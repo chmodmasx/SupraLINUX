@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+divert() {
+    file="$1"
+    backup="${file}.supralinux-distrib"
+    if [ -e "$backup" ]; then
+        dpkg-divert --package supralinux-base-files --divert "$backup" --add "$file" >/dev/null
+    elif [ -e "$file" ]; then
+        dpkg-divert --package supralinux-base-files --divert "$backup" --rename "$file" >/dev/null
+    else
+        dpkg-divert --package supralinux-base-files --divert "$backup" --add "$file" >/dev/null
+    fi
+}
+
+if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
+    divert /usr/lib/os-release
+    divert /etc/lsb-release
+    divert /etc/issue
+    divert /etc/issue.net
+    divert /etc/legal
+fi
+
+exit 0

@@ -1,0 +1,70 @@
+#!/bin/sh
+# Provision the initial KWallet for the autologin-without-LUKS case.
+# The other cases are handled by pam_kwallet5:
+#   * password login: the login password unlocks/creates kdewallet;
+#   * autologin + LUKS: pam_systemd_loadkey feeds the LUKS key to pam_kwallet5.
+set -eu
+
+[ "$(id -u)" -eq 0 ] || exit 0
+
+user=$(sed -n 's/^User=//p' /etc/sddm.conf /etc/sddm.conf.d/*.conf 2>/dev/null | head -n 1)
+[ -n "$user" ] || exit 0
+
+entry=$(getent passwd "$user" 2>/dev/null || true)
+[ -n "$entry" ] || exit 0
+home=$(printf '%s\n' "$entry" | cut -d: -f6)
+gid=$(printf '%s\n' "$entry" | cut -d: -f4)
+[ -n "$home" ] || exit 0
+
+# Make org.freedesktop.secrets activatable for this user. The per-user file
+# avoids a system-wide conflict with gnome-keyring.
+if [ -f /usr/share/supralinux/kwallet-blank/org.freedesktop.secrets.service ]; then
+    if install -d -m 755 "$home/.local/share/dbus-1/services" 2>/dev/null; then
+        target="$home/.local/share/dbus-1/services/org.freedesktop.secrets.service"
+        if [ ! -e "$target" ]; then
+            if install -m 644 /usr/share/supralinux/kwallet-blank/org.freedesktop.secrets.service "$target" 2>/dev/null; then
+                chown "$user:$gid" "$target" 2>/dev/null || true
+            fi
+        fi
+        chown "$user:$gid" "$home/.local/share/dbus-1" "$home/.local/share/dbus-1/services" 2>/dev/null || true
+    fi
+fi
+
+# Do not overwrite an existing wallet.
+[ -e "$home/.local/share/kwalletd/kdewallet.kwl" ] && exit 0
+
+# With LUKS, pam_systemd_loadkey/pam_kwallet5 provision and unlock the wallet.
+if [ -s /etc/crypttab ] && grep -qE '^[[:space:]]*[^#]' /etc/crypttab 2>/dev/null; then
+    exit 0
+fi
+if grep -qE '^/dev/mapper/[^[:space:]]+[[:space:]]+/[[:space:]]' /etc/fstab 2>/dev/null; then
+    exit 0
+fi
+
+install -d -m 700 "$home/.local" "$home/.local/share/kwalletd" "$home/.config"
+install -d -m 755 "$home/.local/share"
+install -m 600 /usr/share/supralinux/kwallet-blank/kdewallet.kwl \
+    "$home/.local/share/kwalletd/kdewallet.kwl"
+install -m 600 /usr/share/supralinux/kwallet-blank/kdewallet.salt \
+    "$home/.local/share/kwalletd/kdewallet.salt"
+
+if [ ! -f "$home/.config/kwalletrc" ]; then
+    install -m 600 /usr/share/supralinux/kwallet-blank/kwalletrc \
+        "$home/.config/kwalletrc"
+else
+    if grep -q '^First Use=' "$home/.config/kwalletrc"; then
+        sed -i 's/^First Use=.*/First Use=false/' "$home/.config/kwalletrc"
+    elif grep -q '^\[Wallet\]' "$home/.config/kwalletrc"; then
+        sed -i '/^\[Wallet\]/a First Use=false' "$home/.config/kwalletrc"
+    else
+        printf '\n[Wallet]\nFirst Use=false\n' >> "$home/.config/kwalletrc"
+    fi
+    chmod 600 "$home/.config/kwalletrc"
+fi
+
+chown -R "$user:$gid" "$home/.local" "$home/.config/kwalletrc"
+chown "$user:$gid" "$home/.config"
+chmod 700 "$home/.local/share/kwalletd" "$home/.config"
+chmod 600 "$home/.local/share/kwalletd/kdewallet.kwl" \
+          "$home/.local/share/kwalletd/kdewallet.salt" \
+          "$home/.config/kwalletrc"

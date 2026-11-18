@@ -1,0 +1,185 @@
+supralinux-defaults (1.1.0) resolute; urgency=medium
+
+  * Refresh the desktop defaults for SupraLINUX 1.0.0 Aurora.
+  * Depend on branding 1.2.0, theme 1.0.3 and supralinux-base-files.
+  * Keep Firefox, keyring, Snapper and locale helpers.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000
+
+supralinux-defaults (1.0.18) unstable; urgency=medium
+
+  * Install a per-user org.freedesktop.secrets D-Bus activation file that
+    starts ksecretd. New users get it from /etc/skel; existing users get it
+    from the postinst. The file is per-user to avoid conflicting with
+    gnome-keyring's system-wide service file.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 17 Nov 2026 21:00:00 -0300
+
+supralinux-defaults (1.0.17) unstable; urgency=medium
+
+  * Use the three-color fastfetch logo as the default: light gray ring
+    (#F6F6F6), blue background (#51A2DA) and white SL letters (#FFFFFF).
+    The original . + # characters are preserved; only their colors change.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 09 Nov 2026 18:20:00 -0300
+
+supralinux-defaults (1.0.16) unstable; urgency=medium
+
+  * Replace the fastfetch ASCII logo with the 24-line circular SL mark in
+    the existing @ % # * + style. The plain source is kept at
+    branding/supralinux/logos/fastfetch-logo.txt; the installed copy uses
+    the same blue truecolor as the previous logo.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 09 Nov 2026 18:00:00 -0300
+
+supralinux-defaults (1.0.15) unstable; urgency=medium
+
+  * Add D-Bus service overrides for the KDE root helpers. The
+    dbus-daemon-launch-helper clears the environment, so setting LANG on
+    dbus.service alone did not reach powerdevil/kded/kinfocenter helpers.
+    The /usr/local overrides wrap their Exec with env LANG=C.UTF-8.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 09 Nov 2026 08:45:00 -0300
+
+supralinux-defaults (1.0.14) unstable; urgency=medium
+
+  * Set LANG=C.UTF-8 for the system D-Bus daemon so Qt helpers activated
+    on the system bus no longer start in the C locale.
+  * Create /run/utmp, /run/utmpx and /var/log/wtmp with tmpfiles.d so
+    sddm-helper can write its compatibility records.
+  * Allow the sudo group to query Snapper and synchronize the ACLs on
+    /.snapshots; migrate existing installations from postinst.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 09 Nov 2026 06:45:00 -0300
+
+supralinux-defaults (1.0.13) unstable; urgency=medium
+
+  * Keep the traditional sudo implementation and drop the sudo-rs
+    dependency. sudo 1.9.17p2 is the reference implementation and supports
+    the complete sudoers format.
+  * Ship /etc/sudoers.d/99-pwfeedback with "Defaults pwfeedback" (mode
+    0440) so password feedback is enabled by default on the traditional
+    sudo.
+  * Default image/* to Gwenview in the system and skeleton MIME defaults.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 08 Nov 2026 14:35:00 -0300
+
+supralinux-defaults (1.0.12) unstable; urgency=medium
+
+  * Install sudo-rs and make it the default sudo implementation, matching
+    Kubuntu 26.04. sudo-rs shows asterisks (pwfeedback) while typing the
+    password by default. The traditional sudo package remains installed as
+    a fallback; if the alternative is switched to it, add
+    `Defaults pwfeedback` in /etc/sudoers.d/ to get the same feedback.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 08 Nov 2026 12:50:00 -0300
+
+supralinux-defaults (1.0.11) unstable; urgency=medium
+
+  * Depend on supralinux-hardware-support for Sound Open Firmware,
+    ALSA UCM/topology profiles and thermald, which Ubuntu/Kubuntu install as
+    Recommends but our --no-install-recommends build would omit.
+  * Add open metric-compatible fonts: fonts-croscore, fonts-crosextra-carlito,
+    fonts-crosextra-caladea and fonts-dejavu-extra.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 07 Nov 2026 11:00:00 -0300
+
+supralinux-defaults (1.0.10) unstable; urgency=medium
+
+  * Keep the Plymouth shutdown console readable: systemd 259 prints the unit
+    name in bold in the combined status format, and Plymouth's hidden console
+    lacks the bold font at shutdown (Ubuntu #2109459), rendering tofu boxes.
+    Use StatusUnitFormat=description.
+  * Cap cups-browsed stop at 10 s; it otherwise waits the full 90 s default
+    TimeoutStopSec before systemd kills it.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 07 Nov 2026 06:10:00 -0300
+
+supralinux-defaults (1.0.9) unstable; urgency=medium
+
+  * Provision KWallet before Chrome's first run:
+    - autologin without LUKS gets a blank Blowfish kdewallet, copied into the
+      new user's home by Calamares; the user can set a password later;
+    - password login keeps a wallet protected by the user password;
+    - autologin with LUKS receives the disk key through pam_systemd_loadkey
+      and pam_kwallet5.
+  * Point pam_kwallet5 at Plasma 6's ksecretd and add the SDDM
+    KeyringMode=inherit drop-in.
+  * Keep the wallet creation dialog as a fallback; the normal cases no longer
+    depend on it.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 07 Nov 2026 02:50:00 -0300
+
+supralinux-defaults (1.0.8) unstable; urgency=medium
+
+  * Use the final 60x30 ASCII SL logo for fastfetch, with the full default
+    module list and a system-wide config.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 05 Nov 2026 21:45:00 -0300
+
+supralinux-defaults (1.0.7) unstable; urgency=medium
+
+  * Use the provided ASCII SL logo for fastfetch, keeping the
+    full default module list.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 05 Nov 2026 21:35:00 -0300
+
+supralinux-defaults (1.0.6) unstable; urgency=medium
+
+  * Fix the fastfetch logo integration: use a compact ASCII/ANSI SL logo
+    instead of the raster half-block image, and restore the full default
+    module list so `fastfetch` still prints OS, kernel, CPU, memory, etc.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 05 Nov 2026 21:20:00 -0300
+
+supralinux-defaults (1.0.5) unstable; urgency=medium
+
+  * Ship a SupraLINUX ANSI logo and a system-wide fastfetch config so
+    `fastfetch` no longer falls back to the Ubuntu logo.
+  * Keep the rest of the fastfetch defaults untouched.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 05 Nov 2026 21:05:00 -0300
+
+supralinux-defaults (1.0.4) unstable; urgency=medium
+
+  * Register the root Snapper configuration in /etc/default/snapper so
+    snapperd exposes it over D-Bus.  Ubuntu ships SNAPPER_CONFIGS="";
+    `snapper -c root` failed with "unknown config" even though
+    /etc/snapper/configs/root existed.
+  * Use Haruna as the default handler for common video formats.
+  * Keep Firefox as the default browser.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 05 Nov 2026 13:30:00 -0300
+
+supralinux-defaults (1.0.3) unstable; urgency=medium
+
+  * Avoid regenerating every locale twice during installation.  The
+    language packs add a list of Spanish locales and a full locale-gen
+    run can exceed the previous Calamares timeout on slow hardware.
+    Use locale-gen --keep-existing after localecfg, which is fast when
+    the selected locale is already present.
+  * Raise the shellprocess timeout to 900 seconds as a safety margin.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 04 Nov 2026 12:40:00 +0000
+
+supralinux-defaults (1.0.2) unstable; urgency=medium
+
+  * Restore the previous default look-and-feel and Breeze SDDM theme.
+  * Leave the Aurora theme installed but not selected.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 04 Nov 2026 11:00:00 +0000
+
+supralinux-defaults (1.0.1) unstable; urgency=medium
+
+  * Select the SupraLINUX Aurora global theme, color scheme, icon theme and
+    sound theme in system and skeleton defaults.
+  * Select the supralinux SDDM theme.
+  * Depend on supralinux-theme and the updated branding assets.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 04 Nov 2026 07:35:00 +0000
+
+supralinux-defaults (1.0.0) unstable; urgency=medium
+
+  * Move system defaults and installer helpers out of the rootfs build.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 03 Nov 2026 23:40:00 +0000

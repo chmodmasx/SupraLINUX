@@ -1,0 +1,12 @@
+etc/apt etc
+etc/default etc
+etc/fastfetch etc
+etc/firefox etc
+etc/sddm.conf.d etc
+etc/skel etc
+etc/sudoers.d etc
+etc/systemd etc
+etc/xdg etc
+usr/lib usr
+usr/local usr
+usr/share usr

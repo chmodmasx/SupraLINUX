@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.kde.kded.smart
+Exec=/usr/bin/env LANG=C.UTF-8 /usr/lib/kf6/kauth/libexec/kded-smart-helper
+User=root

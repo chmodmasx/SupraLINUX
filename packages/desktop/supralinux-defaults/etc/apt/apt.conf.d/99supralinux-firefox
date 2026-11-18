@@ -1,0 +1,2 @@
+// Keep the Firefox desktop override in sync with package updates.
+DPkg::Post-Invoke { "/usr/lib/supralinux/fix-firefox-desktop"; };

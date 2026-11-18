@@ -1,0 +1,18 @@
+Source: plasma-wayland-protocols
+Section: libdevel
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               extra-cmake-modules (>= 5.69.0~),
+               libwayland-dev,
+               qt6-base-dev
+Standards-Version: 4.7.3
+Homepage: https://invent.kde.org/libraries/plasma-wayland-protocols
+
+Package: plasma-wayland-protocols
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Wayland protocols for Plasma
+ This package contains protocols for Wayland that are not standard, and used
+ in KDE Plasma.

@@ -1,0 +1,16 @@
+[Default Applications]
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+text/html=firefox.desktop
+application/xhtml+xml=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-htm=firefox.desktop
+video/mp4=org.kde.haruna.desktop
+video/x-matroska=org.kde.haruna.desktop
+video/webm=org.kde.haruna.desktop
+video/mpeg=org.kde.haruna.desktop
+video/ogg=org.kde.haruna.desktop
+video/quicktime=org.kde.haruna.desktop
+video/x-msvideo=org.kde.haruna.desktop
+video/x-ms-wmv=org.kde.haruna.desktop
+image/*=org.kde.gwenview.desktop

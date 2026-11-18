@@ -1,0 +1,21 @@
+Source: supralinux-hardware-support
+Section: misc
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://supralinux.com/
+Rules-Requires-Root: no
+
+Package: supralinux-hardware-support
+Architecture: all
+Depends: ${misc:Depends},
+ firmware-sof-signed,
+ alsa-ucm-conf,
+ alsa-topology-conf,
+ thermald,
+ libpam-fprintd
+Description: SupraLINUX hardware support defaults
+ Pulls the firmware, audio profiles and thermal daemon that Ubuntu and
+ Kubuntu install as Recommends but a --no-install-recommends build would
+ otherwise omit.

@@ -1,0 +1,57 @@
+#!/bin/sh
+# Configure Btrfs snapshots and the APT pre-invoke hook on an installed system.
+# Runs inside the Calamares target chroot.
+set -eu
+
+if ! grep -q 'subvol=/@' /etc/fstab 2>/dev/null; then
+    exit 0
+fi
+
+# Ubuntu ships SNAPPER_CONFIGS="" in /etc/default/snapper.  snapperd only
+# exposes the configs listed there, so `snapper -c root` over D-Bus fails
+# with "unknown config" even though /etc/snapper/configs/root exists.
+if [ -f /etc/default/snapper ]; then
+    if grep -q '^SNAPPER_CONFIGS=' /etc/default/snapper; then
+        sed -i 's/^SNAPPER_CONFIGS=.*/SNAPPER_CONFIGS="root"/' /etc/default/snapper
+    else
+        printf '%s\n' 'SNAPPER_CONFIGS="root"' >> /etc/default/snapper
+    fi
+fi
+
+if [ ! -e /etc/snapper/configs/root ]; then
+    install -d -m 0755 /etc/snapper/configs
+    sed \
+        -e 's/^SUBVOLUME=.*/SUBVOLUME="\/"/' \
+        -e 's/^TIMELINE_CREATE=.*/TIMELINE_CREATE="no"/' \
+        -e 's/^NUMBER_LIMIT=.*/NUMBER_LIMIT="20"/' \
+        -e 's/^NUMBER_LIMIT_IMPORTANT=.*/NUMBER_LIMIT_IMPORTANT="10"/' \
+        /usr/share/snapper/config-templates/default \
+        > /etc/snapper/configs/root
+    chmod 0600 /etc/snapper/configs/root
+fi
+
+# --no-dbus works in the Calamares chroot, where snapperd is not running.
+snapper --no-dbus -c root set-config TIMELINE_CREATE=no >/dev/null
+snapper --no-dbus -c root set-config NUMBER_LIMIT=20 >/dev/null
+snapper --no-dbus -c root set-config NUMBER_LIMIT_IMPORTANT=10 >/dev/null
+snapper --no-dbus -c root set-config ALLOW_GROUPS=sudo >/dev/null
+snapper --no-dbus -c root set-config SYNC_ACL=yes >/dev/null
+
+cat > /etc/apt/apt.conf.d/80snapper <<'EOF'
+// Take a root snapshot before package operations. /home is a separate
+// Btrfs subvolume and is therefore not part of root snapshots.
+// The number cleanup algorithm makes NUMBER_LIMIT effective; failures are
+// logged instead of being silently discarded.
+DPkg::Pre-Invoke { "snapper --no-dbus -c root create --cleanup-algorithm number --description 'APT pre' --userdata 'reason=apt' >>/var/log/supralinux-snapshot.log 2>&1 || logger -t supralinux-snapshot 'APT pre snapshot failed'"; };
+EOF
+
+# Baseline snapshot for recovery.
+snapper --no-dbus -c root create \
+    --cleanup-algorithm number \
+    --description "initial install" \
+    --userdata "reason=install" >/dev/null
+
+systemctl disable snapper-boot.timer snapper-timeline.timer >/dev/null 2>&1 || true
+# The timers race with the /.snapshots mount on boot; mask them explicitly.
+systemctl mask snapper-boot.timer snapper-timeline.timer >/dev/null 2>&1 || true
+systemctl enable snapper-cleanup.timer >/dev/null 2>&1 || true

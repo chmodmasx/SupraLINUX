@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+%:
+	dh $@
+
+override_dh_fixperms:
+	dh_fixperms
+	chmod 0440 debian/supralinux-defaults/etc/sudoers.d/99-pwfeedback
+
+override_dh_usrlocal:
+	# The installer helpers intentionally live in /usr/local/sbin.

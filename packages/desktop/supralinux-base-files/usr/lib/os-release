@@ -1,0 +1,15 @@
+PRETTY_NAME="SupraLINUX Aurora 1.0.0"
+NAME="SupraLINUX"
+VERSION="1.0.0 (Aurora)"
+VERSION_ID="26.04"
+VERSION_CODENAME=resolute
+ID=supralinux
+ID_LIKE="ubuntu debian"
+UBUNTU_CODENAME=resolute
+SUPRALINUX_VERSION="1.0.0"
+SUPRALINUX_CODENAME="aurora"
+SUPRALINUX_BASE="Ubuntu 26.04 LTS"
+HOME_URL="https://supralinux.com/"
+BUG_REPORT_URL="https://supralinux.com/bugs.html"
+LOGO=supralinux
+ANSI_COLOR="1;34"

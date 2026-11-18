@@ -1,0 +1,32 @@
+#!/bin/sh
+# Remove legacy GIO "userapp-Firefox" entries left by older ISOs.
+#
+# Firefox created these entries when it tried to set itself as the default
+# browser using a desktop Exec that resolved through /usr/bin/firefox. The
+# entries have no Icon= and no StartupWMClass=, so Plasma shows a white pinned
+# icon and a second running icon. The current desktop override prevents new
+# entries; this is a one-time cleanup for existing homes.
+set -eu
+
+for home in /home/*; do
+    [ -d "$home" ] || continue
+    user=$(stat -c '%U' "$home")
+    [ "$user" != root ] || continue
+
+    runuser -u "$user" -- sh -c '
+        for f in "$HOME"/.local/share/applications/userapp-Firefox-*.desktop; do
+            if [ -e "$f" ]; then
+                rm -f "$f"
+            fi
+        done
+        for f in "$HOME"/.config/mimeapps.list "$HOME"/.local/share/applications/mimeapps.list; do
+            if [ -f "$f" ]; then
+                sed -i "s/userapp-Firefox-[^;]*/firefox.desktop/g" "$f"
+            fi
+        done
+        f="$HOME/.config/plasma-org.kde.plasma.desktop-appletsrc"
+        if [ -f "$f" ]; then
+            sed -i "s/applications:userapp-Firefox-[^,;]*/applications:firefox.desktop/g" "$f"
+        fi
+    '
+done

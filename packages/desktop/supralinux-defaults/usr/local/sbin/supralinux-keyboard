@@ -1,0 +1,50 @@
+#!/bin/sh
+# Generate Plasma's kxkbrc from the keyboard selected in Calamares.
+# Calamares writes /etc/default/keyboard and the X.org file, but Plasma
+# Wayland reads ~/.config/kxkbrc for the keyboard-layout KCM.  Without this
+# file the KCM starts with "Configure layouts" disabled.
+set -eu
+
+[ -r /etc/default/keyboard ] || exit 0
+. /etc/default/keyboard
+
+XKBMODEL=${XKBMODEL:-pc105}
+XKBLAYOUT=${XKBLAYOUT:-us}
+XKBVARIANT=${XKBVARIANT:-}
+XKBOPTIONS=${XKBOPTIONS:-}
+
+# The values come from Calamares, but keep the generated file predictable.
+case "$XKBMODEL" in *[!A-Za-z0-9_,.-]*) XKBMODEL=pc105 ;; esac
+case "$XKBLAYOUT" in *[!A-Za-z0-9_,.-]*) XKBLAYOUT=us ;; esac
+case "$XKBVARIANT" in *[!A-Za-z0-9_,.-]*) XKBVARIANT= ;; esac
+case "$XKBOPTIONS" in *[!A-Za-z0-9_,.:+_-]*) XKBOPTIONS= ;; esac
+
+write_kxkbrc() {
+    file=$1
+    install -d -m 0755 "$(dirname "$file")"
+    {
+        echo '[Layout]'
+        echo 'Use=true'
+        echo "LayoutList=$XKBLAYOUT"
+        echo "Model=$XKBMODEL"
+        if [ -n "$XKBVARIANT" ] && [ "$XKBVARIANT" != "," ]; then
+            echo "VariantList=$XKBVARIANT"
+        fi
+        if [ -n "$XKBOPTIONS" ]; then
+            echo "Options=$XKBOPTIONS"
+            echo 'ResetOldOptions=true'
+        fi
+    } > "$file"
+    chmod 0644 "$file"
+}
+
+user=$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 { print $1; exit }')
+if [ -n "$user" ]; then
+    home=$(getent passwd "$user" | cut -d: -f6)
+    if [ -n "$home" ] && [ -d "$home" ]; then
+        write_kxkbrc "$home/.config/kxkbrc"
+        chown "$user:$user" "$home/.config" "$home/.config/kxkbrc"
+    fi
+fi
+
+write_kxkbrc /etc/skel/.config/kxkbrc

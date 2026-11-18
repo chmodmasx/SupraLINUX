@@ -1,0 +1,16 @@
+Source: supralinux-base-files
+Section: admin
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.2
+Homepage: https://supralinux.com
+Rules-Requires-Root: no
+
+Package: supralinux-base-files
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: SupraLINUX identity files
+ Installs the SupraLINUX os-release, lsb-release, issue and legal files,
+ using dpkg-divert so base-files remains the owner of the original paths.

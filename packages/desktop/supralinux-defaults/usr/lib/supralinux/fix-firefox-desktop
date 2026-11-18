@@ -1,0 +1,31 @@
+#!/bin/sh
+# Regenerate the Firefox desktop override after package updates.
+#
+# Firefox's default-browser check compares the GIO app command with the
+# executable that XRE actually reports. The Mozilla package launches through
+# /usr/bin/firefox -> /usr/lib/firefox/firefox, but the real XRE executable is
+# the sibling firefox-bin. Using the launcher path makes Firefox believe it is
+# not the default and creates an icon-less userapp-Firefox-*.desktop on
+# "set default". Point the desktop entry at firefox-bin.
+set -eu
+
+src=/usr/share/applications/firefox.desktop
+dst=/usr/local/share/applications/firefox.desktop
+
+[ -f "$src" ] || exit 0
+
+launcher=$(readlink -f /usr/bin/firefox 2>/dev/null || true)
+[ -n "$launcher" ] || launcher=/usr/lib/firefox/firefox
+real="$launcher"
+bindir=$(dirname "$launcher")
+if [ -x "$bindir/firefox-bin" ]; then
+    real="$bindir/firefox-bin"
+fi
+
+install -d -m 0755 /usr/local/share/applications
+sed -E "s#^Exec=firefox([[:space:]]|$)#Exec=$real\1#" "$src" > "$dst"
+chmod 0644 "$dst"
+
+if command -v update-desktop-database >/dev/null 2>&1; then
+    update-desktop-database /usr/local/share/applications >/dev/null 2>&1 || true
+fi

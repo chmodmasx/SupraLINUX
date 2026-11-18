@@ -1,0 +1,22 @@
+#!/bin/sh
+# Create the XDG user directories for the user created by Calamares.
+# xdg-user-dirs-update runs with the selected locale so the standard
+# directories and ~/.config/user-dirs.dirs belong to that user from the
+# first session, not to the live user or to the build host.
+set -eu
+
+if [ -r /etc/default/locale ]; then
+    . /etc/default/locale
+elif [ -r /etc/locale.conf ]; then
+    . /etc/locale.conf
+fi
+: "${LANG:=C.UTF-8}"
+
+user=$(getent passwd | awk -F: '$3 >= 1000 && $3 < 65534 { print $1; exit }')
+[ -n "$user" ] || exit 0
+home=$(getent passwd "$user" | cut -d: -f6)
+[ -n "$home" ] && [ -d "$home" ] || exit 0
+
+/usr/sbin/runuser -u "$user" -- env -i HOME="$home" \
+    PATH=/usr/local/bin:/usr/bin:/bin LANG="$LANG" LC_ALL="$LANG" \
+    /usr/bin/xdg-user-dirs-update --force

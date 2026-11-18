@@ -1,0 +1,2 @@
+# Show asterisks while the user types the sudo password.
+Defaults pwfeedback

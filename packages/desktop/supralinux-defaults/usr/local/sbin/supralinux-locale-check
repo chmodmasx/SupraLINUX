@@ -1,0 +1,54 @@
+#!/bin/sh
+# Ensure the locale selected in Calamares exists in the installed system.
+# This is distribution-independent: it works for any language, not only Spanish.
+set -eu
+
+# Calamares and older locale tools may write values such as LC_CTYPE=es_AR
+# without the codeset.  glibc then falls back to ISO-8859-1, which breaks
+# Qt's UTF-8 assumptions and makes dpkg/apt print mojibake.  Normalize every
+# non-C locale value to UTF-8 before checking or generating locales.
+for file in /etc/default/locale /etc/locale.conf; do
+    [ -f "$file" ] || continue
+    sed -i -E '/^(LANG|LC_[A-Z]+)=(C|POSIX)$/! s/^(LANG|LC_[A-Z]+)=([^."@]+)$/\1=\2.UTF-8/' "$file"
+done
+
+if [ -r /etc/default/locale ]; then
+    . /etc/default/locale
+elif [ -r /etc/locale.conf ]; then
+    . /etc/locale.conf
+fi
+
+: "${LANG:=en_US.UTF-8}"
+
+seen=""
+for loc in "$LANG" \
+           "${LC_TIME:-}" \
+           "${LC_NUMERIC:-}" \
+           "${LC_MONETARY:-}" \
+           "${LC_PAPER:-}" \
+           "${LC_NAME:-}" \
+           "${LC_ADDRESS:-}" \
+           "${LC_TELEPHONE:-}" \
+           "${LC_MEASUREMENT:-}" \
+           "${LC_IDENTIFICATION:-}"; do
+    [ -n "$loc" ] || continue
+    case "$loc" in
+        C|C.UTF-8|POSIX) continue ;;
+    esac
+    case " $seen " in
+        *" $loc "*) continue ;;
+    esac
+    seen="$seen $loc"
+    if ! grep -q "^${loc} " /etc/locale.gen 2>/dev/null; then
+        printf '%s UTF-8\n' "$loc" >> /etc/locale.gen
+    fi
+done
+
+echo "SupraLINUX: checking locale $LANG"
+locale-gen --keep-existing
+echo "SupraLINUX: locale generation complete"
+
+if ! locale -a | grep -qi "^${LANG%.*}"; then
+    echo "SupraLINUX: locale was not generated: $LANG" >&2
+    exit 1
+fi

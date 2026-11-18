@@ -1,0 +1,25 @@
+Source: supralinux-defaults
+Section: misc
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://supralinux.com/
+Rules-Requires-Root: no
+
+Package: supralinux-defaults
+Architecture: all
+Depends: ${misc:Depends},
+ grub-common,
+ systemd,
+ supralinux-branding (>= 1.2.0),
+ supralinux-theme (>= 1.0.3),
+ supralinux-hardware-support,
+ supralinux-base-files (>= 1.0.0),
+ fonts-croscore,
+ fonts-crosextra-carlito,
+ fonts-crosextra-caladea,
+ fonts-dejavu-extra
+Description: SupraLINUX Aurora system defaults
+ SDDM, MIME and Firefox defaults, zram and AppArmor configuration, installer
+ helpers, GRUB settings and the SupraLINUX Aurora theme selection.

@@ -1,0 +1,6 @@
+supralinux-base-files (1.0.0) resolute; urgency=medium
+
+  * Provide the SupraLINUX identity files with dpkg-divert over base-files.
+  * Keep VERSION_ID and the base codename for Ubuntu compatibility.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000
