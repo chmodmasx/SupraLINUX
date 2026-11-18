@@ -7,6 +7,14 @@ Full SupraLINUX documentation is published with the 1.0.0 release.
 - [Product](product.md) (Spanish)
 - [Architecture](architecture.md) (Spanish)
 - [Packaging policy](packaging-policy.md) (Spanish)
+- [Development](development.md) (Spanish)
+- [Testing](testing.md) (Spanish)
+- [Release](release.md) (Spanish)
+- [Secure Boot](secure-boot.md) (Spanish)
+- [Provenance](provenance.md) (Spanish)
+- [Reuse](reuse.md) (Spanish)
+- [Decisions](decisions.md) (Spanish)
+- [Compatibility](compatibility.md) (Spanish)
 - [Project README](../README.en.md)
 - [Contributing](../CONTRIBUTING.en.md)
 - [Security](../SECURITY.en.md)
@@ -15,16 +23,10 @@ Full SupraLINUX documentation is published with the 1.0.0 release.
 
 ## Planned for 1.0.0
 
-- `development.md`: local workflow, branches, and checkpoints.
+- `host-tools.md`: host tools and preflight check.
 - `clean-build.md`: clean build with sbuild/unshare.
 - `live-image.md`: rootfs, squashfs, ISO, and Secure Boot.
 - `installer.md`: Calamares, partitioning, users, and GRUB.
-- `testing.md`: test matrix and evidence.
-- `release.md`: versioning, signing, publication, and rollback.
-- `secure-boot.md`: trust chain and limits.
-- `provenance.md`: sources, patches, and licenses.
-- `decisions.md`: architecture decisions.
-- `compatibility.md`: compatibility notes for the Ubuntu base.
 
 ## Language
 

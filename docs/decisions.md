@@ -1,0 +1,289 @@
+# Decisiones
+
+Registro de decisiones de arquitectura y producto. Cada decisión indica el
+motivo y la consecuencia; si se revisa, se agrega una entrada nueva en lugar de
+reescribir la anterior.
+
+## D-001 — Repositorio e historia nuevos
+
+**Decisión:** crear un repositorio nuevo con historia curada de aproximadamente
+35–40 commits. El proyecto anterior queda como referencia de sólo lectura.
+
+**Motivo:** la historia anterior mezcla 498 commits, campañas, pasos muertos y
+manifests internos. No es una base legible para una release nueva.
+
+**Consecuencia:** no se replica la historia ni se copia en bloque. Cada
+importación se revisa y se registra en [reuse.md](reuse.md). `main` contiene
+sólo releases; `testing`, la integración.
+
+## D-002 — Base Ubuntu 26.04 y KDE desde upstream
+
+**Decisión:** usar Ubuntu 26.04 LTS como base y construir KDE Frameworks,
+Plasma y Gear desde fuentes upstream contra el Qt de Ubuntu.
+
+**Motivo:** Ubuntu mantiene kernel, firmware, drivers, Qt y bibliotecas de
+plataforma. KDE define el escritorio. La cadencia de Kubuntu no selecciona la
+versión.
+
+**Consecuencia:** no se reconstruye Qt, el kernel ni los drivers de plataforma.
+No se mantiene un fork de KDE. Una versión de KDE que exija un Qt superior al
+de la base queda fuera de la campaña.
+
+## D-003 — Identidad separada de la base
+
+**Decisión:** `ID=supralinux`, `ID_LIKE="ubuntu debian"`, `VERSION_ID=26.04`,
+`VERSION_CODENAME=resolute`, `UBUNTU_CODENAME=resolute`,
+`VERSION="1.0.0 (Aurora)"`, `PRETTY_NAME="SupraLINUX Aurora 1.0.0"` y
+`SUPRALINUX_VERSION`/`SUPRALINUX_CODENAME` para el producto.
+
+**Motivo:** APT y las herramientas de la base esperan `VERSION_ID=26.04` y el
+codename de Ubuntu. A la vez, el usuario necesita ver la versión del producto.
+
+**Consecuencia:** no se cambia `VERSION_ID` para mostrar 1.0.0. Las herramientas
+que detectan la base leen `VERSION_ID`/`UBUNTU_CODENAME`; las que muestran el
+producto leen `PRETTY_NAME`/`VERSION`/`SUPRALINUX_*`.
+
+## D-004 — `supralinux-base-files` con `dpkg-divert`
+
+**Decisión:** la identidad la posee un paquete propio, `supralinux-base-files`,
+con `dpkg-divert` sobre los archivos de `base-files`.
+
+**Motivo:** se necesita controlar `os-release`, `lsb-release`, `issue` y
+`legal` sin reemplazar ni romper `base-files` de Ubuntu.
+
+**Consecuencia:** el paquete se instala y se actualiza de forma independiente.
+Los archivos de identidad no se copian a mano en el rootfs ni en el instalador.
+
+## D-005 — Stack KDE fijado por release
+
+**Decisión:** 1.0.0 usa Frameworks 6.24, Plasma 6.6.7, Gear 25.12.3 y Qt
+6.10.2. No se mezclan versiones dentro de la misma release.
+
+**Motivo:** las dependencias entre Frameworks, Plasma y Gear son estrictas; una
+mezcla produce fallos de ABI y de runtime.
+
+**Consecuencia:** cada campaña fija fuentes, versiones, parches y claves. Una
+nueva release upstream no cambia la release en curso.
+
+## D-006 — Calamares configurado, no parcheado
+
+**Decisión:** la configuración de Calamares se empaqueta como
+`supralinux-calamares-config` e instala `/etc/calamares`. No se instala
+`calamares-settings-kubuntu` ni se parchea Calamares.
+
+**Motivo:** separar configuración de binario; evitar depender de los settings de
+Kubuntu y facilitar la actualización de Calamares.
+
+**Consecuencia:** el paquete declara la dependencia de `calamares` y prueba la
+instalación en BIOS, UEFI y Secure Boot. Los módulos propios se versionan y se
+documentan.
+
+## D-007 — Secure Boot con la cadena de Ubuntu
+
+**Decisión:** usar shim, GRUB y kernel firmados por Canonical; no mantener una
+cadena Secure Boot propia en 1.0.0.
+
+**Motivo:** una cadena propia exige custodia de claves, revisión de seguridad,
+enrolamiento y, potencialmente, revisión de Microsoft. No es el costo correcto
+para la primera release.
+
+**Consecuencia:** la ISO y el sistema instalado arrancan con Secure Boot en
+firmware que confía en Canonical. Los módulos propios requieren MOK. Ver
+[secure-boot.md](secure-boot.md).
+
+## D-008 — Btrfs, Snapper y recuperación desde el live
+
+**Decisión:** Btrfs por defecto, con `@`, `@home` y `@snapshots`; Snapper en la
+raíz; rollback desde el live con `supralinux-recover`.
+
+**Motivo:** permitir volver a un estado anterior sin revertir los datos
+personales y sin depender de una entrada de recuperación en el sistema
+instalado.
+
+**Consecuencia:** `@home` no se toca en el rollback. La raíz anterior se
+conserva como `@pre-rollback-<fecha>` y se retienen las tres más recientes. EXT4
+sigue disponible, pero sin rollback.
+
+## D-009 — Firefox desde el repositorio oficial de Mozilla
+
+**Decisión:** preinstalar Firefox y los paquetes de idioma español desde el
+repositorio oficial de Mozilla. No mantener un mirror propio ni un cron de
+sincronización.
+
+**Motivo:** evitar un mirror y un servicio propios; Mozilla mantiene el
+repositorio y las firmas.
+
+**Consecuencia:** la ISO y el sistema instalado configuran la fuente y la clave
+de Mozilla. Los paquetes `firefox-l10n-es-ar`, `firefox-l10n-es-es` y
+`firefox-l10n-es-mx` se instalan; el inglés queda incorporado. No se usa el
+paquete transicional de Ubuntu ni snap.
+
+## D-010 — Sin snapd en 1.0.0
+
+**Decisión:** la release no incluye `snapd`. Usa APT, el repositorio propio y
+Flatpak/Flathub.
+
+**Motivo:** reducir capas y servicios; el escritorio y las apps necesarias se
+empaquetan o se instalan por Flatpak.
+
+**Consecuencia:** las instrucciones que asumen snap no aplican. Firefox se
+instala desde Mozilla; Thunderbird, si se necesita, se ofrece por Flathub. Los
+usuarios pueden agregar snap por su cuenta, pero no es parte del producto.
+
+## D-011 — Aptly nuevo, clave Ed25519 nueva
+
+**Decisión:** crear una instancia y un volumen nuevos de Aptly, con una clave
+Ed25519 nueva. Verificar la publicación antes de cambiar el repositorio en uso.
+La instancia, el volumen y las claves anteriores se consideran descartables y
+sólo se eliminan después de la validación y con autorización explícita.
+
+**Motivo:** separar la infraestructura nueva de la anterior y no arrastrar una
+clave o un estado de publicación que ya no representan al proyecto.
+
+**Consecuencia:** `testing` y `stable` se publican con la clave nueva. La clave
+privada vive fuera de Git. No se reutiliza la clave anterior para 1.0.0.
+
+## D-012 — Nombres de packaging
+
+**Decisión:** `packages/complete` pasa a `packages/gear-extras` y
+`desktop-complete.list` pasa a `desktop-packages.list`.
+
+**Motivo:** los nombres describen el contenido y el perfil de escritorio, no una
+campaña anterior.
+
+**Consecuencia:** las referencias, manifests y scripts usan los nombres nuevos.
+No se mantienen enlaces de compatibilidad con los nombres viejos.
+
+## D-013 — fastfetch sin parche de `os-release`
+
+**Decisión:** no se parchea fastfetch para su heurística de variantes Ubuntu. Se
+usa su comportamiento estándar sobre la identidad de SupraLINUX.
+
+**Motivo:** la identidad correcta vive en `os-release`; un parche propio de una
+herramienta cosmética agrega mantenimiento sin valor de producto.
+
+**Consecuencia:** la salida de fastfetch puede mostrar un logo o una variante
+genérica. Es cosmético y no afecta la identidad del sistema.
+
+## D-014 — Keyring/Secret Service por usuario
+
+**Decisión:** KWallet/Secret Service se activa por usuario, no con un servicio
+system-wide.
+
+**Motivo:** el bus de sesión y la cartera pertenecen al usuario; un servicio
+global produce condiciones de carrera y diálogos fuera de la sesión.
+
+**Consecuencia:** la cartera está disponible desde el primer inicio. No se
+instala `evolution-data-server` para no desplazar `org.freedesktop.secrets` con
+`gnome-keyring`. La sincronización PBAP de contactos por Bluetooth queda como
+limitación conocida.
+
+## D-015 — zram sólo en equipos pequeños
+
+**Decisión:** `systemd-zram-generator` se configura en equipos de hasta 8 GB de
+RAM, con `zram-size = min(ram / 2, 4096)` y `lz4`. No se usa zswap. El swap de
+disco elegido en el instalador sigue disponible.
+
+**Motivo:** evitar doble compresión y mejorar la respuesta en equipos con poca
+memoria sin imponer zram en equipos grandes.
+
+**Consecuencia:** los equipos grandes usan swap de disco o ningún swap según la
+elección. La hibernación sólo se ofrece con partición `suspend`; no se promete
+reanudación real.
+
+## D-016 — Git local, sin CI ni remoto
+
+**Decisión:** el desarrollo es local. No hay remoto, CI, PR, Actions ni JIT. La
+publicación es una operación explícita.
+
+**Motivo:** el proyecto es personal y no quiere depender de una plataforma. La
+historia y los tags se controlan localmente.
+
+**Consecuencia:** las pruebas se ejecutan a mano y se registran. No se crean
+opciones de compatibilidad para CI. Un remoto sólo se configura con
+autorización.
+
+## D-017 — Sitio web sin build
+
+**Decisión:** el sitio público es HTML/CSS/JS plano, sin Astro, Node ni paso de
+build. Se desarrolla directamente sobre el servidor. El backend privado de
+bugs es Flask y los datos quedan fuera del web root.
+
+**Motivo:** reducir dependencias y mantener el sitio simple, rápido y fácil de
+auditar.
+
+**Consecuencia:** no hay `node_modules`, lockfiles ni pipeline de frontend. El
+sitio se sirve con nginx; el formulario de bugs no envía notificaciones ni
+correo. Los datos personales se normalizan y no se publican.
+
+## D-018 — Alcance recortado de 1.0.0
+
+**Decisión:** no se incluyen openQA, SBOM/CRA, `CODE_OF_CONDUCT`, `MAINTAINERS`,
+un archivo de marca separado, una publicación de validación completa ni
+`reprotest` de todo el stack.
+
+**Motivo:** mantener el foco en una release construible y validable, sin
+infraestructura que no aporte al producto.
+
+**Consecuencia:** la validación se publica como manifiestos y evidencia
+resumida. `reprotest` se aplica a paquetes clave. La marca se describe en el
+README. El soporte es best-effort.
+
+## D-019 — Aislamiento del host
+
+**Decisión:** ninguna distribución instalada se modifica. Los builds y pruebas
+se hacen en ISO, rootfs o VM desechable, con cero NIC o SLIRP.
+
+**Motivo:** el host es una herramienta de desarrollo, no un banco de pruebas.
+Modificarlo oculta errores de packaging y arriesga el entorno.
+
+**Consecuencia:** no se usan bridges, TAP ni redes de libvirt del host. Las
+bases/checkpoints KVM son inmutables para sus consumidores. Una excepción exige
+autorización explícita y puntual.
+
+## D-020 — Documentación y licencias
+
+**Decisión:** documentación principal en español, con índice en inglés. Código
+y configuración propios bajo GPL-2.0-or-later; drivers GPL-3.0-or-later; arte
+CC-BY-4.0; sonidos CC0-1.0; KDE/Breeze LGPL-2.1-or-later; fuentes OFL-1.1;
+documentación CC BY-SA 4.0; terceros según `debian/copyright`.
+
+**Motivo:** una licencia clara por área y una documentación usable por el
+usuario hispanohablante, sin perder el índice en inglés.
+
+**Consecuencia:** `LICENSE` resume; `LICENSES/` contiene los textos; cada
+paquete declara su licencia en `debian/copyright`.
+
+## D-021 — ISO híbrida con payload del rootfs
+
+**Decisión:** construir una ISO híbrida BIOS/UEFI con `xorriso` y el payload de
+GRUB/shim del rootfs. No usar `grub-mkrescue` ni el GRUB del host.
+
+**Motivo:** controlar el contenido firmado y evitar que el host introduzca
+binarios o módulos distintos.
+
+**Consecuencia:** el build depende de `grub-pc-bin`, `grub-efi-amd64-bin`,
+`grub-efi-amd64-signed` y `shim-signed` dentro del rootfs. Los binarios
+firmados no se modifican.
+
+## D-022 — URLs públicas
+
+**Decisión:** las URLs públicas del proyecto son `supralinux.com`,
+`stable.supralinux.com` y `testing.supralinux.com`.
+
+**Motivo:** separar el sitio de los canales de paquetes y evitar nombres
+internos en la documentación y en la configuración del producto.
+
+**Consecuencia:** la documentación y los ejemplos usan esas URLs. La
+infraestructura interna no se publica.
+
+## D-023 — Sin promesa de fin de soporte
+
+**Decisión:** no se publica `SUPPORT_END`. El soporte es best-effort.
+
+**Motivo:** el proyecto es personal y no puede comprometer una fecha de fin de
+soporte que dependa de Ubuntu, KDE y del tiempo disponible.
+
+**Consecuencia:** la documentación informa que las actualizaciones de seguridad
+siguen el ciclo de Ubuntu 26.04 mientras el proyecto se mantenga, sin SLA ni
+fecha garantizada.

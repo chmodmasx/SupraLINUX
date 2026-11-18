@@ -56,7 +56,7 @@
 - `debian/copyright` en formato DEP-5.
 - Cubrir código, assets, fuentes, traducciones y vendor.
 - Conservar avisos de copyright y licencias de terceros.
-- `THIRD-PARTY.md` es un índice; la fuente autoritativa es cada `debian/copyright`.
+- `THIRD-PARTY.md` es un índice; la referencia principal es cada `debian/copyright`.
 - Los paquetes modificados publican su fuente en `deb-src`.
 
 ## Categorías
@@ -81,7 +81,7 @@
 
 ## Artefactos
 
-No se commitean:
+No se versionan:
 
 - `.deb`, `.udeb`, `.changes`, `.buildinfo`, `.dsc`.
 - `.orig.tar.*`, `.debian.tar.*`.

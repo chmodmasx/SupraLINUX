@@ -75,7 +75,8 @@ manifests/        Registros de build y release
 
 ## Workspace
 
-El repo no depende de rutas de una máquina concreta:
+Las rutas se pasan por variables de entorno. Valores de ejemplo del entorno
+actual:
 
 ```sh
 SUPRALINUX_REPO=/mnt/RAID0/Proyectos/SupraLINUX
@@ -83,9 +84,9 @@ SUPRALINUX_WORKSPACE=/mnt/RAID0/Proyectos/SupraLINUX-workspace
 SUPRALINUX_SECRETS=/mnt/RAID0/Proyectos/SupraLINUX-secrets
 ```
 
-- `workspace/` guarda artifacts, evidencia y KVM fuera de Git.
-- `secrets/` guarda claves y credenciales, fuera de Git.
-- Los scripts no hardcodean rutas del host.
+- `SUPRALINUX_WORKSPACE` guarda artifacts, evidencia y KVM fuera de Git.
+- `SUPRALINUX_SECRETS` guarda claves y credenciales, fuera de Git.
+- Los scripts no fijan rutas del host.
 - Las bases/checkpoints KVM son inmutables para sus consumidores.
 
 ## Seguridad de la cadena

@@ -35,7 +35,7 @@ Una release se integra a `main` desde `testing` o desde un `hotfix` probado.
 - `debian/copyright` DEP-5 completo, incluyendo assets y vendor.
 - Versiones `0supralinuxN`; changelog claro.
 - No se ocultan Build-Depends preinstalando SDKs en el rootfs.
-- No se commitean `.deb`, `.changes`, `.buildinfo`, `.dsc`, ISOs, `.qcow2`,
+- No se versionan `.deb`, `.changes`, `.buildinfo`, `.dsc`, ISOs, `.qcow2`,
   logs ni `__pycache__`.
 
 ## Documentación
