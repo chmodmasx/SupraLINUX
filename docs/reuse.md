@@ -50,7 +50,7 @@ certifica un build nuevo ni una release.
 | Firefox y l10n | `packages/` y notas de mirror | — | Pasar al repositorio oficial de Mozilla; retirar mirror y cron | Pendiente |
 | Calamares | `installer/calamares/` | — | Empaquetar como `supralinux-calamares-config`; retirar `calamares-settings-kubuntu` | Pendiente |
 | Live y arranque | `tools/live/` | — | Revisar hooks, shim/GRUB firmados y sellado | Pendiente |
-| Branding y tema | `branding/`, `packages/desktop/supralinux-branding`, `packages/desktop/supralinux-theme` | — | Assets, GRUB, Plymouth, wallpapers y tema Aurora; licencias revisadas y rutas personales normalizadas | En curso |
+| Branding y tema | `branding/`, `packages/desktop/supralinux-branding`, `packages/desktop/supralinux-theme` | `c310739` | Assets, GRUB, Plymouth, wallpapers y tema Aurora; licencias revisadas y rutas personales normalizadas | Hecho |
 | Herramientas y pruebas | `tools/` y `tests/` | `11c0ea8` | Revisadas; workspace configurable y sin rutas del proyecto anterior | Hecho |
 | Paquete de prueba | `packages/supralinux-build-test` | `11c0ea8` | Versión 0.2.0 y licencia GPL-2.0-or-later | Hecho |
 | Evidencia anterior | `evidence/` | — | Sólo diagnóstico; no se usa como PASS de release | Pendiente |
