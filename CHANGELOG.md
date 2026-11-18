@@ -13,6 +13,7 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - Guías de build limpio, imagen live e instalador.
 - Registro de reutilización del proyecto anterior.
 - Herramientas de host, importación, build limpio, smoke tests y paquete sintético.
+- Builds limpios de 10 paquetes nativos y muestras de Frameworks, Plasma y Gear.
 - Packaging de KDE Frameworks 6.24, Plasma 6.6.7 y Gear 25.12.3.
 - Integración de Calamares, Secure Boot, Btrfs/Snapper y recuperación live.
 - Branding y tema Aurora.

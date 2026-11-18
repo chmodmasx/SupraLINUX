@@ -134,6 +134,18 @@ Un gate `BLOCKED` o `INFRA_INVALID` no se convierte en `PASS`. Si un gate no se
 puede completar, la release se detiene o se publica con un alcance menor
 explícitamente documentado, nunca con una afirmación falsa.
 
+## Estado de validación (2026-11-18)
+
+- Suite unitaria: `PASS`.
+- 10 paquetes nativos: build limpio `PASS`, con artifact y evidencia.
+- Muestras de Frameworks, Plasma y Gear: `extra-cmake-modules`,
+  `libkf6coreaddons6`, `libkwin6` y `dolphin` con build limpio `PASS`.
+- Los 176 paquetes fuente y la ISO no se construyeron completos.
+- No hay snapshot `stable`, clave nueva publicada ni autorización de release.
+
+Esto no es una release validada. Los gates de la tabla siguen pendientes hasta
+completar el build de todos los paquetes y la matriz de ISO.
+
 ## Publicación
 
 La publicación estable y las operaciones destructivas requieren autorización
