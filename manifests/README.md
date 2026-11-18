@@ -13,6 +13,18 @@ prueba. No reemplaza los artifacts: los referencia por SHA-256.
 - Un manifiesto no se publica si sus artifacts no están retenidos.
 - No se versionan `.deb`, `.changes`, `.buildinfo`, ISOs ni discos.
 
+## Inventario de fuentes
+
+`manifests/packages-1.0.0.json` lo genera
+`python3 tools/package_inventory.py`. Lista cada paquete fuente, versión, área,
+binarios y licencias declaradas. No contiene hashes de build ni afirma que un
+paquete haya sido construido.
+
+```sh
+python3 tools/package_inventory.py
+python3 tools/package_inventory.py --check
+```
+
 ## Build limpio
 
 `manifests/<paquete>-<version>-clean-build.json`:

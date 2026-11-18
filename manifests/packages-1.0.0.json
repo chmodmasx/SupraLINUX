@@ -1,0 +1,3720 @@
+{
+  "schema": 1,
+  "scope": "source-inventory",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "packaging",
+  "areas": {
+    "kde": 68,
+    "plasma": 61,
+    "gear": 20,
+    "gear-extras": 15,
+    "desktop": 7,
+    "apps": 2,
+    "fonts": 1,
+    "system": 2
+  },
+  "packages": [
+    {
+      "source": "supralinux-drivers",
+      "version": "1.0.9",
+      "area": "apps",
+      "path": "packages/apps/supralinux-drivers",
+      "binaries": [
+        "supralinux-drivers"
+      ],
+      "licenses": [
+        "GPL-3+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-kdeconnect-sftp",
+      "version": "1.0.2",
+      "area": "apps",
+      "path": "packages/apps/supralinux-kdeconnect-sftp",
+      "binaries": [
+        "supralinux-kdeconnect-sftp"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-wayland-protocols",
+      "version": "1.20.0-2supralinux2",
+      "area": "desktop",
+      "path": "packages/desktop/plasma-wayland-protocols",
+      "binaries": [
+        "plasma-wayland-protocols"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "BSD-3-Clause",
+        "MIT-CMU",
+        "Expat"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-base-files",
+      "version": "1.0.0",
+      "area": "desktop",
+      "path": "packages/desktop/supralinux-base-files",
+      "binaries": [
+        "supralinux-base-files"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-branding",
+      "version": "1.2.0",
+      "area": "desktop",
+      "path": "packages/desktop/supralinux-branding",
+      "binaries": [
+        "supralinux-branding"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "GPL-3.0-only or LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.1-or-later",
+        "CC-BY-4.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-calamares-config",
+      "version": "1.0.0",
+      "area": "desktop",
+      "path": "packages/desktop/supralinux-calamares-config",
+      "binaries": [
+        "supralinux-calamares-config"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "CC-BY-4.0",
+        "GPL-3.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-defaults",
+      "version": "1.1.0",
+      "area": "desktop",
+      "path": "packages/desktop/supralinux-defaults",
+      "binaries": [
+        "supralinux-defaults"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-hardware-support",
+      "version": "1.0.2",
+      "area": "desktop",
+      "path": "packages/desktop/supralinux-hardware-support",
+      "binaries": [
+        "supralinux-hardware-support"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-theme",
+      "version": "1.0.3",
+      "area": "desktop",
+      "path": "packages/desktop/supralinux-theme",
+      "binaries": [
+        "supralinux-theme"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "LGPL-2.1-or-later",
+        "LGPL-2.0-or-later",
+        "CC-BY-4.0",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "fonts-noto-color-emoji",
+      "version": "2.057+supralinux2",
+      "area": "fonts",
+      "path": "packages/fonts/noto-color-emoji",
+      "binaries": [
+        "fonts-noto-color-emoji"
+      ],
+      "licenses": [
+        "OFL-1.1"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "ark",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/ark",
+      "binaries": [
+        "ark"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "CC0-1.0",
+        "GFDL-1.2-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-3.0-or-later",
+        "MIT",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "baloo-widgets",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/baloo-widgets",
+      "binaries": [
+        "libbaloowidgets-bin",
+        "libbaloowidgets-dev",
+        "libkf6baloowidgets6"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "GPL-2+3+KDEeV",
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-2"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "dolphin",
+      "version": "4:25.12.3-0supralinux3",
+      "area": "gear",
+      "path": "packages/gear/dolphin",
+      "binaries": [
+        "dolphin",
+        "dolphin-dev",
+        "dolphin-doc",
+        "dolphin-data",
+        "libdolphinvcs-dev",
+        "libdolphinvcs6"
+      ],
+      "licenses": [
+        "GPL-2+ or GFDL-NIV-1.2+",
+        "GPL-2+",
+        "BSD-3-clause",
+        "GFDL-1.2+",
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-2+",
+        "BSD-2-clause",
+        "CC0-1.0",
+        "GPL-2+3+KDEeV",
+        "LGPL-2"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "elisa-player",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/elisa-player",
+      "binaries": [
+        "elisa"
+      ],
+      "licenses": [
+        "LGPL-3.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-3.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-3.0-only",
+        "LGPL-2.1-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "filelight",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/filelight",
+      "binaries": [
+        "filelight"
+      ],
+      "licenses": [
+        "GPL-2+3+KDEeV",
+        "GFDL-1.2+",
+        "FSFAP",
+        "LGPL-2.1+3+KDEeV",
+        "GPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "gwenview",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/gwenview",
+      "binaries": [
+        "gwenview",
+        "gwenview-doc"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-3-clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GFDL-1.2-only_NIV",
+        "JPEG",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "MIT",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "isoimagewriter",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/isoimagewriter",
+      "binaries": [
+        "isoimagewriter"
+      ],
+      "licenses": [
+        "GPL-3.0-or-later",
+        "GPL-2.0-or-later",
+        "CC0-1.0",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kate",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/kate",
+      "binaries": [
+        "kate",
+        "kate-data",
+        "kwrite"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "CC0-1.0",
+        "GFDL-NIV-1.2+",
+        "GPL-2.0-only",
+        "GPL-2.0-or-later",
+        "GPL-2.1+3+KDEeV",
+        "GPL-3.0-or-later",
+        "LGPL-2.0-only",
+        "MIT",
+        "BSD-3-Clause",
+        "public-domain",
+        "Permissive"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kcalc",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/kcalc",
+      "binaries": [
+        "kcalc"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "GFDL-1.2+",
+        "BSD-3-clause",
+        "LGPL-2.1+3+KDEeV-translations",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kdeconnect",
+      "version": "25.12.3-0supralinux7",
+      "area": "gear",
+      "path": "packages/gear/kdeconnect",
+      "binaries": [
+        "kdeconnect",
+        "kdeconnect-libs",
+        "nautilus-kdeconnect",
+        "qml6-module-org-kde-kdeconnect"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "BSD-3-Clause",
+        "Apache-2.0",
+        "CC0-1.0",
+        "CC0-1.0 OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "GPL-3.0-or-later OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "MIT",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "GPL-3.0-or-later",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kfind",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/kfind",
+      "binaries": [
+        "kfind"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "GFDL-1.3+",
+        "CC0-1.0",
+        "LGPL-2.1+3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kgpg",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/kgpg",
+      "binaries": [
+        "kgpg"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "GPL-2+3+KDEeV",
+        "GFDL-1.2+",
+        "CC0-1.0",
+        "LGPL-2.1+3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "khelpcenter",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/khelpcenter",
+      "binaries": [
+        "khelpcenter",
+        "khelpcenter-data"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "GFDL-1.2+",
+        "GPL-2.0-only OR GPL-3.0-only",
+        "CC0-1.0",
+        "LGPL-2.1+3+KDEeV",
+        "GPL-2.0-only",
+        "GPL-3.0-only"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kio-extras",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/kio-extras",
+      "binaries": [
+        "kio-extras",
+        "kio-extras-data"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-only",
+        "LGPL-2.1-only",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later OR LicenseRef-KDE-Accepted-GPL",
+        "MIT",
+        "GPL-3.0-only",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "konsole",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/konsole",
+      "binaries": [
+        "konsole",
+        "konsole-kpart"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "CC0-1.0",
+        "GFDL-1.2-or-later",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-only",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "MIT",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kpmcore",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/kpmcore",
+      "binaries": [
+        "libkpmcore13",
+        "libkpmcore-dev"
+      ],
+      "licenses": [
+        "GPL-3.0-or-later",
+        "CC0-1.0",
+        "CC-BY-4.0",
+        "MIT",
+        "LGPL-2.1-or-later",
+        "GPL-2.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "libkexiv2",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/libkexiv2",
+      "binaries": [
+        "libkexiv2qt6-0",
+        "libkexiv2qt6-dev"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "BSD-3-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "okular",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/okular",
+      "binaries": [
+        "libokular6core4",
+        "okular",
+        "okular-dev",
+        "okular-data",
+        "okular-doc",
+        "okular-extra-backends",
+        "qml6-module-org-kde-okular",
+        "okular-mobile"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-only",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "X11",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "partitionmanager",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/partitionmanager",
+      "binaries": [
+        "partitionmanager"
+      ],
+      "licenses": [
+        "GPL-3+",
+        "CC0-1.0",
+        "GFDL-1.2+",
+        "LGPL-3+",
+        "GPL-2+",
+        "MIT"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "sweeper",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "path": "packages/gear/sweeper",
+      "binaries": [
+        "sweeper"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "FSFAP",
+        "LGPL-2.1+3+KDEeV-translations"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "audiocd-kio",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/audiocd-kio",
+      "binaries": [
+        "kio-audiocd",
+        "kio-audiocd-dev"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "BSD-3-clause",
+        "CC0-1.0",
+        "GFDL-NIV-1.2+",
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV-translations"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "dolphin-plugins",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/dolphin-plugins",
+      "binaries": [
+        "dolphin-plugins"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "ffmpegthumbs",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/ffmpegthumbs",
+      "binaries": [
+        "ffmpegthumbs"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-3-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kaccounts-providers",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kaccounts-providers",
+      "binaries": [
+        "kaccounts-providers"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kcharselect",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kcharselect",
+      "binaries": [
+        "kcharselect"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-3-Clause",
+        "FSFAP",
+        "LGPL-2.1+3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kde-inotify-survey",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kde-inotify-survey",
+      "binaries": [
+        "kde-inotify-survey"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.1+3+KDEeV",
+        "GPL-2.0-or-later",
+        "CC0-1.0",
+        "BSD-3-Clause",
+        "FSFAP",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kde-spectacle",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kde-spectacle",
+      "binaries": [
+        "kde-spectacle"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GFDL-NIV-1.2+",
+        "GPL-2+",
+        "GPL-2.1+3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kdegraphics-thumbnailers",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kdegraphics-thumbnailers",
+      "binaries": [
+        "kdegraphics-thumbnailers"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "CC0-1.0",
+        "GPL-1",
+        "LGPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kdenetwork-filesharing",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kdenetwork-filesharing",
+      "binaries": [
+        "kdenetwork-filesharing"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "BSD-3-clause",
+        "CC0-1.0",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-or-later",
+        "GPL-3.0-only",
+        "GPL-2.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kdeplasma-addons",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kdeplasma-addons",
+      "binaries": [
+        "kdeplasma-addons-data",
+        "kwin-addons",
+        "libplasmaweatherdata6",
+        "libplasmaweatherion6",
+        "plasma-calendar-addons",
+        "plasma-dataengines-addons",
+        "plasma-runners-addons",
+        "plasma-wallpapers-addons",
+        "plasma-widgets-addons",
+        "plasma-widgets-addons-dev"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-3.0-or-later",
+        "LGPL-2.0-only",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-or-later",
+        "LicenseRef-KDE-Accepted-GPL",
+        "MIT",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kio-admin",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kio-admin",
+      "binaries": [
+        "kio-admin"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "FSFAP",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "ksystemlog",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/ksystemlog",
+      "binaries": [
+        "ksystemlog"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "BSD-3-clause",
+        "GFDL-1.2+",
+        "FSFAP",
+        "LGPL-2.1+3+KDEeV-translations"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kwalletmanager",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/kwalletmanager",
+      "binaries": [
+        "kwalletmanager"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "GFDL-1.2+",
+        "FSFAP",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1+3+KDEeV",
+        "GPL-2+3+KDEeV",
+        "LGPL-2.0-only",
+        "BSD-3-Clause"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "oxygen",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/oxygen",
+      "binaries": [
+        "kde-style-oxygen-qt5",
+        "kde-style-oxygen-qt6",
+        "kwin-decoration-oxygen",
+        "liboxygenstyle5-6",
+        "liboxygenstyle6-6",
+        "liboxygenstyleconfig5-6",
+        "liboxygenstyleconfig6-6",
+        "plasma-theme-oxygen"
+      ],
+      "licenses": [
+        "Expat",
+        "GPL-3+",
+        "LGPL-2",
+        "GPL-2+",
+        "LGPL-2+",
+        "GPL-2+3+KDEeV",
+        "GPL-2+Expat",
+        "LGPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "skanpage",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "path": "packages/gear-extras/skanpage",
+      "binaries": [
+        "skanpage"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-or-later",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-attica",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/attica",
+      "binaries": [
+        "libkf6attica-dev",
+        "libkf6attica-doc",
+        "libkf6attica6"
+      ],
+      "licenses": [
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-baloo",
+      "version": "6.24.0-0supralinux2",
+      "area": "kde",
+      "path": "packages/kde/baloo",
+      "binaries": [
+        "baloo6",
+        "libkf6baloo-dev",
+        "libkf6baloo-doc",
+        "libkf6baloo6",
+        "libkf6balooengine6",
+        "qml6-module-org-kde-baloo"
+      ],
+      "licenses": [
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "BSD-3-Clause",
+        "bzip2-1.0.6",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-or-later",
+        "LGPL-2.1-or-later AND BSD-3-Clause",
+        "LGPL-2.1-or-later OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-bluez-qt",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/bluez-qt",
+      "binaries": [
+        "libkf6bluezqt-data",
+        "libkf6bluezqt-dev",
+        "libkf6bluezqt-doc",
+        "libkf6bluezqt6",
+        "qml6-module-org-kde-bluezqt"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "LGPL-2.1+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-breeze-icons",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/breeze-icons",
+      "binaries": [
+        "kf6-breeze-icon-theme",
+        "kf6-breeze-icon-theme-rcc",
+        "libkf6breezeicons-dev",
+        "libkf6breezeicons6"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-2.1+",
+        "BSD-3-clause",
+        "LGPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-extra-cmake-modules",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/extra-cmake-modules",
+      "binaries": [
+        "extra-cmake-modules"
+      ],
+      "licenses": [
+        "BSD-3-Clause and BSD-2-Clause and MIT",
+        "BSD-3-Clause",
+        "BSD-2-Clause",
+        "MIT"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-frameworkintegration",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/frameworkintegration",
+      "binaries": [
+        "frameworkintegration6",
+        "libkf6style-dev",
+        "libkf6style6"
+      ],
+      "licenses": [
+        "LGPL-2+3+KDEeV",
+        "LGPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-karchive",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/karchive",
+      "binaries": [
+        "libkf6archive-data",
+        "libkf6archive-dev",
+        "libkf6archive-doc",
+        "libkf6archive6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "BSD-2-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kauth",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kauth",
+      "binaries": [
+        "libkf6auth-data",
+        "libkf6auth-dev",
+        "libkf6auth-dev-bin",
+        "libkf6auth-doc",
+        "libkf6authcore6"
+      ],
+      "licenses": [
+        "LGPL-2.1-or-later",
+        "BSD-3-Clause",
+        "LGPL-2.1-only_OR_LGPL-3.0-only_OR_LicenseRef-KDE-Accepted-LGPL",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kbookmarks",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kbookmarks",
+      "binaries": [
+        "libkf6bookmarks-data",
+        "libkf6bookmarks-dev",
+        "libkf6bookmarks-doc",
+        "libkf6bookmarks6",
+        "libkf6bookmarkswidgets6"
+      ],
+      "licenses": [
+        "LGPL-2",
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kcalendarcore",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kcalendarcore",
+      "binaries": [
+        "libkf6calendarcore-dev",
+        "libkf6calendarcore-doc",
+        "libkf6calendarcore6",
+        "qml6-module-org-kde-calendarcore"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-3+",
+        "BSD-3-clause",
+        "public-domain"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kcmutils",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kcmutils",
+      "binaries": [
+        "libkf6kcmutils-bin",
+        "libkf6kcmutils-data",
+        "libkf6kcmutils-dev",
+        "libkf6kcmutils-doc",
+        "libkf6kcmutils6",
+        "libkf6kcmutilscore6",
+        "libkf6kcmutilsquick6",
+        "qml6-module-org-kde-kcmutils"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.0-only",
+        "GPL-2+",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kcodecs",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kcodecs",
+      "binaries": [
+        "libkf6codecs-data",
+        "libkf6codecs-dev",
+        "libkf6codecs-doc",
+        "libkf6codecs6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "GPL-2+",
+        "LGPL-2",
+        "MIT",
+        "MPL-1.1 or GPL-2+ or LGPL-2.1+",
+        "LGPL-2.1+3+KDEeV",
+        "CC0-1.0",
+        "MPL-1.1",
+        "LGPL-2.1+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kcolorscheme",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kcolorscheme",
+      "binaries": [
+        "libkf6colorscheme-data",
+        "libkf6colorscheme-dev",
+        "libkf6colorscheme-doc",
+        "libkf6colorscheme6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-3+KDEeV",
+        "BSD-2-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kcompletion",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kcompletion",
+      "binaries": [
+        "libkf6completion-data",
+        "libkf6completion-dev",
+        "libkf6completion-doc",
+        "libkf6completion6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-2.1+",
+        "GPL",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kconfig",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kconfig",
+      "binaries": [
+        "libkf6config-bin",
+        "libkf6config-data",
+        "libkf6config-dev",
+        "libkf6config-dev-bin",
+        "libkf6config-doc",
+        "libkf6configcore6",
+        "libkf6configgui6",
+        "libkf6configqml6",
+        "qml6-module-org-kde-config"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "BSD-2-clause",
+        "BSD-3-clause",
+        "GPL-2+",
+        "LGPL-2",
+        "LGPL-3+KDEeV",
+        "LGPL-2.1+3+KDEeV",
+        "MIT",
+        "MIT_OLIF",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kconfigwidgets",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kconfigwidgets",
+      "binaries": [
+        "libkf6configwidgets-data",
+        "libkf6configwidgets-dev",
+        "libkf6configwidgets-doc",
+        "libkf6configwidgets6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2",
+        "LGPL-3+KDEeV",
+        "GPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kcoreaddons",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kcoreaddons",
+      "binaries": [
+        "libkf6coreaddons-data",
+        "libkf6coreaddons-dev",
+        "libkf6coreaddons-doc",
+        "libkf6coreaddons6",
+        "qml6-module-org-kde-coreaddons"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2",
+        "LGPL-3+KDEeV",
+        "LGPL-2.1",
+        "LGPL-2.1-with-Qt-Exception",
+        "GPL-2+ or LGPL-2.1+ or MPL-1.1",
+        "BSD-2-clause",
+        "CC0-1.0",
+        "GPL-2+",
+        "LGPL-2.1+",
+        "MPL-1.1"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kcrash",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kcrash",
+      "binaries": [
+        "libkf6crash-dev",
+        "libkf6crash-doc",
+        "libkf6crash6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kdbusaddons",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kdbusaddons",
+      "binaries": [
+        "libkf6dbusaddons-bin",
+        "libkf6dbusaddons-data",
+        "libkf6dbusaddons-dev",
+        "libkf6dbusaddons-doc",
+        "libkf6dbusaddons6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kdeclarative",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kdeclarative",
+      "binaries": [
+        "libkquickcontrolsprivate0",
+        "libkf6calendarevents6",
+        "libkf6declarative-data",
+        "libkf6declarative-dev",
+        "libkf6declarative-doc",
+        "qml6-module-org-kde-draganddrop",
+        "qml6-module-org-kde-graphicaleffects",
+        "qml6-module-org-kde-kquickcontrols",
+        "qml6-module-org-kde-kquickcontrolsaddons"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.1-or-later",
+        "MIT",
+        "CC0-1.0",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kded",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kded",
+      "binaries": [
+        "kded6",
+        "kded6-dev"
+      ],
+      "licenses": [
+        "LGPL-2",
+        "LGPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kdesu",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kdesu",
+      "binaries": [
+        "libkf6su-bin",
+        "libkf6su-data",
+        "libkf6su-dev",
+        "libkf6su-doc",
+        "libkf6su6"
+      ],
+      "licenses": [
+        "GPL-2",
+        "LGPL-2+",
+        "LGPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kdnssd",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kdnssd",
+      "binaries": [
+        "libkf6dnssd-data",
+        "libkf6dnssd-dev",
+        "libkf6dnssd-doc",
+        "libkf6dnssd6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "BSD-3-clause",
+        "LGPL-2.1+3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kdoctools",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kdoctools",
+      "binaries": [
+        "kdoctools6",
+        "libkf6doctools-dev",
+        "libkf6doctools-doc",
+        "libkf6doctools6"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-2.1+",
+        "BSD-3-clause",
+        "LGPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kfilemetadata",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kfilemetadata",
+      "binaries": [
+        "libkf6filemetadata-bin",
+        "libkf6filemetadata-data",
+        "libkf6filemetadata-dev",
+        "libkf6filemetadata-dev-tools",
+        "libkf6filemetadata-doc",
+        "libkf6filemetadata3"
+      ],
+      "licenses": [
+        "LGPL-2.1-or-later",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-2.1-only",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kglobalaccel",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kglobalaccel",
+      "binaries": [
+        "libkf6globalaccel-data",
+        "libkf6globalaccel-dev",
+        "libkf6globalaccel-doc",
+        "libkf6globalaccel6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kguiaddons",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kguiaddons",
+      "binaries": [
+        "libkf6guiaddons-bin",
+        "libkf6guiaddons-data",
+        "libkf6guiaddons-dev",
+        "libkf6guiaddons-doc",
+        "libkf6guiaddons6",
+        "qml6-module-org-kde-guiaddons"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "LGPL-2+",
+        "GPL-3+KDEeV",
+        "CC0-1.0",
+        "BSD-2-clause",
+        "Expat",
+        "LGPL-2.1+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kholidays",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kholidays",
+      "binaries": [
+        "libkf6holidays-data",
+        "libkf6holidays-dev",
+        "libkf6holidays-doc",
+        "libkf6holidays6",
+        "qml6-module-org-kde-kholidays"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "GPL-3+ with Bison exception",
+        "LGPL-2.1+3+KDEeV",
+        "BSD-3-clause_and_LGPL-2+",
+        "BSD-2-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-ki18n",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/ki18n",
+      "binaries": [
+        "libkf6i18n-data",
+        "libkf6i18n-dev",
+        "libkf6i18n-doc",
+        "libkf6i18n6",
+        "libkf6i18nlocaledata6",
+        "libkf6i18nqml6",
+        "qml6-module-org-kde-i18n-localedata",
+        "qml6-module-org-kde-ki18n"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-2.0-or-later_with_parts_under_ODbL-1.0",
+        "LGPL-2.1-only_OR_LGPL-3.0-only_OR_LicenseRef-KDE-Accepted-LGPL",
+        "ODbL-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kiconthemes",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kiconthemes",
+      "binaries": [
+        "libkf6iconthemes-bin",
+        "libkf6iconthemes-data",
+        "libkf6iconthemes-dev",
+        "libkf6iconthemes-doc",
+        "libkf6iconthemes6",
+        "libkf6iconwidgets6",
+        "qml6-module-org-kde-iconthemes"
+      ],
+      "licenses": [
+        "LGPL-2.0-only",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kidletime",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kidletime",
+      "binaries": [
+        "libkf6idletime-dev",
+        "libkf6idletime-doc",
+        "libkf6idletime6"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "GPL-2+",
+        "LGPL-3+KDEeV",
+        "Expat",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kimageformats",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kimageformats",
+      "binaries": [
+        "kimageformat6-plugins"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-3+KDEeV",
+        "LGPL-2.1+",
+        "BSD-3-clause",
+        "BSD-2-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kio",
+      "version": "6.24.0-0supralinux2",
+      "area": "kde",
+      "path": "packages/kde/kio",
+      "binaries": [
+        "kio6",
+        "libkf6kio-dev",
+        "libkf6kio-doc",
+        "libkf6kiocore6",
+        "libkf6kiofilewidgets6",
+        "libkf6kiogui6",
+        "libkf6kiowidgets6"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "LGPL-2.0-only",
+        "LGPL-2.0-only OR LGPL-3.0-only",
+        "LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kirigami",
+      "version": "6.24.0-0supralinux4",
+      "area": "kde",
+      "path": "packages/kde/kirigami",
+      "binaries": [
+        "libkirigami-data",
+        "libkirigami-dev",
+        "libkirigami-doc",
+        "libkirigami6",
+        "libkirigamicontrols6",
+        "libkirigamidelegates6",
+        "libkirigamidialogs6",
+        "libkirigamilayouts6",
+        "libkirigamilayoutsprivate6",
+        "libkirigamiplatform6",
+        "libkirigamipolyfill6",
+        "libkirigamiprimitives6",
+        "libkirigamiprivate6",
+        "libkirigamitemplates6",
+        "qml6-module-org-kde-kirigami"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "CC0-1.0",
+        "GPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "MIT",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kitemmodels",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kitemmodels",
+      "binaries": [
+        "libkf6itemmodels-dev",
+        "libkf6itemmodels-doc",
+        "libkf6itemmodels6",
+        "qml6-module-org-kde-kitemmodels"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only",
+        "LGPL-2.1-or-later",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kitemviews",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kitemviews",
+      "binaries": [
+        "libkf6itemviews-data",
+        "libkf6itemviews-dev",
+        "libkf6itemviews-doc",
+        "libkf6itemviews6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2",
+        "LGPL-2.1+3+KDEeV",
+        "CC0-1.0",
+        "GPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kjobwidgets",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kjobwidgets",
+      "binaries": [
+        "libkf6jobwidgets-data",
+        "libkf6jobwidgets-dev",
+        "libkf6jobwidgets-doc",
+        "libkf6jobwidgets6"
+      ],
+      "licenses": [
+        "LGPL-2",
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "GPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-knewstuff",
+      "version": "6.24.0-0supralinux2",
+      "area": "kde",
+      "path": "packages/kde/knewstuff",
+      "binaries": [
+        "knewstuff-dialog6",
+        "libkf6newstuff-data",
+        "libkf6newstuff-dev",
+        "libkf6newstuff-doc",
+        "libkf6newstuffcore6",
+        "libkf6newstuffwidgets6",
+        "qml6-module-org-kde-newstuff"
+      ],
+      "licenses": [
+        "LGPL-2.1-or-later",
+        "BSD-2-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-knotifications",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/knotifications",
+      "binaries": [
+        "libkf6notifications-data",
+        "libkf6notifications-dev",
+        "libkf6notifications-doc",
+        "libkf6notifications6",
+        "qml6-module-org-kde-notifications"
+      ],
+      "licenses": [
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.0-or-later",
+        "LGPL-2.0-only",
+        "LGPL-2.0-only OR LGPL-3.0-only",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.0-Only"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-knotifyconfig",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/knotifyconfig",
+      "binaries": [
+        "libkf6notifyconfig-data",
+        "libkf6notifyconfig-dev",
+        "libkf6notifyconfig-doc",
+        "libkf6notifyconfig6"
+      ],
+      "licenses": [
+        "LGPL-2",
+        "LGPL-2.1+3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kpackage",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kpackage",
+      "binaries": [
+        "kpackagetool6",
+        "libkf6package-data",
+        "libkf6package-dev",
+        "libkf6package-doc",
+        "libkf6package6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "GPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kparts",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kparts",
+      "binaries": [
+        "libkf6parts-data",
+        "libkf6parts-dev",
+        "libkf6parts-doc",
+        "libkf6parts6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2.1+",
+        "LGPL-3+KDEeV",
+        "LGPL-2.1+3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kpeople",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kpeople",
+      "binaries": [
+        "libkf6people-data",
+        "libkf6people-dev",
+        "libkf6people-doc",
+        "libkf6people6",
+        "libkf6peoplebackend6",
+        "libkf6peoplewidgets6",
+        "qml6-module-org-kde-people"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "BSD-3-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kplotting",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kplotting",
+      "binaries": [
+        "libkf6plotting-dev",
+        "libkf6plotting-doc",
+        "libkf6plotting6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "GPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kpty",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kpty",
+      "binaries": [
+        "libkf6pty-data",
+        "libkf6pty-dev",
+        "libkf6pty-doc",
+        "libkf6pty6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "GPL-2+",
+        "BSD-3-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kquickcharts",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kquickcharts",
+      "binaries": [
+        "libquickcharts1",
+        "libquickcharts-dev",
+        "libquickchartscontrols1",
+        "qml6-module-org-kde-quickcharts"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "BSD-2-clause",
+        "MIT",
+        "CC0-1.0",
+        "LGPL-2.1+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-krunner",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/krunner",
+      "binaries": [
+        "libkf6runner-dev",
+        "libkf6runner-doc",
+        "libkf6runner6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2.1+",
+        "LGPL-3+KDEeV",
+        "BSD-2-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kservice",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kservice",
+      "binaries": [
+        "libkf6service-bin",
+        "libkf6service-data",
+        "libkf6service-dev",
+        "libkf6service-doc",
+        "libkf6service6"
+      ],
+      "licenses": [
+        "LGPL-2",
+        "LGPL-2+",
+        "LGPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kstatusnotifieritem",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kstatusnotifieritem",
+      "binaries": [
+        "libkf6statusnotifieritem-data",
+        "libkf6statusnotifieritem-dev",
+        "libkf6statusnotifieritem-doc",
+        "libkf6statusnotifieritem6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-ksvg",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/ksvg",
+      "binaries": [
+        "libkf6svg-dev",
+        "libkf6svg-doc",
+        "libkf6svg6",
+        "qml6-module-org-kde-ksvg"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-or-later",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-ktexteditor",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/ktexteditor",
+      "binaries": [
+        "libkf6texteditor-data",
+        "libkf6texteditor-bin",
+        "libkf6texteditor-dev",
+        "libkf6texteditor-doc",
+        "libkf6texteditor-katepart",
+        "libkf6texteditor6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "BSD-2-Clause",
+        "CC0-1.0",
+        "LGPL",
+        "LGPL-2",
+        "LGPL-2.1+",
+        "Expat"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-ktexttemplate",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/ktexttemplate",
+      "binaries": [
+        "libkf6texttemplate-dev",
+        "libkf6texttemplate-doc",
+        "libkf6texttemplate6"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "LGPL-2.0+",
+        "GPL-3_or_LGPL-2.1-QTexception-1.0",
+        "Expat",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-ktextwidgets",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/ktextwidgets",
+      "binaries": [
+        "libkf6textwidgets-data",
+        "libkf6textwidgets-dev",
+        "libkf6textwidgets-doc",
+        "libkf6textwidgets6"
+      ],
+      "licenses": [
+        "LGPL-2",
+        "LGPL-2.1+",
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kunitconversion",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kunitconversion",
+      "binaries": [
+        "libkf6unitconversion-data",
+        "libkf6unitconversion-dev",
+        "libkf6unitconversion-doc",
+        "libkf6unitconversion6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kuserfeedback",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kuserfeedback",
+      "binaries": [
+        "libkf6userfeedback-data",
+        "libkf6userfeedback-dev",
+        "libkf6userfeedback-doc",
+        "libkf6userfeedbackcore6",
+        "libkf6userfeedbackwidgets6",
+        "qml6-module-org-kde-userfeedback"
+      ],
+      "licenses": [
+        "MIT",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kwallet",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kwallet",
+      "binaries": [
+        "kwallet6",
+        "libkf6wallet-data",
+        "libkf6wallet-dev",
+        "libkf6wallet-doc",
+        "libkf6wallet6",
+        "libkf6walletbackend6"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-2.0-only",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kwidgetsaddons",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kwidgetsaddons",
+      "binaries": [
+        "libkf6widgetsaddons-data",
+        "libkf6widgetsaddons-dev",
+        "libkf6widgetsaddons-doc",
+        "libkf6widgetsaddons6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2",
+        "LGPL-2.1+",
+        "LGPL-3+KDEeV",
+        "LGPL-3+",
+        "GPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kwindowsystem",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kwindowsystem",
+      "binaries": [
+        "libkf6windowsystem-data",
+        "libkf6windowsystem-dev",
+        "libkf6windowsystem-doc",
+        "libkf6windowsystem6",
+        "qml6-module-org-kde-kwindowsystem"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "LGPL-2+",
+        "LGPL-3+KDEeV",
+        "Expat",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-kxmlgui",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/kxmlgui",
+      "binaries": [
+        "libkf6xmlgui-data",
+        "libkf6xmlgui-dev",
+        "libkf6xmlgui-doc",
+        "libkf6xmlgui6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2",
+        "LGPL-2.1+",
+        "LGPL-3+KDEeV",
+        "MIT_OLIF",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-modemmanager-qt",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/modemmanager-qt",
+      "binaries": [
+        "libkf6modemmanagerqt-doc",
+        "libkf6modemmanagerqt-dev",
+        "libkf6modemmanagerqt6"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "BSD-3-clause",
+        "GPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-networkmanager-qt",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/networkmanager-qt",
+      "binaries": [
+        "libkf6networkmanagerqt-dev",
+        "libkf6networkmanagerqt-doc",
+        "libkf6networkmanagerqt6",
+        "qml6-module-org-kde-networkmanager"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "GPL-3+KDEeV",
+        "CC0-1.0",
+        "LGPL-2.1-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-prison",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/prison",
+      "binaries": [
+        "libkf6prison-dev",
+        "libkf6prison-doc",
+        "libkf6prison6",
+        "libkf6prisonscanner6",
+        "qml6-module-org-kde-prison"
+      ],
+      "licenses": [
+        "MIT",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2+",
+        "BSD-3-clause"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-purpose",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/purpose",
+      "binaries": [
+        "libkf6purpose-bin",
+        "libkf6purpose-data",
+        "libkf6purpose-dev",
+        "libkf6purpose6",
+        "libkf6purposewidgets6",
+        "qml6-module-org-kde-purpose"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-2+",
+        "GPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-qqc2-desktop-style",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/qqc2-desktop-style",
+      "binaries": [
+        "libkf6qqc2desktopstyle-data",
+        "libkf6qqc2desktopstyle-dev",
+        "qml6-module-org-kde-desktop"
+      ],
+      "licenses": [
+        "LGPL-3.0-only OR GPL-2.0-or-later",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1+",
+        "LGPL-3.0-only OR GPL-2.0-only_OR_GPL-3.0-only_OR_LicenseRef-KFQF-Accepted-GPL OR LicenseRef-Qt-Commercial",
+        "LGPL-3+KDEeV",
+        "BSD-3-clause",
+        "CC0-1.0",
+        "GPL-2.0-or-later",
+        "GPL-2.0-only_OR_GPL-3.0-only_OR_LicenseRef-KFQF-Accepted-GPL",
+        "LGPL-3.0-only",
+        "LicenseRef-Qt-Commercial"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-solid",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/solid",
+      "binaries": [
+        "libkf6solid-bin",
+        "libkf6solid-data",
+        "libkf6solid-dev",
+        "libkf6solid-doc",
+        "libkf6solid6"
+      ],
+      "licenses": [
+        "LGPL-2.1-only_OR_LGPL-3.0-only_OR_LicenseRef-KDE-Accepted-LGPL",
+        "BSD-3-Clause",
+        "LGPL-2.1-or-later",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-sonnet",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/sonnet",
+      "binaries": [
+        "sonnet6-plugins",
+        "libkf6sonnet-data",
+        "libkf6sonnet-dev",
+        "libkf6sonnet-dev-bin",
+        "libkf6sonnet-doc",
+        "libkf6sonnetcore6",
+        "libkf6sonnetui6",
+        "qml6-module-org-kde-sonnet"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV",
+        "BSD-3-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-syntax-highlighting",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/syntax-highlighting",
+      "binaries": [
+        "libkf6syntaxhighlighting-data",
+        "libkf6syntaxhighlighting-dev",
+        "libkf6syntaxhighlighting-doc",
+        "libkf6syntaxhighlighting-tools",
+        "libkf6syntaxhighlighting6",
+        "qml6-module-org-kde-syntaxhighlighting"
+      ],
+      "licenses": [
+        "MIT",
+        "Apache-2.0",
+        "Apache-2.0_OR_LGPL-2.0-or-later",
+        "Artistic",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "Expat-like-Highscore",
+        "GFDL",
+        "GPL",
+        "GPL_OR_BSD_with_parts_under_MIT",
+        "GPL-2.0-only",
+        "GPL-2.0-or-later",
+        "GPL-3.0-only",
+        "GPL-3.0-or-later",
+        "LGPL-2.0-only",
+        "LGPL-2.0-only_with_parts_under_MIT",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only_OR_LGPL-3.0-only_OR_LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-only",
+        "Public_Domain",
+        "WTFPL",
+        "ZLib"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kf6-threadweaver",
+      "version": "6.24.0-0supralinux1",
+      "area": "kde",
+      "path": "packages/kde/threadweaver",
+      "binaries": [
+        "libkf6threadweaver-dev",
+        "libkf6threadweaver-doc",
+        "libkf6threadweaver6"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "aurorae",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/aurorae",
+      "binaries": [
+        "kwin-style-aurorae"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "bluedevil",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/bluedevil",
+      "binaries": [
+        "bluedevil"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-2+",
+        "GPL-3+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "breeze",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/breeze",
+      "binaries": [
+        "breeze",
+        "breeze-cursor-theme",
+        "breeze-dev",
+        "breeze-wallpaper",
+        "kde-style-breeze",
+        "kde-style-breeze-data",
+        "kde-style-breeze-qt5",
+        "kwin-style-breeze"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "Expat",
+        "GPL-2+3+KDEeV",
+        "LGPL-2.1+3+KDEeV",
+        "Expat_and_GPL-2+",
+        "LGPL-3+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "breeze-grub",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/breeze-grub",
+      "binaries": [
+        "grub-theme-breeze"
+      ],
+      "licenses": [
+        "GPL-3+",
+        "GPL-3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "breeze-gtk",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/breeze-gtk",
+      "binaries": [
+        "breeze-gtk-theme"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "Permissive"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "breeze-plymouth",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/breeze-plymouth",
+      "binaries": [
+        "plymouth-theme-breeze"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "GPL-3+KDEeV",
+        "BSD-2-clause",
+        "GPL-2+3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "drkonqi",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/drkonqi",
+      "binaries": [
+        "drkonqi"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-3.0-or-later",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "flatpak-kcm",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/flatpak-kcm",
+      "binaries": [
+        "kde-config-flatpak"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "freerdp3",
+      "version": "3.32.1+dfsg-0ubuntu0.26.04.1+supralinux2",
+      "area": "plasma",
+      "path": "packages/plasma/freerdp3",
+      "binaries": [
+        "freerdp-x11",
+        "freerdp3-x11",
+        "libfreerdp3-3",
+        "libfreerdp-client3-3",
+        "libfreerdp-server3-3",
+        "libwinpr3-3",
+        "libwinpr-tools3-3",
+        "libwinpr3-dev",
+        "freerdp3-dev",
+        "winpr-utils",
+        "winpr3-utils",
+        "libfreerdp-shadow3-3",
+        "libfreerdp-shadow-subsystem3-3",
+        "freerdp-shadow-x11",
+        "freerdp3-shadow-x11",
+        "freerdp-wayland",
+        "freerdp3-wayland",
+        "freerdp-sdl",
+        "freerdp3-sdl",
+        "libfreerdp-server-proxy3-3",
+        "freerdp-proxy-modules",
+        "freerdp-proxy",
+        "freerdp3-proxy-modules",
+        "freerdp3-proxy"
+      ],
+      "licenses": [
+        "Apache-2.0",
+        "HPND-sell-variant~and/or~NTP~disclaimer",
+        "BSD-3-clause",
+        "public-domain",
+        "BSD-2-clause",
+        "BSL-1.0",
+        "OFL-1.1",
+        "Zlib",
+        "Expat",
+        "LGPL-2.1+",
+        "Apache-2.0 or BSD-2-clause or BSD-3-clause or BSL-1.0 or Expat or Zlib or public-domain or OFL-1.1"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kactivitymanagerd",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kactivitymanagerd",
+      "binaries": [
+        "kactivitymanagerd"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kde-cli-tools",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kde-cli-tools",
+      "binaries": [
+        "kde-cli-tools",
+        "kde-cli-tools-data"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only",
+        "Artistic-2.0",
+        "CC0-1.0",
+        "GFDL-1.2-or-later",
+        "GPL-2.0-only",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "LGPL-2.0-only",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "MIT",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kde-gtk-config",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kde-gtk-config",
+      "binaries": [
+        "kde-config-gtk-style",
+        "kde-config-gtk-style-preview"
+      ],
+      "licenses": [
+        "GPL-2.0-only_OR_GPL-3.0-only_OR_LicenseRef-KDE-Accepted-GPL",
+        "BSD-3-Clause",
+        "BSD-2-clause",
+        "GPL-2.0-or-later",
+        "BSD-3-clause"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kdecoration",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kdecoration",
+      "binaries": [
+        "libkdecorations3-6",
+        "libkdecorations3-dev",
+        "libkdecorations3private2"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "CC0-1.0",
+        "LGPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kglobalacceld",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kglobalacceld",
+      "binaries": [
+        "kglobalacceld",
+        "libkglobalacceld-dev",
+        "libkglobalacceld0"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kinfocenter",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kinfocenter",
+      "binaries": [
+        "kinfocenter"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "FSFAP",
+        "GFDL-1.2-or-later",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.1-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "MIT",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kmenuedit",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kmenuedit",
+      "binaries": [
+        "kmenuedit"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "CC0-1.0",
+        "GFDL-1.2+",
+        "GPL-2"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "knighttime",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/knighttime",
+      "binaries": [
+        "knighttime",
+        "knighttime-dev",
+        "libknighttime0"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kpipewire",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kpipewire",
+      "binaries": [
+        "libkpipewire-data",
+        "libkpipewire-dev",
+        "libkpipewire6",
+        "libkpipewiredmabuf6",
+        "libkpipewirerecord6",
+        "qml6-module-org-kde-pipewire"
+      ],
+      "licenses": [
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-or-later",
+        "BSD-3-clause",
+        "Apache-2.0",
+        "CC0-1.0",
+        "BSD-3-Clause",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "krdp",
+      "version": "6.6.7-0supralinux2",
+      "area": "plasma",
+      "path": "packages/plasma/krdp",
+      "binaries": [
+        "krdp"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "BSD-2-clause",
+        "LGPL-2.0+",
+        "GPL-2+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kscreen",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kscreen",
+      "binaries": [
+        "kscreen"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-2.1+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kscreenlocker",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kscreenlocker",
+      "binaries": [
+        "kde-config-screenlocker",
+        "kscreenlocker-dev",
+        "libkscreenlocker6"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-3+KDEeV",
+        "LicenseRef-KDE-Accepted-GPL",
+        "BSD-3-clause",
+        "LGPL-2.1+",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "ksshaskpass",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/ksshaskpass",
+      "binaries": [
+        "ksshaskpass"
+      ],
+      "licenses": [
+        "GPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "ksystemstats",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/ksystemstats",
+      "binaries": [
+        "ksystemstats"
+      ],
+      "licenses": [
+        "GPL-2 OR GPL-3 OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.1 OR LGPL-3.0",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "LGPL-3.0-or-later",
+        "GPL-2",
+        "GPL-3",
+        "LGPL-2.1",
+        "LGPL-3.0",
+        "LicenseRef-KDE-Accepted-GPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kwallet-pam",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kwallet-pam",
+      "binaries": [
+        "libpam-kwallet-common",
+        "libpam-kwallet5"
+      ],
+      "licenses": [
+        "LGPL-2.1+",
+        "BSD-3-clause",
+        "GPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kwayland",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kwayland",
+      "binaries": [
+        "kwayland6-data",
+        "kwayland-dev",
+        "kwayland-doc",
+        "libkwaylandclient6"
+      ],
+      "licenses": [
+        "LGPL-2.1-only_OR_LGPL-3.0-only_OR_LicenseRef-KDE-Accepted-LGPL",
+        "MIT",
+        "CC0-1.0",
+        "LGPL-2.1-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kwin",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kwin",
+      "binaries": [
+        "kwin-common",
+        "kwin-data",
+        "kwin-dev",
+        "kwin-wayland",
+        "libkwin6"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-only",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-only",
+        "MIT",
+        "HPND-sell-variant",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "kwrited",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/kwrited",
+      "binaries": [
+        "kwrited"
+      ],
+      "licenses": [
+        "GPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "layer-shell-qt",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/layer-shell-qt",
+      "binaries": [
+        "layer-shell-qt",
+        "liblayershellqtinterface-dev",
+        "liblayershellqtinterface6",
+        "qml6-module-org-kde-layershell"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "LGPL-3.0-or-later",
+        "BSD-3-Clause",
+        "Expat",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "libkscreen",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/libkscreen",
+      "binaries": [
+        "libkscreen-bin",
+        "libkf6screen8",
+        "libkf6screendpms8",
+        "libkscreen-data",
+        "libkscreen-dev",
+        "libkscreen-doc"
+      ],
+      "licenses": [
+        "LGPL-2.1-or-later",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "BSD-3-clause",
+        "CC0-1.0",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "libksysguard",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/libksysguard",
+      "binaries": [
+        "libksysguard-bin",
+        "libkf5sysguard-bin",
+        "libkf5sysguard-data",
+        "libksgrd9",
+        "libksignalplotter9",
+        "libksysguard-data",
+        "libksysguard-dev",
+        "libksysguardformatter1",
+        "libksysguardformatter2",
+        "libksysguardsensorfaces1",
+        "libksysguardsensorfaces2",
+        "libksysguardsensors1",
+        "libksysguardsensors2",
+        "libksysguardsystemstats1",
+        "libksysguardsystemstats2",
+        "liblsofui9",
+        "libprocesscore10",
+        "libprocesscore9",
+        "libprocessui9",
+        "qml-module-org-kde-ksysguard",
+        "qml6-module-org-kde-ksysguard"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "GPL-2+",
+        "GPL-2.0-only_OR_GPL-3.0-only_OR_LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.1-only_OR_LGPL-3.0-only_OR_LicenseRef-KDE-Accepted-LGPL",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "libplasma",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/libplasma",
+      "binaries": [
+        "libplasma-dev",
+        "libplasma-doc",
+        "libplasma7",
+        "libplasmaquick7",
+        "plasma-desktoptheme"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "LGPL-2.1-only_WITH_Qt-LGPL-exception-1.1",
+        "LGPL-2.1-only_WITH_Qt-LGPL-exception-1.1 OR LGPL-3.0-only_WITH_Qt-LGPL-exception-1.1 OR LicenseRef-Qt-Commercial",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-only OR GPL-2.0-or-later",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LGPL-3.0-only_WITH_Qt-LGPL-exception-1.1",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL",
+        "LicenseRef-Qt-Commercial"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "milou",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/milou",
+      "binaries": [
+        "milou"
+      ],
+      "licenses": [
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-2.1+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "ocean-sound-theme",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/ocean-sound-theme",
+      "binaries": [
+        "ocean-sound-theme"
+      ],
+      "licenses": [
+        "CC-BY-SA-4.0",
+        "BSD-2-Clause",
+        "GPL-3.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "oxygen-sounds",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/oxygen-sounds",
+      "binaries": [
+        "oxygen-sounds"
+      ],
+      "licenses": [
+        "LGPL-3.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-activities",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-activities",
+      "binaries": [
+        "plasma-activities-bin",
+        "libplasmaactivities-data",
+        "libplasmaactivities-dev",
+        "libplasmaactivities-qt6-doc",
+        "libplasmaactivities7",
+        "qml6-module-org-kde-activities"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "CC0-1.0",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "MIT",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-activities-stats",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-activities-stats",
+      "binaries": [
+        "libplasmaactivitiesstats-dev",
+        "libplasmaactivitiesstats-doc",
+        "libplasmaactivitiesstats1"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-3+KDEeV",
+        "LGPL-2+",
+        "GPL-3+KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-browser-integration",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-browser-integration",
+      "binaries": [
+        "plasma-browser-integration"
+      ],
+      "licenses": [
+        "GPL-3+",
+        "Expat",
+        "LGPL-2.1 or LGPL-3, and KDEeV",
+        "GPL-2+",
+        "LGPL-2.1",
+        "LGPL-3",
+        "KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-desktop",
+      "version": "4:6.6.7-0supralinux3",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-desktop",
+      "binaries": [
+        "plasma-desktop",
+        "plasma-desktop-data",
+        "plasma-desktop-dev",
+        "sddm-theme-breeze"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-only",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "MIT",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-discover",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-discover",
+      "binaries": [
+        "plasma-discover",
+        "kde-config-updates",
+        "plasma-discover-backend-flatpak",
+        "plasma-discover-backend-fwupd",
+        "plasma-discover-common",
+        "plasma-discover-notifier"
+      ],
+      "licenses": [
+        "GPL-2+3+KDEeV",
+        "GPL-3+",
+        "LGPL-2.1 or LGPL-3",
+        "GPL-2+",
+        "CC0-1.0",
+        "LGPL-2.1",
+        "LGPL-3"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-disks",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-disks",
+      "binaries": [
+        "plasma-disks"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "FSFAP",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-3.0-or-later",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-firewall",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-firewall",
+      "binaries": [
+        "plasma-firewall"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "FSFAP",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-3.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-integration",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-integration",
+      "binaries": [
+        "plasma-integration",
+        "plasma5-integration"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "GPL-2+3+KFQF",
+        "LGPL-2",
+        "LGPL-2+",
+        "LGPL-2.1+",
+        "LGPL-2.1+3+KDEeV",
+        "BSD-3-clause",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-keyboard",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-keyboard",
+      "binaries": [
+        "plasma-keyboard"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LicenseRef-Qt-Commercial OR GPL-3.0-only",
+        "LGPL-2.1-only",
+        "BSD-2-clause",
+        "BSD-3-clause",
+        "CC0-1.0",
+        "FSFAP",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-3.0-or-later",
+        "GPL-3.0-only",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-only",
+        "GPL-2.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL",
+        "LicenseRef-Qt-Commercial"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-nm",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-nm",
+      "binaries": [
+        "plasma-nm"
+      ],
+      "licenses": [
+        "LGPL-2.1-only_OR_LGPL-3.0-only_OR_LicenseRef-KDE-Accepted-LGPL",
+        "GPL-2.0-only_OR_GPL-3.0-only_OR_LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "LGPL-2.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-pa",
+      "version": "4:6.6.7-0supralinux2",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-pa",
+      "binaries": [
+        "plasma-pa"
+      ],
+      "licenses": [
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-2.0-or-later",
+        "GPL-3.0-or-later",
+        "LGPL-2.0-only",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-3.0-only",
+        "LGPL-3.0-or-later",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-systemmonitor",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-systemmonitor",
+      "binaries": [
+        "plasma-systemmonitor"
+      ],
+      "licenses": [
+        "GPL-2+3+KDEeV",
+        "LGPL-3+",
+        "CC0-1.0",
+        "BSD-3-clause",
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-thunderbolt",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-thunderbolt",
+      "binaries": [
+        "plasma-thunderbolt"
+      ],
+      "licenses": [
+        "GPL-2-3-KDEeV",
+        "BSD-3-clause",
+        "GPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-vault",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-vault",
+      "binaries": [
+        "plasma-vault"
+      ],
+      "licenses": [
+        "GPL-2+3+KDEeV",
+        "LGPL-2.1+3+KDEeV",
+        "LGPL-2.1+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-welcome",
+      "version": "6.6.7-0supralinux2",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-welcome",
+      "binaries": [
+        "plasma-welcome"
+      ],
+      "licenses": [
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "BSD-2-Clause",
+        "CC-BY-SA-4.0",
+        "CC0-1.0",
+        "GPL-2.0-or-later",
+        "GPL-3.0-only",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.0-or-later",
+        "GPL-2.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-workspace",
+      "version": "4:6.6.7-0supralinux3",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-workspace",
+      "binaries": [
+        "libbatterycontrol6",
+        "libkfontinst6",
+        "libkfontinstui6",
+        "libklipper6",
+        "libklookandfeel6",
+        "libkmpris6",
+        "libkworkspace6-6",
+        "libnotificationmanager1",
+        "libtaskmanager6",
+        "plasma-session-wayland",
+        "plasma-session-x11",
+        "plasma-workspace",
+        "plasma-workspace-data",
+        "plasma-workspace-dev"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GFDL-1.2-or-later",
+        "GPL-2.0-only",
+        "GPL-2.0-only OR GPL-3.0-only",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-3.0-or-later",
+        "LGPL-2.0-only",
+        "LGPL-2.0-only OR GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-only_with_parts_in_Public_Domain_OR_MIT",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "LGPL-3.0-or-later",
+        "MIT",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma-workspace-wallpapers",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma-workspace-wallpapers",
+      "binaries": [
+        "plasma-workspace-wallpapers"
+      ],
+      "licenses": [
+        "GPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plasma5support",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plasma5support",
+      "binaries": [
+        "libplasma-geolocation-interface6",
+        "libplasma-geolocation-interface-dev",
+        "libplasma5support-data",
+        "libplasma5support-dev",
+        "libplasma5support6",
+        "libweather-ion-dev",
+        "libweather-ion7",
+        "qml6-module-org-kde-plasma-plasma5support"
+      ],
+      "licenses": [
+        "LGPL-2.0-or-later",
+        "GPL-2.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "plymouth-kcm",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/plymouth-kcm",
+      "binaries": [
+        "kde-config-plymouth"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "polkit-kde-agent-1",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/polkit-kde-agent-1",
+      "binaries": [
+        "polkit-kde-agent-1"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "powerdevil",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/powerdevil",
+      "binaries": [
+        "libpowerdevilcore2",
+        "powerdevil",
+        "powerdevil-data",
+        "powerdevil-dev"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "BSD-3-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "GPL-3.0-or-later",
+        "LGPL-2.0-only",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "MIT",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "print-manager",
+      "version": "6:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/print-manager",
+      "binaries": [
+        "print-manager"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-3-clause",
+        "CC0-1.0",
+        "FSFAP",
+        "LGPL-2.0-or-later",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "BSD-3-Clause",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "qqc2-breeze-style",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/qqc2-breeze-style",
+      "binaries": [
+        "libqqc2breezestyle-dev",
+        "qml6-module-org-kde-breeze"
+      ],
+      "licenses": [
+        "LGPL-3+KDEeV",
+        "LGPL-2+",
+        "LGPL-3_or_GPL-2+",
+        "LGPL-3+KDEeV_or_GPL-2++KDEeV",
+        "CC0-1.0"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "sddm-kcm",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/sddm-kcm",
+      "binaries": [
+        "kde-config-sddm"
+      ],
+      "licenses": [
+        "GPL-2+"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "systemsettings",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/systemsettings",
+      "binaries": [
+        "systemsettings"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "BSD-2-Clause",
+        "CC0-1.0",
+        "GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL",
+        "LGPL-2.0-only",
+        "LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL",
+        "LGPL-2.1-or-later",
+        "GPL-2.0-only",
+        "GPL-3.0-only",
+        "LGPL-2.1-only",
+        "LGPL-3.0-only",
+        "LicenseRef-KDE-Accepted-GPL",
+        "LicenseRef-KDE-Accepted-LGPL"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "wacomtablet",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/wacomtablet",
+      "binaries": [
+        "kde-config-tablet"
+      ],
+      "licenses": [
+        "GPL-2+",
+        "LGPL-2+",
+        "LGPL-2.1 or LGPL-3 or KDEeV",
+        "GFDL-1.2+",
+        "FSFAP",
+        "LGPL-2.1",
+        "LGPL-3",
+        "KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "xdg-desktop-portal-kde",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "path": "packages/plasma/xdg-desktop-portal-kde",
+      "binaries": [
+        "xdg-desktop-portal-kde"
+      ],
+      "licenses": [
+        "LGPL-2+",
+        "LGPL-2.1+3+KDEeV"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "casper",
+      "version": "26.04.2-0supralinux3",
+      "area": "system",
+      "path": "packages/system/casper",
+      "binaries": [
+        "casper",
+        "ubiquity-casper"
+      ],
+      "licenses": [],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-ath9k-ar9565",
+      "version": "1.0.2",
+      "area": "system",
+      "path": "packages/system/supralinux-ath9k-ar9565",
+      "binaries": [
+        "supralinux-ath9k-ar9565"
+      ],
+      "licenses": [
+        "GPL-3+"
+      ],
+      "test_only": false
+    }
+  ]
+}

@@ -84,6 +84,7 @@ Se conservan, además:
 - Fuentes, `.dsc`, `.debian.tar.*` y `.orig.tar.*` de paquetes modificados.
 - `.deb`, `.changes`, `.buildinfo` y logs de build.
 - Manifiestos de build con hashes de inputs y dependencias.
+- Inventario de fuentes `manifests/packages-1.0.0.json`.
 - Resultados de pruebas y capturas de la release.
 - Snapshot de Aptly y clave pública de verificación.
 
@@ -124,6 +125,7 @@ keyring personal del desarrollador.
 | Post-instalación | Keyring, Firefox, APT, Snapper y apagado `PASS`. |
 | Recuperación | Rollback y preservación de `/home` `PASS`. |
 | Repositorio | `InRelease` verificado y snapshot `stable` exacto. |
+| Inventario | 176 paquetes fuente listados y sin paquetes de prueba. |
 | Documentación | Sin enlaces rotos; versión y changelog coherentes. |
 | Higiene | Sin secretos, artifacts ni datos personales en Git. |
 | Autorización | Publicación estable aprobada explícitamente. |
