@@ -1,0 +1,22 @@
+Source: supralinux-theme
+Section: misc
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.2
+Homepage: https://supralinux.com
+Rules-Requires-Root: no
+
+Package: supralinux-theme
+Architecture: all
+Depends: ${misc:Depends},
+ supralinux-branding (>= 1.0.0),
+ breeze,
+ plasma-desktoptheme,
+ sddm-theme-breeze,
+ ocean-sound-theme,
+ breeze-gtk-theme,
+ fonts-noto-core
+Description: SupraLINUX Aurora global theme
+ Plasma look-and-feel, color schemes, Plasma style, SDDM theme, sound theme
+ and GTK defaults for SupraLINUX Aurora. Icons and cursors remain Breeze.

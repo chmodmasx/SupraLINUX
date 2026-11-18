@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "SupraLINUX"
+            }
+        ],
+        "Id": "SupraLINUX",
+        "License": "CC-BY-4.0",
+        "Name": "SupraLINUX Aurora"
+    }
+}

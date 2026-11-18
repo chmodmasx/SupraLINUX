@@ -7,6 +7,8 @@ for each package is in its `debian/copyright`.
 | Component | License | Where |
 |---|---|---|
 | KDE Plasma, Frameworks, Gear, Breeze | GPL/LGPL, per package | `packages/kde/`, `packages/plasma/`, `packages/gear/` |
+| Breeze Plymouth theme | GPL-3.0-only or KDE-Accepted-GPL | `packages/desktop/supralinux-branding/usr/share/plymouth/` |
+| GNU Unifont (GRUB `.pf2`) | GPL-2.0-or-later with font exception | `branding/grub/supralinux/unifont-*.pf2` |
 | Ubuntu, Debian, casper | per package | `packages/system/casper/debian/copyright` |
 | Calamares | GPL-3.0-or-later | `installer/`, package metadata |
 | Noto Color Emoji | OFL-1.1 | `packages/fonts/noto-color-emoji/debian/copyright` |

@@ -1,0 +1,15 @@
+[SddmGreeterTheme]
+Name=SupraLINUX Aurora
+Description=SupraLINUX Aurora login screen
+Author=SupraLINUX
+Copyright=(c) 2026 SupraLINUX
+License=GPL-2.0-or-later
+Type=sddm-theme
+Version=1.0.0
+Website=https://supralinux.com/
+Screenshot=preview.png
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=supralinux
+Theme-API=2.0
+QtVersion=6

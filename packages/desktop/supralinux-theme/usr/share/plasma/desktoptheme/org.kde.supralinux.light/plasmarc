@@ -1,0 +1,13 @@
+[Wallpaper]
+defaultWallpaperTheme=SupraLINUX
+defaultFileSuffix=.png
+defaultWidth=1920
+defaultHeight=1080
+
+[ContrastEffect]
+enabled=true
+contrast=1.0
+saturation=1.3
+
+[AdaptiveTransparency]
+enabled=true

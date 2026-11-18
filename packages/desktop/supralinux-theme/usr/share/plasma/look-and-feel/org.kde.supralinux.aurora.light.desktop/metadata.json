@@ -1,0 +1,16 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "SupraLINUX"
+            }
+        ],
+        "Description": "SupraLINUX Aurora Claro global theme",
+        "Id": "org.kde.supralinux.aurora.light.desktop",
+        "License": "GPL-2.0-or-later",
+        "Name": "SupraLINUX Aurora Claro",
+        "Version": "1.0.0"
+    },
+    "X-Plasma-APIVersion": "2"
+}

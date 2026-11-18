@@ -1,0 +1,7 @@
+supralinux-theme (1.0.0) resolute; urgency=medium
+
+  * Initial Aurora theme package for SupraLINUX 1.0.0.
+  * Include dark and light global themes, Plasma styles, SDDM theme, sounds
+    and GTK defaults.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000

@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=SupraLINUX Aurora
+Description=A Breeze Splash
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes//supralinux
+ScriptFile=/usr/share/plymouth/themes//supralinux/supralinux.script

@@ -1,0 +1,14 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "SupraLINUX"
+            }
+        ],
+        "Id": "org.kde.supralinux",
+        "Name": "SupraLINUX Aurora",
+        "Description": "SupraLINUX Aurora Plasma style",
+        "License": "LGPL-2.1-or-later",
+        "Version": "1.0.0"
+    }
+}

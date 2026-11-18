@@ -1,0 +1,31 @@
+[kdeglobals][KDE]
+widgetStyle=Breeze
+
+[kdeglobals][General]
+ColorScheme=SupralinuxAurora
+font=Noto Sans,10,-1,5,50,0,0,0,0,0
+fixed=Noto Sans Mono,10,-1,5,50,0,0,0,0,0
+menuFont=Noto Sans,10,-1,5,50,0,0,0,0,0
+toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0
+
+[kdeglobals][Icons]
+Theme=Supralinux
+
+[kdeglobals][Sounds]
+Theme=Supralinux
+
+[plasmarc][Theme]
+name=org.kde.supralinux
+
+[Wallpaper]
+Image=SupraLINUX
+
+[kcminputrc][Mouse]
+cursorTheme=breeze_cursors
+
+[kwinrc][org.kde.kdecoration2]
+library=org.kde.breeze
+theme=Breeze
+
+[ksplashrc][KSplash]
+Theme=org.kde.supralinux.aurora.desktop

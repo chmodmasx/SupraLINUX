@@ -46,11 +46,11 @@ certifica un build nuevo ni una release.
 | Frameworks 6.24 | `packages/kde/` | — | Pendiente de revisión paquete por paquete | Pendiente |
 | Plasma 6.6.7 | `packages/plasma/` | — | Pendiente de revisión paquete por paquete | Pendiente |
 | Gear 25.12.3 | `packages/gear/` y `packages/complete/` | — | Renombrar a `gear-extras`; revisar dependencias | Pendiente |
-| Integración de escritorio | `packages/desktop/` | — | Revisar defaults, tema, base-files y hardware | Pendiente |
+| Integración de escritorio | `packages/desktop/` | — | Revisar defaults, base-files y hardware | Pendiente |
 | Firefox y l10n | `packages/` y notas de mirror | — | Pasar al repositorio oficial de Mozilla; retirar mirror y cron | Pendiente |
 | Calamares | `installer/calamares/` | — | Empaquetar como `supralinux-calamares-config`; retirar `calamares-settings-kubuntu` | Pendiente |
 | Live y arranque | `tools/live/` | — | Revisar hooks, shim/GRUB firmados y sellado | Pendiente |
-| Branding | `branding/` | — | Revisar licencias, assets y textos | Pendiente |
+| Branding y tema | `branding/`, `packages/desktop/supralinux-branding`, `packages/desktop/supralinux-theme` | — | Assets, GRUB, Plymouth, wallpapers y tema Aurora; licencias revisadas y rutas personales normalizadas | En curso |
 | Herramientas y pruebas | `tools/` y `tests/` | `11c0ea8` | Revisadas; workspace configurable y sin rutas del proyecto anterior | Hecho |
 | Paquete de prueba | `packages/supralinux-build-test` | `11c0ea8` | Versión 0.2.0 y licencia GPL-2.0-or-later | Hecho |
 | Evidencia anterior | `evidence/` | — | Sólo diagnóstico; no se usa como PASS de release | Pendiente |
