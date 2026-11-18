@@ -28,8 +28,9 @@ python3 tools/package_inventory.py --check
 ## Resultados de build
 
 `manifests/native-builds-1.0.0.json` resume los builds nativos ejecutados.
-Cada entrada enlaza su manifiesto, artifact por SHA-256 y run de evidencia.
-El estado es `partial`: no cubre Frameworks, Plasma, Gear ni la ISO.
+`manifests/stack-builds-1.0.0.json` resume las muestras de Frameworks, Plasma
+y Gear. Cada entrada enlaza su manifiesto, artifact por SHA-256 y run de
+evidencia. Ambos estados son `partial`: no cubren los 176 paquetes ni la ISO.
 
 ## Build limpio
 

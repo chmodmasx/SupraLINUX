@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "scope": "stack-clean-build-results",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "partial",
+  "note": "Muestras de Frameworks, Plasma y Gear. No es el build completo de los 176 paquetes ni de la ISO.",
+  "build_count": 4,
+  "builds": [
+    {
+      "package": "extra-cmake-modules",
+      "version": "6.24.0-0supralinux1",
+      "manifest": "manifests/ecm-6.24-clean-build.json",
+      "state": "PASS",
+      "artifact": {
+        "name": "extra-cmake-modules_6.24.0-0supralinux1_all.deb",
+        "sha256": "0f8eeca3a61485e4e9c69f6d76526661ee0ec089b3b00207a756a9867a0bb3b8"
+      },
+      "evidence": "evidence/clean-build/20261118T162619Z-618ad12987a7",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "libkf6coreaddons6",
+      "version": "6.24.0-0supralinux1",
+      "manifest": "manifests/kcoreaddons-6.24-clean-build.json",
+      "state": "PASS",
+      "artifact": {
+        "name": "libkf6coreaddons6_6.24.0-0supralinux1_amd64.deb",
+        "sha256": "37db79387293d7281f729f1c72df825d22ded662e793d4bb86a7573c876eb3f0"
+      },
+      "evidence": "evidence/clean-build/20261118T162908Z-a615522e3813",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "libkwin6",
+      "version": "4:6.6.7-0supralinux1",
+      "manifest": "manifests/kwin-6.6.7-clean-build.json",
+      "state": "PASS",
+      "artifact": {
+        "name": "libkwin6_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "7a253b4995984cdec19d8c204fc8284d7bfe16a7a10e0277b59b3aa28c153176"
+      },
+      "evidence": "evidence/clean-build/20261118T163403Z-aa907b423e19",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "dolphin",
+      "version": "4:25.12.3-0supralinux3",
+      "manifest": "manifests/dolphin-25.12.3-clean-build.json",
+      "state": "PASS",
+      "artifact": {
+        "name": "dolphin_25.12.3-0supralinux3_amd64.deb",
+        "sha256": "fa9704127d6a1a4941bace94d2a6778273f2aa69c50691a561237b965a04b2c3"
+      },
+      "evidence": "evidence/clean-build/20261118T165844Z-e6b17019c92d",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    }
+  ]
+}

@@ -212,7 +212,10 @@ manifiesto de release.
 - 10 paquetes nativos seleccionados: `PASS` en build limpio, con artifact y
   evidencia retenidos. El resumen está en
   `manifests/native-builds-1.0.0.json`.
-- Frameworks, Plasma y Gear: packaging importado; build binario pendiente.
+- Muestras de Frameworks, Plasma y Gear: `extra-cmake-modules`,
+  `libkf6coreaddons6`, `libkwin6` y `dolphin` con build limpio `PASS`.
+  El resumen está en `manifests/stack-builds-1.0.0.json`.
+- Los 176 paquetes y la ISO siguen pendientes de build completo.
 - ISO, instalación y recuperación: pendientes de la clave nueva y del
   repositorio publicado.
 
