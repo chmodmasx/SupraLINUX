@@ -1,0 +1,2 @@
+usr/lib/supralinux/ath9k-load usr/lib/supralinux
+etc/modprobe.d/ath9k-supralinux.conf etc/modprobe.d

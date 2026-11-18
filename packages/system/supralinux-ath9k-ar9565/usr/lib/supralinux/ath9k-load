@@ -1,0 +1,37 @@
+#!/bin/sh
+# Conditional modprobe wrapper for QCA9565/AR9565 (168c:0036).
+#
+# The AR9565 is a WB335 combo whose Wi-Fi and Bluetooth share the 2.4 GHz
+# radio. ath9k loads with btcoex_enable=0 by default; with Bluetooth active
+# that causes repeated authentication/association timeouts. The parameter is
+# read-only after load (0444), so it has to be set while loading the module.
+#
+# This wrapper is invoked by /etc/modprobe.d/ath9k-supralinux.conf. It adds
+# the parameter only when the AR9565 PCI ID is present; other ath9k devices
+# are loaded exactly as before.
+set -eu
+
+sysfs=${SUPRALINUX_SYSFS:-/sys}
+found=0
+
+for dev in "$sysfs"/bus/pci/devices/*; do
+    [ -r "$dev/vendor" ] || continue
+    [ -r "$dev/device" ] || continue
+
+    read -r vendor < "$dev/vendor" || continue
+    read -r device < "$dev/device" || continue
+
+    if [ "$vendor" = "0x168c" ] && [ "$device" = "0x0036" ]; then
+        found=1
+        break
+    fi
+done
+
+if [ "$found" -eq 1 ]; then
+    if /sbin/modprobe --ignore-install ath9k "$@" btcoex_enable=1; then
+        exit 0
+    fi
+    # If the quirk cannot be applied, keep Wi-Fi working with the default.
+fi
+
+exec /sbin/modprobe --ignore-install ath9k "$@"

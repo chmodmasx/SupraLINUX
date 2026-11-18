@@ -1,0 +1,16 @@
+Source: supralinux-ath9k-ar9565
+Section: kernel
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://supralinux.com/
+Rules-Requires-Root: no
+
+Package: supralinux-ath9k-ar9565
+Architecture: all
+Depends: ${misc:Depends}, kmod, initramfs-tools
+Description: ath9k Bluetooth coexistence quirk for QCA9565/AR9565
+ A conditional modprobe wrapper for the QCA9565/AR9565 (WB335) combo.
+ It enables ath9k Bluetooth coexistence only when the PCI ID 168c:0036 is
+ present, avoiding a global ath9k module option on unrelated hardware.

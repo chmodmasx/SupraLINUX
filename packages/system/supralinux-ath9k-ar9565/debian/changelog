@@ -1,0 +1,20 @@
+supralinux-ath9k-ar9565 (1.0.2) resolute; urgency=medium
+
+  * Refresh the ath9k Bluetooth coexistence quirk for 1.0.0.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000
+
+supralinux-ath9k-ar9565 (1.0.1) unstable; urgency=medium
+
+  * Use dh_installinitramfs and the standard update-initramfs trigger.
+    The hook is installed in /usr/share/initramfs-tools/hooks and the
+    manual postinst/postrm scripts are removed.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 03 Nov 2026 00:12:00 +0000
+
+supralinux-ath9k-ar9565 (1.0.0) unstable; urgency=medium
+
+  * Add a conditional ath9k modprobe wrapper for QCA9565/AR9565 (168c:0036)
+    that enables Bluetooth coexistence only on this combo card.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 02 Nov 2026 23:50:00 +0000

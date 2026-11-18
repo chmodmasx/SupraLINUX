@@ -1,0 +1,14 @@
+--- a/scripts/casper-bottom/13swap
++++ b/scripts/casper-bottom/13swap
+@@ -26,6 +26,11 @@
+ 
+ log_begin_msg "$DESCRIPTION"
+ 
++if grep -qw noswap /proc/cmdline; then
++    log_end_msg
++    exit 0
++fi
++
+ devices=""
+ for device in /dev/[hsv]d[a-z][0-9]*; do
+     if ! [ -b "$device" ]; then

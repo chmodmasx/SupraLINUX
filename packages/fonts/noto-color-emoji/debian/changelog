@@ -1,0 +1,16 @@
+fonts-noto-color-emoji (2.057+supralinux2) resolute; urgency=medium
+
+  * Rebuild the Emoji 18 color font for SupraLINUX 1.0.0.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000
+
+fonts-noto-color-emoji (2.057+supralinux1) unstable; urgency=medium
+
+  * Import Noto Color Emoji 2.057 from upstream tag
+    v2026-09-24-unicode18_0 (2D/fonts/NotoColorEmoji.ttf, SHA-256
+    15671215ab769fdc7162a045d56fd7d7e477c51b04e6b3c761d914d8fdd6cc44).
+  * This version covers the Emoji 18.0 sequences that are absent from
+    2.051-1build1, while preserving the package name and installed font
+    path used by Ubuntu 26.04 and Kubuntu.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 12 Nov 2026 19:50:00 -0300
