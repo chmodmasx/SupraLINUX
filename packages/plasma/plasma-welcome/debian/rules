@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+%:
+	dh $@
+
+override_dh_install:
+	mkdir -p debian/plasma-welcome/etc/apparmor.d
+	cp debian/plasma-welcome-apparmor debian/plasma-welcome/etc/apparmor.d/usr.bin.plasma-welcome
+	dh_apparmor --profile-name=usr.bin.plasma-welcome -pplasma-welcome

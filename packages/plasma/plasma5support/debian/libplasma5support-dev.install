@@ -1,0 +1,3 @@
+usr/include/Plasma5Support/
+usr/lib/*/cmake/Plasma5Support/
+usr/lib/*/libPlasma5Support.so

@@ -1,0 +1,3 @@
+usr/lib/*/libweather_ion.so.7
+usr/lib/*/libweather_ion.so.7.0.0
+usr/share/plasma/weather_legacy/noaa_station_list.xml

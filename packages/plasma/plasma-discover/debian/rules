@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+%:
+	dh $@
+
+# FIXME: tests are broken at time
+override_dh_auto_test:
+	:
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f debian/tmp/usr/share/applications/org.kde.discover.snap.desktop

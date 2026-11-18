@@ -1,0 +1,10 @@
+--- krdp-orig/src/screencasting.cpp	2026-10-16 05:51:16.000000000 -0300
++++ krdp-src/src/screencasting.cpp	2026-11-07 21:58:44.102119671 -0300
+@@ -148,6 +148,7 @@
+ {
+     auto stream = new ScreencastingStream(this);
+     stream->d->init(d->stream_virtual_output(name, resolution.width(), resolution.height(), wl_fixed_from_double(dpr), mode));
++    stream->d->m_size = resolution;
+     return stream;
+ }
+ 

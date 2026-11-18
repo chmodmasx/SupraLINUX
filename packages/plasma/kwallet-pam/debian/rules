@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	    -DCMAKE_INSTALL_LIBDIR="/usr/lib/${DEB_HOST_MULTIARCH}" \
+	    -DKDE_INSTALL_LIBEXECDIR="/usr/share/libpam-kwallet-common"

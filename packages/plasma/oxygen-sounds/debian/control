@@ -1,0 +1,21 @@
+Source: oxygen-sounds
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               qt6-base-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/oxygen-sounds
+Rules-Requires-Root: no
+
+Package: oxygen-sounds
+Architecture: all
+Depends: ${misc:Depends}
+Description: Sounds for the Oxygen desktop theme
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the sounds.
+Multi-Arch: foreign

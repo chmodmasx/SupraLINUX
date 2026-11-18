@@ -1,0 +1,4 @@
+usr/include/winpr3
+usr/lib/${DEB_HOST_MULTIARCH}/cmake/WinPR*
+usr/lib/${DEB_HOST_MULTIARCH}/libwinpr*.so
+usr/lib/${DEB_HOST_MULTIARCH}/pkgconfig/winpr*.pc

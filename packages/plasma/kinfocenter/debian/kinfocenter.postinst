@@ -1,0 +1,12 @@
+#! /bin/sh
+
+set -e
+
+# remove the old custom kinfocenter_oui.db file
+if [ "configure" = "$1" ] && [ -n "$2" ] && dpkg --compare-versions "$2" lt "4:5.19.4-1~"; then
+    rm -f "/var/lib/ieee-data/kinfocenter_oui.db"
+fi
+
+#DEBHELPER#
+
+exit 0

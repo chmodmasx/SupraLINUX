@@ -1,0 +1,17 @@
+#!/bin/sh
+
+set -e
+
+#DEBHELPER#
+
+target_dir=/etc/opt/chrome/native-messaging-hosts
+source_dir=/usr/share/plasma-browser-integration
+filename=org.kde.plasma.browser_integration.json
+
+mkdir -p "$target_dir"
+
+if [ ! -e "$target_dir/$filename" ]; then
+    ln -s "$source_dir/$filename" "$target_dir"
+fi
+
+exit 0

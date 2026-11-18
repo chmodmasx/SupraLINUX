@@ -1,0 +1,502 @@
+plasma-welcome (6.6.7-0supralinux2) resolute; urgency=medium
+
+  * Increase the welcome window height to avoid clipping the first page
+    at 125% scaling, with a small width increase.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 01 Nov 2026 21:30:00 +0000
+
+plasma-welcome (6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 plasma-welcome for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+  * Drop the Ubuntu-specific Discover page selection patch.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+plasma-welcome (6.6.5-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream release (6.6.5) (LP: #2152276)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 May 2026 10:28:14 +0100
+
+plasma-welcome (6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:11:44 +0100
+
+plasma-welcome (6.6.3-0ubuntu2) resolute; urgency=medium
+
+  * Add a patch to disable blender on the discover page 
+    as the link is broken. (LP: #2141800) 
+
+ -- Scarlett Moore <sgmoore@debian.org>  Sat, 28 Mar 2026 04:42:48 -0700
+
+plasma-welcome (6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:45:04 +0000
+
+plasma-welcome (6.6.2-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for libplasma7.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 07 Mar 2026 06:45:34 +0000
+
+plasma-welcome (6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:24:55 +0000
+
+plasma-welcome (6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:16:54 +0000
+
+plasma-welcome (6.5.5-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 23:10:17 +0000
+
+plasma-welcome (6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 15:08:12 +0000
+
+plasma-welcome (6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:21:15 +0000
+
+plasma-welcome (6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:09:50 +0000
+
+plasma-welcome (6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:14:32 +0000
+
+plasma-welcome (6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:48:53 +0000
+
+plasma-welcome (6.5.0-0ubuntu2) resolute; urgency=medium
+
+  * Add missing runtime depend on qml6-module-qtnetwork. (LP: #2129931)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 27 Oct 2025 12:58:39 +0000
+
+plasma-welcome (6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:39:36 +0100
+
+plasma-welcome (6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:04:06 +0100
+
+plasma-welcome (6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:31:22 +0100
+
+plasma-welcome (6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:36:20 +0100
+
+plasma-welcome (6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 08:58:42 +0100
+
+plasma-welcome (6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:24:49 +0000
+
+plasma-welcome (6.3.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Add apparmor profile to fix userns.
+    - Do not build depend on kuserfeedback.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 09 Mar 2025 09:34:42 +0000
+
+plasma-welcome (6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.3.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 00:54:32 +0100
+
+plasma-welcome (6.3.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 25 Feb 2025 18:18:30 +0000
+
+plasma-welcome (6.3.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.1)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Feb 2025 14:25:51 +0000
+
+plasma-welcome (6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 15:00:51 +0100
+
+plasma-welcome (6.3.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Feb 2025 12:57:49 +0000
+
+plasma-welcome (6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.91).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:54:29 +0100
+
+plasma-welcome (6.2.91-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.91)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 23 Jan 2025 13:44:38 +0000
+
+plasma-welcome (6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+  * Add patch for missing KNotifications build dependency.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 11 Jan 2025 23:38:12 +0100
+
+plasma-welcome (6.2.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.90)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 08:33:35 +0000
+
+plasma-welcome (6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 11:24:02 +0100
+
+plasma-welcome (6.2.5-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 31 Dec 2024 19:04:39 +0000
+
+plasma-welcome (6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+  * Update build-deps and deps with the info from cmake.
+  * Remove obsolete conf file /etc/xdg/autostart/org.kde.plasma-
+    welcome.desktop.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:52:00 +0100
+
+plasma-welcome (6.2.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 26 Nov 2024 12:16:10 +0000
+
+plasma-welcome (6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Update build-deps and deps with the info from cmake.
+  * Add build dependency to qt6-declarative-private-dev required since
+    cmake 3.31.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:36 +0100
+
+plasma-welcome (6.2.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.0)
+  * New build depend on kirigami-addons-dev (>= 1.2.0)
+  * Update runtime qml module depends.
+  * New upstream release (6.2.1)
+  * New upstream release (6.2.2)
+  * New upstream release (6.2.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 19:59:42 +0000
+
+plasma-welcome (6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 21:25:29 +0200
+
+plasma-welcome (6.2.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:51 +0200
+
+plasma-welcome (6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:28:22 +0200
+
+plasma-welcome (6.1.5-0ubuntu2) oracular; urgency=medium
+
+  * Fix webengineprocess for qt6 in apparmor profile.
+
+ -- Scarlett Moore <sgmoore@debian.org>  Wed, 18 Sep 2024 01:53:08 -0700
+
+plasma-welcome (6.1.5-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.5)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 Sep 2024 06:01:37 +0100
+
+plasma-welcome (6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Update build-deps and deps with the info from cmake.
+  * Review copyright information.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:27 +0200
+
+plasma-welcome (6.1.4-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 14 Aug 2024 21:44:01 +0100
+
+plasma-welcome (6.1.3-1ubuntu1) UNRELEASED; urgency=medium
+
+  * Merge from Debian. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Add apparmor profile to fix userns.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 29 Jul 2024 13:20:59 +0100
+
+plasma-welcome (6.1.3-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:21 +0200
+
+plasma-welcome (6.1.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.1.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 23 Jun 2024 17:36:56 +0200
+
+plasma-welcome (5.27.11-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * New upstream release (5.27.11).
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 19 May 2024 12:17:33 +0200
+
+plasma-welcome (5.27.11-0ubuntu5) oracular; urgency=medium
+
+  * Properly address the apparmor profile issue by adding multiple
+    lines for the different architectures we want to support until 
+    @multiarch is supported. This closes (LP: #2064492)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Fri, 12 Jul 2024 00:47:32 -0700
+
+plasma-welcome (5.27.11-0ubuntu4) oracular; urgency=medium
+
+  * Use less restrictive apparmor, folling other applications. (LP: #2065915) 
+
+ -- Scarlett Moore <sgmoore@debian.org>  Mon, 08 Jul 2024 19:26:02 +0100
+
+plasma-welcome (5.27.11-0ubuntu3) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 17:01:17 +0000
+
+plasma-welcome (5.27.11-0ubuntu2) noble; urgency=medium
+
+  * Fix comment syntax. 
+
+ -- Scarlett Moore <sgmoore@debian.org>  Tue, 26 Mar 2024 12:55:27 +0000
+
+plasma-welcome (5.27.11-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (5.27.11)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Sun, 17 Mar 2024 07:24:46 +0000
+
+plasma-welcome (5.27.10-1ubuntu3) noble; urgency=medium
+
+  * No-change rebuild against libqt5core5t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 15 Mar 2024 06:28:59 +0000
+
+plasma-welcome (5.27.10-1ubuntu2) noble; urgency=medium
+
+  * Add kubuntu_skip-online-accounts-page.patch
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Mar 2024 13:52:15 +0000
+
+plasma-welcome (5.27.10-1ubuntu1) noble; urgency=low
+
+  [ Ubuntu Merge-o-Matic ]
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+  [ Scarlett Moore ]
+  * Add apparmor profile to fix userns. Ref: LP: #2046844 
+  * Release to archive.
+
+ -- Scarlett Moore <sgmoore@debian.org>  Wed, 21 Feb 2024 04:23:15 -0700
+
+plasma-welcome (5.27.10-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.10).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 11 Jan 2024 23:20:55 +0100
+
+plasma-welcome (5.27.10-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (5.27.10)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Mon, 11 Dec 2023 11:23:12 +0000
+
+plasma-welcome (5.27.9-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.9).
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 27 Oct 2023 21:52:00 +0200
+
+plasma-welcome (5.27.9-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (5.27.9)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 26 Oct 2023 12:20:28 +0100
+
+plasma-welcome (5.27.8-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.8).
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 13 Sep 2023 20:48:06 +0200
+
+plasma-welcome (5.27.8-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (5.27.8)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Sep 2023 12:32:14 +0100
+
+plasma-welcome (5.27.7-1ubuntu1) mantic; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 01 Sep 2023 10:48:04 +0100
+
+plasma-welcome (5.27.7-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.7).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Aug 2023 18:53:40 +0200
+
+plasma-welcome (5.27.5-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 27 May 2023 18:23:43 +0200
+
+plasma-welcome (5.27.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.5).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 09 May 2023 23:26:43 +0200
+
+plasma-welcome (5.27.3-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.3).
+  * Add myself to Uploaders.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 22 Mar 2023 23:15:26 +0100
+
+plasma-welcome (5.27.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.1).
+  * New upstream release (5.27.2).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 28 Feb 2023 15:00:10 +0100
+
+plasma-welcome (5.27.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 18 Feb 2023 17:08:41 +0100
+
+plasma-welcome (5.26.90-1) unstable; urgency=medium
+
+  [ Rik Mills ]
+  * Initial release. (Closes: #1029532)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 23 Jan 2023 23:34:46 +0100
+

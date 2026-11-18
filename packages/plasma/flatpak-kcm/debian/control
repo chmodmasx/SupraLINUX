@@ -1,0 +1,36 @@
+Source: flatpak-kcm
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               libconfig-dev,
+               libflatpak-dev,
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6iconthemes-dev (>= 6.22.0~),
+               libkf6itemmodels-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6service-dev (>= 6.22.0~),
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qt6-svg-dev (>= 6.10.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/flatpak-kcm
+Rules-Requires-Root: no
+
+Package: kde-config-flatpak
+Architecture: any
+Depends: flatpak, systemsettings, ${misc:Depends}, ${shlibs:Depends}
+Description: Flatpak permissions management KCM
+ Plasma System Settings module for managinng Flatpak permissions.
+ .
+ The System Settings module allows users to changing what permissions have
+ been granted to installed Flatpak applications.

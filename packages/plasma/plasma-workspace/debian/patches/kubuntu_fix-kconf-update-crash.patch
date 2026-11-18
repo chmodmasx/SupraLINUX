@@ -1,0 +1,20 @@
+Author: Rik Mills <rikmills@kubuntu.org>
+Description: Fix crash in kconf_update script for calendar migration
+ Upstream detection of the qtpaths binary location at build time finds
+ the version/link from the qt6-base dev package instead of the one from
+ the qt6-base-dev-tools package. On a user system without the dev package
+ the resultant script crashes on not finding the binary at the expected
+ path. Instead specificy the path in Ubuntu, which will not change over
+ LTS release cycle.
+
+--- a/components/calendar/kconf_update/migrate-calendar-to-plugin-id.py.in
++++ b/components/calendar/kconf_update/migrate-calendar-to-plugin-id.py.in
+@@ -13,7 +13,7 @@
+ 
+ proc = subprocess.Popen(
+     [
+-        "@QTPATHS_PATH@",
++        "/usr/lib/qt6/bin/qtpaths6",
+         "--locate-file",
+         "ConfigLocation",
+         "plasma-org.kde.plasma.desktop-appletsrc",

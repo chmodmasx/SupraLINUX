@@ -1,0 +1,3 @@
+usr/lib/*/libplasma-geolocation-interface.so.6
+usr/lib/*/libplasma-geolocation-interface.so.6.*
+usr/lib/*/qt6/plugins/plasma5support/geolocationprovider/plasma-geolocation-ip.so

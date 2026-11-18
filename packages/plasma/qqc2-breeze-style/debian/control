@@ -1,0 +1,47 @@
+Source: qqc2-breeze-style
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.22.0~),
+               libkf6colorscheme-dev (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6guiaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6iconthemes-dev (>= 6.22.0~),
+               libkirigami-dev (>= 6.22.0~),
+               libquickcharts-dev (>= 6.22.0~),
+               libxkbcommon-dev,
+               pkgconf,
+               qml6-module-org-kde-guiaddons,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qt6-declarative-private-dev (>= 6.10.0~)
+Homepage: https://invent.kde.org/plasma/qqc2-breeze-style
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+
+Package: libqqc2breezestyle-dev
+Section: libdevel
+Architecture: any
+Depends: qml6-module-org-kde-breeze (= ${binary:Version}),
+         ${misc:Depends}
+Description: development files for Breeze inspired QQC2 Style
+ This is a pure Qt Quick/Kirigami Qt Quick Controls style.
+ Unlike QQC2-Desktop-Style, it does not depend on Qt Widgets and the system
+ QStyle.
+ .
+ This package contains the development files.
+
+Package: qml6-module-org-kde-breeze
+Architecture: any
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: Breeze inspired QQC2 Style
+ This is a pure Qt Quick/Kirigami Qt Quick Controls style.
+ Unlike QQC2-Desktop-Style, it does not depend on Qt Widgets and the system
+ QStyle.

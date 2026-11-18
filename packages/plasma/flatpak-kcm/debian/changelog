@@ -1,0 +1,312 @@
+flatpak-kcm (6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 flatpak-kcm for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+flatpak-kcm (6.6.6-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.6) (LP: #2159979)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 13 Jul 2026 10:53:46 +0100
+
+flatpak-kcm (6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:05:09 +0100
+
+flatpak-kcm (6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:40:44 +0000
+
+flatpak-kcm (6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:21:03 +0000
+
+flatpak-kcm (6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:12:26 +0000
+
+flatpak-kcm (6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 14:53:52 +0000
+
+flatpak-kcm (6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:16:29 +0000
+
+flatpak-kcm (6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:06:08 +0000
+
+flatpak-kcm (6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:10:45 +0000
+
+flatpak-kcm (6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:45:01 +0000
+
+flatpak-kcm (6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+  * Update build deps from cmake.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:35:42 +0100
+
+flatpak-kcm (6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:00:43 +0100
+
+flatpak-kcm (6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:27:10 +0100
+
+flatpak-kcm (6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:32:43 +0100
+
+flatpak-kcm (6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 08:53:55 +0100
+
+flatpak-kcm (6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:15:49 +0000
+
+flatpak-kcm (6.3.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 10 Mar 2025 14:35:44 +0000
+
+flatpak-kcm (6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * New upstream release (6.3.2).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 00:50:52 +0100
+
+flatpak-kcm (6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 14:51:49 +0100
+
+flatpak-kcm (6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.91).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:50:17 +0100
+
+flatpak-kcm (6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 11 Jan 2025 23:05:57 +0100
+
+flatpak-kcm (6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 10:56:06 +0100
+
+flatpak-kcm (6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:21:04 +0100
+
+flatpak-kcm (6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:22 +0100
+
+flatpak-kcm (6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 17:43:00 +0200
+
+flatpak-kcm (6.2.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:38 +0200
+
+flatpak-kcm (6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:27:28 +0200
+
+flatpak-kcm (6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Add lintian override for systemsettings executable being in a different
+    package, kde-config-flatpak does depend on it.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:15 +0200
+
+flatpak-kcm (6.1.3-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:07 +0200
+
+flatpak-kcm (6.1.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.1.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 18 Jun 2024 19:42:52 +0200
+
+flatpak-kcm (5.27.11-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * New upstream release (5.27.11).
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 19 May 2024 12:19:29 +0200
+
+flatpak-kcm (5.27.10-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.10).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 11 Jan 2024 23:21:06 +0100
+
+flatpak-kcm (5.27.9-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.9).
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 27 Oct 2023 21:53:20 +0200
+
+flatpak-kcm (5.27.8-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.8).
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 13 Sep 2023 20:47:51 +0200
+
+flatpak-kcm (5.27.7-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.7).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Aug 2023 18:54:13 +0200
+
+flatpak-kcm (5.27.5-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 27 May 2023 18:23:39 +0200
+
+flatpak-kcm (5.27.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.5).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 09 May 2023 23:25:05 +0200
+
+flatpak-kcm (5.27.3-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.3).
+  * Drop patch to populate list of permissions for applications.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 22 Mar 2023 23:13:21 +0100
+
+flatpak-kcm (5.27.2-3) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add flatpak as a dependency since the module crashes systemsettings
+    when activated if flatpak is not installed (Closes: #1033286).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 21 Mar 2023 19:17:01 +0100
+
+flatpak-kcm (5.27.2-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Backport commit to populate list of permissions for applications
+    (Closes: #1033039).
+  * Add myself as uploader.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 19 Mar 2023 21:15:52 +0100
+
+flatpak-kcm (5.27.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.1).
+  * Update build-deps and deps with the info from cmake.
+  * Disable failing tests.
+  * New upstream release (5.27.2).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 28 Feb 2023 14:58:50 +0100
+
+flatpak-kcm (5.27.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 18 Feb 2023 17:08:34 +0100
+
+flatpak-kcm (5.26.90-1) unstable; urgency=medium
+
+  [ Rik Mills ]
+  * Initial release. (Closes: #1029531)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 23 Jan 2023 22:31:43 +0100

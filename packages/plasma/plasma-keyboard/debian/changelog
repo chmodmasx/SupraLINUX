@@ -1,0 +1,31 @@
+plasma-keyboard (6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 plasma-keyboard for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+plasma-keyboard (6.6.6-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.6) (LP: #2159979)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 13 Jul 2026 10:54:28 +0100
+
+plasma-keyboard (6.6.5-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream release (6.6.5) (LP: #2152276)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 May 2026 10:27:55 +0100
+
+plasma-keyboard (6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:10:28 +0100
+
+plasma-keyboard (6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New release to Ubuntu. (LP: #2141757)
+  * New upstream release 6.6.3 (LP: #2142562)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Sat, 21 Mar 2026 19:19:45 +0000

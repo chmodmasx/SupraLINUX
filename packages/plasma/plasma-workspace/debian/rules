@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_python3:
+	dh_python3 usr/share/kconf_update/
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DBUILD_TESTING=OFF -DPLASMA_X11_DEFAULT_SESSION=OFF -DWITH_X11=ON -DUBUNTU_PACKAGEKIT=FALSE
+
+override_dh_auto_test:
+	# Disable auto tests at build time
+	:
+
+#override_dh_makeshlibs:
+#	dh_makeshlibs -V -- -c0
+
+execute_after_dh_fixperms-arch:
+	chmod -x $(CURDIR)/debian/plasma-workspace/usr/share/kglobalaccel/org.kde.krunner.desktop

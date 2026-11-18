@@ -1,0 +1,41 @@
+Source: plasma-disks
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.22.0~),
+               libkf6auth-dev (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6service-dev (>= 6.22.0~),
+               libkf6solid-dev (>= 6.22.0~),
+               qt6-base-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/plasma-disks
+Rules-Requires-Root: no
+
+Package: plasma-disks
+Architecture: any
+Depends: libkf6kcmutils-bin,
+         qml6-module-org-kde-kcmutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-qtqml-models,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-layouts,
+         smartmontools,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: kup-backup, partitionmanager
+Description: Monitor S.M.A.R.T. capable devices for imminent failure in Plasma
+ This package provides a plugin for the KDE user daemon and the corresponding
+ Plasma configuration widget for monitoring devices with S.M.A.R.T. support
+ and alerting the user in case of imminent failure.

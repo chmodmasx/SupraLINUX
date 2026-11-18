@@ -1,0 +1,78 @@
+Source: plasma-nm
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libkf6colorscheme-dev (>= 6.22.0~),
+               libkf6completion-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6modemmanagerqt-dev (>= 6.22.0~),
+               libkf6networkmanagerqt-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6prison-dev (>= 6.22.0~),
+               libkf6service-dev (>= 6.22.0~),
+               libkf6solid-dev (>= 6.22.0~),
+               libkf6svg-dev (>= 6.22.0~),
+               libkf6wallet-dev (>= 6.22.0~),
+               libkf6widgetsaddons-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libkirigami-dev (>= 6.22.0~),
+               libnm-dev (>= 1.4.0~),
+               libopenconnect-dev (>= 3.99~),
+               libplasma-dev (>= 6.6.6~),
+               libqca-qt6-dev (>= 2.1.0~),
+               mobile-broadband-provider-info,
+               modemmanager-dev (>= 1.0.0~),
+               pkgconf,
+               qcoro-qt6-dev,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qt6-webengine-dev (>= 6.10.0~) [amd64 arm64 armhf i386]
+Standards-Version: 4.7.2
+Homepage: https://invent.kde.org/plasma/plasma-nm
+Rules-Requires-Root: no
+
+Package: plasma-nm
+Architecture: linux-any
+Depends: mobile-broadband-provider-info,
+         network-manager,
+         plasma-desktoptheme,
+         qml6-module-org-kde-config (>= 6.22.0~),
+         qml6-module-org-kde-coreaddons,
+         qml6-module-org-kde-kcmutils (>= 6.22.0~),
+         qml6-module-org-kde-kirigami (>= 6.22.0~),
+         qml6-module-org-kde-kquickcontrolsaddons (>= 6.22.0~),
+         qml6-module-org-kde-ksvg,
+         qml6-module-org-kde-networkmanager,
+         qml6-module-org-kde-prison (>= 6.22.0~),
+         qml6-module-org-kde-quickcharts,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-dialogs,
+         qml6-module-qtquick-layouts,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: kwallet6, qrca, systemsettings
+Suggests: network-manager-fortisslvpn,
+          network-manager-iodine,
+          network-manager-l2tp,
+          network-manager-openconnect,
+          network-manager-openvpn,
+          network-manager-pptp,
+          network-manager-ssh,
+          network-manager-strongswan,
+          network-manager-vpnc
+Description: Plasma network connections management
+ plasma-nm provides a Plasma applet written in QML for managing network
+ connections using Network Manager.
+ .
+ This package is part of the KDE Plasma.

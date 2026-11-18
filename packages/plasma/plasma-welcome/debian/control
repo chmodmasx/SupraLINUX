@@ -1,0 +1,53 @@
+Source: plasma-welcome
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-apparmor,
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               kirigami-addons-dev (>= 1.2.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6configwidgets-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6jobwidgets-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6newstuff-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6service-dev (>= 6.22.0~),
+               libkf6svg-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libkirigami-dev (>= 6.22.0~),
+               libplasma-dev (>= 6.6.5~),
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qt6-declarative-private-dev (>= 6.10.0~),
+               qt6-svg-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://invent.kde.org/plasma/plasma-welcome
+
+Package: plasma-welcome
+Architecture: any
+Depends: milou,
+         plasma-desktoptheme,
+         plasma-nm,
+         qml6-module-org-kde-kcmutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-ksvg,
+         qml6-module-org-kde-plasma-plasma5support,
+         qml6-module-qtnetwork,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-effects,
+         qml6-module-qtquick-layouts,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: KDE Plasma welcome center
+ Welcome Center is the perfect introduction to KDE Plasma! It can help
+ you learn how to connect to the internet, install apps, customize the
+ system, and more!

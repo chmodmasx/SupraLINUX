@@ -1,0 +1,3 @@
+usr/include/plasma/geolocation/geolocation_export.h
+usr/include/plasma/geolocation/geolocationprovider.h
+usr/lib/*/libplasma-geolocation-interface.so

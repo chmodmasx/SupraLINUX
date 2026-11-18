@@ -1,0 +1,2 @@
+plasma-session-x11: desktop-entry-unknown-type XSession [usr/share/xsessions/plasmax11.desktop]
+plasma-session-x11: depends-on-metapackage Depends: xorg

@@ -1,0 +1,38 @@
+Source: milou
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libkf6config-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6runner-dev (>= 6.22.0~),
+               libkf6svg-dev (>= 6.22.0~),
+               libplasma-dev (>= 6.6.4~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qt6-declarative-private-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/milou
+Rules-Requires-Root: no
+
+Package: milou
+Architecture: any
+Depends: plasma-desktoptheme,
+         qml6-module-org-kde-kirigami (>= 6.22.0~),
+         qml6-module-org-kde-ksvg,
+         qml6-module-qtquick,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-templates,
+         qml6-module-qtquick-tooling,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Dedicated search plasmoid
+ Milou can also be used as an alternative to KRunner, and
+ does provide application launching. The main difference
+ is that it concentrates more on searching.

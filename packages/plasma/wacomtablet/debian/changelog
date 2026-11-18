@@ -1,0 +1,662 @@
+wacomtablet (6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 wacomtablet for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+  * Drop the obsolete AppStream modalias patch.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+wacomtablet (6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+  * Refresh appstream-add-provides-modalias.patch
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:13:19 +0100
+
+wacomtablet (6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:47:18 +0000
+
+wacomtablet (6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:26:05 +0000
+
+wacomtablet (6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * Refresh appstream-add-provides-modalias.patch
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:18:25 +0000
+
+wacomtablet (6.5.5-0ubuntu4) resolute; urgency=medium
+
+  * No-change rebuild for Qt 6.10.2 private ABI.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 15 Feb 2026 12:56:05 +0000
+
+wacomtablet (6.5.5-0ubuntu3) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 23:20:45 +0000
+
+wacomtablet (6.5.5-0ubuntu2) resolute; urgency=medium
+
+  * Rebuild for release.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 14 Jan 2026 21:08:39 +0000
+
+wacomtablet (6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 15:10:40 +0000
+
+wacomtablet (6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:24:52 +0000
+
+wacomtablet (6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:11:00 +0000
+
+wacomtablet (6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:15:36 +0000
+
+wacomtablet (6.5.1-1ubuntu1) resolute; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Make build time tests non fatal.
+    - Do not depend on the wacaom X11 driver.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 09:44:07 +0000
+
+wacomtablet (6.5.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.5.1).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 28 Oct 2025 23:16:47 +0100
+
+wacomtablet (6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:49:56 +0000
+
+wacomtablet (6.5.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.5.0).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+  * Refresh copyright information.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 16 Oct 2025 22:01:05 +0200
+
+wacomtablet (6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+  * Refresh appstream-add-provides-modalias.patch
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:40:40 +0100
+
+wacomtablet (6.4.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Point upstream source to invent git repo.
+  * Add/update Bhushan Shah’s key in upstream keyring.
+  * New upstream release (6.4.91).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+  * Use plasma-devel@kde.org as the upstream contact.
+  * Drop Rules-Requires-Root: no, not needed anymore since trixie.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 07 Oct 2025 22:06:02 +0200
+
+wacomtablet (6.4.5-0ubuntu2) questing; urgency=medium
+
+  * No-change rebuild for Qt 6.9.2 private ABI.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 18 Sep 2025 00:16:31 +0100
+
+wacomtablet (6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:05:07 +0100
+
+wacomtablet (6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+  * Refresh appstream-add-provides-modalias.patch
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:32:39 +0100
+
+wacomtablet (6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+  * Refresh appstream-add-provides-modalias.patch
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:37:37 +0100
+
+wacomtablet (6.3.4-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add patch to avoid test failures, thanks to Santiago Vila (Closes:
+    #1102124).
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 05 Apr 2025 19:54:19 +0200
+
+wacomtablet (6.3.4-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.4).
+  * Bump Standards-Version to 4.7.2 (No changes needed).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Apr 2025 01:02:44 +0200
+
+wacomtablet (6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+  * Refresh appstream-add-provides-modalias.patch
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 09:00:09 +0100
+
+wacomtablet (6.3.3-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.3 (LP: #2103945).
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 29 Mar 2025 15:14:16 -0500
+
+wacomtablet (6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:27:07 +0000
+
+wacomtablet (6.3.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Build depend on Plasma >= 6.3.2 and KF6 >= 6.10.0
+    - Make build time tests non fatal.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 09 Mar 2025 09:08:36 +0000
+
+wacomtablet (6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+  * New upstream release (6.3.2).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 00:54:41 +0100
+
+wacomtablet (6.3.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.2)
+  * Disable appstream-add-provides-modalias.patch
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 25 Feb 2025 18:19:42 +0000
+
+wacomtablet (6.3.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.1)
+  * Refresh appstream-add-provides-modalias.patch
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Feb 2025 14:27:21 +0000
+
+wacomtablet (6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 15:00:58 +0100
+
+wacomtablet (6.3.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.0)
+  * Refresh appstream-add-provides-modalias.patch
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Feb 2025 12:59:10 +0000
+
+wacomtablet (6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.91).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:54:38 +0100
+
+wacomtablet (6.2.91-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.2.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 05 Feb 2025 21:14:15 -0600
+
+wacomtablet (6.2.91-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.91)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 23 Jan 2025 13:45:54 +0000
+
+wacomtablet (6.2.90-2ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian experimental. Remaining changes:
+    - Kubuntu Vcs and maintainer fields,
+    - Bump KF6 build deps to 6.10.0.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Jan 2025 18:45:50 +0000
+
+wacomtablet (6.2.90-2) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Add provides/modalias to AppStream metadata so Isenkram can detect
+    which hardware wacomtablet can manage and advise users of such
+    hardware to install it. (Closes: #1077365)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 20 Jan 2025 18:04:57 +0100
+
+wacomtablet (6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+  * Build with hardening=+all build hardening flag.
+  * Bump inter-plasma versioned dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 17 Jan 2025 09:23:47 +0100
+
+wacomtablet (6.2.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.90)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 08:54:03 +0000
+
+wacomtablet (6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 11:24:12 +0100
+
+wacomtablet (6.2.5-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 31 Dec 2024 19:06:23 +0000
+
+wacomtablet (6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:39:07 +0100
+
+wacomtablet (6.2.4-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.1.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 05 Dec 2024 02:26:53 -0600
+
+wacomtablet (6.2.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 26 Nov 2024 12:17:12 +0000
+
+wacomtablet (6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:37 +0100
+
+wacomtablet (6.2.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.0)
+  * New upstream release (6.2.1)
+  * New upstream release (6.2.2)
+  * New upstream release (6.2.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 20:01:03 +0000
+
+wacomtablet (6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 21:25:38 +0200
+
+wacomtablet (6.2.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+  * Update build-deps and deps with the info from cmake.
+  * Tighten inter-Plasma package dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:51 +0200
+
+wacomtablet (6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+  * Update build-deps and deps with the info from cmake.
+  * Tighten Plasma packages inter-dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:28:24 +0200
+
+wacomtablet (6.1.5-0ubuntu3) plucky; urgency=medium
+
+  * Rebuild against Qt 6.7.2 private-abi.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 17 Oct 2024 18:02:03 +0100
+
+wacomtablet (6.1.5-0ubuntu2) plucky; urgency=medium
+
+  * Rebuild against Qt 6.7.2 private-abi.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 17 Oct 2024 17:08:02 +0100
+
+wacomtablet (6.1.5-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.5)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 Sep 2024 06:02:36 +0100
+
+wacomtablet (6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Update build-deps and deps with the info from cmake.
+  * Add dependency on systemsettings, override lintian false positives.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:27 +0200
+
+wacomtablet (6.1.4-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 14 Aug 2024 21:45:02 +0100
+
+wacomtablet (6.1.3-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:22 +0200
+
+wacomtablet (6.1.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.1.0).
+  * Update d/watch as the package is now part of Plasma.
+  * Update upstream signing-key.
+  * Set the Maintainers-field to Debian Qt/KDE Maintainers and remove
+    inactive maintainers. Thank you for your work.
+  * Remove redundant patches.
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.7.0 (no changes needed).
+  * Update Homepage and Vcs-fields.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 29 Jun 2024 12:03:20 +0200
+
+wacomtablet (3.2.0-5) unstable; urgency=medium
+
+  * Team upload.
+  * Backport upstream commit 2dcb1d407d5d019802161e04760e6af41d4fabce to fix
+    the build with GCC 13; patch upstream_Add-missing-include.patch.
+    (Closes: #1037889)
+  * Update standards version to 4.6.2, no changes needed.
+  * Mark the dbus, xauth, and xvfb build dependencies as !nocheck, as they are
+    needed only during dh_auto_test.
+  * Remove inactive Uploaders.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 15 Jul 2023 07:37:39 +0200
+
+wacomtablet (3.2.0-4) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Debian Janitor ]
+  * Set debhelper-compat version in Build-Depends.
+  * Remove obsolete field Name from debian/upstream/metadata (already present in
+    machine-readable debian/copyright).
+  * Update standards version to 4.5.0, no changes needed.
+
+  [ Pino Toscano ]
+  * Set field Upstream-Contact in debian/copyright.
+  * Remove obsolete field Contact from debian/upstream/metadata (already present
+    in machine-readable debian/copyright).
+  * Bump the debhelper compatibility to 13:
+    - switch the debhelper-compat build dependency to 13
+  * Backport upstream commit 7c8e1de0c240d6c6ff1a6946d0fabd524a0e8a7e to fix
+    build with Qt 5.15; patch upstream_Fix-build-with-Qt-5.15.patch.
+    (Closes: #975152)
+  * Add Rules-Requires-Root: no.
+  * Update the references to the upstream Git repository.
+  * Bump Standards-Version to 4.5.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 22 Nov 2020 14:04:29 +0100
+
+wacomtablet (3.2.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Restore running the unit tests at build time, as autopkgtest is not a
+    replacement for this.
+  * Add the libxcb-xfixes0-dev build dependency, as apparently libxcb-xinput-dev
+    does not pull it automatically (while using its headers).
+  * Drop the 'testsuite' autopkgtest, as it does not test the installed
+    packages.
+  * Remove gbp.conf, as the packaging repository does not use git buildpackage.
+  * Do not explicitly specify --buildsystem=cmake to dh, as cmake is the only
+    build system available.
+  * Stop passing --fail-missing to dh_missing, as everything is already
+    installed in the only binary package (kde-config-tablet) of this source.
+  * Improve salsa CI configuration to run more standard checks.
+  * Stop using the non-existing ${shlibs:Recommends} substvar.
+  * Bump Standards-Version to 4.4.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 31 Dec 2019 16:41:57 +0100
+
+wacomtablet (3.2.0-2) unstable; urgency=medium
+
+  * Remove duplicate test override out of rules because
+    they are already run in autopkgtest. Replace the command
+    in the autopackage test with the one from rules to fix the
+    failing test could not connect to display error.
+  * Release to unstable.
+
+ -- Scarlett Moore <sgmoore@kde.org>  Sat, 10 Aug 2019 15:06:32 -0700
+
+wacomtablet (3.2.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update my email.
+  * Bump compat to 12.
+  * Remove spelling error patch applied upstream.
+  * Remove gcc9 ftbfs patch applied upstream.
+  * Bump standards version to 4.4.0; no changes needed.
+  * Add upstream metadata file.
+  * Release to unstable.
+
+ -- Scarlett Moore <sgmoore@kde.org>  Tue, 06 Aug 2019 15:27:11 -0700
+
+wacomtablet (3.1.1-2) unstable; urgency=medium
+
+  * Team upload, with permission from two Uploaders.
+  * Backport upstream patch to fix FTBFS with GCC 9 (closes: #925855).
+
+ -- Dmitry Shachnev <mitya57@debian.org>  Sat, 13 Jul 2019 16:51:24 +0300
+
+wacomtablet (3.1.1-1) unstable; urgency=medium
+
+  [ Scarlett Moore ]
+  * New upstream release.
+  * Update my name.
+  * Add translations and fix missing copyright.
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Update Standards-Version to 4.3.0, no changes reuiqred.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Thu, 24 Jan 2019 18:52:40 -0300
+
+wacomtablet (3.1.0-1) unstable; urgency=medium
+
+  * New upstream release. (Closes: #896819)
+  * Merge in qt5 port work I did for neon.
+    - Correct kdoctools, plasma-framework dependency naming in debian.
+    - Restore Maintainers and add myself to uploaders.
+  * Bump compat to 11.
+    - Bump debhelper requirement (>= 11).
+  * Bump Standards version 4.1.3.
+  * Update copyright file to format version 1.0.
+  * Change Priority to optional.
+  * Add hardening+=bindnow.
+  * Add extra-cmake-modules lost in merge.
+  * Fix VCS entries - moved to extras.
+  * New point release.
+  * Add new dependency for libwacom-dev and pkg-config.
+  * Use dh_missing instead of dh_install --list-missing.
+  * README no longer exists - remove install file.
+  * Fix dh_missing override to include command.
+  * Update Standards-Version to 4.1.4. No changes needed.
+  * Add missing libxcb-xinput-dev build dependency, wrap-and-sort.
+  * Add a patch to fix binary spelling error. Sent upstream.
+  * Use https in watch file uri.
+  * Add dep3 header to fix binary spelling patch.
+  * Add autopkgtest tests.
+  * Remove the test override in rules.
+  * Update gpg signing key.
+  * Add test dependencies and override to use xvfb-run dbus session so
+    the tests pass.
+  * Upload to unstable.
+
+ -- Scarlett Clark <sgclark@kde.org>  Fri, 24 Aug 2018 05:55:59 -0700
+
+wacomtablet (2.0-2) unstable; urgency=low
+
+  * Fix FTBFS due to KDE4_ENABLE_TESTS being ON since kdelibs 4.10
+    (Closes: #718122):
+    - Add xvfb, xauth and dbus-x11 as build dependencies to allow tests to run.
+    - Override dh_auto_test to start the virtual X server and the dbus session.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 20 Aug 2013 19:11:41 -0300
+
+wacomtablet (2.0-1) unstable; urgency=low
+
+  [ Michał Zając ]
+  * New upstream release
+  * Added xserver-xorg-input-wacom to Build-Depends due to upstream
+    requiring it
+  * Updated debian/patches/02_less_linkage
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Use canonical Vcs fields.
+  * Export flags to allow hardening of the binaries.
+  * Upload to unstable.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 26 Jun 2013 14:14:09 -0300
+
+wacomtablet (1.3.7-1) experimental; urgency=low
+
+  * New upstream release.
+  * Update Standards-Version to 3.9.4. No changes needed.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Tue, 13 Nov 2012 18:55:01 -0300
+
+wacomtablet (1.3.6-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Mon, 23 Jan 2012 09:49:03 -0300
+
+wacomtablet (1.3.5-1) unstable; urgency=low
+
+  * New upstream release.
+  * Change my e-mail address.
+  * Remove DM-Upload-Allowed flag. It is no longer needed.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 16 Nov 2011 19:20:26 -0300
+
+wacomtablet (1.3.3-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <perezmeyer@gmail.com>  Sun, 04 Sep 2011 17:42:41 -0300
+
+wacomtablet (1.3.2-1) unstable; urgency=low
+
+  * New upstream release.
+    - Fixes crash in the kded module when a new table is connected
+      (Closes: #628144).
+
+ -- Lisandro Damián Nicanor Pérez Meyer <perezmeyer@gmail.com>  Thu, 09 Jun 2011 10:03:49 -0300
+
+wacomtablet (1.3.1-1) unstable; urgency=low
+
+  [ Lisandro Damián Nicanor Pérez Meyer]
+  * Add myself to Uploaders.
+  * Set DM-Upload-Allowed: yes.
+  * Change the source name to follow upstream's naming.
+
+  [ Pino Toscano ]
+  * New upstream release:
+    - does not crash with Solid/KDE 4.6. (Closes: #624432)
+  * Update debian/control:
+    - bump debhelper build-dependency to 7.3.16
+    - bump pkg-kde-tools build-dependency to 0.6.2
+    - add build-dependencies: libxi-dev, libxrandr-dev
+    - update Homepage field
+    - add Vcs-Git and Vcs-Browser fields
+    - bump Standards-Version to 3.9.2, no changes required
+    - kde-config-tablet: recommend xserver-xorg-input-wacom (for `xsetwacom')
+  * Upate debian/rules:
+    - use the kde addon with `dh'
+    - update the filename of the plasma widget when calling `dh_shlibdeps'
+  * Refresh patch 02_less_linkage, and add DEP3 header to it.
+  * Update copyright.
+  * Install the upstream README among the package docs (it contains instructions
+    on how to add new device information).
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Thu, 28 Apr 2011 17:55:07 +0200
+
+kcm-tablet (1.2.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #569708). Based on the brilliant work by
+    Lisandro.
+
+ -- Sune Vuorela <debian@pusling.com>  Mon, 17 May 2010 22:40:15 +0200

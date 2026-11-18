@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+execute_before_dh_install:
+	rm -rfv debian/breeze-gtk-theme/usr/share/themes/*/gtk-2.0

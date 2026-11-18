@@ -1,0 +1,31 @@
+From: SupraLINUX Project <packages@supralinux.invalid>
+Date: Sun, 01 Nov 2026 21:30:00 +0000
+Subject: [PATCH] Increase the welcome window height and minimum size
+
+The default 36x32 grid-unit window is too short for the Spanish welcome
+text at 125% scaling and the first page can clip its content. Make the
+window slightly taller and keep the width increase small.
+
+Forwarded: not-needed
+Last-Update: 2026-11-01
+---
+ src/qml/Main.qml | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+
+--- a/src/qml/Main.qml
++++ b/src/qml/Main.qml
+@@ -17,10 +17,10 @@
+ Kirigami.ApplicationWindow {
+     id: app
+ 
+-    minimumWidth: Kirigami.Units.gridUnit * 20
+-    minimumHeight: Kirigami.Units.gridUnit * 30
+-    width: Kirigami.Units.gridUnit * 36
+-    height: Kirigami.Units.gridUnit * 32
++    minimumWidth: Kirigami.Units.gridUnit * 34
++    minimumHeight: Kirigami.Units.gridUnit * 36
++    width: Kirigami.Units.gridUnit * 40
++    height: Kirigami.Units.gridUnit * 36
+ 
+     KConfig.WindowStateSaver {
+         configGroupName: "MainWindow"

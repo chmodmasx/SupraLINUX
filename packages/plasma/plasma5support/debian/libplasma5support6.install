@@ -1,0 +1,3 @@
+usr/lib/*/libPlasma5Support.so.6
+usr/lib/*/libPlasma5Support.so.6.*
+usr/lib/*/qt6/plugins/plasma5support/dataengine/plasma_engine_*.so

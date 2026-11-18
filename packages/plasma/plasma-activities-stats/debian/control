@@ -1,0 +1,52 @@
+Source: plasma-activities-stats
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.22.0~),
+               libboost-dev (>= 1.49~),
+               libkf6config-dev (>= 6.22.0~),
+               libplasmaactivities-dev (>= 6.6.4~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0+dfsg~),
+               qt6-tools-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/plasma-activities-stats
+Rules-Requires-Root: no
+
+Package: libplasmaactivitiesstats-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libplasmaactivitiesstats1 (= ${binary:Version}),
+         qt6-base-dev (>= 6.10.0~),
+         ${misc:Depends}
+Recommends: libplasmaactivitiesstats-doc (= ${source:Version})
+Description: development files for plasma-activities-stats
+ A library for accessing the usage data collected by the activities system.
+ .
+ Contains development files for plasma-activities-stats.
+
+Package: libplasmaactivitiesstats-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: usage data collected by the activities system (documentation)
+ A library for accessing the usage data collected by the activities
+ system.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libplasmaactivitiesstats1
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: usage data collected by the activities system
+ A library for accessing the usage data collected by the activities
+ system.

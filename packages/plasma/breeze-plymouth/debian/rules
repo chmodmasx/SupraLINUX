@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all reproducible=+fixfilepath
+export DEB_CFLAGS_MAINT_APPEND  = -Werror -Wno-error=unused-result -Wno-error=sign-compare
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,-Bsymbolic-functions
+
+%:
+	dh $@

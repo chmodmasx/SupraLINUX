@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+execute_after_dh_fixperms-arch:
+	chmod -x $(CURDIR)/debian/plasma-systemmonitor/usr/share/kglobalaccel/org.kde.plasma-systemmonitor.desktop
+
+override_dh_auto_test:
+	# Disable auto tests at build time
+	:

@@ -1,0 +1,4 @@
+usr/include/PlasmaActivitiesStats/
+usr/lib/*/cmake/PlasmaActivitiesStats/
+usr/lib/*/libPlasmaActivitiesStats.so
+usr/lib/*/pkgconfig/PlasmaActivitiesStats.pc

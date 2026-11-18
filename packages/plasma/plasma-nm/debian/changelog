@@ -1,0 +1,1144 @@
+plasma-nm (4:6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 plasma-nm for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+  * Drop the provider test patch; unit tests are disabled in this build.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+plasma-nm (4:6.6.6-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.6) (LP: #2159979)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 13 Jul 2026 10:54:32 +0100
+
+plasma-nm (4:6.6.5-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream release (6.6.5) (LP: #2152276)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 May 2026 10:28:04 +0100
+
+plasma-nm (4:6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:10:53 +0100
+
+plasma-nm (4:6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:44:22 +0000
+
+plasma-nm (4:6.6.2-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for libplasma7.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 07 Mar 2026 06:28:18 +0000
+
+plasma-nm (4:6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:24:27 +0000
+
+plasma-nm (4:6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:16:15 +0000
+
+plasma-nm (4:6.5.5-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 23:08:00 +0000
+
+plasma-nm (4:6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 15:07:22 +0000
+
+plasma-nm (4:6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:20:44 +0000
+
+plasma-nm (4:6.5.3-0ubuntu2) resolute; urgency=medium
+
+  * Disable build time tests.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 23:04:42 +0000
+
+plasma-nm (4:6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:09:23 +0000
+
+plasma-nm (4:6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:14:04 +0000
+
+plasma-nm (4:6.5.1-0ubuntu2) resolute; urgency=medium
+
+  * Add qrca to recommends as per KDE upstream.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 03 Nov 2025 18:49:05 +0000
+
+plasma-nm (4:6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:48:23 +0000
+
+plasma-nm (4:6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:39:06 +0100
+
+plasma-nm (4:6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:03:42 +0100
+
+plasma-nm (4:6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:30:51 +0100
+
+plasma-nm (4:6.3.5-0ubuntu2) questing; urgency=medium
+
+  * Sync changes from Debian 4:6.3.4-1 and 4:6.3.4-2
+    - Skip providers test to fix FTBFS with mobile-broadband-provider-info
+      20250613 targeted at trixie. (Closes: #1108424)
+    - Bump Standards-Version to 4.7.2 (No changes needed).
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 05 Jul 2025 11:31:06 +0100
+
+plasma-nm (4:6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:35:45 +0100
+
+plasma-nm (4:6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 08:58:05 +0100
+
+plasma-nm (4:6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:23:52 +0000
+
+plasma-nm (4:6.3.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 09 Mar 2025 10:03:28 +0000
+
+plasma-nm (4:6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.3.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 00:54:15 +0100
+
+plasma-nm (4:6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 15:00:37 +0100
+
+plasma-nm (4:6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.91).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:54:10 +0100
+
+plasma-nm (4:6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 11 Jan 2025 23:38:01 +0100
+
+plasma-nm (4:6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 11:23:41 +0100
+
+plasma-nm (4:6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:38:26 +0100
+
+plasma-nm (4:6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:35 +0100
+
+plasma-nm (4:6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 21:25:13 +0200
+
+plasma-nm (4:6.2.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh lintian overrides.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:50 +0200
+
+plasma-nm (4:6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+  * Update build-deps and deps with the info from cmake.
+  * Fix Recommends on kwallet6.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:28:17 +0200
+
+plasma-nm (4:6.1.4-2) experimental; urgency=medium
+
+  * Merge changes from 4:6.1.3-2 dropped from the previous upload.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 16 Aug 2024 16:28:34 +0200
+
+plasma-nm (4:6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:26 +0200
+
+plasma-nm (4:6.1.3-2) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Limit the build of the OpenConnect VPN plugin to architectures where
+    Qt WebEngine is available.
+
+ -- Patrick Franz <deltaone@debian.org>  Mon, 29 Jul 2024 15:43:08 +0900
+
+plasma-nm (4:6.1.3-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+  * Update build-deps and deps with the info from cmake.
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:21 +0200
+
+plasma-nm (4:6.1.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.1.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update list of installed files and remove binary package kde-config-
+    mobile-networking as its functionality has been moved to plasma-
+    mobile.
+  * Update d/copyright.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 26 Jun 2024 01:00:53 +0200
+
+plasma-nm (4:5.27.11-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * New upstream release (5.27.11).
+  * Remove inactive uploaders, thanks for your work.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 19 May 2024 12:17:40 +0200
+
+plasma-nm (4:5.27.10-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.10).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 11 Jan 2024 23:16:11 +0100
+
+plasma-nm (4:5.27.9-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.9).
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 27 Oct 2023 21:52:23 +0200
+
+plasma-nm (4:5.27.8-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.8).
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 13 Sep 2023 20:48:01 +0200
+
+plasma-nm (4:5.27.7-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.7).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Aug 2023 18:50:03 +0200
+
+plasma-nm (4:5.27.5-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 27 May 2023 18:23:43 +0200
+
+plasma-nm (4:5.27.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.5).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 09 May 2023 23:27:13 +0200
+
+plasma-nm (4:5.27.3-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.3).
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 22 Mar 2023 23:12:51 +0100
+
+plasma-nm (4:5.27.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.1).
+  * New upstream release (5.27.2).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 28 Feb 2023 14:59:56 +0100
+
+plasma-nm (4:5.27.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 18 Feb 2023 17:08:40 +0100
+
+plasma-nm (4:5.26.90-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.90).
+  * Bump Standards-Version to 4.6.2, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 23 Jan 2023 21:50:55 +0100
+
+plasma-nm (4:5.26.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 07 Jan 2023 00:21:02 +0100
+
+plasma-nm (4:5.26.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 29 Nov 2022 16:01:22 +0100
+
+plasma-nm (4:5.26.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.3).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 08 Nov 2022 15:43:44 +0100
+
+plasma-nm (4:5.26.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.1).
+  * New upstream release (5.26.2).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 27 Oct 2022 23:31:06 +0200
+
+plasma-nm (4:5.26.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.0).
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 11 Oct 2022 15:44:18 +0200
+
+plasma-nm (4:5.25.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.90).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 25 Sep 2022 00:14:22 +0200
+
+plasma-nm (4:5.25.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 09 Sep 2022 23:21:15 +0200
+
+plasma-nm (4:5.25.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 02 Aug 2022 17:31:45 +0200
+
+plasma-nm (4:5.25.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.2).
+  * Drop unused build dependency on libkf5iconthemes-dev.
+  * Review copyright information.
+  * Add a Recommends on systemsettings used to invoke KCM.
+  * New upstream release (5.25.3).
+  * Release to unstable
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 17 Jul 2022 15:27:05 +0200
+
+plasma-nm (4:5.25.1-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.25.1).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 21 Jun 2022 21:44:11 +0200
+
+plasma-nm (4:5.25.0-1) experimental; urgency=medium
+
+  * New upstream release (5.25.0).
+  * Bump Standards-Version to 4.6.1, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 14 Jun 2022 21:26:26 +0200
+
+plasma-nm (4:5.24.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.90).
+  * Update the list of installed files from build logs.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 20 May 2022 11:44:48 +0200
+
+plasma-nm (4:5.24.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 12 May 2022 21:39:38 +0200
+
+plasma-nm (4:5.24.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 30 Mar 2022 13:45:57 +0200
+
+plasma-nm (4:5.24.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.3).
+  * Added myself to the uploaders.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 10 Mar 2022 07:47:37 +0100
+
+plasma-nm (4:5.24.2-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.24.2).
+  * Bump Standards-Version to 4.6.0 (no changes needed).
+  * Re-export signing key without extra signatures.
+  * Update list of installed files.
+  * Update d/copyright.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 26 Feb 2022 21:59:34 +0100
+
+plasma-nm (4:5.23.5-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Update list of installed files (Closes: #1005668).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 22 Feb 2022 02:04:58 +0100
+
+plasma-nm (4:5.23.5-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.23.5).
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 07 Jan 2022 15:44:45 +0100
+
+plasma-nm (4:5.23.4-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.4).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 02 Dec 2021 20:25:23 +0100
+
+plasma-nm (4:5.23.3-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.3).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 10 Nov 2021 08:41:47 +0900
+
+plasma-nm (4:5.23.2-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Update upstream signing-key.
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.1).
+  * New upstream release (5.23.2).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Nov 2021 22:21:03 +0900
+
+plasma-nm (4:5.23.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.0).
+  * Update list of installed files.
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 14 Oct 2021 20:13:15 +0900
+
+plasma-nm (4:5.21.5-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Release to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 17 Aug 2021 03:25:01 +0200
+
+plasma-nm (4:5.21.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.5).
+
+ -- Patrick Franz <patfra71@gmail.com>  Fri, 07 May 2021 13:55:25 +0200
+
+plasma-nm (4:5.21.4-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.4).
+
+ -- Patrick Franz <patfra71@gmail.com>  Tue, 06 Apr 2021 17:48:03 +0200
+
+plasma-nm (4:5.21.3-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.3).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Mar 2021 05:49:42 +0900
+
+plasma-nm (4:5.21.2-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.2).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Mar 2021 05:33:50 +0900
+
+plasma-nm (4:5.21.1-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.1).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 24 Feb 2021 14:36:40 +0900
+
+plasma-nm (4:5.21.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.0).
+  * Update build-deps and deps with the info from cmake.
+
+  [ Debian Qt/KDE Maintainers ]
+  * Update list of installed files.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Feb 2021 05:42:27 +0900
+
+plasma-nm (4:5.20.5-3) unstable; urgency=medium
+
+  * Team upload.
+  * Slightly improve the descriptions.
+  * Remove Multi-Arch: same from plasma-nm: it does not make sense to let it
+    be installed for two architectures at the same time.
+  * Remove leading '/' in install files.
+  * Add more network-manager suggests to plasma-nm: network-manager-fortisslvpn,
+    network-manager-iodine, network-manager-l2tp, network-manager-openconnect,
+    network-manager-ssh, and network-manager-strongswan.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 18 Jan 2021 23:44:51 +0100
+
+plasma-nm (4:5.20.5-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Jonah Brüchert ]
+  * Enable mobile networking kcm and split it into a new
+    kde-config-mobile-networking package. Since the translations
+    of the mobile kcm were already installed earlier, the package
+    breaks / replaces older versions of plasma-nm.
+
+  [ Sandro Knauß ]
+  * Trim trailing whitespace.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata (already
+    present in machine-readable debian/copyright).
+  * Bump Standards-Version (No changes needed).
+  * Add multiarch metadata for plasma-nm.
+
+ -- Sandro Knauß <hefee@debian.org>  Wed, 13 Jan 2021 00:27:34 +0100
+
+plasma-nm (4:5.20.5-1) unstable; urgency=medium
+
+  * New upstream release (5.20.5).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 06 Jan 2021 23:50:53 +0900
+
+plasma-nm (4:5.20.4-3) unstable; urgency=medium
+
+  * Runtime depend on the qml modules qml-module-org-kde-kirigami2
+    and qml-module-org-kde-prison instead of their library packages,
+    as we have qml imports in the code for these
+    (Thanks to Rik Mills)
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 28 Dec 2020 09:41:22 +0900
+
+plasma-nm (4:5.20.4-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 22 Dec 2020 11:04:38 +0900
+
+plasma-nm (4:5.20.4-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.20.4).
+  * Update build-deps with the info from cmake.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 09 Dec 2020 14:17:33 +0900
+
+plasma-nm (4:5.19.5-3) unstable; urgency=medium
+
+  [ Scarlett Moore ]
+  * Fix renamed lintian tag ldconfig trigger.
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 06 Nov 2020 08:37:24 +0900
+
+plasma-nm (4:5.19.5-2) experimental; urgency=medium
+
+  * Rebuild for Qt 5.15
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 02 Nov 2020 09:27:42 +0900
+
+plasma-nm (4:5.19.5-1) experimental; urgency=medium
+
+  * New upstream release (5.19.5).
+  * Add Patrick and myself to uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 19 Oct 2020 17:37:34 +0900
+
+plasma-nm (4:5.19.4-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Scarlett Moore ]
+  * Bump compat level to 13.
+  * Add Rules-Requires-Root field to control.
+  * New upstream release (5.18.5).
+  * Update build-deps and deps with the info from cmake.
+  * Delete not needed Breaks/Confilcts.
+  * Add myself to Uploaders.
+  * Remove not needed injection of linker flags.
+  * Update Homepage link to point to new invent.kde.org
+  * Update field Source in debian/copyright to invent.kde.org move.
+  * Set/Update field Upstream-Contact in debian/copyright.
+  * Update build-deps and deps with the info from cmake.
+
+  [ Norbert Preining ]
+  * New upstream release (5.19.4).
+  * Remove Maximiliano from Uploaders as requested on IRC.
+  * Change maintainer in d/control to Debian Qt/KDE Maintainers.
+  * Update Qt build-deps with the info from cmake.
+  * Add runtime dependencies based on the info from cmake.
+  * Enable hardening for build.
+  * Update upstream metadata.
+  * Use new lintian override tags.
+  * Override lintian warning on large /usr/share.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 30 Aug 2020 00:28:33 +0200
+
+plasma-nm (4:5.17.5-2) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+  * Bump Standards-Version to 4.5.0, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 14 Feb 2020 21:17:20 +0100
+
+plasma-nm (4:5.17.5-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.16.5).
+  * Update build-deps and deps with the info from cmake
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Update the patches:
+    - upstream_Add-some-missing-includes.patch: drop, backported from upstream
+  * Update the build dependencies according to the upstream build system:
+    - bump KF packages to 5.62.0
+    - add libkf5prison-dev
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+
+ -- Pino Toscano <pino@debian.org>  Fri, 17 Jan 2020 09:15:30 +0100
+
+plasma-nm (4:5.14.5-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Scarlett Gately Moore ]
+  * Make plasma-nm recommend libkf5wallet-bin as wifi password storage is not
+    working unless kwallet is installed (and enabled). Possibly fixes #863973.
+
+  [ Pino Toscano ]
+  * Remove unused build dependencies: kinit-dev, libkf5itemmodels-dev,
+    libkf5itemviews-dev, libkf5kdelibs4support-dev, libkf5xmlgui-dev, and
+    qttools5-dev.
+  * Bump Standards-Version to 4.4.1, no changes required.
+  * Drop the migration from plasma-nm-dbg, no more needed after two Debian
+    stable releases.
+  * Use https for Format in copyright.
+  * Backport upstream commit a1c99fc7cbba1a0e1b1d2fce4c8b6ca24a5c7b63 to fix
+    build with newer KF; patch upstream_Add-some-missing-includes.patch.
+  * Update lintian overrides.
+
+  [ Maximiliano Curia ]
+  * Salsa CI automatic initialization by Tuco
+
+ -- Pino Toscano <pino@debian.org>  Sun, 13 Oct 2019 09:28:56 +0200
+
+plasma-nm (4:5.14.5-1) unstable; urgency=medium
+
+  * New upstream release (5.14.5).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 24 Jan 2019 09:26:07 -0300
+
+plasma-nm (4:5.14.3-1) unstable; urgency=medium
+
+  * Update upsteam signing-key
+  * New upstream release (5.14.3).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 23 Nov 2018 08:51:05 -0300
+
+plasma-nm (4:5.13.5-1) unstable; urgency=medium
+
+  * New upstream release (5.13.5).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 06 Sep 2018 20:40:42 +0200
+
+plasma-nm (4:5.13.4-1) unstable; urgency=medium
+
+  * New upstream release (5.13.4).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 19 Aug 2018 23:18:17 +0200
+
+plasma-nm (4:5.13.1-1) unstable; urgency=medium
+
+  * New upstream release (5.13.1).
+  * Drop upstream patch
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 26 Jun 2018 13:43:19 +0200
+
+plasma-nm (4:5.12.3-2) unstable; urgency=medium
+
+  * New revision
+  * Upstream patch: Require NM 1.0.0 and newer
+    Thanks to Michael Biebl for the report (Closes: 895438)
+  * Bump build dep to libnm > 1.0.0~
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 11 Apr 2018 20:12:15 +0200
+
+plasma-nm (4:5.12.3-1) sid; urgency=medium
+
+  * New upstream release (5.12.2).
+  * New upstream release (5.12.3).
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 07 Mar 2018 19:14:11 +0100
+
+plasma-nm (4:5.12.1-1) sid; urgency=medium
+
+  * Use the salsa canonical urls
+  * New upstream release (5.12.1).
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 20 Feb 2018 22:09:02 +0100
+
+plasma-nm (4:5.12.0-2) sid; urgency=medium
+
+  * New revision
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 12 Feb 2018 16:03:50 +0100
+
+plasma-nm (4:5.12.0-1) experimental; urgency=medium
+
+  * Bump debhelper build-dep and compat to 11.
+  * Build without build_stamp
+  * Add link options as-needed
+  * Add Bhushan Shah upstream signing key
+  * New upstream release (5.12.0).
+  * Bump Standards-Version to 4.1.3.
+  * Update build-deps and deps with the info from cmake
+  * Bump extra-cmake-modules build depends version
+  * Bump libkf5itemmodels-dev build depends version
+  * Use https uri for uscan
+  * Drop unused lintian override
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 08 Feb 2018 15:21:02 +0100
+
+plasma-nm (4:5.11.4-1) experimental; urgency=medium
+
+  * New upstream release (5.11.4).
+  * Bump Standards-Version to 4.1.2.
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jan 2018 16:49:14 -0300
+
+plasma-nm (4:5.10.5-2) sid; urgency=medium
+
+  * New revision
+  * Bump Standards-Version to 4.1.0.
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 03 Sep 2017 09:55:42 +0200
+
+plasma-nm (4:5.10.5-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.10.3).
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.0.0.
+  * Update upstream metadata
+  * New upstream release (5.10.4).
+  * Update build-deps and deps with the info from cmake
+  * New upstream release (5.10.5).
+  * Release to experimental
+
+  [ Jonathan Riddell ]
+  * update watch file to version=4 with pgp signature checking
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 28 Aug 2017 15:28:45 +0200
+
+plasma-nm (4:5.8.6-1) unstable; urgency=medium
+
+  * New upstream release (5.8.6)
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 16 Mar 2017 14:15:39 +0100
+
+plasma-nm (4:5.8.5-1) experimental; urgency=medium
+
+  * New upstream release (5.8.5).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 30 Dec 2016 18:46:21 +0100
+
+plasma-nm (4:5.8.4-1) unstable; urgency=medium
+
+  * New upstream release (5.8.4)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 Nov 2016 18:38:04 +0100
+
+plasma-nm (4:5.8.2-1) unstable; urgency=medium
+
+  * New upstream release (5.8.2)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 19 Oct 2016 15:23:42 +0200
+
+plasma-nm (4:5.8.1-1) unstable; urgency=medium
+
+  * Update install files
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 16 Oct 2016 22:59:23 +0200
+
+plasma-nm (4:5.8.0-1) unstable; urgency=medium
+
+  * New upstream release (5.8.0)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 07 Oct 2016 14:05:49 +0200
+
+plasma-nm (4:5.7.4-1) unstable; urgency=medium
+
+  * New upstream release (5.7.4)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 26 Aug 2016 15:05:50 +0200
+
+plasma-nm (4:5.7.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 09 Jul 2016 22:41:11 +0200
+
+plasma-nm (4:5.6.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 22 Jun 2016 21:48:30 +0200
+
+plasma-nm (4:5.6.4-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 31 May 2016 12:57:53 +0200
+
+plasma-nm (4:5.6.4-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * uscan no longer supports this kind of watch files.
+  * New upstream release (5.5.5).
+  * Force installing in debian/tmp
+  * Automatic update with ddeb_migration3.py
+  * Add upstream metadata (DEP-12)
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Bump network manager build dependency.
+    Thanks to Martin Steigerwald for noticing this (Closes: 824531)
+  * Add new lintian-override for the internal lib
+
+  [ Automatic packaging ]
+  * Bump Standards-Version to 3.9.8
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 28 May 2016 02:26:19 +0200
+
+plasma-nm (4:5.5.4-1) experimental; urgency=medium
+
+  * New upstream release (5.5.0).
+  * New upstream release (5.5.1).
+  * New upstream release (5.5.2).
+  * New upstream release (5.5.3).
+  * New upstream release (5.5.4).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 27 Jan 2016 16:49:03 +0100
+
+plasma-nm (4:5.4.3-1) unstable; urgency=medium
+
+  * New upstream release (5.4.3).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Dec 2015 11:45:54 +0100
+
+plasma-nm (4:5.4.2-1) unstable; urgency=medium
+
+  * New upstream release (5.4.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 06 Oct 2015 07:52:12 +0200
+
+plasma-nm (4:5.4.1-1) unstable; urgency=medium
+
+  * New upstream release (5.4.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 11 Sep 2015 18:45:21 +0200
+
+plasma-nm (4:5.4.0-1) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * Make the source as linux-any, as NetworkManager exists only on Linux.
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.4.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 03 Sep 2015 18:39:14 +0200
+
+plasma-nm (4:5.3.2-1) unstable; urgency=medium
+
+  * New upstream release (5.3.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 23:30:14 +0200
+
+plasma-nm (4:5.3.1-0ubuntu1) wily; urgency=medium
+
+  [ Jonathan Riddell ]
+  * Plasma 5.3 beta
+  * new upstream release
+
+  [ Scarlett Clark ]
+  * Vivid backport
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 05 Jun 2015 02:41:20 +0200
+
+plasma-nm (4:5.3.1-1) unstable; urgency=medium
+
+  * New upstream release (5.3.0).
+  * Remove upstream patch:
+    upstream_fix_newmodemmanager_framework_integration.patch
+  * New upstream release (5.3.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 11:09:11 +0200
+
+plasma-nm (4:5.2.2-2) experimental; urgency=medium
+
+  * Merge with kubuntu changes.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 23 Apr 2015 15:29:20 +0200
+
+plasma-nm (4:5.2.2-1) experimental; urgency=medium
+
+  * New upstream release (5.2.1).
+  * New upstream release (5.2.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 23:17:44 +0100
+
+plasma-nm (4:5.2.2-0ubuntu2) vivid; urgency=medium
+
+  * Add upstream patch upstream_fix_newmodemmanager_framework_integration
+  * Fix series file
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 10 Apr 2015 14:20:06 -0700
+
+plasma-nm (4:5.2.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 24 Mar 2015 07:43:02 -0700
+
+plasma-nm (4:5.2.1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:47:28 -0800
+
+plasma-nm (4:5.2.0-1) experimental; urgency=medium
+
+  * Prepare initial Debian release.
+  * Add myself as Uploader.
+  * Update build dependencies to build against experimental and to
+    follow cmake.
+  * Update copyright information.
+  * Update watch file.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 13 Feb 2015 13:58:53 +0100
+
+plasma-nm (4:5.2.0-0ubuntu2) vivid; urgency=medium
+
+  * Build with networkmanager-qt 5.6.0-0ubuntu2 for new symbols
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 28 Jan 2015 13:45:34 +0100
+
+plasma-nm (4:5.2.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Harald Sitter <sitter@kde.org>  Tue, 27 Jan 2015 14:59:27 +0100
+
+plasma-nm (4:5.1.95-0ubuntu1) vivid; urgency=medium
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Jan 2015 01:36:54 +0100
+
+plasma-nm (4:5.1.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 15 Dec 2014 13:27:24 +0100
+
+plasma-nm (4:5.1.1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release.
+
+  [ Harald Sitter ]
+  * Drop ugly workaround to make a desktop file exectuable
+    + This either should be done upstream or be lintian overridden (former
+      seems more suitable). Upstream has been poked on IRC.
+  * Add lintian overrides
+    + missing manpages: we don't care
+    + package name doesn't match soname: we don't care for internal libraries
+    + shlib-without-versioned-soname: we don't care for internal libraries
+  * Fix copyright short license for LGPL-KDEeV
+
+  [ Scarlett Clark ]
+  * Fix copyright short licence for LGPL-2.1-KDEeV
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 10 Nov 2014 19:52:08 +0100
+
+plasma-nm (4:5.0.2-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+  * Remove no-human-maintainers lintian-override per ScottK.
+
+  [ Harald Sitter ]
+  * switch to new pkg-kde-tools
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 18 Sep 2014 07:32:02 -0700
+
+plasma-nm (4:5.0.0a-0ubuntu1) utopic; urgency=medium
+
+  [ Jonathan Riddell ]
+  * New upstream release
+  * Add epoch to match the rest of Plasma
+
+  [ Scarlett Clark ]
+  * Add Replaces: plasma-nm-data to control to resolve file conflict on install.
+  * Update watch to http://download.kde.org
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 10 Jul 2014 21:32:48 +0200
+
+plasma-nm (4.98.0-0ubuntu1) utopic; urgency=medium
+
+  * New upstream RC release
+  * Upstream now releasing along with Plasma 5 RC so new version number
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 07 Jul 2014 14:48:54 +0200
+
+plasma-nm (1.0.0~git20140614-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * Initial release.
+  * Fix depends
+  * Change section and re-version
+  * Fix build depend
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Thu, 12 Jun 2014 10:24:08 +0100

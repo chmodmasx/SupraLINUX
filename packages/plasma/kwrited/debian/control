@@ -1,0 +1,30 @@
+Source: kwrited
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6pty-dev (>= 6.22.0~),
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/kwrited
+Rules-Requires-Root: no
+
+Package: kwrited
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Read and write console output to X
+ Kwrited captures console output (e.g. broadcast messages) and prints
+ it in a X window.
+ .
+ This package is part of the KDE base workspace module.

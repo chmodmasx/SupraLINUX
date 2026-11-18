@@ -1,0 +1,57 @@
+Source: drkonqi
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6crash-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6idletime-dev (>= 6.22.0~),
+               libkf6jobwidgets-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6service-dev (>= 6.22.0~),
+               libkf6statusnotifieritem-dev (>= 6.22.0~),
+               libkf6syntaxhighlighting-dev (>= 6.22.0~),
+               libkf6wallet-dev (>= 6.22.0~),
+               libkf6widgetsaddons-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libpolkit-qt6-1-dev,
+               libsystemd-dev [linux-any],
+               pkgconf,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               zlib1g-dev
+Standards-Version: 4.7.2
+Homepage: https://invent.kde.org/plasma/drkonqi
+
+Package: drkonqi
+Architecture: any
+Depends: elfutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-kitemmodels,
+         qml6-module-org-kde-syntaxhighlighting,
+         systemd-coredump [linux-any],
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: python3-psutil,
+            python3-sentry-sdk
+Description: Crash handler for Qt applications
+ Drkonqi shows a dialog for dealing with application crashes.
+ .
+ Drkonqi also doesn't technically require a process to actually crash, you
+ can simply run it manually on any old pid. Do note that in most cases you
+ only need to define the pid, however not giving certain cmdline options can
+ change behavior somewhat drastically (e.g. kdeinit vs. notkdeinit behaves
+ radically different as far as process name detection goes) . Drkonqi has a
+ number of backends that may be used. Backends are stacked by order of
+ preference, backends in the directory of the binary are most preferred.
+ This means that you can dump debuggers/internal/ into your build's bin/
+ directory and override for example gdb. This essentially allows you to
+ replace the gdb debugger with a cat of a fixture file to not have to trace
+ live processes at all.

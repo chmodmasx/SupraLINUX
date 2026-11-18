@@ -1,0 +1,63 @@
+Source: wacomtablet
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               dbus <!nocheck>,
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6doctools-dev (>= 6.22.0~),
+               libkf6globalaccel-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6widgetsaddons-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libkf6xmlgui-dev (>= 6.22.0~),
+               libplasma-dev (>= 6.6.4~),
+               libplasma5support-dev (>= 4:6.6.4~),
+               libwacom-dev,
+               libx11-dev,
+               libxcb-xfixes0-dev,
+               libxcb-xinput-dev,
+               libxi-dev,
+               libxkbcommon-dev,
+               libxrandr-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-base-private-dev,
+               qt6-declarative-dev (>= 6.10.0~),
+               xauth <!nocheck>,
+               xserver-xorg-input-wacom,
+               xvfb <!nocheck>
+Standards-Version: 4.7.2
+Homepage: https://invent.kde.org/plasma/wacomtablet
+
+Package: kde-config-tablet
+Architecture: any
+Depends: plasma-desktoptheme,
+         qml6-module-org-kde-config,
+         qml6-module-org-kde-kcmutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-ksvg,
+         qml6-module-qtquick,
+         qml6-module-qtquick-layouts,
+         systemsettings,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: implements a KDE configuration GUI for the Wacom drivers
+ KDE Wacom tablet KCModule
+ .
+ This module implements a GUI for the Wacom Linux Drivers and extends it
+ with profile support to handle different button / pen layouts per profile.
+ .
+ For hardware support have a look at http://www.linuxwacom.sourceforge.net
+ .
+ All tablets can be set up as long as they are found via xorg.conf or HAL
+ configuration.

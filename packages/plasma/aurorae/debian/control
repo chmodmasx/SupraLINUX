@@ -1,0 +1,32 @@
+Source: aurorae
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               libkdecorations3-dev (>= 4:6.6.4~),
+               libkf6colorscheme-dev (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6newstuff-dev (>= 6.22.0~),
+               libkf6package-dev (>= 6.22.0~),
+               libkf6svg-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               pkgconf,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qt6-tools-dev (>= 6.10.0~)
+Standards-Version: 4.7.2
+Homepage: https://invent.kde.org/plasma/aurorae
+
+Package: kwin-style-aurorae
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: KWin Aurorae decoration style engine
+ Aurorae is a themeable window decoration for KWin.
+ .
+ This package contains the KWin decoration and settings modules.

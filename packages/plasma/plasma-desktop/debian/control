@@ -1,0 +1,240 @@
+Source: plasma-desktop
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               kded6-dev (>= 6.22.0~),
+               kscreenlocker-dev (>= 6.6.5~),
+               kwin-dev (>= 4:6.6.6~),
+               libaccounts-qt6-dev (>= 1.13~),
+               libcanberra-dev,
+               libfontconfig-dev,
+               libfreetype-dev,
+               libglib2.0-dev,
+               libibus-1.0-dev (>= 1.5.0~),
+               libicu-dev,
+               libkf5runner-dev,
+               libkf6attica-dev (>= 6.22.0~),
+               libkf6auth-dev (>= 6.22.0~),
+               libkf6baloo-dev (>= 6.22.0~),
+               libkf6codecs-dev (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6crash-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6doctools-dev (>= 6.22.0~),
+               libkf6globalaccel-dev (>= 6.22.0~),
+               libkf6guiaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6iconthemes-dev (>= 6.22.0~),
+               libkf6itemmodels-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6newstuff-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6notifyconfig-dev (>= 6.22.0~),
+               libkf6package-dev (>= 6.22.0~),
+               libkf6runner-dev (>= 6.22.0~),
+               libkf6sonnet-dev (>= 6.22.0~),
+               libkf6svg-dev (>= 6.22.0~),
+               libkf6widgetsaddons-dev (>= 6.22.0~),
+               libkf6xmlgui-dev (>= 6.22.0~),
+               libkirigami-dev (>= 6.22.0~),
+               libksysguard-dev (>= 4:6.6.5~),
+               libpackagekitqt6-dev,
+               libplasma-dev (>= 6.6.6~),
+               libplasma5support-dev (>= 4:6.6.4~),
+               libplasmaactivities-dev (>= 6.6.4~),
+               libplasmaactivitiesstats-dev (>= 6.6.4~),
+               libscim-dev,
+               libsdl2-dev (>= 2.0.16~),
+               libudev-dev,
+               libwayland-dev (>= 1.22~),
+               libx11-dev,
+               libx11-xcb-dev,
+               libxcb-image0-dev,
+               libxcb-keysyms1-dev,
+               libxcb-record0-dev,
+               libxcb-shm0-dev,
+               libxcb-util-dev,
+               libxcb-xinput-dev,
+               libxcb-xkb-dev,
+               libxcb1-dev,
+               libxft-dev,
+               libxkbregistry-dev,
+               pkgconf,
+               plasma-workspace-dev (>= 4:6.6.6~),
+               qt6-5compat-dev (>= 6.10.0~),
+               qt6-base-dev (>= 6.10.0+dfsg~),
+               qt6-base-private-dev,
+               qt6-declarative-dev (>= 6.10.0+dfsg~),
+               qt6-shadertools-dev (>= 6.10.0~),
+               qt6-svg-dev (>= 6.10.0~),
+               qt6-wayland-dev (>= 6.10.0~),
+               wayland-protocols (>= 1.44~),
+               xdg-user-dirs,
+               xserver-xorg-dev,
+               xserver-xorg-input-libinput-dev
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/plasma-desktop
+Rules-Requires-Root: no
+
+Package: plasma-desktop
+Architecture: any
+Depends: accountsservice,
+         breeze (>= 4:6.2.90~),
+         kactivitymanagerd (>= 6.1.0~),
+         kde-cli-tools (>= 4:6.1.0~),
+         kded6,
+         kio6,
+         layer-shell-qt (>= 6.1.0~),
+         ocean-sound-theme (>= 6.1.0~),
+         oxygen-sounds (>= 4:6.1.0~),
+         plasma-desktop-data (= ${source:Version}),
+         plasma-desktoptheme,
+         plasma-integration (>= 6.1.0~),
+         plasma-workspace (>= 4:6.6.00~),
+         polkit-kde-agent-1 (>= 4:6.1.0~),
+         qml6-module-org-kde-activities,
+         qml6-module-org-kde-baloo,
+         qml6-module-org-kde-breeze,
+         qml6-module-org-kde-config,
+         qml6-module-org-kde-coreaddons,
+         qml6-module-org-kde-desktop,
+         qml6-module-org-kde-draganddrop,
+         qml6-module-org-kde-graphicaleffects,
+         qml6-module-org-kde-iconthemes,
+         qml6-module-org-kde-kcmutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-kirigamiaddons-components,
+         qml6-module-org-kde-kirigamiaddons-delegates,
+         qml6-module-org-kde-kirigamiaddons-tableview,
+         qml6-module-org-kde-kitemmodels,
+         qml6-module-org-kde-kquickcontrols,
+         qml6-module-org-kde-kquickcontrolsaddons,
+         qml6-module-org-kde-ksvg,
+         qml6-module-org-kde-kwindowsystem,
+         qml6-module-org-kde-newstuff,
+         qml6-module-org-kde-pipewire,
+         qml6-module-qt-labs-platform,
+         qml6-module-qt5compat-graphicaleffects,
+         qml6-module-qtcore,
+         qml6-module-qtqml,
+         qml6-module-qtqml-models,
+         qml6-module-qtqml-workerscript,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-dialogs,
+         qml6-module-qtquick-effects,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-shapes,
+         qml6-module-qtquick-templates,
+         qml6-module-qtquick-window,
+         xdg-user-dirs,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: bluedevil (>= 4:6.1.0~),
+            breeze-gtk-theme (>= 6.1.0~),
+            fonts-hack,
+            fonts-noto-cjk,
+            fonts-noto-hinted,
+            fonts-noto-mono,
+            fonts-noto-unhinted,
+            ibus-data,
+            kde-config-gtk-style (>= 4:6.1.0~),
+            kde-config-screenlocker (>= 6.1.0~),
+            kde-config-sddm (>= 4:6.1.0~),
+            kde-style-oxygen-qt6 (>= 4:6.1.0~),
+            kgamma (>= 6.1.0~),
+            khelpcenter,
+            kinfocenter (>= 4:6.1.0~),
+            kio-extras,
+            kmenuedit (>= 4:6.1.0~),
+            kscreen (>= 4:6.1.0~),
+            ksshaskpass (>= 4:6.1.0~),
+            kwin-wayland (>= 4:6.1.0~) | kwin (>= 4:6.1.0~),
+            kwrited (>= 4:6.1.0~),
+            libkf6kcmutils-bin,
+            libpam-kwallet5 (>= 6.1.0~),
+            plasma-browser-integration (>= 6.1.0~),
+            plasma-discover (>= 6.1.0~),
+            plasma-disks (>= 6.1.0~),
+            plasma-firewall (>= 6.1.0~),
+            plasma-nm (>= 4:6.1.0~),
+            plasma-pa (>= 4:6.1.0~),
+            plasma-systemmonitor (>= 6.1.0~),
+            plasma-thunderbolt (>= 6.1.0~),
+            plasma-vault (>= 6.1.0~),
+            powerdevil (>= 4:6.1.0~),
+            systemsettings (>= 4:6.1.0~),
+            xdg-desktop-portal-gtk,
+            xdg-desktop-portal-kde (>= 6.1.0~)
+Suggests: kde-config-flatpak (>= 4:6.1.0~)
+Breaks: plasma-workspace (<< 4:6.1.0~), user-manager (<< 4:5.20)
+Replaces: plasma-workspace (<< 4:6.1.0~)
+Description: Tools and widgets for the desktop
+ Plasma Desktop offers a beautiful looking desktop
+ that takes complete advantage of modern computing technology.
+ Through the use of visual effects and scalable graphics,
+ the desktop experience is not only smooth but also pleasant
+ to the eye. The looks of Plasma Desktop not only provide beauty,
+ they are also used to support and improve your computer
+ activities effectively, without being distracting.
+ .
+ This package is part of the KDE Plasma.
+
+Package: plasma-desktop-data
+Architecture: all
+Depends: python3:any, ${misc:Depends}
+Breaks: plasma-widgets-addons (<< 4:5.25.70~)
+Replaces: plasma-widgets-addons (<< 4:5.25.70~)
+Description: Tools and widgets for the desktop data files
+ Plasma Desktop offers a beautiful looking desktop
+ that takes complete advantage of modern computing technology.
+ Through the use of visual effects and scalable graphics,
+ the desktop experience is not only smooth but also pleasant
+ to the eye. The looks of Plasma Desktop not only provide beauty,
+ they are also used to support and improve your computer
+ activities effectively, without being distracting.
+ .
+ This package is part of the KDE Plasma.
+ .
+ This package contains the data files
+
+Package: plasma-desktop-dev
+Section: devel
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         ${so:Depends}
+Description: Tools and widgets for the desktop
+ Plasma Desktop offers a beautiful looking desktop
+ that takes complete advantage of modern computing technology.
+ Through the use of visual effects and scalable graphics,
+ the desktop experience is not only smooth but also pleasant
+ to the eye. The looks of Plasma Desktop not only provide beauty,
+ they are also used to support and improve your computer
+ activities effectively, without being distracting.
+ .
+ This package is part of the KDE Plasma.
+
+Package: sddm-theme-breeze
+Architecture: any
+Depends: plasma-desktoptheme,
+         plasma-workspace,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: sddm
+Provides: sddm-theme
+Description: Breeze SDDM theme
+ Plasma Workspace for KF6. Workspaces provide
+ support for KDE Plasma Widgets, integrated search,
+ hardware management and a high degree of customizability.
+ Taskmanager library.
+ .
+ This package contains the files for the breeze SDDM theme.

@@ -1,0 +1,131 @@
+Source: plasma5support
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6guiaddons-dev (>= 6.22.0~),
+               libkf6holidays-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6idletime-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6networkmanagerqt-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6service-dev (>= 6.22.0~),
+               libkf6solid-dev (>= 6.22.0~),
+               libkf6unitconversion-dev (>= 6.22.0~),
+               libksysguard-dev (>= 4:6.6.4~),
+               libplasmaactivities-dev (>= 6.6.4~),
+               libx11-dev,
+               libxfixes-dev,
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-base-private-dev,
+               qt6-declarative-dev (>= 6.10.0~)
+Standards-Version: 4.7.2
+Homepage: https://invent.kde.org/plasma/plasma5support
+
+Package: libplasma-geolocation-interface6
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: plasma-workspace (<< 4:6.2.90~)
+Replaces: plasma-workspace (<< 4:6.2.90~)
+Description: Plasma geolocation library
+ This library provides support for interfacing with geolocation
+ provider services like GPS or Mozilla Location Service.
+
+Package: libplasma-geolocation-interface-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libplasma-geolocation-interface6 (= ${binary:Version}),
+         ${misc:Depends}
+Breaks: plasma-workspace-dev (<< 4:6.2.90~)
+Replaces: plasma-workspace-dev (<< 4:6.2.90~)
+Description: development files for the Plasma geolocation library
+ This library provides support for interfacing with geolocation
+ provider services like GPS or Mozilla Location Service.
+ .
+ This package contains development files for building software that
+ uses the Plasma geolocation library.
+
+Package: libplasma5support-data
+Section: libs
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: plasma-workspace-data (<< 4:6.6.0~)
+Replaces: plasma-workspace-data (<< 4:6.6.0~)
+Description: support components for porting from KF5/Qt5 to KF6/Qt6 - data files
+ Plasma5Support Framework providing migration aids for KF5 -> KF6 migrations.
+ .
+ This package contains the data files for the shared library.
+
+Package: libplasma5support-dev
+Section: libdevel
+Architecture: any
+Depends: libplasma5support6 (= ${binary:Version}),
+         qml6-module-org-kde-plasma-plasma5support (= ${binary:Version}),
+         ${misc:Depends}
+Description: support components for porting from KF5/Qt5 to KF6/Qt6 - development files
+ Plasma5Support Framework providing migration aids for KF5 -> KF6 migrations.
+ .
+ This package contains the development files for the shared library.
+
+Package: libplasma5support6
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: libplasma5support-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: plasma-workspace (<< 4:6.6.0~)
+Replaces: plasma-workspace (<< 4:6.6.0~)
+Description: support components for porting from KF5/Qt5 to KF6/Qt6 - shared library
+ Plasma5Support Framework providing migration aids for KF5 -> KF6 migrations.
+ .
+ This package contains the shared library.
+
+Package: libweather-ion-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libweather-ion7 (= ${binary:Version}),
+         ${misc:Depends}
+Description: weather data from multiple sources - development files
+ Library to get online weather data from multiple sources.
+ .
+ This package contains the development files for the shared library.
+
+Package: libweather-ion7
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: libplasma5support-data (<< 4:6.5.0~)
+Replaces: libplasma5support-data (<< 4:6.5.0~)
+Description: weather data from multiple sources
+ Library to get online weather data from multiple sources.
+ .
+ This package contains the shared library.
+
+Package: qml6-module-org-kde-plasma-plasma5support
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: libplasma5support6 (= ${binary:Version}),
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Description: support components for porting from KF5/Qt5 to KF6/Qt6 - QML module
+ Plasma5Support Framework providing migration aids for KF5 -> KF6 migrations.
+ .
+ This package contains the QML module.

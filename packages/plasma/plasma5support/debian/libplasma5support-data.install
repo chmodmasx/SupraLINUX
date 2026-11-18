@@ -1,0 +1,5 @@
+usr/share/locale/*/*/libplasma5support.mo
+usr/share/locale/*/*/plasma_engine_*.mo
+usr/share/plasma5support/services/*.operations
+usr/share/qlogging-categories6/plasma5support.categories
+usr/share/qlogging-categories6/plasma5support.renamecategories

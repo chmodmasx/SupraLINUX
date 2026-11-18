@@ -1,0 +1,30 @@
+Source: kactivitymanagerd
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libboost-dev (>= 1.58~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6crash-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6globalaccel-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libkf6xmlgui-dev (>= 6.22.0~),
+               qt6-base-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/kactivitymanagerd
+Rules-Requires-Root: no
+
+Package: kactivitymanagerd
+Architecture: any
+Depends: libqt6sql6-sqlite, ${misc:Depends}, ${shlibs:Depends}
+Description: System service to manage user's activities
+ System service to manage user's activities, track the usage patterns
+ etc.

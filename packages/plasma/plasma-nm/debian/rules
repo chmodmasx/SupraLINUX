@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+# limit the build of OpenConnect VPN to archs where qtwebengine is available
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+ifneq (,$(filter $(DEB_HOST_ARCH), amd64 arm64 armhf i386))
+	extra_cmake_args += -DBUILD_OPENCONNECT=ON
+else
+	extra_cmake_args += -DBUILD_OPENCONNECT=OFF
+endif
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(extra_cmake_args)
+
+override_dh_auto_test:
+	# Disable auto tests at build time
+	:

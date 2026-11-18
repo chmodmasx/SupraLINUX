@@ -1,0 +1,7 @@
+# the lib is currently not used by other packages
+krdp: package-name-doesnt-match-sonames libKRdp6
+krdp: link-to-shared-library-in-wrong-package usr/lib/*/libKRdp.so.6.* [usr/lib/*/libKRdp.so]
+krdp: no-manual-page [usr/bin/krdpserver]
+# systemsettings executable required for the KCM is provided by the Recommends: systemsettings dependency
+krdp: desktop-command-not-in-package systemsettings [usr/share/applications/kcm_krdpserver.desktop]
+

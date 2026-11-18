@@ -1,0 +1,34 @@
+Source: kmenuedit
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libkf6crash-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6doctools-dev (>= 6.22.0~),
+               libkf6globalaccel-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6iconthemes-dev (>= 6.22.0~),
+               libkf6itemviews-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6sonnet-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libkf6xmlgui-dev (>= 6.22.0~),
+               qt6-base-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/kmenuedit
+Rules-Requires-Root: no
+
+Package: kmenuedit
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: XDG menu editor
+ This package provides a menu editor which may be used to edit the KDE Plasma
+ workspaces menu or any other XDG menu.
+ .
+ This package contains the runtime files.

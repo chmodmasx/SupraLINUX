@@ -1,0 +1,705 @@
+plasma-systemmonitor (6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 plasma-systemmonitor for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+plasma-systemmonitor (6.6.6-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.6) (LP: #2159979)
+  * Add relax-plasma-internal-build-deps.patch to avoid rebuilding
+    sources with just a version bump.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 13 Jul 2026 10:54:37 +0100
+
+plasma-systemmonitor (6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:11:26 +0100
+
+plasma-systemmonitor (6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:44:41 +0000
+
+plasma-systemmonitor (6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:24:41 +0000
+
+plasma-systemmonitor (6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:16:36 +0000
+
+plasma-systemmonitor (6.5.5-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 23:09:21 +0000
+
+plasma-systemmonitor (6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 15:07:45 +0000
+
+plasma-systemmonitor (6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:21:00 +0000
+
+plasma-systemmonitor (6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:09:35 +0000
+
+plasma-systemmonitor (6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:14:19 +0000
+
+plasma-systemmonitor (6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:48:37 +0000
+
+plasma-systemmonitor (6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:39:21 +0100
+
+plasma-systemmonitor (6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:03:54 +0100
+
+plasma-systemmonitor (6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+  * Disable tests at build time.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:31:06 +0100
+
+plasma-systemmonitor (6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:36:04 +0100
+
+plasma-systemmonitor (6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 08:58:24 +0100
+
+plasma-systemmonitor (6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:24:22 +0000
+
+plasma-systemmonitor (6.3.2-2ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 02 Mar 2025 15:55:04 +0000
+
+plasma-systemmonitor (6.3.2-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Depend on libksysguard-bin so that per-application network stats
+    work. (Closes: #1054200)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 01 Mar 2025 22:15:33 +0100
+
+plasma-systemmonitor (6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.3.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 00:53:17 +0100
+
+plasma-systemmonitor (6.3.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 25 Feb 2025 18:18:15 +0000
+
+plasma-systemmonitor (6.3.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.1)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Feb 2025 14:25:35 +0000
+
+plasma-systemmonitor (6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 14:59:52 +0100
+
+plasma-systemmonitor (6.3.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Feb 2025 12:57:30 +0000
+
+plasma-systemmonitor (6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.91).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:53:06 +0100
+
+plasma-systemmonitor (6.2.91-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.91)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 23 Jan 2025 13:44:20 +0000
+
+plasma-systemmonitor (6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+  * Add python3:any dependency for the plasma-systemmonitor-replace-
+    vmpss.py configuration migration script.
+  * Bump inter-plasma versioned dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 17 Jan 2025 11:48:07 +0100
+
+plasma-systemmonitor (6.2.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.90)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 07:48:27 +0000
+
+plasma-systemmonitor (6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 11:22:36 +0100
+
+plasma-systemmonitor (6.2.5-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 31 Dec 2024 19:04:16 +0000
+
+plasma-systemmonitor (6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:36:45 +0100
+
+plasma-systemmonitor (6.2.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 26 Nov 2024 12:15:56 +0000
+
+plasma-systemmonitor (6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Update build-deps and deps with the info from cmake.
+  * Add build dependency to qt6-declarative-private-dev required since
+    cmake 3.31.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:32 +0100
+
+plasma-systemmonitor (6.2.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.0)
+  * New upstream release (6.2.1)
+  * New upstream release (6.2.2)
+  * New upstream release (6.2.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 19:59:23 +0000
+
+plasma-systemmonitor (6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 18:21:59 +0200
+
+plasma-systemmonitor (6.2.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+  * Update build-deps and deps with the info from cmake.
+  * Tighten inter-Plasma package dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:47 +0200
+
+plasma-systemmonitor (6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+  * Update build-deps and deps with the info from cmake.
+  * Tighten Plasma packages inter-dependencies.
+  * Fix permissions of installed files.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:28:04 +0200
+
+plasma-systemmonitor (6.1.5-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.5)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 Sep 2024 06:01:23 +0100
+
+plasma-systemmonitor (6.1.4-2) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Tighten inter-plasma dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 17 Aug 2024 10:08:18 +0200
+
+plasma-systemmonitor (6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:23 +0200
+
+plasma-systemmonitor (6.1.4-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 14 Aug 2024 21:43:47 +0100
+
+plasma-systemmonitor (6.1.3-2) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Bump inter-Plasma dependencies.
+
+ -- Patrick Franz <deltaone@debian.org>  Mon, 29 Jul 2024 14:27:18 +0900
+
+plasma-systemmonitor (6.1.3-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:18 +0200
+
+plasma-systemmonitor (6.1.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.1.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update lintian-overrides.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 25 Jun 2024 00:26:26 +0200
+
+plasma-systemmonitor (5.27.11-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * New upstream release (5.27.11).
+  * Update build-deps and deps with the info from cmake.
+  * Remove inactive uploaders, thanks for your work.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 19 May 2024 12:21:37 +0200
+
+plasma-systemmonitor (5.27.10-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.10).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 11 Jan 2024 23:24:56 +0100
+
+plasma-systemmonitor (5.27.9-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.9).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 27 Oct 2023 21:54:17 +0200
+
+plasma-systemmonitor (5.27.8-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.8).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 13 Sep 2023 21:54:36 +0200
+
+plasma-systemmonitor (5.27.7-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.7).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Aug 2023 18:54:47 +0200
+
+plasma-systemmonitor (5.27.5-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 27 May 2023 18:23:45 +0200
+
+plasma-systemmonitor (5.27.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 09 May 2023 23:27:56 +0200
+
+plasma-systemmonitor (5.27.3-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 22 Mar 2023 23:18:19 +0100
+
+plasma-systemmonitor (5.27.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (5.27.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 28 Feb 2023 15:00:59 +0100
+
+plasma-systemmonitor (5.27.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 18 Feb 2023 17:08:45 +0100
+
+plasma-systemmonitor (5.26.90-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.90).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Update cross-plasma versioned dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 23 Jan 2023 21:50:57 +0100
+
+plasma-systemmonitor (5.26.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 07 Jan 2023 00:22:10 +0100
+
+plasma-systemmonitor (5.26.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 29 Nov 2022 16:06:25 +0100
+
+plasma-systemmonitor (5.26.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 08 Nov 2022 15:46:30 +0100
+
+plasma-systemmonitor (5.26.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (5.26.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 27 Oct 2022 23:35:26 +0200
+
+plasma-systemmonitor (5.26.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 11 Oct 2022 15:44:22 +0200
+
+plasma-systemmonitor (5.25.90-2) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Tighten cross-plasma components dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 07 Oct 2022 11:47:07 +0200
+
+plasma-systemmonitor (5.25.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.90).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 25 Sep 2022 00:14:25 +0200
+
+plasma-systemmonitor (5.25.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 09 Sep 2022 23:22:06 +0200
+
+plasma-systemmonitor (5.25.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 02 Aug 2022 17:34:10 +0200
+
+plasma-systemmonitor (5.25.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.2).
+  * Add lintian override for plasma-systemmonitor having no manpage.
+  * New upstream release (5.25.3).
+  * Release to unstable
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 17 Jul 2022 15:29:01 +0200
+
+plasma-systemmonitor (5.25.1-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.25.1).
+  * Tighten inter-Plasma dependencies.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 21 Jun 2022 21:46:52 +0200
+
+plasma-systemmonitor (5.25.0-1) experimental; urgency=medium
+
+  * New upstream release (5.25.0).
+  * Tighten cross-plasma components dependencies.
+  * Bump Standards-Version to 4.6.1, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 14 Jun 2022 21:26:52 +0200
+
+plasma-systemmonitor (5.24.90-2) experimental; urgency=medium
+
+  * Tighten build dependency to libkf5sysguard-dev (>= 4:5.24.90~).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 31 May 2022 22:16:59 +0200
+
+plasma-systemmonitor (5.24.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.90).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 20 May 2022 11:45:56 +0200
+
+plasma-systemmonitor (5.24.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 12 May 2022 21:40:23 +0200
+
+plasma-systemmonitor (5.24.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 30 Mar 2022 14:03:57 +0200
+
+plasma-systemmonitor (5.24.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.3).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 10 Mar 2022 20:37:54 +0100
+
+plasma-systemmonitor (5.24.2-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.24.2).
+  * Re-export signing key without extra signatures.
+  * Update B-Ds and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 26 Feb 2022 21:59:43 +0100
+
+plasma-systemmonitor (5.23.5-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.23.5).
+  * Update B-Ds.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 07 Jan 2022 17:22:30 +0100
+
+plasma-systemmonitor (5.23.4-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add explicit dependencies for qml-module-qtquick-dialogs and qml-
+    module-org-kde-kcm (Closes: #1000976).
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 08 Dec 2021 09:51:47 +0100
+
+plasma-systemmonitor (5.23.4-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.4).
+
+  [ Patrick Franz ]
+  * Update B-Ds.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 02 Dec 2021 21:58:56 +0100
+
+plasma-systemmonitor (5.23.3-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.3).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 10 Nov 2021 08:42:14 +0900
+
+plasma-systemmonitor (5.23.2-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * Add ksystemstats to deps.
+  * New upstream release (5.23.1).
+  * New upstream release (5.23.2).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Nov 2021 22:21:04 +0900
+
+plasma-systemmonitor (5.23.0-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Update upstream signing-key.
+  * Tighten build-dependencies.
+  * Bump Standards-Version to 4.6.0 (no changes needed).
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 15 Oct 2021 23:03:15 +0200
+
+plasma-systemmonitor (5.23.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.0).
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 14 Oct 2021 20:13:16 +0900
+
+plasma-systemmonitor (5.21.5-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Release to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 17 Aug 2021 03:25:09 +0200
+
+plasma-systemmonitor (5.21.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.5).
+  * Tighten inter-plasma B-Ds.
+  * Borrow signing-key from plasma-vault.
+
+ -- Patrick Franz <patfra71@gmail.com>  Fri, 07 May 2021 18:45:24 +0200
+
+plasma-systemmonitor (5.21.4-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.4).
+  * Tighten inter-plasma B-Ds.
+  * Add myself to uploaders.
+
+ -- Patrick Franz <patfra71@gmail.com>  Tue, 06 Apr 2021 20:22:10 +0200
+
+plasma-systemmonitor (5.21.3-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.3).
+  * Tighten inter-plasma dependencies.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Mar 2021 05:49:42 +0900
+
+plasma-systemmonitor (5.21.2-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.2).
+  * Tigthen inter-plasma B-Ds.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Mar 2021 05:33:50 +0900
+
+plasma-systemmonitor (5.21.1-2) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Tigthen inter-plasma build-depends.
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Feb 2021 06:31:21 +0900
+
+plasma-systemmonitor (5.21.1-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.1).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 24 Feb 2021 14:36:40 +0900
+
+plasma-systemmonitor (5.21.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.0).
+  * Update watch file.
+  * Update build dependencies.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Feb 2021 10:42:26 +0900
+
+plasma-systemmonitor (5.20.0-4) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 22 Dec 2020 11:04:38 +0900
+
+plasma-systemmonitor (5.20.0-3) experimental; urgency=medium
+
+  * Fix FTBFS due to incorrect version.
+  * Add myself to uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 15 Dec 2020 20:37:53 +0900
+
+plasma-systemmonitor (5.20.0-2) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Fix incorrect version number for some qml modules.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 14 Dec 2020 21:38:42 +0100
+
+plasma-systemmonitor (5.20.0-1) experimental; urgency=medium
+
+  * Initial release. (Closes: #975598)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 09 Dec 2020 09:28:58 +0100

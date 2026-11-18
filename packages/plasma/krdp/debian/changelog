@@ -1,0 +1,306 @@
+krdp (6.6.7-0supralinux2) resolute; urgency=medium
+
+  * Initialise the virtual monitor size so pointer events map correctly.
+    Backport of upstream commit d2a2b1f, included in krdp 6.7.6.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 07 Nov 2026 22:00:00 -0300
+
+krdp (6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 krdp for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+krdp (6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:06:38 +0100
+
+krdp (6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:41:42 +0000
+
+krdp (6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:21:53 +0000
+
+krdp (6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:13:29 +0000
+
+krdp (6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 14:55:06 +0000
+
+krdp (6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:17:30 +0000
+
+krdp (6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:07:02 +0000
+
+krdp (6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:11:46 +0000
+
+krdp (6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:46:02 +0000
+
+krdp (6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+  * Build depend on libpam0g-dev.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:36:44 +0100
+
+krdp (6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:01:33 +0100
+
+krdp (6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+  * Drop included upstream_mr_69_add-support-for-freerdp3.patch
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:28:19 +0100
+
+krdp (6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:33:30 +0100
+
+krdp (6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 08:55:06 +0100
+
+krdp (6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:18:06 +0000
+
+krdp (6.3.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Build depend on current Plasma version.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 09 Mar 2025 10:20:22 +0000
+
+krdp (6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * New upstream release (6.3.2).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 00:53:01 +0100
+
+krdp (6.3.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 25 Feb 2025 18:15:32 +0000
+
+krdp (6.3.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.1)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Feb 2025 14:22:36 +0000
+
+krdp (6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 14:59:39 +0100
+
+krdp (6.3.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Feb 2025 12:54:31 +0000
+
+krdp (6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Fix Vcs-* URLs. (Closes: #1092560)
+  * New upstream release (6.2.91).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:52:48 +0100
+
+krdp (6.2.91-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.91)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 23 Jan 2025 13:41:14 +0000
+
+krdp (6.2.90-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian experimental. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Jan 2025 14:29:05 +0000
+
+krdp (6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+  * Bump inter-plasma versioned dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 11 Jan 2025 23:38:46 +0100
+
+krdp (6.2.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.90)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 07:50:11 +0000
+
+krdp (6.2.5-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Also remove libwinpr2-dev build dependency, shipped by FreeRDP 2.
+    (Closes: #1081528)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 10 Jan 2025 21:55:11 +0100
+
+krdp (6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Backport upstream MR to add support for FreeRDP 3.
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+  * Add build flag to build with FreeRDP 3.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 11:21:46 +0100
+
+krdp (6.2.5-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 31 Dec 2024 19:00:16 +0000
+
+krdp (6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:36:14 +0100
+
+krdp (6.2.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 26 Nov 2024 12:13:17 +0000
+
+krdp (6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:30 +0100
+
+krdp (6.2.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.0)
+  * New build depend on libkf6crash-dev.
+  * New upstream release (6.2.1)
+  * New upstream release (6.2.2)
+  * New upstream release (6.2.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 19:56:28 +0000
+
+krdp (6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 18:21:12 +0200
+
+krdp (6.2.0-1) experimental; urgency=medium
+
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+  * Tighten inter-Plasma package dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:46 +0200
+
+krdp (6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+  * Update build-deps and deps with the info from cmake.
+  * Tighten Plasma packages inter-dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:28:00 +0200
+
+krdp (6.1.5-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.5)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 Sep 2024 05:58:51 +0100
+
+krdp (6.1.4-2) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Tighten Plasma packages inter-dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 18 Aug 2024 01:07:37 +0200
+
+krdp (6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Add Recommends to systemsettings for the RDP server configuration KCM.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:22 +0200
+
+krdp (6.1.4-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.4)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 15 Aug 2024 00:24:11 +0100
+
+krdp (6.1.3-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:18 +0200
+
+krdp (6.1.0-1) experimental; urgency=medium
+
+  * Initial release. (Closes: #1074485)
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 30 Jun 2024 17:09:43 +0200

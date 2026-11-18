@@ -1,0 +1,1112 @@
+systemsettings (4:6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 systemsettings for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+  * Drop the obsolete internal dependency relaxation.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+systemsettings (4:6.6.5-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream release (6.6.5) (LP: #2152276)
+  * Add relax-plasma-internal-build-deps.patch, to avoid rebuilding
+    sources with just a version bump.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 May 2026 10:28:43 +0100
+
+systemsettings (4:6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:13:13 +0100
+
+systemsettings (4:6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:47:05 +0000
+
+systemsettings (4:6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:26:00 +0000
+
+systemsettings (4:6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:18:19 +0000
+
+systemsettings (4:6.5.5-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 23:19:03 +0000
+
+systemsettings (4:6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 15:10:32 +0000
+
+systemsettings (4:6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:24:47 +0000
+
+systemsettings (4:6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:10:56 +0000
+
+systemsettings (4:6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:15:31 +0000
+
+systemsettings (4:6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:49:51 +0000
+
+systemsettings (4:6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:40:36 +0100
+
+systemsettings (4:6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:05:03 +0100
+
+systemsettings (4:6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:32:34 +0100
+
+systemsettings (4:6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:37:32 +0100
+
+systemsettings (4:6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 09:00:03 +0100
+
+systemsettings (4:6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:26:57 +0000
+
+systemsettings (4:6.3.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 10 Mar 2025 09:30:00 +0000
+
+systemsettings (4:6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.3.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 00:53:29 +0100
+
+systemsettings (4:6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 15:00:01 +0100
+
+systemsettings (4:6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.91).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:53:20 +0100
+
+systemsettings (4:6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 12 Jan 2025 00:49:58 +0100
+
+systemsettings (4:6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 11:22:46 +0100
+
+systemsettings (4:6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:37:00 +0100
+
+systemsettings (4:6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Update build-deps and deps with the info from cmake.
+  * Drop patch for minor versions compatibility.
+  * Add build dependency to qt6-declarative-private-dev required since
+    cmake 3.31.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:32 +0100
+
+systemsettings (4:6.2.2-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.2).
+  * Revert upstream minor version bump for build dependencies to avoid
+    rebuilding all Plasma packages.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 22 Oct 2024 18:50:13 +0200
+
+systemsettings (4:6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 18:22:34 +0200
+
+systemsettings (4:6.2.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:47 +0200
+
+systemsettings (4:6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:28:05 +0200
+
+systemsettings (4:6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Update build-deps and deps with the info from cmake.
+  * Review copyright information.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:23 +0200
+
+systemsettings (4:6.1.3-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:19 +0200
+
+systemsettings (4:6.1.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.1.0).
+  * Update build-deps and deps with the info from cmake.
+  * Simplify d/rules as those files do not need to be removed any more.
+  * Update lintian-overrides.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 23 Jun 2024 17:35:02 +0200
+
+systemsettings (4:5.27.11-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * New upstream release (5.27.11).
+  * Update build-deps and deps with the info from cmake.
+  * Remove inactive uploaders, thanks for your work.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 19 May 2024 12:22:28 +0200
+
+systemsettings (4:5.27.10-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.10).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 11 Jan 2024 23:27:57 +0100
+
+systemsettings (4:5.27.9-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.9).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 27 Oct 2023 21:55:00 +0200
+
+systemsettings (4:5.27.8-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.8).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 13 Sep 2023 22:31:27 +0200
+
+systemsettings (4:5.27.7-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.7).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Aug 2023 18:55:47 +0200
+
+systemsettings (4:5.27.5-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 27 May 2023 18:23:48 +0200
+
+systemsettings (4:5.27.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 09 May 2023 23:29:10 +0200
+
+systemsettings (4:5.27.3-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 22 Mar 2023 23:20:31 +0100
+
+systemsettings (4:5.27.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (5.27.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 28 Feb 2023 15:01:57 +0100
+
+systemsettings (4:5.27.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 18 Feb 2023 17:08:48 +0100
+
+systemsettings (4:5.26.90-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.90).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.2, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 23 Jan 2023 21:51:00 +0100
+
+systemsettings (4:5.26.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 07 Jan 2023 00:22:57 +0100
+
+systemsettings (4:5.26.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 29 Nov 2022 16:11:00 +0100
+
+systemsettings (4:5.26.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 08 Nov 2022 16:05:30 +0100
+
+systemsettings (4:5.26.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (5.26.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 27 Oct 2022 23:37:29 +0200
+
+systemsettings (4:5.26.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 11 Oct 2022 15:44:26 +0200
+
+systemsettings (4:5.25.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.90).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 25 Sep 2022 00:14:27 +0200
+
+systemsettings (4:5.25.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 09 Sep 2022 23:23:15 +0200
+
+systemsettings (4:5.25.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 02 Aug 2022 17:35:37 +0200
+
+systemsettings (4:5.25.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.2).
+  * Drop now unused build dependency on libkf5declarative-dev.
+  * Add missing dependency to qml-module-org-kde-kcmutils required by some
+    KCMs.
+  * Refresh lintian overrides.
+  * New upstream release (5.25.3).
+  * Release to unstable
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 17 Jul 2022 15:30:01 +0200
+
+systemsettings (4:5.25.1-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.25.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 21 Jun 2022 21:48:04 +0200
+
+systemsettings (4:5.25.0-1) experimental; urgency=medium
+
+  * New upstream release (5.25.0).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.1, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 14 Jun 2022 21:27:16 +0200
+
+systemsettings (4:5.24.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.90).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 20 May 2022 11:49:05 +0200
+
+systemsettings (4:5.24.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 12 May 2022 21:40:59 +0200
+
+systemsettings (4:5.24.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 30 Mar 2022 14:09:27 +0200
+
+systemsettings (4:5.24.3-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add missing dependency qml-module-qtquick-shapes, otherwise user
+    settings are not displayed at all.
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.3).
+  * Added myself to the uploaders.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 10 Mar 2022 08:07:59 +0100
+
+systemsettings (4:5.24.2-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.24.2).
+  * Re-export signing key without extra signatures.
+  * Update B-Ds and deps with the info from cmake.
+  * Update d/copyright.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 26 Feb 2022 22:00:12 +0100
+
+systemsettings (4:5.23.5-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.23.5).
+  * Update B-Ds.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 07 Jan 2022 18:37:25 +0100
+
+systemsettings (4:5.23.4-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.4).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 02 Dec 2021 22:59:13 +0100
+
+systemsettings (4:5.23.3-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.3).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 10 Nov 2021 08:43:49 +0900
+
+systemsettings (4:5.23.2-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.1).
+  * New upstream release (5.23.2).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Nov 2021 22:21:04 +0900
+
+systemsettings (4:5.23.0-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Update upstream signing-key.
+  * Bump Standards-Version to 4.6.0 (no changes needed).
+
+  [ Norbert Preining ]
+  * Tighten B-D of plasma-workspace.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 15 Oct 2021 23:58:47 +0200
+
+systemsettings (4:5.23.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.0).
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 14 Oct 2021 20:13:16 +0900
+
+systemsettings (4:5.21.5-3) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add qml-module-org-kde-newstuff as a dependency as several settings
+    cannot be accessed otherwise. Thx to LtWorf.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 02 Sep 2021 11:56:02 +0200
+
+systemsettings (4:5.21.5-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Release to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 17 Aug 2021 03:25:30 +0200
+
+systemsettings (4:5.21.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.5).
+  * Tighten inter-plasma B-Ds.
+
+ -- Patrick Franz <patfra71@gmail.com>  Fri, 07 May 2021 19:32:55 +0200
+
+systemsettings (4:5.21.4-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.4).
+  * Tighten inter-plasma B-Ds.
+
+ -- Patrick Franz <patfra71@gmail.com>  Tue, 06 Apr 2021 20:53:54 +0200
+
+systemsettings (4:5.21.3-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.3).
+  * Bump inter-plasma dependencies.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Mar 2021 05:49:43 +0900
+
+systemsettings (4:5.21.2-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.2).
+  * Tigthen inter-plasma B-Ds.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Mar 2021 05:33:51 +0900
+
+systemsettings (4:5.21.1-2) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Tigthen inter-plasma build-depends.
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Feb 2021 06:33:58 +0900
+
+systemsettings (4:5.21.1-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.1).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 24 Feb 2021 14:36:41 +0900
+
+systemsettings (4:5.21.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Feb 2021 05:42:28 +0900
+
+systemsettings (4:5.20.5-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bump the plasma-workspace-dev build dependency to 5.20.5.
+  * Bump Standards-Version to 4.5.1, no changes required.
+  * Update renamed lintian tag names in lintian overrides.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata (already
+    present in machine-readable debian/copyright).
+
+ -- Pino Toscano <pino@debian.org>  Thu, 07 Jan 2021 10:22:44 +0100
+
+systemsettings (4:5.20.5-1) unstable; urgency=medium
+
+  * New upstream release (5.20.5).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 06 Jan 2021 23:50:54 +0900
+
+systemsettings (4:5.20.4-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 22 Dec 2020 11:04:39 +0900
+
+systemsettings (4:5.20.4-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Update build-deps with the info from cmake.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 09 Dec 2020 14:17:34 +0900
+
+systemsettings (4:5.19.5-3) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Add qml-module-org-kde-kitemmodels as a dependency to allow editing
+    Window Rules.
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 07 Nov 2020 06:48:45 +0900
+
+systemsettings (4:5.19.5-2) experimental; urgency=medium
+
+  * Rebuild for Qt 5.15
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 02 Nov 2020 09:27:44 +0900
+
+systemsettings (4:5.19.5-1) experimental; urgency=medium
+
+  * New upstream release (5.19.5).
+  * Add Patrick and myself to uploaders.
+  * Tighten B-D on plasma-workspace-dev.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 19 Oct 2020 21:15:20 +0900
+
+systemsettings (4:5.19.4-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Norbert Preining ]
+  * Remove Max from Uploaders as requested on IRC, add Scarlett.
+  * Change maintainer in d/control to Debian Qt/KDE Maintainers.
+  * Update build-deps with the info from cmake.
+  * Bump compat level to 13.
+  * Enable team builder to be able to build on salsa.
+  * Add Rules-Requires-Root field to control.
+  * Remove not needed injection of linker flags.
+  * Enable build hardening.
+  * Update Homepage link to point to new invent.kde.org
+  * Update field Source in debian/copyright to invent.kde.org move.
+  * Set field Upstream-Contact in debian/copyright.
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 16 Oct 2020 15:00:32 +0900
+
+systemsettings (4:5.17.5-2) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+  * Bump Standards-Version to 4.5.0, no changes required.
+  * Add breaks/replaces against kde-config-systemd < 1.2.1-3.1, as that version
+    stops shipping settings-system-administration.desktop (now shipped by
+    systemsettings). (Closes: #949318)
+
+ -- Pino Toscano <pino@debian.org>  Sat, 15 Feb 2020 08:46:03 +0100
+
+systemsettings (4:5.17.5-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.16.5).
+  * Salsa CI automatic initialization by Tuco
+  * Update build-deps and deps with the info from cmake
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Update the patches:
+    - 0001-systemsettings.desktop-Fix-zh_CN-translation-bug-in-.patch: drop,
+      backported from upstream
+  * Update the build dependencies according to the upstream build system:
+    - bump KF packages to 5.62.0
+    - remove unused libkf5khtml-dev
+    - explicitly add gettext
+  * Remove breaks/replaces for versions older than oldstable.
+  * Drop the migration from systemsettings-dbg, no more needed after two
+    Debian stable releases.
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+  * Stop forcing the local destdir to debian/tmp, and install directly in the
+    right place:
+    - remove all the development files, not needed
+    - drop systemsettings.install, and not-installed, no more needed
+  * Unregister systemsettings.categories as conffile, as it is no more in /etc.
+  * Bump Standards-Version to 4.4.1, no changes required.
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 19 Jan 2020 09:24:39 +0100
+
+systemsettings (4:5.14.5-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Cherry-pick from upstream trunk to fix a bug in zh_CN
+    (Simplified Chinese) .desktop file translation.
+
+ -- Boyuan Yang <byang@debian.org>  Sat, 23 Feb 2019 12:45:05 -0500
+
+systemsettings (4:5.14.5-1) unstable; urgency=medium
+
+  * New upstream release (5.14.5).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 24 Jan 2019 09:26:17 -0300
+
+systemsettings (4:5.14.3-1) unstable; urgency=medium
+
+  * Update upsteam signing-key
+  * New upstream release (5.14.3).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 23 Nov 2018 08:51:01 -0300
+
+systemsettings (4:5.13.5-1) unstable; urgency=medium
+
+  * New upstream release (5.13.5).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 06 Sep 2018 20:40:48 +0200
+
+systemsettings (4:5.13.4-1) unstable; urgency=medium
+
+  * New upstream release (5.13.4).
+  * Update build-deps and deps with the info from cmake
+  * Update install files
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 19 Aug 2018 23:18:27 +0200
+
+systemsettings (4:5.13.1-1) unstable; urgency=medium
+
+  * New upstream release (5.13.1).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 26 Jun 2018 13:43:30 +0200
+
+systemsettings (4:5.12.5-1) unstable; urgency=medium
+
+  * Bump Standards-Version to 4.1.4.
+  * New upstream release (5.12.5).
+  * Use https for the debian/copyright
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 09 May 2018 13:24:16 +0200
+
+systemsettings (4:5.12.4-1) unstable; urgency=medium
+
+  * New upstream release (5.12.4).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 28 Mar 2018 18:12:59 +0200
+
+systemsettings (4:5.12.3-1) sid; urgency=medium
+
+  * New upstream release (5.12.3).
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 07 Mar 2018 19:14:15 +0100
+
+systemsettings (4:5.12.2-1) sid; urgency=medium
+
+  * New upstream release (5.12.2).
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 24 Feb 2018 09:47:59 +0100
+
+systemsettings (4:5.12.1-1) sid; urgency=medium
+
+  * Use the salsa canonical urls
+  * New upstream release (5.12.1).
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 20 Feb 2018 22:09:13 +0100
+
+systemsettings (4:5.12.0-2) sid; urgency=medium
+
+  * New revision
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 12 Feb 2018 16:04:00 +0100
+
+systemsettings (4:5.12.0-1) experimental; urgency=medium
+
+  * Bump debhelper build-dep and compat to 11.
+  * Build without build_stamp
+  * Add link options as-needed
+  * Add new qml-module-org-kde-kcm runtime dependency
+  * Add Bhushan Shah upstream signing key
+  * New upstream release (5.12.0).
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.1.3.
+  * Bump ecm build dep (for ECMQMLModules)
+  * Use https uri for uscan
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 08 Feb 2018 15:21:17 +0100
+
+systemsettings (4:5.11.4-1) experimental; urgency=medium
+
+  * New upstream release (5.11.4).
+  * Bump Standards-Version to 4.1.2.
+  * Update build-deps and deps with the info from cmake
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jan 2018 16:49:26 -0300
+
+systemsettings (4:5.10.5-2) sid; urgency=medium
+
+  * New revision
+  * Bump Standards-Version to 4.1.0.
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 03 Sep 2017 09:55:50 +0200
+
+systemsettings (4:5.10.5-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.10.3).
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.0.0.
+  * Update upstream metadata
+  * Sync debian/watch and debian/upstream/signing-key.asc with neon
+  * New upstream release (5.10.4).
+  * Update build-deps and deps with the info from cmake
+  * New upstream release (5.10.5).
+  * Release to experimental
+
+  [ Jonathan Riddell ]
+  * Qt5QuickConfig
+  * KF5 (missing: Package Declarative)
+  * qmllint
+  * KF5Kirigami2Config.cmake
+  * Could NOT find KF5 (missing: Activities ActivitiesStats)
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 28 Aug 2017 15:29:01 +0200
+
+systemsettings (4:5.8.7-1) unstable; urgency=medium
+
+  * New upstream release (5.8.7)
+     + Set the correct desktop file name when in a KDE session.
+        System Settings installs two .desktop files:
+        - kdesystemsettings.desktop setting NotShowIn=KDE, for non-KDE desktops
+        - systemsettings.desktop, the one we use in Plasma
+        As of 39e13de3468a, it sets "kdesystemsettings" as its desktop file
+        name using KAboutData. As this is not the one we show in our menus,
+        it's not the one used as applicationId for the KStartupInfo provided
+        to the Task Manager after starting System Settings. With the eventual
+        window telling the Task Manager to use a different .desktop file, the
+        Task Manager can no longer match up the startup notification and the
+        window, causing them to co-exist instead of replace each other.
+        Telling the environment you're running in to look at a .desktop file
+        you've also told it to ignore is wrong app behavior, and this should
+        not be worked around in the Task Manager (especially as it would
+        cause I/O in a hotpath, requiring it to open and parse the .desktop
+        file to realize it's crummy and ignore it, falling back from the
+        window hint to a slow heuristic).
+        This patch instead makes it use the correct desktop file name when
+        KDE_FULL_SESSION is set. This completes the original hack of shipping
+        two .desktop files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 16 Jun 2017 10:51:05 +0200
+
+systemsettings (4:5.8.5-1) experimental; urgency=medium
+
+  * New upstream release (5.8.5).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 30 Dec 2016 18:46:24 +0100
+
+systemsettings (4:5.8.4-1) unstable; urgency=medium
+
+  * New upstream release (5.8.4)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 Nov 2016 18:39:11 +0100
+
+systemsettings (4:5.8.2-1) unstable; urgency=medium
+
+  * New upstream release (5.8.2)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 19 Oct 2016 15:25:21 +0200
+
+systemsettings (4:5.8.1-1) unstable; urgency=medium
+
+  * New upstream release (5.8.1)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 16 Oct 2016 23:00:11 +0200
+
+systemsettings (4:5.8.0-1) unstable; urgency=medium
+
+  * New upstream release (5.8.0)
+  * Update build-deps and deps with the info from cmake
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 07 Oct 2016 14:07:49 +0200
+
+systemsettings (4:5.7.4-1) unstable; urgency=medium
+
+  * New upstream release (5.7.4)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 26 Aug 2016 15:06:52 +0200
+
+systemsettings (4:5.7.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 09 Jul 2016 22:15:35 +0200
+
+systemsettings (4:5.6.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 23 Jun 2016 09:55:42 +0200
+
+systemsettings (4:5.6.4-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * uscan no longer supports this kind of watch files.
+  * New upstream release (5.5.5).
+  * Force installing in debian/tmp
+  * Automatic update with ddeb_migration3.py
+  * Add upstream metadata (DEP-12)
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+
+  [ Automatic packaging ]
+  * Bump Standards-Version to 3.9.8
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 26 May 2016 11:10:12 +0200
+
+systemsettings (4:5.5.4-1) experimental; urgency=medium
+
+  * New upstream release (5.5.0).
+  * New upstream release (5.5.1).
+  * New upstream release (5.5.2).
+  * New upstream release (5.5.3).
+  * New upstream release (5.5.4).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 27 Jan 2016 16:48:55 +0100
+
+systemsettings (4:5.4.3-1) unstable; urgency=medium
+
+  * New upstream release (5.4.3).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Dec 2015 11:45:47 +0100
+
+systemsettings (4:5.4.2-1) unstable; urgency=medium
+
+  * New upstream release (5.4.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 06 Oct 2015 07:51:59 +0200
+
+systemsettings (4:5.4.1-1) unstable; urgency=medium
+
+  * New upstream release (5.4.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 11 Sep 2015 18:45:09 +0200
+
+systemsettings (4:5.4.0-1) unstable; urgency=medium
+
+  * New upstream release (5.4.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 03 Sep 2015 19:08:32 +0200
+
+systemsettings (4:5.3.2-2) unstable; urgency=medium
+
+  * Add the missing Breaks/Replaces. (Closes: #790702, #789674)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 03 Jul 2015 14:07:52 +0200
+
+systemsettings (4:5.3.2-1) unstable; urgency=medium
+
+  * New upstream release (5.3.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 23:35:12 +0200
+
+systemsettings (4:5.3.1-0ubuntu1) wily; urgency=medium
+
+  [ Jonathan Riddell ]
+  * Plasma 5.3 beta
+  * new upstream release
+
+  [ Scarlett Clark ]
+  * Vivid backport
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 05 Jun 2015 02:54:32 +0200
+
+systemsettings (4:5.3.1-1) unstable; urgency=medium
+
+  * New upstream release (5.3.0).
+  * New upstream release (5.3.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 11:46:01 +0200
+
+systemsettings (4:5.2.2-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.2.2).
+
+  [ Felix Geyer ]
+  * Document LGPL license of some .po files.
+
+ -- Felix Geyer <fgeyer@debian.org>  Thu, 18 Jun 2015 22:58:01 +0200
+
+systemsettings (4:5.2.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 24 Mar 2015 07:46:06 -0700
+
+systemsettings (4:5.2.1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:50:53 -0800
+
+systemsettings (4:5.2.0-1) experimental; urgency=medium
+
+  * Prepare initial Debian release.
+  * Add myself as Uploader.
+  * Update build dependencies to build against experimental and to
+    follow cmake.
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 13 Feb 2015 11:16:29 +0100
+
+systemsettings (4:5.2.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Harald Sitter <sitter@kde.org>  Tue, 27 Jan 2015 15:02:08 +0100
+
+systemsettings (4:5.1.95-0ubuntu1) vivid; urgency=medium
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Jan 2015 01:39:53 +0100
+
+systemsettings (4:5.1.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 15 Dec 2014 13:30:00 +0100
+
+systemsettings (4:5.1.1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 10 Nov 2014 19:54:29 +0100
+
+systemsettings (4:5.0.2-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream release
+  * Bump depends versions
+
+  [ Harald Sitter ]
+  * Drop -data package and merge it into the regular systemsettings package
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Wed, 17 Sep 2014 18:24:08 -0700
+
+systemsettings (4:5.0.1-0ubuntu1~ubuntu14.10~ppa3) utopic; urgency=medium
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+  [ Scarlett Clark ]
+  * Update watch to http://download.kde.org
+
+  [ Jonathan Riddell ]
+  * New upstream bugfix release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sun, 10 Aug 2014 15:46:42 +0200
+
+systemsettings (4:4.98.0-0ubuntu1) utopic; urgency=medium
+
+  * New upstream RC release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 07 Jul 2014 13:28:53 +0200
+
+systemsettings (4:4.97.0-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * Initial release.
+
+  [ Jonathan Riddell ]
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 09 Jun 2014 10:27:15 +0100

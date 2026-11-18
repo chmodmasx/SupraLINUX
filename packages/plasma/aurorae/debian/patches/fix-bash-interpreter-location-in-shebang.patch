@@ -1,0 +1,8 @@
+--- a/plasma-apply-aurorae.cmake
++++ b/plasma-apply-aurorae.cmake
+@@ -1,4 +1,4 @@
+-#!/usr/bin/bash
++#!/bin/bash
+ 
+ # TODO Plasma 7: Drop aurorae.knsrc, use knsrc file provided by KWin.
+ 

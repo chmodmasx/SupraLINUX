@@ -1,0 +1,140 @@
+Source: breeze
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               kirigami2-dev (>= 5.102.0~),
+               libkdecorations3-dev (>= 4:6.6.4~),
+               libkf5config-dev (>= 5.102.0~),
+               libkf5configwidgets-dev (>= 5.102.0~),
+               libkf5coreaddons-dev (>= 5.102.0~),
+               libkf5guiaddons-dev (>= 5.102.0~),
+               libkf5i18n-dev (>= 5.102.0~),
+               libkf5iconthemes-dev (>= 5.102.0~),
+               libkf5kcmutils-dev (>= 5.102.0~),
+               libkf5style-dev (>= 5.102.0~),
+               libkf5windowsystem-dev (>= 5.102.0~),
+               libkf6colorscheme-dev (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6guiaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6iconthemes-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6style-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libkirigami-dev (>= 6.22.0~),
+               libqt5x11extras5-dev (>= 5.15.2~),
+               libx11-dev,
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qt6-svg-dev (>= 6.10.0~),
+               qtbase5-dev (>= 5.15.2~),
+               qtdeclarative5-dev (>= 5.15.2~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/?p=breeze.git/breeze
+Rules-Requires-Root: no
+
+Package: breeze
+Architecture: any
+Depends: breeze-cursor-theme (= ${source:Version}),
+         breeze-wallpaper (= ${source:Version}),
+         kde-style-breeze (= ${binary:Version}),
+         kf6-breeze-icon-theme,
+         kwin-style-breeze (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: kde-style-breeze-qt5 (= ${binary:Version})
+Description: Default Plasma theme (Metapackage)
+ This is the default theme for the KDE Plasma desktop.
+ .
+ This package includes wallpapers, icons, cursors, KWin style and Qt
+ widget style for the Plasma 6 desktop.
+ .
+ This package is part of the KDE base workspace module.
+
+Package: breeze-cursor-theme
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Default Plasma cursor theme
+ This is the default cursor theme for the KDE Plasma 6 desktop.
+ .
+ This package is part of the Breeze theme module.
+
+Package: breeze-dev
+Architecture: any
+Depends: ${misc:Depends}
+Description: Default Plasma theme (development files)
+ This is the default theme for the KDE Plasma desktop.
+ .
+ This package includes development files.
+ .
+ This package is part of the KDE base workspace module.
+
+Package: breeze-wallpaper
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: breeze (<< 4:6.2.5-1~)
+Replaces: breeze (<< 4:6.2.5-1~)
+Description: Default Plasma wallpaper
+ This is the default wallpaper for the KDE Plasma 6 desktop.
+ .
+ This package is part of the Breeze theme module.
+
+Package: kde-style-breeze
+Architecture: any
+Depends: kde-style-breeze-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6kcmutils-bin
+Description: Widget style for Qt and KDE Software
+ This is the default widget style for KDE's Plasma desktop.
+ .
+ This package is part of the Breeze theme module.
+
+Package: kde-style-breeze-data
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: kde-style-breeze (<< 4:6.2.5-1~)
+Replaces: kde-style-breeze (<< 4:6.2.5-1~)
+Description: Widget style for Qt and KDE Software - data files
+ This is the default widget style for KDE's Plasma desktop.
+ .
+ This package containts the architecture-independent data files used by both
+ the Qt6 and Qt5 versions of the Breeze theme module.
+ .
+ This package is part of the Breeze theme module.
+
+Package: kde-style-breeze-qt5
+Architecture: any
+Depends: kde-style-breeze-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6kcmutils-bin
+Breaks: kde-style-breeze (<< 4:6.2.5-1~)
+Replaces: kde-style-breeze (<< 4:6.2.5-1~)
+Description: Widget style for Qt and KDE Software running Qt5
+ This is the default widget style for KDE's Plasma desktop for apps still
+ depending on Qt5 and KDE Frameworks 5.
+ .
+ This package is part of the Breeze theme module.
+
+Package: kwin-style-breeze
+Architecture: any
+Depends: kde-style-breeze (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6kcmutils-bin
+Description: KWin Breeze Style
+ This is the Breeze window manager style for the KDE Plasma 6 desktop.
+ .
+ This package is part of the Breeze theme module.

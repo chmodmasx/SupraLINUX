@@ -1,0 +1,54 @@
+Source: print-manager
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               libcups2-dev (>= 2.4),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6configwidgets-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6iconthemes-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6widgetsaddons-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libkirigami-dev (>= 6.22.0~),
+               libpackagekitqt6-dev,
+               libplasma-dev (>= 6.6.5~),
+               pkgconf,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~)
+Standards-Version: 4.7.0
+Homepage: https://apps.kde.org/en/print-manager
+Rules-Requires-Root: no
+
+Package: print-manager
+Architecture: any
+Depends: plasma-desktoptheme,
+         qml6-module-org-kde-config,
+         qml6-module-org-kde-kcmutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-kitemmodels,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-dialogs,
+         qml6-module-qtquick-layouts,
+         systemsettings,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: cups,
+            smbclient,
+            system-config-printer-common,
+            system-config-printer-udev
+Description: printer configuration and monitoring tools
+ This package provides a KDE configuration module and a Plasma widget for
+ installing and configuring printers, and monitoring printers, print jobs and
+ print queues.
+ .
+ This package is part of the KDE utilities module.

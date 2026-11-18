@@ -1,0 +1,816 @@
+plasma-browser-integration (6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Plasma 6.6.7 plasma-browser-integration for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 6.6.x packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+plasma-browser-integration (6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:09:40 +0100
+
+plasma-browser-integration (6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:43:28 +0000
+
+plasma-browser-integration (6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:23:46 +0000
+
+plasma-browser-integration (6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:15:18 +0000
+
+plasma-browser-integration (6.5.5-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 23:02:42 +0000
+
+plasma-browser-integration (6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 15:06:21 +0000
+
+plasma-browser-integration (6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:19:40 +0000
+
+plasma-browser-integration (6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:08:44 +0000
+
+plasma-browser-integration (6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:13:22 +0000
+
+plasma-browser-integration (6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:47:37 +0000
+
+plasma-browser-integration (6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:38:26 +0100
+
+plasma-browser-integration (6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:03:05 +0100
+
+plasma-browser-integration (6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:30:06 +0100
+
+plasma-browser-integration (6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:35:05 +0100
+
+plasma-browser-integration (6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 08:57:07 +0100
+
+plasma-browser-integration (6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:22:10 +0000
+
+plasma-browser-integration (6.3.2-2ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Build depend on KF6 >= 6.10.0 and Plasma 6.3.2
+    - Do not ship web extension package.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 05 Mar 2025 08:45:16 +0000
+
+plasma-browser-integration (6.3.2-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Fix arch-dependent paths in install file.
+  * Move back native-messaging-hosts configuration from the webext to
+    the plasma-browser-integration package.
+  * Readd README.debian with more information.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 03 Mar 2025 09:37:41 +0100
+
+plasma-browser-integration (6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * Update build-deps and deps with the info from cmake.
+  * Also package the web browsers extension. Thanks Piper McCorkle for
+    the initial merge request. (Closes: #926618, #965386)
+  * New upstream release (6.3.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 01:01:52 +0100
+
+plasma-browser-integration (6.3.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 25 Feb 2025 18:17:18 +0000
+
+plasma-browser-integration (6.3.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.1)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Feb 2025 14:24:23 +0000
+
+plasma-browser-integration (6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 15:07:54 +0100
+
+plasma-browser-integration (6.3.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Feb 2025 12:56:27 +0000
+
+plasma-browser-integration (6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.91).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:54:57 +0100
+
+plasma-browser-integration (6.2.91-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.91)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 23 Jan 2025 13:43:04 +0000
+
+plasma-browser-integration (6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 12 Jan 2025 00:49:43 +0100
+
+plasma-browser-integration (6.2.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.90)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 09:01:43 +0000
+
+plasma-browser-integration (6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 11:24:33 +0100
+
+plasma-browser-integration (6.2.5-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 31 Dec 2024 19:02:42 +0000
+
+plasma-browser-integration (6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:40:04 +0100
+
+plasma-browser-integration (6.2.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 26 Nov 2024 12:15:07 +0000
+
+plasma-browser-integration (6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:38 +0100
+
+plasma-browser-integration (6.2.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.2.0)
+  * New upstream release (6.2.1)
+  * New upstream release (6.2.2)
+  * New upstream release (6.2.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 19:58:27 +0000
+
+plasma-browser-integration (6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 21:25:56 +0200
+
+plasma-browser-integration (6.2.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:52 +0200
+
+plasma-browser-integration (6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:59:38 +0200
+
+plasma-browser-integration (6.1.5-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.5)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 Sep 2024 06:00:38 +0100
+
+plasma-browser-integration (6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:28 +0200
+
+plasma-browser-integration (6.1.4-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.1.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 14 Aug 2024 21:43:03 +0100
+
+plasma-browser-integration (6.1.3-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:22 +0200
+
+plasma-browser-integration (6.1.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.1.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Mon, 08 Jul 2024 00:38:02 +0200
+
+plasma-browser-integration (5.27.11-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * New upstream release (5.27.11).
+  * Update build-deps and deps with the info from cmake.
+  * Remove inactive uploaders, thanks for your work.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 19 May 2024 12:23:55 +0200
+
+plasma-browser-integration (5.27.10-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.10).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 11 Jan 2024 23:28:08 +0100
+
+plasma-browser-integration (5.27.9-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.9).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 27 Oct 2023 21:55:05 +0200
+
+plasma-browser-integration (5.27.8-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.8).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 13 Sep 2023 22:31:23 +0200
+
+plasma-browser-integration (5.27.7-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.7).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Aug 2023 18:55:21 +0200
+
+plasma-browser-integration (5.27.5-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 27 May 2023 18:23:47 +0200
+
+plasma-browser-integration (5.27.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 09 May 2023 23:29:29 +0200
+
+plasma-browser-integration (5.27.3-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 22 Mar 2023 23:20:42 +0100
+
+plasma-browser-integration (5.27.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (5.27.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 28 Feb 2023 15:01:40 +0100
+
+plasma-browser-integration (5.27.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 18 Feb 2023 17:08:47 +0100
+
+plasma-browser-integration (5.26.90-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.90).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.2, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 23 Jan 2023 21:50:59 +0100
+
+plasma-browser-integration (5.26.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 07 Jan 2023 00:22:43 +0100
+
+plasma-browser-integration (5.26.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 29 Nov 2022 16:10:28 +0100
+
+plasma-browser-integration (5.26.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 08 Nov 2022 16:04:59 +0100
+
+plasma-browser-integration (5.26.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (5.26.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 27 Oct 2022 23:36:59 +0200
+
+plasma-browser-integration (5.26.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 11 Oct 2022 15:44:25 +0200
+
+plasma-browser-integration (5.25.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.90).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 25 Sep 2022 00:14:26 +0200
+
+plasma-browser-integration (5.25.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 09 Sep 2022 23:23:01 +0200
+
+plasma-browser-integration (5.25.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 02 Aug 2022 17:35:16 +0200
+
+plasma-browser-integration (5.25.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.2).
+  * Refresh lintian overrides.
+  * New upstream release (5.25.3).
+  * Release to unstable
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 17 Jul 2022 15:29:42 +0200
+
+plasma-browser-integration (5.25.1-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.25.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 21 Jun 2022 21:47:36 +0200
+
+plasma-browser-integration (5.25.0-1) experimental; urgency=medium
+
+  * New upstream release (5.25.0).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.1, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 14 Jun 2022 21:27:10 +0200
+
+plasma-browser-integration (5.24.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.90).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 20 May 2022 11:48:11 +0200
+
+plasma-browser-integration (5.24.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 12 May 2022 21:40:50 +0200
+
+plasma-browser-integration (5.24.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 30 Mar 2022 14:08:55 +0200
+
+plasma-browser-integration (5.24.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.3).
+  * Added myself to the uploaders.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 10 Mar 2022 08:07:17 +0100
+
+plasma-browser-integration (5.24.2-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.24.2).
+  * Re-export signing key without extra signatures.
+  * Update B-Ds and deps with the info from cmake.
+  * Update d/copyright.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 26 Feb 2022 21:59:11 +0100
+
+plasma-browser-integration (5.23.5-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.23.5).
+  * Update B-Ds.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 07 Jan 2022 18:37:11 +0100
+
+plasma-browser-integration (5.23.4-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.4).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 02 Dec 2021 22:59:03 +0100
+
+plasma-browser-integration (5.23.3-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.3).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 10 Nov 2021 08:40:37 +0900
+
+plasma-browser-integration (5.23.2-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.1).
+  * New upstream release (5.23.2).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Nov 2021 22:21:03 +0900
+
+plasma-browser-integration (5.23.0-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Update upstream signing-key.
+  * Bump Standards-Version to 4.6.0 (no changes needed).
+
+  [ Norbert Preining ]
+  * Tighten B-D of plasma-workspace.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 15 Oct 2021 23:44:42 +0200
+
+plasma-browser-integration (5.23.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.0).
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 14 Oct 2021 20:13:15 +0900
+
+plasma-browser-integration (5.21.5-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Release to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 17 Aug 2021 03:24:33 +0200
+
+plasma-browser-integration (5.21.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.5).
+  * Tighten inter-plasma B-Ds.
+
+ -- Patrick Franz <patfra71@gmail.com>  Fri, 07 May 2021 19:32:42 +0200
+
+plasma-browser-integration (5.21.4-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.4).
+  * Tighten inter-plasma B-Ds.
+
+ -- Patrick Franz <patfra71@gmail.com>  Tue, 06 Apr 2021 20:51:02 +0200
+
+plasma-browser-integration (5.21.3-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.3).
+  * Bump inter-plasma dependencies.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Mar 2021 05:49:42 +0900
+
+plasma-browser-integration (5.21.2-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.2).
+  * Tigthen inter-plasma B-Ds.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Mar 2021 05:33:50 +0900
+
+plasma-browser-integration (5.21.1-2) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Tigthen inter-plasma build-depends.
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 25 Feb 2021 06:29:51 +0900
+
+plasma-browser-integration (5.21.1-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.1).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 24 Feb 2021 14:36:40 +0900
+
+plasma-browser-integration (5.21.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Feb 2021 05:42:27 +0900
+
+plasma-browser-integration (5.20.5-1) unstable; urgency=medium
+
+  * New upstream release (5.20.5).
+  * Update lintian overrides.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 06 Jan 2021 23:50:52 +0900
+
+plasma-browser-integration (5.20.4-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 22 Dec 2020 11:04:37 +0900
+
+plasma-browser-integration (5.20.4-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.20.4).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 09 Dec 2020 14:17:32 +0900
+
+plasma-browser-integration (5.19.5-3) unstable; urgency=medium
+
+  [ Scarlett Moore ]
+  * Refresh upstream metadata.
+    - Remove obsolete entries already defined in d/copyright.
+    - Update repositories to invent.kde.org.
+    - Simplify bug-database.
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 06 Nov 2020 08:37:23 +0900
+
+plasma-browser-integration (5.19.5-2) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 24 Oct 2020 09:29:02 +0200
+
+plasma-browser-integration (5.19.5-1) experimental; urgency=medium
+
+  * New upstream release (5.19.5).
+  * Add Patrick and myself to uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 19 Oct 2020 13:57:30 +0900
+
+plasma-browser-integration (5.19.4-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Scarlett Moore ]
+  * New upstream release.
+  * Update salsa-ci config for reprotest.
+  * Add gbp.conf for salsa ci git-buildpackage.
+    - Add configuration for git-overlay on salsa-ci.
+    - Update .gitattributes for salsa-ci and gbp.
+  * Update build dependencies as per cmake.
+    - Removed libkf5windowsystem-dev no longer needed.
+  * Raise ECM build dep version to 5.64 as it requires
+    a module ( kde_clang_format ) introduced with that release.
+  * Add rules-requires-root to control file as per lintian.
+  * Bump Standards to 4.5.0; no changes required.
+  * Refresh copyright with new copyright, fix formatting.
+    - Fix KDEev clause copyright to correctly reflect the upstream copyright.
+    - Review and update all copyright holders.
+    - According to policy 12.5 Sources field should be a link to the actual
+    source. Fixed the link to make it comply.
+  * Add upstream/metadata file to provide upstream information.
+  * Bump debhelper compat to 13.
+  * Update build dependencies from cmake.
+  * Refresh copyright.
+  * Bump compat level to 13.
+  * Bump Standards-Version to 4.5.0 (No changes needed).
+  * Add Rules-Requires-Root field to control.
+  * New upstream release (5.18.5).
+  * Update build-deps and deps with the info from cmake.
+  * Update Homepage link to point to new invent.kde.org
+  * Update field Source in debian/copyright to invent.kde.org move.
+  * Set/Update field Upstream-Contact in debian/copyright.
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Update the build dependencies according to the upstream build system:
+    - bump KF packages to 5.70.0
+  * Remove the dbus-x11 build dependency, not needed.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 22 Aug 2020 19:46:42 +0200
+
+plasma-browser-integration (5.17.5-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update the build dependencies according to the upstream build system:
+    - add libkf5crash-dev, libkf5filemetadata-dev, and libkf5purpose-dev
+    - explicitly add gettext
+  * Switch from the debhelper build dependency to debhelper-compat
+    - remove debian/compat
+  * Stop passing --fail-missing to dh_missing, as everything is already
+    installed in the only binary package (plasma-browser-integration) of this
+    source.
+  * Bump Standards-Version to 4.4.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 12 Jan 2020 14:40:01 +0100
+
+plasma-browser-integration (5.16.5-1) unstable; urgency=medium
+
+  * New upstream release (5.16.5).
+  * Add the symlink only if the file is not present (Closes: 935601)
+  * Add the LGPL-2.1+3+KDEeV paragraph
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 16 Sep 2019 16:23:30 +0100
+
+plasma-browser-integration (5.16.4-1) unstable; urgency=medium
+
+  [ Scarlett Moore ]
+  * Fix "Incorrect installation directory for chrome config file"
+     - Added postinst/postrm to handle symlinks to opt/etc
+       that chrome expects.
+     - Adjusted rules file to move files to usr/share dpkg expects.
+     - Removed install file no longer needed.
+     - Update README as we now handle the symlinks.
+     - (Closes: #923322)
+  * New upstream release.
+  * Fix "Description shouldn't be limited to chromium"
+    - Vastly improve the description and include supported browsers.
+    (Closes: #903919)
+  * Update my name and email.
+  * Update copyright file.
+  * Use secure copyright format.
+  * Bump compat level to 12.
+  * Bump standards version to 4.4.0; no changes needed.
+  * Add back commas in copyright.
+  * Use decopy friendly short license.
+
+  [ Maximiliano Curia ]
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 11 Aug 2019 21:40:53 -0300
+
+plasma-browser-integration (5.14.5-1) unstable; urgency=medium
+
+  * New upstream release (5.14.5).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 24 Jan 2019 09:26:03 -0300
+
+plasma-browser-integration (5.14.3-1) unstable; urgency=medium
+
+  * Fix wrong path in the README.Debian file.
+    Thanks to acheronuk
+  * New upstream release (5.14.3).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 23 Nov 2018 08:51:03 -0300
+
+plasma-browser-integration (5.13.5-1) unstable; urgency=medium
+
+  * New upstream release (5.13.5).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 06 Sep 2018 20:40:37 +0200
+
+plasma-browser-integration (5.13.4-1) unstable; urgency=medium
+
+  * New upstream release (5.13.2).
+  * New upstream release (5.13.4).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 19 Aug 2018 23:18:12 +0200
+
+plasma-browser-integration (5.13.1-1) unstable; urgency=medium
+
+  [ Scarlett Clark ]
+  * Initial release. (Closes: #890778)
+
+  [ Maximiliano Curia ]
+  * Use debhelper 11
+  * Update watch file
+  * New upstream release (5.13.1).
+  * Update build-deps and deps with the info from cmake
+  * Update copyright information
+  * Add call to dh_missing
+  * Move the chromium native-messaging-hosts file to usr/share
+  * Avoid installing the manifests
+  * Update documentation
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 26 Jun 2018 13:43:14 +0200

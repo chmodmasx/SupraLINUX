@@ -1,0 +1,3 @@
+# systemsettings executable is provided by the systemsettings dependency
+kde-config-flatpak: desktop-command-not-in-package systemsettings [usr/share/applications/kcm_flatpak.desktop]
+

@@ -1,0 +1,47 @@
+Source: plasma-firewall
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-python3,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libkf6auth-dev (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libxkbcommon-dev,
+               python3:any,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/plasma-firewall
+Rules-Requires-Root: no
+
+Package: plasma-firewall
+Architecture: any
+Depends: qml6-module-org-kde-kcmutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-kitemmodels,
+         qml6-module-qt-labs-qmlmodels,
+         qml6-module-qtqml,
+         qml6-module-qtqml-workerscript,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-layouts,
+         systemsettings,
+         ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends}
+Recommends: ufw | firewalld
+Description: Plasma configuration module for firewalls
+ Plasma Firewall provides a way to graphically configure a firewall service.
+ .
+ Supported firewalls are:
+  - firewalld
+  - ufw
