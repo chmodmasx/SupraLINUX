@@ -49,7 +49,7 @@ class BrandingTests(unittest.TestCase):
 
     def test_theme_uses_the_branding_package_version(self):
         control = (ROOT / "packages/desktop/supralinux-theme/debian/control").read_text()
-        self.assertIn("supralinux-branding (>= 1.0.0)", control)
+        self.assertIn("supralinux-branding (>= 1.2.0)", control)
         self.assertIn("Package: supralinux-theme", control)
 
     def test_branding_changelog_and_copyright_are_present(self):

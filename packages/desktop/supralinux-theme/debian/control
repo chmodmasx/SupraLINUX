@@ -10,7 +10,7 @@ Rules-Requires-Root: no
 Package: supralinux-theme
 Architecture: all
 Depends: ${misc:Depends},
- supralinux-branding (>= 1.0.0),
+ supralinux-branding (>= 1.2.0),
  breeze,
  plasma-desktoptheme,
  sddm-theme-breeze,

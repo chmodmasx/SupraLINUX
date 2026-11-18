@@ -1,4 +1,4 @@
-supralinux-branding (1.0.0) resolute; urgency=medium
+supralinux-branding (1.2.0) resolute; urgency=medium
 
   * Rebuild the Aurora brand assets for SupraLINUX 1.0.0.
   * Keep the GRUB theme, Plymouth theme, wallpapers and distributor-logo

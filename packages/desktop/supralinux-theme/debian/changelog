@@ -1,4 +1,4 @@
-supralinux-theme (1.0.0) resolute; urgency=medium
+supralinux-theme (1.0.3) resolute; urgency=medium
 
   * Initial Aurora theme package for SupraLINUX 1.0.0.
   * Include dark and light global themes, Plasma styles, SDDM theme, sounds
