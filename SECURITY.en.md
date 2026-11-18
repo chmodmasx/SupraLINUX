@@ -44,4 +44,13 @@ Best-effort, no SLA. Issues with real impact are prioritized.
 
 ## GPG key
 
-The release key fingerprint will be published with the 1.0.0 release.
+The release public key is at `installer/keys/supralinux-archive-key.asc`.
+
+Ed25519 fingerprint:
+
+```text
+9BAD7A4B1826213B3BE271E208780B9EEC43C2B8
+```
+
+The private key and passphrase live in `SUPRALINUX_SECRETS`, never in the
+repository.

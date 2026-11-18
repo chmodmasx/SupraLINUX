@@ -44,4 +44,13 @@ Best-effort, sin SLA. Se priorizan los fallos con impacto real.
 
 ## Clave GPG
 
-La huella de la clave de release se publicará con la release 1.0.0.
+La clave pública de release está en `installer/keys/supralinux-archive-key.asc`.
+
+Huella Ed25519:
+
+```text
+9BAD7A4B1826213B3BE271E208780B9EEC43C2B8
+```
+
+La clave privada y su passphrase viven en `SUPRALINUX_SECRETS`, nunca en el
+repositorio.

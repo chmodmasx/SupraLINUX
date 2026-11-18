@@ -74,11 +74,14 @@ class LiveImageTests(unittest.TestCase):
         self.assertIn("@pre-rollback-", script.read_text())
         self.assertTrue((ROOT / "installer/recovery/supralinux-recovery.service").is_file())
 
-    def test_no_previous_repository_key_is_shipped(self):
+    def test_repository_public_key_is_shipped(self):
         keys = sorted(path.name for path in (ROOT / "installer/keys").iterdir())
-        self.assertNotIn("supralinux-archive-key.asc", keys)
+        self.assertIn("supralinux-archive-key.asc", keys)
         self.assertIn("packages.mozilla.org.asc", keys)
         self.assertIn("README.md", keys)
+        text = (ROOT / "installer/keys/supralinux-archive-key.asc").read_text()
+        self.assertIn("BEGIN PGP PUBLIC KEY BLOCK", text)
+        self.assertNotIn("PRIVATE KEY", text)
 
 
 if __name__ == "__main__":
