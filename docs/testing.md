@@ -209,8 +209,8 @@ manifiesto de release.
 ## Resultados actuales
 
 - Suite unitaria: `PASS`.
-- 10 paquetes nativos seleccionados: `PASS` en build limpio, con artifact y
-  evidencia retenidos. El resumen está en
+- 9 paquetes nativos del producto y el paquete sintético de prueba: `PASS` en
+  build limpio, con artifact y evidencia retenidos. El resumen está en
   `manifests/native-builds-1.0.0.json`.
 - Muestras de Frameworks, Plasma y Gear: `extra-cmake-modules`,
   `libkf6coreaddons6`, `libkwin6` y `dolphin` con build limpio `PASS`.

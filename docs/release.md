@@ -137,7 +137,8 @@ explícitamente documentado, nunca con una afirmación falsa.
 ## Estado de validación (2026-11-18)
 
 - Suite unitaria: `PASS`.
-- 10 paquetes nativos: build limpio `PASS`, con artifact y evidencia.
+- 9 paquetes nativos del producto y el paquete sintético: build limpio `PASS`,
+  con artifact y evidencia.
 - Muestras de Frameworks, Plasma y Gear: `extra-cmake-modules`,
   `libkf6coreaddons6`, `libkwin6` y `dolphin` con build limpio `PASS`.
 - Smoke offline: `supralinux-build-test` y `supralinux-base-files` con

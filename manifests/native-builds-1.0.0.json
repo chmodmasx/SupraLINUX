@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "codename": "Aurora",
   "status": "partial",
-  "note": "Solo paquetes nativos seleccionados. Frameworks, Plasma, Gear y la ISO siguen pendientes.",
+  "note": "9 paquetes nativos del producto y el paquete sint\u00e9tico de prueba. Frameworks, Plasma, Gear y la ISO siguen pendientes.",
   "build_count": 10,
   "builds": [
     {
