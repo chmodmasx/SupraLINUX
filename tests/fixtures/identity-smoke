@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+grep -qx 'ID=supralinux' /usr/lib/os-release
+grep -qx 'ID_LIKE="ubuntu debian"' /usr/lib/os-release
+grep -qx 'VERSION_ID="26.04"' /usr/lib/os-release
+grep -qx 'SUPRALINUX_VERSION="1.0.0"' /usr/lib/os-release
+grep -qx 'DISTRIB_ID=SupraLINUX' /etc/lsb-release
+grep -q 'SupraLINUX Aurora 1.0.0' /etc/issue
+test -s /etc/legal
+test -x /etc/update-motd.d/10-help-text
+dpkg-divert --list /usr/lib/os-release | grep -q 'supralinux-base-files'
+dpkg-divert --list /etc/lsb-release | grep -q 'supralinux-base-files'
