@@ -144,7 +144,12 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Smoke offline: `supralinux-build-test` y `supralinux-base-files` con
   instalación, control negativo y rechazo de índices manipulados `PASS`.
 - Los 176 paquetes fuente y la ISO no se construyeron completos.
-- No hay snapshot `stable`, clave nueva publicada ni autorización de release.
+- Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
+  (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
+  `SUPRALINUX_SECRETS`.
+- Instancia Aptly paralela creada con `supralinux-testing` y
+  `supralinux-stable` vacíos. No está publicada ni reemplaza a la anterior.
+- No hay snapshot `stable` ni autorización de release.
 
 Esto no es una release validada. Los gates de la tabla siguen pendientes hasta
 completar el build de todos los paquetes y la matriz de ISO.

@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "scope": "release-key",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "key": {
+    "algorithm": "ed25519",
+    "fingerprint": "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8",
+    "uid": "SupraLINUX Archive <packages@supralinux.invalid>",
+    "created": "2026-11-18",
+    "expires": "2028-11-17",
+    "public_key": "installer/keys/supralinux-archive-key.asc",
+    "private_key_location": "SUPRALINUX_SECRETS/aptly-gpg-private-key.asc"
+  },
+  "aptly": {
+    "repositories": ["supralinux-testing", "supralinux-stable"],
+    "published": false,
+    "note": "Instancia paralela creada; la instancia anterior no se modificó."
+  }
+}
