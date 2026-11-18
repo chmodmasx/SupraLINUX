@@ -1,0 +1,69 @@
+Source: khelpcenter
+Section: doc
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-python3,
+               extra-cmake-modules (>= 6.0.0~),
+               gettext,
+               libkf6archive-dev (>= 6.0.0~),
+               libkf6bookmarks-dev (>= 6.0.0~),
+               libkf6completion-dev (>= 6.0.0~),
+               libkf6config-dev (>= 6.0.0~),
+               libkf6configwidgets-dev (>= 6.0.0~),
+               libkf6coreaddons-dev (>= 6.0.0~),
+               libkf6dbusaddons-dev (>= 6.0.0~),
+               libkf6doctools-dev (>= 6.0.0~),
+               libkf6i18n-dev (>= 6.0.0~),
+               libkf6kio-dev (>= 6.0.0~),
+               libkf6service-dev (>= 6.0.0~),
+               libkf6texttemplate-dev (>= 6.0.0~),
+               libkf6widgetsaddons-dev (>= 6.0.0~),
+               libkf6windowsystem-dev (>= 6.0.0~),
+               libkf6xmlgui-dev (>= 6.0.0~),
+               libxapian-dev,
+               libxml2-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.5.0+dfsg~),
+               qt6-webengine-dev (>= 6.5.0+dfsg~)
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://invent.kde.org/system/khelpcenter
+
+Package: khelpcenter
+Architecture: amd64 amd64v3 arm64 armhf
+Depends: kdoctools6,
+         khelpcenter-data (>= ${source:Version}),
+         ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends}
+Recommends: man-db
+Breaks: khelpcenter-data (<< 4:24.12.2-1~)
+Replaces: khelpcenter-data (<< 4:24.12.2-1~)
+Description: search and read system documentation
+ KHelpCenter is an application to search and read documentation for
+ applications, modules, libraries, and system utilities.
+ .
+ It collects documentation from various sources (KDE community, man pages, etc)
+ and displays them in one window.
+ .
+ This package is part of the KDE System module.
+
+Package: khelpcenter-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: khelpcenter (<< 4:24.05.2-1~)
+Replaces: khelpcenter (<< 4:24.05.2-1~)
+Description: search and read system documentation data
+ KHelpCenter is an application to search and read documentation for
+ applications, modules, libraries, and system utilities.
+ .
+ It collects documentation from various sources (KDE community, man pages, etc)
+ and displays them in one window.
+ .
+ This package is part of the KDE System module.
+ .
+ This package contains the data files.

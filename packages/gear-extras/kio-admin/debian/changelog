@@ -1,0 +1,212 @@
+kio-admin (25.12.3-0supralinux1) resolute; urgency=medium
+
+  * Package kio-admin for the KDE desktop completeness set.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+kio-admin (25.12.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Mar 2026 13:51:57 +0000
+
+kio-admin (25.12.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Feb 2026 12:24:13 +0000
+
+kio-admin (25.12.1-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 22:08:27 +0000
+
+kio-admin (25.12.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jan 2026 11:05:13 +0000
+
+kio-admin (25.12.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Dec 2025 12:22:21 +0000
+
+kio-admin (25.11.90-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (RC) release (25.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 28 Nov 2025 14:06:32 +0000
+
+kio-admin (25.11.80-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (beta) release (25.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 16 Nov 2025 05:52:55 +0000
+
+kio-admin (25.08.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Nov 2025 12:15:00 +0000
+
+kio-admin (25.08.2-1ubuntu1) resolute; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 19 Oct 2025 07:27:33 +0100
+
+kio-admin (25.08.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Drop Rules-Requires-Root: no, no more needed since Debian trixie.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 11 Oct 2025 19:23:05 +0200
+
+kio-admin (25.08.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 11:46:43 +0100
+
+kio-admin (25.08.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Sep 2025 06:54:20 +0100
+
+kio-admin (25.08.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Aug 2025 11:24:50 +0100
+
+kio-admin (25.07.90-0ubuntu1) questing; urgency=medium
+
+  * New upstream (RC) release (25.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Jul 2025 17:47:45 +0100
+
+kio-admin (25.07.80-0ubuntu1) questing; urgency=medium
+
+  * New upstream (beta) release (25.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 12 Jul 2025 18:12:42 +0100
+
+kio-admin (25.04.3-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Jul 2025 07:45:07 +0100
+
+kio-admin (25.04.2-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 11:47:59 +0100
+
+kio-admin (25.04.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 May 2025 22:07:58 +0100
+
+kio-admin (25.04.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (25.04.0).
+  * Bump Standards-Version to 4.7.2, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 17 Apr 2025 21:43:54 +0200
+
+kio-admin (25.04.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 30 Apr 2025 19:51:07 +0100
+
+kio-admin (24.12.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Mar 2025 08:43:00 +0000
+
+kio-admin (24.12.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Feb 2025 14:17:56 +0000
+
+kio-admin (24.12.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 14:32:04 +0000
+
+kio-admin (24.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.12.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 22 Dec 2024 22:41:42 +0100
+
+kio-admin (24.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Dec 2024 17:12:41 +0000
+
+kio-admin (24.11.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (RC) release (24.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 29 Nov 2024 14:09:02 +0000
+
+kio-admin (24.11.80-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (beta) release (24.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 20 Nov 2024 14:53:09 +0000
+
+kio-admin (24.08.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 14:40:38 +0000
+
+kio-admin (24.08.2-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 12:44:42 +0100
+
+kio-admin (24.08.2-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Added myself to the uploaders, made the Team the maintainer instead
+    of myself.
+  * Add upstream metadata.
+  * kio-admin is now part of KDE Gear releases, adapt packaging
+    accordingly.
+  * Refresh upstream metadata.
+  * Add/update Heiko Becker in upstream signing keys.
+  * New upstream release (24.08.2).
+  * Build against Qt6 / KF6, update build-deps and deps with the info
+    from cmake.
+  * Switch to kf6 debhelper build sequence.
+  * Bump Standards-Version to 4.7.0, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 04 Nov 2024 01:17:09 +0100
+
+kio-admin (1.0.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #1024716)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 23 Nov 2022 21:31:32 +0100

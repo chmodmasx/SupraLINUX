@@ -1,0 +1,32 @@
+Source: kcharselect
+Section: utils
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.3.0~),
+               libkf6bookmarks-dev (>= 6.3.0~),
+               libkf6configwidgets-dev,
+               libkf6coreaddons-dev (>= 6.3.0~),
+               libkf6crash-dev (>= 6.3.0~),
+               libkf6doctools-dev (>= 6.3.0~),
+               libkf6i18n-dev (>= 6.3.0~),
+               libkf6iconthemes-dev,
+               libkf6widgetsaddons-dev (>= 6.3.0~),
+               libkf6xmlgui-dev (>= 6.3.0~),
+               qt6-base-dev (>= 6.7.0~)
+Standards-Version: 4.7.0
+Homepage: https://apps.kde.org/en/kcharselect
+Rules-Requires-Root: no
+
+Package: kcharselect
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: special character utility
+ KCharSelect is a utility for finding special characters which are not
+ available on the keyboard.  It can search for characters by Unicode number,
+ display characters in any font, and copy characters to the clipboard so they
+ can be pasted into documents.
+ .
+ This package is part of the KDE utilities module.

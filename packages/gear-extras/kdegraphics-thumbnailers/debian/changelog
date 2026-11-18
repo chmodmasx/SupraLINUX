@@ -1,0 +1,541 @@
+kdegraphics-thumbnailers (4:25.12.3-0supralinux1) resolute; urgency=medium
+
+  * Package kdegraphics-thumbnailers for the KDE desktop completeness set.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+kdegraphics-thumbnailers (4:25.12.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Mar 2026 13:49:09 +0000
+
+kdegraphics-thumbnailers (4:25.12.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Feb 2026 12:21:43 +0000
+
+kdegraphics-thumbnailers (4:25.12.1-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 21:51:00 +0000
+
+kdegraphics-thumbnailers (4:25.12.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jan 2026 11:01:50 +0000
+
+kdegraphics-thumbnailers (4:25.12.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Dec 2025 12:19:12 +0000
+
+kdegraphics-thumbnailers (4:25.11.90-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (RC) release (25.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 28 Nov 2025 14:03:29 +0000
+
+kdegraphics-thumbnailers (4:25.11.80-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (beta) release (25.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 16 Nov 2025 07:55:14 +0000
+
+kdegraphics-thumbnailers (4:25.08.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Nov 2025 15:22:37 +0000
+
+kdegraphics-thumbnailers (4:25.08.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 11:43:44 +0100
+
+kdegraphics-thumbnailers (4:25.08.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Sep 2025 07:07:03 +0100
+
+kdegraphics-thumbnailers (4:25.08.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Aug 2025 11:51:25 +0100
+
+kdegraphics-thumbnailers (4:25.07.90-0ubuntu1) questing; urgency=medium
+
+  * New upstream (RC) release (25.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Jul 2025 17:43:05 +0100
+
+kdegraphics-thumbnailers (4:25.07.80-0ubuntu1) questing; urgency=medium
+
+  * New upstream (beta) release (25.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 12 Jul 2025 18:08:51 +0100
+
+kdegraphics-thumbnailers (4:25.04.3-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Jul 2025 07:41:18 +0100
+
+kdegraphics-thumbnailers (4:25.04.2-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 11:43:03 +0100
+
+kdegraphics-thumbnailers (4:25.04.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 May 2025 22:04:59 +0100
+
+kdegraphics-thumbnailers (4:25.04.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 30 Apr 2025 19:47:15 +0100
+
+kdegraphics-thumbnailers (4:24.12.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Mar 2025 08:40:22 +0000
+
+kdegraphics-thumbnailers (4:24.12.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Feb 2025 14:14:49 +0000
+
+kdegraphics-thumbnailers (4:24.12.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 14:29:43 +0000
+
+kdegraphics-thumbnailers (4:24.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Dec 2024 17:10:32 +0000
+
+kdegraphics-thumbnailers (4:24.11.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (RC) release (24.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 29 Nov 2024 14:06:52 +0000
+
+kdegraphics-thumbnailers (4:24.11.80-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (beta) release (24.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 Nov 2024 20:53:36 +0000
+
+kdegraphics-thumbnailers (4:24.08.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 11:39:22 +0000
+
+kdegraphics-thumbnailers (4:24.08.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.2)
+  * Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 04 Nov 2024 10:37:52 +0000
+
+kdegraphics-thumbnailers (4:24.08.1-0ubuntu2) oracular; urgency=medium
+
+  * Restore building with raw image support.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 14 Sep 2024 09:54:07 +0100
+
+kdegraphics-thumbnailers (4:24.08.1-0ubuntu1) oracular; urgency=medium
+
+  * New uptream release (24.08.1)
+  * Build without optional raw support until we have libkdcraw.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Sep 2024 14:03:41 +0100
+
+kdegraphics-thumbnailers (4:24.08.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.08.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 25 Aug 2024 23:32:36 +0200
+
+kdegraphics-thumbnailers (4:24.05.2-1) experimental; urgency=medium
+
+  [ Debian Qt/KDE Maintainers ]
+  * New upstream release (24.05.2).
+
+  [ Scarlett Moore ]
+  * Add myself to uploaders.
+  * Update dependencies according to cmake.
+  * Bump standards version 4.7.0, no changes required. 
+  * Remove inactive uploaders, thanks for your work.
+  * Remove kf5 from rules.
+  * Refresh copyright.
+  * Override auto configure to set QT_MAJOR_VERSION.
+  * Add bug information to metadata; it does not have a product.
+
+ -- Scarlett Moore <sgmoore@debian.org>  Thu, 15 Aug 2024 03:17:35 -0700
+
+kdegraphics-thumbnailers (4:22.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 01 Mar 2023 11:58:14 +0100
+
+kdegraphics-thumbnailers (4:22.12.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.1).
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Add/update Albert Astals Cid’s master key in upstream signing keys.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 07 Jan 2023 00:00:33 +0100
+
+kdegraphics-thumbnailers (4:22.12.0-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Use correct Breaks/Replaces versions against kdegraphics-mobipocket.
+    (Closes: #1025947)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 12 Dec 2022 13:04:40 +0100
+
+kdegraphics-thumbnailers (4:22.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.08.3).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.1, no change required.
+  * New upstream release (22.11.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (22.12.0).
+  * Add Breaks / Replaces against kdegraphics-mobipocket since the
+    thumbnailer was moved to this project.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Dec 2022 23:06:27 +0100
+
+kdegraphics-thumbnailers (4:21.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (21.12.3).
+  * Bump Standards-Version to 4.6.0, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 06 Mar 2022 22:40:34 +0100
+
+kdegraphics-thumbnailers (4:21.08.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.08.0).
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 16 Aug 2021 16:09:26 +0900
+
+kdegraphics-thumbnailers (4:21.04.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.04.0).
+  * Borrow minimal upstream signing key from k3b.
+  * Added myself to the uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 28 Apr 2021 10:04:36 +0900
+
+kdegraphics-thumbnailers (4:20.12.0-1) unstable; urgency=medium
+
+  * New upstream release (20.12.0).
+  * Bump Standards-Version to 4.5.1, no change required.
+  * Refresh copyright information.
+  * Build with hardening=+all build hardening flag.
+  * Update project homepage.
+  * Bump debhelper compatibility level to 13.
+  * Borrow minimal upstream signing key from k3b.
+  * Refresh upstream metadata.
+  * Remove Eshat Cakar and Maximiliano Curia from the uploaders, thanks for
+    your work on the package!
+  * Add myself to the uploaders.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 17 Dec 2020 15:40:15 +0100
+
+kdegraphics-thumbnailers (4:20.04.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Switch Vcs-* fields to salsa.debian.org.
+  * Update watch file to the new release-service location.
+  * Update the build dependencies according to the upstream build system:
+    - bump cmake to 3.0
+    - add libkf5archive-dev
+  * Switch from dhmk to the dh sequencer:
+    - invoke the dh sequencer using the kf5 addon
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+  * Bump Standards-Version to 4.5.0, no changes required.
+  * Add the configuration for the CI on salsa.
+  * Add Rules-Requires-Root: no.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 01 Aug 2020 17:10:45 +0200
+
+kdegraphics-thumbnailers (4:17.08.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+  * New upstream release.
+  * Remove the breaks/replaces with kde-l10n, since there are no translations
+    shipped in this source.
+  * Bump Standards-Version to 4.1.1, no changes required.
+  * Simplify watch file, and switch it to https.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 02 Dec 2017 14:48:35 +0100
+
+kdegraphics-thumbnailers (4:17.08.1-1) experimental; urgency=medium
+
+  * New upstream release (17.08.1)
+  * Bump Standards-Version to 4.1.0.
+  * Update upstream metadata
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 12 Sep 2017 22:41:19 +0200
+
+kdegraphics-thumbnailers (4:17.08.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Tue, 05 Sep 2017 13:59:44 +0000
+
+kdegraphics-thumbnailers (4:17.08.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 17 Aug 2017 09:34:14 +0000
+
+kdegraphics-thumbnailers (4:17.04.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 12 Jul 2017 10:20:12 +0000
+
+kdegraphics-thumbnailers (4:17.04.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 07 Jun 2017 12:21:19 +0000
+
+kdegraphics-thumbnailers (4:17.04.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 11 May 2017 18:16:26 +0000
+
+kdegraphics-thumbnailers (4:17.04.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 19 Apr 2017 13:03:41 +0000
+
+kdegraphics-thumbnailers (4:16.12.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 08 Mar 2017 13:47:47 +0000
+
+kdegraphics-thumbnailers (4:16.12.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 08 Feb 2017 16:57:50 +0000
+
+kdegraphics-thumbnailers (4:16.12.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 11 Jan 2017 13:16:58 +0000
+
+kdegraphics-thumbnailers (4:16.12.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 14 Dec 2016 16:25:40 +0000
+
+kdegraphics-thumbnailers (4:16.08.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 21 Nov 2016 13:53:04 +0000
+
+kdegraphics-thumbnailers (4:16.08.2-2) unstable; urgency=medium
+
+  * Add ghostscript recommends.
+    Thanks to Mateusz Kowalewski for reporting (Closes: 841266)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 Nov 2016 21:08:11 +0100
+
+kdegraphics-thumbnailers (4:16.08.2-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (16.08.2)
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 19 Oct 2016 00:07:48 +0200
+
+kdegraphics-thumbnailers (4:16.08.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 14 Oct 2016 13:39:21 +0000
+
+kdegraphics-thumbnailers (4:16.08.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 16 Sep 2016 13:06:17 +0000
+
+kdegraphics-thumbnailers (4:16.08.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 17 Aug 2016 11:48:17 +0000
+
+kdegraphics-thumbnailers (4:16.04.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Tue, 12 Jul 2016 11:38:38 +0000
+
+kdegraphics-thumbnailers (4:16.04.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 08 Jul 2016 12:16:26 +0000
+
+kdegraphics-thumbnailers (4:16.04.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Bump Standards-Version to 3.9.8
+
+  [ Maximiliano Curia ]
+  * New upstream release (15.12.2).
+  * Add upstream metadata (DEP-12)
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Update vcs uris to the applications one
+  * Use the newer debian-qt-kde.m
+  * Update build-deps and deps with the info from cmake
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 May 2016 11:56:19 +0200
+
+kdegraphics-thumbnailers (4:15.12.0-1) experimental; urgency=medium
+
+  * New upstream release (15.12.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 01 Feb 2016 10:22:51 +0100
+
+kdegraphics-thumbnailers (4:4.14.2-1) unstable; urgency=medium
+
+  * New upstream release (4.14.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 21 Oct 2014 19:12:36 +0200
+
+kdegraphics-thumbnailers (4:4.14.0-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 23 Aug 2014 02:50:31 +0200
+
+kdegraphics-thumbnailers (4:4.11.3-2) unstable; urgency=medium
+
+  * Bump Standards-Version to 3.9.5, no changes needed.
+  * Update copyright Upstream-Name.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 03 Apr 2014 11:20:57 +0200
+
+kdegraphics-thumbnailers (4:4.11.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 09 Nov 2013 12:38:08 +0100
+
+kdegraphics-thumbnailers (4:4.11.2-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 08 Oct 2013 12:14:36 +0200
+
+kdegraphics-thumbnailers (4:4.10.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 12 Jul 2013 17:52:20 +0200
+
+kdegraphics-thumbnailers (4:4.10.4-1) experimental; urgency=low
+
+  * New upstream release.
+  * Bump debhelper build-dep and compat to 9.
+  * Bump Standards-Version to 3.9.4.
+  * Update vcs fields.
+  * Add myself to uploaders.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 14 Jun 2013 16:33:39 +0200
+
+kdegraphics-thumbnailers (4:4.10.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Bump build-deps.
+  * Update uploaders.
+
+ -- Sune Vuorela <sune@debian.org>  Sun, 07 Apr 2013 23:05:19 +0000
+
+kdegraphics-thumbnailers (4:4.8.4-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release.
+
+  [ Eshat Cakar ]
+  * Bump kde-sc-dev-latest build dependency to 4:4.8.4.
+  * Bump kdelibs5-dev build dependency to 4:4.8.
+  * Bump Standards-Version to 3.9.3, no further changes.
+  * Add watch file.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Wed, 20 Jun 2012 10:29:01 -0300
+
+kdegraphics-thumbnailers (4:4.7.4-2) unstable; urgency=low
+
+  * Team upload. Upload to unstable.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 06 Mar 2012 23:40:09 +0100
+
+kdegraphics-thumbnailers (4:4.7.4-1) experimental; urgency=low
+
+  * New upstream release.
+
+  [ Eshat Cakar ]
+  * Add myself to uploaders.
+  * Bump kde-sc-dev-latest build dependency to 4:4.7.4.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 18 Dec 2011 01:37:49 +0100
+
+kdegraphics-thumbnailers (4:4.7.2-1) experimental; urgency=low
+
+  [ José Manuel Santamaría Lema ]
+  * Initial release. Start from the Ubuntu packaging, thanks!
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sat, 03 Dec 2011 10:45:45 -0300

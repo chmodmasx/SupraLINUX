@@ -1,0 +1,51 @@
+Source: audiocd-kio
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.3.0~),
+               gettext,
+               libasound2-dev,
+               libcdparanoia-dev,
+               libflac-dev,
+               libkcddb6-dev (>= 4:25.12.3~),
+               libkcompactdisc-dev (>= 4:25.12.3~),
+               libkf6config-dev (>= 6.3.0~),
+               libkf6doctools-dev (>= 6.3.0~),
+               libkf6i18n-dev (>= 6.3.0~),
+               libkf6kcmutils-dev (>= 6.3.0~),
+               libkf6kio-dev (>= 6.3.0~),
+               libkf6widgetsaddons-dev (>= 6.3.0~),
+               libogg-dev,
+               libvorbis-dev,
+               qt6-base-dev (>= 6.5.0~)
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Homepage: https://invent.kde.org/multimedia/audiocd-kio
+
+Package: kio-audiocd
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: lame, systemsettings
+Description: transparent audio CD access for applications using the KDE Platform
+ This package includes the audiocd KIO plugin, which allows applications using
+ the KDE Platform to read audio from CDs and automatically convert it into other
+ formats.
+ .
+ This package is part of the KDE multimedia module.
+
+Package: kio-audiocd-dev
+Section: devel
+Architecture: any
+Depends: kio-audiocd (= ${binary:Version}),
+         libkcddb6-dev (>= 4:25.12.3~),
+         libkf6kio-dev (>= 6.3.0~),
+         qt6-base-dev (>= 6.5.0~),
+         ${misc:Depends}
+Description: development files for the audio CD KIO plugin
+ This package contains development files for building plugins for the audio CD
+ KIO plugin.
+ .
+ This package is part of the KDE multimedia module.

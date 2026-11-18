@@ -1,0 +1,37 @@
+Source: kaccounts-providers
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.0.0~),
+               gettext,
+               intltool,
+               libkaccounts6-dev (>= 4:25.12.3~),
+               libkf6i18n-dev (>= 6.0.0~),
+               libkf6kio-dev (>= 6.0.0~),
+               libkf6package-dev (>= 6.0.0~),
+               libkirigami-dev,
+               libsignon-qt6-dev,
+               qcoro-qt6-dev,
+               qt6-base-dev (>= 6.5.0+dfsg~),
+               qt6-declarative-dev (>= 6.5.0+dfsg~),
+               qt6-webengine-dev (>= 6.5.0+dfsg~) [amd64 arm64 armhf i386]
+Standards-Version: 4.7.3
+Rules-Requires-Root: no
+Homepage: https://invent.kde.org/network/kaccounts-providers
+
+Package: kaccounts-providers
+Architecture: any
+Depends: plasma-desktoptheme,
+         signon-plugin-oauth2,
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6purpose-bin
+Description: KDE providers for accounts sign-on
+ Provides additional configuration files for libaccounts and
+ libsignon to recognize online services such as Facebook
+ and Google.

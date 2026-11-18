@@ -1,0 +1,29 @@
+Source: kdegraphics-thumbnailers
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.0.0~),
+               libkdcrawqt6-dev (>= 25.12.3~),
+               libkexiv2qt6-dev (>= 25.12.3~),
+               libkf6archive-dev (>= 6.0.0~),
+               libkf6kio-dev (>= 6.0.0~),
+               libqmobipocket6-dev (>= 4:25.12.3~),
+               qt6-base-dev (>= 6.5.0+dfsg~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/graphics/kdegraphics-thumbnailers
+Rules-Requires-Root: no
+
+Package: kdegraphics-thumbnailers
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: ghostscript
+Replaces: kdegraphics-mobipocket (<< 4:22.12.0-1)
+Breaks: kdegraphics-mobipocket (<< 4:22.12.0-1)
+Description: graphics file format thumbnailers for KDE SC
+ These plugins allow KDE software to create thumbnails for several
+ advanced graphic file formats (PS, RAW).
+ .
+ This package is part of the KDE graphics module.

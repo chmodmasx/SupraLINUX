@@ -1,0 +1,36 @@
+Source: kdenetwork-filesharing
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.1.0~),
+               gettext,
+               libkf6auth-dev (>= 6.1.0~),
+               libkf6completion-dev (>= 6.1.0~),
+               libkf6coreaddons-dev (>= 6.1.0~),
+               libkf6declarative-dev (>= 6.1.0~),
+               libkf6i18n-dev (>= 6.1.0~),
+               libkf6kio-dev (>= 6.1.0~),
+               libkf6widgetsaddons-dev (>= 6.1.0~),
+               libpackagekitqt6-dev,
+               pkg-kde-tools (>= 0.12),
+               qcoro-qt6-dev,
+               qt6-base-dev (>= 6.6.0+dfsg~),
+               qt6-declarative-dev (>= 6.6.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/network/kdenetwork-filesharing
+Rules-Requires-Root: no
+
+Package: kdenetwork-filesharing
+Section: net
+Architecture: any
+Depends: samba-common-bin, ${misc:Depends}, ${shlibs:Depends}
+Suggests: samba
+Enhances: dolphin
+Description: network filesharing configuration module
+ This package provides a way to configure network file-sharing using
+ Samba in the properties dialogue of the file manager.
+ .
+ This package is part of the KDE networking module.

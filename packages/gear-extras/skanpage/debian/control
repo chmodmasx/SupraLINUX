@@ -1,0 +1,51 @@
+Source: skanpage
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.9.0~),
+               kquickimageeditor-dev (>= 0.4.0~),
+               libkf6config-dev (>= 6.9.0~),
+               libkf6coreaddons-dev (>= 6.9.0~),
+               libkf6crash-dev (>= 6.9.0~),
+               libkf6doctools-dev (>= 6.0.0~),
+               libkf6i18n-dev (>= 6.9.0~),
+               libkf6kio-dev (>= 6.9.0~),
+               libkf6purpose-dev (>= 6.9.0~),
+               libkf6xmlgui-dev (>= 6.9.0~),
+               libkirigami-dev (>= 6.9.0~),
+               libksanecore-dev (>= 25.12.3~),
+               libleptonica-dev,
+               libtesseract-dev (>= 4~),
+               qml6-module-org-kde-kquickimageeditor,
+               qml6-module-org-kde-purpose (>= 6.0.0~),
+               qml6-module-qt-labs-platform (>= 6.5.0~),
+               qml6-module-qtquick-dialogs (>= 6.5.0~),
+               qml6-module-qtquick-window (>= 6.5.0~),
+               qt6-base-dev (>= 6.5.0~),
+               qt6-declarative-dev (>= 6.5.0~),
+               qt6-pdf-dev (>= 6.5.0~),
+               qt6-webengine-dev (>= 6.5.0~)
+Standards-Version: 4.7.2
+Homepage: https://apps.kde.org/skanpage
+Rules-Requires-Root: no
+
+Package: skanpage
+Architecture: amd64 amd64v3 arm64 armhf
+Depends: qml6-module-qtqml-workerscript,
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Description: Multi-page scanning and saving of documents and images
+ Skanpage is a simple scanning application designed for multi-page
+ scanning and saving of documents and images.
+ .
+ Features:
+ .
+   - Scanning from flatbed and ADF scanners
+   - Configurable options for scanning device
+   - Reordering, rotation and deletion of scanned pages
+   - Saving to multi-page PDF documents and image files

@@ -1,0 +1,597 @@
+diff -ruN kdeconnect-orig/plugins/sftp/CMakeLists.txt kdeconnect-src/plugins/sftp/CMakeLists.txt
+--- kdeconnect-orig/plugins/sftp/CMakeLists.txt	2026-03-02 00:28:35.000000000 -0300
++++ kdeconnect-src/plugins/sftp/CMakeLists.txt	2026-11-07 21:57:55.331604051 -0300
+@@ -11,6 +11,8 @@
+         mounter.cpp
+         mountloop.cpp
+         sftpplugin.cpp
++        sftpserverprocess.cpp
++        sftpserverprocess.h
+     )
+ endif()
+ 
+diff -ruN kdeconnect-orig/plugins/sftp/kdeconnect_sftp.json kdeconnect-src/plugins/sftp/kdeconnect_sftp.json
+--- kdeconnect-orig/plugins/sftp/kdeconnect_sftp.json	2026-03-02 00:28:35.000000000 -0300
++++ kdeconnect-src/plugins/sftp/kdeconnect_sftp.json	2026-11-07 21:58:00.481552902 -0300
+@@ -166,9 +166,11 @@
+         "Name[zh_TW]": "遠端檔案瀏覽器"
+     },
+     "X-KdeConnect-OutgoingPacketType": [
++        "kdeconnect.sftp",
+         "kdeconnect.sftp.request"
+     ],
+     "X-KdeConnect-SupportedPacketType": [
+-        "kdeconnect.sftp"
++        "kdeconnect.sftp",
++        "kdeconnect.sftp.request"
+     ]
+ }
+diff -ruN kdeconnect-orig/plugins/sftp/sftpplugin.cpp kdeconnect-src/plugins/sftp/sftpplugin.cpp
+--- kdeconnect-orig/plugins/sftp/sftpplugin.cpp	2026-03-02 00:28:35.000000000 -0300
++++ kdeconnect-src/plugins/sftp/sftpplugin.cpp	2026-11-07 21:57:47.408682740 -0300
+@@ -10,6 +10,7 @@
+ #include <QDebug>
+ #include <QDir>
+ #include <QStandardPaths>
++#include <QStringList>
+ 
+ #include <KIO/OpenUrlJob>
+ #include <KLocalizedString>
+@@ -20,6 +21,7 @@
+ #include "daemon.h"
+ #include "mounter.h"
+ #include "plugin_sftp_debug.h"
++#include "sftpserverprocess.h"
+ 
+ K_PLUGIN_CLASS_WITH_JSON(SftpPlugin, "kdeconnect_sftp.json")
+ 
+@@ -29,11 +31,17 @@
+     , deviceId(device()->id())
+ {
+     addToDolphin();
++    connect(device(), &Device::reachableChanged, this, [this](bool reachable) {
++        if (!reachable) {
++            stopServer();
++        }
++    });
+     qCDebug(KDECONNECT_PLUGIN_SFTP) << "Created device:" << device()->name();
+ }
+ 
+ SftpPlugin::~SftpPlugin()
+ {
++    stopServer();
+     removeFromDolphin();
+     unmount();
+ }
+@@ -81,6 +89,44 @@
+     }
+ }
+ 
++void SftpPlugin::startServer()
++{
++    stopServer();
++
++    m_server = new SftpServerProcess(device(), this);
++    m_server->setProperty("readOnly", config()->getBool(QStringLiteral("readOnly"), false));
++
++    connect(m_server, &SftpServerProcess::ready, this, [this](const QString &ip, quint16 port, const QString &user) {
++        NetworkPacket np(PACKET_TYPE_SFTP);
++        np.set(QStringLiteral("ip"), ip);
++        np.set(QStringLiteral("port"), static_cast<int>(port));
++        np.set(QStringLiteral("user"), user);
++        np.set(QStringLiteral("path"), QStringLiteral("/"));
++        // KDE Connect 25.12 requires the field to exist; this server only
++        // accepts the paired device's public key, so no password is used.
++        np.set(QStringLiteral("password"), QString());
++        np.set(QStringLiteral("multiPaths"), QStringList{QStringLiteral("/")});
++        np.set(QStringLiteral("pathNames"), QStringList{tr("Home")});
++        sendPacket(np);
++    });
++
++    connect(m_server, &SftpServerProcess::failed, this, [this](const QString &message) {
++        NetworkPacket np(PACKET_TYPE_SFTP);
++        np.set(QStringLiteral("errorMessage"), message);
++        sendPacket(np);
++    });
++
++    m_server->start();
++}
++
++void SftpPlugin::stopServer()
++{
++    if (m_server) {
++        delete m_server;
++        m_server = nullptr;
++    }
++}
++
+ bool SftpPlugin::mountAndWait()
+ {
+     mount();
+@@ -113,6 +159,15 @@
+ 
+ void SftpPlugin::receivePacket(const NetworkPacket &np)
+ {
++    if (np.type() == PACKET_TYPE_SFTP_REQUEST) {
++        if (np.get<bool>(QStringLiteral("startBrowsing"), false)) {
++            startServer();
++        } else {
++            stopServer();
++        }
++        return;
++    }
++
+     if (np.has(QStringLiteral("errorMessage"))) {
+         onFailed(np.get<QString>(QStringLiteral("errorMessage")));
+         return;
+diff -ruN kdeconnect-orig/plugins/sftp/sftpplugin.h kdeconnect-src/plugins/sftp/sftpplugin.h
+--- kdeconnect-orig/plugins/sftp/sftpplugin.h	2026-03-02 00:28:35.000000000 -0300
++++ kdeconnect-src/plugins/sftp/sftpplugin.h	2026-11-07 21:57:13.646018064 -0300
+@@ -10,8 +10,10 @@
+ #include <core/device.h>
+ #include <core/kdeconnectplugin.h>
+ 
++#define PACKET_TYPE_SFTP QStringLiteral("kdeconnect.sftp")
+ #define PACKET_TYPE_SFTP_REQUEST QStringLiteral("kdeconnect.sftp.request")
+ class Mounter;
++class SftpServerProcess;
+ 
+ class SftpPlugin : public KdeConnectPlugin
+ {
+@@ -50,9 +52,12 @@
+     void knotify(int type, const QString &text, const QPixmap &icon) const;
+     void addToDolphin();
+     void removeFromDolphin();
++    void startServer();
++    void stopServer();
+     // Add KIO entry to Dolphin's Places
+     KFilePlacesModel m_placesModel;
+     Mounter *m_mounter;
++    SftpServerProcess *m_server = nullptr;
+     QString deviceId; // Storing it to avoid accessing device() from the destructor which could cause a crash
+ 
+     QVariantMap remoteDirectories; // Actually a QMap<String, String>, but QDBus prefers this
+diff -ruN kdeconnect-orig/plugins/sftp/sftpserverprocess.cpp kdeconnect-src/plugins/sftp/sftpserverprocess.cpp
+--- kdeconnect-orig/plugins/sftp/sftpserverprocess.cpp	1969-12-31 21:00:00.000000000 -0300
++++ kdeconnect-src/plugins/sftp/sftpserverprocess.cpp	2026-11-07 21:58:33.402225940 -0300
+@@ -0,0 +1,365 @@
++/*
++ * SPDX-FileCopyrightText: 2026 SupraLINUX Project
++ *
++ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
++ */
++
++#include "sftpserverprocess.h"
++
++#include <QAbstractSocket>
++#include <QDebug>
++#include <QDir>
++#include <QFile>
++#include <QFileInfo>
++#include <QHostAddress>
++#include <QNetworkAddressEntry>
++#include <QNetworkInterface>
++#include <QSslCertificate>
++#include <QSslKey>
++#include <QStandardPaths>
++#include <QStringList>
++
++#include "plugin_sftp_debug.h"
++
++#include <core/device.h>
++
++namespace
++{
++constexpr int StartupTimeoutMs = 8000;
++constexpr int StopTimeoutMs = 2000;
++constexpr qsizetype MaxErrorSize = 8192;
++
++QString bracketedAddress(const QString &address)
++{
++    if (address.contains(QLatin1Char(':')) && !address.startsWith(QLatin1Char('['))) {
++        return QLatin1Char('[') + address + QLatin1Char(']');
++    }
++    return address;
++}
++}
++
++SftpServerProcess::SftpServerProcess(const Device *device, QObject *parent)
++    : QObject(parent)
++    , m_device(device)
++{
++    m_startupTimer.setSingleShot(true);
++    connect(&m_startupTimer, &QTimer::timeout, this, &SftpServerProcess::startupTimeout);
++}
++
++SftpServerProcess::~SftpServerProcess()
++{
++    stop();
++}
++
++bool SftpServerProcess::isRunning() const
++{
++    return m_process && m_process->state() != QProcess::NotRunning;
++}
++
++QString SftpServerProcess::localIp() const
++{
++    return m_localIp;
++}
++
++quint16 SftpServerProcess::port() const
++{
++    return m_port;
++}
++
++QString SftpServerProcess::lastError() const
++{
++    return m_stderr;
++}
++
++QString SftpServerProcess::findServerExecutable() const
++{
++    const QString installed = QStringLiteral("/usr/libexec/supralinux-kdeconnect-sftp");
++    if (QFileInfo(installed).isExecutable()) {
++        return installed;
++    }
++    return QStandardPaths::findExecutable(QStringLiteral("supralinux-kdeconnect-sftp"));
++}
++
++QHostAddress SftpServerProcess::localAddressForPeer() const
++{
++    const QHostAddress peer = m_device ? m_device->getLocalIpAddress() : QHostAddress();
++    const auto interfaces = QNetworkInterface::allInterfaces();
++
++    // Prefer an IPv4 address on the same subnet as the paired device.
++    if (peer.protocol() == QAbstractSocket::IPv4Protocol) {
++        for (const QNetworkInterface &iface : interfaces) {
++            const auto flags = iface.flags();
++            if (!(flags & QNetworkInterface::IsUp) || (flags & QNetworkInterface::IsLoopBack)) {
++                continue;
++            }
++            for (const QNetworkAddressEntry &entry : iface.addressEntries()) {
++                const QHostAddress address = entry.ip();
++                if (address.protocol() != QAbstractSocket::IPv4Protocol) {
++                    continue;
++                }
++                const quint32 mask = entry.netmask().toIPv4Address();
++                if (mask != 0 && (peer.toIPv4Address() & mask) == (address.toIPv4Address() & mask)) {
++                    return address;
++                }
++            }
++        }
++    }
++
++    // Fall back to the first non-loopback IPv4 address, then IPv6.
++    for (const QNetworkInterface &iface : interfaces) {
++        const auto flags = iface.flags();
++        if (!(flags & QNetworkInterface::IsUp) || (flags & QNetworkInterface::IsLoopBack)) {
++            continue;
++        }
++        for (const QNetworkAddressEntry &entry : iface.addressEntries()) {
++            if (entry.ip().protocol() == QAbstractSocket::IPv4Protocol && !entry.ip().isLoopback()) {
++                return entry.ip();
++            }
++        }
++    }
++    for (const QNetworkInterface &iface : interfaces) {
++        const auto flags = iface.flags();
++        if (!(flags & QNetworkInterface::IsUp) || (flags & QNetworkInterface::IsLoopBack)) {
++            continue;
++        }
++        for (const QNetworkAddressEntry &entry : iface.addressEntries()) {
++            if (entry.ip().protocol() == QAbstractSocket::IPv6Protocol && !entry.ip().isLoopback()) {
++                return entry.ip();
++            }
++        }
++    }
++    return {};
++}
++
++void SftpServerProcess::start()
++{
++    stop();
++
++    if (!m_device) {
++        fail(tr("No device is associated with this SFTP request."));
++        return;
++    }
++
++    const QString executable = findServerExecutable();
++    if (executable.isEmpty()) {
++        fail(tr("The native KDE Connect SFTP server is not installed."));
++        return;
++    }
++
++    const QHostAddress localAddress = localAddressForPeer();
++    if (localAddress.isNull()) {
++        fail(tr("Could not determine a local network address for the SFTP server."));
++        return;
++    }
++    m_localIp = localAddress.toString();
++
++    QString runtimePath = QStandardPaths::writableLocation(QStandardPaths::RuntimeLocation);
++    if (runtimePath.isEmpty()) {
++        runtimePath = QDir::tempPath();
++    }
++    m_runtimeDir = std::make_unique<QTemporaryDir>(runtimePath + QStringLiteral("/kdeconnect-sftp-XXXXXX"));
++    if (!m_runtimeDir->isValid()) {
++        fail(tr("Could not create a temporary directory for the SFTP server."));
++        return;
++    }
++    QFile::setPermissions(m_runtimeDir->path(), QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
++
++    const QSslCertificate certificate = m_device->certificate();
++    if (certificate.isNull()) {
++        fail(tr("The paired device certificate is not available."));
++        return;
++    }
++    const QSslKey publicKey = certificate.publicKey();
++    if (publicKey.isNull()) {
++        fail(tr("Could not extract the paired device public key."));
++        return;
++    }
++
++    const QString keyPath = m_runtimeDir->filePath(QStringLiteral("paired-device.pub"));
++    QFile keyFile(keyPath);
++    if (!keyFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
++        fail(tr("Could not write the paired device public key."));
++        return;
++    }
++    keyFile.write(publicKey.toPem());
++    keyFile.close();
++    QFile::setPermissions(keyPath, QFile::ReadOwner | QFile::WriteOwner);
++
++    m_user = qEnvironmentVariable("USER");
++    if (m_user.isEmpty()) {
++        m_user = QFileInfo(QDir::homePath()).fileName();
++    }
++
++    const bool readOnly = configReadOnly();
++    const QString listenAddress = bracketedAddress(m_localIp) + QStringLiteral(":0");
++
++    QStringList arguments{
++        QStringLiteral("--listen"),
++        listenAddress,
++        QStringLiteral("--root"),
++        QDir::homePath(),
++        QStringLiteral("--user"),
++        m_user,
++        QStringLiteral("--authorized-key-file"),
++        keyPath,
++        QStringLiteral("--idle-timeout"),
++        QStringLiteral("2m"),
++        QStringLiteral("--startup-timeout"),
++        QStringLiteral("60s"),
++        QStringLiteral("--max-lifetime"),
++        QStringLiteral("8h"),
++    };
++    if (readOnly) {
++        arguments << QStringLiteral("--read-only");
++    }
++
++    m_process = new QProcess(this);
++    m_process->setProgram(executable);
++    m_process->setArguments(arguments);
++    m_process->setProcessChannelMode(QProcess::SeparateChannels);
++    connect(m_process, &QProcess::readyReadStandardOutput, this, &SftpServerProcess::readStandardOutput);
++    connect(m_process, &QProcess::readyReadStandardError, this, &SftpServerProcess::readStandardError);
++    connect(m_process, QOverload<int, QProcess::ExitStatus>::of(&QProcess::finished), this, &SftpServerProcess::processFinished);
++    connect(m_process, &QProcess::errorOccurred, this, &SftpServerProcess::processError);
++
++    m_ready = false;
++    m_port = 0;
++    m_stdoutBuffer.clear();
++    m_stderr.clear();
++    m_startupTimer.start(StartupTimeoutMs);
++    m_process->start();
++
++    qCDebug(KDECONNECT_PLUGIN_SFTP) << "Starting native SFTP server" << executable << arguments;
++}
++
++void SftpServerProcess::stop()
++{
++    m_startupTimer.stop();
++    m_ready = false;
++    m_port = 0;
++    m_stdoutBuffer.clear();
++
++    if (m_process) {
++        m_process->disconnect(this);
++        if (m_process->state() != QProcess::NotRunning) {
++            m_process->terminate();
++            if (!m_process->waitForFinished(StopTimeoutMs)) {
++                m_process->kill();
++                m_process->waitForFinished(StopTimeoutMs);
++            }
++        }
++        delete m_process;
++        m_process = nullptr;
++    }
++
++    m_runtimeDir.reset();
++    m_stderr.clear();
++}
++
++void SftpServerProcess::readStandardOutput()
++{
++    if (!m_process) {
++        return;
++    }
++    m_stdoutBuffer += m_process->readAllStandardOutput();
++    while (true) {
++        const qsizetype newline = m_stdoutBuffer.indexOf('\n');
++        if (newline < 0) {
++            break;
++        }
++        const QByteArray line = m_stdoutBuffer.left(newline).trimmed();
++        m_stdoutBuffer.remove(0, newline + 1);
++        if (!line.startsWith("PORT=")) {
++            continue;
++        }
++        bool ok = false;
++        const uint value = line.mid(5).toUInt(&ok);
++        if (!ok || value == 0 || value > 65535) {
++            continue;
++        }
++        m_port = static_cast<quint16>(value);
++        m_ready = true;
++        m_startupTimer.stop();
++        Q_EMIT ready(m_localIp, m_port, m_user);
++    }
++}
++
++void SftpServerProcess::readStandardError()
++{
++    if (!m_process) {
++        return;
++    }
++    const QByteArray data = m_process->readAllStandardError();
++    if (!data.isEmpty()) {
++        m_stderr += QString::fromLocal8Bit(data);
++        if (m_stderr.size() > MaxErrorSize) {
++            m_stderr = m_stderr.right(MaxErrorSize);
++        }
++        qCDebug(KDECONNECT_PLUGIN_SFTP) << "native SFTP server:" << data.trimmed();
++    }
++}
++
++void SftpServerProcess::processFinished(int exitCode, QProcess::ExitStatus status)
++{
++    const bool wasReady = m_ready;
++    const QString errorText = m_stderr;
++    if (m_process) {
++        m_process->deleteLater();
++        m_process = nullptr;
++    }
++    m_ready = false;
++    m_port = 0;
++    if (!wasReady) {
++        Q_EMIT failed(tr("The native SFTP server exited before it was ready (status %1, code %2). %3")
++                          .arg(status == QProcess::NormalExit ? QStringLiteral("normal") : QStringLiteral("crash"))
++                          .arg(exitCode)
++                          .arg(errorText));
++    }
++}
++
++void SftpServerProcess::processError(QProcess::ProcessError error)
++{
++    QString message;
++    if (error == QProcess::FailedToStart) {
++        message = tr("Could not start the native SFTP server.");
++    } else if (error == QProcess::Crashed) {
++        message = tr("The native SFTP server crashed.");
++    } else if (error != QProcess::UnknownError) {
++        message = tr("The native SFTP server failed: %1").arg(m_stderr);
++    }
++    if (!message.isEmpty()) {
++        QTimer::singleShot(0, this, [this, message]() {
++            fail(message);
++        });
++    }
++}
++
++void SftpServerProcess::startupTimeout()
++{
++    if (!m_ready) {
++        fail(tr("The native SFTP server did not become ready in time."));
++    }
++}
++
++void SftpServerProcess::fail(const QString &message)
++{
++    if (!message.isEmpty()) {
++        qCWarning(KDECONNECT_PLUGIN_SFTP) << message;
++    }
++    Q_EMIT failed(message);
++    stop();
++}
++
++bool SftpServerProcess::configReadOnly() const
++{
++    // The plugin config is a per-device KConfig key.  The default matches
++    // Android's remote-filesystem behavior: read/write.  Users who only want
++    // to browse can set readOnly=true without touching sshd or ~/.ssh.
++    if (!m_device) {
++        return false;
++    }
++    // SftpPlugin owns the config; this helper is implemented in the plugin
++    // and passed via a dynamic property to avoid exposing config() here.
++    const QVariant value = property("readOnly");
++    return value.isValid() && value.toBool();
++}
+diff -ruN kdeconnect-orig/plugins/sftp/sftpserverprocess.h kdeconnect-src/plugins/sftp/sftpserverprocess.h
+--- kdeconnect-orig/plugins/sftp/sftpserverprocess.h	1969-12-31 21:00:00.000000000 -0300
++++ kdeconnect-src/plugins/sftp/sftpserverprocess.h	2026-11-07 21:56:31.724434422 -0300
+@@ -0,0 +1,71 @@
++/*
++ * SPDX-FileCopyrightText: 2026 SupraLINUX Project
++ *
++ * SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
++ */
++
++#pragma once
++
++#include <QByteArray>
++#include <QHostAddress>
++#include <QObject>
++#include <QProcess>
++#include <QString>
++#include <QTemporaryDir>
++#include <QTimer>
++
++#include <memory>
++
++class Device;
++
++/**
++ * Launches the ephemeral native SFTP server for one paired device.
++ *
++ * The server is a plain user process: it listens on a random high port, only
++ * accepts the paired device's certificate key, and exits after the mount goes
++ * away.  It never touches sshd, port 22 or the user's ~/.ssh.
++ */
++class SftpServerProcess : public QObject
++{
++    Q_OBJECT
++
++public:
++    explicit SftpServerProcess(const Device *device, QObject *parent = nullptr);
++    ~SftpServerProcess() override;
++
++    void start();
++    void stop();
++
++    bool isRunning() const;
++    QString localIp() const;
++    quint16 port() const;
++    QString lastError() const;
++
++Q_SIGNALS:
++    void ready(const QString &ip, quint16 port, const QString &user);
++    void failed(const QString &message);
++
++private Q_SLOTS:
++    void readStandardOutput();
++    void readStandardError();
++    void processFinished(int exitCode, QProcess::ExitStatus status);
++    void processError(QProcess::ProcessError error);
++    void startupTimeout();
++
++private:
++    QString findServerExecutable() const;
++    QHostAddress localAddressForPeer() const;
++    bool configReadOnly() const;
++    void fail(const QString &message);
++
++    const Device *m_device;
++    QProcess *m_process = nullptr;
++    std::unique_ptr<QTemporaryDir> m_runtimeDir;
++    QTimer m_startupTimer;
++    QByteArray m_stdoutBuffer;
++    QString m_stderr;
++    QString m_localIp;
++    QString m_user;
++    quint16 m_port = 0;
++    bool m_ready = false;
++};

@@ -1,0 +1,53 @@
+Source: partitionmanager
+Section: admin
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.17.0~),
+               gettext,
+               libkf6config-dev (>= 6.17.0~),
+               libkf6configwidgets-dev (>= 6.17.0~),
+               libkf6coreaddons-dev (>= 6.17.0~),
+               libkf6crash-dev (>= 6.17.0~),
+               libkf6dbusaddons-dev (>= 6.17.0~),
+               libkf6doctools-dev (>= 6.17.0~) <!nodoc>,
+               libkf6i18n-dev (>= 6.17.0~),
+               libkf6jobwidgets-dev (>= 6.17.0~),
+               libkf6kio-dev (>= 6.17.0~),
+               libkf6widgetsaddons-dev (>= 6.17.0~),
+               libkf6windowsystem-dev (>= 6.17.0~),
+               libkf6xmlgui-dev (>= 6.17.0~),
+               libkpmcore-dev (>= 25.12.3~),
+               libpolkit-qt6-1-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.5.0~)
+Standards-Version: 4.7.3
+Homepage: https://apps.kde.org/partitionmanager/
+
+Package: partitionmanager
+Architecture: any
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Suggests: btrfs-progs,
+          dosfstools,
+          hfsplus,
+          hfsutils,
+          jfsutils,
+          ntfs-3g,
+          reiser4progs,
+          reiserfsprogs,
+          xfsprogs
+Description: file, disk and partition management for KDE
+ Partition Manager is a utility program to help you manage the disk devices,
+ partitions and file systems on your computer. It allows you to easily create,
+ copy, move, delete, resize without losing data, backup and restore partitions.
+ .
+ Partition Manager supports a large number of file systems, including ext2/3/4,
+ reiserfs, NTFS, FAT16/32, jfs, xfs and more. Note that to gain support for a
+ specific file system other than ext2/3/4, you should install the corresponding
+ suggested package.
+ .
+ Partition Manager is based on libparted (like gparted) and makes use of the
+ KDE libraries for its user interface.

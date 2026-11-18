@@ -1,0 +1,35 @@
+#!/usr/bin/dh-exec
+[amd64 arm64 armhf i386] usr/lib/*/qt6/qml/org/kde/plasma/private/dict/
+[amd64 arm64 armhf i386] usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.webbrowser.so
+[amd64 arm64 armhf i386] usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma_applet_dict.so
+usr/lib/kf6/kauth/libexec/kameleonhelper
+usr/lib/*/qt6/plugins/kf6/kded/kameleon.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.addons.katesessions.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.binaryclock.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.calculator.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.colorpicker.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.comic.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.diskquota.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.fifteenpuzzle.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.fuzzyclock.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.grouping.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.keyboardindicator.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.konsoleprofiles.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.mediaframe.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.notes.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.quicklaunch.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.timer.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.userswitcher.so
+usr/lib/*/qt6/plugins/plasma/applets/org.kde.plasma.weather.so
+usr/lib/*/qt6/plugins/plasma/weather_ions/
+usr/lib/*/qt6/qml/org/kde/plasma/private/fifteenpuzzle/
+usr/lib/*/qt6/qml/org/kde/plasma/private/profiles/
+usr/share/dbus-1/system.d/org.kde.kameleonhelper.conf
+usr/share/dbus-1/system-services/org.kde.kameleonhelper.service
+usr/share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
+usr/share/knotifications6/plasma_applet_timer.notifyrc
+usr/share/knsrcfiles/comic.knsrc
+usr/share/plasma/desktoptheme/default
+usr/share/plasma/plasmoids/org.kde.plasma.kickerdash/
+usr/share/plasma/weather/noaa_station_list.xml
+usr/share/polkit-1/actions/org.kde.kameleonhelper.policy

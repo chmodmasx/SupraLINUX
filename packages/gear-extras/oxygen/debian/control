@@ -1,0 +1,135 @@
+Source: oxygen
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.25~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               libkdecorations3-dev (>= 4:6.6.4~),
+               libkf5completion-dev (>= 5.102.0~),
+               libkf5config-dev (>= 5.102.0~),
+               libkf5coreaddons-dev (>= 5.102.0~),
+               libkf5guiaddons-dev (>= 5.102.0~),
+               libkf5i18n-dev (>= 5.102.0~),
+               libkf5service-dev (>= 5.102.0~),
+               libkf5style-dev (>= 5.102.0~),
+               libkf5widgetsaddons-dev (>= 5.102.0~),
+               libkf5windowsystem-dev (>= 5.102.0~),
+               libkf6completion-dev (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6configwidgets-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6guiaddons-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6service-dev (>= 6.22.0~),
+               libkf6style-dev (>= 6.22.0~),
+               libkf6widgetsaddons-dev (>= 6.22.0~),
+               libkf6windowsystem-dev (>= 6.22.0~),
+               libplasma-dev (>= 6.6.5~),
+               libqt5x11extras5-dev (>= 5.15.2~),
+               libx11-dev,
+               libxcb1-dev,
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.10.0~),
+               qt6-base-private-dev (>= 6.10.0+dfsg~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qtbase5-dev (>= 5.15.2~),
+               qtdeclarative5-dev (>= 5.15.2~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/plasma/oxygen
+Rules-Requires-Root: no
+
+Package: kde-style-oxygen-qt5
+Architecture: any
+Breaks: plasma-desktop-data (<< 4:5.20)
+Replaces: plasma-desktop-data (<< 4:5.20)
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 5 decoration for the Oxygen desktop theme
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the Qt 5 widget theme.
+
+Package: kde-style-oxygen-qt6
+Architecture: any
+Breaks: kde-style-oxygen-qt5 (<< 4:6.1.0~), plasma-desktop-data (<< 4:5.20)
+Replaces: kde-style-oxygen-qt5 (<< 4:6.1.0~), plasma-desktop-data (<< 4:5.20)
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt 6 decoration for the Oxygen desktop theme
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the Qt 6 widget theme.
+
+Package: kwin-decoration-oxygen
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: libkf6kcmutils-bin
+Multi-Arch: same
+Description: KWin decoration for the Oxygen desktop theme
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the KWin decoration and settings modules.
+
+Package: liboxygenstyle5-6
+Architecture: any
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: style library for the Oxygen desktop theme (Qt 5)
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the private library used by the widget theme
+ and KWin style.
+
+Package: liboxygenstyle6-6
+Architecture: any
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: style library for the Oxygen desktop theme (Qt 6)
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the private library used by the widget theme
+ and KWin style.
+
+Package: liboxygenstyleconfig5-6
+Architecture: any
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: liboxygenstyleconfig5-5
+Replaces: liboxygenstyleconfig5-5
+Multi-Arch: same
+Description: style library configuration for the Oxygen desktop theme (Qt 5)
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the private library used to configure the widget theme
+ and KWin style.
+
+Package: liboxygenstyleconfig6-6
+Architecture: any
+Section: libs
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: style library configuration for the Oxygen desktop theme (Qt 6)
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the private library used to configure the widget theme
+ and KWin style.
+
+Package: plasma-theme-oxygen
+Architecture: any
+Depends: kde-style-oxygen-qt6 (= ${binary:Version}),
+         kwin-decoration-oxygen (= ${binary:Version}),
+         oxygen-sounds,
+         qml6-module-qtquick,
+         ${misc:Depends}
+Breaks: plasma-desktoptheme (<< 6.1.90~)
+Replaces: plasma-desktoptheme (<< 6.1.90~)
+Description: Look-and-feel for the Oxygen desktop theme
+ The Oxygen desktop theme is used by Plasma and other KDE Software.
+ .
+ This package contains the meta settings for the Oxygen theme.

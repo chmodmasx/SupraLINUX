@@ -1,0 +1,25 @@
+Source: kde-inotify-survey
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.22~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.0.0~),
+               libkf6auth-dev (>= 6.0.0~),
+               libkf6coreaddons-dev (>= 6.0.0~),
+               libkf6dbusaddons-dev (>= 6.0.0~),
+               libkf6i18n-dev (>= 6.0.0~),
+               libkf6notifications-dev (>= 6.0.0~),
+               qt6-base-dev (>= 6.5.0+dfsg~),
+               qt6-declarative-dev (>= 6.5.0+dfsg~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/system/kde-inotify-survey
+Rules-Requires-Root: no
+
+Package: kde-inotify-survey
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Notifies of excessive use of inotify watches
+ Polls the state every couple minutes and warns if the user capacities
+ have been exhausted.

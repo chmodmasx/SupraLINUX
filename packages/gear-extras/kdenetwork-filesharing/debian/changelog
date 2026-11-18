@@ -1,0 +1,1039 @@
+kdenetwork-filesharing (4:25.12.3-0supralinux1) resolute; urgency=medium
+
+  * Package kdenetwork-filesharing for the KDE desktop completeness set.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+kdenetwork-filesharing (4:25.12.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Mar 2026 13:49:16 +0000
+
+kdenetwork-filesharing (4:25.12.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Feb 2026 12:21:49 +0000
+
+kdenetwork-filesharing (4:25.12.1-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 21:51:28 +0000
+
+kdenetwork-filesharing (4:25.12.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jan 2026 11:01:55 +0000
+
+kdenetwork-filesharing (4:25.12.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Dec 2025 12:19:18 +0000
+
+kdenetwork-filesharing (4:25.11.90-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (RC) release (25.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 28 Nov 2025 14:03:34 +0000
+
+kdenetwork-filesharing (4:25.11.80-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (beta) release (25.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 16 Nov 2025 05:51:46 +0000
+
+kdenetwork-filesharing (4:25.08.3-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for libpackagekitqt6-2.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 07 Nov 2025 09:53:53 +0000
+
+kdenetwork-filesharing (4:25.08.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Nov 2025 12:13:23 +0000
+
+kdenetwork-filesharing (4:25.08.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 11:43:49 +0100
+
+kdenetwork-filesharing (4:25.08.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Sep 2025 06:53:05 +0100
+
+kdenetwork-filesharing (4:25.08.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Aug 2025 11:23:10 +0100
+
+kdenetwork-filesharing (4:25.07.90-0ubuntu1) questing; urgency=medium
+
+  * New upstream (RC) release (25.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Jul 2025 17:43:14 +0100
+
+kdenetwork-filesharing (4:25.07.80-0ubuntu1) questing; urgency=medium
+
+  * New upstream (beta) release (25.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 12 Jul 2025 18:09:00 +0100
+
+kdenetwork-filesharing (4:25.04.3-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Jul 2025 07:41:24 +0100
+
+kdenetwork-filesharing (4:25.04.2-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 11:43:09 +0100
+
+kdenetwork-filesharing (4:25.04.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 May 2025 22:05:04 +0100
+
+kdenetwork-filesharing (4:25.04.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 30 Apr 2025 19:47:21 +0100
+
+kdenetwork-filesharing (4:24.12.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Mar 2025 08:40:27 +0000
+
+kdenetwork-filesharing (4:24.12.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Feb 2025 14:14:57 +0000
+
+kdenetwork-filesharing (4:24.12.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 14:29:50 +0000
+
+kdenetwork-filesharing (4:24.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Dec 2024 17:10:39 +0000
+
+kdenetwork-filesharing (4:24.11.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (RC) release (24.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 29 Nov 2024 14:06:59 +0000
+
+kdenetwork-filesharing (4:24.11.80-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (beta) release (24.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 20 Nov 2024 15:00:49 +0000
+
+kdenetwork-filesharing (4:24.08.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 11:39:28 +0000
+
+kdenetwork-filesharing (4:24.08.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian Experimental.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 02 Nov 2024 17:54:17 -0500
+
+kdenetwork-filesharing (4:24.08.2-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.08.2).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 14 Oct 2024 08:23:29 +0200
+
+kdenetwork-filesharing (4:24.08.1-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (24.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Sep 2024 06:24:16 +0100
+
+kdenetwork-filesharing (4:24.08.0-0ubuntu1) oracular; urgency=medium
+
+  * Merge from debian experimental.
+  * New upstream release (24.08.0).
+  * Refresh patch. 
+
+ -- Scarlett Moore <sgmoore@debian.org>  Mon, 09 Sep 2024 02:21:36 -0700
+
+kdenetwork-filesharing (4:24.05.2-1) experimental; urgency=medium
+
+  [ Debian Qt/KDE Maintainers ]
+  * New upstream release (24.05.2).
+
+  [ Scarlett Moore ]
+  * Add myself to uploaders.
+  * Update dependincies according to cmake.
+  * Bump standards version 4.7.0; no changes required.
+  * Remove kf5 from rules.
+  * Refresh copyright.
+
+ -- Scarlett Moore <sgmoore@debian.org>  Fri, 02 Aug 2024 04:05:42 -0700
+
+kdenetwork-filesharing (4:23.08.5-0ubuntu4) noble; urgency=high
+
+  * No change rebuild against libqt5core5t64, libqt5dbus5t64,
+    libqt5gui5t64, libqt5widgets5t64.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 08 Apr 2024 16:41:35 +0200
+
+kdenetwork-filesharing (4:23.08.5-0ubuntu3) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 09:03:36 +0000
+
+kdenetwork-filesharing (4:23.08.5-0ubuntu2) noble; urgency=medium
+
+  * No-change rebuild against libqt5core5t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 15 Mar 2024 04:50:57 +0000
+
+kdenetwork-filesharing (4:23.08.5-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.5)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Thu, 22 Feb 2024 09:42:29 -0700
+
+kdenetwork-filesharing (4:23.08.4-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.4)
+  * Remove upstream_fix-polkit-auth-dialog.patch, applied upstream
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 13 Dec 2023 10:14:12 +0000
+
+kdenetwork-filesharing (4:23.08.3-1ubuntu2) noble; urgency=medium
+
+  * Add upstream_fix-polkit-auth-dialog.patch (LP: #1996420)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 03 Dec 2023 08:11:26 +0000
+
+kdenetwork-filesharing (4:23.08.3-1ubuntu1) noble; urgency=medium
+
+  * Merge from Debian unstable:
+    - Kubuntu Vcs and maintainer fields.
+    - Update upstream signing key.
+    - Add checkatomics-to-fix-riscv64-build.patch
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Nov 2023 22:35:25 +0000
+
+kdenetwork-filesharing (4:23.08.3-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Jesse Rhodes ]
+  * New upstream release (23.08.2).
+  * NFS support removed by upstream with cb4fc5f5 (2011), update
+    description.
+  * Update build-deps with info from cmake.
+  * New upstream release (23.08.3).
+
+ -- Jesse Rhodes <jesse@sney.ca>  Thu, 09 Nov 2023 17:57:47 -0500
+
+kdenetwork-filesharing (4:23.08.3-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Nov 2023 11:33:42 +0000
+
+kdenetwork-filesharing (4:23.08.2-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 26 Oct 2023 12:29:58 +0100
+
+kdenetwork-filesharing (4:23.08.1-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Sep 2023 11:58:02 +0100
+
+kdenetwork-filesharing (4:23.08.0-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 24 Aug 2023 12:52:56 +0100
+
+kdenetwork-filesharing (4:23.07.90-0ubuntu1) mantic; urgency=medium
+
+  * New upstream (beta) release (23.07.80)
+  * New upstream (RC) release (23.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 15 Aug 2023 02:32:48 +0100
+
+kdenetwork-filesharing (4:23.04.3-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jul 2023 14:45:28 +0100
+
+kdenetwork-filesharing (4:23.04.2-0ubuntu2) mantic; urgency=medium
+
+  * Add checkatomics-to-fix-riscv64-build.patch
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 10 Jun 2023 18:11:31 +0100
+
+kdenetwork-filesharing (4:23.04.2-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.04.1)
+  * Add qcoro-qt5-dev to Build-Depends
+  * New upstream release (23.04.2)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 10 Jun 2023 11:56:03 +0100
+
+kdenetwork-filesharing (4:22.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 01 Mar 2023 11:57:50 +0100
+
+kdenetwork-filesharing (4:22.12.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 02 Mar 2023 00:36:56 +0000
+
+kdenetwork-filesharing (4:22.12.2-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.2)
+
+ -- Simon Quigley <tsimonq2@kubuntu.org>  Sat, 11 Feb 2023 14:15:01 -0600
+
+kdenetwork-filesharing (4:22.12.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.1).
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Add Albert Astals Cid’s master key to upstream signing keys.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 06 Jan 2023 23:05:30 +0100
+
+kdenetwork-filesharing (4:22.12.1-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jan 2023 11:13:53 +0000
+
+kdenetwork-filesharing (4:22.12.0-2ubuntu1) lunar; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Update upstream signing key.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 30 Dec 2022 07:49:42 +0000
+
+kdenetwork-filesharing (4:22.12.0-2) unstable; urgency=medium
+
+  * Upload with a correctly released changelog.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Dec 2022 16:04:37 +0100
+
+kdenetwork-filesharing (4:22.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.08.3).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.1, no change required.
+  * New upstream release (22.11.90).
+  * New upstream release (22.12.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Dec 2022 00:12:54 +0100
+
+kdenetwork-filesharing (4:22.12.0-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 09 Dec 2022 19:08:03 +0000
+
+kdenetwork-filesharing (4:22.11.90-0ubuntu1) lunar; urgency=medium
+
+  * New upstream (RC) release (22.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Nov 2022 16:04:22 +0000
+
+kdenetwork-filesharing (4:22.11.80-0ubuntu1) lunar; urgency=medium
+
+  * New upstream (beta) release (22.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 14 Nov 2022 10:49:47 +0000
+
+kdenetwork-filesharing (4:22.08.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.08.2)
+  * New upstream release (22.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 07 Nov 2022 11:07:55 +0000
+
+kdenetwork-filesharing (4:22.08.1-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Sep 2022 07:38:51 +0100
+
+kdenetwork-filesharing (4:22.08.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 24 Aug 2022 09:48:53 +0100
+
+kdenetwork-filesharing (4:22.04.3-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Jul 2022 09:26:18 +0100
+
+kdenetwork-filesharing (4:22.04.2-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jun 2022 08:00:18 +0100
+
+kdenetwork-filesharing (4:22.04.1-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 May 2022 20:57:51 +0100
+
+kdenetwork-filesharing (4:22.04.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 02 May 2022 06:46:49 +0100
+
+kdenetwork-filesharing (4:21.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (21.12.3).
+  * Bump Standards-Version to 4.6.0, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 06 Mar 2022 22:42:38 +0100
+
+kdenetwork-filesharing (4:21.12.3-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Mar 2022 10:09:23 +0000
+
+kdenetwork-filesharing (4:21.12.2-0ubuntu1) jammy; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key
+
+  [ Rik Mills ]
+  * New upstream release (21.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Feb 2022 07:15:52 +0000
+
+kdenetwork-filesharing (4:21.12.1-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jan 2022 10:23:42 +0000
+
+kdenetwork-filesharing (4:21.12.0-0ubuntu1) jammy; urgency=medium
+
+  [ Rik Mills ]
+  * New upstream release (21.12.0)
+  * Set maintainer to Kubuntu Developers.
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Dec 2021 11:20:48 +0000
+
+kdenetwork-filesharing (4:21.11.90-0ubuntu2) jammy; urgency=medium
+
+  * Add Kubuntu Vcs fields.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 28 Nov 2021 19:05:02 +0000
+
+kdenetwork-filesharing (4:21.11.90-0ubuntu1) jammy; urgency=medium
+
+  * New upstream (RC) release (21.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 26 Nov 2021 13:16:03 +0000
+
+kdenetwork-filesharing (4:21.11.80-0ubuntu1) jammy; urgency=medium
+
+  * New upstream (beta) release (21.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 21 Nov 2021 18:25:15 +0000
+
+kdenetwork-filesharing (4:21.08.3-0ubuntu1) jammy; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * New upstream release (21.08.2)
+
+  [ Rik Mills ]
+  * New upstream release (21.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 15 Nov 2021 09:38:59 +0000
+
+kdenetwork-filesharing (4:21.08.1-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.08.1)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Thu, 09 Sep 2021 22:32:42 +0100
+
+kdenetwork-filesharing (4:21.08.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.08.0).
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 16 Aug 2021 16:09:36 +0900
+
+kdenetwork-filesharing (4:21.08.0-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Aug 2021 09:01:11 +0100
+
+kdenetwork-filesharing (4:21.07.90-0ubuntu1) impish; urgency=medium
+
+  * New upstream (RC) release (21.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 02 Aug 2021 12:54:14 +0100
+
+kdenetwork-filesharing (4:21.07.80-0ubuntu1) impish; urgency=medium
+
+  * New upstream (beta) release (21.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 18 Jul 2021 20:32:59 +0100
+
+kdenetwork-filesharing (4:21.04.3-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jul 2021 11:42:06 +0100
+
+kdenetwork-filesharing (4:21.04.2-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 10 Jun 2021 10:38:38 +0100
+
+kdenetwork-filesharing (4:21.04.1-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 May 2021 09:05:16 +0100
+
+kdenetwork-filesharing (4:21.04.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.04.0).
+  * Borrow minimal upstream signing key from k3b.
+  * Drop Kubuntu from maintainer name.
+  * Added myself to the uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 27 Apr 2021 15:14:53 +0900
+
+kdenetwork-filesharing (4:21.04.0-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 29 Apr 2021 01:33:56 +0100
+
+kdenetwork-filesharing (4:20.12.3-0ubuntu1) hirsute; urgency=medium
+
+  * New upstream release (20.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 04 Mar 2021 15:18:42 +0000
+
+kdenetwork-filesharing (4:20.12.2-0ubuntu1) hirsute; urgency=medium
+
+  * New upstream release (20.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 04 Feb 2021 09:52:56 +0000
+
+kdenetwork-filesharing (4:20.12.1-0ubuntu1) hirsute; urgency=medium
+
+  * New upstream release (20.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 20 Jan 2021 23:09:29 +0000
+
+kdenetwork-filesharing (4:20.12.0-2) unstable; urgency=medium
+
+  * Update build dependencies according to the upstream build system:
+    - KF5 >= 5.74.0
+    - add libkf5declarative-dev
+  * Add missing runtime dependency:
+    - samba-common-bin
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 17 Dec 2020 22:02:26 +0100
+
+kdenetwork-filesharing (4:20.12.0-1) unstable; urgency=medium
+
+  * New upstream release (20.12.0).
+  * Bump Standards-Version to 4.5.1, no change required.
+  * Refresh copyright information.
+  * Build with hardening=+all build hardening flag.
+  * Borrow minimal upstream signing key from k3b.
+  * Drop kde-l10n migration rules, not needed anymore after 2 stable releases.
+  * Refresh upstream metadata.
+  * Update project homepage.
+  * Remove Modestas Vainius, George Kiagiadakis, Eshat Cakar, Maximiliano
+    Curia from the uploaders, thanks for your work on the package!
+  * Add myself to the uploaders.
+  * Bump debhelper compatibility level to 13.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 17 Dec 2020 18:50:17 +0100
+
+kdenetwork-filesharing (4:20.04.2-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * New upstream release (18.04.1).
+  * Update Vcs links to salsa.
+  * Bump Standards-Version to 4.1.4 (No changes needed).
+  * Bump debhelper build-dep and compat to 11.
+  * Update Long description (Closes: #691634).
+  * Update copyright file for new upstream.
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Update watch file to the new release-service location.
+  * Update the build dependencies according to the upstream build system:
+    - bump cmake to 3.5
+    - bump extra-cmake-modules to 5.7.0
+    - add libkf5completion-dev
+    - remove unused libkf5doctools-dev
+    - explicitly add gettext
+  * Drop the migration from kdenetwork-filesharing-dbg, no more needed after
+    two Debian stable releases.
+  * Switch from dhmk to the dh sequencer:
+    - invoke the dh sequencer using the kf5 addon
+    - manually force the generation of the substvars for the kde-l10n breaks
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+  * Use https for Format in copyright.
+  * Bump Standards-Version to 4.5.0, no changes required.
+  * Add Rules-Requires-Root: no.
+  * Add Enhances: dolphin.
+  * Remove empty line at the end of changelog.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 12 Jun 2020 17:00:17 +0200
+
+kdenetwork-filesharing (4:17.08.3-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Maximiliano Curia ]
+  * New upstream release (17.08.1)
+  * Bump Standards-Version to 4.1.0.
+  * Update upstream metadata
+  * Update uploaders list as requested by MIA team (Closes: #879325)
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Adjust l10npkgs_firstversion_ok to the version where kde-l10n will drop
+    translations.
+  * Simplify watch file, and switch it to https.
+  * Bump Standards-Version to 4.1.1, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 20 Nov 2017 21:42:09 +0100
+
+kdenetwork-filesharing (4:17.08.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Tue, 05 Sep 2017 13:59:59 +0000
+
+kdenetwork-filesharing (4:17.08.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 17 Aug 2017 09:34:33 +0000
+
+kdenetwork-filesharing (4:17.04.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 12 Jul 2017 10:21:01 +0000
+
+kdenetwork-filesharing (4:17.04.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 07 Jun 2017 12:21:21 +0000
+
+kdenetwork-filesharing (4:17.04.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 11 May 2017 18:15:30 +0000
+
+kdenetwork-filesharing (4:17.04.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 19 Apr 2017 13:03:50 +0000
+
+kdenetwork-filesharing (4:16.12.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 08 Mar 2017 13:47:50 +0000
+
+kdenetwork-filesharing (4:16.12.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 08 Feb 2017 16:57:56 +0000
+
+kdenetwork-filesharing (4:16.12.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 11 Jan 2017 13:09:47 +0000
+
+kdenetwork-filesharing (4:16.12.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 14 Dec 2016 16:26:36 +0000
+
+kdenetwork-filesharing (4:16.08.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 21 Nov 2016 13:53:01 +0000
+
+kdenetwork-filesharing (4:16.08.2-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+  [ Maximiliano Curia ]
+  * New upstream release (16.08.2)
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 17 Oct 2016 23:28:02 +0200
+
+kdenetwork-filesharing (4:16.08.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 14 Oct 2016 13:39:44 +0000
+
+kdenetwork-filesharing (4:16.08.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 16 Sep 2016 13:06:17 +0000
+
+kdenetwork-filesharing (4:16.08.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 17 Aug 2016 11:48:17 +0000
+
+kdenetwork-filesharing (4:16.04.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Tue, 26 Jul 2016 16:36:40 +0000
+
+kdenetwork-filesharing (4:16.04.2-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Refresh patches
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 22 Jun 2016 16:17:17 +0200
+
+kdenetwork-filesharing (4:16.04.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Add the libpackagekitqt5-dev build dependency to enable the samba
+    installation.
+  * Stop forcing the local installation to debian/tmp, letting the package
+    directory as install place.
+    - remove kdenetwork-filesharing.install, no more used now
+  * Backport upstream commit fb48a2e997eb76ff2eeff1e69c2db35478c2f0c0 to fix
+    detection of smbd; patch upstream_Sync-smbd-detection-with-kio.patch.
+    (Closes: #826851)
+  * Suggest samba. (Closes: #691637)
+
+ -- Pino Toscano <pino@debian.org>  Thu, 09 Jun 2016 22:09:22 +0200
+
+kdenetwork-filesharing (4:15.12.1-2) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Bump Standards-Version to 3.9.8
+
+  [ Maximiliano Curia ]
+  * Replace the "Historical name" ddeb-migration by its "Modern, clearer" replacement dbgsym-migration.
+  * Add upstream metadata (DEP-12)
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 May 2016 11:57:30 +0200
+
+kdenetwork-filesharing (4:15.12.1-1) experimental; urgency=medium
+
+  * New upstream release (15.12.0).
+  * New upstream release (15.12.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 01 Feb 2016 10:22:48 +0100
+
+kdenetwork-filesharing (4:14.12.2-1) experimental; urgency=medium
+
+  * Prepare Debian release.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 18 Feb 2015 19:04:55 +0100
+
+kdenetwork-filesharing (4:14.12.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 10 Feb 2015 08:42:03 -0800
+
+kdenetwork-filesharing (4:14.12.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+  * Remove kdelibs5-dev depend version as there was not a new release.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 15 Dec 2014 16:08:44 +0100
+
+kdenetwork-filesharing (4:14.11.97-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release candidate
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 02 Dec 2014 10:28:29 -0800
+
+kdenetwork-filesharing (4:14.11.95-0ubuntu1) vivid; urgency=medium
+
+  * Initial release for KDE applications 14.12 series
+   - Change maintainer to Debian/Kubuntu
+   - Fix Watch file applications locations
+   - Fix VCS for new kde-applications location
+  * Debian merge, remaining changes:
+   - Keep dbg package.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 24 Nov 2014 22:42:32 +0000
+
+kdenetwork-filesharing (4:4.14.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 10 Oct 2014 13:42:51 -0700
+
+kdenetwork-filesharing (4:4.14.1-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Mon, 22 Sep 2014 16:45:39 +0200
+
+kdenetwork-filesharing (4:4.14.0-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 20 Aug 2014 12:46:09 +0200
+
+kdenetwork-filesharing (4:4.13.97-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release RC
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 01 Aug 2014 16:32:10 +0200
+
+kdenetwork-filesharing (4:4.13.95-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Wed, 30 Jul 2014 18:02:18 +0200
+
+kdenetwork-filesharing (4:4.13.90-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Thu, 24 Jul 2014 22:58:02 +0200
+
+kdenetwork-filesharing (4:4.13.2-0ubuntu1) utopic; urgency=medium
+
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Jun 2014 11:52:05 +0100
+
+kdenetwork-filesharing (4:4.13.0-0ubuntu2) utopic; urgency=medium
+
+  * Merge with Debian, remaining changes:
+    - Keep -dbg package
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Wed, 11 Jun 2014 12:43:57 +0200
+
+kdenetwork-filesharing (4:4.13.0-0ubuntu1) trusty; urgency=medium
+
+  * New upstream KDE Software Compilation release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 15 Apr 2014 11:37:33 +0200
+
+kdenetwork-filesharing (4:4.12.97-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release candidate
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Wed, 02 Apr 2014 11:19:24 +0200
+
+kdenetwork-filesharing (4:4.12.95-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sun, 23 Mar 2014 12:07:51 +0100
+
+kdenetwork-filesharing (4:4.12.90-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 10:48:05 +0000
+
+kdenetwork-filesharing (4:4.12.3-0ubuntu1) trusty; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Tue, 04 Mar 2014 20:40:46 +0100
+
+kdenetwork-filesharing (4:4.12.2-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 28 Apr 2014 12:24:46 +0200
+
+kdenetwork-filesharing (4:4.12.2-1) experimental; urgency=medium
+
+  * Bump Standards-Version to 3.9.5, no changes needed.
+  * New upstream release.
+  * Bump kde-sc-dev-latest build dependency.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 10 Feb 2014 11:32:07 +0100
+
+kdenetwork-filesharing (4:4.12.2-0ubuntu1) trusty; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Tue, 04 Feb 2014 23:50:43 +0000
+
+kdenetwork-filesharing (4:4.12.1-0ubuntu1) trusty; urgency=low
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 16 Jan 2014 08:08:48 +0000
+
+kdenetwork-filesharing (4:4.12.0-0ubuntu1) trusty; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Dec 2013 16:43:08 +0000
+
+kdenetwork-filesharing (4:4.11.97-0ubuntu1) trusty; urgency=low
+
+  * New upstream RC release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 29 Nov 2013 12:47:19 +0000
+
+kdenetwork-filesharing (4:4.11.95-0ubuntu1) trusty; urgency=low
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Mon, 25 Nov 2013 17:56:07 +0100
+
+kdenetwork-filesharing (4:4.11.80-0ubuntu1) trusty; urgency=low
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sat, 23 Nov 2013 17:35:43 +0100
+
+kdenetwork-filesharing (4:4.11.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 10 Nov 2013 11:02:18 +0100
+
+kdenetwork-filesharing (4:4.11.2-1) experimental; urgency=low
+
+  * First release of kdenetwork after being split by upstream.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 09 Oct 2013 14:09:22 +0200
+
+kdenetwork-filesharing (4:4.11.2-0ubuntu1) saucy; urgency=low
+
+  * New upstream bugfix release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 30 Sep 2013 14:12:39 +0100
+
+kdenetwork-filesharing (4:4.11.1-0ubuntu1) saucy; urgency=low
+
+  * New upstream bugfix release.
+
+ -- Howard Chan <smartboyhw@gmail.com>  Fri, 06 Sep 2013 22:18:55 +0100
+
+kdenetwork-filesharing (4:4.11.0-0ubuntu1) saucy; urgency=low
+
+  [ Howard Chan ]
+  * New upstream release
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 14 Aug 2013 00:11:09 +0100
+
+kdenetwork-filesharing (4:4.10.97-0ubuntu1) saucy; urgency=low
+
+  * New upstream RC 2 release
+  * New upstream RC 2 release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 26 Jul 2013 19:20:52 +0100
+
+kdenetwork-filesharing (4:4.10.95-0ubuntu1) saucy; urgency=low
+
+  * New upstream RC release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Fri, 19 Jul 2013 12:32:12 +0000
+
+kdenetwork-filesharing (4:4.10.90-0ubuntu1) saucy; urgency=low
+
+  [ Jonathan Riddell ]
+  * Tidy up copyright file
+  * Fix watch file
+
+  [ Michał Zając ]
+  * New upstream bet release
+
+ -- Michał Zając <quintasan@kubuntu.org>  Fri, 28 Jun 2013 18:09:49 +0100
+
+kdenetwork-filesharing (4:4.10.80-0ubuntu1) saucy; urgency=low
+
+  * New upstream release
+  * Initial package split from kdenetwork
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 21 Jun 2013 02:14:35 +0100

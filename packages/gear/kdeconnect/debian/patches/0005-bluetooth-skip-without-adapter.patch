@@ -1,0 +1,113 @@
+--- a/core/backends/bluetooth/bluetoothlinkprovider.h
++++ b/core/backends/bluetooth/bluetoothlinkprovider.h
+@@ -67,6 +67,7 @@
+ private:
+     void addLink(BluetoothDeviceLink *deviceLink, const QString &deviceId);
+     QList<QBluetoothAddress> getPairedDevices();
++    void ensureServiceDiscoveryAgent();
+     void tryToInitialise();
+ 
+     QBluetoothUuid mServiceUuid;
+--- a/core/backends/bluetooth/bluetoothlinkprovider.cpp
++++ b/core/backends/bluetooth/bluetoothlinkprovider.cpp
+@@ -12,18 +12,38 @@
+ #include "multiplexchannel.h"
+ 
+ #include <QBluetoothServiceInfo>
++#include <QFileInfo>
++
++#ifdef Q_OS_LINUX
++static bool hasBluetoothAdapter()
++{
++    return QFileInfo::exists(QStringLiteral("/sys/class/bluetooth"));
++}
++#else
++static bool hasBluetoothAdapter()
++{
++    return true;
++}
++#endif
+ 
+ BluetoothLinkProvider::BluetoothLinkProvider(bool isDisabled)
+     : mServiceUuid(QBluetoothUuid(QStringLiteral("185f3df4-3268-4e3f-9fca-d4d5059915bd")))
+-    , mServiceDiscoveryAgent(new QBluetoothServiceDiscoveryAgent(this))
++    , mServiceDiscoveryAgent(nullptr)
+     , mDisabled(isDisabled)
+ {
+     qCDebug(KDECONNECT_CORE) << "BluetoothLinkProvider::ctor executed";
++    qCDebug(KDECONNECT_CORE) << "BluetoothLinkProvider::ctor finished";
++}
+ 
++void BluetoothLinkProvider::ensureServiceDiscoveryAgent()
++{
++    if (mServiceDiscoveryAgent) {
++        return;
++    }
++
++    mServiceDiscoveryAgent = new QBluetoothServiceDiscoveryAgent(this);
+     mServiceDiscoveryAgent->setUuidFilter(mServiceUuid);
+     connect(mServiceDiscoveryAgent, &QBluetoothServiceDiscoveryAgent::serviceDiscovered, this, &BluetoothLinkProvider::serviceDiscovered);
+-
+-    qCDebug(KDECONNECT_CORE) << "BluetoothLinkProvider::ctor finished";
+ }
+ 
+ void BluetoothLinkProvider::onStart()
+@@ -36,14 +56,22 @@
+ 
+ void BluetoothLinkProvider::onStartDiscovery()
+ {
+-    if (!mDisabled && mServiceDiscoveryAgent != nullptr) {
+-        qCDebug(KDECONNECT_CORE) << "BluetoothLinkProvider::onStartDiscovery executed";
+-        mServiceDiscoveryAgent->start();
++    if (!mDisabled && hasBluetoothAdapter()) {
++        ensureServiceDiscoveryAgent();
++        if (mServiceDiscoveryAgent != nullptr) {
++            qCDebug(KDECONNECT_CORE) << "BluetoothLinkProvider::onStartDiscovery executed";
++            mServiceDiscoveryAgent->start();
++        }
+     }
+ }
+ 
+ void BluetoothLinkProvider::tryToInitialise()
+ {
++    if (!hasBluetoothAdapter()) {
++        qCDebug(KDECONNECT_CORE) << "No local bluetooth adapter found";
++        return;
++    }
++
+     QBluetoothLocalDevice localDevice;
+     if (!localDevice.isValid()) {
+         qCWarning(KDECONNECT_CORE) << "No local bluetooth adapter found";
+--- a/core/daemon.cpp
++++ b/core/daemon.cpp
+@@ -47,6 +47,15 @@
+     return s_instance;
+ }
+ 
++static bool hasBluetoothAdapter()
++{
++#ifdef Q_OS_LINUX
++    return QFileInfo::exists(QStringLiteral("/sys/class/bluetooth"));
++#else
++    return true;
++#endif
++}
++
+ Daemon::Daemon(QObject *parent, bool testMode)
+     : QObject(parent)
+     , d(new DaemonPrivate)
+@@ -85,8 +94,12 @@
+         d->m_linkProviders.insert(new LanLinkProvider(false, disabledLinkProviders.contains(QStringLiteral("LanLinkProvider"))));
+         qCDebug(KDECONNECT_CORE) << "Constructed LanLinkProvider Backend";
+ #ifdef KDECONNECT_BLUETOOTH
+-        d->m_linkProviders.insert(new AsyncLinkProvider(disabledLinkProviders.contains(QStringLiteral("AsyncLinkProvider"))));
+-        qCDebug(KDECONNECT_CORE) << "Constructed AsyncLinkProvider<AsyncLinkProvider> Backend";
++        if (hasBluetoothAdapter()) {
++            d->m_linkProviders.insert(new AsyncLinkProvider(disabledLinkProviders.contains(QStringLiteral("AsyncLinkProvider"))));
++            qCDebug(KDECONNECT_CORE) << "Constructed AsyncLinkProvider<AsyncLinkProvider> Backend";
++        } else {
++            qCDebug(KDECONNECT_CORE) << "Skipping Bluetooth backend: no local adapter";
++        }
+ #endif
+ #ifdef KDECONNECT_LOOPBACK
+         d->m_linkProviders.insert(new LoopbackLinkProvider());

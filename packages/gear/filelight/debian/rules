@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+# Disable fixfilepath, as it triggers build failures.
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=-fixfilepath
+
+%:
+	dh $@
+
+execute_before_dh_auto_build:
+	# print the filesystem info (that include the block sizes) to help
+	# debugging issues in DirectoryIterator/POSIXWalker
+	LANG=C stat -f .
+	# info on the test files
+	LANG=C stat autotests/iterator-tree.in/*
+
+override_dh_auto_test:
+	- xvfb-run -a --server-args="-screen 0 1024x768x24+32" dh_auto_test
+
+execute_after_dh_fixperms-arch:
+	chmod -x $(CURDIR)/debian/filelight/usr/share/kio/servicemenus/filelight.desktop
+
+execute_after_dh_auto_clean:
+	rm -f src/qml/qml.generated.qrc

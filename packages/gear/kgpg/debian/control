@@ -1,0 +1,49 @@
+Source: kgpg
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 5.240.0~),
+               gettext,
+               gnupg2,
+               gpg-agent,
+               libakonadicontact-dev (>= 4:25.12.3~),
+               libgpgme-dev,
+               libkf6archive-dev (>= 5.240.0~),
+               libkf6codecs-dev (>= 5.240.0~),
+               libkf6contacts-dev (>= 5.240.0~),
+               libkf6coreaddons-dev (>= 5.240.0~),
+               libkf6crash-dev (>= 5.240.0~),
+               libkf6dbusaddons-dev (>= 5.240.0~),
+               libkf6doctools-dev (>= 5.240.0~),
+               libkf6i18n-dev (>= 5.240.0~),
+               libkf6jobwidgets-dev (>= 5.240.0~),
+               libkf6kio-dev (>= 5.240.0~),
+               libkf6notifications-dev (>= 5.240.0~),
+               libkf6service-dev (>= 5.240.0~),
+               libkf6statusnotifieritem-dev (>= 5.240.0~),
+               libkf6textwidgets-dev (>= 5.240.0~),
+               libkf6widgetsaddons-dev (>= 5.240.0~),
+               libkf6windowsystem-dev (>= 5.240.0~),
+               libkf6xmlgui-dev (>= 5.240.0~),
+               pkgconf,
+               qt6-base-dev (>= 6.4.0+dfsg~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.6.2
+Homepage: https://apps.kde.org/en/kgpg
+Rules-Requires-Root: no
+
+Package: kgpg
+Section: utils
+Architecture: any
+Depends: gnupg, ${misc:Depends}, ${shlibs:Depends}
+Description: graphical front end for GNU Privacy Guard
+ Kgpg manages cryptographic keys for the GNU Privacy Guard, and can encrypt,
+ decrypt, sign, and verify files.  It features a simple editor for applying
+ cryptography to short pieces of text, and can also quickly apply cryptography
+ to the contents of the clipboard.
+ .
+ This package is part of the KDE Utilities module.

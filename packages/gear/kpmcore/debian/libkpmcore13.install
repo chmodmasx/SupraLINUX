@@ -1,0 +1,7 @@
+usr/lib/*/libkpmcore.so.13
+usr/lib/*/libkpmcore.so.2*
+usr/lib/*/qt6/plugins/
+usr/lib/*/libexec/
+usr/share/dbus-1/
+usr/share/locale
+usr/share/polkit-1/actions

@@ -1,0 +1,114 @@
+Source: kdeconnect
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16.0~),
+               dbus-x11 <!nocheck>,
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.0.0~),
+               gettext,
+               kio6 <!nocheck>,
+               kirigami-addons-dev (>= 0.11~),
+               kpeople-vcard,
+               libdbus-1-dev,
+               libfakekey-dev,
+               libkf6configwidgets-dev (>= 6.0.0~),
+               libkf6crash-dev (>= 6.0.0~),
+               libkf6dbusaddons-dev (>= 6.0.0~),
+               libkf6doctools-dev (>= 6.0.0~),
+               libkf6guiaddons-dev (>= 6.0.0~),
+               libkf6i18n-dev (>= 6.0.0~),
+               libkf6iconthemes-dev (>= 6.0.0~),
+               libkf6itemmodels-dev (>= 6.0.0~),
+               libkf6kcmutils-dev (>= 6.0.0~),
+               libkf6kio-dev (>= 6.0.0~),
+               libkf6modemmanagerqt-dev (>= 6.0.0~),
+               libkf6notifications-dev (>= 6.0.0~),
+               libkf6package-dev,
+               libkf6people-dev (>= 6.0.0~),
+               libkf6pulseaudioqt-dev,
+               libkf6qqc2desktopstyle-dev (>= 6.0.0~),
+               libkf6service-dev (>= 6.0.0~),
+               libkf6solid-dev (>= 6.0.0~),
+               libkf6statusnotifieritem-dev (>= 6.0.0~),
+               libkf6windowsystem-dev (>= 6.0.0~),
+               libkirigami-dev (>= 6.0.0~),
+               libqca-qt6-dev,
+               libssl-dev,
+               libwayland-bin,
+               libwayland-dev (>= 1.9~),
+               libx11-dev,
+               libxkbcommon-dev,
+               libxtst-dev,
+               pkgconf,
+               plasma-desktoptheme,
+               plasma-wayland-protocols,
+               qml6-module-org-kde-kquickcontrolsaddons,
+               qt6-base-dev (>= 6.7.0~),
+               qt6-base-dev-tools (>= 6.10.0~),
+               qt6-base-private-dev,
+               qt6-connectivity-dev (>= 6.7.0~),
+               qt6-declarative-dev (>= 6.7.0~),
+               qt6-declarative-private-dev,
+               qt6-multimedia-dev (>= 6.7.0~),
+               qt6-wayland-dev,
+               wayland-protocols,
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Homepage: https://kdeconnect.kde.org
+
+Package: kdeconnect
+Architecture: any
+Depends: kirigami-addons-data,
+         libqca-qt6-plugins,
+         plasma-desktoptheme,
+         qml6-module-org-kde-kdeconnect,
+         sshfs (>= 3),
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Recommends: systemsettings
+Breaks: fuse (<< 3)
+Description: connect smartphones to your desktop devices
+ Tool to integrate your smartphone, tablet, and desktop devices.
+ Remote-control, share files, synchronize notifications, and more!
+ At the moment it only supports Android-based mobile devices. Linux desktop
+ devices are well-supported, with ports available for other operating systems.
+
+Package: kdeconnect-libs
+Architecture: any
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Breaks: kdeconnect (<< 25.04.2-1~)
+Replaces: kdeconnect (<< 25.04.2-1~)
+Description: KDE Connect internal libs
+ Tool to integrate your smartphone, tablet, and desktop devices.
+ Remote-control, share files, synchronize notifications, and more!
+ At the moment it only supports Android-based mobile devices. Linux desktop
+ devices are well-supported, with ports available for other operating systems.
+ .
+ This package contains the internal libs used by KDE Connect and thw QML module.
+
+Package: nautilus-kdeconnect
+Architecture: all
+Depends: kdeconnect, nautilus, python3-nautilus, ${misc:Depends}
+Enhances: nautilus
+Breaks: kdeconnect (<< 20.12)
+Replaces: kdeconnect (<< 20.12)
+Description: KDE Connect integration for Nautilus
+ Extension providing integration to send files to KDE Connect compatible
+ devices directly from within Nautilus.
+
+Package: qml6-module-org-kde-kdeconnect
+Architecture: any
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: QML module wrapping KDE Connect functionality
+ Tool to integrate your smartphone, tablet, and desktop devices.
+ Remote-control, share files, synchronize notifications, and more!
+ At the moment it only supports Android-based mobile devices. Linux desktop
+ devices are well-supported, with ports available for other operating systems.
+ .
+ This package contains the wrapper to use KDE Connect functionality from QML.

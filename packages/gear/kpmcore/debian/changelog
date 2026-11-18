@@ -1,0 +1,1070 @@
+kpmcore (25.12.3-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Gear 25.12.3 kpmcore for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+kpmcore (25.12.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Mar 2026 13:56:36 +0000
+
+kpmcore (25.12.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Feb 2026 12:27:27 +0000
+
+kpmcore (25.12.1-3ubuntu1) resolute; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Keep our symbols file.
+    - Do not wildcard shared library soversion in install file, as this
+      risks soname bumps not being detected.
+    - Disable build time tests.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 15 Jan 2026 10:44:06 +0000
+
+kpmcore (25.12.1-3) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 15 Jan 2026 07:38:02 +0100
+
+kpmcore (25.12.1-2) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  Reupload including merge of previous changes from the experimental branch.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 12 Jan 2026 23:34:36 +0100
+
+kpmcore (25.12.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (25.12.1).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.7.3, no change required.
+  * Drop Rules-Requires-Root: no, not needed anymore since trixie.
+  * Drop patches applied upstream.
+  * Adapt packaging to upstream soname bump to libkpmcore13.
+  * Update symbols from build for 25.12.1.
+  * Switch to debian/watch format version 5.
+  * Add/update Heiko Becker’s key in upstream keyring.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 12 Jan 2026 23:21:05 +0100
+
+kpmcore (25.12.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jan 2026 11:11:01 +0000
+
+kpmcore (25.12.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Dec 2025 12:29:23 +0000
+
+kpmcore (25.11.90-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (RC) release (25.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 28 Nov 2025 14:11:21 +0000
+
+kpmcore (25.11.80-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (beta) release (25.11.80)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 16 Nov 2025 05:54:52 +0000
+
+kpmcore (25.08.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Nov 2025 12:17:17 +0000
+
+kpmcore (25.08.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 11:51:50 +0100
+
+kpmcore (25.08.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Sep 2025 06:56:24 +0100
+
+kpmcore (25.08.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Aug 2025 11:27:26 +0100
+
+kpmcore (25.07.90-0ubuntu1) questing; urgency=medium
+
+  * New upstream (RC) release (25.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Jul 2025 17:54:32 +0100
+
+kpmcore (25.07.80-0ubuntu1) questing; urgency=medium
+
+  * New upstream (beta) release (25.07.80)
+  * Update symbols from build logs.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 12 Jul 2025 18:19:08 +0100
+
+kpmcore (25.04.3-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Jul 2025 07:50:35 +0100
+
+kpmcore (25.04.2-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 11:54:25 +0100
+
+kpmcore (25.04.1-0ubuntu2) questing; urgency=medium
+
+  * Disable test that requires full build.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 10 May 2025 11:02:50 +0100
+
+kpmcore (25.04.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.1)
+  * Drop included upstream_fix-partitionmanager-crashes.patch
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 May 2025 22:12:57 +0100
+
+kpmcore (24.12.3-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Backport upstream commits:
+    - Fix a memory leak by actually freeing a correct pointer.
+    - Fix a crash when filesystem==nullptr.
+  * Reenable build-time tests.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 09 Jun 2025 09:01:20 +0200
+
+kpmcore (25.04.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (25.04.0).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+  * Adapt packaging to soname bump from libkpmcore12 to libkpmcore13.
+  * Update symbols from build for 25.04.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 06 May 2025 00:46:20 +0200
+
+kpmcore (25.04.0-0ubuntu2) questing; urgency=medium
+
+  * Add upstream_fix-partitionmanager-crashes.patch
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 02 May 2025 07:34:51 +0100
+
+kpmcore (25.04.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.0)
+  * Drop ext4-lazy_itable_init-lazy_journal_init.patch and tests-
+    cpp20.patch. Included in this release.
+  * Bump SONAME according to upstream changes:
+    - libkpmcore12 -> libkpmcore13
+  * Regenerate symbols file.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 30 Apr 2025 19:56:50 +0100
+
+kpmcore (24.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.12.3).
+  * Backport commit to fix misleading Polish translation. (Closes:
+    #1104060)
+  * Bump Standards-Version to 4.7.2, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 04 May 2025 00:19:45 +0200
+
+kpmcore (24.12.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Mar 2025 08:46:34 +0000
+
+kpmcore (24.12.2-0ubuntu2) plucky; urgency=medium
+
+  * Merge from Debian Unstable in packaging.
+  * Add ext4-lazy_itable_init-lazy_journal_init.patch which sets
+    lazy_itable_init and lazy_journal_init to 0, trading speed (with the
+    bottleneck being disk bandwidth) for a cleaner mkfs.
+  * Add tests-cpp20.patch which bumps the test suite to C++20.
+  * Enable the autopkgtest, ensure it is functional.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Fri, 21 Feb 2025 02:07:29 -0600
+
+kpmcore (24.12.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Feb 2025 10:00:50 +0000
+
+kpmcore (24.12.1-0ubuntu2) plucky; urgency=medium
+
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 13 Jan 2025 13:13:59 +0000
+
+kpmcore (24.12.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 06:17:41 +0000
+
+kpmcore (24.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.12.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 21 Dec 2024 08:41:23 +0100
+
+kpmcore (24.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.0)
+  * Update symbols from build logs.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Dec 2024 17:17:24 +0000
+
+kpmcore (24.11.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (RC) release (24.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 29 Nov 2024 13:20:15 +0000
+
+kpmcore (24.11.80-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (beta) release (24.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 Nov 2024 11:42:58 +0000
+
+kpmcore (24.08.3-0ubuntu2) plucky; urgency=medium
+
+  * Update symbols from build logs.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 14:54:03 +0000
+
+kpmcore (24.08.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 11:44:35 +0000
+
+kpmcore (24.08.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian Experimental, remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Update upstream signing key.
+    - Keep our symbols file.
+  * Drop old Breaks/Replaces.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 16 Oct 2024 14:59:33 -0500
+
+kpmcore (24.08.2-1) experimental; urgency=medium
+
+  [ Jesse Rhodes ]
+  * New upstream release (24.05.2).
+  * Update build-deps with info from cmake.
+  * Update list of installed files from build system.
+  * Update libkpmcore12.symbols.
+  * Refresh copyright info.
+  * pkg-config -> pkgconf.
+  * Update Standards-Version to 4.7.0 (no changes needed).
+  * Use dh-sequence-kf6.
+  * Update package descriptions.
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.08.2).
+  * Update symbols from build for 24.08.2.
+  * Fix typo in Replaces relation with older version of the lib.
+  * Cleanup Breaks/Replaces.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 16 Oct 2024 08:48:50 +0200
+
+kpmcore (23.08.5-0ubuntu3) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 07:42:01 +0000
+
+kpmcore (23.08.5-0ubuntu2) noble; urgency=medium
+
+  * No-change rebuild against libqt5core5t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 15 Mar 2024 05:15:31 +0000
+
+kpmcore (23.08.5-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.5)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Thu, 22 Feb 2024 10:14:02 -0700
+
+kpmcore (23.08.4-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.4)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 13 Dec 2023 10:19:35 +0000
+
+kpmcore (23.08.3-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Jesse Rhodes ]
+  * New upstream release (23.08.2).
+  * Update symbols file.
+  * Update build-deps with info from cmake.
+  * New upstream release (23.08.3).
+
+ -- Jesse Rhodes <jesse@sney.ca>  Tue, 05 Dec 2023 12:18:00 -0500
+
+kpmcore (23.08.3-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Nov 2023 11:39:43 +0000
+
+kpmcore (23.08.2-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 26 Oct 2023 12:35:32 +0100
+
+kpmcore (23.08.1-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Sep 2023 12:03:22 +0100
+
+kpmcore (23.08.0-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 24 Aug 2023 12:58:23 +0100
+
+kpmcore (23.07.90-0ubuntu1) mantic; urgency=medium
+
+  * New upstream (beta) release (23.07.80)
+  * Add the dh-sequence-pkgkde-symbolshelper build dep.
+  * New upstream (RC) release (23.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 15 Aug 2023 02:37:55 +0100
+
+kpmcore (23.04.3-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jul 2023 14:52:24 +0100
+
+kpmcore (23.04.2-0ubuntu1) mantic; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * New upstream release (23.04.1)
+  * New upstream release (23.04.2)
+
+  [ Rik Mills ]
+  * Update symbols.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 10 Jun 2023 11:59:33 +0100
+
+kpmcore (22.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 01 Mar 2023 11:57:57 +0100
+
+kpmcore (22.12.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 02 Mar 2023 00:42:03 +0000
+
+kpmcore (22.12.2-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.2)
+
+ -- Simon Quigley <tsimonq2@kubuntu.org>  Sat, 11 Feb 2023 14:23:02 -0600
+
+kpmcore (22.12.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.1).
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Add Albert Astals Cid’s master key to upstream signing keys.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 06 Jan 2023 23:38:41 +0100
+
+kpmcore (22.12.1-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.1)
+  * Build depend on dh-sequence-kf5 and remove pkg-kde-tools.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jan 2023 11:17:45 +0000
+
+kpmcore (22.12.0-2ubuntu1) lunar; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Update upstream signing key.
+    - Keep our symbols file.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 19 Dec 2022 10:47:30 +0000
+
+kpmcore (22.12.0-2) unstable; urgency=medium
+
+  * Upload with a correctly released changelog.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Dec 2022 16:04:50 +0100
+
+kpmcore (22.12.0-1) unstable; urgency=medium
+
+  [ Jonathan Carter ]
+  * Remove self from uploaders, package is good in the hands of KDE team now
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.08.3).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (22.11.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (22.12.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Dec 2022 00:13:02 +0100
+
+kpmcore (22.12.0-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 09 Dec 2022 19:13:31 +0000
+
+kpmcore (22.11.90-0ubuntu1) lunar; urgency=medium
+
+  * New upstream (RC) release (22.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Nov 2022 16:09:46 +0000
+
+kpmcore (22.11.80-0ubuntu1) lunar; urgency=medium
+
+  * New upstream (beta) release (22.11.80)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 14 Nov 2022 10:52:57 +0000
+
+kpmcore (22.08.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.08.2)
+  * New upstream release (22.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 07 Nov 2022 11:12:47 +0000
+
+kpmcore (22.08.1-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Update symbols from buildd’s logs.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 03 Oct 2022 22:17:49 +0200
+
+kpmcore (22.08.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.08.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 28 Sep 2022 23:14:29 +0200
+
+kpmcore (22.08.1-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Sep 2022 07:44:06 +0100
+
+kpmcore (22.08.0-0ubuntu2) kinetic; urgency=medium
+
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 28 Aug 2022 16:52:13 +0100
+
+kpmcore (22.08.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.08.0)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 24 Aug 2022 09:53:35 +0100
+
+kpmcore (22.04.3-1ubuntu1) kinetic; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Keep our symbols file.
+    - Update unstream signing key.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 15 Aug 2022 14:47:56 +0100
+
+kpmcore (22.04.3-1) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Apply multi-arch hints.
+    + libkpmcore-dev: Add Multi-Arch: same.
+
+  [ Jonathan Carter ]
+  * New upstream release
+  * Bump soname version to 12
+  * Update symbols file
+  * Update copyright years
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 10 Aug 2022 11:16:13 +0200
+
+kpmcore (22.04.3-0ubuntu3) kinetic; urgency=medium
+
+  * Update symbols for riscv64.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 31 Jul 2022 06:51:07 +0100
+
+kpmcore (22.04.3-0ubuntu2) kinetic; urgency=medium
+
+  * Update symbols files, marking optional=gccinternal to prevent FTBFS
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Fri, 29 Jul 2022 13:22:45 +0100
+
+kpmcore (22.04.3-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Jul 2022 09:31:20 +0100
+
+kpmcore (22.04.2-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jun 2022 08:05:46 +0100
+
+kpmcore (22.04.1-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.0)
+  * Bump SONAME according to upstream changes:
+    - libkpmcore11 -> libkpmcore12
+  * Update symbols.
+  * New upstream release (22.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 May 2022 21:04:45 +0100
+
+kpmcore (21.12.3-3) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols file from the logs of buildds.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 28 Jul 2022 16:40:30 +0200
+
+kpmcore (21.12.3-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bump Standards-Version to 4.6.1, no changes required.
+  * Remove inactive Uploaders.
+  * Remove the libkpmcore4-dev replaces in libkpmcore-dev, as the rename was
+    done before Debian Buster.
+  * Remove the libkpmcore4, libkpmcore8, and libkpmcore9 breaks/replaces in
+    libkpmcore11: they either refer to versions older than Debian Buster, or
+    to development versions between Buster and Bullseye.
+  * Update symbols file. (Closes: #1012963)
+
+ -- Pino Toscano <pino@debian.org>  Thu, 28 Jul 2022 05:57:48 +0200
+
+kpmcore (21.12.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update symbols file from the logs of buildds.
+  * CI: enable blhc, as it should work fine now.
+  * Update the build dependencies according to the upstream build system:
+    - bump cmake to 3.16.0
+  * Remove the unused ${shlibs:Depends} substvar from libkpmcore-dev.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 07 Mar 2022 07:56:22 +0100
+
+kpmcore (21.12.3-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Mar 2022 10:14:51 +0000
+
+kpmcore (21.12.2-3) unstable; urgency=medium
+
+  * More symbols fixes for armel and riscv64.
+  * Add Build-Depends-Package to symbols file.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 18 Feb 2022 13:24:03 +0100
+
+kpmcore (21.12.2-2) unstable; urgency=medium
+
+  * Fix symbols for armel and riscv64.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 18 Feb 2022 11:16:31 +0100
+
+kpmcore (21.12.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 17 Feb 2022 11:19:15 +0200
+
+kpmcore (21.12.2-0ubuntu1) jammy; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key
+
+  [ Rik Mills ]
+  * New upstream release (21.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Feb 2022 07:21:26 +0000
+
+kpmcore (21.12.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.6.0
+  * Update symbols
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 20 Jan 2022 11:57:01 +0200
+
+kpmcore (21.12.1-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jan 2022 10:29:16 +0000
+
+kpmcore (21.12.0-0ubuntu1) jammy; urgency=medium
+
+  [ Rik Mills ]
+  * New upstream release (21.12.0)
+  * Set maintainer to Kubuntu Developers.
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Dec 2021 11:26:27 +0000
+
+kpmcore (21.11.90-0ubuntu2) jammy; urgency=medium
+
+  * Add Kubuntu Vcs fields.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 28 Nov 2021 19:10:29 +0000
+
+kpmcore (21.11.90-0ubuntu1) jammy; urgency=medium
+
+  * New upstream (RC) release (21.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 26 Nov 2021 13:21:36 +0000
+
+kpmcore (21.11.80-0ubuntu1) jammy; urgency=medium
+
+  * New upstream (beta) release (21.11.80)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 21 Nov 2021 18:28:55 +0000
+
+kpmcore (21.08.3-0ubuntu1) jammy; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * New upstream release (21.08.2)
+
+  [ Rik Mills ]
+  * New upstream release (21.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 15 Nov 2021 09:44:03 +0000
+
+kpmcore (21.08.1-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.08.1)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Thu, 09 Sep 2021 22:37:19 +0100
+
+kpmcore (21.08.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.08.0).
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 17 Aug 2021 12:38:22 +0900
+
+kpmcore (21.08.0-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Aug 2021 09:06:30 +0100
+
+kpmcore (21.07.90-0ubuntu1) impish; urgency=medium
+
+  * New upstream (RC) release (21.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 02 Aug 2021 13:00:28 +0100
+
+kpmcore (21.07.80-0ubuntu1) impish; urgency=medium
+
+  * New upstream (beta) release (21.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 17 Jul 2021 19:07:54 +0100
+
+kpmcore (21.04.3-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jul 2021 11:47:40 +0100
+
+kpmcore (21.04.2-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 10 Jun 2021 10:44:41 +0100
+
+kpmcore (21.04.1-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 May 2021 09:11:15 +0100
+
+kpmcore (21.04.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.04.0).
+  * Add myself to uploaders.
+  * Drop upstream patch.
+  * Bump so-level in accordance with upstream.
+  * Update symbols.
+  * Add missing breaks/replaces.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 26 Apr 2021 08:33:25 +0900
+
+kpmcore (21.04.0-0ubuntu1) impish; urgency=medium
+
+  [ Rik Mills ]
+  * New upstream release (21.04.0)
+  * Drop upstream_2ea9ff49_fix_smartctl_exit_status_success_check.patch
+
+  [ José Manuel Santamaría Lema ]
+  * Use kf5 addon for dh, provides lintian and list-missing when
+    building for Kubuntu
+  * Rename libkpmcore10 -> libkpmcore11 due to SONAME change
+  * Update symbols file
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 29 Apr 2021 02:09:49 +0100
+
+kpmcore (20.12.3-2ubuntu1) hirsute; urgency=medium
+
+  * Mark symbols as optional that are not seen when building with lto.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 23 Mar 2021 13:13:18 +0000
+
+kpmcore (20.12.3-2) unstable; urgency=medium
+
+  * Backport upstream fix so that S.M.A.R.T. information display always works
+    whatever the disk state.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 22 Mar 2021 11:36:09 +0100
+
+kpmcore (20.12.3-1) unstable; urgency=medium
+
+  * New upstream release (20.12.3).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 08 Mar 2021 23:23:00 +0100
+
+kpmcore (20.12.2-4) unstable; urgency=medium
+
+  * Team upload.
+  * Drop unused build dependencies: libatasmart-dev, libkf5auth-dev,
+    libparted-dev, libqca-qt5-2-dev, and util-linux
+    - drop also the libatasmart-dev dependency in libkpmcore-dev
+    - drop also the libqca-qt5-2-plugins dependency in libkpmcore10
+  * Enable the build on any architecture (not only Linux ones), as it builds
+    fine now.
+  * Update symbols files from the logs of buildds.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 12 Feb 2021 22:15:58 +0100
+
+kpmcore (20.12.2-3) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files from the logs of buildds.
+  * debian/copyright: use spaces rather than tabs to start continuation lines.
+  * Explicitly add the gettext build dependency.
+  * Add the missing libkpmcore10 dependency in libkpmcore-dev.
+  * Remove the old libkpmcore5, and libkpmcore6 breaks/replaces, as they
+    existed only in versions between Stretch and Buster.
+  * Do not ship kpmcore._policy_.mo files, as they are helper translations for
+    .policy files.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 12 Feb 2021 12:49:57 +0100
+
+kpmcore (20.12.2-2) unstable; urgency=medium
+
+  * Update symbols file for armel and risvc64 specificities.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 12 Feb 2021 09:50:47 +0100
+
+kpmcore (20.12.2-1) unstable; urgency=medium
+
+  * Update upstream GPG signing key.
+  * New upstream release (20.12.2).
+  * Git ignore generated debian/files.
+  * Add min versions to build dependencies according to the upstream build
+    system.
+  * Drop explicit call to dh_missing --fail-missing, it’s now the default with
+    debhelper-compat 13.
+  * Add symbols file.
+  * Drop breaks/replaces older than 2 stable releases.
+  * Add upstream metadata.
+  * Move maintainer and repos from extras to kde now that the app is part of
+    official KDE apps releases.
+  * Update project homepage.
+  * Add salsa-ci.yml pipeline file.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 08 Feb 2021 13:39:08 +0100
+
+kpmcore (20.12.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 12 Jan 2021 16:58:01 +0200
+
+kpmcore (20.12.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update watch file (kpmcore is now part of kde release service)
+  * Remove patches, now integrated upstream
+  * Update standards version to 4.5.1
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 22 Dec 2020 14:30:08 +0200
+
+kpmcore (4.2.0-2) unstable; urgency=medium
+
+  * Remove explicit dependency polkit-qt1 added in error
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 19 Oct 2020 11:35:48 +0200
+
+kpmcore (4.2.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Bump debhelper-compat to 13
+  * Add build-dep: libpolkit-qt5-1-dev
+  * Add binary-dep: polkit-qt1
+  * Add upstream signing key
+  * Add patch to provide local ecm functions
+  * Bump soname version to kpmcore10
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 16 Oct 2020 22:15:39 +0200
+
+kpmcore (4.1.0-2) unstable; urgency=medium
+
+  * Fix libkpmcore dependency
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 20 Feb 2020 10:51:08 +0200
+
+kpmcore (4.1.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.5.0
+  * Declare Rules-Requires-Root
+  * Update copyright years
+  * Bump soname version to kpmcore9
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 10 Feb 2020 09:18:41 +0200
+
+kpmcore (4.0.1-2) unstable; urgency=medium
+
+  [ Alf Gaida ]
+  * libqca-qt5-2-plugins is a dependency for libkpmcore8, not a build-dependency
+  * Added missed override_dh_missing
+  * Install missed directories to libkpmcore8
+    (Closes: #942522, #942528)
+  * Removed FindLIBPARTED.cmake from d/copyright - file isn't provided anymore
+
+  [ Jonathan Carter ]
+  * Upload to unstable
+
+ -- Alf Gaida <agaida@siduction.org>  Thu, 17 Oct 2019 17:30:09 +0200
+
+kpmcore (4.0.1-1) unstable; urgency=medium
+
+  * New upstream version
+  * Update standards version to 4.4.1
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 14 Oct 2019 09:04:09 +0000
+
+kpmcore (4.0.0-1~exp2) experimental; urgency=medium
+
+  * Override dh_autotest (dbus possibly can't work in chroot)
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 23 Sep 2019 20:53:30 +0200
+
+kpmcore (4.0.0-1~exp1) experimental; urgency=medium
+
+  [ Jonathan Carter ]
+  * New upstream release
+  * Update standards version to 4.4.0
+  * Upgrade to debhelper-compat (=12)
+  * Remove luks1 patch (applied upstream)
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * Add libqca-qt5-2-dev as a build dependency, required by the build system.
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 08 Jul 2019 09:08:30 +0000
+
+kpmcore (3.3.0-5) unstable; urgency=medium
+
+  * Use luks1 format only
+
+ -- Jonathan Carter <jcc@debian.org>  Sat, 06 Apr 2019 12:40:05 +0200
+
+kpmcore (3.3.0-4) unstable; urgency=medium
+
+  * Version bump (no changes)
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 27 Nov 2018 09:54:56 +0200
+
+kpmcore (3.3.0-3) unstable; urgency=medium
+
+  * Remove build-dependencies that are no longed needed
+    - libkf5service-dev
+    - libkf5iconthemes-dev
+    - libkf5kio-de
+  * Add upstream signing key
+  * Add new required dependencies
+    - libqca-qt5-2-plugins
+  * Update standards version to 4.2.0
+  * Update Vcs to salsa.debian.org
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 09 Feb 2018 13:34:01 +0200
+
+kpmcore (3.3.0-2) unstable; urgency=medium
+
+  * Depend libkpmcore-dev on correct libkpmcore (Closes: #887874)
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 25 Jan 2018 14:23:36 +0200
+
+kpmcore (3.3.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.1.3
+    - Update to secure URI in debian/watch
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 08 Jan 2018 14:14:23 +0200
+
+kpmcore (3.2.1-3) unstable; urgency=medium
+
+  * Revert target architectures to linux-any
+    (Closes: #881497, #881031)
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 13 Nov 2017 09:29:00 +0200
+
+kpmcore (3.2.1-2) unstable; urgency=medium
+
+  * Update symbols file
+  * Remove builds for alpha, powerpcspe and m68k
+    (kde dependencies has never been available since inception
+     of this package)
+
+ -- Jonathan Carter <jcc@debian.org>  Sat, 04 Nov 2017 14:45:13 +0200
+
+kpmcore (3.2.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 03 Nov 2017 20:00:36 +0200
+
+kpmcore (3.2.0-2) unstable; urgency=medium
+
+  * Use versioned build-dep for libblkid-dev (Closes: #879025)
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 25 Oct 2017 09:03:19 +0200
+
+kpmcore (3.2.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.1.1
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 06 Oct 2017 15:52:21 +0200
+
+kpmcore (3.1.2-2) unstable; urgency=medium
+
+  * Add corresponding breaks field for the replace field (Closes: #870435)
+  * Update maintainer email address
+  * Update standards version to 4.1.0.0
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 29 Aug 2017 09:45:05 +0200
+
+kpmcore (3.1.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * Set standards version to 4.0.0
+  * Set architecture to linux-any
+  * Upload to unstable
+
+ -- Jonathan Carter <jcarter@linux.com>  Wed, 05 Jul 2017 15:52:07 +0200
+
+kpmcore (3.0.3-1) experimental; urgency=medium
+
+  * New upstream release
+  * Migrate from gitlab.com to git.debian.org
+  * Update debian/copyright
+
+ -- Jonathan Carter <jcarter@linux.com>  Wed, 22 Mar 2017 11:51:02 +0200
+
+kpmcore (3.0.2-2) unstable; urgency=medium
+
+  * Update symbols files (Fix FTBFS on i386)
+
+ -- Jonathan Carter <jcarter@linux.com>  Tue, 10 Jan 2017 18:49:36 +0200
+
+kpmcore (3.0.2-1) unstable; urgency=medium
+
+  [ Jonathan Carter ]
+  * New upstream release (Closes: #850788)
+
+  [ Scott Kitterman ]
+  * Update debian/copyright
+
+ -- Jonathan Carter <jcarter@linux.com>  Tue, 10 Jan 2017 09:50:02 +0200
+
+kpmcore (3.0.0-1) unstable; urgency=medium
+
+  [ Jonathan Carter ]
+  * New upstream release
+  * Remove unneeded dependency: libkf5kdelibs4support-dev
+  * Update watch file to use download.kde.org
+  * Make libkpmcore4-dev depend on libkpmcore4 (Closes: #847565)
+
+  [ Andrius Štikonas ]
+  * Update dependencies to match CMakeLists.txt
+
+  [ Scott Kitterman ]
+  * Update debian/copyright
+
+ -- Jonathan Carter <jcarter@linux.com>  Sun, 18 Dec 2016 10:30:42 +0200
+
+kpmcore (2.2.1-2) unstable; urgency=medium
+
+  * Upgrade compat to 10
+  * Update architectures to any
+  * Remove unneeded Replaces field
+  * Add copyright entry
+
+ -- Jonathan Carter <jcarter@linux.com>  Fri, 11 Nov 2016 16:18:58 +0200
+
+kpmcore (2.2.1-1) unstable; urgency=low
+
+  * Initial release (Closes: 810063)
+
+ -- Jonathan Carter <jcarter@linux.com>  Sat, 10 Sep 2016 19:46:04 +0200

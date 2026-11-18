@@ -1,0 +1,58 @@
+Source: elisa-player
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-qmldeps,
+               cmake (>= 3.16~),
+               extra-cmake-modules (>= 6.9~),
+               gettext,
+               kirigami-addons-dev (>= 0.11.76~),
+               libkf6baloo-dev,
+               libkf6colorscheme-dev (>= 6.9~),
+               libkf6config-dev (>= 6.9~),
+               libkf6configwidgets-dev (>= 5.240.0~),
+               libkf6coreaddons-dev (>= 6.9~),
+               libkf6crash-dev (>= 6.9~),
+               libkf6dbusaddons-dev (>= 6.9~),
+               libkf6doctools-dev (>= 5.240.0~),
+               libkf6filemetadata-dev (>= 6.9~),
+               libkf6i18n-dev (>= 6.9~),
+               libkf6iconthemes-dev (>= 6.9~),
+               libkf6kio-dev (>= 6.9~),
+               libkf6qqc2desktopstyle-dev (>= 6.9~),
+               libkf6xmlgui-dev (>= 6.9~),
+               libkirigami-dev (>= 6.9~),
+               libvlc-dev,
+               libvlccore-dev,
+               pkgconf,
+               qml6-module-qt5compat-graphicaleffects,
+               qml6-module-qtcore,
+               qml6-module-qtquick-dialogs,
+               qt6-base-dev (>= 6.6.0~),
+               qt6-base-private-dev (>= 6.6.0~),
+               qt6-declarative-dev (>= 6.6.0~),
+               qt6-declarative-private-dev,
+               qt6-multimedia-dev (>= 6.6.0~),
+               qt6-svg-dev (>= 6.6.0~)
+Standards-Version: 4.7.3
+Homepage: https://elisa.kde.org/
+
+Package: elisa
+Architecture: any
+Depends: kf6-breeze-icon-theme,
+         libqt6sql6-sqlite (>= 6.5.0~),
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Description: Simple music player with a focus on Plasma desktop integration and privacy
+ Elisa is a music player developed by the KDE community that strives to be
+ simple and nice to use. It tries to be flexible to account for different
+ workflows and use-cases. It focuses on a very good integration with the
+ Plasma desktop of the KDE community without compromising the support for
+ other environments.
+ .
+ Elisa is developed using modern KDE technologies and aims to be reliable
+ and respectful of users’ privacy. As such, it favors online services where
+ users are in control of their data.

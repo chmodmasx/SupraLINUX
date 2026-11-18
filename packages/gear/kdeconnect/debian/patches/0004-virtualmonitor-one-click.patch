@@ -1,0 +1,150 @@
+--- a/plugins/virtualmonitor/virtualmonitorplugin.cpp
++++ b/plugins/virtualmonitor/virtualmonitorplugin.cpp
+@@ -7,11 +7,15 @@
+ 
+ #include "virtualmonitorplugin.h"
+ 
++#include <KConfigGroup>
+ #include <KLocalizedString>
+ #include <KPluginFactory>
++#include <KSharedConfig>
+ 
+ #include "kdeconnectconfig.h"
+ #include "plugin_virtualmonitor_debug.h"
++#include <QDir>
++#include <QFile>
+ #include <QGuiApplication>
+ #include <QJsonArray>
+ #include <QProcess>
+@@ -22,8 +26,6 @@
+ #include <QSettings>
+ #else
+ #include <KApplicationTrader>
+-#include <KIO/OpenUrlJob>
+-#include <KNotificationJobUiDelegate>
+ #endif
+ 
+ K_PLUGIN_CLASS_WITH_JSON(VirtualMonitorPlugin, "kdeconnect_virtualmonitor.json")
+@@ -133,25 +135,79 @@
+             return;
+         }
+ 
++        const int port = received.get<int>(QS("port"), DEFAULT_PORT);
+         QUrl url;
+         url.setScheme(received.get<QString>(QS("protocol"), QS("rdp")));
+         url.setUserName(received.get<QString>(QS("username"), QS("user")));
+         url.setPassword(received.get<QString>(QS("password")));
+-        url.setPort(received.get<int>(QS("port"), DEFAULT_PORT));
++        url.setPort(port);
+         url.setHost(addr.toString());
+ 
+         qCInfo(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Received request, try connecting to" << url.toDisplayString();
+ 
+-        auto *job = new KIO::OpenUrlJob(url);
+-        job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
+-        connect(job, &KJob::result, this, [this](KJob *job) {
+-            if (job->error()) {
+-                qCWarning(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Failed to open" << job->errorString();
+-                NetworkPacket np(PACKET_TYPE_VIRTUALMONITOR, {{QS("failed"), job->errorString()}});
+-                sendPacket(np);
++        // KRDC's FreeRDP client asks for confirmation for the self-signed
++        // KDE Connect certificate on every new KDE Connect port. Seed the
++        // certificate store with the certificate that krdpserver is using so
++        // the virtual monitor opens without a certificate dialog.
++        const QString certificate = received.get<QString>(QS("certificate"));
++        if (!certificate.isEmpty()) {
++            const QString serverDir = QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation)
++                + QStringLiteral("/freerdp/server");
++            QDir().mkpath(serverDir);
++            QString certificateHost = addr.toString().toLower();
++            certificateHost.replace(QLatin1Char(':'), QLatin1Char('.'));
++            certificateHost.replace(QLatin1Char('/'), QLatin1Char('_'));
++            certificateHost.replace(QLatin1Char('\\'), QLatin1Char('_'));
++            const QString certificatePath = serverDir + QLatin1Char('/') + certificateHost
++                + QLatin1Char('_') + QString::number(port) + QStringLiteral(".pem");
++            QFile certificateFile(certificatePath);
++            if (certificateFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
++                certificateFile.write(certificate.toUtf8());
++                certificateFile.close();
++                QFile::setPermissions(certificatePath, QFileDevice::ReadOwner | QFileDevice::WriteOwner);
++            } else {
++                qCWarning(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Could not seed FreeRDP certificate store" << certificatePath
++                                                             << certificateFile.errorString();
+             }
+-        });
+-        job->start();
++        }
++
++        // The KRDP server is TLS-only and its client is a one-shot virtual
++        // monitor. Avoid the first-connection settings dialog, use TLS, and
++        // make the RDP surface match the resolution requested from KRDP.
++        auto krdcConfig = KSharedConfig::openConfig(QStringLiteral("krdcrc"));
++        KConfigGroup general = krdcConfig->group(QStringLiteral("General"));
++        general.writeEntry(QStringLiteral("ShowPreferencesForNewConnections"), false);
++        KConfigGroup rdp = krdcConfig->group(QStringLiteral("RDP"));
++        rdp.writeEntry(QStringLiteral("SecurityNLA"), false);
++        rdp.writeEntry(QStringLiteral("SecurityTLS"), true);
++        rdp.writeEntry(QStringLiteral("SecurityRDP"), false);
++        rdp.writeEntry(QStringLiteral("SecurityEXT"), false);
++        rdp.writeEntry(QStringLiteral("TlsSecLevel"), 0);
++        KConfigGroup host = krdcConfig->group(QStringLiteral("hostpreferences")).group(url.toDisplayString(QUrl::StripTrailingSlash));
++        host.writeEntry(QStringLiteral("showConfigAgain"), false);
++        host.writeEntry(QStringLiteral("securityNLA"), false);
++        host.writeEntry(QStringLiteral("securityTLS"), true);
++        host.writeEntry(QStringLiteral("securityRDP"), false);
++        host.writeEntry(QStringLiteral("securityEXT"), false);
++        host.writeEntry(QStringLiteral("walletSupport"), false);
++        const int width = received.get<int>(QS("width"), 0);
++        const int height = received.get<int>(QS("height"), 0);
++        if (width > 0 && height > 0) {
++            host.writeEntry(QStringLiteral("resolution"), 5);
++            host.writeEntry(QStringLiteral("width"), width);
++            host.writeEntry(QStringLiteral("height"), height);
++            rdp.writeEntry(QStringLiteral("resolution"), 5);
++            rdp.writeEntry(QStringLiteral("width"), width);
++            rdp.writeEntry(QStringLiteral("height"), height);
++        }
++        krdcConfig->sync();
++
++        const QString krdc = QStandardPaths::findExecutable(QS("krdc"));
++        if (krdc.isEmpty() || !QProcess::startDetached(krdc, {url.toString()})) {
++            qCWarning(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Failed to launch krdc for" << url.toDisplayString();
++            NetworkPacket np(PACKET_TYPE_VIRTUALMONITOR, {{QS("failed"), i18n("Failed to launch KRDC")}});
++            sendPacket(np);
++        }
+     } else if (received.type() == PACKET_TYPE_VIRTUALMONITOR) {
+         if (received.has(QS("resolutions"))) {
+             m_remoteResolution = received.get<QJsonArray>(QS("resolutions")).first().toObject();
+@@ -267,6 +323,21 @@
+     np.set(QS("username"), QS("user"));
+     np.set(QS("password"), password);
+     np.set(QS("port"), port);
++    QFile certificateFile(KdeConnectConfig::instance().certificatePath());
++    if (certificateFile.open(QIODevice::ReadOnly)) {
++        np.set(QS("certificate"), QString::fromUtf8(certificateFile.readAll()));
++    } else {
++        qCWarning(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Could not read KDE Connect certificate"
++                                                     << KdeConnectConfig::instance().certificatePath()
++                                                     << certificateFile.errorString();
++    }
++    const QString resolution = m_remoteResolution.value(QLatin1String("resolution")).toString();
++    const QStringList resolutionParts = resolution.split(QLatin1Char('x'));
++    if (resolutionParts.size() == 2) {
++        np.set(QS("width"), resolutionParts.at(0).toInt());
++        np.set(QS("height"), resolutionParts.at(1).toInt());
++    }
++    np.set(QS("scale"), scale);
+     sendPacket(np);
+     return true;
+ }
+--- a/plugins/virtualmonitor/CMakeLists.txt
++++ b/plugins/virtualmonitor/CMakeLists.txt
+@@ -4,7 +4,6 @@
+     Qt::Core
+     Qt::Multimedia
+     Qt::DBus
++    KF6::ConfigCore
+     KF6::I18n
+-    KF6::KIOWidgets
+-    KF6::Notifications
+ )

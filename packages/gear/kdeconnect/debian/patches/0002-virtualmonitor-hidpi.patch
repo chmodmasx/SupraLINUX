@@ -1,0 +1,12 @@
+--- kdeconnect-orig/plugins/virtualmonitor/virtualmonitorplugin.cpp	2026-03-02 00:28:35.000000000 -0300
++++ kdeconnect-src/plugins/virtualmonitor/virtualmonitorplugin.cpp	2026-11-07 21:58:13.362424972 -0300
+@@ -99,7 +99,8 @@
+     qCDebug(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Local device supports Virtual Monitor:" << m_capabilitiesLocal.virtualMonitor;
+ 
+     auto screen = QGuiApplication::primaryScreen();
+-    auto resolution = screen->size();
++    // QScreen size() is in logical pixels; krdpserver expects physical pixels.
++    auto resolution = screen->size() * screen->devicePixelRatio();
+     QString resolutionString = QString::number(resolution.width()) + QLatin1Char('x') + QString::number(resolution.height());
+     NetworkPacket np(PACKET_TYPE_VIRTUALMONITOR,
+                      {

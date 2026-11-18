@@ -1,0 +1,11 @@
+usr/bin/gwenview
+usr/bin/gwenview_importer
+usr/lib/*/libgwenviewlib*
+usr/lib/*/qt6/plugins/kf6/*
+usr/share/applications/
+usr/share/gwenview/
+usr/share/icons/hicolor/*
+usr/share/locale/
+usr/share/metainfo/
+usr/share/qlogging-categories6/
+usr/share/solid/actions/gwenview*

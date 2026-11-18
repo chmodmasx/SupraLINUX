@@ -1,0 +1,7 @@
+-qrcFiles plugins/presenter/assets.qrc
+-qmlFiles
+	plasmoid/package/contents/ui/*.qml
+	app/**/*.qml
+	smsapp/**/*.qml
+	declarativeplugin/**/*.qml
+	plugins/**/*.qml

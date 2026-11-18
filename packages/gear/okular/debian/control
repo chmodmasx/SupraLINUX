@@ -1,0 +1,190 @@
+Source: okular
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.22~),
+               debhelper-compat (= 13),
+               dh-exec,
+               dh-sequence-kf6,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 5.240.0~),
+               gettext,
+               kirigami-addons-dev (>= 1.3.0~),
+               libdjvulibre-dev (>= 3.5.28~),
+               libepub-dev,
+               libfreetype-dev,
+               libkexiv2qt6-dev (>= 25.12.3~),
+               libkf6archive-dev (>= 5.240.0~),
+               libkf6bookmarks-dev (>= 5.240.0~),
+               libkf6colorscheme-dev (>= 5.240.0~),
+               libkf6completion-dev (>= 5.240.0~),
+               libkf6config-dev (>= 5.240.0~),
+               libkf6configwidgets-dev (>= 5.240.0~),
+               libkf6coreaddons-dev (>= 5.240.0~),
+               libkf6crash-dev (>= 5.240.0~),
+               libkf6doctools-dev (>= 5.240.0~),
+               libkf6i18n-dev (>= 5.240.0~),
+               libkf6iconthemes-dev (>= 5.240.0~),
+               libkf6itemviews-dev (>= 5.240.0~),
+               libkf6kio-dev (>= 5.240.0~),
+               libkf6parts-dev (>= 5.240.0~),
+               libkf6pty-dev (>= 5.240.0~),
+               libkf6purpose-dev (>= 5.240.0~),
+               libkf6textwidgets-dev (>= 5.240.0~),
+               libkf6threadweaver-dev (>= 5.240.0~),
+               libkf6wallet-dev (>= 5.240.0~),
+               libkf6widgetsaddons-dev (>= 5.240.0~),
+               libkf6windowsystem-dev (>= 5.240.0~),
+               libkf6xmlgui-dev (>= 5.240.0~),
+               libkirigami-dev (>= 5.240.0~),
+               libmarkdown2-dev,
+               libphonon4qt6-dev,
+               libphonon4qt6experimental-dev,
+               libplasmaactivities-dev,
+               libpoppler-qt6-dev (>= 22.02.0~) [!i386],
+               libqca-qt6-dev (>= 2.1.0~),
+               libqmobipocket6-dev (>= 4:25.12.3~),
+               libspectre-dev (>= 0.2~),
+               libtiff-dev,
+               libzip-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.6.0~),
+               qt6-base-private-dev (>= 6.6.0~),
+               qt6-declarative-dev (>= 6.6.0~),
+               qt6-speech-dev (>= 6.6.0~),
+               qt6-svg-dev (>= 6.6.0~),
+               zlib1g-dev
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Homepage: https://okular.kde.org
+
+Package: libokular6core4
+Section: libs
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: libraries for the Okular document viewer
+ This package contains libraries used by the Okular document viewer.
+ .
+ This package is part of the KDE graphics module.
+
+Package: okular
+Section: graphics
+Architecture: any
+Depends: okular-data (= ${source:Version}), ${misc:Depends}, ${shlibs:Depends}
+Recommends: cups-bsd, okular-doc, okular-extra-backends
+Suggests: ghostscript,
+          okular-extra-backends (= ${binary:Version}),
+          poppler-data,
+          texlive-binaries,
+          unrar
+Provides: pdf-viewer, postscript-viewer
+Breaks: okular-data (<< 4:24.12.2-1~)
+Replaces: okular-data (<< 4:24.12.2-1~)
+Description: universal document viewer
+ Okular is a universal document viewer with support for advanced document
+ features, such as annotations, forms, and embedded files.
+ .
+ This package provides the document viewer application, plus plugins for a wide
+ variety of document formats such as:
+  * PostScript (PS)
+  * Portable Document Format (PDF)
+  * TeX Device independent file format (DVI)
+  * XML Paper Specification (XPS)
+  * G3 fax
+  * various electronic book formats: ComicBook, FictionBook, and Plucker
+ .
+ Additional document formats are in the okular-extra-backends package.
+ .
+ The Calligra suite provides Okular plugins for OpenDocument formats that can
+ be found in the okular-backend-odt and okular-backend-odp packages.
+ .
+ This package is part of the KDE graphics module.
+
+Package: okular-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6config-dev (>= 5.240.0~),
+         libkf6coreaddons-dev (>= 5.240.0~),
+         libkf6xmlgui-dev (>= 5.240.0~),
+         libokular6core4 (= ${binary:Version}),
+         qml6-module-org-kde-okular (= ${binary:Version}),
+         qt6-base-dev (>= 6.6.0~),
+         qt6-base-private-dev (>= 6.6.0~),
+         ${misc:Depends}
+Description: development files for the Okular libraries
+ This package contains development files for building Okular document format
+ backends.
+ .
+ This package is part of the KDE graphics module.
+
+Package: okular-data
+Section: graphics
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: okular (<< 4:24.05.2-1~)
+Replaces: okular (<< 4:24.05.2-1~)
+Description: universal document viewer - data files
+ Okular is a universal document viewer with support for advanced document
+ features, such as annotations, forms, and embedded files.
+ .
+ This package contains architecture-independent data files.
+
+Package: okular-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: okular (<< 4:24.05.2-1~)
+Replaces: okular (<< 4:24.05.2-1~)
+Description: universal document viewer - manual
+ Okular is a universal document viewer with support for advanced document
+ features, such as annotations, forms, and embedded files.
+ .
+ This package contains the HTML documentation.
+
+Package: okular-extra-backends
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: okular
+Provides: djvu-viewer
+Description: additional document format support for Okular
+ These plugins allow Okular to view additional document formats:
+  * DeJaVu Format
+  * TIFF Image Format
+  * EPUB
+  * Markdown
+ .
+ This package is part of the KDE graphics module.
+
+Package: qml6-module-org-kde-okular
+Architecture: any
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: mobile support for Okular - QML modules
+ This package contains the QML module for interfacing with the Okular core
+ library.
+ .
+ This package is part of the KDE graphics module.
+
+Package: okular-mobile
+Architecture: any
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Suggests: ghostscript,
+          okular-extra-backends (= ${binary:Version}),
+          poppler-data,
+          texlive-binaries,
+          unrar
+Recommends: okular
+Description: mobile support for Okular
+ These plugins allow Okular to view additional document formats for mobile:
+  * Portable Document Format (PDF)
+  * PostScript
+  * Device Independent Format (DVI)
+  * DeJaVu Format
+  * Comic Books
+  * Images (JPEG, PNG, GIF, and many more)
+  * TIFF Image Format
+  * FictionBook Format
+  * Plucker Format
+  * OpenDocument Text Format
+  * Microsofts XML Document Format
+ .
+ This package is part of the KDE graphics module.

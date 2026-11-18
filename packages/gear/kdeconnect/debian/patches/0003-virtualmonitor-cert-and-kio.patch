@@ -1,0 +1,65 @@
+--- a/plugins/virtualmonitor/virtualmonitorplugin.cpp
++++ b/plugins/virtualmonitor/virtualmonitorplugin.cpp
+@@ -10,8 +10,8 @@
+ #include <KLocalizedString>
+ #include <KPluginFactory>
+ 
++#include "kdeconnectconfig.h"
+ #include "plugin_virtualmonitor_debug.h"
+-#include <QDesktopServices>
+ #include <QGuiApplication>
+ #include <QJsonArray>
+ #include <QProcess>
+@@ -22,6 +22,8 @@
+ #include <QSettings>
+ #else
+ #include <KApplicationTrader>
++#include <KIO/OpenUrlJob>
++#include <KNotificationJobUiDelegate>
+ #endif
+ 
+ K_PLUGIN_CLASS_WITH_JSON(VirtualMonitorPlugin, "kdeconnect_virtualmonitor.json")
+@@ -140,11 +142,16 @@
+ 
+         qCInfo(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Received request, try connecting to" << url.toDisplayString();
+ 
+-        if (!QDesktopServices::openUrl(url)) {
+-            qCWarning(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Failed to open" << url.toDisplayString();
+-            NetworkPacket np(PACKET_TYPE_VIRTUALMONITOR, {{QS("failed"), 0}});
+-            sendPacket(np);
+-        }
++        auto *job = new KIO::OpenUrlJob(url);
++        job->setUiDelegate(new KNotificationJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled));
++        connect(job, &KJob::result, this, [this](KJob *job) {
++            if (job->error()) {
++                qCWarning(KDECONNECT_PLUGIN_VIRTUALMONITOR) << "Failed to open" << job->errorString();
++                NetworkPacket np(PACKET_TYPE_VIRTUALMONITOR, {{QS("failed"), job->errorString()}});
++                sendPacket(np);
++            }
++        });
++        job->start();
+     } else if (received.type() == PACKET_TYPE_VIRTUALMONITOR) {
+         if (received.has(QS("resolutions"))) {
+             m_remoteResolution = received.get<QJsonArray>(QS("resolutions")).first().toObject();
+@@ -221,7 +228,11 @@
+                         QS("--password"),
+                         password,
+                         QS("--port"),
+-                        port};
++                        port,
++                        QS("--certificate"),
++                        KdeConnectConfig::instance().certificatePath(),
++                        QS("--certificate-key"),
++                        KdeConnectConfig::instance().privateKeyPath()};
+ 
+     static const bool s_plasma = qgetenv("XDG_CURRENT_DESKTOP").compare("KDE", Qt::CaseInsensitive) == 0;
+     if (s_plasma) {
+--- a/plugins/virtualmonitor/CMakeLists.txt
++++ b/plugins/virtualmonitor/CMakeLists.txt
+@@ -5,4 +5,6 @@
+     Qt::Multimedia
+     Qt::DBus
+     KF6::I18n
++    KF6::KIOWidgets
++    KF6::Notifications
+ )

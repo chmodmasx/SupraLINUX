@@ -1,0 +1,1358 @@
+kdeplasma-addons (4:6.6.7-0supralinux1) resolute; urgency=medium
+
+  * Package kdeplasma-addons for the KDE desktop completeness set.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+kdeplasma-addons (4:6.6.6-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.6) (LP: #2159979)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 13 Jul 2026 10:53:55 +0100
+
+kdeplasma-addons (4:6.6.5-0ubuntu0.1) resolute; urgency=medium
+
+  * New upstream release (6.6.5) (LP: #2152276)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 May 2026 10:26:59 +0100
+
+kdeplasma-addons (4:6.6.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream bugfix release (6.6.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 07 Apr 2026 13:05:41 +0100
+
+kdeplasma-addons (4:6.6.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.3)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 18 Mar 2026 14:41:08 +0000
+
+kdeplasma-addons (4:6.6.2-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for libplasma7.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 07 Mar 2026 06:27:53 +0000
+
+kdeplasma-addons (4:6.6.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 03 Mar 2026 12:21:24 +0000
+
+kdeplasma-addons (4:6.6.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.6.0)
+  * Update install files.
+  * New upstream release (6.6.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 28 Feb 2026 22:12:54 +0000
+
+kdeplasma-addons (4:6.5.5-0ubuntu3) resolute; urgency=medium
+
+  * No-change rebuild for Qt 6.10.2 private ABI.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 15 Feb 2026 12:53:52 +0000
+
+kdeplasma-addons (4:6.5.5-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 21:53:23 +0000
+
+kdeplasma-addons (4:6.5.5-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Jan 2026 14:54:26 +0000
+
+kdeplasma-addons (4:6.5.4-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.4)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Dec 2025 11:16:52 +0000
+
+kdeplasma-addons (4:6.5.3-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for icu soname.
+
+ -- Matthias Klose <doko@ubuntu.com>  Thu, 04 Dec 2025 19:01:15 +0100
+
+kdeplasma-addons (4:6.5.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Nov 2025 12:06:32 +0000
+
+kdeplasma-addons (4:6.5.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.2)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 04 Nov 2025 17:11:12 +0000
+
+kdeplasma-addons (4:6.5.1-0ubuntu1) resolute; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Breaks/Replaces for Ubuntu.
+    - Drop kwin-x11 depends.
+    - Do not build tests.
+  * New upstream release (6.5.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 29 Oct 2025 05:45:26 +0000
+
+kdeplasma-addons (4:6.5.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Reenable and fix build-time tests.
+  * Drop Rules-Requires-Root: no, not needed anymore since trixie.
+  * Add patch to fix test failing on number representation.
+  * New upstream release (6.5.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update the list of installed files.
+  * Adapt packaging to libplasmaweatherdata6 and libplasmaweatherion6
+    now being public libraries.
+  * Refresh copyright information.
+  * Release to unstable.
+
+  [ Pino Toscano ]
+  * Update install files according to the newer kpackage, which does not
+    generate appstream metainfo files for packages anymore. (Closes: #1117351)
+  * CI: update/simplify configuration.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 16 Oct 2025 22:00:01 +0200
+
+kdeplasma-addons (4:6.5.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.5.0)
+  * Update build deps from cmake.
+  * Update install files.
+  * Sync changes from Debian.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 20 Oct 2025 18:36:08 +0100
+
+kdeplasma-addons (4:6.4.91-3) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Add missing Breaks/Replaces against plasma-workspace-data (<<
+    4:6.4.90~). (Closes: #1118033)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 14 Oct 2025 18:17:15 +0200
+
+kdeplasma-addons (4:6.4.91-2) experimental; urgency=medium
+
+  * Team upload.
+  * Update lintian override to apply on any architecture.
+  * Ship /usr/share/icons/hicolor/scalable/apps/accessories-dictionary.svgz
+    on any architecture, and not only when QtWebEngine is available; it looks
+    like it is always installed now.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 14 Oct 2025 17:51:01 +0200
+
+kdeplasma-addons (4:6.4.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Reenable and fix build-time tests.
+  * New upstream release (6.4.91).
+  * Update build-deps and deps with the info from cmake.
+  * Drop backported commits now part of the upstream release.
+  * Add patch to fix test failing on number representation.
+  * Update the list of installed files.
+  * Add lintian overrides for the new libweatherdata.so and
+    libweatherion.so private libraries.
+  * Drop Rules-Requires-Root: no, not needed anymore since trixie.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Oct 2025 13:28:06 +0200
+
+kdeplasma-addons (4:6.4.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 09 Sep 2025 17:01:07 +0100
+
+kdeplasma-addons (4:6.4.4-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.4.4)
+  * Update install files.
+  * Update runtime depends.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 12 Aug 2025 17:27:47 +0100
+
+kdeplasma-addons (4:6.3.5-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Aurélien COUDERC ]
+  * Reenable and fix build-time tests.
+  * Drop Rules-Requires-Root: no, not needed anymore since trixie.
+  * Add patch to fix test failing on number representation.
+
+  [ Pino Toscano ]
+  * Update install files according to the newer kpackage, which does not
+    generate appstream metainfo files for packages anymore. (Closes: #1117351)
+  * CI: update/simplify configuration.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 16 Oct 2025 21:00:25 +0200
+
+kdeplasma-addons (4:6.3.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.5).
+    - Applets/notes: don't set Layout preferred sizes. (kde#495306)
+    - Fix bug report urls.
+    - Applets/weather: Expose and use default units directly. (kde#503138)
+  * Relax inter-plasma versioned dependency constraint so we can upload
+    only 6.3.5 packages that have actual code changes.
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 19 May 2025 00:58:40 +0200
+
+kdeplasma-addons (4:6.3.5-0ubuntu2) questing; urgency=medium
+
+  * Drop kwin-x11 dependency from kwin-addons.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 21 Jun 2025 05:08:10 +0100
+
+kdeplasma-addons (4:6.3.5-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.3.5)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 06 May 2025 21:33:04 +0100
+
+kdeplasma-addons (4:6.3.4-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.4).
+  * Bump Standards-Version to 4.7.2 (No changes needed).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Apr 2025 01:01:54 +0200
+
+kdeplasma-addons (4:6.3.4-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.4)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 02 Apr 2025 08:54:27 +0100
+
+kdeplasma-addons (4:6.3.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.3.3)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 11 Mar 2025 15:16:46 +0000
+
+kdeplasma-addons (4:6.3.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 09 Mar 2025 09:21:47 +0000
+
+kdeplasma-addons (4:6.3.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.1).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.3.2).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 28 Feb 2025 00:53:45 +0100
+
+kdeplasma-addons (4:6.3.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.3.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 10 Feb 2025 15:00:14 +0100
+
+kdeplasma-addons (4:6.2.91-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.91).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 23 Jan 2025 23:53:38 +0100
+
+kdeplasma-addons (4:6.2.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.90).
+  * Update build-deps and deps with the info from cmake.
+  * Bump inter-plasma versioned dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 12 Jan 2025 00:49:39 +0100
+
+kdeplasma-addons (4:6.2.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.5).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 05 Jan 2025 11:23:05 +0100
+
+kdeplasma-addons (4:6.2.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.4).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 03 Dec 2024 16:37:29 +0100
+
+kdeplasma-addons (4:6.2.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.3).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 23 Nov 2024 21:57:33 +0100
+
+kdeplasma-addons (4:6.2.1-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.2.1).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 15 Oct 2024 18:23:48 +0200
+
+kdeplasma-addons (4:6.2.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.2.0).
+  * Update build-deps and deps with the info from cmake.
+  * Tighten inter-Plasma package dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 05 Oct 2024 23:17:48 +0200
+
+kdeplasma-addons (4:6.1.5-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.5).
+  * Update build-deps and deps with the info from cmake.
+  * Tighten Plasma packages inter-dependencies.
+  * Fix alternate dependency to be kwin-x11 instead of kwin.
+  * Fix epoch for Recommends: plasma-systemmonitor.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 Sep 2024 23:28:09 +0200
+
+kdeplasma-addons (4:6.1.4-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.4).
+  * Update build-deps and deps with the info from cmake.
+  * Review copyright information.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Aug 2024 23:58:24 +0200
+
+kdeplasma-addons (4:6.1.3-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * Drop unnecessary build-dependency to plasma-workspace.
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.1.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 21 Jul 2024 23:46:19 +0200
+
+kdeplasma-addons (4:6.1.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.1.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update list of installed files.
+  * Update lintian-overrides.
+
+ -- Patrick Franz <deltaone@debian.org>  Mon, 08 Jul 2024 02:04:23 +0200
+
+kdeplasma-addons (4:5.27.11-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * New upstream release (5.27.11).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 19 May 2024 12:22:25 +0200
+
+kdeplasma-addons (4:5.27.10-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.10).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 11 Jan 2024 23:27:31 +0100
+
+kdeplasma-addons (4:5.27.9-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.9).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 27 Oct 2023 21:54:50 +0200
+
+kdeplasma-addons (4:5.27.8-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.8).
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 13 Sep 2023 22:32:00 +0200
+
+kdeplasma-addons (4:5.27.7-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.7).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 03 Aug 2023 18:55:52 +0200
+
+kdeplasma-addons (4:5.27.5-3) unstable; urgency=medium
+
+  * Team upload.
+  * Remove inactive Uploaders.
+  * Trim trailing whitespace.
+  * Remove an obsolete maintscript entry.
+  * Modernize building:
+    - add the dh-sequence-kf5 build dependency to use the kf5 addon
+      automatically, removing pkg-kde-tools
+    - drop all the manually specified addons and buildsystem for dh
+  * Stop using qtwebengine5-dev on mipsel, as it will be removed soon from
+    that architecture.
+  * Update the build dependencies according to the upstream build system:
+    - drop unused: kross-dev, libkf5archive-dev, libkf5iconthemes-dev,
+      libkf5widgetsaddons-dev, libkf5windowsystem-dev, and libkf5xmlgui-dev
+  * Drop the unused kross dependency in plasma-dataengines-addons.
+  * Simplify the installation of the dictionary widget, which depends on
+    QtWebEngine:
+    - add the dh-exec build dependency
+    - add to plasma-widgets-addons.install the list of files & directories
+      of the widget
+    - drop the manual copying done in rules
+    - drop the (duplicated) list of files from not-installed
+
+ -- Pino Toscano <pino@debian.org>  Tue, 18 Jul 2023 23:25:47 +0200
+
+kdeplasma-addons (4:5.27.5-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 27 May 2023 18:23:47 +0200
+
+kdeplasma-addons (4:5.27.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.5).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 09 May 2023 23:29:43 +0200
+
+kdeplasma-addons (4:5.27.3-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.27.3).
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 22 Mar 2023 23:19:38 +0100
+
+kdeplasma-addons (4:5.27.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.1).
+  * New upstream release (5.27.2).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 28 Feb 2023 15:01:29 +0100
+
+kdeplasma-addons (4:5.27.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.27.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 18 Feb 2023 17:08:47 +0100
+
+kdeplasma-addons (4:5.26.90-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.90).
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Update cross-plasma versioned dependencies.
+  * Update the list of installed files from build logs.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 23 Jan 2023 21:50:59 +0100
+
+kdeplasma-addons (4:5.26.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 07 Jan 2023 00:22:36 +0100
+
+kdeplasma-addons (4:5.26.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 29 Nov 2022 16:10:14 +0100
+
+kdeplasma-addons (4:5.26.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.3).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 08 Nov 2022 16:04:46 +0100
+
+kdeplasma-addons (4:5.26.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.1).
+  * New upstream release (5.26.2).
+  * Tighten cross-plasma components dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 27 Oct 2022 23:36:44 +0200
+
+kdeplasma-addons (4:5.26.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.26.0).
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 11 Oct 2022 15:44:25 +0200
+
+kdeplasma-addons (4:5.25.90-2) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Tighten cross-plasma components dependencies.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 07 Oct 2022 11:47:05 +0200
+
+kdeplasma-addons (4:5.25.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.90).
+  * Update the list of installed files from build logs.
+  * Update build-deps and deps with the info from cmake.
+  * Review copyright information.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 25 Sep 2022 00:14:26 +0200
+
+kdeplasma-addons (4:5.25.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 09 Sep 2022 23:22:54 +0200
+
+kdeplasma-addons (4:5.25.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 02 Aug 2022 17:35:05 +0200
+
+kdeplasma-addons (4:5.25.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.25.2).
+  * Review copyright information.
+  * New upstream release (5.25.3).
+  * Release to unstable
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 17 Jul 2022 15:29:33 +0200
+
+kdeplasma-addons (4:5.25.1-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.25.1).
+  * Tighten inter-Plasma dependencies.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 21 Jun 2022 21:47:39 +0200
+
+kdeplasma-addons (4:5.25.0-1) experimental; urgency=medium
+
+  * New upstream release (5.25.0).
+  * Tighten cross-plasma components dependencies.
+  * Bump Standards-Version to 4.6.1, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 14 Jun 2022 21:27:06 +0200
+
+kdeplasma-addons (4:5.24.90-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.90).
+  * Update the list of installed files from build logs.
+  * Refresh lintian overrides.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 20 May 2022 19:32:03 +0200
+
+kdeplasma-addons (4:5.24.5-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.5).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 12 May 2022 21:40:45 +0200
+
+kdeplasma-addons (4:5.24.4-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.4).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 30 Mar 2022 14:08:36 +0200
+
+kdeplasma-addons (4:5.24.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.24.3).
+  * Added myself to the uploaders.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 10 Mar 2022 08:06:50 +0100
+
+kdeplasma-addons (4:5.24.2-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.24.2).
+  * Re-export signing key without extra signatures.
+  * Update B-Ds and deps with the info from cmake.
+  * Update list of installed files.
+  * Update d/copyright.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 26 Feb 2022 21:58:22 +0100
+
+kdeplasma-addons (4:5.23.5-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Update list of installed files (Closes: #1005626).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 22 Feb 2022 02:16:10 +0100
+
+kdeplasma-addons (4:5.23.5-1) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.23.5).
+  * Update B-Ds.
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 07 Jan 2022 18:37:03 +0100
+
+kdeplasma-addons (4:5.23.4-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.4).
+
+  [ Patrick Franz ]
+  * Update B-Ds.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 02 Dec 2021 22:58:53 +0100
+
+kdeplasma-addons (4:5.23.3-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.3).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 10 Nov 2021 08:37:49 +0900
+
+kdeplasma-addons (4:5.23.2-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.1).
+  * New upstream release (5.23.2).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Nov 2021 22:21:02 +0900
+
+kdeplasma-addons (4:5.23.0-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Update upstream signing-key.
+  * Tighten build-dependencies.
+  * Bump Standards-Version to 4.6.0 (no changes needed).
+
+ -- Patrick Franz <deltaone@debian.org>  Fri, 15 Oct 2021 23:35:49 +0200
+
+kdeplasma-addons (4:5.23.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.23.0).
+  * Update list of installed files.
+  * Update list of installed files.
+
+ -- Norbert Preining <norbert@preining.info>  Thu, 14 Oct 2021 20:13:14 +0900
+
+kdeplasma-addons (4:5.21.5-2) unstable; urgency=medium
+
+  [ Patrick Franz ]
+  * Release to unstable.
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 17 Aug 2021 03:23:24 +0200
+
+kdeplasma-addons (4:5.21.5-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.5).
+
+ -- Patrick Franz <patfra71@gmail.com>  Fri, 07 May 2021 19:32:34 +0200
+
+kdeplasma-addons (4:5.21.4-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.4).
+
+ -- Patrick Franz <patfra71@gmail.com>  Tue, 06 Apr 2021 17:46:31 +0200
+
+kdeplasma-addons (4:5.21.3-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.3).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Mar 2021 05:49:41 +0900
+
+kdeplasma-addons (4:5.21.2-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.21.2).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 03 Mar 2021 05:33:49 +0900
+
+kdeplasma-addons (4:5.21.1-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.1).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 24 Feb 2021 14:36:39 +0900
+
+kdeplasma-addons (4:5.21.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.21.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update list of installed files.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Feb 2021 05:42:26 +0900
+
+kdeplasma-addons (4:5.20.5-1) unstable; urgency=medium
+
+  * New upstream release (5.20.5).
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 06 Jan 2021 23:50:51 +0900
+
+kdeplasma-addons (4:5.20.4-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 22 Dec 2020 11:04:36 +0900
+
+kdeplasma-addons (4:5.20.4-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.20.4).
+  * Update list of installed files.
+
+  [ John Scott ]
+  * Suggest the quota package needed for the Disk Quota desktop widget.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 09 Dec 2020 14:17:31 +0900
+
+kdeplasma-addons (4:5.19.5-4) unstable; urgency=medium
+
+  [ Scarlett Moore ]
+  * Remove obsolete entries in d/upstream/metadata already
+    defined in d/copyright.
+  * Add Multi-Arch according to multiarch hints.
+  * Tighten runtime dependency versions.
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 06 Nov 2020 08:37:22 +0900
+
+kdeplasma-addons (4:5.19.5-3) experimental; urgency=medium
+
+  * Rebuild for Qt 5.15
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 02 Nov 2020 09:27:39 +0900
+
+kdeplasma-addons (4:5.19.5-2) experimental; urgency=medium
+
+  * Fix FTBFS on non-QtWebEngine platforms.
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 23 Oct 2020 10:03:11 +0900
+
+kdeplasma-addons (4:5.19.5-1) experimental; urgency=medium
+
+  * New upstream release (5.19.5).
+  * Add Patrick and myself to uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 19 Oct 2020 10:36:33 +0900
+
+kdeplasma-addons (4:5.19.4-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Scarlett Moore ]
+  * Bump compat level to 13.
+  * Add Rules-Requires-Root field to control.
+  * New upstream release (5.18.5).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh install file for 3 new addons:
+    dict, nightcolorcontrol, webbrowser.
+  * Delete not needed Breaks/Confilcts.
+  * Add myself to Uploaders.
+  * Remove not needed injection of linker flags.
+  * Update Homepage link to point to new invent.kde.org
+  * Update field Source in debian/copyright to invent.kde.org move.
+  * Set/Update field Upstream-Contact in debian/copyright.
+
+  [ Patrick Franz ]
+  * Add hardening=+all build flag.
+  * Update matching files in debian/copyright.
+  * Update data in /debian/upstream/metadata.
+  * New upstream version (5.19.4).
+  * Bump Qt build-dependencies to 5.14.
+  * Bump KF5 build-dependencies to 5.70.
+  * Change Maintainer in debian/control to Debian Qt/KDE Maintainers.
+  * Remove Maxy from Uploaders as requested.
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 16 Oct 2020 10:30:54 +0900
+
+kdeplasma-addons (4:5.17.5-2) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+  * Bump Standards-Version to 4.5.0, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 14 Feb 2020 21:12:20 +0100
+
+kdeplasma-addons (4:5.17.5-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.16.5).
+  * Update build-deps and deps with the info from cmake
+  * Salsa CI automatic initialization by Tuco
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Update the patches:
+    - upstream_Fix-build.patch: drop, backported from upstream
+  * Update the build dependencies according to the upstream build system:
+    - remove unused: kinit-dev, libboost-dev, libgee-0.8-dev, libglib2.0-dev,
+      libibus-1.0-dev, libkf5activities-dev, libkf5configwidgets-dev,
+      libkf5itemmodels-dev, libkf5kdelibs4support-dev, libkf5sysguard-dev,
+      libqt5x11extras5-dev, libscim-dev, libx11-dev, libxcb-image0-dev,
+      libxcb-keysyms1-dev, libxcb-shm0-dev, libxcb1-dev, plasma-workspace-dev,
+      and shared-mime-info (Closes: #661366)
+  * Drop the kde-l10n breaks/replaces, no more needed after two Debian stable
+    releases.
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+  * Update install files.
+  * Unregister old conffiles.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 18 Jan 2020 19:22:44 +0100
+
+kdeplasma-addons (4:5.14.5.1-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ John Scott ]
+  * Add dependency on qml-module-qtwebengine (Closes: 925406)
+
+  [ Pino Toscano ]
+  * Bump Standards-Version to 4.4.1, no changes required.
+  * Pass -DBUILD_TESTING=OFF to cmake to disable the build of tests, as they
+    are not run at build time anyway.
+  * Backport upstream commit 959443f85ec94d0748d536a07edfa5a68c7d254b to fix
+    build with newer KF5; patch upstream_Fix-build.patch.
+  * Explicitly add the gettext build dependency.
+  * Drop the migration from kdeplasma-addons-dbg, no more needed after two
+    Debian stable releases.
+  * Do not use the ${shlibs:Depends} substvar for kdeplasma-addons-data, as
+    it is an arch:all package.
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 03 Oct 2019 07:48:46 +0200
+
+kdeplasma-addons (4:5.14.5.1-1) unstable; urgency=medium
+
+  * New upstream bugfix release (5.14.5.1).
+    - [weather] Center align the warning heading (fba8a13f)
+    - [weather] Fix weather Notices tab not showing (46204a5e)
+    - Translation updates (556106bd, dbf8de65, 97c86def)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 13 Feb 2019 19:39:25 +0100
+
+kdeplasma-addons (4:5.14.5-1) unstable; urgency=medium
+
+  * New upstream release (5.14.5).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 24 Jan 2019 09:25:46 -0300
+
+kdeplasma-addons (4:5.14.3-1) unstable; urgency=medium
+
+  * Update upsteam signing-key
+  * New upstream release (5.14.3).
+  * Update build-deps and deps with the info from cmake
+  * Bump group breaks (4:5.14)
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 23 Nov 2018 08:50:55 -0300
+
+kdeplasma-addons (4:5.13.5-1) unstable; urgency=medium
+
+  * New upstream release (5.13.5).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 06 Sep 2018 20:40:31 +0200
+
+kdeplasma-addons (4:5.13.4-1) unstable; urgency=medium
+
+  * New upstream release (5.13.4).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 19 Aug 2018 23:17:56 +0200
+
+kdeplasma-addons (4:5.13.2-1) unstable; urgency=medium
+
+  * New upstream release (5.13.2).
+  * Add new binary package for the calendar addons
+  * Update the not-installed file
+  * Update the addons listed in the package descriptions
+  * Update copyright information
+  * Drop old not-installed entries
+  * Install the webbrowser applet only when built
+  * Drop special lancelot clean rule
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 02 Jul 2018 14:10:50 +0200
+
+kdeplasma-addons (4:5.13.1-1) unstable; urgency=medium
+
+  * New revision
+  * Add recommends for ksysguard (Closes: 900523)
+  * Use libscim-dev build dependency.
+    Thanks to Helmut Grohne for the report (Closes: 893441)
+  * New upstream release (5.13.1).
+  * Update build-deps and deps with the info from cmake
+  * Update install files
+  * Bump group breaks (4:5.13)
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 26 Jun 2018 13:42:55 +0200
+
+kdeplasma-addons (4:5.12.5-1) unstable; urgency=medium
+
+  * New upstream release (5.12.5).
+  * Bump Standards-Version to 4.1.4.
+  * Use https for the debian/copyright
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 09 May 2018 13:23:55 +0200
+
+kdeplasma-addons (4:5.12.4-1) unstable; urgency=medium
+
+  * New upstream release (5.12.4).
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 28 Mar 2018 18:12:41 +0200
+
+kdeplasma-addons (4:5.12.3-1) sid; urgency=medium
+
+  * New upstream release (5.12.3).
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 07 Mar 2018 19:14:04 +0100
+
+kdeplasma-addons (4:5.12.2-1) sid; urgency=medium
+
+  * New upstream release (5.12.2).
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 24 Feb 2018 09:47:51 +0100
+
+kdeplasma-addons (4:5.12.1-1) sid; urgency=medium
+
+  * Use the salsa canonical urls
+  * New upstream release (5.12.1).
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 20 Feb 2018 22:08:44 +0100
+
+kdeplasma-addons (4:5.12.0-3) sid; urgency=medium
+
+  * New revision
+  * Limit the optional qtwebengine dependency to the arches where it's present
+  * Install the dict applet only if we could build it
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 14 Feb 2018 21:42:07 +0100
+
+kdeplasma-addons (4:5.12.0-2) sid; urgency=medium
+
+  * New revision
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 12 Feb 2018 16:03:31 +0100
+
+kdeplasma-addons (4:5.12.0-1) experimental; urgency=medium
+
+  * Bump debhelper build-dep and compat to 11.
+  * Build without build_stamp
+  * Add link options as-needed
+  * Add Bhushan Shah upstream signing key
+  * New upstream release (5.12.0).
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.1.3.
+  * Bump itemmodels build dep version
+  * Update install files
+  * Add qtwebengine5-dev for the dict applet
+  * Use https uri for uscan
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 08 Feb 2018 15:20:35 +0100
+
+kdeplasma-addons (4:5.11.4-1) experimental; urgency=medium
+
+  * New upstream release (5.11.4).
+  * Bump Standards-Version to 4.1.2.
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 03 Jan 2018 16:48:50 -0300
+
+kdeplasma-addons (4:5.10.5-2) sid; urgency=medium
+
+  * New revision
+  * Bump Standards-Version to 4.1.0.
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 03 Sep 2017 09:55:18 +0200
+
+kdeplasma-addons (4:5.10.5-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Update plasma-wallpapers-addons package description.
+    Thanks to Ralf Jung for reporting (Closes: 861318)
+  * New upstream release (5.10.3).
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.0.0.
+  * Update upstream metadata
+  * New upstream release (5.10.4).
+  * Update build-deps and deps with the info from cmake
+  * Update install file
+  * New upstream release (5.10.5).
+  * Release to experimental
+
+  [ Jonathan Riddell ]
+  * update watch file to version=4 with pgp signature checking
+  * more qml deps
+  * qmllint
+  * update .install
+  * update .install
+  * update .install
+  * appstream
+  * update .install file
+  * update not-installed
+
+  [ Clive Johnston ]
+  * Wildcarding /usr/share/locale/*/*/*.mo in install file
+
+  [ Rik Mills ]
+  * Install files for binary clock applet
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 28 Aug 2017 15:29:35 +0200
+
+kdeplasma-addons (4:5.8.5-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 23 Mar 2017 08:50:49 +0100
+
+kdeplasma-addons (4:5.8.5-1) experimental; urgency=medium
+
+  * New upstream release (5.8.5).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 30 Dec 2016 18:46:14 +0100
+
+kdeplasma-addons (4:5.8.4-1) unstable; urgency=medium
+
+  * New upstream release (5.8.4)
+  * Add the quickshare plasmoid
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 Nov 2016 18:35:21 +0100
+
+kdeplasma-addons (4:5.8.2-1) unstable; urgency=medium
+
+  * New upstream release (5.8.2)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 19 Oct 2016 15:27:38 +0200
+
+kdeplasma-addons (4:5.8.1-1) unstable; urgency=medium
+
+  * New upstream release (5.8.1)
+  * Add quickshare to not-installed till purpose is available
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 16 Oct 2016 23:01:34 +0200
+
+kdeplasma-addons (4:5.8.0-1) unstable; urgency=medium
+
+  * New upstream release (5.8.0)
+  * Update install files
+  * Add new plasmoid (minimizeall)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 07 Oct 2016 14:10:26 +0200
+
+kdeplasma-addons (4:5.7.4-1) unstable; urgency=medium
+
+  * New upstream release (5.7.4)
+  * Bump plasma-workspace-dev build dependency version
+  * Update install files
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 31 Aug 2016 14:16:59 +0200
+
+kdeplasma-addons (4:5.6.5-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 28 Jun 2016 14:53:12 +0200
+
+kdeplasma-addons (4:5.6.4-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Bump Standards-Version to 3.9.8
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 31 May 2016 21:28:33 +0200
+
+kdeplasma-addons (4:5.6.2-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+  [ Maximiliano Curia ]
+  * uscan no longer supports this kind of watch files.
+  * New upstream release (5.5.5).
+  * Automatic update with ddeb_migration3.py
+  * Add upstream metadata (DEP-12)
+  * Update build-depends
+  * Add libksysguard as a build dep
+  * Drop kimpanel package
+  * Update install files
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Remove duplicated build dependency
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 31 May 2016 21:23:09 +0200
+
+kdeplasma-addons (4:5.5.4-1) experimental; urgency=medium
+
+  * New upstream release (5.5.0).
+  * New upstream release (5.5.1).
+  * New upstream release (5.5.2).
+  * New upstream release (5.5.3).
+  * New upstream release (5.5.4).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 27 Jan 2016 16:49:09 +0100
+
+kdeplasma-addons (4:5.4.3-0ubuntu1) xenial; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream bugfix release
+
+  [ Philip Muškovac ]
+  * New upstream bugfix release (LP: #1518598)
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sun, 22 Nov 2015 16:29:09 +0100
+
+kdeplasma-addons (4:5.4.2-0ubuntu1) wily; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 02 Oct 2015 15:52:40 +0100
+
+kdeplasma-addons (4:5.4.3-1) unstable; urgency=medium
+
+  * New upstream release (5.4.3).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Dec 2015 11:46:01 +0100
+
+kdeplasma-addons (4:5.4.2-1) unstable; urgency=medium
+
+  * New upstream release (5.4.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 06 Oct 2015 07:52:17 +0200
+
+kde-gtk-config (4:5.4.2-0ubuntu1) wily; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 02 Oct 2015 15:52:02 +0100
+
+kdeplasma-addons (4:5.4.1-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.4.1).
+
+  [ Scott Kitterman ]
+  * Drop unused build-depends on libgee-dev
+  * Add kwin-x11 as a real alternative to the kwin virtual package depends for
+    kwin-addons to make the package more installable (Closes: #791381)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 11 Sep 2015 18:45:32 +0200
+
+kdeplasma-addons (4:5.4.1-0ubuntu1) wily; urgency=medium
+
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 08 Sep 2015 10:14:40 +0100
+
+kdeplasma-addons (4:5.4.0-1) unstable; urgency=medium
+
+  * New upstream release (5.4.0).
+  * Update install files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 03 Sep 2015 18:00:02 +0200
+
+kdeplasma-addons (4:5.4.0-0ubuntu1) wily; urgency=medium
+
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 31 Aug 2015 15:48:32 +0100
+
+kdeplasma-addons (4:5.3.95-0ubuntu2) wily; urgency=medium
+
+  * Build-depend on unversioned boost package.
+
+ -- Matthias Klose <doko@ubuntu.com>  Fri, 28 Aug 2015 13:58:26 +0200
+
+kdeplasma-addons (4:5.3.95-0ubuntu1) wily; urgency=medium
+
+  * new upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Aug 2015 23:12:41 +0200
+
+kdeplasma-addons (4:5.3.2-2) unstable; urgency=medium
+
+  * Add the missing Breaks/Replaces. (Closes: #790919)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 03 Jul 2015 14:07:47 +0200
+
+kdeplasma-addons (4:5.3.2-1) unstable; urgency=medium
+
+  * New upstream release (5.3.2).
+  * Update copyright information.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 30 Jun 2015 20:36:27 +0200
+
+kdeplasma-addons (4:5.3.2-0ubuntu1) wily; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 02 Jul 2015 12:26:53 +0000
+
+kdeplasma-addons (4:5.3.1-1) unstable; urgency=medium
+
+  * New upstream release (5.3.0).
+  * New upstream release (5.3.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 29 Jun 2015 23:44:54 +0200
+
+kdeplasma-addons (4:5.3.1-0ubuntu1) wily; urgency=medium
+
+  [ Jonathan Riddell ]
+  * Plasma 5.3 beta
+  * new upstream release
+
+  [ Scarlett Clark ]
+  * Vivid backport
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 05 Jun 2015 02:27:29 +0200
+
+kdeplasma-addons (4:5.2.2-1) experimental; urgency=medium
+
+  * New upstream release (5.2.1).
+  * New upstream release (5.2.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 23:17:49 +0100
+
+kdeplasma-addons (4:5.2.2-0ubuntu3) vivid; urgency=medium
+
+  * Add depends on qml-module-qtwebkit LP: #1431610
+    Web Browser plasmoid missing dependency to QtWebKit
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 15 Apr 2015 12:34:59 +0200
+
+kdeplasma-addons (4:5.2.2-0ubuntu2) vivid; urgency=medium
+
+  * Fix .install files
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 25 Mar 2015 00:49:53 +0100
+
+kdeplasma-addons (4:5.2.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 24 Mar 2015 07:13:42 -0700
+
+kdeplasma-addons (4:5.2.1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:37:47 -0800
+
+kdeplasma-addons (4:5.2.0-1) experimental; urgency=medium
+
+  * Prepare initial Debian release.
+  * Add myself as Uploader.
+  * Update build dependencies to build against experimental and to
+    follow cmake.
+  * Update copyright information.
+  * Update install files.
+  * Update watch file.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 09 Feb 2015 13:48:48 +0100
+
+kdeplasma-addons (4:5.2.0-0ubuntu1) vivid; urgency=medium
+
+  * Fix the -data depends to use source:Version rather than binary:
+  * New upstream release
+
+ -- Harald Sitter <sitter@kde.org>  Tue, 27 Jan 2015 14:51:11 +0100
+
+kdeplasma-addons (4:5.1.95-0ubuntu2) vivid; urgency=medium
+
+  * Make packages depend on the -data package for translations
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 16 Jan 2015 12:01:39 +0100
+
+kdeplasma-addons (4:5.1.95-0ubuntu1) vivid; urgency=medium
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Jan 2015 01:25:22 +0100
+
+kdeplasma-addons (4:5.1.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 19 Dec 2014 18:12:50 +0100
+
+kdeplasma-addons (4:5.1.1-0ubuntu1) vivid; urgency=medium
+
+  * Initial release for Plasma 5
+  * Remove no-human-maintainers lintian-override per ScottK.
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Nov 2014 21:19:52 +0100
+
+kdeplasma-addons (4:5.1.0.1-0ubuntu2) vivid; urgency=medium
+
+  * Remove unused build-depend libgio3.0-cil-dev
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 06 Nov 2014 11:31:26 +0100
+
+kdeplasma-addons (4:5.1.0.1-0ubuntu1) vivid; urgency=medium
+
+  * Initial release for Plasma 5
+  * New copyright file, wrap-and-sort, changelog entry, add epoch.
+  * Fix Maintainer field.
+  * New upstream tarball, add new dependencies.
+  * Correct the xcb dependency.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 03 Oct 2014 10:59:34 +0000

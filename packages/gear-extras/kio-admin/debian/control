@@ -1,0 +1,27 @@
+Source: kio-admin
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.22~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 5.98.0~),
+               gettext,
+               libkf6i18n-dev (>= 5.98.0~),
+               libkf6kio-dev (>= 5.98.0~),
+               libpolkit-qt6-1-dev,
+               qt6-base-dev (>= 5.15.0~)
+Standards-Version: 4.7.2
+Homepage: https://invent.kde.org/system/kio-admin
+
+Package: kio-admin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: manage files as administrator using the admin:// KIO protocol
+ kio-admin implements the admin:// protocol which gives administrative access
+ to the entire system. This is achieved by talking, over D-Bus, with a
+ root-level helper binary that in turn uses existing KIO infrastructure to run
+ file:// operations in root-scope.
+ .
+ Simply put: admin:// is exactly like file:// but redirected over D-Bus to gain
+ administrative privileges.

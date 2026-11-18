@@ -1,0 +1,5 @@
+Version: 5
+Source: https://download.kde.org/stable/release-service/@ANY_VERSION@/src/
+Matching-Pattern: elisa-@ANY_VERSION@@ARCHIVE_EXT@
+Filename-Mangle: s/elisa/elisa-player/
+Pgp-Mode: auto

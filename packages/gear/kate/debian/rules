@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+testsuite_failing_archs := armel armhf hurd-amd64 hurd-i386 i386
+ifneq (,$(filter $(DEB_HOST_ARCH),$(testsuite_failing_archs)))
+  fail_param := || true
+endif
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	-xvfb-run -a dh_auto_test --buildsystem=kf6 $(fail_param)

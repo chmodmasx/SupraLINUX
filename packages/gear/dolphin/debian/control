@@ -1,0 +1,135 @@
+Source: dolphin
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.9.0~),
+               gettext,
+               libbaloowidgets-dev (>= 4:25.12.3~),
+               libkf6baloo-dev (>= 6.9.0~) [!hurd-any],
+               libkf6bookmarks-dev (>= 6.9.0~),
+               libkf6codecs-dev (>= 6.9.0~),
+               libkf6colorscheme-dev (>= 6.9.0~),
+               libkf6completion-dev (>= 6.9.0~),
+               libkf6config-dev (>= 6.9.0~),
+               libkf6coreaddons-dev (>= 6.9.0~),
+               libkf6crash-dev (>= 6.9.0~),
+               libkf6dbusaddons-dev (>= 6.9.0~),
+               libkf6doctools-dev (>= 6.9.0~),
+               libkf6filemetadata-dev (>= 6.9.0~),
+               libkf6guiaddons-dev (>= 6.9.0~),
+               libkf6i18n-dev (>= 6.9.0~),
+               libkf6iconthemes-dev (>= 6.9.0~),
+               libkf6kcmutils-dev (>= 6.9.0~),
+               libkf6kio-dev (>= 6.9.0~),
+               libkf6newstuff-dev (>= 6.9.0~),
+               libkf6notifications-dev (>= 6.9.0~),
+               libkf6parts-dev (>= 6.9.0~),
+               libkf6solid-dev (>= 6.9.0~),
+               libkf6textwidgets-dev (>= 6.9.0~),
+               libkf6userfeedback-dev (>= 6.9.0~),
+               libkf6widgetsaddons-dev (>= 6.9.0~),
+               libkf6windowsystem-dev (>= 6.9.0~),
+               libpackagekitqt6-dev,
+               libphonon4qt6-dev,
+               libphonon4qt6experimental-dev,
+               libplasmaactivities-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.4.0~),
+               qt6-base-private-dev,
+               qt6-multimedia-dev (>= 6.4.0~)
+Standards-Version: 4.7.3
+Rules-Requires-Root: no
+Homepage: https://apps.kde.org/dolphin/
+
+Package: dolphin
+Section: utils
+Architecture: any
+Depends: baloo6,
+         dolphin-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: dolphin-doc (>= 4:24.05.2~),
+            dolphin-plugins,
+            ffmpegthumbs,
+            kdegraphics-thumbnailers,
+            kdenetwork-filesharing,
+            kimageformat6-plugins,
+            kio-extras (>= 4:24.12.2~),
+            qt6-image-formats-plugins
+Suggests: kio-admin
+Breaks: dolphin-data (<< 4:24.12.2-2~), dolphin-plugins (<< 4:24.05~)
+Replaces: dolphin-data (<< 4:24.12.2-2~)
+Description: file manager
+ Dolphin is KDE's file manager that lets you navigate and browse the contents
+ of your hard drives, USB sticks, SD cards, and more. Creating, moving, or
+ deleting files and folders is simple and fast.
+ .
+ Features include:
+   Customisable sidebars
+   "Breadcrumb" navigation
+   View properties remembered for each folder
+   Split views
+   Integrated terminal
+   Network transparency
+   Undo/redo functionality
+   Ratings, comments, and tags
+
+Package: dolphin-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}
+Description: file manager - development files
+ Contains DBus interface XML files to access dolphin via the DBus
+ org.freedesktop.FileManager1 interface.
+
+Package: dolphin-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: dolphin (<< 4:24.05.2-1~)
+Replaces: dolphin (<< 4:24.05.2-1~)
+Description: file manager - documentation
+ Dolphin is KDE's file manager that lets you navigate and browse the contents
+ of your hard drives, USB sticks, SD cards, and more. Creating, moving, or
+ deleting files and folders is simple and fast.
+ .
+ This package contains the HTML documentation.
+
+Package: dolphin-data
+Section: utils
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: dolphin (<< 4:24.05.2-1~)
+Replaces: dolphin (<< 4:24.05.2-1~)
+Description: file manager - data
+ Dolphin is KDE's file manager that lets you navigate and browse the contents
+ of your hard drives, USB sticks, SD cards, and more. Creating, moving, or
+ deleting files and folders is simple and fast.
+ .
+ This package contains architecture-independent data files.
+
+Package: libdolphinvcs-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libdolphinvcs6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.5.0~),
+         ${misc:Depends}
+Description: library to show version control in Dolphin - development files
+ This library enables developers to expand Dolphin with the ability to show
+ version control status in directories that are version controlled.
+ .
+ This package contains the development files.
+
+Package: libdolphinvcs6
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: library to show version control in Dolphin
+ This library enables developers to expand Dolphin with the ability to show
+ version control status in directories that are version controlled.

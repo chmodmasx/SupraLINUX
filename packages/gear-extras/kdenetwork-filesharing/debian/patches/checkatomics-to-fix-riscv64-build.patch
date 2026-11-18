@@ -1,0 +1,18 @@
+--- a/samba/filepropertiesplugin/CMakeLists.txt
++++ b/samba/filepropertiesplugin/CMakeLists.txt
+@@ -20,7 +20,13 @@
+ 
+ if(SAMBA_INSTALL)
+     target_sources(sambausershareplugin PRIVATE sambainstaller.cpp)
+-    target_link_libraries(sambausershareplugin PK::packagekitqt6)
++    # Test for Atomics
++    include(CheckAtomic)
++    if(NOT HAVE_CXX_ATOMICS_WITHOUT_LIB OR NOT HAVE_CXX_ATOMICS64_WITHOUT_LIB)
++       target_link_libraries(sambausershareplugin "atomic" PK::packagekitqt6)
++    else()
++       target_link_libraries(sambausershareplugin PK::packagekitqt6)
++    endif()
+ endif()
+ 
+ install(TARGETS sambausershareplugin DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/propertiesdialog)
+

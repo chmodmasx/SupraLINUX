@@ -1,0 +1,7 @@
+usr/bin/exec_inspect.sh
+usr/bin/kate
+usr/lib/*/libkateprivate.so.*
+usr/lib/*/qt6/plugins/kf6/kio/
+usr/lib/*/qt6/plugins/kf6/ktexteditor/
+usr/share/applications/org.kde.kate.desktop
+usr/share/metainfo/org.kde.kate.appdata.xml

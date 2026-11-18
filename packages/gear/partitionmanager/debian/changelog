@@ -1,0 +1,708 @@
+partitionmanager (25.12.3-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Gear 25.12.3 partitionmanager for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+partitionmanager (25.12.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Mar 2026 14:02:21 +0000
+
+partitionmanager (25.12.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Feb 2026 12:32:39 +0000
+
+partitionmanager (25.12.1-2ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 22:57:52 +0000
+
+partitionmanager (25.12.1-2ubuntu1) resolute; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 16 Jan 2026 15:45:29 +0000
+
+partitionmanager (25.12.1-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Bump required KPMCore version as per the upstream build system.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 15 Jan 2026 09:39:46 +0100
+
+partitionmanager (25.12.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (25.12.1).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.7.3, no change required.
+  * Drop Rules-Requires-Root: no, not needed anymore since trixie.
+  * Switch to debian/watch format version 5.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 15 Jan 2026 07:42:28 +0100
+
+partitionmanager (25.12.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jan 2026 11:18:55 +0000
+
+partitionmanager (25.12.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Dec 2025 12:38:18 +0000
+
+partitionmanager (25.11.90-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (RC) release (25.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 28 Nov 2025 14:18:13 +0000
+
+partitionmanager (25.11.80-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (beta) release (25.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 16 Nov 2025 08:03:48 +0000
+
+partitionmanager (25.08.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Nov 2025 15:29:59 +0000
+
+partitionmanager (25.08.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 11:58:43 +0100
+
+partitionmanager (25.08.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Sep 2025 07:14:08 +0100
+
+partitionmanager (25.08.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Aug 2025 12:01:06 +0100
+
+partitionmanager (25.07.90-0ubuntu1) questing; urgency=medium
+
+  * New upstream (RC) release (25.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Jul 2025 18:02:59 +0100
+
+partitionmanager (25.07.80-0ubuntu1) questing; urgency=medium
+
+  * New upstream (beta) release (25.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 12 Jul 2025 18:27:55 +0100
+
+partitionmanager (25.04.3-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Jul 2025 07:57:37 +0100
+
+partitionmanager (25.04.2-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 12:03:17 +0100
+
+partitionmanager (25.04.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 May 2025 22:19:28 +0100
+
+partitionmanager (25.04.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 30 Apr 2025 20:05:32 +0100
+
+partitionmanager (24.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.12.3).
+  * Update project homepage. (Closes: #1104066)
+  * Bump Standards-Version to 4.7.2, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 04 May 2025 00:21:01 +0200
+
+partitionmanager (24.12.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Mar 2025 08:51:25 +0000
+
+partitionmanager (24.12.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Feb 2025 14:24:05 +0000
+
+partitionmanager (24.12.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 14:15:30 +0000
+
+partitionmanager (24.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.12.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 21 Dec 2024 08:46:38 +0100
+
+partitionmanager (24.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Dec 2024 17:25:24 +0000
+
+partitionmanager (24.11.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (RC) release (24.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 29 Nov 2024 14:16:31 +0000
+
+partitionmanager (24.11.80-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (beta) release (24.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 Nov 2024 14:18:53 +0000
+
+partitionmanager (24.08.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 11:48:53 +0000
+
+partitionmanager (24.08.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian Unstable.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 16 Oct 2024 15:24:51 -0500
+
+partitionmanager (24.08.2-1) experimental; urgency=medium
+
+  [ Jesse Rhodes ]
+  * New upstream release (24.05.2).
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.08.2).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.7.0, no change required.
+  * Switch to declarative dh-sequence-kf6 build sequence.
+  * Switch away from transitional pkg-config build dependency.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 16 Oct 2024 09:08:21 +0200
+
+partitionmanager (23.08.5-0ubuntu3) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 09:24:32 +0000
+
+partitionmanager (23.08.5-0ubuntu2) noble; urgency=medium
+
+  * No-change rebuild against libqt5core5t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 15 Mar 2024 06:19:48 +0000
+
+partitionmanager (23.08.5-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.5)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Thu, 22 Feb 2024 10:30:19 -0700
+
+partitionmanager (23.08.4-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.4)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 13 Dec 2023 10:23:44 +0000
+
+partitionmanager (23.08.3-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Nov 2023 11:44:12 +0000
+
+partitionmanager (23.08.2-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 26 Oct 2023 12:40:25 +0100
+
+partitionmanager (23.08.1-0ubuntu2) mantic; urgency=medium
+
+  * d/control: add new Depends: fdisk (LP: #2037826)
+
+ -- Erich Eickmeyer <eeickmeyer@ubuntu.com>  Sat, 30 Sep 2023 19:55:03 -0700
+
+partitionmanager (23.08.1-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Sep 2023 12:07:31 +0100
+
+partitionmanager (23.08.0-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 24 Aug 2023 13:02:26 +0100
+
+partitionmanager (23.07.90-0ubuntu1) mantic; urgency=medium
+
+  [ Rik Mills ]
+  * New upstream (beta) release (23.07.80)
+  * New upstream (RC) release (23.07.90)
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key, copied from k3b
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 15 Aug 2023 02:41:51 +0100
+
+partitionmanager (23.04.3-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jul 2023 14:58:29 +0100
+
+partitionmanager (23.04.2-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.04.1)
+  * New upstream release (23.04.2)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 10 Jun 2023 12:03:35 +0100
+
+partitionmanager (22.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 01 Mar 2023 11:58:26 +0100
+
+partitionmanager (22.12.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 02 Mar 2023 00:46:38 +0000
+
+partitionmanager (22.12.2-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.2)
+
+ -- Simon Quigley <tsimonq2@kubuntu.org>  Sat, 11 Feb 2023 14:30:37 -0600
+
+partitionmanager (22.12.1-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jan 2023 11:22:01 +0000
+
+partitionmanager (22.12.0-1ubuntu1) lunar; urgency=medium
+
+  * Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 28 Dec 2022 08:59:19 +0000
+
+partitionmanager (22.12.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.1).
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Add/update Albert Astals Cid’s master key in upstream signing keys.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 07 Jan 2023 00:07:17 +0100
+
+partitionmanager (22.12.0-1) unstable; urgency=medium
+
+  [ Jonathan Carter ]
+  * Remove self from uploaders (package now part of KDE team) 
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.11.90).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (22.12.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 11 Dec 2022 23:06:48 +0100
+
+partitionmanager (22.04.3-2) unstable; urgency=medium
+
+  * Add libpolkit-qt5-1-dev as build-dep (fixes FTBFS)
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 11 Aug 2022 11:51:10 +0200
+
+partitionmanager (22.04.3-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.6.1
+  * Update copyright years
+  * Remove trailing whitespace in copyright file
+  * Remove inactive maintainer
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 10 Aug 2022 12:45:41 +0200
+
+partitionmanager (21.12.3-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Carter <jcc@debian.org>  Sat, 05 Mar 2022 18:21:39 +0200
+
+partitionmanager (21.12.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 17 Feb 2022 11:30:32 +0200
+
+partitionmanager (21.12.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.6.0
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 20 Jan 2022 12:13:59 +0200
+
+partitionmanager (21.08.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.08.0).
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 17 Aug 2021 12:31:44 +0900
+
+partitionmanager (21.04.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.04.0).
+  * Add myself to uploaders.
+  * Bump dependencies according to cmake.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 26 Apr 2021 09:50:21 +0900
+
+partitionmanager (20.12.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add the configuration for the CI on salsa.
+  * Drop the Debian man page, as it offers no useful information.
+  * Use the kf5 dh addon, so standard bits for KF-based applications are used.
+  * Bump the libkpmcore-dev build dependency to 20.12.2-3~, as that version
+    properly depends on the libkpmcore library package.
+  * Drop the unused libkf5service-dev build dependency.
+  * Enable the build on any architecture (not only Linux ones), as it should
+    build fine now.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 12 Feb 2021 15:56:09 +0100
+
+partitionmanager (20.12.2-1) unstable; urgency=medium
+
+  * Update upstream GPG signing key.
+  * New upstream release (20.12.2).
+  * Removed Mark Purcell from the uploaders, thanks for your work on the
+    package!
+  * Update Vcs-* fields after moving the Salsa repo from extras/ to kde/.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 08 Feb 2021 14:34:34 +0100
+
+partitionmanager (20.12.1-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 13 Jan 2021 09:09:14 +0200
+
+partitionmanager (20.12.0-1) unstable; urgency=medium
+
+  * Adapt watch file to new release-service location.
+  * Borrow minimal upstream signing key from k3b.
+  * New upstream release (20.12.0).
+  * Update build dependencies according to the upstream build system:
+    - bump Qt to 5.10
+    - bump KF5 to 5 73
+    - add libkf5dbusaddons-dev
+    - drop libkf5kiocore5, uuid-dev
+    - drop libatasmart-dev, libblkid-dev, libparted-dev that are build
+      dependencies of kpmcore after the split
+  * Refresh copyright information.
+  * Bump Standards-Version to 4.5.1, no change required.
+  * Refresh upstream metadata.
+  * Removed George Kiagiadakis from the uploaders, thanks for your work
+    on the package!
+  * Add myself to the uploaders.
+  * Change maintainer to Debian Qt/KDE Maintainers now that Partition Manager
+    is part of official KDE apps release service.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 02 Jan 2021 10:07:33 +0100
+
+partitionmanager (4.2.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Add upstream signing key
+  * Add new translation copyright
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 20 Oct 2020 10:48:15 +0200
+
+partitionmanager (4.1.0-2) unstable; urgency=medium
+
+  * Small change upload for kpmcore ABI bump (to version 10)
+  * Remove trailing whitespace in changelog
+  * Bump debhelper-compat to 13
+
+ -- Jonathan Carter <jcc@debian.org>  Sun, 18 Oct 2020 19:09:02 +0200
+
+partitionmanager (4.1.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.5.0
+  * Declare Rules-Requires-Root
+  * Update copyright years
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 24 Feb 2020 11:23:25 +0200
+
+partitionmanager (4.0.0-2) unstable; urgency=medium
+
+  * Set correct copyright information for appdata.xml in debian/copyright
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 23 Oct 2019 11:35:53 +0000
+
+partitionmanager (4.0.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.4.1
+  * Drop ancient versioned dependency on:
+    - pkg-kde-tools
+    - libkpmcore-dev
+    - libparted-dev
+  * Upgrade to debhelper-compat (12)
+  * Remove cdbs
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 14 Oct 2019 09:57:32 +0000
+
+partitionmanager (3.3.1-5) unstable; urgency=medium
+
+  * Fix bug number in previous changelog entry
+
+ -- Jonathan Carter <jcc@debian.org>  Sat, 01 Dec 2018 19:40:50 +0200
+
+partitionmanager (3.3.1-4) unstable; urgency=medium
+
+  * debian/control: Add btrfs-progs to suggests field
+    (Closes: #912990)
+
+ -- Jonathan Carter <jcc@debian.org>  Tue, 27 Nov 2018 10:18:20 +0200
+
+partitionmanager (3.3.1-3) unstable; urgency=medium
+
+  * Move git repository to salsa.debian.net
+  * Update standards version to 4.2.1
+  * Update maintainer team e-mail address
+
+ -- Jonathan Carter <jcc@debian.org>  Sat, 29 Sep 2018 14:49:40 +0200
+
+partitionmanager (3.3.1-2) unstable; urgency=medium
+
+  * Add required build-dependencies previously removed in error:
+    - libkf5iconthemes-dev
+    - libkf5kio-dev
+    - libkf5service-dev
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 09 Feb 2018 13:47:37 +0200
+
+partitionmanager (3.3.1-1) unstable; urgency=medium
+
+  * Upload to unstable (Closes: #888729)
+
+ -- Jonathan Carter <jcc@debian.org>  Fri, 09 Feb 2018 09:47:40 +0200
+
+partitionmanager (3.3.1-1~exp1) experimental; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.1.3
+  * Remove build-dependencies that are no longer required
+    - libkf5iconthemes-dev
+    - libkf5kio-dev
+    - libkf5service-dev
+
+ -- Jonathan Carter <jcc@debian.org>  Thu, 08 Feb 2018 04:20:17 -0500
+
+partitionmanager (3.2.1-3) unstable; urgency=medium
+
+  * Remove stale dependency kdelibs5-dev (Closes: #883592)
+  * Update standards version to 4.1.2
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 11 Dec 2017 21:01:43 +0200
+
+partitionmanager (3.2.1-2) unstable; urgency=medium
+
+  * Add version spec for libkpmcore-dev build-dependency
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 25 Oct 2017 09:20:59 +0200
+
+partitionmanager (3.2.1-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update debian/copyright
+  * Update standards version to 4.1.1
+  * Build-depend on libparted-dev rather than libparted0-dev (Closes: 878627)
+  * Drop fdo-desktop-keywords patch (merged upstream)
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 16 Oct 2017 10:03:12 +0200
+
+partitionmanager (3.1.2-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Carter <jcc@debian.org>  Wed, 06 Sep 2017 15:08:50 +0200
+
+partitionmanager (3.1.0-1) unstable; urgency=medium
+
+  * New upstream release
+  * Update standards version to 4.1.0.0 (no changes)
+  * Update copyright years
+  * Set architecture to linux-any
+  * Update maintainer e-mail address
+
+ -- Jonathan Carter <jcc@debian.org>  Mon, 10 Jul 2017 14:36:42 +0200
+
+partitionmanager (3.0.1-1) experimental; urgency=medium
+
+  * Update to new upstream version
+  * Add libkpmcore4-dev as build-dependency
+  * Update fdo-keywords patch
+  * Update VCS URIs
+  * Remove lintian-overrides (no longer needed)
+
+ -- Jonathan Carter <jcarter@linux.com>  Wed, 22 Mar 2017 13:46:20 +0200
+
+partitionmanager (3.0.0-1) unstable; urgency=medium
+
+  * Update to new upstream version (Closes: #794438, #709474, LP: #1635756)
+  * Update standards version to 3.9.8
+  * Remove patches (no longer needed)
+  * Update compat to level 10
+  * Fix watch file (Closes: #788701)
+  * Replace ntfsprogs dependency with ntfs-3g (Closes: #731957)
+  * Fix typo with partition in control (Closes: 745290)
+  * New build-deps: extra-cmake-modules, qtbase5-dev, libkf5widgetsaddons-dev,
+                    libkf5xmlgui-dev, libkf5kiocore5, libkf5config-dev,
+                    libkf5crash-dev, libkf5doctools-dev, libkf5jobwidgets-dev,
+                    libkf5kio-dev, libkpmcore4-dev, libatasmart-dev
+  * wrap-and-sort
+  * Update homepage to new location on kde.org
+  * Update copyright file to machine readable format
+  * Add hardening export to debian/rules
+  * Remove 3 lintian-overrides (no longer needed)
+  * Add lintian override for insecure VCS URI
+  * Remove maintainer scripts (no longer needed)
+  * Add myself as uploader
+
+ -- Jonathan Carter <jcarter@linux.com>  Sat, 24 Dec 2016 18:15:08 +0200
+
+partitionmanager (1.0.3-2.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Backport support for libparted 3.1 from upstream (closes: #754580).
+  * Include cmake module needed for CHECK_FUNCTION_EXISTS.
+
+ -- Colin Watson <cjwatson@debian.org>  Sat, 19 Jul 2014 23:05:50 +0100
+
+partitionmanager (1.0.3-2) unstable; urgency=low
+
+  * Upload to unstable
+  * Update debian/control - Standards-Version & Vcs
+
+ -- Mark Purcell <msp@debian.org>  Sun, 12 May 2013 10:14:07 +1000
+
+partitionmanager (1.0.3-1) experimental; urgency=low
+
+  * New upstream release
+    - Drop 01_ftbfs_binutils-gold.diff
+  * Add myself to Uploaders
+  * Added Vcs fields
+  * Updated Description - fixes description-synopsis-starts-with-article
+  * debian/compat -> 9
+
+ -- Mark Purcell <msp@debian.org>  Sun, 21 Apr 2013 09:22:56 +1000
+
+partitionmanager (1.0.2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Explicitly add cmake to build dependencies.
+
+ -- George Kiagiadakis <gkiagiad@csd.uoc.gr>  Wed, 12 May 2010 13:14:01 +0300
+
+partitionmanager (1.0.1-2) unstable; urgency=low
+
+  [ George Kiagiadakis ]
+  * Remove the udev suggest since vol_id is now gone from udev and
+    partitionmanager can use blkid from util-linux, which is essential.
+
+  [ Fathi Boudra ]
+  * Add 01_ftbfs_binutils-gold patch. (Closes: #556051)
+  * Build against parted 2.2. (Closes: #574907)
+  * Bump standards-version to 3.8.4 (no changes needed).
+
+ -- Debian KDE Extras Team <pkg-kde-extras@lists.alioth.debian.org>  Tue, 23 Mar 2010 09:24:08 +0100
+
+partitionmanager (1.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+
+  [ José Manuel Santamaría Lema ]
+  * Add uversionmangle=s/-/~/;y/A-Z/a-z/ to watch file.
+
+  [ George Kiagiadakis ]
+  * Update copyright years.
+
+ -- George Kiagiadakis <gkiagiad@csd.uoc.gr>  Sat, 23 Jan 2010 14:06:33 +0200
+
+partitionmanager (1.0.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump standards-version to 3.8.3 (no changes required).
+
+ -- George Kiagiadakis <gkiagiad@csd.uoc.gr>  Sun, 23 Aug 2009 15:08:57 +0300
+
+partitionmanager (1.0.0~rc1-1) unstable; urgency=low
+
+  * New upstream release candidate.
+  * Disable building the partitionmanager kcm, as it
+    is requires systemsettings to be running as root and
+    it ends up being just confusing and not useful at all.
+
+ -- George Kiagiadakis <gkiagiad@csd.uoc.gr>  Sat, 15 Aug 2009 19:26:29 +0300
+
+partitionmanager (1.0.0~beta3-1) unstable; urgency=low
+
+  * New upstream beta release.
+  * Bump standards-version to 3.8.2 (No changes required).
+  * As a side effect, package will be rebuilt against
+    libparted1.8-12. (Closes: #534252)
+
+ -- George Kiagiadakis <gkiagiad@csd.uoc.gr>  Tue, 23 Jun 2009 18:51:47 +0300
+
+partitionmanager (1.0.0~beta2-1) unstable; urgency=low
+
+  * New upstream beta release.
+  * Bump standards-version to 3.8.1.
+
+ -- George Kiagiadakis <gkiagiad@csd.uoc.gr>  Mon, 01 Jun 2009 18:17:12 +0300
+
+partitionmanager (1.0.0~beta1a-1) unstable; urgency=low
+
+  * Initial release (Closes: #512097)
+
+ -- George Kiagiadakis <gkiagiad@csd.uoc.gr>  Wed, 15 Apr 2009 23:02:49 +0300

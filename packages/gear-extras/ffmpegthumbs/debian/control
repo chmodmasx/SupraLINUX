@@ -1,0 +1,29 @@
+Source: ffmpegthumbs
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.0.0~),
+               libavcodec-dev,
+               libavfilter-dev,
+               libavformat-dev,
+               libavutil-dev,
+               libkf6config-dev (>= 6.0.0~),
+               libkf6kio-dev (>= 6.0.0~),
+               libswscale-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.5.0+dfsg~)
+Standards-Version: 4.7.2
+Homepage: https://apps.kde.org/ffmpegthumbs/
+
+Package: ffmpegthumbs
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: video thumbnail generator using ffmpeg
+ FFMpegThumbs is a video thumbnail generator for KDE file managers
+ like Dolphin and Konqueror.  It enables them to show preview images
+ of video files using FFMpeg.
+ .
+ This package is part of the KDE multimedia module.

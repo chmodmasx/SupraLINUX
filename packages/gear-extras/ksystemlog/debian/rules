@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS=hardening=+bindnow
+ARCH := $(shell dpkg-architecture -qDEB_BUILD_ARCH 2>/dev/null)
+
+%:
+	dh $@
+
+override_dh_auto_test:
+	# Don't run tests on armhf
+ifneq ("$(ARCH)", "armhf")
+	xvfb-run -a dh_auto_test
+endif

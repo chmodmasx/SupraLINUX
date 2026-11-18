@@ -1,0 +1,1247 @@
+kdeconnect (25.12.3-0supralinux7) resolute; urgency=medium
+
+  * Bluetooth: skip creating the Bluetooth link provider entirely when
+    /sys/class/bluetooth does not exist. This also avoids the one-time
+    QBluetooth/BlueZ initialization at daemon startup on machines without
+    an adapter; the 0supralinux6 guards remain for the provider itself.
+    Machines with an adapter keep the same behavior.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 09 Nov 2026 06:55:00 -0300
+
+kdeconnect (25.12.3-0supralinux6) resolute; urgency=medium
+
+  * Bluetooth: do not query BlueZ when the system has no Bluetooth
+    adapter. The link provider used to request org.bluez every 30 seconds
+    through QBluetoothLocalDevice and wait for the 25-second D-Bus
+    activation timeout. Check /sys/class/bluetooth on Linux and create the
+    service discovery agent lazily, so machines without an adapter stay
+    quiet while machines with one keep working.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 09 Nov 2026 06:40:00 -0300
+
+kdeconnect (25.12.3-0supralinux5) resolute; urgency=medium
+
+  * Virtual Monitor: launch krdc directly instead of KIO::OpenUrlJob.
+    KIO treats the rdp:// URL as a remote file and fails with
+    "Could not read file", so KRDC never started. Pass the URL, which
+    already contains the one-time credentials, to the krdc binary.
+    Also write the requested resolution to the global KRDC RDP group.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 09 Nov 2026 01:15:00 -0300
+
+kdeconnect (25.12.3-0supralinux4) resolute; urgency=medium
+
+  * Virtual Monitor: seed KRDC's FreeRDP certificate store with the KDE
+    Connect certificate, configure TLS-only RDP, skip the first-connection
+    settings dialog, and pass the client resolution. A paired SupraLINUX
+    device opens the virtual monitor with a single click.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 09 Nov 2026 01:00:00 -0300
+
+kdeconnect (25.12.3-0supralinux3) resolute; urgency=medium
+
+  * Pass the KDE Connect TLS certificate and key to krdpserver so the
+    Virtual Monitor server starts on a fresh profile.
+  * Launch the remote RDP client through KIO instead of relying on
+    xdg-open/kfmclient, which is not available in the Plasma 6 session.
+  * Link the virtualmonitor plugin with KIOWidgets and Notifications.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 08 Nov 2026 02:40:00 -0300
+
+kdeconnect (25.12.3-0supralinux2) resolute; urgency=medium
+
+  * Add the native SFTP server side to the sftp plugin.  A paired Linux
+    device can now answer kdeconnect.sftp.request by launching
+    supralinux-kdeconnect-sftp, an ephemeral per-user server authenticated
+    with the paired device certificate.  No system sshd, port 22, ~/.ssh or
+    known_hosts changes are involved.
+  * Use physical pixels for Virtual Monitor capabilities on HiDPI screens
+    (upstream fix present in 26.04.3).
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 07 Nov 2026 22:00:00 -0300
+
+kdeconnect (25.12.3-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Gear 25.12.3 kdeconnect for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+kdeconnect (25.12.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Mar 2026 13:48:49 +0000
+
+kdeconnect (25.12.2-0ubuntu3) resolute; urgency=medium
+
+  * Update build deps for Qt 6.10
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 17 Feb 2026 07:24:47 +0000
+
+kdeconnect (25.12.2-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for Qt 6.10.2 private ABI.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 15 Feb 2026 12:53:35 +0000
+
+kdeconnect (25.12.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Feb 2026 12:21:27 +0000
+
+kdeconnect (25.12.1-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 21:50:17 +0000
+
+kdeconnect (25.12.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jan 2026 11:01:35 +0000
+
+kdeconnect (25.12.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Dec 2025 12:18:55 +0000
+
+kdeconnect (25.11.90-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (RC) release (25.11.90)
+  * Drop included upstream patches.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 28 Nov 2025 14:03:12 +0000
+
+kdeconnect (25.11.80-0ubuntu2) resolute; urgency=medium
+
+  * Backport upstream_check-ID-does-not-change-during-handshake.patch
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 20 Nov 2025 12:47:22 +0000
+
+kdeconnect (25.11.80-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (beta) release (25.11.80)
+  * Update install files.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 16 Nov 2025 05:51:30 +0000
+
+kdeconnect (25.08.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Nov 2025 12:13:02 +0000
+
+kdeconnect (25.08.2-0ubuntu2) resolute; urgency=medium
+
+  * Update install files.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 13:50:08 +0100
+
+kdeconnect (25.08.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 11:43:27 +0100
+
+kdeconnect (25.08.1-0ubuntu2) questing; urgency=medium
+
+  * No-change rebuild for Qt 6.9.2 private ABI.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 18 Sep 2025 00:12:00 +0100
+
+kdeconnect (25.08.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Sep 2025 06:52:49 +0100
+
+kdeconnect (25.08.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Aug 2025 11:22:48 +0100
+
+kdeconnect (25.07.90-0ubuntu1) questing; urgency=medium
+
+  * New upstream (RC) release (25.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Jul 2025 17:42:36 +0100
+
+kdeconnect (25.07.80-0ubuntu1) questing; urgency=medium
+
+  * New upstream (beta) release (25.07.80)
+  * Update install files.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 12 Jul 2025 18:08:19 +0100
+
+kdeconnect (25.04.3-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Jul 2025 07:40:59 +0100
+
+kdeconnect (25.04.2-1ubuntu1) questing; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Recommend plasma-desktoptheme and qml6-module-org-kde-kdeconnect.
+    - Do not have the qml module recommend kdeconnect.
+    - kdeconnect-libs Breaks/Replaces to suit Kubuntu merge history.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 09 Jun 2025 08:53:38 +0100
+
+kdeconnect (25.04.2-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (25.04.2).
+    - Change qtdbus-qt5 to qtdbus-qt6 in the sample commands logic to find the
+    qdbus executable name.
+    - Kcm: fix memory leak in devicesRemoved().
+    - Fix mpris sessions changed event handler.
+    - Add plugin settings dep.
+    - Make KF6DocTools optional.
+    - Sendnotifications: Add missing qRegisterMetaType<>().
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 07 Jun 2025 01:20:50 +0200
+
+kdeconnect (25.04.2-0ubuntu2) questing; urgency=medium
+
+  * Additional b-d on libkf6itemmodels-dev
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 13:24:17 +0100
+
+kdeconnect (25.04.2-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 11:42:43 +0100
+
+kdeconnect (25.04.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.1)
+  * Drop included upstream_fix-armhf-build.patch
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 May 2025 22:04:44 +0100
+
+kdeconnect (25.04.0+git20250504.28fb9142-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream git snapshot (25.04.0+git20250504.28fb9142).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 04 May 2025 18:39:07 +0200
+
+kdeconnect (25.04.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (25.04.0).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.7.2, no change required.
+  * Drop patch applied upstream.
+  * Backport upstream commit to fix build on 32-bit architectures.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 17 Apr 2025 19:00:03 +0200
+
+kdeconnect (25.04.0-0ubuntu2) questing; urgency=medium
+
+  * Drop org.kde.people from qmldeps.overrides. (LP: #2109830)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 02 May 2025 12:50:45 +0100
+
+kdeconnect (25.04.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.0)
+  * Add upstream_fix-armhf-build.patch
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 30 Apr 2025 19:46:55 +0100
+
+kdeconnect (24.12.3-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.3 (LP: #2103945).
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 29 Mar 2025 15:13:51 -0500
+
+kdeconnect (24.12.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Mar 2025 08:40:04 +0000
+
+kdeconnect (24.12.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Feb 2025 10:06:05 +0000
+
+kdeconnect (24.12.1-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.2.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 05 Feb 2025 21:03:58 -0600
+
+kdeconnect (24.12.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 14:29:31 +0000
+
+kdeconnect (24.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.12.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 25 Dec 2024 22:45:56 +0100
+
+kdeconnect (24.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Dec 2024 17:10:06 +0000
+
+kdeconnect (24.11.90-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.1.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Thu, 05 Dec 2024 02:22:07 -0600
+
+kdeconnect (24.11.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (RC) release (24.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 29 Nov 2024 14:06:30 +0000
+
+kdeconnect (24.11.80-0ubuntu2) plucky; urgency=medium
+
+  * For now make sure the main package recommends the qml module.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 24 Nov 2024 20:44:08 +0000
+
+kdeconnect (24.11.80-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (beta) release (24.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 20 Nov 2024 14:50:55 +0000
+
+kdeconnect (24.08.3-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * Add upstream patch to fix "kdeconnect FTCBFS: error parsing cmake
+    expression containing unquoted variable" (Closes: #977275)
+  * Mark failing test to not fail the build #1089306.
+
+ -- Sandro Knauß <hefee@debian.org>  Sat, 07 Dec 2024 21:08:33 +0100
+
+kdeconnect (24.08.3-1) unstable; urgency=medium
+
+  * Team upload.
+
+  * New upstream release (24.08.3).
+  * Release to unstable.
+  * Temporarily add qt6-declarative-private-dev to workaround #1087385.
+  * Split libs into own -libs package to break interpackage circular
+    dependency chain.
+  * qml module recommends kdeconnect (before it depend on kdeconnect)
+    (Closes: #1087840).
+
+ -- Sandro Knauß <hefee@debian.org>  Fri, 06 Dec 2024 20:13:24 +0100
+
+kdeconnect (24.08.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.3)
+  * Make flaky tests non fatal.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Nov 2024 11:08:02 +0000
+
+kdeconnect (24.08.2-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian Experimental. Remaining changes:
+    - Kubuntuify.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 06 Nov 2024 14:14:37 -0600
+
+kdeconnect (24.08.2-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.08.2).
+  * Update build-deps and deps with the info from cmake.
+  * Switch to kf6 debhelper build sequence.
+  * Drop patch enabling non-default openssh key algorithms, not
+    necessary anymore with the current version of the Android app.
+  * Update the list of installed files.
+  * Add new qml6-module-org-kde-kdeconnect binary package.
+  * Replace manual QML runtime dependencies with dbhelper sequence
+    qmldeps.
+  * Recommend systemsettings and override lintian warning about the
+    executable being in another package.
+  * Reenable build-time tests.
+  * Review copyright information.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 17 Oct 2024 17:52:17 +0200
+
+kdeconnect (24.05.2-0ubuntu2) plucky; urgency=medium
+
+  * Rebuild against Qt 6.7.2 private-abi.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 17 Oct 2024 17:06:08 +0100
+
+kdeconnect (24.05.2-0ubuntu1) oracular; urgency=medium
+
+  * Merge debian experimental. 
+  * 
+
+ -- Scarlett Moore <sgmoore@debian.org>  Mon, 09 Sep 2024 00:34:09 -0700
+
+kdeconnect (24.08.0-1) experimental; urgency=medium
+
+  * New upstream release (24.08.0).
+  * Add myself to uploaders.
+  * Remove unneeded patch.
+  * Update dependencies according to cmake.
+  * Refresh install files.
+
+ -- Scarlett Moore <sgmoore@debian.org>  Thu, 22 Aug 2024 02:28:04 -0700
+
+kdeconnect (23.08.5-1ubuntu2) oracular; urgency=medium
+
+  * Rebuild against new libkf6pulseaudioqt5.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 29 Jun 2024 18:43:37 +0200
+
+kdeconnect (23.08.5-1ubuntu1) oracular; urgency=medium
+
+  * Merge with Debian. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 14 May 2024 10:04:41 +0100
+
+kdeconnect (23.08.5-1) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * Team upload.
+  * New upstream release.
+  * Bump Standards-Version to 4.7.0, no changes required.
+  * Switch the transitional pkg-config build dependency to pkgconf.
+
+  [ Aurélien COUDERC ]
+  * Add/update Heiko Becker in upstream signing keys.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 11 May 2024 23:51:42 +0200
+
+kdeconnect (23.08.5-0ubuntu6) oracular; urgency=medium
+
+  * Rebuild against new libkf5pulseaudioqt4.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Tue, 14 May 2024 10:33:18 +0200
+
+kdeconnect (23.08.5-0ubuntu5) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 09:03:08 +0000
+
+kdeconnect (23.08.5-0ubuntu4) noble; urgency=medium
+
+  * No-change rebuild against libqt5core5t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 15 Mar 2024 04:50:03 +0000
+
+kdeconnect (23.08.5-0ubuntu3) noble; urgency=medium
+
+  * No-change rebuild against libglib2.0-0t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Mon, 11 Mar 2024 22:54:28 +0000
+
+kdeconnect (23.08.5-0ubuntu2) noble; urgency=medium
+
+  * No-change rebuild against libglib2.0-0t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 08 Mar 2024 05:13:57 +0000
+
+kdeconnect (23.08.5-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.5)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Thu, 22 Feb 2024 09:41:27 -0700
+
+kdeconnect (23.08.4-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.4)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 13 Dec 2023 10:13:58 +0000
+
+kdeconnect (23.08.3-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Nov 2023 11:33:27 +0000
+
+kdeconnect (23.08.2-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Jesse Rhodes ]
+  * New upstream release (23.08.2).
+  * Update build-deps and deps with info from cmake.
+
+ -- Jesse Rhodes <jesse@sney.ca>  Sun, 15 Oct 2023 10:35:13 -0400
+
+kdeconnect (23.08.2-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 26 Oct 2023 12:29:43 +0100
+
+kdeconnect (23.08.1-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Sep 2023 11:57:47 +0100
+
+kdeconnect (23.08.0-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 24 Aug 2023 12:52:41 +0100
+
+kdeconnect (23.07.90-0ubuntu1) mantic; urgency=medium
+
+  * New upstream (beta) release (23.07.80)
+  * New upstream (RC) release (23.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 15 Aug 2023 02:32:35 +0100
+
+kdeconnect (23.04.3-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jul 2023 14:45:12 +0100
+
+kdeconnect (23.04.2-0ubuntu1) mantic; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * New upstream release (23.04.1)
+  * Update Build-Depends:
+    - add modemmanager-qt-dev
+    - add wayland-protocols
+  * New upstream release (23.04.2)
+
+  [ Rik Mills ]
+  * Add runtime depends on qml-module-org-kde-kirigami-addons-labs-
+    mobileform, as indicated in cmake output.
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 10 Jun 2023 11:55:50 +0100
+
+kdeconnect (22.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.3).
+  * Update build-deps and deps with the info from cmake.
+  * Drop patch upstream_nautilus-drop-spurious-shebang.patch applied upstream.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 01 Mar 2023 11:57:49 +0100
+
+kdeconnect (22.12.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.3)
+  * Drop no longer needed python shebang patch.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 02 Mar 2023 12:16:00 +0000
+
+kdeconnect (22.12.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Re-export upstream signing key without extra signatures.
+  * Remove inactive Uploaders.
+  * Modernize building:
+    - add the dh-sequence-kf5 build dependency to use the kf5 addon
+      automatically, removing pkg-kde-tools
+    - drop all the manually specified addons and buildsystem for dh
+  * Backport upstream commit 71803f04d8521199dfa6960f5b84801d9f35d9ee to drop
+    the spurious shebang in the nautilus plugin; patch
+    upstream_nautilus-drop-spurious-shebang.patch
+    - drop the patch fix-python3-interpreter-location, no more needed now
+  * Update the patches:
+    - kdeconnect-openssh-8.2.patch: refresh
+
+ -- Pino Toscano <pino@debian.org>  Sun, 05 Feb 2023 09:34:13 +0100
+
+kdeconnect (22.12.2-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.2)
+  * Refresh OpenSSL patch.
+
+ -- Simon Quigley <tsimonq2@kubuntu.org>  Sat, 11 Feb 2023 14:14:36 -0600
+
+kdeconnect (22.12.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.1).
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Add Albert Astals Cid’s master key to upstream signing keys.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 06 Jan 2023 23:05:20 +0100
+
+kdeconnect (22.12.1-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jan 2023 11:13:38 +0000
+
+kdeconnect (22.12.0-2ubuntu1) lunar; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Update upstream signing key.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 28 Dec 2022 14:00:38 +0000
+
+kdeconnect (22.12.0-2) unstable; urgency=medium
+
+  * Upload with a correctly released changelog.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Dec 2022 16:04:36 +0100
+
+kdeconnect (22.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.08.3).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.1, no change required.
+  * Update the list of installed files from build logs.
+  * Update the list of installed files from build logs.
+  * New upstream release (22.11.90).
+  * Update build-deps and deps with the info from cmake.
+  * Refresh patches.
+  * Drop patch nautilus-43-compat.patch, applied upstream.
+  * New upstream release (22.12.0).
+  * Refresh lintian overrides.
+  * Refresh copyright information.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Dec 2022 00:12:53 +0100
+
+kdeconnect (22.12.0-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 09 Dec 2022 19:07:47 +0000
+
+kdeconnect (22.11.90-0ubuntu1) lunar; urgency=medium
+
+  * New upstream (RC) release (22.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Nov 2022 16:04:08 +0000
+
+kdeconnect (22.11.80-0ubuntu1) lunar; urgency=medium
+
+  * New upstream (beta) release (22.11.80)
+  * Update kdeconnect-openssh-8.2.patch
+  * Drop included nautilus-43-compat.patch
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 14 Nov 2022 10:49:33 +0000
+
+kdeconnect (22.08.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 07 Nov 2022 11:07:40 +0000
+
+kdeconnect (22.08.2-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream bugfix release (22.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 Oct 2022 08:14:19 +0100
+
+kdeconnect (22.08.1-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Sep 2022 07:38:36 +0100
+
+kdeconnect (22.08.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.08.0)
+  * Build depend on plasma-wayland-protocols.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 24 Aug 2022 09:48:39 +0100
+
+kdeconnect (22.04.3-0ubuntu2) kinetic; urgency=medium
+
+  * Patch for nautilus 43 compatibility
+
+ -- Erich Eickmeyer <eeickmeyer@ubuntu.com>  Wed, 17 Aug 2022 10:55:14 -0700
+
+kdeconnect (22.04.3-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Jul 2022 09:26:04 +0100
+
+kdeconnect (22.04.2-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jun 2022 08:00:03 +0100
+
+kdeconnect (22.04.1-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 May 2022 20:57:25 +0100
+
+kdeconnect (22.04.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.0)
+  * Update lintian overrides.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 02 May 2022 06:46:32 +0100
+
+kdeconnect (21.12.3-2) unstable; urgency=medium
+
+  * Team upload.
+  * Backport patch to fix Nautilus 43 compatibility (Closes: #1018884).
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sat, 03 Sep 2022 13:18:07 -0300
+
+kdeconnect (21.12.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update the build dependencies according to the upstream build system:
+    - add libkf5package-dev
+  * Update install files.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 05 Mar 2022 15:02:06 +0100
+
+kdeconnect (21.12.3-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Mar 2022 10:09:08 +0000
+
+kdeconnect (21.12.2-0ubuntu1) jammy; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key
+
+  [ Rik Mills ]
+  * New upstream release (21.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Feb 2022 07:15:36 +0000
+
+kdeconnect (21.12.1-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jan 2022 10:23:26 +0000
+
+kdeconnect (21.12.0-0ubuntu1) jammy; urgency=medium
+
+  [ Rik Mills ]
+  * New upstream release (21.12.0)
+  * Set maintainer to Kubuntu Developers.
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Dec 2021 11:20:29 +0000
+
+kdeconnect (21.11.90-0ubuntu2) jammy; urgency=medium
+
+  * Add Kubuntu Vcs fields.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 28 Nov 2021 19:04:40 +0000
+
+kdeconnect (21.11.90-0ubuntu1) jammy; urgency=medium
+
+  * New upstream (RC) release (21.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 26 Nov 2021 13:15:47 +0000
+
+kdeconnect (21.11.80-0ubuntu1) jammy; urgency=medium
+
+  * New upstream (beta) release (21.11.80)
+  * Update build deps from cmake.
+  * Update install files.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 21 Nov 2021 18:24:59 +0000
+
+kdeconnect (21.08.3-1ubuntu1) jammy; urgency=medium
+
+  * Merge with Debian unstable. Remaining changes:
+    - Don't depend for now on fuse3 or sshfs >= 3 until fuse3
+      transition is complete in Ubuntu.
+    - Runtime depend on qml-module-org-kde-qqc2desktopstyle.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 19 Nov 2021 09:47:29 +0000
+
+kdeconnect (21.08.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * CI: enable blhc again, as it should work fine now.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 06 Nov 2021 08:40:51 +0100
+
+kdeconnect (21.08.3-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 15 Nov 2021 09:38:46 +0000
+
+kdeconnect (21.08.2-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Norbert Preining ]
+  * Disable BLHC of Salsa CI.
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Bump Standards-Version to 4.6.0, no changes required.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 09 Oct 2021 21:57:18 +0200
+
+kdeconnect (21.08.1-0ubuntu2) jammy; urgency=medium
+
+  * No-change rebuild against libkf5pulseaudioqt3
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 07 Nov 2021 07:39:19 +0000
+
+kdeconnect (21.08.1-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.08.1)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Thu, 09 Sep 2021 22:32:28 +0100
+
+kdeconnect (21.08.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.08.0).
+  * Add missing B-Ds.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 18 Aug 2021 09:10:24 +0900
+
+kdeconnect (21.08.0-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Aug 2021 09:00:54 +0100
+
+kdeconnect (21.07.90-0ubuntu1) impish; urgency=medium
+
+  * New upstream (RC) release (21.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 02 Aug 2021 12:53:55 +0100
+
+kdeconnect (21.07.80-0ubuntu1) impish; urgency=medium
+
+  * New upstream (beta) release (21.07.80)
+  * Update build deps.
+  * Add qml-module-org-kde-qqc2desktopstyle to runtime depends.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 17 Jul 2021 22:11:04 +0100
+
+kdeconnect (21.04.3-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jul 2021 11:41:48 +0100
+
+kdeconnect (21.04.2-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 10 Jun 2021 10:38:20 +0100
+
+kdeconnect (21.04.1-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 May 2021 09:04:59 +0100
+
+kdeconnect (21.04.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.04.0).
+  * Added myself to the uploaders.
+  * Update build dependencies from cmake.
+  * Update list of installed files.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 28 Apr 2021 13:57:54 +0900
+
+kdeconnect (21.04.0-0ubuntu1) impish; urgency=medium
+
+  [ Rik Mills ]
+  * New upstream release (21.04.0)
+  * Update build deps.
+  * Update install files.
+
+  [ José Manuel Santamaría Lema ]
+  * Add lintian override for *.desktop service file
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 29 Apr 2021 01:33:39 +0100
+
+kdeconnect (20.12.3-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Norbert Preining ]
+  * Add Breaks: fuse (<< 3) and Depends: fuse3 (>= 3) and bump sshfs Depends
+    to (>= 3) to ensure fuse gets replaced by fuse3 on upgrades from buster.
+    (Thanks to Andreas Beckmann) (Closes: #990764)
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 07 Jul 2021 04:16:39 +0900
+
+kdeconnect (20.12.3-1) unstable; urgency=medium
+
+  * New upstream release (20.12.3).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 08 Mar 2021 22:43:49 +0100
+
+kdeconnect (20.12.2-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Nicolas Fella ]
+  * Drop now unnecessary dependency to kde-cli-tools.
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Update upstream GPG signing key.
+  * Remove the explicit as-needed linking, as it is done by binutils now.
+  * Drop the unused kdeconnect-app.lintian-overrides file.
+  * Rename docs to kdeconnect.docs, to make it clear which package it refers
+    to.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 04 Feb 2021 14:06:51 +0100
+
+kdeconnect (20.12.0-4) unstable; urgency=medium
+
+  * Add Breaks+Replaces: kdeconnect (<< 20.12) (Closes: #979420).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 06 Jan 2021 16:10:02 +0100
+
+kdeconnect (20.12.0-3) unstable; urgency=medium
+
+  * Remove unneeded runtime dependency kde-telepathy-kpeople.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 05 Jan 2021 21:22:21 +0100
+
+kdeconnect (20.12.0-2) unstable; urgency=medium
+
+  * Fix runtime dependency to kpeople-vcard for vCard support.
+  * Sync long description with Kubuntu.
+  * Prefer the specific project homepage over the generic apps page.
+  * Drop lintian override for desktop-entry-limited-to-environments, will be
+    fixed upstream in the next release.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 05 Jan 2021 16:17:48 +0100
+
+kdeconnect (20.12.0-1) unstable; urgency=medium
+
+  * Add Recommends: kdeconnect-kpeople-vcard-plugin which is now a runtime
+    dependency of kdeconnect.
+  * New upstream release (20.12.0).
+  * Refresh copyright information.
+  * Bump Standards-Version to 4.5.1, no change required.
+  * Refresh upstream metadata.
+  * Update project homepage.
+  * Removed Maximiliano Curia from the uploaders, thanks for your work
+    on the package!
+  * Split the Nautilus extension into its own package so it can correctly
+    depend on python3-nautilus.
+  * Add various missing QML runtime dependendencies, drop dependency on
+    qml-module-qtquick-controls, not needed anymore.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 31 Dec 2020 12:30:27 +0100
+
+kdeconnect (20.08.3-1) unstable; urgency=medium
+
+  * New upstream release (20.08.3).
+  * Add patch to fix Python interpreter location in Debian for the Nautilus
+    extension.
+  * Add lintian overrides:
+    - Missing manpage for kdeconnect-app, it has no command line arguments.
+    - desktop-entry-limited-to-environments, kdeconnect is really only working
+      in Plasma.
+  * Add myself to the uploaders.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 09 Nov 2020 23:17:30 +0100
+
+kdeconnect (20.08.2-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Nicolas Fella ]
+  * Add dependency on QtQuick Particles QML module, used in the presenter.
+
+  [ Aurélien COUDERC ]
+  * New upstream release (20.08.2).
+  * Update the build dependencies according to the upstream build system:
+    - bump KF packages to 5.71.0
+    - add libkf5solid-dev
+  * Add lintian override for kdeconnect-app having no manual as it doesn’t
+    have command line arguments.
+  * Build with hardening=+all build hardening flag.
+  * Review copyright information.
+  * Borrow minimal upstream signing key from k3b.
+  * Refresh upstream metadata.
+  * Bump the debhelper compatibility to 13.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 27 Oct 2020 22:53:05 +0100
+
+kdeconnect (20.04.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Switch python-nautilus suggest to python3-nautilus. (Closes: #958724)
+
+ -- Pino Toscano <pino@debian.org>  Fri, 31 Jul 2020 07:43:53 +0200
+
+kdeconnect (20.04.2-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * We don't need disable_networkPackageIdentityTest.patch anymore to
+    pass tests.
+
+  [ Maximiliano Curia ]
+  * Update watch file
+  * New upstream release (1.3.5). (Closes: #940489)
+
+  [ Nicolas Fella ]
+  * Point to new website.
+  * Remove suggestion of plasma-workspace.
+
+  [ Pino Toscano ]
+  * New upstream release from KDE's release-service.
+  * Update Vcs-* fields.
+  * Update watch file and signing key for KDE's release-service.
+  * Update the patches:
+    - fix_typos_in_lanlinkprovider.cpp.patch: drop, fixed upstream
+    - ssl_socket_race_fix.diff: drop, fixed upstream
+  * Update the build dependencies according to the upstream build system:
+    - bump Qt packages to 5.10.0
+    - bump KF packages to 5.64.0
+    - add kirigami2-dev, libkf5people-dev, libkf5pulseaudioqt-dev,
+      libkf5wayland-dev, and qtmultimedia5-dev
+    - remove libkf5config-dev, and libkf5declarative-dev
+    - explicitly add gettext
+  * Drop the 'testsuite' autopkgtest, as it does not test the installed
+    packages.
+  * Unregister the removed /etc/xdg/autostart/kdeconnectd.desktop conffile.
+  * Bump Standards-Version to 4.5.0, no changes required.
+  * Add Rules-Requires-Root: no.
+  * Add the configuration for the CI on salsa.
+  * Bump the debhelper compatibility to 12:
+    - switch the debhelper build dependency to debhelper-compat 12
+    - remove debian/compat
+  * Add the qml-module-org-kde-kirigami2 and qml-module-org-kde-people
+    dependencies, as hinted by the build system.
+  * Pass -DBUILD_TESTING=OFF to cmake to disable the build of tests, as they
+    are not run at build time anyway
+    - drop the libqca-qt5-2-plugins build dependency, no more needed now
+  * Temporarily enable the diffie-hellman-group14-sha1 key exchange algorithm,
+    as the Android application still uses it; backport the
+    kdeconnect-openssh-8.2.patch Arch Linux patch done by Antonio Rojas.
+    (Closes: #953843)
+
+ -- Pino Toscano <pino@debian.org>  Fri, 12 Jun 2020 09:59:36 +0200
+
+kdeconnect (1.3.3-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add ssl_socket_race_fix.diff to fix a race condition on tests.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Sun, 30 Dec 2018 17:33:01 -0300
+
+kdeconnect (1.3.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Simplify handling of build flags: debhelper since compat 9 already passes
+    all the right flags to cmake, so use the dpkg-buildflags envvars to only
+    link in as-needed mode.
+  * Stop using the pkgkde-symbolshelper dh addon, since there are no symbols.
+  * Bump Standards-Version to 4.2.1, no changes required.
+  * Drop the Debian-provided kdeconnect-cli man page: very outdated, not
+    touched in the last 4 years, and thus not useful. (Closes: #900710)
+
+ -- Pino Toscano <pino@debian.org>  Mon, 12 Nov 2018 08:57:34 +0100
+
+kdeconnect (1.3.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Maximiliano Curia ]
+  * New revision
+  * Drop --parallel dh option, obsolete with dh >= 11
+  * Update Vcs fields
+
+  [ Nicholas D Steeves ]
+  * Enable GPG signature verification of upstream tarball.
+  * Add Albert Vaca Cintora's (the upstream maintainer) gpg key.
+  * New upstream version 1.3.1.
+  * Use 'wrap-and-sort -bst' to sort dependencies.
+  * Add fix_typos_in_lanlinkprovider.cpp.patch
+  * Update upstream homepage URL.
+  * Use secure URL for copyright format.
+  * Add upstream metadata.
+
+ -- Nicholas D Steeves <nsteeves@gmail.com>  Fri, 01 Jun 2018 16:07:13 -0400
+
+kdeconnect (1.3.0-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Update watch file
+  * New upstream release (1.2.1).
+  * Set the team as the maintainer
+  * Drop plasma-workspace runtime dependency
+  * Update testsuite
+  * Bump to Standards-Version 4.1.4
+  * Add suggests:
+     + plasma-workspace, for the plasmoid
+     + python-nautilus for the nautilus integration
+  * New upstream release (1.3.0).
+  * Update build-deps and deps with the info from cmake
+  * Update copyright information
+  * Refresh patches
+  * Release to unstable
+
+  [ Vangelis Mouhtsis ]
+  * debian/{control,compat}: Bump DH version level to 11.
+  * debian/control: Bump Standards-Version: to 4.1.3. No changes needed.
+  * debian/control: Update Vcs-*: fields to salsa.debian.org.
+
+  [ Scarlett Clark ]
+  * Add missing qml modules
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 10 Apr 2018 17:24:16 +0200
+
+kdeconnect (1.0.3-1) unstable; urgency=medium
+
+  * New upstream release (1.0.3).
+  * debian/watch: use https
+  * Bump Standards-Version to 4.0.0, no changes needed.
+  * Update vcs fields
+  * Update Homepage field
+  * Update build-deps and deps with the info from cmake
+  * Add a .gitattributes file to use dpkg-mergechangelogs
+  * Refresh patches
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 13 Jul 2017 20:22:08 +0200
+
+kdeconnect (1.0.1-1) unstable; urgency=medium
+
+  [ Lisandro Damián Nicanor Pérez Meyer ]
+  * New upstream release (Closes: #833650).
+  * Update debian/watch: kdeconnect is now stable.
+
+  [ Diederik de Haas ]
+  * Update homepage (Closes: #802189).
+
+  [ Maximiliano Curia ]
+  * New upstream release (1.0.1).
+  * Refresh patches
+  * Use dbus-run-session instead of dbus-launch
+  * Update copyright information.
+
+  [ Harald Sitter ]
+  * do not run tests at build time
+  * run test through xvfb as we now need workign xcb for some tests
+  * install openbox, it's being forked as part of the test...
+  * force all tests to fork kio slaves from themself
+
+  [ Jonathan Riddell ]
+  * add xvfb install for tests
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 14 Oct 2016 16:21:07 +0200
+
+kdeconnect (0.9g-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Switch to KF5.
+    - Remove all Qt4/Plasma 4 related packages from build dpendencies and
+      dependencies.
+    - Add new build dependencies and dependencies as required. Thanks to the
+      Ubuntu folks for they work! I have taken most of the correct build deps
+      names from your packaging.
+    - Remove unnecessary removals in debian/rules.
+  * Update README.md installation.
+  * Disable NetworkPackageTests::networkPackageIdentityTest as it seems to
+    run fine with network access but fail without it (and thus on sbuild).
+  * Add libqca-qt5-2-plugins as a build dependency, it is needed by the tests.
+  * Update lintian overrides.
+  * Update and simplify debian/copyright.
+
+ -- Lisandro Damián Nicanor Pérez Meyer <lisandro@debian.org>  Fri, 05 Feb 2016 00:53:25 -0300
+
+kdeconnect (0.8-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Update copyright.
+  * Update standards version; no changes needed.
+  * debian/control:
+      - Add libfakekey-dev and libdbus-1-dev as a build dependency.
+      - Change runtime depend to libqca2-plugins instead of deprecated
+          libqca2-plugins-{gnupg, ossl} packages.
+      - Update Vcs-Browser to use cgit.
+  * Remove some older false positives in lintian overrides that are fixed:
+      - 'desktop-command-not-in-package' for kcmshell4.
+      - 'desktop-entry-lacks-keywords-entry' for kdeconnect.desktop.
+
+ -- David Suárez <david.sephirot@gmail.com>  Sun, 21 Jun 2015 14:15:31 +0200
+
+kdeconnect (0.7.2-1) unstable; urgency=medium
+
+  * New upstream version.
+  * Drop patch 'provide-versioned-so-for-kdeconnectcore'.
+      Upstream implemented it.
+  * Add sshfs as a runtime dependency (Closes: #754300).
+      Is needed to remote browsing the devices filesystems.
+
+ -- David Suárez <david.sephirot@gmail.com>  Mon, 08 Sep 2014 20:27:20 +0200
+
+kdeconnect (0.7-1) unstable; urgency=medium
+
+  * New upstream version. (Closes: #753391)
+  * Add 'provide-versioned-so-for-kdeconnectcore' patch.
+  * Update lintian overrides.
+  * debian/rules: remove more development files in order to avoid
+      shipping them.
+  * debian/control: add libxtst-dev as a build dependency.
+
+ -- David Suárez <david.sephirot@gmail.com>  Tue, 01 Jul 2014 18:11:53 +0200
+
+kdeconnect (0.5.2.1-1) unstable; urgency=low
+
+  * New upstream version
+  * Drop 'remove-xdg-open-shebang' patch
+  * Point Vcs headers to debian git repository
+  * Update copyright file
+
+ -- David Suárez <david.sephirot@gmail.com>  Sun, 18 May 2014 15:50:33 +0200
+
+kdeconnect (0.4.2-2) unstable; urgency=low
+
+  * Add libqca2-plugin-gnupg and libqca2-plugin-ossl runtime depends.
+    (Closes: #735850)
+
+ -- David Suárez <david.sephirot@gmail.com>  Mon, 27 Jan 2014 19:56:34 +0100
+
+kdeconnect (0.4.2-1) unstable; urgency=low
+
+  * Initial release (Closes: #734374)
+
+ -- David Suárez <david.sephirot@gmail.com>  Sun, 12 Jan 2014 02:14:23 +0100

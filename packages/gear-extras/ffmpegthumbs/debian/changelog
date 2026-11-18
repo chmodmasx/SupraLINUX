@@ -1,0 +1,1272 @@
+ffmpegthumbs (4:25.12.3-0supralinux1) resolute; urgency=medium
+
+  * Package ffmpegthumbs for the KDE desktop completeness set.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+ffmpegthumbs (4:25.12.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Mar 2026 13:44:56 +0000
+
+ffmpegthumbs (4:25.12.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Feb 2026 12:17:50 +0000
+
+ffmpegthumbs (4:25.12.1-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 21:37:54 +0000
+
+ffmpegthumbs (4:25.12.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jan 2026 10:57:10 +0000
+
+ffmpegthumbs (4:25.12.0-1ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for ffmpeg 8.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 26 Dec 2025 12:03:03 +0000
+
+ffmpegthumbs (4:25.12.0-1ubuntu1) resolute; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 16 Dec 2025 16:48:12 +0000
+
+ffmpegthumbs (4:25.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Point upstream source to invent git repo.
+
+  [ Pino Toscano ]
+  * New upstream release:
+    - build with FFmpeg 8+ (Closes: #1115019)
+  * Drop Rules-Requires-Root: no, no more needed since Debian trixie.
+  * Stop passing -DQT_MAJOR_VERSION=6 to cmake, as ffmpegthumbs supports only
+    Qt 6 now.
+  * Trim trailing whitespace.
+  * Re-export upstream signing key without extra signatures.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 16 Dec 2025 11:04:08 +0100
+
+ffmpegthumbs (4:25.12.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Dec 2025 12:13:52 +0000
+
+ffmpegthumbs (4:25.11.90-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (RC) release (25.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 28 Nov 2025 13:58:48 +0000
+
+ffmpegthumbs (4:25.11.80-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (beta) release (25.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 16 Nov 2025 05:49:16 +0000
+
+ffmpegthumbs (4:25.08.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Nov 2025 12:10:45 +0000
+
+ffmpegthumbs (4:25.08.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 11:39:02 +0100
+
+ffmpegthumbs (4:25.08.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Sep 2025 06:50:31 +0100
+
+ffmpegthumbs (4:25.08.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Aug 2025 11:19:43 +0100
+
+ffmpegthumbs (4:25.07.90-0ubuntu1) questing; urgency=medium
+
+  * New upstream (RC) release (25.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Jul 2025 17:28:05 +0100
+
+ffmpegthumbs (4:25.07.80-0ubuntu1) questing; urgency=medium
+
+  * New upstream (beta) release (25.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 12 Jul 2025 18:02:48 +0100
+
+ffmpegthumbs (4:25.04.3-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Jul 2025 07:36:03 +0100
+
+ffmpegthumbs (4:25.04.2-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 11:37:42 +0100
+
+ffmpegthumbs (4:25.04.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 May 2025 22:00:44 +0100
+
+ffmpegthumbs (4:25.04.0-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Update project homepage.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 30 Apr 2025 22:20:58 +0200
+
+ffmpegthumbs (4:25.04.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release (25.04.0).
+
+ -- Boyuan Yang <byang@debian.org>  Mon, 21 Apr 2025 19:02:31 -0400
+
+ffmpegthumbs (4:25.04.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 30 Apr 2025 19:41:40 +0100
+
+ffmpegthumbs (4:24.12.3-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release (24.12.3).
+  * debian/control: Bump Standards-Version to 4.7.2.
+
+ -- Boyuan Yang <byang@debian.org>  Mon, 31 Mar 2025 09:49:23 -0400
+
+ffmpegthumbs (4:24.12.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Mar 2025 08:35:56 +0000
+
+ffmpegthumbs (4:24.12.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Feb 2025 14:10:45 +0000
+
+ffmpegthumbs (4:24.12.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release (24.12.1).
+  * debian/control: Drop build-dependency on libtag1-dev. Upstream is
+    not using taglib anymore.
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 17 Jan 2025 15:23:52 -0500
+
+ffmpegthumbs (4:24.12.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 14:24:58 +0000
+
+ffmpegthumbs (4:24.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.12.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 25 Dec 2024 19:15:37 +0100
+
+ffmpegthumbs (4:24.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Dec 2024 17:03:10 +0000
+
+ffmpegthumbs (4:24.11.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (RC) release (24.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 29 Nov 2024 14:02:17 +0000
+
+ffmpegthumbs (4:24.11.80-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (beta) release (24.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 Nov 2024 19:41:12 +0000
+
+ffmpegthumbs (4:24.08.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 11:35:58 +0000
+
+ffmpegthumbs (4:24.08.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 04 Nov 2024 10:00:02 +0000
+
+ffmpegthumbs (4:24.08.1-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (24.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Sep 2024 06:23:53 +0100
+
+ffmpegthumbs (4:24.08.0-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Release to unstable. (Closes: #1089620)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 10 Dec 2024 08:11:02 +0100
+
+ffmpegthumbs (4:24.08.0-1ubuntu1) oracular; urgency=medium
+
+  * Merge from debian experimental.
+
+ -- Scarlett Moore <sgmoore@debian.org>  Thu, 29 Aug 2024 04:50:59 -0700
+
+ffmpegthumbs (4:24.08.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (24.08.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 24 Aug 2024 12:41:26 +0200
+
+ffmpegthumbs (4:24.05.2-1) experimental; urgency=medium
+
+  [ Debian Qt/KDE Maintainers ]
+  * New upstream release (24.05.2).
+
+  [ Scarlett Moore ]
+  * Add myself to uploaders.
+  * Update dependencies according to cmake.
+  * Remove kf5 from rules.
+  * Refresh copyright.
+  * Override cmake options for qt6 build.
+  * Bumpstandards to 4.7.0; no changes required.
+
+ -- Scarlett Moore <sgmoore@debian.org>  Tue, 06 Aug 2024 10:44:17 -0700
+
+ffmpegthumbs (4:23.08.5-0ubuntu4) noble; urgency=high
+
+  * No change rebuild against libqt5core5t64, libqt5gui5t64.
+
+ -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 08 Apr 2024 16:39:00 +0200
+
+ffmpegthumbs (4:23.08.5-0ubuntu3) noble; urgency=medium
+
+  * No-change rebuild for CVE-2024-3094
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Sun, 31 Mar 2024 08:52:46 +0000
+
+ffmpegthumbs (4:23.08.5-0ubuntu2) noble; urgency=medium
+
+  * No-change rebuild against libqt5core5t64
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Fri, 15 Mar 2024 04:23:19 +0000
+
+ffmpegthumbs (4:23.08.5-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.5)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Thu, 22 Feb 2024 09:30:43 -0700
+
+ffmpegthumbs (4:23.08.4-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.4)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Wed, 13 Dec 2023 10:11:29 +0000
+
+ffmpegthumbs (4:23.08.3-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Nov 2023 11:30:38 +0000
+
+ffmpegthumbs (4:23.08.2-0ubuntu1) noble; urgency=medium
+
+  * New upstream release (23.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 26 Oct 2023 12:27:00 +0100
+
+ffmpegthumbs (4:23.08.1-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Sep 2023 11:55:11 +0100
+
+ffmpegthumbs (4:23.08.0-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 24 Aug 2023 12:50:01 +0100
+
+ffmpegthumbs (4:23.07.90-0ubuntu1) mantic; urgency=medium
+
+  * New upstream (beta) release (23.07.80)
+  * New upstream (RC) release (23.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 15 Aug 2023 02:30:06 +0100
+
+ffmpegthumbs (4:23.04.3-0ubuntu2) mantic; urgency=medium
+
+  * Rebuild against new libavcodec60.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Sat, 29 Jul 2023 21:47:34 +0200
+
+ffmpegthumbs (4:23.04.3-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jul 2023 14:42:13 +0100
+
+ffmpegthumbs (4:23.04.2-0ubuntu1) mantic; urgency=medium
+
+  * New upstream release (23.04.1)
+  * New upstream release (23.04.2)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 10 Jun 2023 11:53:47 +0100
+
+ffmpegthumbs (4:22.12.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 02 Mar 2023 00:34:13 +0000
+
+ffmpegthumbs (4:22.12.2-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.2)
+
+ -- Simon Quigley <tsimonq2@kubuntu.org>  Sat, 11 Feb 2023 14:10:36 -0600
+
+ffmpegthumbs (4:22.12.1-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jan 2023 11:11:26 +0000
+
+ffmpegthumbs (4:22.12.0-2ubuntu1) lunar; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Update upstream signing key.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 19 Dec 2022 09:07:35 +0000
+
+ffmpegthumbs (4:22.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.3).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 01 Mar 2023 11:57:44 +0100
+
+ffmpegthumbs (4:22.12.1-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.12.1).
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Add Albert Astals Cid’s master key to upstream signing keys.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 06 Jan 2023 22:33:25 +0100
+
+ffmpegthumbs (4:22.12.0-2) unstable; urgency=medium
+
+  * Upload with a correctly released changelog.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Dec 2022 16:04:26 +0100
+
+ffmpegthumbs (4:22.12.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (22.08.3).
+  * New upstream release (22.11.90).
+  * New upstream release (22.12.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Dec 2022 00:12:48 +0100
+
+ffmpegthumbs (4:22.12.0-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 09 Dec 2022 19:05:05 +0000
+
+ffmpegthumbs (4:22.11.90-0ubuntu1) lunar; urgency=medium
+
+  * New upstream (RC) release (22.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Nov 2022 16:01:30 +0000
+
+ffmpegthumbs (4:22.11.80-0ubuntu1) lunar; urgency=medium
+
+  * New upstream (beta) release (22.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 14 Nov 2022 10:47:40 +0000
+
+ffmpegthumbs (4:22.08.3-0ubuntu1) lunar; urgency=medium
+
+  * New upstream release (22.08.2)
+  * New upstream release (22.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 07 Nov 2022 11:05:09 +0000
+
+ffmpegthumbs (4:22.08.1-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Sep 2022 07:35:51 +0100
+
+ffmpegthumbs (4:22.08.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 24 Aug 2022 09:46:13 +0100
+
+ffmpegthumbs (4:22.04.3-0ubuntu2) kinetic; urgency=medium
+
+  * No-change rebuild against libavcodec59
+
+ -- Steve Langasek <steve.langasek@ubuntu.com>  Tue, 19 Jul 2022 12:49:35 +0000
+
+ffmpegthumbs (4:22.04.3-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Jul 2022 09:23:27 +0100
+
+ffmpegthumbs (4:22.04.2-1ubuntu1) kinetic; urgency=medium
+
+  * Merge from debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Update upstream signing key.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 24 Jun 2022 08:05:00 +0100
+
+ffmpegthumbs (4:22.04.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Update the patches:
+    - ffmpeg-5.0.patch: drop, backported from upstream
+  * Bump Standards-Version to 4.6.1, no changes required.
+  * Remove the explicit as-needed linking, as it is done by binutils now.
+  * Add the configuration for the CI on salsa.
+  * Remove inactive Uploaders.
+  * debian/copyright: use spaces rather than tabs to start continuation lines.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 24 Jun 2022 08:10:32 +0200
+
+ffmpegthumbs (4:22.04.2-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jun 2022 07:57:06 +0100
+
+ffmpegthumbs (4:22.04.1-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 11 May 2022 20:53:54 +0100
+
+ffmpegthumbs (4:22.04.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release (22.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 02 May 2022 06:43:42 +0100
+
+ffmpegthumbs (4:21.12.3-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Apply upstream patch to fix build with ffmpeg 5.0 (Closes: #1004610)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 03 Apr 2022 19:13:05 +0200
+
+ffmpegthumbs (4:21.12.3-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (21.12.3).
+  * Bump Standards-Version to 4.6.0, no change required.
+  * Added myself to the uploaders.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 06 Mar 2022 17:16:43 +0100
+
+ffmpegthumbs (4:21.12.3-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Mar 2022 10:06:18 +0000
+
+ffmpegthumbs (4:21.12.2-0ubuntu1) jammy; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key
+
+  [ Rik Mills ]
+  * New upstream release (21.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Feb 2022 07:12:48 +0000
+
+ffmpegthumbs (4:21.12.1-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release (21.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Jan 2022 10:20:41 +0000
+
+ffmpegthumbs (4:21.12.0-0ubuntu1) jammy; urgency=medium
+
+  [ Rik Mills ]
+  * New upstream release (21.12.0)
+  * Set maintainer to Kubuntu Developers.
+
+  [ José Manuel Santamaría Lema ]
+  * Update upstream signing key
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Dec 2021 11:17:28 +0000
+
+ffmpegthumbs (4:21.11.90-0ubuntu2) jammy; urgency=medium
+
+  * Add Kubuntu Vcs fields.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 28 Nov 2021 19:01:54 +0000
+
+ffmpegthumbs (4:21.11.90-0ubuntu1) jammy; urgency=medium
+
+  * New upstream (RC) release (21.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 26 Nov 2021 13:13:03 +0000
+
+ffmpegthumbs (4:21.11.80-0ubuntu1) jammy; urgency=medium
+
+  * New upstream (beta) release (21.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 21 Nov 2021 18:22:41 +0000
+
+ffmpegthumbs (4:21.08.3-0ubuntu1) jammy; urgency=medium
+
+  [ José Manuel Santamaría Lema ]
+  * New upstream release (21.08.2)
+
+  [ Rik Mills ]
+  * New upstream release (21.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 15 Nov 2021 09:36:12 +0000
+
+ffmpegthumbs (4:21.08.1-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.08.1)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Thu, 09 Sep 2021 22:29:59 +0100
+
+ffmpegthumbs (4:21.08.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.08.0).
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 16 Aug 2021 15:44:42 +0900
+
+ffmpegthumbs (4:21.08.0-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Aug 2021 08:58:02 +0100
+
+ffmpegthumbs (4:21.07.90-0ubuntu1) impish; urgency=medium
+
+  * New upstream (RC) release (21.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 02 Aug 2021 12:50:27 +0100
+
+ffmpegthumbs (4:21.07.80-0ubuntu1) impish; urgency=medium
+
+  * New upstream (beta) release (21.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 18 Jul 2021 20:30:30 +0100
+
+ffmpegthumbs (4:21.04.3-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jul 2021 11:38:50 +0100
+
+ffmpegthumbs (4:21.04.2-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 10 Jun 2021 10:35:05 +0100
+
+ffmpegthumbs (4:21.04.1-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 May 2021 09:02:03 +0100
+
+ffmpegthumbs (4:21.04.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (21.04.0).
+  * Borrow minimal upstream signing key from k3b.
+  * Drop Kubuntu from maintainer name.
+  * Removed Maximiliano Curia from the uploaders, thanks for your work
+    on the package!
+  * Added myself to the uploaders.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 28 Apr 2021 09:45:42 +0900
+
+ffmpegthumbs (4:21.04.0-0ubuntu1) impish; urgency=medium
+
+  * New upstream release (21.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 29 Apr 2021 01:29:44 +0100
+
+ffmpegthumbs (4:20.12.3-0ubuntu1) hirsute; urgency=medium
+
+  * New upstream release (20.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 04 Mar 2021 15:15:23 +0000
+
+ffmpegthumbs (4:20.12.2-0ubuntu1) hirsute; urgency=medium
+
+  * New upstream release (20.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 04 Feb 2021 09:49:47 +0000
+
+ffmpegthumbs (4:20.12.1-0ubuntu1) hirsute; urgency=medium
+
+  * New upstream release (20.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 20 Jan 2021 23:07:26 +0000
+
+ffmpegthumbs (4:20.12.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release (20.12.0).
+  * Update build dependencies according to upstream build system:
+    - bump extra-cmake-modules to >= 5.14.0
+    - add libtag1-dev
+  * Refresh copyright information.
+  * Bump Standards-Version to 4.5.1 (no change required).
+  * Update project homepage.
+  * Refresh upstream metadata:
+    - simplify Bug-Database URL
+    - drop Contact and Name fields already present in machine readable
+      copyright
+    - move VCS URLs to invent.kde.org
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 12 Dec 2020 16:09:23 +0100
+
+ffmpegthumbs (4:20.04.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release (20.04.2).
+  * Bump dh compatibility level to 13.
+  * Add Bug-* URLs to upstream metadata.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 15 Jun 2020 09:43:03 +0200
+
+ffmpegthumbs (4:19.12.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * Update project homepage URL.
+  * New upstream minor release (19.12.2).
+  * Bump Standards-Version to 4.5.0 (no change required).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 08 Feb 2020 16:23:37 +0100
+
+ffmpegthumbs (4:19.12.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Aurélien COUDERC ]
+  * New upstream minor release (19.12.1).
+  * Fix copyright attribution for app metadata.
+  * Move from dhmk to dh --with kf5.
+  * Borrow minimal upstream signing key from k3b.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 10 Jan 2020 18:25:36 +0100
+
+ffmpegthumbs (4:19.12.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Aurélien COUDERC ]
+  * New upstream release (19.12.0).
+  * Refresh debian/copyright.
+  * Drop l10n migration rules after 2 stable releases.
+  * debian/control:
+    - use debhelper-compat dependency and bump level to 12
+    - add Rules-Requires-Root: no
+    - bump Standards-Version to 4.4.1 (no change required)
+  * debian/rules:
+    - add hardening=+all build flag
+  * Update debian/watch to new KDE release-service location.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 29 Dec 2019 18:36:30 +0100
+
+ffmpegthumbs (4:18.12.0-1) unstable; urgency=medium
+
+  * New upstream release:
+    - does not crash when the video cannot be opened (Closes: #917269)
+  * Switch Vcs-* fields to salsa.debian.org.
+  * Bump the debhelper compatibility to 11:
+    - bump the debhelper build dependency to 11~
+    - bump compat to 11
+  * Remove empty line at the end of changelog, and rules.
+  * Use https for Format in copyright.
+  * Bump Standards-Version to 4.3.0, no changes required.
+  * Explicitly add the libkf5config-dev, and libkf5i18n-dev build dependencies,
+    according to the upstream build system.
+
+ -- Pino Toscano <pino@debian.org>  Wed, 26 Dec 2018 11:00:09 +0100
+
+ffmpegthumbs (4:17.08.3-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (17.08.0)
+  * Bump Standards-Version to 4.1.0.
+  * Update upstream metadata
+
+  [ Pino Toscano ]
+  * New upstream release.
+  * Adjust l10npkgs_firstversion_ok to the version where kde-l10n will
+    drop translations.
+  * Bump Standards-Version to 4.1.1, no changes required.
+  * Simplify watch file, and switch it to https.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 26 Nov 2017 12:17:13 +0100
+
+ffmpegthumbs (4:17.08.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 17 Aug 2017 09:31:56 +0000
+
+ffmpegthumbs (4:17.04.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 12 Jul 2017 10:17:07 +0000
+
+ffmpegthumbs (4:17.04.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 07 Jun 2017 12:19:58 +0000
+
+ffmpegthumbs (4:17.04.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 11 May 2017 18:10:27 +0000
+
+ffmpegthumbs (4:17.04.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 19 Apr 2017 13:02:29 +0000
+
+ffmpegthumbs (4:16.12.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 08 Mar 2017 13:46:31 +0000
+
+ffmpegthumbs (4:16.12.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 08 Feb 2017 16:55:54 +0000
+
+ffmpegthumbs (4:16.12.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 11 Jan 2017 13:13:44 +0000
+
+ffmpegthumbs (4:16.12.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 14 Dec 2016 16:23:13 +0000
+
+ffmpegthumbs (4:16.08.3-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+  [ Maximiliano Curia ]
+  * New upstream release (16.08.3)
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 Nov 2016 20:53:52 +0100
+
+ffmpegthumbs (4:16.08.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 21 Nov 2016 13:52:12 +0000
+
+ffmpegthumbs (4:16.08.2-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 14 Oct 2016 13:38:46 +0000
+
+ffmpegthumbs (4:16.08.1-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 16 Sep 2016 13:04:57 +0000
+
+ffmpegthumbs (4:16.08.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Refresh patches
+
+  [ Maximiliano Curia ]
+  * New upstream release (16.08.0)
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 17 Oct 2016 23:04:59 +0200
+
+ffmpegthumbs (4:16.08.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Wed, 17 Aug 2016 11:47:40 +0000
+
+ffmpegthumbs (4:16.04.3-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Tue, 12 Jul 2016 11:39:27 +0000
+
+ffmpegthumbs (4:16.04.2-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Refresh patches
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 22 Jun 2016 16:18:03 +0200
+
+ffmpegthumbs (4:15.12.0-2) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Add new patch: ffmpeg2.9_support.patch (Closes: #803813) Thanks to
+    Andreas Cadhalpun
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Add upstream metadata (DEP-12)
+  * Use the newer debian-qt-kde.mk
+  * Use upstream ffmpeg 2.9 patch
+
+  [ Automatic packaging ]
+  * Bump Standards-Version to 3.9.8
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 29 May 2016 15:40:55 +0200
+
+ffmpegthumbs (4:15.12.0-1) experimental; urgency=medium
+
+  * New upstream release (15.12.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 01 Feb 2016 10:22:42 +0100
+
+ffmpegthumbs (4:15.07.90-1) unstable; urgency=medium
+
+  * New upstream release (15.07.90).
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 19 Sep 2015 19:10:47 +0200
+
+ffmpegthumbs (4:14.12.2-1) experimental; urgency=medium
+
+  * Prepare Debian release.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 16 Feb 2015 15:12:49 +0100
+
+ffmpegthumbs (4:14.12.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 10 Feb 2015 09:28:42 -0800
+
+ffmpegthumbs (4:14.12.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+  * Remove kdelibs5-dev depend version as there was not a new release.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 15 Dec 2014 17:05:59 +0100
+
+ffmpegthumbs (4:14.11.97-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release candidate
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 02 Dec 2014 10:06:31 -0800
+
+ffmpegthumbs (4:14.11.95-0ubuntu2) vivid; urgency=medium
+
+  * Fix Watch file applications locations
+  * Fix VCS for new kde-applications location
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 24 Nov 2014 08:54:56 -0800
+
+ffmpegthumbs (4:14.11.95-0ubuntu1) vivid; urgency=medium
+
+  * Initial release for KDE applications 14.12 series
+   - Change maintainer to Debian/Kubuntu
+  * Debian merge, no remaining changes.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Sat, 22 Nov 2014 09:10:45 +0000
+
+ffmpegthumbs (4:4.14.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Fri, 10 Oct 2014 03:55:19 -0700
+
+ffmpegthumbs (4:4.14.1-1) unstable; urgency=medium
+
+  * New upstream release (4.14.1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 17 Sep 2014 09:44:16 +0200
+
+ffmpegthumbs (4:4.14.1-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 22 Sep 2014 16:24:58 +0200
+
+ffmpegthumbs (4:4.14.0-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 20 Aug 2014 12:29:39 +0200
+
+ffmpegthumbs (4:4.13.97-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release RC
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Fri, 01 Aug 2014 16:09:06 +0200
+
+ffmpegthumbs (4:4.13.95-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Wed, 30 Jul 2014 17:23:22 +0200
+
+ffmpegthumbs (4:4.13.90-0ubuntu1) utopic; urgency=medium
+
+  * New upstream beta release
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Thu, 24 Jul 2014 17:23:34 +0200
+
+ffmpegthumbs (4:4.13.3-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 23 Jul 2014 10:24:39 +0200
+
+ffmpegthumbs (4:4.13.2-0ubuntu1) utopic; urgency=medium
+
+  [ Rohan Garg ]
+  * Merge with debian, no remaining changes
+
+  [ Jonathan Riddell ]
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Jun 2014 11:40:25 +0100
+
+ffmpegthumbs (4:4.13.1-1) unstable; urgency=medium
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 16 May 2014 20:47:50 +0200
+
+ffmpegthumbs (4:4.13.0-0ubuntu1) trusty; urgency=medium
+
+  * New upstream KDE Software Compilation release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 10 Apr 2014 21:35:41 +0100
+
+ffmpegthumbs (4:4.12.97-0ubuntu1) trusty; urgency=medium
+
+  * New upstream release candidate
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Wed, 02 Apr 2014 11:06:54 +0200
+
+ffmpegthumbs (4:4.12.95-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sun, 23 Mar 2014 11:53:56 +0100
+
+ffmpegthumbs (4:4.12.90-0ubuntu1) trusty; urgency=medium
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 19 Mar 2014 10:33:41 +0000
+
+ffmpegthumbs (4:4.12.3-0ubuntu1) trusty; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Tue, 04 Mar 2014 20:26:07 +0100
+
+ffmpegthumbs (4:4.12.2-2) unstable; urgency=medium
+
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 28 Apr 2014 12:24:11 +0200
+
+ffmpegthumbs (4:4.12.2-1) experimental; urgency=medium
+
+  * Bump Standards-Version to 3.9.5, no changes needed.
+  * New upstream release.
+  * Bump kde-sc-dev-latest build dependency.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 10 Feb 2014 11:31:46 +0100
+
+ffmpegthumbs (4:4.12.2-0ubuntu1) trusty; urgency=medium
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Tue, 04 Feb 2014 23:34:59 +0000
+
+ffmpegthumbs (4:4.12.1-0ubuntu1) trusty; urgency=low
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 16 Jan 2014 07:54:52 +0000
+
+ffmpegthumbs (4:4.12.0-0ubuntu1) trusty; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 18 Dec 2013 16:22:32 +0000
+
+ffmpegthumbs (4:4.11.97-0ubuntu1) trusty; urgency=low
+
+  * New upstream RC release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 29 Nov 2013 12:28:29 +0000
+
+ffmpegthumbs (4:4.11.95-0ubuntu1) trusty; urgency=low
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Mon, 25 Nov 2013 17:40:01 +0100
+
+ffmpegthumbs (4:4.11.80-0ubuntu1) trusty; urgency=low
+
+  * New upstream beta release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Sat, 23 Nov 2013 17:25:32 +0100
+
+ffmpegthumbs (4:4.11.3-1) unstable; urgency=low
+
+  * New upstream release.
+  * Update build dependencies.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 08 Nov 2013 12:17:04 +0100
+
+ffmpegthumbs (4:4.11.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Enable auto tests.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 07 Oct 2013 15:00:20 +0200
+
+ffmpegthumbs (4:4.11.2-0ubuntu1) saucy; urgency=low
+
+  * New upstream bugfix release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 30 Sep 2013 13:55:48 +0100
+
+ffmpegthumbs (4:4.11.1-0ubuntu1) saucy; urgency=low
+
+  * New upstream bugfix release.
+
+ -- Howard Chan <smartboyhw@gmail.com>  Fri, 06 Sep 2013 22:04:09 +0100
+
+ffmpegthumbs (4:4.11.0-0ubuntu1) saucy; urgency=low
+
+  [ Howard Chan ]
+  * New upstream release
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 13 Aug 2013 23:55:44 +0100
+
+ffmpegthumbs (4:4.10.97-0ubuntu1) saucy; urgency=low
+
+  * New upstream RC 2 release
+  * New upstream RC 2 release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 26 Jul 2013 19:02:50 +0100
+
+ffmpegthumbs (4:4.10.95-0ubuntu1) saucy; urgency=low
+
+  * New upstream RC release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Fri, 19 Jul 2013 12:31:42 +0000
+
+ffmpegthumbs (4:4.10.90-0ubuntu1) saucy; urgency=low
+
+  * New upstream bet release
+
+ -- Michał Zając <quintasan@kubuntu.org>  Fri, 28 Jun 2013 17:57:50 +0100
+
+ffmpegthumbs (4:4.10.80-0ubuntu1) saucy; urgency=low
+
+  [ Rohan Garg ]
+  * New upstream release
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 21 Jun 2013 00:44:23 +0100
+
+ffmpegthumbs (4:4.10.5-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 11 Jul 2013 17:58:39 +0200
+
+ffmpegthumbs (4:4.10.4-1) experimental; urgency=low
+
+  * New upstream release.
+  * Bump debhelper build-dep and compat to 9.
+  * Bump Standards-Version to 3.9.4.
+  * Update vcs fields.
+  * Add myself to uploaders.
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 14 Jun 2013 11:09:37 +0200
+
+ffmpegthumbs (4:4.10.4-0ubuntu1) saucy-proposed; urgency=low
+
+  * New upstream bugfix release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Thu, 06 Jun 2013 23:33:29 +0100
+
+ffmpegthumbs (4:4.10.3-0ubuntu1) saucy; urgency=low
+
+  * New upstream release
+  * Merge with Debian
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 07 May 2013 16:55:15 +0000
+
+ffmpegthumbs (4:4.10.2-2) experimental; urgency=low
+
+  [ Pino Toscano ]
+  * Add the pkg-config build dependency.
+
+ -- Sune Vuorela <sune@debian.org>  Mon, 29 Apr 2013 01:19:15 +0200
+
+ffmpegthumbs (4:4.10.2-1) experimental; urgency=low
+
+  [ Pino Toscano ]
+  * Initial packaging.
+
+  [ Sune Vuorela ]
+  * Add myself.
+
+ -- Sune Vuorela <sune@debian.org>  Fri, 05 Apr 2013 23:13:11 +0000
+
+ffmpegthumbs (4:4.10.2-0ubuntu1) raring; urgency=low
+
+  * New upstream bugfix release
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Sun, 31 Mar 2013 14:34:43 +0200
+
+ffmpegthumbs (4:4.10.1-0ubuntu1) raring-proposed; urgency=low
+
+  * New upstream bugfix release
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Tue, 05 Mar 2013 15:11:01 +0000
+
+ffmpegthumbs (4:4.10.0-0ubuntu1) raring-proposed; urgency=low
+
+  * New upstream release
+
+ -- Rohan Garg <rohangarg@kubuntu.org>  Wed, 06 Feb 2013 11:29:08 +0000
+
+ffmpegthumbs (4:4.9.98-0ubuntu1) raring-proposed; urgency=low
+
+  * New upstream release candidate
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 18 Jan 2013 14:54:12 +0000
+
+ffmpegthumbs (4:4.9.97-0ubuntu1) raring; urgency=low
+
+  * New upstream release candidate
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Thu, 03 Jan 2013 22:22:47 +0100
+
+ffmpegthumbs (4:4.9.95-0ubuntu1) raring; urgency=low
+
+  * New upstream RC release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 18 Dec 2012 23:14:07 +0000
+
+ffmpegthumbs (4:4.9.90-0ubuntu1) raring-proposed; urgency=low
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 07 Dec 2012 17:34:25 +0000
+
+ffmpegthumbs (4:4.9.80-0ubuntu1) raring; urgency=low
+
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 19 Nov 2012 15:41:57 +0000
+
+ffmpegthumbs (4:4.9.3-0ubuntu1) raring; urgency=low
+
+  * New upstream release (LP: #1074747)
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Tue, 06 Nov 2012 22:20:49 +0100
+
+ffmpegthumbs (4:4.9.2-0ubuntu1) quantal-proposed; urgency=low
+
+  * New upstream bugfix release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 02 Oct 2012 15:09:18 +0100
+
+ffmpegthumbs (4:4.9.1-0ubuntu1) quantal; urgency=low
+
+  * New upstream release
+
+ -- Harald Sitter <apachelogger@ubuntu.com>  Mon, 10 Sep 2012 18:14:55 +0530
+
+ffmpegthumbs (4:4.9.0-0ubuntu1) quantal; urgency=low
+
+  * Use direct build-depends versions rather than kde-sc-dev-latest
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 26 Jul 2012 16:58:34 +0100
+
+ffmpegthumbs (4:4.8.90+repack-0ubuntu1) quantal; urgency=low
+
+  * New upstream beta release.
+  * Repack upstream tarball to add license text for cmake modules.
+  * Mention cmake scripts in the copyright file.
+
+ -- Felix Geyer <debfx@ubuntu.com>  Thu, 14 Jun 2012 16:51:13 +0200
+
+ffmpegthumbs (4:4.8.80-0ubuntu1) quantal; urgency=low
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 06 Jun 2012 14:16:02 +0100

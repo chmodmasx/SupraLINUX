@@ -1,0 +1,48 @@
+Source: dolphin-plugins
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.0.0~),
+               gettext,
+               libdolphinvcs-dev (>= 4:25.12.3~),
+               libkf6config-dev (>= 6.0.0~),
+               libkf6coreaddons-dev (>= 6.0.0~),
+               libkf6i18n-dev (>= 6.0.0~),
+               libkf6kio-dev (>= 6.0.0~),
+               libkf6solid-dev (>= 6.0.0~),
+               libkf6texteditor-dev (>= 5.240.0~),
+               libkf6textwidgets-dev (>= 6.0.0~),
+               libkf6xmlgui-dev (>= 6.0.0~),
+               qt6-base-dev (>= 6.7.0~)
+Standards-Version: 4.7.3
+Rules-Requires-Root: no
+Homepage: https://apps.kde.org/en/dolphin_plugins
+
+Package: dolphin-plugins
+Architecture: any
+Section: devel
+Depends: dolphin (>= 24.05.2~), ${misc:Depends}, ${shlibs:Depends}
+Enhances: dolphin
+Description: plugins for Dolphin
+ This package contains plugins for Dolphin that enhance its functionalities.
+ .
+ There are plugins that offer integration with the following version control
+ systems:
+ .
+  * Bzr
+  * Git
+  * Mercurial
+  * Subversion
+ .
+ Also, there are plugins to offer integration with the following services:
+ .
+  * Dropbox
+ .
+ Miscellaneous plugins:
+ .
+  * Mount ISO
+ .
+ This package is part of the KDE Software Development Kit module.

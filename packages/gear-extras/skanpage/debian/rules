@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+before_dh_auto_clean:
+	# Generated file not removed by upstream clean target
+	rm -f src/qml.generated.qrc

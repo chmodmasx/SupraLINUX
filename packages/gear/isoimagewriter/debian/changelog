@@ -1,0 +1,174 @@
+isoimagewriter (25.12.3-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Gear 25.12.3 isoimagewriter for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+isoimagewriter (25.12.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 06 Mar 2026 06:18:07 +0000
+
+isoimagewriter (25.12.2-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for gpgme1.0 2.0
+
+ -- Ural Tunaboyu <ural.tunaboyu@canonical.com>  Fri, 20 Feb 2026 19:45:26 +0000
+
+isoimagewriter (25.12.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Feb 2026 12:18:21 +0000
+
+isoimagewriter (25.12.1-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 08 Jan 2026 10:58:06 +0000
+
+isoimagewriter (25.12.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Dec 2025 12:14:44 +0000
+
+isoimagewriter (25.11.90-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (RC) release (25.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 28 Nov 2025 13:59:33 +0000
+
+isoimagewriter (25.11.80-0ubuntu1) resolute; urgency=medium
+
+  * New upstream (beta) release (25.11.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 16 Nov 2025 05:49:32 +0000
+
+isoimagewriter (25.08.3-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Nov 2025 12:11:00 +0000
+
+isoimagewriter (25.08.2-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (25.08.2)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 17 Oct 2025 11:39:44 +0100
+
+isoimagewriter (25.08.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.1)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 11 Sep 2025 06:50:46 +0100
+
+isoimagewriter (25.08.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.08.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 14 Aug 2025 11:20:01 +0100
+
+isoimagewriter (25.07.90-0ubuntu1) questing; urgency=medium
+
+  * New upstream (RC) release (25.07.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 25 Jul 2025 17:28:55 +0100
+
+isoimagewriter (25.07.80-0ubuntu1) questing; urgency=medium
+
+  * New upstream (beta) release (25.07.80)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 12 Jul 2025 18:03:20 +0100
+
+isoimagewriter (25.04.3-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 03 Jul 2025 07:36:46 +0100
+
+isoimagewriter (25.04.2-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 05 Jun 2025 11:38:26 +0100
+
+isoimagewriter (25.04.1-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.1)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 May 2025 22:01:21 +0100
+
+isoimagewriter (25.04.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (25.04.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 30 Apr 2025 19:42:27 +0100
+
+isoimagewriter (24.12.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Mar 2025 08:36:21 +0000
+
+isoimagewriter (24.12.2-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.2)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 06 Feb 2025 14:11:05 +0000
+
+isoimagewriter (24.12.1-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.1)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 11 Jan 2025 14:25:21 +0000
+
+isoimagewriter (24.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Dec 2024 17:04:01 +0000
+
+isoimagewriter (24.11.90-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (RC) release (24.11.90)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 29 Nov 2024 14:02:43 +0000
+
+isoimagewriter (24.11.80-0ubuntu1) plucky; urgency=medium
+
+  * New upstream (beta) release (24.11.80)
+  * Drop included debian-iso-verify.patch
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 19 Nov 2024 18:17:07 +0000
+
+isoimagewriter (24.08.3-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (24.08.3)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 07 Nov 2024 17:45:32 +0000
+
+isoimagewriter (24.08.2+dfsg-1ubuntu1) plucky; urgency=medium
+
+  * Kubuntu Vcs and maintainer fields.
+
+ -- Rik Mills <rikmills@kde.org>  Mon, 04 Nov 2024 13:24:41 +0000
+
+isoimagewriter (24.08.2+dfsg-1) experimental; urgency=medium
+
+  [ Jesse Rhodes ]
+  * New upstream release (24.08.2).
+  * Update build-deps and deps with the info from cmake.
+  * Add/update Albert Astals Cid’s master key in upstream signing keys.
+  * Enable Salsa CI.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 16 Oct 2024 18:19:11 +0200
+
+isoimagewriter (24.05.2+dfsg-1) experimental; urgency=medium
+
+  [ Jesse Rhodes ]
+  * Initial release. (Closes: #1054315)
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Sun, 18 Aug 2024 14:18:16 +0200

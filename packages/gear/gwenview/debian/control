@@ -1,0 +1,93 @@
+Source: gwenview
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.3.0~),
+               gettext,
+               libcfitsio-dev,
+               libexiv2-dev,
+               libjpeg-dev,
+               libkcolorpicker-qt6-dev,
+               libkdcrawqt6-dev (>= 25.12.3~),
+               libkf6baloo-dev (>= 6.3.0~),
+               libkf6crash-dev (>= 5.240.0~),
+               libkf6doctools-dev (>= 5.240.0~),
+               libkf6guiaddons-dev (>= 5.240.0~),
+               libkf6i18n-dev (>= 5.240.0~),
+               libkf6iconthemes-dev (>= 5.240.0~),
+               libkf6itemmodels-dev (>= 5.240.0~),
+               libkf6kio-dev (>= 5.240.0~),
+               libkf6notifications-dev (>= 5.240.0~),
+               libkf6parts-dev (>= 5.240.0~),
+               libkf6purpose-dev (>= 5.240.0~),
+               libkf6widgetsaddons-dev (>= 5.240.0~),
+               libkf6windowsystem-dev (>= 5.240.0~),
+               libkimageannotator-qt6-dev,
+               liblcms2-dev,
+               libphonon4qt6-dev (>= 4:4.6.60~),
+               libphonon4qt6experimental-dev (>= 4.9.1),
+               libplasmaactivities-dev,
+               libpng-dev,
+               libtiff-dev,
+               libwayland-dev (>= 1.9~) [linux-any],
+               libx11-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.6.0+dfsg~),
+               qt6-base-private-dev,
+               qt6-multimedia-dev (>= 6.6.0~),
+               qt6-svg-dev (>= 6.6.0~),
+               qt6-wayland-dev,
+               wayland-protocols [linux-any]
+Standards-Version: 4.7.3
+Homepage: https://apps.kde.org/gwenview/
+
+Package: gwenview
+Section: graphics
+Architecture: any
+Depends: kimageformat6-plugins,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: gwenview-doc (>= ${source:Version}),
+            kamera,
+            kio-extras (>= 4:24.08.0~),
+            qt6-image-formats-plugins
+Description: image viewer by KDE
+ Gwenview is a fast and easy to use image viewer by KDE, ideal for browsing and
+ displaying a collection of images.
+ .
+ Features:
+  - Simple image editing: rotate, crop, resize, mirror, flip, reduce red eye,
+    and adjust brightness, contrast, or gamma.
+  - Annotate and mark up images with arrows, shapes, text boxes, image stamps,
+    and more.
+  - Basic file management actions such as copy, move, delete, and others.
+  - Functions both as a standalone application and an embedded viewer in the
+    Konqueror web browser.
+ .
+ This package is part of the KDE graphics module.
+
+Package: gwenview-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Breaks: gwenview (<< 4:24.08.1-1~)
+Replaces: gwenview (<< 4:24.08.1-1~)
+Description: documentation for Gwenview
+ Gwenview is a fast and easy to use image viewer by KDE, ideal for browsing and
+ displaying a collection of images.
+ .
+ Features:
+  - Simple image editing: rotate, crop, resize, mirror, flip, reduce red eye,
+    and adjust brightness, contrast, or gamma.
+  - Annotate and mark up images with arrows, shapes, text boxes, image stamps,
+    and more.
+  - Basic file management actions such as copy, move, delete, and others.
+  - Functions both as a standalone application and an embedded viewer in the
+    Konqueror web browser.
+ .
+ This package is part of the KDE graphics module.
+ .
+ This package contains the documentation for Gwenview.

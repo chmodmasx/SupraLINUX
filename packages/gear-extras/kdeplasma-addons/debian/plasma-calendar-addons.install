@@ -1,0 +1,6 @@
+usr/lib/*/qt6/plugins/plasmacalendarplugins/alternatecalendar.so
+usr/lib/*/qt6/plugins/plasmacalendarplugins/alternatecalendar/AlternateCalendarConfig.qml
+usr/lib/*/qt6/plugins/plasmacalendarplugins/astronomicalevents.so
+usr/lib/*/qt6/plugins/plasmacalendarplugins/astronomicalevents/AstronomicalEventsConfig.qml
+usr/lib/*/qt6/qml/org/kde/plasma/private/alternatecalendarconfig/
+usr/lib/*/qt6/qml/org/kde/plasmacalendar/astronomicaleventsconfig/

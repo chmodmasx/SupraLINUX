@@ -1,0 +1,30 @@
+commit a8a3c2a87286274e510532dc0d16aa9a9eaa7a7f
+Author: Rik Mills <rikmills@kde.org>
+Date:   Mon Mar 30 12:37:24 2026 +0100
+
+    Revert "Fix tesseract not being found on Fedora"
+    
+    This reverts commit 89538f014de81ce15f70a3e8b1125648ef5d37ef.
+
+diff --git a/src/TesseractRuntimeLoader.cpp b/src/TesseractRuntimeLoader.cpp
+index 57276fbc..528d220a 100644
+--- a/src/TesseractRuntimeLoader.cpp
++++ b/src/TesseractRuntimeLoader.cpp
+@@ -50,10 +50,6 @@ bool TesseractRuntimeLoader::loadLocked()
+ {
+     const auto candidates = candidateLibraryNames();
+     for (const QString &candidate : candidates) {
+-        // From https://doc.qt.io/qt-6/qlibrary.html :
+-        // QLibrary tries the name with different platform-specific file prefixes,
+-        // like "lib" on Unix and Mac, and suffixes, like ".so" on Unix,
+-        // ".dylib" on the Mac, or ".dll" on Windows.
+         m_library.setFileName(candidate);
+         m_library.setLoadHints(QLibrary::ExportExternalSymbolsHint | QLibrary::PreventUnloadHint);
+ 
+@@ -185,5 +181,5 @@ bool TesseractRuntimeLoader::validateLoadedVersion()
+ 
+ QStringList TesseractRuntimeLoader::candidateLibraryNames() const
+ {
+-    return {QStringLiteral("tesseract")};
++    return {QStringLiteral("libtesseract.so.5"), QStringLiteral("libtesseract.so.4"), QStringLiteral("libtesseract.so")};
+ }

@@ -1,0 +1,35 @@
+Source: sweeper
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               extra-cmake-modules (>= 6.3.0~),
+               gettext,
+               libkf6bookmarks-dev (>= 6.3.0~),
+               libkf6config-dev (>= 6.3.0~),
+               libkf6configwidgets-dev (>= 6.3.0~),
+               libkf6coreaddons-dev (>= 6.3.0~),
+               libkf6crash-dev (>= 6.3.0~),
+               libkf6doctools-dev (>= 6.3.0~),
+               libkf6i18n-dev (>= 6.3.0~),
+               libkf6kio-dev (>= 6.3.0~),
+               libkf6textwidgets-dev (>= 6.3.0~),
+               libkf6xmlgui-dev (>= 6.3.0~),
+               libplasmaactivitiesstats-dev,
+               pkg-kde-tools,
+               qt6-base-dev (>= 6.7.0~)
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://apps.kde.org/en/sweeper
+
+Package: sweeper
+Section: utils
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: history and temporary file cleaner
+ Sweeper can quickly remove temporary information, such as web page cookies,
+ browser history, or the list of recently-opened documents.  It helps provide
+ additional privacy on a system shared between multiple users.
+ .
+ This package is part of the KDE SC utilities module.

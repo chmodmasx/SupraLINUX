@@ -1,0 +1,4 @@
+usr/lib/*/qt6/plugins/org.kde.kdecoration3.kcm/kcm_oxygendecoration.so
+usr/lib/*/qt6/plugins/org.kde.kdecoration3/org.kde.oxygen.so
+usr/share/applications/kcm_oxygendecoration.desktop
+usr/share/locale/*/*/oxygen_kdecoration.mo

@@ -1,0 +1,45 @@
+Source: ksystemlog
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.3.0~),
+               gettext,
+               libaudit-dev [linux-any],
+               libkf6archive-dev (>= 6.3.0~),
+               libkf6completion-dev (>= 6.3.0~),
+               libkf6config-dev (>= 6.3.0~),
+               libkf6coreaddons-dev (>= 6.3.0~),
+               libkf6crash-dev,
+               libkf6doctools-dev (>= 6.3.0~),
+               libkf6i18n-dev (>= 6.3.0~),
+               libkf6itemviews-dev (>= 6.3.0~),
+               libkf6kio-dev (>= 6.3.0~),
+               libkf6textwidgets-dev (>= 6.3.0~),
+               libkf6widgetsaddons-dev (>= 6.3.0~),
+               libkf6xmlgui-dev (>= 6.3.0~),
+               libsystemd-dev [linux-any],
+               pkgconf,
+               qt6-base-dev (>= 6.7.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://apps.kde.org/en/ksystemlog
+
+Package: ksystemlog
+Section: admin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: system log viewer
+ KSystemLog show all logs of your system, grouped by General (Default system
+ log, Authentication, Kernel, X.org...), and optional Services (Apache, Cups,
+ etc, ...). It includes many features to read nicely your log files:
+  * Colorize log lines depending on their severities
+  * Tabbed view to allow displaying several logs at the same time
+  * Auto display new lines logged
+  * Detailed information for each log lines
+ .
+ This package is part of the KDE administration module.

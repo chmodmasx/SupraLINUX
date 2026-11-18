@@ -1,0 +1,43 @@
+Source: kwalletmanager
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.3.0~),
+               gettext,
+               libkf6archive-dev (>= 6.3.0~),
+               libkf6auth-dev (>= 6.3.0~),
+               libkf6config-dev (>= 6.3.0~),
+               libkf6configwidgets-dev (>= 6.3.0~),
+               libkf6coreaddons-dev (>= 6.3.0~),
+               libkf6crash-dev (>= 6.3.0~),
+               libkf6dbusaddons-dev (>= 6.3.0~),
+               libkf6doctools-dev (>= 6.3.0~),
+               libkf6i18n-dev (>= 6.3.0~),
+               libkf6kcmutils-dev (>= 6.3.0~),
+               libkf6kio-dev (>= 6.3.0~),
+               libkf6service-dev (>= 6.3.0~),
+               libkf6statusnotifieritem-dev (>= 6.3.0~),
+               libkf6wallet-dev (>= 6.3.0~),
+               libkf6windowsystem-dev (>= 6.3.0~),
+               libkf6xmlgui-dev (>= 6.3.0~),
+               qt6-base-dev (>= 6.7.0~)
+Standards-Version: 4.7.2
+Rules-Requires-Root: no
+Homepage: https://apps.kde.org/kwalletmanager5/
+
+Package: kwalletmanager
+Architecture: any
+Section: utils
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: secure password wallet manager
+ The KDE Wallet system provides a secure way to store passwords and other
+ secret information, allowing the user to remember only a single KDE Wallet
+ password instead of numerous different passwords and credentials.
+ .
+ KWallet Manager is a utility for viewing and editing information stored in
+ the KDE Wallet.
+ .
+ This package is part of the KDE SC utilities module.

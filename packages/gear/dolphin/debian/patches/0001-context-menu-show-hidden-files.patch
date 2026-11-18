@@ -1,0 +1,24 @@
+--- a/src/dolphincontextmenu.cpp
++++ b/src/dolphincontextmenu.cpp
+@@ -358,16 +358,17 @@
+     }
+     addSeparator();
+ 
+-    // Insert 'Sort By' and 'View Mode'
++    // Insert 'Sort By', 'View Mode' and 'Show Hidden Files'. Reuse Dolphin's
++    // standard action so its check state, shortcut and per-view setting stay
++    // in sync with the View menu.
+     if (ContextMenuSettings::showSortBy()) {
+         addAction(m_mainWindow->actionCollection()->action(QStringLiteral("sort")));
+     }
+     if (ContextMenuSettings::showViewMode()) {
+         addAction(m_mainWindow->actionCollection()->action(QStringLiteral("view_mode")));
+     }
+-    if (ContextMenuSettings::showSortBy() || ContextMenuSettings::showViewMode()) {
+-        addSeparator();
+-    }
++    addAction(m_mainWindow->actionCollection()->action(QStringLiteral("show_hidden_files")));
++    addSeparator();
+ 
+     addAdditionalActions(baseUrlProperties);
+ 

@@ -1,0 +1,35 @@
+Source: isoimagewriter
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Rules-Requires-Root: no
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.0.0~),
+               libgpgme-dev (>= 1.8.0~),
+               libkf6archive-dev (>= 6.0.0~),
+               libkf6coreaddons-dev (>= 6.0.0~),
+               libkf6crash-dev (>= 6.0.0~),
+               libkf6i18n-dev (>= 6.0.0~),
+               libkf6iconthemes-dev (>= 6.0.0~),
+               libkf6solid-dev (>= 6.0.0~),
+               libkf6widgetsaddons-dev (>= 6.0.0~),
+               libqgpgmeqt6-dev (>= 1.8.0~),
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.5.0~)
+Standards-Version: 4.7.0
+Homepage: https://apps.kde.org/isoimagewriter/
+
+Package: isoimagewriter
+Section: utils
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: write hybrid iso files to usb
+ ISO Image Writer is a simple GUI application for creating bootable USB flash
+ drives from hybrid ISO files, such as Linux distribution live images and
+ installers. It does not modify the image before writing, so it is also safe
+ for use with the Debian installer.
+ .
+ This package is part of the KDE System module.

@@ -1,0 +1,30 @@
+Source: kfind
+Section: utils
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.3.0~),
+               gettext,
+               libkf6archive-dev (>= 6.3.0~),
+               libkf6coreaddons-dev (>= 6.3.0~),
+               libkf6crash-dev (>= 6.3.0~),
+               libkf6filemetadata-dev (>= 6.3.0~),
+               libkf6i18n-dev (>= 6.3.0~),
+               libkf6kio-dev (>= 6.3.0~),
+               libkf6widgetsaddons-dev (>= 6.3.0~),
+               libkf6xmlgui-dev (>= 6.3.0~),
+               qt6-5compat-dev,
+               qt6-base-dev (>= 6.7.0~)
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://apps.kde.org/en/kfind
+
+Package: kfind
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: file search utility by KDE
+ KFind can be used as a standalone search tool, launched by KRunner or from
+ your menu. It is also integrated into Konqueror as "Find File" in the
+ "Tools" menu. It allows you to find files by name, type or content.

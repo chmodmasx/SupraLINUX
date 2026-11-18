@@ -1,0 +1,53 @@
+Source: kpmcore
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 5.240.0~),
+               gettext,
+               libblkid-dev (>= 2.33.2),
+               libkf6coreaddons-dev (>= 5.240.0~),
+               libkf6i18n-dev (>= 5.240.0~),
+               libkf6widgetsaddons-dev (>= 5.240.0~),
+               libpolkit-qt6-1-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.5.0~)
+Standards-Version: 4.7.3
+Homepage: https://invent.kde.org/system/kpmcore
+
+Package: libkpmcore13
+Architecture: any
+Multi-Arch: same
+Depends: fdisk,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: libkpmcore10,
+        libkpmcore11,
+        libkpmcore12
+Replaces: libkpmcore10,
+          libkpmcore11,
+          libkpmcore12
+Description: KDE Partition Manager Core
+ KDE Partition Manager Core (KPM core) allows software to re-use
+ common partitioning GUI tasks.
+ .
+ It is used by the generic system installer called Calamares
+ as well as the KDE Partition Manager application.
+
+Package: libkpmcore-dev
+Section: libdevel
+Architecture: any
+Depends: libkpmcore13 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Multi-Arch: same
+Description: KDE Partition Manager Core development files
+ KDE Partition Manager Core (KPM core) allows software to re-use
+ common partitioning GUI tasks.
+ .
+ It is used by the generic system installer called Calamares
+ as well as the KDE Partition Manager application.
+ .
+ This package contains development files for kpmcore.

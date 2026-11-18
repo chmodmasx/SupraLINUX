@@ -1,0 +1,270 @@
+Source: kdeplasma-addons
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-exec,
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.22.0~),
+               gettext,
+               hunspell-en-us <!nocheck>,
+               libicu-dev (>= 66.1~),
+               libkf6auth-dev (>= 6.22.0~),
+               libkf6config-dev (>= 6.22.0~),
+               libkf6coreaddons-dev (>= 6.22.0~),
+               libkf6dbusaddons-dev (>= 6.22.0~),
+               libkf6declarative-dev (>= 6.22.0~),
+               libkf6globalaccel-dev (>= 6.22.0~),
+               libkf6holidays-dev (>= 6.22.0~),
+               libkf6i18n-dev (>= 6.22.0~),
+               libkf6jobwidgets-dev (>= 6.22.0~),
+               libkf6kcmutils-dev (>= 6.22.0~),
+               libkf6kio-dev (>= 6.22.0~),
+               libkf6newstuff-dev (>= 6.22.0~),
+               libkf6notifications-dev (>= 6.22.0~),
+               libkf6runner-dev (>= 6.22.0~),
+               libkf6service-dev (>= 6.22.0~),
+               libkf6sonnet-dev (>= 6.22.0~),
+               libkf6svg-dev (>= 6.22.0~),
+               libkf6unitconversion-dev (>= 6.22.0~),
+               libkf6xmlgui-dev (>= 6.22.0~),
+               libplasma-dev (>= 6.6.6~),
+               libplasma5support-dev (>= 4:6.6.4~),
+               pkgconf,
+               qt6-5compat-dev (>= 6.10.0~),
+               qt6-base-dev (>= 6.10.0~),
+               qt6-declarative-dev (>= 6.10.0~),
+               qt6-webengine-dev (>= 6.10.0~) [amd64 arm64 armhf i386],
+               sonnet6-plugins <!nocheck>,
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.2
+Homepage: https://invent.kde.org/plasma/kdeplasma-addons
+
+Package: kdeplasma-addons-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: locale files for kdeplasma-addons
+ The KDE Plasma addons module is a collection of additional Plasma 6
+ data engines, widgets and krunner plugins. It is part of
+ the official KDE distribution.
+ .
+ This package contains locale files for KDE Plasma addons module.
+
+Package: kwin-addons
+Architecture: any
+Multi-Arch: same
+Depends: kdeplasma-addons-data (= ${source:Version}),
+         kwin-wayland (>= 4:6.6.0~),
+         plasma-desktoptheme (>= 6.6.0~),
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-ksvg,
+         qml6-module-qt5compat-graphicaleffects,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-window,
+         qml6-module-qtquick3d,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: additional desktop and window switchers for KWin
+ This package contains additional KWin desktop and window switchers shipped in
+ the Plasma 6 addons module.
+ .
+ This package is part of the KDE Plasma addons module.
+
+Package: libplasmaweatherdata6
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: plasma-widgets-addons (<< 4:6.5.0-1~)
+Replaces: plasma-widgets-addons (<< 4:6.5.0-1~)
+Description: weather data manipulation library for Plasma widgets
+ This library provide various classes to manipulate weather forecast data.
+ .
+ This package is part of the KDE Plasma 6 addons module.
+
+Package: libplasmaweatherion6
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: plasma-widgets-addons (<< 4:6.5.0-1~)
+Replaces: plasma-widgets-addons (<< 4:6.5.0-1~)
+Description: weather location and forcast library for Plasma widgets
+ This library provides weather "ions" that can be used to request locations
+ and weather forecast on the locations.
+ .
+ This package is part of the KDE Plasma 6 addons module.
+
+Package: plasma-calendar-addons
+Architecture: any
+Multi-Arch: same
+Depends: kdeplasma-addons-data (= ${source:Version}),
+         plasma-desktoptheme (>= 6.6.0~),
+         qml6-module-org-kde-kcmutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-templates,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: additional calendar plugins for Plasma 6
+ This package contains additional Plasma 6 calendar plugins that are used in
+ the Plasma desktop.
+ .
+ This package contains the following calendars:
+  * Alternate Calendar
+  * Astonomical Calendar
+ .
+ This package is part of the KDE Plasma 6 addons module.
+
+Package: plasma-dataengines-addons
+Architecture: any
+Multi-Arch: same
+Depends: kdeplasma-addons-data (= ${source:Version}),
+         plasma-desktoptheme (>= 6.6.0~),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: additional data engines for Plasma
+ This package contains additional Plasma data engines shipped in Plasma 6
+ addons module. These engines are needed by some Plasma 6 widget shipped with
+ plasma-widgets-addons, but they may be useful for any other Plasma widgets too.
+ .
+ This package is part of the KDE Plasma addons module.
+
+Package: plasma-runners-addons
+Architecture: any
+Multi-Arch: same
+Depends: kdeplasma-addons-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: additional runners for Plasma 6 and Krunner
+ This package contains additional Plasma runners that are used in krunner
+ (the "run command" dialog of Plasma) to reveal special search results.
+ If you use krunner a lot, you will probably like this package.
+ .
+ This package contains the following runners:
+  * Special Characters
+  * Unit Converter
+  * Date and Time
+  * Dictionary
+  * Kate Sessions
+  * Konsole Profiles
+  * Spell Checker
+ .
+ This package is part of the KDE Plasma 6 addons module.
+
+Package: plasma-wallpapers-addons
+Architecture: any
+Multi-Arch: same
+Depends: kdeplasma-addons-data (= ${source:Version}),
+         plasma-desktoptheme (>= 6.6.0~),
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-kquickcontrols,
+         qml6-module-org-kde-ksvg,
+         qml6-module-qt5compat-graphicaleffects,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-window,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: additional wallpaper plugins for Plasma 6
+ This package contains additional Plasma 6 wallpaper plugins that are used in
+ the Plasma desktop.
+ .
+ This package contains the following wallpaper plugins:
+  * Haenau
+  * Hunyango
+  * Picture of the Day
+ .
+ This package is part of the KDE Plasma 6 addons module.
+
+Package: plasma-widgets-addons
+Architecture: any
+Depends: kdeplasma-addons-data (= ${source:Version}),
+         kpackagetool6,
+         libkf6purpose-bin,
+         plasma-dataengines-addons (= ${binary:Version}),
+         plasma-desktoptheme (>= 6.6.0~),
+         plasma-workspace (>= 4:6.6.0~),
+         qml6-module-org-kde-config,
+         qml6-module-org-kde-coreaddons,
+         qml6-module-org-kde-draganddrop,
+         qml6-module-org-kde-iconthemes,
+         qml6-module-org-kde-kcmutils,
+         qml6-module-org-kde-kirigami,
+         qml6-module-org-kde-kirigamiaddons-components,
+         qml6-module-org-kde-kirigamiaddons-delegates,
+         qml6-module-org-kde-kitemmodels,
+         qml6-module-org-kde-kquickcontrols,
+         qml6-module-org-kde-kquickcontrolsaddons,
+         qml6-module-org-kde-ksvg,
+         qml6-module-org-kde-kwindowsystem,
+         qml6-module-org-kde-newstuff,
+         qml6-module-org-kde-notifications,
+         qml6-module-org-kde-plasma-plasma5support,
+         qml6-module-qtcore,
+         qml6-module-qtqml,
+         qml6-module-qtqml-workerscript,
+         qml6-module-qtquick,
+         qml6-module-qtquick-controls,
+         qml6-module-qtquick-dialogs,
+         qml6-module-qtquick-layouts,
+         qml6-module-qtquick-window,
+         qml6-module-qtwebengine [amd64 arm64 armhf i386],
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: plasma-systemmonitor (>= 6.2.90~)
+Suggests: quota
+Breaks: plasma-workspace-data (<< 4:6.4.90~)
+Replaces: plasma-workspace-data (<< 4:6.4.90~)
+Description: additional widgets for Plasma 6
+ This package contains additional Plasma 6 widgets shipped in the Plasma
+ addons module. Install it if you want a variety of widgets on your Plasma
+ desktop.
+ .
+ This package provides the following widgets:
+  * Application Dashboard
+  * Binary Clock
+  * Calculator
+  * Color Picker
+  * Comic Strip
+  * Dictionary
+  * Disk Quota
+  * Fifteen Puzzle
+  * Fuzzy Clock
+  * Grouping Plasmoid
+  * Kate Sessions
+  * Keyboard Indicator
+  * Konsole Profiles
+  * Lock Keys Status
+  * Media Frame
+  * Quicklaunch
+  * Sticky Note
+  * Timer
+  * User Switcher
+  * Weather Report
+  * Web Browser
+ .
+ This package is part of the KDE Plasma 6 addons module.
+
+Package: plasma-widgets-addons-dev
+Section: libdevel
+Architecture: any
+Depends: libplasmaweatherdata6 (= ${binary:Version}),
+         libplasmaweatherion6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.10.0~),
+         ${misc:Depends}
+Breaks: plasma-widgets-addons (<< 4:6.5.0-1~)
+Replaces: plasma-widgets-addons (<< 4:6.5.0-1~)
+Description: additional widgets for Plasma 6 - development files
+ This package contains the development headers for the shared libraries
+ shipped with the additional Plasma 6 widgets from the Plasma addons module.
+ .
+ This package is part of the KDE Plasma 6 addons module.

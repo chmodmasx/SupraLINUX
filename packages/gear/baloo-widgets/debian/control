@@ -1,0 +1,54 @@
+Source: baloo-widgets
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.4.0~),
+               gettext,
+               libkf6baloo-dev (>= 6.4.0~),
+               libkf6config-dev (>= 6.4.0~),
+               libkf6filemetadata-dev (>= 6.4.0~),
+               libkf6i18n-dev (>= 6.4.0~),
+               libkf6kio-dev (>= 6.4.0~),
+               libkf6service-dev (>= 6.4.0~),
+               qt6-base-dev (>= 6.7.0~)
+Standards-Version: 4.7.3
+Homepage: https://invent.kde.org/frameworks/baloo
+Rules-Requires-Root: no
+
+Package: libbaloowidgets-bin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: libkf5baloowidgets-bin
+Replaces: libkf5baloowidgets-bin
+Description: Wigets for use with Baloo - binaries
+ Baloo is a framework for searching and managing metadata.
+ .
+ This package contains binaries used by the baloo widgets library.
+
+Package: libbaloowidgets-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6baloowidgets6 (= ${binary:Version}),
+         libkf6kio-dev (>= 6.4.0~),
+         qt6-base-dev (>= 6.4.0~),
+         ${misc:Depends}
+Description: Development headers for developing applications with Baloo
+ Baloo is a framework for searching and managing metadata.
+ .
+ This package contains development headers for Baloo Widgets library.
+
+Package: libkf6baloowidgets6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6filemetadata-bin, ${misc:Depends}, ${shlibs:Depends}
+Breaks: libkf5baloowidgets5, libkf5baloowidgets-data
+Replaces: libkf5baloowidgets5, libkf5baloowidgets-data
+Recommends: libbaloowidgets-bin
+Description: Wigets for use with Baloo
+ Baloo is a framework for searching and managing metadata.
+ .
+ This package contains GUI widgets for baloo.
