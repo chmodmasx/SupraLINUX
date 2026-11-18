@@ -1,0 +1,21 @@
+Source: supralinux-kdeconnect-sftp
+Section: net
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13),
+               golang-go (>= 2:1.24~)
+Standards-Version: 4.7.0
+Homepage: https://supralinux.com/
+Rules-Requires-Root: no
+
+Package: supralinux-kdeconnect-sftp
+Architecture: any
+Depends: kdeconnect,
+         ${misc:Depends}
+Description: native SFTP server for KDE Connect remote filesystems
+ An ephemeral, single-user SFTP server used by the KDE Connect sftp
+ plugin when a paired Linux device requests its filesystem.
+ .
+ The server listens on a random high port, accepts only the paired device's
+ certificate key, exposes the user's home directory, and exits after the
+ mount goes away.  It does not use sshd, port 22, ~/.ssh or authorized_keys.

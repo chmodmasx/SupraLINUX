@@ -1,0 +1,15 @@
+[Desktop Entry]
+Type=Application
+Name=Drivers
+Name[es]=Controladores
+GenericName=Driver Manager
+GenericName[es]=Gestor de controladores
+Comment=Install and manage hardware drivers
+Comment[es]=Instalar y gestionar controladores de hardware
+Exec=supralinux-drivers
+Icon=supralinux-drivers
+Terminal=false
+Categories=System;Settings;HardwareSettings;
+Keywords=driver;drivers;nvidia;gpu;hardware;
+Keywords[es]=controlador;controladores;nvidia;gpu;hardware;
+StartupNotify=true

@@ -1,0 +1,35 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: supralinux-kdeconnect-sftp
+Source: https://supralinux.com/
+
+Files: *
+Copyright: 2026 SupraLINUX Project
+License: GPL-2.0-or-later
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ This program is distributed in the hope that it will be useful, but WITHOUT
+ ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ details.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+Files: vendor/github.com/pkg/sftp/*
+Copyright: 2013-2025 The Go SFTP Authors
+License: BSD-2-Clause
+
+Files: vendor/golang.org/x/crypto/*
+Copyright: 2009 The Go Authors
+License: BSD-3-Clause
+
+Files: vendor/golang.org/x/sys/*
+Copyright: 2009 The Go Authors
+License: BSD-3-Clause
+
+Files: vendor/github.com/kr/fs/*
+Copyright: 2012 Keith Rarick
+License: BSD-3-Clause

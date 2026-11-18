@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# SPDX-License-Identifier: GPL-2.0-or-later
+
+export CGO_ENABLED = 0
+export GOFLAGS = -mod=vendor
+export GOCACHE = $(CURDIR)/debian/gocache
+export GOPATH = $(CURDIR)/debian/gopath
+export GOTOOLCHAIN = local
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	install -d debian/build
+	go build -trimpath -ldflags="-s -w" -o debian/build/supralinux-kdeconnect-sftp ./cmd/supralinux-kdeconnect-sftp
+
+override_dh_auto_test:
+	go test ./...
+
+override_dh_auto_install:
+	install -D -m 0755 debian/build/supralinux-kdeconnect-sftp debian/supralinux-kdeconnect-sftp/usr/libexec/supralinux-kdeconnect-sftp
+
+override_dh_strip:
+
+override_dh_dwz:

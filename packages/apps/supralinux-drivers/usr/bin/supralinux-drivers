@@ -1,0 +1,5 @@
+#!/usr/bin/python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+from supralinux_drivers.__main__ import main
+
+raise SystemExit(main())

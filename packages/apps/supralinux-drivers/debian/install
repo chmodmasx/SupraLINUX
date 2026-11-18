@@ -1,0 +1,6 @@
+usr/bin/supralinux-drivers usr/bin
+usr/lib/python3/dist-packages/supralinux_drivers usr/lib/python3/dist-packages
+usr/share/supralinux/drivers usr/share/supralinux
+usr/share/applications/org.supralinux.drivers.desktop usr/share/applications
+usr/share/icons/hicolor/scalable/apps/supralinux-drivers.svg usr/share/icons/hicolor/scalable/apps
+etc/xdg/kcm-about-distrorc etc/xdg

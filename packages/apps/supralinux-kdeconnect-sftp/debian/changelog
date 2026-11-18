@@ -1,0 +1,25 @@
+supralinux-kdeconnect-sftp (1.0.2) resolute; urgency=medium
+
+  * Rebuild the KDE Connect SFTP bridge for SupraLINUX 1.0.0.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000
+
+supralinux-kdeconnect-sftp (1.0.1) unstable; urgency=medium
+
+  * Reject final symlinks in Filewrite/OpenFile and use O_NOFOLLOW to
+    prevent writing through a symlink that points outside the home.
+  * Add a regression test for dangling symlink escapes.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 14 Nov 2026 12:00:00 -0300
+
+supralinux-kdeconnect-sftp (1.0.0) unstable; urgency=medium
+
+  * Initial ephemeral native SFTP server for KDE Connect remote
+    filesystem browsing between Linux devices.
+  * Authenticates with the paired device certificate; no sshd, port 22,
+    ~/.ssh or authorized_keys changes.
+  * Exposes the user's home directory with native filesystem semantics.
+    Symlinks that resolve outside the home are rejected and readlink
+    targets are reported relative to the link.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 07 Nov 2026 22:00:00 -0300

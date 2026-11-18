@@ -1,0 +1,79 @@
+supralinux-drivers (1.0.9) resolute; urgency=medium
+
+  * Update the application version metadata for SupraLINUX 1.0.0.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000
+
+supralinux-drivers (1.0.8) unstable; urgency=medium
+
+  * Add English and French translations for the QML UI and load the
+    compiled catalogs at startup.
+  * Update the About text to reflect the current ubuntu-drivers/apt
+    backend through pkexec.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 14 Nov 2026 12:00:00 -0300
+
+supralinux-drivers (1.0.7) unstable; urgency=medium
+
+  * Delegate driver changes to Ubuntu's ubuntu-drivers install through
+    pkexec, instead of building package IDs for PackageKit. That follows the
+    Ubuntu kernel meta package, installs the signed prebuilt modules and runs
+    the NVIDIA hooks. Package index refresh uses apt-get update.
+  * Remove the manual NVIDIA/kernel package selection introduced in 1.0.6.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 06 Nov 2026 12:00:00 -0300
+
+supralinux-drivers (1.0.6) unstable; urgency=medium
+
+  * Install the prebuilt linux-modules-nvidia package for the running kernel
+    instead of the generic meta package. The meta can point to a newer kernel
+    ABI whose linux-modules package is not available, which made the NVIDIA
+    install fail with unmet dependencies. If no prebuilt package exists, add
+    the matching kernel headers so DKMS can build the driver.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 06 Nov 2026 00:00:00 -0300
+
+supralinux-drivers (1.0.5) unstable; urgency=medium
+
+  * Remove the accidental dependency on supralinux-ath9k-ar9565. The AR9565
+    Bluetooth coexistence quirk remains an optional package in testing.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 03 Nov 2026 00:10:00 +0000
+
+supralinux-drivers (1.0.4) unstable; urgency=medium
+
+  * Depend on supralinux-ath9k-ar9565 so existing installations receive the
+    AR9565 Bluetooth coexistence quirk through a normal apt upgrade.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 02 Nov 2026 23:55:00 +0000
+
+supralinux-drivers (1.0.3) unstable; urgency=medium
+
+  * Show a reboot action in the proprietary-driver warning after applying a
+    driver, and use the neutral "Para que surtan efecto, reiniciar el equipo"
+    wording while a reboot is pending.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 02 Nov 2026 20:00:00 +0000
+
+supralinux-drivers (1.0.2) unstable; urgency=medium
+
+  * Show "SupraLINUX - Aurora" in the KDE About This System page and in the
+    driver app's About sheet, without the distribution version number.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 02 Nov 2026 18:00:00 +0000
+
+supralinux-drivers (1.0.1) unstable; urgency=medium
+
+  * Fix PackageKit transactions: PkTask has no "error" signal. The bogus
+    connection raised before refresh/apply started and left the UI busy
+    forever. Errors are now reported by generic_finish().
+  * Pass tuple user_data to PackageKit async callbacks; None raised
+    "expected tuple for callback user_data" on every progress event.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 02 Nov 2026 09:00:00 +0000
+
+supralinux-drivers (1.0.0) unstable; urgency=medium
+
+  * Initial SupraLINUX Aurora hardware driver manager.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 01 Nov 2026 21:00:00 +0000
