@@ -46,7 +46,9 @@ certifica un build nuevo ni una release.
 | Frameworks 6.24 | `packages/kde/` | `4df8d51` | 68 paquetes; controles saneados y parches conservados | Hecho |
 | Plasma 6.6.7 | `packages/plasma/` | `8331246` | 61 paquetes; incluye FreeRDP 3 con control saneado | Hecho |
 | Gear 25.12.3 | `packages/gear/` y `packages/complete/` | `8e0055a` | 20 de Gear y 15 extras; `complete` renombrado a `gear-extras` | Hecho |
-| Integración de escritorio | `packages/desktop/` | — | Revisar defaults, base-files y hardware | Pendiente |
+| Integración de escritorio | `packages/desktop/` | `f65417d` | Defaults, base-files con `dpkg-divert`, hardware y protocolos Wayland | Hecho |
+| Aplicaciones | `packages/apps/` | `b73d66c` | Controladores y puente SFTP de KDE Connect | Hecho |
+| Sistema y fuentes | `packages/system/`, `packages/fonts/` | `7db6a90` | Casper con `noswap`, quirk ath9k y Noto Color Emoji | Hecho |
 | Firefox y l10n | `packages/` y notas de mirror | — | Pasar al repositorio oficial de Mozilla; retirar mirror y cron | Pendiente |
 | Calamares | `installer/calamares/` | — | Empaquetar como `supralinux-calamares-config`; retirar `calamares-settings-kubuntu` | Pendiente |
 | Live y arranque | `tools/live/` | — | Revisar hooks, shim/GRUB firmados y sellado | Pendiente |
