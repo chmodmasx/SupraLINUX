@@ -140,6 +140,8 @@ explícitamente documentado, nunca con una afirmación falsa.
 - 10 paquetes nativos: build limpio `PASS`, con artifact y evidencia.
 - Muestras de Frameworks, Plasma y Gear: `extra-cmake-modules`,
   `libkf6coreaddons6`, `libkwin6` y `dolphin` con build limpio `PASS`.
+- Smoke offline: `supralinux-build-test` y `supralinux-base-files` con
+  instalación, control negativo y rechazo de índices manipulados `PASS`.
 - Los 176 paquetes fuente y la ISO no se construyeron completos.
 - No hay snapshot `stable`, clave nueva publicada ni autorización de release.
 
