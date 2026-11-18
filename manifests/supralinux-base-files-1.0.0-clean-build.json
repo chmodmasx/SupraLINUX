@@ -304,11 +304,11 @@
   "verification": {
     "expected_paths": [
       "/usr/lib/os-release",
-      "/etc/lsb-release",
-      "/etc/issue",
-      "/etc/issue.net",
-      "/etc/legal",
-      "/etc/update-motd.d/10-help-text"
+      "/usr/share/supralinux/base-files/lsb-release",
+      "/usr/share/supralinux/base-files/issue",
+      "/usr/share/supralinux/base-files/issue.net",
+      "/usr/share/supralinux/base-files/legal",
+      "/usr/share/supralinux/base-files/10-help-text"
     ]
   }
 }
