@@ -221,7 +221,11 @@ manifiesto de release.
   `manifests/package-smoke-results-1.0.0.json`.
 - El intento inicial de `supralinux-base-files` falló por preguntas de
   conffile; se corrigió el paquete y se repitió el smoke.
-- Los 176 paquetes y la ISO siguen pendientes de build completo.
+- ISO de humo `8994da94…`: arranque BIOS y UEFI Secure Boot hasta Plasma
+  `PASS`. Se construyó desde el rootfs live anterior con 9 paquetes nuevos;
+  no es un build limpio, no se probó Calamares y no es una release.
+  El resumen está en `manifests/smoke-iso-1.0.0.json`.
+- Los 176 paquetes y la ISO de release siguen pendientes de build completo.
 - ISO, instalación y recuperación: pendientes de la clave nueva y del
   repositorio publicado.
 

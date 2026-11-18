@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "scope": "smoke-iso-result",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "smoke",
+  "release_ready": false,
+  "note": "ISO de humo desde el rootfs live anterior con 9 paquetes nuevos. No es un build limpio de los 176 paquetes ni una release.",
+  "iso": {
+    "name": "supralinux-aurora-1.0.0-smoke-amd64.iso",
+    "sha256": "8994da94099dccf4abc54009c867bfe93d4971771107248643e0875865fb7354",
+    "bytes": 2981173248,
+    "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-smoke-amd64.iso"
+  },
+  "sources": {
+    "rootfs": "live-6.6.7/rootfs del workspace anterior, copiado y actualizado en el workspace nuevo",
+    "new_packages": [
+      "supralinux-base-files 1.0.0",
+      "supralinux-branding 1.2.0",
+      "supralinux-theme 1.0.3",
+      "supralinux-calamares-config 1.0.0",
+      "supralinux-defaults 1.1.0",
+      "supralinux-hardware-support 1.0.2",
+      "supralinux-drivers 1.0.9",
+      "fonts-noto-color-emoji 2.057+supralinux2",
+      "supralinux-ath9k-ar9565 1.0.2"
+    ]
+  },
+  "tests": [
+    {
+      "id": "SMOKE-BIOS",
+      "state": "PASS",
+      "result": "Plasma en Wayland, wallpaper SupraLINUX y asistente de bienvenida",
+      "evidence": "evidence/smoke-iso/bios-screen/screen.png"
+    },
+    {
+      "id": "SMOKE-UEFI-SB",
+      "state": "PASS",
+      "result": "Arranque con OVMF Secure Boot y Plasma en Wayland",
+      "evidence": "evidence/smoke-iso/uefi-sb/screen.png"
+    }
+  ],
+  "limitations": [
+    "No se ejecut\u00f3 el instalador Calamares.",
+    "No se prob\u00f3 recuperaci\u00f3n Btrfs desde esta ISO.",
+    "El rootfs conserva paquetes de la campa\u00f1a anterior; no es un build limpio.",
+    "No se public\u00f3 ni se firm\u00f3 como release."
+  ]
+}

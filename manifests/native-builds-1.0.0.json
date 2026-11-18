@@ -92,9 +92,9 @@
       "state": "PASS",
       "artifact": {
         "name": "supralinux-calamares-config_1.0.0_all.deb",
-        "sha256": "409cec12cedf68ea096291b7e54be854499dcbb8829576bc4d80e3119553cb4e"
+        "sha256": "44b9b25f8c8248bb5d6511b026806feec0c564b978aee487e8a2eeca8dde0b08"
       },
-      "evidence": "evidence/clean-build/20261118T161503Z-c74c6aacfa94",
+      "evidence": "evidence/clean-build/20261118T180417Z-353767c25e7a",
       "sbuild_invoked": true,
       "cleanup": {
         "process_absent": true,
