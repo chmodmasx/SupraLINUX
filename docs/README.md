@@ -4,6 +4,9 @@ La documentación completa de SupraLINUX se publica con la release 1.0.0.
 
 ## Disponible ahora
 
+- [Producto](product.md)
+- [Arquitectura](architecture.md)
+- [Política de packaging](packaging-policy.md)
 - [README del proyecto](../README.md)
 - [Contribuir](../CONTRIBUTING.md)
 - [Seguridad](../SECURITY.md)
@@ -12,9 +15,6 @@ La documentación completa de SupraLINUX se publica con la release 1.0.0.
 
 ## Previsto para 1.0.0
 
-- `product.md`: alcance, experiencia y soporte.
-- `architecture.md`: componentes, pipeline y layout del repo.
-- `packaging-policy.md`: fuentes, parches, ABI y versiones.
 - `development.md`: flujo local, ramas y checkpoints.
 - `clean-build.md`: build limpio con sbuild/unshare.
 - `live-image.md`: rootfs, squashfs, ISO y Secure Boot.
