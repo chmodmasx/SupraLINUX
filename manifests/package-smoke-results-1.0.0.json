@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "scope": "package-smoke-results",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "partial",
+  "note": "Smoke offline de dos paquetes. No cubre la ISO, el instalador ni la release completa.",
+  "smoke_count": 2,
+  "smokes": [
+    {
+      "package": "supralinux-build-test",
+      "version": "0.2.0",
+      "manifest": "manifests/supralinux-build-test-0.2.0-package-smoke.json",
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-build-test_0.2.0_all.deb",
+        "sha256": "091a8b3fe75fb3954f1b3539db813c56862d14657337e7b81e926a99b7ea844e"
+      },
+      "evidence": "evidence/package-smoke/20261118T170907Z-121ac671a132",
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-base-files",
+      "version": "1.0.0",
+      "manifest": "manifests/supralinux-base-files-1.0.0-package-smoke.json",
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-base-files_1.0.0_all.deb",
+        "sha256": "9b75550d48b217e86395f1f64ce01f51df8ab3047bc9ad7ca19c0556071b420d"
+      },
+      "evidence": "evidence/package-smoke/20261118T171702Z-a5b73d0aa9a1",
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    }
+  ],
+  "infra_invalid_attempts": [
+    {
+      "run": "20261118T171029Z-04900de131b8",
+      "state": "INFRA_INVALID",
+      "error": "Guest smoke failed; inspect retained guest.log"
+    }
+  ]
+}

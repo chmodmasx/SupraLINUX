@@ -215,6 +215,12 @@ manifiesto de release.
 - Muestras de Frameworks, Plasma y Gear: `extra-cmake-modules`,
   `libkf6coreaddons6`, `libkwin6` y `dolphin` con build limpio `PASS`.
   El resumen está en `manifests/stack-builds-1.0.0.json`.
+- Smoke offline: `supralinux-build-test` y `supralinux-base-files` instalan
+  desde un repositorio local firmado, pasan el control negativo y rechazan
+  índices manipulados. El resumen está en
+  `manifests/package-smoke-results-1.0.0.json`.
+- El intento inicial de `supralinux-base-files` falló por preguntas de
+  conffile; se corrigió el paquete y se repitió el smoke.
 - Los 176 paquetes y la ISO siguen pendientes de build completo.
 - ISO, instalación y recuperación: pendientes de la clave nueva y del
   repositorio publicado.
