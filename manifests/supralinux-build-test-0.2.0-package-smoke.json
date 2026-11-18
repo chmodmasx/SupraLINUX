@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "scope": "offline-artifact-installation-smoke",
+  "package": "supralinux-build-test",
+  "version": "0.2.0",
+  "architecture": "all",
+  "artifact": {
+    "path": "artifacts/sha256/091a8b3fe75fb3954f1b3539db813c56862d14657337e7b81e926a99b7ea844e/supralinux-build-test_0.2.0_all.deb",
+    "sha256": "091a8b3fe75fb3954f1b3539db813c56862d14657337e7b81e926a99b7ea844e"
+  },
+  "base_image": {
+    "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
+    "sha256": "0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7",
+    "format": "qcow2"
+  },
+  "test": {
+    "path": "tests/fixtures/package-smoke",
+    "sha256": "16582132497ec777b2e48c85165fca424db535370dad29cad0282fc05fe530ac"
+  },
+  "installed_files": {
+    "/usr/bin/supralinux-build-test": "921462cd57ca4febc63a057e28020e38c401c062376e684289eda3c8e960278a",
+    "/usr/share/supralinux/build-proof.txt": "9240dcf24c6e07f7ce7796fd1109567cf20a50cc25d047016b28d4473a7f13d6"
+  },
+  "negative_test": {
+    "path": "/usr/share/supralinux/build-proof.txt",
+    "suffix": ".hidden-for-smoke"
+  }
+}
