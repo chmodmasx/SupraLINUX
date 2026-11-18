@@ -1,6 +1,2 @@
 usr/lib/os-release usr/lib
-etc/lsb-release etc
-etc/issue etc
-etc/issue.net etc
-etc/legal etc
-etc/update-motd.d etc
+usr/share/supralinux/base-files usr/share/supralinux

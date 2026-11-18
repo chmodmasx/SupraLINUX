@@ -30,7 +30,7 @@ class DesktopIntegrationTests(unittest.TestCase):
         self.assertEqual(values["SUPRALINUX_VERSION"], "1.0.0")
         self.assertEqual(values["SUPRALINUX_CODENAME"], "aurora")
         self.assertNotIn("SUPPORT_END", values)
-        self.assertIn("DISTRIB_ID=SupraLINUX", (base / "etc/lsb-release").read_text())
+        self.assertIn("DISTRIB_ID=SupraLINUX", (base / "usr/share/supralinux/base-files/lsb-release").read_text())
 
     def test_base_files_use_dpkg_divert(self):
         base = ROOT / "packages/desktop/supralinux-base-files"
@@ -43,7 +43,9 @@ class DesktopIntegrationTests(unittest.TestCase):
                 self.assertIn(name, postrm)
         self.assertIn("dpkg-divert", preinst)
         self.assertIn("dpkg-divert", postrm)
-        for script in [base / "debian/preinst", base / "debian/postrm"]:
+        self.assertIn("/usr/share/supralinux/base-files", (base / "debian/postinst").read_text())
+        self.assertNotIn("etc/", (base / "debian/install").read_text())
+        for script in [base / "debian/preinst", base / "debian/postrm", base / "debian/postinst"]:
             result = subprocess.run(["bash", "-n", str(script)], capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
 

@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+source=/usr/share/supralinux/base-files
+install -d -m 0755 /etc /etc/update-motd.d
+install -m 0644 "$source/lsb-release" /etc/lsb-release
+install -m 0644 "$source/issue" /etc/issue
+install -m 0644 "$source/issue.net" /etc/issue.net
+install -m 0644 "$source/legal" /etc/legal
+install -m 0755 "$source/10-help-text" /etc/update-motd.d/10-help-text
+
+exit 0
