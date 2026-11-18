@@ -21,13 +21,13 @@
     }
   },
   "base_image": {
-    "path": "/var/lib/supralinux/images/ubuntu-26.04-authoritative.qcow2",
+    "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
     "sha256": "0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7",
     "format": "qcow2",
     "scope": "inherited-builder-image; disposable-overlay-only"
   },
   "rootfs": {
-    "path": "/mnt/RAID0/SupraLINUX_OS/artifacts/rootfs/resolute-amd64.tar",
+    "path": "artifacts/sha256/4fdb9d433ebdd075af3d4a94ffb32dc50d84c2e8e47d9d9385c2921a61f85c0b/resolute-amd64.tar",
     "sha256": "4fdb9d433ebdd075af3d4a94ffb32dc50d84c2e8e47d9d9385c2921a61f85c0b",
     "bytes": 434753024,
     "installed_package_count": 123,
@@ -35,7 +35,7 @@
   },
   "build_dependencies": {
     "declared": "debhelper-compat (= 13), cmake (>= 3.29), ninja-build, python3",
-    "source_evidence": "/mnt/RAID0/SupraLINUX_OS/artifacts/build-deps/ecm-20261028",
+    "source_evidence": "artifacts/sha256",
     "resolved_at": "2026-10-28T18:30:02.388809+00:00",
     "sources_sha256": "a0edd5ba4718eef95e02e6f7600af8caf886b0f55bbed7a73bb954d1dc7ecfff",
     "packages": [

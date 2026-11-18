@@ -21,13 +21,13 @@
     }
   },
   "base_image": {
-    "path": "/var/lib/supralinux/images/ubuntu-26.04-authoritative.qcow2",
+    "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
     "sha256": "0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7",
     "format": "qcow2",
     "scope": "inherited-builder-image; disposable-overlay-only"
   },
   "rootfs": {
-    "path": "/mnt/RAID0/SupraLINUX_OS/artifacts/rootfs/resolute-amd64.tar",
+    "path": "artifacts/sha256/4fdb9d433ebdd075af3d4a94ffb32dc50d84c2e8e47d9d9385c2921a61f85c0b/resolute-amd64.tar",
     "sha256": "4fdb9d433ebdd075af3d4a94ffb32dc50d84c2e8e47d9d9385c2921a61f85c0b",
     "bytes": 434753024,
     "installed_package_count": 123,
@@ -35,7 +35,7 @@
   },
   "build_dependencies": {
     "declared": "cmake (>= 3.16~), debhelper-compat (= 13), dh-sequence-kf6, extra-cmake-modules (>= 6.9.0~), gettext, libbaloowidgets-dev (>= 4:25.12.3~), libkf6baloo-dev (>= 6.9.0~) [!hurd-any], libkf6bookmarks-dev (>= 6.9.0~), libkf6codecs-dev (>= 6.9.0~), libkf6colorscheme-dev (>= 6.9.0~), libkf6completion-dev (>= 6.9.0~), libkf6config-dev (>= 6.9.0~), libkf6coreaddons-dev (>= 6.9.0~), libkf6crash-dev (>= 6.9.0~), libkf6dbusaddons-dev (>= 6.9.0~), libkf6doctools-dev (>= 6.9.0~), libkf6filemetadata-dev (>= 6.9.0~), libkf6guiaddons-dev (>= 6.9.0~), libkf6i18n-dev (>= 6.9.0~), libkf6iconthemes-dev (>= 6.9.0~), libkf6kcmutils-dev (>= 6.9.0~), libkf6kio-dev (>= 6.9.0~), libkf6newstuff-dev (>= 6.9.0~), libkf6notifications-dev (>= 6.9.0~), libkf6parts-dev (>= 6.9.0~), libkf6solid-dev (>= 6.9.0~), libkf6textwidgets-dev (>= 6.9.0~), libkf6userfeedback-dev (>= 6.9.0~), libkf6widgetsaddons-dev (>= 6.9.0~), libkf6windowsystem-dev (>= 6.9.0~), libpackagekitqt6-dev, libphonon4qt6-dev, libphonon4qt6experimental-dev, libplasmaactivities-dev, pkgconf, qt6-base-dev (>= 6.4.0~), qt6-base-private-dev, qt6-multimedia-dev (>= 6.4.0~)",
-    "source_evidence": "/mnt/RAID0/SupraLINUX_OS/artifacts/build-deps/dolphin-25123b-20261030",
+    "source_evidence": "artifacts/sha256",
     "resolved_at": "2026-10-30T22:42:05.088016+00:00",
     "sources_sha256": "310ce5998ff618c30e64b0ebef68623f6c1c223befe6d8eb9e6011fc3d8082bb",
     "preferences_sha256": "3ede01fddf46a7c2e1786ea1552d7708fb161afe9de01a4f640b1d6137eef611",

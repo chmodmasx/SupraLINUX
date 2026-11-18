@@ -21,13 +21,13 @@
     }
   },
   "base_image": {
-    "path": "/var/lib/supralinux/images/ubuntu-26.04-authoritative.qcow2",
+    "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
     "sha256": "0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7",
     "format": "qcow2",
     "scope": "inherited-builder-image; disposable-overlay-only"
   },
   "rootfs": {
-    "path": "/mnt/RAID0/SupraLINUX_OS/artifacts/rootfs/resolute-amd64.tar",
+    "path": "artifacts/sha256/4fdb9d433ebdd075af3d4a94ffb32dc50d84c2e8e47d9d9385c2921a61f85c0b/resolute-amd64.tar",
     "sha256": "4fdb9d433ebdd075af3d4a94ffb32dc50d84c2e8e47d9d9385c2921a61f85c0b",
     "bytes": 434753024,
     "installed_package_count": 123,
@@ -35,7 +35,7 @@
   },
   "build_dependencies": {
     "declared": "breeze-dev (>= 4:6.6.5~), cmake (>= 3.16~), debhelper-compat (= 13), dh-sequence-kf6, dh-sequence-python3, extra-cmake-modules (>= 6.22.0~), gettext, hwdata, knighttime-dev (>= 6.6.5~), kscreenlocker-dev (>= 6.6.5~), kwayland-dev (>= 4:6.6.4~), libcanberra-dev, libcap-dev [linux-any], libcap2-bin [linux-any], libdisplay-info-dev, libdrm-dev (>= 2.4.116~), libegl-dev (>= 1.2~), libeis-dev, libepoxy-dev (>= 1.3), libfontconfig-dev, libfreetype-dev, libgbm-dev, libice-dev, libinput-dev (>= 1.26~), libkdecorations3-dev (>= 4:6.6.4~), libkf6auth-dev (>= 6.22.0~), libkf6colorscheme-dev (>= 6.22.0~), libkf6config-dev (>= 6.22.0~), libkf6configwidgets-dev (>= 6.22.0~), libkf6coreaddons-dev (>= 6.22.0~), libkf6crash-dev (>= 6.22.0~), libkf6dbusaddons-dev (>= 6.22.0~), libkf6declarative-dev (>= 6.22.0~), libkf6doctools-dev (>= 6.22.0~), libkf6globalaccel-dev (>= 6.22.0~), libkf6guiaddons-dev (>= 6.22.0~), libkf6i18n-dev (>= 6.22.0~), libkf6idletime-dev (>= 6.22.0~), libkf6itemviews-dev (>= 6.22.0~), libkf6kcmutils-dev (>= 6.22.0~), libkf6newstuff-dev (>= 6.22.0~), libkf6notifications-dev (>= 6.22.0~), libkf6package-dev (>= 6.22.0~), libkf6runner-dev (>= 6.22.0~), libkf6service-dev (>= 6.22.0~), libkf6svg-dev (>= 6.22.0~), libkf6widgetsaddons-dev (>= 6.22.0~), libkf6windowsystem-dev (>= 6.22.0~), libkf6xmlgui-dev (>= 6.22.0~), libkglobalacceld-dev (>= 6.6.5~), libkirigami-dev (>= 6.22.0~), liblcms2-dev, libpipewire-0.3-dev (>= 0.3.29), libplasma-dev (>= 6.6.6~), libplasmaactivities-dev (>= 6.6.4~), libqaccessibilityclient-qt6-dev, libsm-dev, libsystemd-dev, libudev-dev [linux-any], libwayland-dev (>= 1.22~), libx11-xcb-dev, libxcb-composite0-dev (>= 1.10~), libxcb-cursor-dev, libxcb-damage0-dev (>= 1.10~), libxcb-dri3-dev (>= 1.10~), libxcb-glx0-dev (>= 1.10~), libxcb-icccm4-dev, libxcb-image0-dev, libxcb-keysyms1-dev, libxcb-present-dev (>= 1.10~), libxcb-randr0-dev (>= 1.10~), libxcb-render0-dev (>= 1.10~), libxcb-res0-dev, libxcb-shape0-dev (>= 1.10~), libxcb-shm0-dev (>= 1.10~), libxcb-sync-dev (>= 1.10~), libxcb-util-dev, libxcb-xfixes0-dev (>= 1.10~), libxcb-xinerama0-dev (>= 1.10~), libxcb-xinput-dev (>= 1.10~), libxcb-xkb-dev (>= 1.10~), libxcb-xtest0-dev, libxcb1-dev (>= 1.10~), libxcursor-dev, libxcvt-dev (>= 0.1.1~), libxkbcommon-dev (>= 0.7.0~), libxkbcommon-x11-dev, pkgconf, plasma-wayland-protocols (>= 1.19.0~), python3:any, qt6-5compat-dev (>= 6.10.0~), qt6-base-dev (>= 6.10.0~), qt6-base-dev-tools (>= 6.10.0~), qt6-base-private-dev (>= 6.10.0+dfsg~), qt6-declarative-dev (>= 6.10.0~), qt6-declarative-private-dev (>= 6.10.0~), qt6-sensors-dev (>= 6.10.0~), qt6-svg-dev (>= 6.10.0~), qt6-tools-dev (>= 6.10.0~), qt6-wayland-dev (>= 6.10.0~), wayland-protocols (>= 1.44~), xwayland (>= 2:22.1.7-1~)",
-    "source_evidence": "/mnt/RAID0/SupraLINUX_OS/artifacts/build-deps/kwin-667-20261030",
+    "source_evidence": "artifacts/sha256",
     "resolved_at": "2026-10-30T14:18:35.496251+00:00",
     "sources_sha256": "310ce5998ff618c30e64b0ebef68623f6c1c223befe6d8eb9e6011fc3d8082bb",
     "preferences_sha256": "3ede01fddf46a7c2e1786ea1552d7708fb161afe9de01a4f640b1d6137eef611",

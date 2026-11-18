@@ -21,7 +21,7 @@ class ToolingTests(unittest.TestCase):
 
     def test_tools_do_not_keep_previous_workspace_paths(self):
         forbidden = ["/mnt/RAID0/" + "SupraLINUX_OS", "/var/lib/" + "supralinux/"]
-        for directory in ["tools", "tests", "packages"]:
+        for directory in ["tools", "tests", "packages", "manifests"]:
             for path in (ROOT / directory).rglob("*"):
                 if not path.is_file() or "__pycache__" in path.parts:
                     continue
