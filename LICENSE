@@ -1,0 +1,46 @@
+SupraLINUX — license summary
+============================
+
+This project is distributed under multiple licenses. The authoritative
+license for each package is the one declared in its debian/copyright file.
+
+Default for original code and configuration
+-------------------------------------------
+GPL-2.0-or-later, unless a file or package says otherwise.
+Full text: LICENSES/GPL-2.0-or-later.txt
+
+Package-specific exceptions
+---------------------------
+- supralinux-drivers: GPL-3.0-or-later
+  Full text: LICENSES/GPL-3.0-or-later.txt
+
+- Artwork and wallpapers: CC-BY-4.0
+  Full text: LICENSES/CC-BY-4.0.txt
+
+- Sounds: CC0-1.0
+  Full text: LICENSES/CC0-1.0.txt
+
+- KDE/Breeze-derived theme parts: LGPL-2.1-or-later
+  Full text: LICENSES/LGPL-2.1-or-later.txt
+
+- Fonts: OFL-1.1
+  Full text: LICENSES/OFL-1.1.txt
+
+- Vendored Go modules and other third-party code: their own licenses,
+  as declared in the corresponding debian/copyright file.
+  BSD texts: LICENSES/BSD-2-Clause.txt, LICENSES/BSD-3-Clause.txt
+
+Documentation
+-------------
+Documentation is licensed under CC BY-SA 4.0.
+Full text: LICENSES/CC-BY-SA-4.0.txt
+
+Third-party components
+----------------------
+See THIRD-PARTY.md for an index and each package's debian/copyright for
+the complete attribution and license text.
+
+Trademark
+---------
+No trademark license is granted by this file. See README.md for the
+project's trademark and branding policy.

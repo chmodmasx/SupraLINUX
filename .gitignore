@@ -1,0 +1,56 @@
+# Build outputs
+*.deb
+*.udeb
+*.changes
+*.buildinfo
+*.dsc
+*.tar.*
+*.iso
+*.img
+*.qcow2
+*.vmdk
+*.vdi
+
+# Debian build directories
+packages/*/*/debian/.debhelper/
+packages/*/*/debian/tmp/
+packages/*/*/debian/files
+packages/*/*/debian/*.substvars
+packages/*/*/debian/debhelper-build-stamp
+packages/*/*/debian/*.postinst.debhelper
+packages/*/*/debian/*.postrm.debhelper
+packages/*/*/debian/*.preinst.debhelper
+packages/*/*/debian/*.prerm.debhelper
+packages/*/*/debian/*/
+!packages/*/*/debian/patches/
+!packages/*/*/debian/source/
+!packages/*/*/debian/tests/
+!packages/*/*/debian/upstream/
+!packages/*/*/debian/po/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Local workspace
+.local/
+.work/
+.env
+secrets/
+
+# Credentials and disks
+*.pem
+*.key
+id_rsa
+id_ed25519
+*.kdbx
+*.ovpn
+
+# Logs and editor files
+*.log
+.DS_Store
+*.swp
+*.swo
