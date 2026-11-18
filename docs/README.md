@@ -9,6 +9,9 @@ La documentación completa de SupraLINUX se publica con la release 1.0.0.
 - [Política de packaging](packaging-policy.md)
 - [Desarrollo](development.md)
 - [Herramientas del host](host-tools.md)
+- [Build limpio](clean-build.md)
+- [Imagen live](live-image.md)
+- [Instalador](installer.md)
 - [Pruebas](testing.md)
 - [Release](release.md)
 - [Secure Boot](secure-boot.md)
@@ -21,12 +24,6 @@ La documentación completa de SupraLINUX se publica con la release 1.0.0.
 - [Seguridad](../SECURITY.md)
 - [Atribuciones de terceros](../THIRD-PARTY.md)
 - [Changelog](../CHANGELOG.md)
-
-## Previsto para 1.0.0
-
-- `clean-build.md`: build limpio con sbuild/unshare.
-- `live-image.md`: rootfs, squashfs, ISO y Secure Boot.
-- `installer.md`: Calamares, particionado, usuarios y GRUB.
 
 ## Idioma
 
