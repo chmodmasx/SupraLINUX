@@ -36,7 +36,8 @@ class DesktopIntegrationTests(unittest.TestCase):
         base = ROOT / "packages/desktop/supralinux-base-files"
         preinst = (base / "debian/preinst").read_text()
         postrm = (base / "debian/postrm").read_text()
-        for name in ["/usr/lib/os-release", "/etc/lsb-release", "/etc/issue", "/etc/issue.net", "/etc/legal"]:
+        for name in ["/usr/lib/os-release", "/etc/lsb-release", "/etc/issue", "/etc/issue.net", "/etc/legal",
+                     "/etc/update-motd.d/10-help-text"]:
             with self.subTest(name=name):
                 self.assertIn(name, preinst)
                 self.assertIn(name, postrm)

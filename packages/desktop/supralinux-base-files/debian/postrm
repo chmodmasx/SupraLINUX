@@ -17,6 +17,7 @@ if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
     remove_divert /etc/issue
     remove_divert /etc/issue.net
     remove_divert /etc/legal
+    remove_divert /etc/update-motd.d/10-help-text
 fi
 
 exit 0

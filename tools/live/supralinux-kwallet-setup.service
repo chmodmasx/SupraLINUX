@@ -1,0 +1,14 @@
+[Unit]
+Description=Provision the KWallet for the live autologin user
+Documentation=file:///usr/local/sbin/supralinux-kwallet-setup
+After=local-fs.target
+Before=display-manager.service
+ConditionPathExists=/usr/local/sbin/supralinux-kwallet-setup
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/supralinux-kwallet-setup
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

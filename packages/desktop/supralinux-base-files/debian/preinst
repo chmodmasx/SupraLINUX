@@ -19,6 +19,7 @@ if [ "$1" = "install" ] || [ "$1" = "upgrade" ]; then
     divert /etc/issue
     divert /etc/issue.net
     divert /etc/legal
+    divert /etc/update-motd.d/10-help-text
 fi
 
 exit 0

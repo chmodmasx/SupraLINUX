@@ -3,3 +3,4 @@ etc/lsb-release etc
 etc/issue etc
 etc/issue.net etc
 etc/legal etc
+etc/update-motd.d etc
