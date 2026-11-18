@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<descriptor>
+
+<version>
+    6.0.0
+</version>
+
+<headers>
+    /usr/include/KF6/KPackage/
+</headers>
+
+<skip_headers>
+    <!-- these are probably private headers that shouldn't be installed anyway-->
+    /usr/include/KF6/KPackage/KPackage/packagestructure_compat_p
+    /usr/include/KF6/KPackage/KPackage/packagestructure_compat_p.h
+</skip_headers>
+
+<libs>
+    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF6Package.so
+</libs>
+
+<gcc_options>
+    -fPIC
+    -std=c++17
+</gcc_options>
+
+</descriptor>

@@ -1,0 +1,134 @@
+Source: kf6-sonnet
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: aspell,
+               cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               hspell,
+               libaspell-dev,
+               libhunspell-dev,
+               libvoikko-dev,
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~),
+               xauth,
+               xvfb,
+               zlib1g-dev
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/sonnet
+Rules-Requires-Root: no
+
+Package: sonnet6-plugins
+Section: kde
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: kf6-sonnet-plugins
+Replaces: kf6-sonnet-plugins
+Suggests: hspell
+Description: spell checking library for Qt, plugins
+ Sonnet is a Qt based library that offers easy access to spell
+ checking using various plugin based backends.  It is part of KDE
+ Frameworks 6.
+ .
+ This package provides plugins used by Sonnet to interact with the following
+ spell checking backends: aspell, hunspell or hspell. The dictionaries need to
+ be installed separatedly.
+
+Package: libkf6sonnet-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: spell checking library for Qt, data files
+ Sonnet is a Qt based library that offers easy access to spell
+ checking using various plugin based backends.  It is part of KDE
+ Frameworks 6.
+ .
+ This package contains the translations.
+
+Package: libkf6sonnet-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6sonnet-dev-bin (= ${binary:Version}),
+         libkf6sonnetcore6 (= ${binary:Version}),
+         libkf6sonnetui6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6sonnet-doc (= ${source:Version})
+Description: spell checking library for Qt, devel files
+ Sonnet is a Qt based library that offers easy access to spell
+ checking using various plugin based backends.  It is part of KDE
+ Frameworks 6.
+ .
+ This package contains development files for building software that uses
+ libraries from the Sonnet framework.
+
+Package: libkf6sonnet-dev-bin
+Section: libdevel
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: spell checking library for Qt, devel binaries
+ Sonnet is a Qt based library that offers easy access to spell
+ checking using various plugin based backends.  It is part of KDE
+ Frameworks 6.
+ .
+ This package contains the utility programs related to the Sonnet framework.
+
+Package: libkf6sonnet-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: spell checking library for Qt (documentation)
+ Sonnet is a Qt based library that offers easy access to spell
+ checking using various plugin based backends.  It is part of KDE
+ Frameworks 6.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6sonnetcore6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6sonnet-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: sonnet6-plugins (= ${binary:Version})
+Description: spell checking library for Qt, core lib
+ Sonnet is a Qt based library that offers easy access to spell
+ checking using various plugin based backends.  It is part of KDE
+ Frameworks 6.
+
+Package: libkf6sonnetui6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: sonnet6-plugins (= ${binary:Version})
+Description: spell checking library for Qt, ui lib
+ Sonnet is a Qt based library that offers easy access to spell
+ checking using various plugin based backends.  It is part of KDE
+ Frameworks 6.
+ .
+ This package provides Qt based GUI elements that can be used
+ by projects to construct spell checking user interfaces.
+
+Package: qml6-module-org-kde-sonnet
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
+Architecture: any
+Multi-Arch: same
+Description: spell checking library for Qt, plugins
+ Sonnet is a Qt based library that offers easy access to spell
+ checking using various plugin based backends.  It is part of KDE
+ Frameworks 6.
+ .
+ This package contains the QML module.

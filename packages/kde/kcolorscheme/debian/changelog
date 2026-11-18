@@ -1,0 +1,181 @@
+kf6-kcolorscheme (6.24.0-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Frameworks 6.24.0 LTS for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 03:40:00 +0000
+
+kf6-kcolorscheme (6.24.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.24.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Mar 2026 23:01:51 +0000
+
+kf6-kcolorscheme (6.23.0-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for Qt 6.10.2 private ABI.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 14 Feb 2026 23:58:49 +0000
+
+kf6-kcolorscheme (6.23.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.23.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Feb 2026 11:36:16 +0000
+
+kf6-kcolorscheme (6.22.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.22.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 Jan 2026 18:28:56 +0000
+
+kf6-kcolorscheme (6.21.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.21.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 12 Dec 2025 11:49:55 +0000
+
+kf6-kcolorscheme (6.20.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.20.0)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 Nov 2025 16:12:56 +0000
+
+kf6-kcolorscheme (6.19.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.18.0)
+  * New upstream release (6.19.0)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 12 Oct 2025 15:04:36 +0100
+
+kf6-kcolorscheme (6.17.0-0ubuntu2) questing; urgency=medium
+
+  * No-change rebuild for Qt 6.9.2 private ABI.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 16 Sep 2025 07:42:46 +0100
+
+kf6-kcolorscheme (6.17.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.17.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Aug 2025 18:13:43 +0100
+
+kf6-kcolorscheme (6.16.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.16.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 11 Jul 2025 16:40:03 +0100
+
+kf6-kcolorscheme (6.15.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.15.0)
+  * Comment out .install for docs packages for now, as the qch docs are
+    currently not buildable in Ubuntu.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Jun 2025 16:31:29 +0100
+
+kf6-kcolorscheme (6.14.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.14.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 10 May 2025 06:55:59 +0100
+
+kf6-kcolorscheme (6.12.0-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.3 (LP: #2103945).
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Sat, 29 Mar 2025 15:05:49 -0500
+
+kf6-kcolorscheme (6.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Mar 2025 10:50:14 +0000
+
+kf6-kcolorscheme (6.11.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.11.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 14 Feb 2025 16:46:08 +0000
+
+kf6-kcolorscheme (6.10.0-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.2.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Tue, 04 Feb 2025 14:50:49 -0600
+
+kf6-kcolorscheme (6.10.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.10.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jan 2025 12:17:34 +0000
+
+kf6-kcolorscheme (6.9.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.9.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Dec 2024 14:45:00 +0000
+
+kf6-kcolorscheme (6.8.0-0ubuntu3) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.1.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 04 Dec 2024 14:29:57 -0600
+
+kf6-kcolorscheme (6.8.0-0ubuntu2) plucky; urgency=medium
+
+  * No-change rebuild for Qt 6.8.0.
+
+ -- Simon Quigley <tsimonq2@ubuntu.com>  Wed, 04 Dec 2024 14:29:57 -0600
+
+kf6-kcolorscheme (6.8.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.7.0)
+  * Build depend on qt6-base-private-dev
+  * New upstream release (6.8.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Nov 2024 16:34:32 +0000
+
+kf6-kcolorscheme (6.6.0-0ubuntu2) oracular; urgency=medium
+
+  * Fix last upload with updates lost in git my merge.
+    - Refresh symbols.
+    - Bring in libkf6guiaddons-doc for qch failure.
+    - More symbol updates.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 21 Sep 2024 17:19:25 +0100
+
+kf6-kcolorscheme (6.6.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.6.0)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Fri, 20 Sep 2024 19:04:31 +0100
+
+kf6-kcolorscheme (6.5.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Aug 2024 19:21:33 +0100
+
+kf6-kcolorscheme (6.4.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.4.0)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 13 Jul 2024 16:32:56 +0100
+
+kf6-kcolorscheme (6.3.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.0).
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 09 Jun 2024 14:55:10 +0200
+
+kf6-kcolorscheme (6.0.0-1) experimental; urgency=medium
+
+  * Initial release. (Closes: #1068520)
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 09 Apr 2024 00:35:56 +0200

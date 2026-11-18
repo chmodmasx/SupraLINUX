@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<descriptor>
+
+<version>
+    6.0.0
+</version>
+
+<headers>
+    /usr/include/KF6/SonnetCore/
+    /usr/include/KF6/SonnetUi/
+</headers>
+
+<libs>
+    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF6SonnetCore.so
+    /usr/lib/@@DEB_HOST_MULTIARCH@@/libKF6SonnetUi.so
+</libs>
+
+<gcc_options>
+    -fPIC
+    -std=c++17
+</gcc_options>
+
+</descriptor>

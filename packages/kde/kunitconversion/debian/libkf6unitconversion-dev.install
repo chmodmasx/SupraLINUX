@@ -1,0 +1,3 @@
+usr/include/KF6/KUnitConversion/
+usr/lib/*/cmake/KF6UnitConversion/
+usr/lib/*/libKF6UnitConversion.so

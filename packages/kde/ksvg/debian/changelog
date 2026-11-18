@@ -1,0 +1,208 @@
+kf6-ksvg (6.24.0-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Frameworks 6.24.0 LTS for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 04:20:00 +0000
+
+kf6-ksvg (6.24.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.24.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Mar 2026 23:05:13 +0000
+
+kf6-ksvg (6.23.0-0ubuntu2) resolute; urgency=medium
+
+  * Add libkirigami-dev to dev package depends.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 20 Feb 2026 18:04:53 +0000
+
+kf6-ksvg (6.23.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.23.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Feb 2026 11:40:40 +0000
+
+kf6-ksvg (6.22.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.22.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 Jan 2026 18:32:26 +0000
+
+kf6-ksvg (6.21.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.21.0)
+  * Make build time tests non fatal.
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 12 Dec 2025 11:53:14 +0000
+
+kf6-ksvg (6.20.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.20.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 Nov 2025 16:15:55 +0000
+
+kf6-ksvg (6.19.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.18.0)
+  * Update symbols.
+  * New upstream release (6.19.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 12 Oct 2025 15:07:42 +0100
+
+kf6-ksvg (6.17.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.17.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Aug 2025 18:17:49 +0100
+
+kf6-ksvg (6.16.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.16.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 11 Jul 2025 16:47:43 +0100
+
+kf6-ksvg (6.15.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.15.0)
+  * Comment out .install for docs packages for now, as the qch docs are
+    currently not buildable in Ubuntu.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Jun 2025 16:35:19 +0100
+
+kf6-ksvg (6.14.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.14.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 10 May 2025 07:00:10 +0100
+
+kf6-ksvg (6.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Mar 2025 10:54:42 +0000
+
+kf6-ksvg (6.11.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.11.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 14 Feb 2025 16:50:00 +0000
+
+kf6-ksvg (6.10.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.10.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jan 2025 12:21:14 +0000
+
+kf6-ksvg (6.9.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.9.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Dec 2024 14:48:56 +0000
+
+kf6-ksvg (6.8.0-0ubuntu2) plucky; urgency=medium
+
+  * Merge changes from 6.6.0-2 in Debian unstable.
+    - Use dh_qmldeps to detect QML dependencies.
+    - Add qml6-module packages to -dev package for QML dependency
+      detection.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 01 Dec 2024 13:55:17 +0000
+
+kf6-ksvg (6.8.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.7.0)
+  * New upstream release (6.8.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Nov 2024 16:38:28 +0000
+
+kf6-ksvg (6.6.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Use dh_qmldeps to detect QML dependencies.
+  * Add qml6-module packages to -dev package for QML dependency detection.
+
+ -- Sandro Knauß <hefee@debian.org>  Mon, 18 Nov 2024 20:02:16 +0100
+
+kf6-ksvg (6.6.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.6.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 06 Sep 2024 23:12:34 +0200
+
+kf6-ksvg (6.6.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.6.0)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Fri, 20 Sep 2024 19:07:44 +0100
+
+kf6-ksvg (6.5.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * CI: update/simplify configuration.
+  * Drop the appstream build dependency, used only for testing the static
+    AppStream metainfo file shipped.
+  * Pass "-a" to xvfb-run, so it should run in more cases.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 23 Aug 2024 07:56:30 +0200
+
+kf6-ksvg (6.5.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.5.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Aug 2024 23:22:08 +0200
+
+kf6-ksvg (6.5.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Aug 2024 19:24:31 +0100
+
+kf6-ksvg (6.4.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.4.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 19 Jul 2024 09:24:45 +0200
+
+kf6-ksvg (6.4.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.4.0)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 13 Jul 2024 16:35:46 +0100
+
+kf6-ksvg (6.3.1-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.1).
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 20 Jun 2024 17:28:23 +0200
+
+kf6-ksvg (6.3.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Drop useless dependency on the ${shlibs:Depends} variable for the -dev
+    package.
+  * Fix Vcs-Git URLs.
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.0).
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * Update build-deps and deps with the info from cmake.
+  * Update list of installed files.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 09 Jun 2024 14:58:32 +0200
+
+kf6-ksvg (6.0.0-1) experimental; urgency=medium
+
+  [ Simon Quigley ]
+  * Initial release (Closes: #1068518).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 06 May 2024 21:24:13 +0200

@@ -1,0 +1,269 @@
+From 5f49d596461ba1a1ca9638b5fa6c1d12028fe3b9 Mon Sep 17 00:00:00 2001
+From: Volodymyr Zolotopupov <zvova7890@gmail.com>
+Date: Sun, 19 Apr 2026 03:32:20 +0300
+Subject: [PATCH] primitives: Snap icon vertices to device pixels after final
+ transform
+
+Snap icon quad vertices in the shader after the final Qt Quick transform so they land on integer device pixels.
+Fixes subpixel blur and keeps icons sharp at fractional DPR.
+
+Origin: upstream, https://invent.kde.org/frameworks/kirigami/-/merge_requests/2070
+Forwarded: not-needed, upstream backport for Frameworks/6.24
+Last-Update: 2026-11-02
+---
+ src/primitives/CMakeLists.txt                |  4 +++
+ src/primitives/icon.cpp                      |  7 +++---
+ src/primitives/scenegraph/iconmaterial.cpp   | 26 ++++++++++++++++++++
+ src/primitives/scenegraph/iconmaterial.h     | 18 ++++++++++++++
+ src/primitives/scenegraph/iconnode.cpp       | 14 +++++++++++
+ src/primitives/scenegraph/iconnode.h         | 18 ++++++++++++++
+ src/primitives/scenegraph/shadermaterial.cpp |  8 ++++++
+ src/primitives/scenegraph/shadermaterial.h   |  6 ++++-
+ src/primitives/shaders/icon.frag             |  2 ++
+ src/primitives/shaders/icon.vert             | 10 ++++++--
+ 10 files changed, 107 insertions(+), 6 deletions(-)
+ create mode 100644 src/primitives/scenegraph/iconmaterial.cpp
+ create mode 100644 src/primitives/scenegraph/iconmaterial.h
+ create mode 100644 src/primitives/scenegraph/iconnode.cpp
+ create mode 100644 src/primitives/scenegraph/iconnode.h
+
+diff --git a/src/primitives/CMakeLists.txt b/src/primitives/CMakeLists.txt
+index 41539e6e2..b086e1e4b 100644
+--- a/src/primitives/CMakeLists.txt
++++ b/src/primitives/CMakeLists.txt
+@@ -25,6 +25,10 @@ target_sources(KirigamiPrimitives PRIVATE
+     scenegraph/shadernode.h
+     scenegraph/shadermaterial.cpp
+     scenegraph/shadermaterial.h
++    scenegraph/iconmaterial.cpp
++    scenegraph/iconmaterial.h
++    scenegraph/iconnode.cpp
++    scenegraph/iconnode.h
+     scenegraph/softwarerectanglenode.cpp
+     scenegraph/softwarerectanglenode.h
+     scenegraph/texturecache.cpp
+diff --git a/src/primitives/icon.cpp b/src/primitives/icon.cpp
+index 6fd04787e..b06d09323 100644
+--- a/src/primitives/icon.cpp
++++ b/src/primitives/icon.cpp
+@@ -6,6 +6,7 @@
+  */
+ 
+ #include "icon.h"
++#include "scenegraph/iconnode.h"
+ #include "scenegraph/shadernode.h"
+ #include "scenegraph/softwarerectanglenode.h"
+ 
+@@ -195,9 +196,9 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData *
+         return rectangleNode;
+     }
+ 
+-    auto shaderNode = static_cast<ShaderNode *>(node);
++    auto shaderNode = static_cast<IconNode *>(node);
+     if (!shaderNode) {
+-        shaderNode = new ShaderNode{};
++        shaderNode = new IconNode{};
+     }
+ 
+     bool shouldBeAnimated = !m_oldIcon.isNull() && m_animated;
+@@ -212,7 +213,7 @@ QSGNode *Icon::updatePaintNode(QSGNode *node, QQuickItem::UpdatePaintNodeData *
+         shaderName += u"default"_s;
+     }
+     shaderNode->setShader(shaderName);
+-    shaderNode->setUniformBufferSize(sizeof(float) * 24);
++    shaderNode->setUniformBufferSize(sizeof(float) * 28);
+ 
+     if (shouldBeAnimated) {
+         shaderNode->setTextureChannels(2);
+diff --git a/src/primitives/scenegraph/iconmaterial.cpp b/src/primitives/scenegraph/iconmaterial.cpp
+new file mode 100644
+index 000000000..af181109f
+--- /dev/null
++++ b/src/primitives/scenegraph/iconmaterial.cpp
+@@ -0,0 +1,26 @@
++/*
++ *  SPDX-FileCopyrightText: 2026 Volodymyr Zolotopupov <zvova7890@gmail.com>
++ *
++ *  SPDX-License-Identifier: LGPL-2.0-or-later
++ */
++
++#include "iconmaterial.h"
++
++#include <array>
++#include <cstring>
++
++void IconMaterial::updateRenderStateUniforms(const QSGMaterialShader::RenderState &state)
++{
++    const auto viewport = state.viewportRect();
++    const float w = viewport.width();
++    const float h = viewport.height();
++
++    const std::array<float, 4> viewportData = {
++        w * 0.5f,
++        h * 0.5f,
++        2.0f / w,
++        2.0f / h,
++    };
++
++    memcpy(uniformData().data() + sizeof(float) * 24, viewportData.data(), sizeof(viewportData));
++}
+diff --git a/src/primitives/scenegraph/iconmaterial.h b/src/primitives/scenegraph/iconmaterial.h
+new file mode 100644
+index 000000000..7c32d8910
+--- /dev/null
++++ b/src/primitives/scenegraph/iconmaterial.h
+@@ -0,0 +1,18 @@
++/*
++ *  SPDX-FileCopyrightText: 2026 Volodymyr Zolotopupov <zvova7890@gmail.com>
++ *
++ *  SPDX-License-Identifier: LGPL-2.0-or-later
++ */
++
++#pragma once
++
++#include "shadermaterial.h"
++
++class IconMaterial : public ShaderMaterial
++{
++public:
++    using ShaderMaterial::ShaderMaterial;
++
++protected:
++    void updateRenderStateUniforms(const QSGMaterialShader::RenderState &state) override;
++};
+diff --git a/src/primitives/scenegraph/iconnode.cpp b/src/primitives/scenegraph/iconnode.cpp
+new file mode 100644
+index 000000000..ce20d999c
+--- /dev/null
++++ b/src/primitives/scenegraph/iconnode.cpp
+@@ -0,0 +1,14 @@
++/*
++ *  SPDX-FileCopyrightText: 2026 Volodymyr Zolotopupov <zvova7890@gmail.com>
++ *
++ *  SPDX-License-Identifier: LGPL-2.0-or-later
++ */
++
++#include "iconnode.h"
++
++#include "iconmaterial.h"
++
++QSGMaterial *IconNode::createMaterialVariant(QSGMaterialType *variant)
++{
++    return new IconMaterial(variant);
++}
+diff --git a/src/primitives/scenegraph/iconnode.h b/src/primitives/scenegraph/iconnode.h
+new file mode 100644
+index 000000000..580fabb6d
+--- /dev/null
++++ b/src/primitives/scenegraph/iconnode.h
+@@ -0,0 +1,18 @@
++/*
++ *  SPDX-FileCopyrightText: 2026 Volodymyr Zolotopupov <zvova7890@gmail.com>
++ *
++ *  SPDX-License-Identifier: LGPL-2.0-or-later
++ */
++
++#pragma once
++
++#include "shadernode.h"
++
++class IconNode : public ShaderNode
++{
++public:
++    IconNode() = default;
++
++protected:
++    QSGMaterial *createMaterialVariant(QSGMaterialType *variant) override;
++};
+diff --git a/src/primitives/scenegraph/shadermaterial.cpp b/src/primitives/scenegraph/shadermaterial.cpp
+index 89a33a246..937cf2d68 100644
+--- a/src/primitives/scenegraph/shadermaterial.cpp
++++ b/src/primitives/scenegraph/shadermaterial.cpp
+@@ -92,6 +92,11 @@ void ShaderMaterial::setTextureFiltering(int binding, QSGTexture::Filtering filt
+     }
+ }
+ 
++void ShaderMaterial::updateRenderStateUniforms(const QSGMaterialShader::RenderState &state)
++{
++    Q_UNUSED(state);
++}
++
+ QString ShaderMaterial::nameForType(QSGMaterialType *type)
+ {
+     for (auto &[key, value] : s_materialTypes) {
+@@ -142,6 +147,9 @@ bool ShaderMaterialShader::updateUniformData(RenderState &state, QSGMaterial *ne
+     data += sizeof(float);
+     remainingSize -= sizeof(float);
+ 
++    auto material = static_cast<ShaderMaterial *>(newMaterial);
++    material->updateRenderStateUniforms(state);
++
+     if (!oldMaterial || newMaterial->compare(oldMaterial) != 0) {
+         const auto uniformData = static_cast<ShaderMaterial *>(newMaterial)->uniformData();
+         memcpy(data, uniformData.data() + sizeof(float) * 17, remainingSize);
+diff --git a/src/primitives/scenegraph/shadermaterial.h b/src/primitives/scenegraph/shadermaterial.h
+index 39b9ff5ab..d5c0940bf 100644
+--- a/src/primitives/scenegraph/shadermaterial.h
++++ b/src/primitives/scenegraph/shadermaterial.h
+@@ -43,14 +43,18 @@ public:
+     static QString nameForType(QSGMaterialType *type);
+     static QSGMaterialType *typeForName(const QString &name);
+ 
++protected:
++    virtual void updateRenderStateUniforms(const QSGMaterialShader::RenderState &state);
++
+ private:
+     QString m_name;
+     QSGMaterialType *m_type;
+ 
+     QByteArray m_uniformData;
+     QHash<int, QSGTexture *> m_textures;
+-
+     inline static std::unordered_map<QString, std::unique_ptr<QSGMaterialType>> s_materialTypes;
++
++    friend class ShaderMaterialShader;
+ };
+ 
+ class ShaderMaterialShader : public QSGMaterialShader
+diff --git a/src/primitives/shaders/icon.frag b/src/primitives/shaders/icon.frag
+index 82ceefbcc..5675a45fe 100644
+--- a/src/primitives/shaders/icon.frag
++++ b/src/primitives/shaders/icon.frag
+@@ -14,6 +14,8 @@ layout(std140, binding = 0) uniform buf {
+     mediump float highlight_amount;
+     mediump float desaturate_amount;
+     mediump vec4 mask_color;
++    highp vec2 viewport_half;
++    highp vec2 inv_viewport_double;
+ } uniforms;
+ 
+ layout(binding = 1) uniform sampler2D texture_source_0;
+diff --git a/src/primitives/shaders/icon.vert b/src/primitives/shaders/icon.vert
+index 52ba2dada..857eb9ec4 100644
+--- a/src/primitives/shaders/icon.vert
++++ b/src/primitives/shaders/icon.vert
+@@ -14,6 +14,8 @@ layout(std140, binding = 0) uniform buf {
+     mediump float highlight_amount;
+     mediump float desaturate_amount;
+     mediump vec4 mask_color;
++    highp vec2 viewport_half;
++    highp vec2 inv_viewport_double;
+ } uniforms;
+ 
+ layout(location = 0) in highp vec4 in_vertex;
+@@ -32,6 +34,10 @@ void main() {
+ #ifdef ENABLE_MIX
+     uv1 = in_uv1;
+ #endif
+-    gl_Position = uniforms.matrix * in_vertex;
++    highp vec4 position = uniforms.matrix * in_vertex;
++    highp vec2 pixel = ((position.xy / position.w) * uniforms.viewport_half)
++        + uniforms.viewport_half + 0.0001;
++    position.xy = (round(pixel) * uniforms.inv_viewport_double - 1.0)
++        * position.w;
++    gl_Position = position;
+ }
+-
+-- 
+GitLab
+

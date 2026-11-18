@@ -1,0 +1,3 @@
+usr/include/KF6/NetworkManagerQt/
+usr/lib/*/cmake/KF6NetworkManagerQt/
+usr/lib/*/libKF6NetworkManagerQt.so

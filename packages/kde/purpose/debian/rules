@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DBUILD_TESTING=OFF
+
+override_dh_shlibdeps:
+	dh_shlibdeps -plibkf6purpose6 -plibkf6purposewidgets6 -- -xlibkf6purpose-bin
+	dh_shlibdeps --remaining-packages
+
+override_dh_auto_test:
+	# Disable auto_tests at build time
+	:

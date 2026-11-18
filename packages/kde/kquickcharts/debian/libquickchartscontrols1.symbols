@@ -1,0 +1,4 @@
+# SymbolsHelper-Confirmed: 6.0.0 amd64
+libQuickChartsControls.so.1 libquickchartscontrols1 #MINVER#
+* Build-Depends-Package: libquickcharts-dev
+ _Z47qml_register_types_org_kde_quickcharts_controlsv@Base 6.0.0

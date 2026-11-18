@@ -1,0 +1,42 @@
+Source: kf6-kded
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6crash-dev (>= 6.24.0~),
+               libkf6dbusaddons-dev (>= 6.24.0~),
+               libkf6doctools-dev (>= 6.24.0~),
+               libkf6service-dev (>= 6.24.0~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0+dfsg~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kded
+Rules-Requires-Root: no
+
+Package: kded6
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Extensible daemon for providing session services
+ KDED runs in the background and performs a number of small tasks.
+ Some of these tasks are built in, others are started on demand.
+
+Package: kded6-dev
+Section: libdevel
+Architecture: any
+Depends: kded6 (= ${binary:Version}),
+         libkf6coreaddons-dev (>= 6.24.0~),
+         libkf6crash-dev (>= 6.24.0~),
+         libkf6dbusaddons-dev (>= 6.24.0~),
+         libkf6service-dev (>= 6.24.0~),
+         ${misc:Depends}
+Description: Extensible daemon for providing session services
+ KDED runs in the background and performs a number of small tasks.
+ Some of these tasks are built in, others are started on demand.
+ .
+ Contains development files.

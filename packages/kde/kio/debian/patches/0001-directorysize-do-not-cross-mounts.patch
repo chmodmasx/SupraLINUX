@@ -1,0 +1,125 @@
+From: SupraLINUX Project <packages@supralinux.invalid>
+Date: Sun, 01 Nov 2026 21:40:00 +0000
+Subject: [PATCH] directorysize: do not recurse into other filesystems
+
+Dolphin's Calculate Size action used listRecursive(), which walks into
+every mounted filesystem below the selected directory. A calculation on /
+therefore entered /proc and counted pseudo-files such as kcore, and could
+also walk slow or network mounts.
+
+List one directory at a time and only queue child directories whose
+UDS_DEVICE_ID matches the root directory of the calculation. The mount
+point directory itself is still counted, but its contents are skipped.
+When a protocol does not report device IDs, retain the previous recursive
+behaviour.
+
+Forwarded: not-needed
+Last-Update: 2026-11-01
+---
+ src/core/directorysizejob.cpp | 51 ++++++++++++++++++++++++++++++++-------
+ 1 file changed, 40 insertions(+), 11 deletions(-)
+
+--- a/src/core/directorysizejob.cpp
++++ b/src/core/directorysizejob.cpp
+@@ -8,6 +8,7 @@
+ #include "directorysizejob.h"
+ #include "global.h"
+ #include "listjob.h"
++#include "../utils_p.h"
+ #include <QDebug>
+ #include <QTimer>
+ #include <kio/jobuidelegatefactory.h>
+@@ -42,6 +43,10 @@
+     KFileItemList m_lstItems;
+     int m_currentItem;
+     QHash<long, std::set<long>> m_visitedInodes; // device -> set of inodes
++    QList<QUrl> m_pendingUrls;
++    QUrl m_currentUrl;
++    long m_currentDevice = 0;
++    bool m_currentDeviceKnown = false;
+ 
+     void startNextJob(const QUrl &url);
+     void slotEntries(KIO::Job *, const KIO::UDSEntryList &);
+@@ -108,11 +113,15 @@
+             if (item.isDir()) {
+                 // qDebug() << "dir -> listing";
+                 const auto localPath = item.localPath();
++                m_pendingUrls.clear();
+                 if (!localPath.isNull()) {
+-                    startNextJob(QUrl::fromLocalFile(localPath));
++                    m_pendingUrls.append(QUrl::fromLocalFile(localPath));
+                 } else {
+-                    startNextJob(item.targetUrl());
++                    m_pendingUrls.append(item.targetUrl());
+                 }
++                m_currentDevice = 0;
++                m_currentDeviceKnown = false;
++                startNextJob(m_pendingUrls.takeFirst());
+                 return; // we'll come back later, when this one's finished
+             } else {
+                 m_totalSize += item.size();
+@@ -131,7 +140,8 @@
+ {
+     Q_Q(DirectorySizeJob);
+     // qDebug() << url;
+-    KIO::ListJob *listJob = KIO::listRecursive(url, KIO::HideProgressInfo);
++    m_currentUrl = url;
++    KIO::ListJob *listJob = KIO::listDir(url, KIO::HideProgressInfo);
+     listJob->addMetaData(QStringLiteral("details"), QString::number(KIO::StatBasic | KIO::StatResolveSymlink | KIO::StatInode));
+     q->connect(listJob, &KIO::ListJob::entries, q, [this](KIO::Job *job, const KIO::UDSEntryList &list) {
+         slotEntries(job, list);
+@@ -146,7 +156,12 @@
+     for (; it != end; ++it) {
+         const KIO::UDSEntry &entry = *it;
+ 
++        const QString name = entry.stringValue(KIO::UDSEntry::UDS_NAME);
+         const long device = entry.numberValue(KIO::UDSEntry::UDS_DEVICE_ID, 0);
++        if (name == QLatin1Char('.') && !m_currentDeviceKnown) {
++            m_currentDevice = device;
++            m_currentDeviceKnown = true;
++        }
+         if (device && !entry.isLink()) {
+             // Hard-link detection (#67939)
+             const long inode = entry.numberValue(KIO::UDSEntry::UDS_INODE, 0);
+@@ -157,7 +172,6 @@
+             }
+         }
+         const KIO::filesize_t size = entry.numberValue(KIO::UDSEntry::UDS_SIZE, 0);
+-        const QString name = entry.stringValue(KIO::UDSEntry::UDS_NAME);
+         if (name == QLatin1Char('.')) {
+             m_totalSize += size;
+             // qDebug() << "'.': added" << size << "->" << m_totalSize;
+@@ -169,6 +183,22 @@
+                 m_totalFiles++;
+             } else {
+                 m_totalSubdirs++;
++
++                // Do not cross mount points: count the mount point directory
++                // itself but leave its contents alone. This keeps a size
++                // calculation on / from walking /proc and counting kcore.
++                const bool sameDevice = !device || !m_currentDevice || device == m_currentDevice;
++                if (!entry.isLink() && sameDevice) {
++                    const QString udsUrl = entry.stringValue(KIO::UDSEntry::UDS_URL);
++                    QUrl childUrl;
++                    if (!udsUrl.isEmpty()) {
++                        childUrl = QUrl(udsUrl);
++                    } else {
++                        childUrl = m_currentUrl;
++                        childUrl.setPath(Utils::concatPaths(childUrl.path(), name));
++                    }
++                    m_pendingUrls.append(childUrl);
++                }
+             }
+             // qDebug() << name << ":" << size << "->" << m_totalSize;
+         }
+@@ -180,7 +210,9 @@
+     Q_D(DirectorySizeJob);
+     // qDebug() << d->m_totalSize;
+     removeSubjob(job);
+-    if (d->m_currentItem < d->m_lstItems.count()) {
++    if (!d->m_pendingUrls.isEmpty()) {
++        d->startNextJob(d->m_pendingUrls.takeFirst());
++    } else if (d->m_currentItem < d->m_lstItems.count()) {
+         d->processNextItem();
+     } else {
+         if (job->error()) {

@@ -1,0 +1,5 @@
+# This is the source.
+kf6-ktexteditor source: source-is-missing [src/script/data/commands/utils.js]
+kf6-ktexteditor source: source-is-missing [src/script/data/libraries/emmet/lib.js]
+# This is the source.
+kf6-ktexteditor source: source-contains-prebuilt-javascript-object [src/script/data/libraries/emmet/lib.js]

@@ -1,0 +1,6 @@
+usr/lib/*/libexec/kf6/purposeprocess
+usr/lib/*/qt6/plugins/kf6/kfileitemaction/sharefileitemaction.so
+usr/lib/*/qt6/plugins/kf6/purpose/*.so
+usr/share/accounts/services/
+usr/share/icons/hicolor/*/apps/*6.png
+usr/share/kf6/purpose/

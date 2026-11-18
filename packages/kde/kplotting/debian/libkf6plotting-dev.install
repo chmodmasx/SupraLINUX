@@ -1,0 +1,4 @@
+usr/include/KF6/KPlotting/
+usr/lib/*/cmake/KF6Plotting/
+usr/lib/*/libKF6Plotting.so
+usr/lib/*/qt6/plugins/designer/kplotting6widgets.so

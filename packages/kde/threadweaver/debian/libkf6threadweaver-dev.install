@@ -1,0 +1,3 @@
+usr/include/KF6/ThreadWeaver/
+usr/lib/*/cmake/KF6ThreadWeaver/
+usr/lib/*/libKF6ThreadWeaver.so

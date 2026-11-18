@@ -1,0 +1,4 @@
+usr/lib/*/qt6/qml/org/kde/userfeedback/KF6UserFeedbackQml.qmltypes
+usr/lib/*/qt6/qml/org/kde/userfeedback/kde-qmlmodule.version
+usr/lib/*/qt6/qml/org/kde/userfeedback/libKF6UserFeedbackQml.so
+usr/lib/*/qt6/qml/org/kde/userfeedback/qmldir

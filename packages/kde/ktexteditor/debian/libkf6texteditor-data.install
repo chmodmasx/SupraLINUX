@@ -1,0 +1,7 @@
+usr/share/dbus-1/system-services/org.kde.ktexteditor6.katetextbuffer.service
+usr/share/dbus-1/system.d/org.kde.ktexteditor6.katetextbuffer.conf
+usr/share/kdevappwizard/templates/ktexteditor6-plugin.tar.bz2
+usr/share/locale/*/*/ktexteditor6.mo
+usr/share/polkit-1/actions/org.kde.ktexteditor6.katetextbuffer.policy
+usr/share/qlogging-categories6/ktexteditor.categories
+usr/share/qlogging-categories6/ktexteditor.renamecategories

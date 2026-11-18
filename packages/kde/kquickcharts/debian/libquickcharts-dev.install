@@ -1,0 +1,3 @@
+usr/lib/*/cmake/KF6QuickCharts
+usr/lib/*/libQuickCharts.so
+usr/lib/*/libQuickChartsControls.so

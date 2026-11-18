@@ -1,0 +1,86 @@
+Source: kf6-kguiaddons
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libwayland-dev (>= 1.9~) [linux-any],
+               libx11-dev,
+               libxcb1-dev,
+               libxkbcommon-dev,
+               pkgconf,
+               plasma-wayland-protocols (>= 1.10.0~),
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0~),
+               qt6-tools-dev (>= 6.8.0~),
+               qt6-wayland-dev (>= 6.8.0~) [linux-any],
+               wayland-protocols (>= 1.39~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kguiaddons
+Rules-Requires-Root: no
+
+Package: libkf6guiaddons-bin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: libkf5guiaddons-bin (<< 5.116.0-0ubuntu2~)
+Replaces: libkf5guiaddons-bin (<< 5.116.0-0ubuntu2~)
+Description: additional addons for QtGui
+ Qt widgets for colours, fonts and text
+ .
+ This package contains kde-geo-uri-handler.
+
+Package: libkf6guiaddons-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: additional addons for QtGui
+ Qt widgets for colours, fonts and text
+ .
+ This package contains shared data files.
+
+Package: libkf6guiaddons-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6coreaddons-dev (>= 6.24.0~),
+         libkf6guiaddons6 (= ${binary:Version}),
+         qml6-module-org-kde-guiaddons (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         qt6-wayland-dev (>= 6.8.0~) [linux-any],
+         ${misc:Depends}
+Recommends: libkf6guiaddons-doc (= ${source:Version})
+Description: development headers for the kguiaddons framework
+ This package contains development files for building software that uses
+ libraries from the kguiaddon framework
+
+Package: libkf6guiaddons-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: additional addons for QtGui (documentation)
+ Qt widgets for colours, fonts and text
+ .
+ This package contains the qch documentation files.
+
+Package: libkf6guiaddons6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6guiaddons-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6guiaddons-bin (= ${binary:Version})
+Description: additional addons for QtGui
+ Qt widgets for colours, fonts and text
+
+Package: qml6-module-org-kde-guiaddons
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: additional addons for QtGui
+ Qt widgets for colours, fonts and text

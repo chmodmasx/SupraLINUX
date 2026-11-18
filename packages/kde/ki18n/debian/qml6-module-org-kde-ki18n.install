@@ -1,0 +1,4 @@
+usr/lib/*/qt6/qml/org/kde/ki18n/KF6I18nQml.qmltypes
+usr/lib/*/qt6/qml/org/kde/ki18n/kde-qmlmodule.version
+usr/lib/*/qt6/qml/org/kde/ki18n/libKF6I18nQmlplugin.so
+usr/lib/*/qt6/qml/org/kde/ki18n/qmldir

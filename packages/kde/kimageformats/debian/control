@@ -1,0 +1,45 @@
+Source: kf6-kimageformats
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               extra-cmake-modules (>= 6.24.0~),
+               libavif-dev (>= 1~),
+               libheif-dev (>= 1.10.0~),
+               libheif-plugin-j2kdec <!nocheck>,
+               libheif-plugin-libde265 <!nocheck>,
+               libheif-plugin-x265 <!nocheck>,
+               libjxl-dev (>= 0.7.0~) [linux-any],
+               libjxr-dev,
+               libkf6archive-dev (>= 6.24.0~),
+               libopenexr-dev (>= 3.0~),
+               libopenjp2-7-dev,
+               libraw-dev (>= 0.20.2~),
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-image-formats-plugins <!nocheck>,
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kimageformats
+Rules-Requires-Root: no
+
+Package: kimageformat6-plugins
+Architecture: any
+Depends: libheif-plugin-j2kdec,
+         libheif-plugin-libde265,
+         libheif-plugin-x265,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: kf6-kimageformat-plugins
+Replaces: kf6-kimageformat-plugins
+Description: additional image format plugins for Qt Gui
+ This framework provides additional image format plugins for QtGui.  As
+ such it is not required for the compilation of any other software, but
+ may be a runtime requirement for Qt-based software to support certain
+ image formats.
+ .
+ This package is part of KDE Frameworks 6.

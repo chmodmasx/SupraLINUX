@@ -1,0 +1,4 @@
+usr/include/KF6/KCoreAddons/
+usr/lib/*/cmake/KF6CoreAddons/
+usr/lib/*/libKF6CoreAddons.so
+usr/lib/*/pkgconfig/KF6CoreAddons.pc

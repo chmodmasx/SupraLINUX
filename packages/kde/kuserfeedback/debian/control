@@ -1,0 +1,151 @@
+Source: kf6-kuserfeedback
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: bison,
+               cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.24.0~),
+               flex,
+               libxkbcommon-dev (>= 0.5.0~),
+               pkgconf,
+               qt6-base-dev (>= 6.8.0~),
+               qt6-charts-dev (>= 6.8.0~),
+               qt6-declarative-dev (>= 6.8.0~),
+               qt6-svg-dev (>= 6.8.0~),
+               qt6-tools-dev (>= 6.8.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Build-Depends-Indep: qt6-documentation-tools
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kuserfeedback
+
+Package: libkf6userfeedback-data
+Section: localization
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: libkuserfeedbackcoreqt6-1
+Replaces: libkuserfeedbackcoreqt6-1
+Description: user feedback for applications - localization files
+ Framework for collecting user feedback for applications via telemetry
+ and surveys.
+ .
+ Telemetry
+  * Extensible set of data sources for telemetry.
+  * Full control for the user on what data to contribute.
+ Surveys
+  * Distribute surveys and offer users to participate in them.
+  * Survey targeting based on telemetry data.
+  * Allow the user to configure how often they want to participate in surveys.
+ .
+ This package contains the shared localizations for KUserFeedback.
+
+Package: libkf6userfeedback-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6userfeedbackcore6 (= ${binary:Version}),
+         libkf6userfeedbackwidgets6 (= ${binary:Version}),
+         qml6-module-org-kde-userfeedback (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0~),
+         ${misc:Depends}
+Description: development files for KUserFeedback
+ Framework for collecting user feedback for applications via telemetry
+ and surveys.
+ .
+ Telemetry
+  * Extensible set of data sources for telemetry.
+  * Full control for the user on what data to contribute.
+ Surveys
+  * Distribute surveys and offer users to participate in them.
+  * Survey targeting based on telemetry data.
+  * Allow the user to configure how often they want to participate in surveys.
+ .
+ This package contains the development header files for KUserFeedback.
+
+Package: libkf6userfeedback-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Breaks: kuserfeedback-doc
+Replaces: kuserfeedback-doc
+Description: user feedback for applications - documentation
+ Framework for collecting user feedback for applications via telemetry
+ and surveys.
+ .
+ Telemetry
+  * Extensible set of data sources for telemetry.
+  * Full control for the user on what data to contribute.
+ Surveys
+  * Distribute surveys and offer users to participate in them.
+  * Survey targeting based on telemetry data.
+  * Allow the user to configure how often they want to participate in surveys.
+ .
+ This package contains the documentation for KUserFeedback.
+
+Package: libkf6userfeedbackcore6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6userfeedback-data (>= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6userfeedback-doc (= ${binary:Version})
+Breaks: libkuserfeedbackcoreqt6-1
+Replaces: libkuserfeedbackcoreqt6-1
+Description: user feedback for applications - core library
+ Framework for collecting user feedback for applications via telemetry
+ and surveys.
+ .
+ Telemetry
+  * Extensible set of data sources for telemetry.
+  * Full control for the user on what data to contribute.
+ Surveys
+  * Distribute surveys and offer users to participate in them.
+  * Survey targeting based on telemetry data.
+  * Allow the user to configure how often they want to participate in surveys.
+ .
+ This package contains the core library for KUserFeedback.
+
+Package: libkf6userfeedbackwidgets6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: qml6-module-org-kde-userfeedback (= ${binary:Version})
+Breaks: libkuserfeedbackwidgetsqt6-1
+Replaces: libkuserfeedbackwidgetsqt6-1
+Description: user feedback for applications - widgets library
+ Framework for collecting user feedback for applications via telemetry
+ and surveys.
+ .
+ Telemetry
+  * Extensible set of data sources for telemetry.
+  * Full control for the user on what data to contribute.
+ Surveys
+  * Distribute surveys and offer users to participate in them.
+  * Survey targeting based on telemetry data.
+  * Allow the user to configure how often they want to participate in surveys.
+ .
+ This package contains the widgets library for KUserFeedback.
+
+Package: qml6-module-org-kde-userfeedback
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: user feedback for applications - QML module
+ Framework for collecting user feedback for applications via telemetry
+ and surveys.
+ .
+ Telemetry
+  * Extensible set of data sources for telemetry.
+  * Full control for the user on what data to contribute.
+ Surveys
+  * Distribute surveys and offer users to participate in them.
+  * Survey targeting based on telemetry data.
+  * Allow the user to configure how often they want to participate in surveys.
+ .
+ This package contains the QML module for KUserFeedback.

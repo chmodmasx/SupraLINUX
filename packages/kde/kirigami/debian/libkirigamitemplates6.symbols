@@ -1,0 +1,4 @@
+# SymbolsHelper-Confirmed: 6.17.0 amd64 arm64 armhf ppc64el s390x
+libKirigamiTemplates.so.6 libkirigamitemplates6 #MINVER#
+* Build-Depends-Package: libkirigami-dev
+ _Z45qml_register_types_org_kde_kirigami_templatesv@Base 6.17.0

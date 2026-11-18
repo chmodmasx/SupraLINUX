@@ -1,0 +1,5 @@
+usr/include/KF6/Baloo
+usr/lib/*/cmake/KF6Baloo
+usr/lib/*/libKF6Baloo.so
+usr/lib/*/pkgconfig/KF6Baloo.pc
+usr/share/dbus-1/interfaces/

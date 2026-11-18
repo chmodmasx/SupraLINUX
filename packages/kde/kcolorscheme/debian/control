@@ -1,0 +1,72 @@
+Source: kf6-kcolorscheme
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen (>= 1.8.13~),
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6guiaddons-dev (>= 6.24.0~),
+               libkf6guiaddons-doc (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kcolorscheme
+Rules-Requires-Root: no
+
+Package: libkf6colorscheme-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Classes to read and interact with KColorScheme
+ This package provides classes to read and interact with KColorScheme.
+ .
+ It is part of the KDE Frameworks 6.
+ .
+ This package contains the translations.
+
+Package: libkf6colorscheme-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6colorscheme6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6colorscheme-doc (= ${source:Version})
+Description: Classes to read and interact with KColorScheme - development files
+ This package provides classes to read and interact with KColorScheme.
+ .
+ It is part of the KDE Frameworks 6.
+ .
+ This package contains the development files for KColorScheme.
+
+Package: libkf6colorscheme-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Classes to read and interact with KColorScheme - documentation
+ This package provides classes to read and interact with KColorScheme.
+ .
+ It is part of the KDE Frameworks 6.
+ .
+ This package contains the documentation for KColorScheme.
+
+Package: libkf6colorscheme6
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libkf6colorscheme-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Classes to read and interact with KColorScheme
+ This package provides classes to read and interact with KColorScheme.
+ .
+ It is part of the KDE Frameworks 6.

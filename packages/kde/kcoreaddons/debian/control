@@ -1,0 +1,96 @@
+Source: kf6-kcoreaddons
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               doxygen (>= 1.8.13~),
+               extra-cmake-modules (>= 6.24.0~),
+               libudev-dev [linux-any],
+               qt6-base-dev (>= 6.8.3+dfsg-0ubuntu3~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~),
+               shared-mime-info (>= 1.8~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kcoreaddons
+Rules-Requires-Root: no
+
+Package: libkf6coreaddons-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: KDE Frameworks 6 addons to QtCore - data files
+ KCoreAddons provides classes built on top of QtCore to perform various tasks
+ such as manipulating mime types, autosaving files, creating backup files,
+ generating random sequences, performing text manipulations such as macro
+ replacement, accessing user information and many more.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the arch independent files for KCoreAddons.
+
+Package: libkf6coreaddons-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6coreaddons6 (= ${binary:Version}),
+         qml6-module-org-kde-coreaddons (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6coreaddons-doc (= ${source:Version})
+Description: KDE Frameworks 6 addons to QtCore - development files
+ KCoreAddons provides classes built on top of QtCore to perform various tasks
+ such as manipulating mime types, autosaving files, creating backup files,
+ generating random sequences, performing text manipulations such as macro
+ replacement, accessing user information and many more.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the development files for KCoreAddons.
+
+Package: libkf6coreaddons-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: KDE Frameworks 6 addons to QtCore (documentation)
+ KCoreAddons provides classes built on top of QtCore to perform various tasks
+ such as manipulating mime types, autosaving files, creating backup files,
+ generating random sequences, performing text manipulations such as macro
+ replacement, accessing user information and many more.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6coreaddons6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6coreaddons-data (= ${source:Version}),
+         shared-mime-info (>= 1.8~),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: KDE Frameworks 6 addons to QtCore
+ KCoreAddons provides classes built on top of QtCore to perform various tasks
+ such as manipulating mime types, autosaving files, creating backup files,
+ generating random sequences, performing text manipulations such as macro
+ replacement, accessing user information and many more.
+ .
+ This package is part of KDE Frameworks 6.
+
+Package: qml6-module-org-kde-coreaddons
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: KDE Frameworks 6 addons to QtCore (QML module)
+ KCoreAddons provides classes built on top of QtCore to perform various tasks
+ such as manipulating mime types, autosaving files, creating backup files,
+ generating random sequences, performing text manipulations such as macro
+ replacement, accessing user information and many more.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the QML module for kcoreaddons.

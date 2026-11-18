@@ -1,0 +1,77 @@
+Source: kf6-kservice
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6doctools-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kservice
+Rules-Requires-Root: no
+
+Package: libkf6service-bin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Advanced plugin and service introspection
+ Application framework for file type association
+ and plugin locating.
+ .
+ This package contains kbuildsycoca6.
+
+Package: libkf6service-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Advanced plugin and service introspection
+ Application framework for file type association
+ and plugin locating.
+ .
+ This package contains shared data files.
+
+Package: libkf6service-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6config-dev (>= 6.24.0~),
+         libkf6coreaddons-dev (>= 6.24.0~),
+         libkf6doctools-dev (>= 6.24.0~),
+         libkf6i18n-dev (>= 6.24.0~),
+         libkf6service6 (= ${binary:Version}),
+         ${misc:Depends}
+Recommends: libkf6service-doc (= ${source:Version})
+Description: development files for kservice
+ Application framework for file type association
+ and plugin locating.
+ .
+ Contains development files for kservice.
+
+Package: libkf6service-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Advanced plugin and service introspection (documentation)
+ Application framework for file type association
+ and plugin locating.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6service6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6service-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6service-bin (= ${binary:Version})
+Description: Advanced plugin and service introspection
+ Application framework for file type association
+ and plugin locating.

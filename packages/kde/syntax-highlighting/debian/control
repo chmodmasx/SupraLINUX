@@ -1,0 +1,114 @@
+Source: kf6-syntax-highlighting
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libxerces-c-dev,
+               libxkbcommon-dev,
+               perl:any,
+               pkgconf,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/syntax-highlighting
+Rules-Requires-Root: no
+
+Package: libkf6syntaxhighlighting-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Syntax highlighting Engine - translations
+ This is a stand-alone implementation of the Kate syntax
+ highlighting engine. It's meant as a building block for
+ text editors as well as for simple highlighted text
+ rendering (e.g. as HTML), supporting both integration
+ with a custom editor as well as a ready-to-use
+ QSyntaxHighlighter sub-class.
+ .
+ This package provides the translations.
+
+Package: libkf6syntaxhighlighting-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6syntaxhighlighting6 (= ${binary:Version}),
+         qml6-module-org-kde-syntaxhighlighting (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         qt6-declarative-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6syntaxhighlighting-doc (= ${source:Version})
+Multi-Arch: same
+Description: Syntax highlighting Engine
+ This is a stand-alone implementation of the Kate syntax
+ highlighting engine. It's meant as a building block for
+ text editors as well as for simple highlighted text
+ rendering (e.g. as HTML), supporting both integration
+ with a custom editor as well as a ready-to-use
+ QSyntaxHighlighter sub-class.
+ .
+ Contains development files for libkf6syntaxhighlighting6.
+
+Package: libkf6syntaxhighlighting-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Section: doc
+Description: Syntax highlighting Engine (documentation)
+ This is a stand-alone implementation of the Kate syntax
+ highlighting engine. It's meant as a building block for
+ text editors as well as for simple highlighted text
+ rendering (e.g. as HTML), supporting both integration
+ with a custom editor as well as a ready-to-use
+ QSyntaxHighlighter sub-class.
+
+Package: libkf6syntaxhighlighting-tools
+Architecture: any
+Depends: libkf6syntaxhighlighting6 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Syntax highlighting Engine
+ This is a stand-alone implementation of the Kate syntax
+ highlighting engine. It's meant as a building block for
+ text editors as well as for simple highlighted text
+ rendering (e.g. as HTML), supporting both integration
+ with a custom editor as well as a ready-to-use
+ QSyntaxHighlighter sub-class.
+ .
+ Provides additional tools for libkf6syntaxhighlighting6
+
+Package: libkf6syntaxhighlighting6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6syntaxhighlighting-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Syntax highlighting Engine
+ This is a stand-alone implementation of the Kate syntax
+ highlighting engine. It's meant as a building block for
+ text editors as well as for simple highlighted text
+ rendering (e.g. as HTML), supporting both integration
+ with a custom editor as well as a ready-to-use
+ QSyntaxHighlighter sub-class.
+
+Package: qml6-module-org-kde-syntaxhighlighting
+Architecture: any
+Multi-Arch: same
+Depends: libkf6syntaxhighlighting6 (= ${binary:Version}),
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Description: Syntax highlighting Engine (QML module)
+ This is a stand-alone implementation of the Kate syntax
+ highlighting engine. It's meant as a building block for
+ text editors as well as for simple highlighted text
+ rendering (e.g. as HTML), supporting both integration
+ with a custom editor as well as a ready-to-use
+ QSyntaxHighlighter sub-class.
+ .
+ This package contains the QtQuick QML module.

@@ -1,0 +1,50 @@
+Source: kf6-kcrash
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libx11-dev,
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kcrash
+Rules-Requires-Root: no
+
+Package: libkf6crash-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6coreaddons-dev (>= 6.24.0~),
+         libkf6crash6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6crash-doc (= ${source:Version})
+Description: Support for application crash analysis and bug report from apps
+ KCrash provides support for intercepting and handling application crashes.
+ .
+ Contains development files for kcrash.
+
+Package: libkf6crash-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Support for application crash analysis and bug report from apps (documentation)
+ KCrash provides support for intercepting and handling application crashes.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6crash6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Support for application crash analysis and bug report from apps
+ KCrash provides support for intercepting and handling application crashes.

@@ -1,0 +1,90 @@
+Source: kf6-karchive
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libbz2-dev,
+               liblzma-dev,
+               libssl-dev,
+               libzstd-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~),
+               zlib1g-dev,
+               zstd
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/karchive
+Rules-Requires-Root: no
+
+Package: libkf6archive-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: data files for karchive
+ Karchive is a Qt 6 addon providing access to numerous types of archives.
+ .
+ KArchive provides classes for easy reading, creation and manipulation of
+ "archive" formats like ZIP and TAR.
+ .
+ It also provides transparent compression and decompression of data, like the
+ GZip format, via a subclass of QIODevice.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the data files.
+
+Package: libkf6archive-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6archive6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6archive-doc (= ${source:Version})
+Description: development files for karchive
+ Karchive is a Qt 6 addon providing access to numerous types of archives.
+ .
+ KArchive provides classes for easy reading, creation and manipulation of
+ "archive" formats like ZIP and TAR.
+ .
+ It also provides transparent compression and decompression of data, like the
+ GZip format, via a subclass of QIODevice.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the development files.
+
+Package: libkf6archive-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Qt 6 addon providing access to numerous types of archives (documentation)
+ KArchive provides classes for easy reading, creation and manipulation of
+ "archive" formats like ZIP and TAR.
+ .
+ It also provides transparent compression and decompression of data, like the
+ GZip format, via a subclass of QIODevice.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6archive6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6archive-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Qt 6 addon providing access to numerous types of archives
+ KArchive provides classes for easy reading, creation and manipulation of
+ "archive" formats like ZIP and TAR.
+ .
+ It also provides transparent compression and decompression of data, like the
+ GZip format, via a subclass of QIODevice.
+ .
+ This package is part of KDE Frameworks 6.

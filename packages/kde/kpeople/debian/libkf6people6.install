@@ -1,0 +1,3 @@
+usr/lib/*/libKF6People.so.6
+usr/lib/*/libKF6People.so.6.*
+usr/lib/*/qt6/plugins/kpeople/datasource/KPeopleVCard.so

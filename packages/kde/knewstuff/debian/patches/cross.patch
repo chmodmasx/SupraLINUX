@@ -1,0 +1,17 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -59,8 +59,12 @@
+     PURPOSE "Used by the OPDS provider to handle most of the parsing."
+     TYPE OPTIONAL
+ )
+-
+-cmake_dependent_option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON "NOT CMAKE_CROSSCOMPILING" OFF)
++if (CMAKE_CROSSCOMPILING)
++    set(BUILD_DESIGNERPLUGIN_DEFAULT OFF)
++else()
++    set(BUILD_DESIGNERPLUGIN_DEFAULT ON)
++endif()
++option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ${BUILD_DESIGNERPLUGIN_DEFAULT})
+ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
+ 
+ set(EXCLUDE_DEPRECATED_BEFORE_AND_AT 0 CACHE STRING "Control the range of deprecated API excluded from the build [default=0].")

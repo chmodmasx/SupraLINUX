@@ -1,0 +1,61 @@
+Source: kf6-kunitconversion
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kunitconversion
+Rules-Requires-Root: no
+
+Package: libkf6unitconversion-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Support for unit conversion
+ Library to help applications in doing conversions of
+ values in different measure units.
+ .
+ This package contains the translations.
+
+Package: libkf6unitconversion-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6i18n-dev (>= 6.24.0~),
+         libkf6unitconversion6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6unitconversion-doc (= ${source:Version})
+Description: development files for kunitconversion
+ Library to help applications in doing conversions of
+ values in different measure units.
+ .
+ Contains development files for kunitconversion.
+
+Package: libkf6unitconversion-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Support for unit conversion (documentation)
+ Library to help applications in doing conversions of
+ values in different measure units.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6unitconversion6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6unitconversion-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Support for unit conversion
+ Library to help applications in doing conversions of
+ values in different measure units.

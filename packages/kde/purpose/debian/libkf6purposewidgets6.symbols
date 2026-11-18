@@ -1,0 +1,18 @@
+# SymbolsHelper-Confirmed: 6.5.0 amd64 arm64 armhf ppc64el riscv64 s390x
+libKF6PurposeWidgets.so.6 libkf6purposewidgets6 #MINVER#
+* Build-Depends-Package: libkf6purpose-dev
+ _ZN7Purpose4Menu11qt_metacallEN11QMetaObject4CallEiPPv@Base 6.0.0
+ _ZN7Purpose4Menu11qt_metacastEPKc@Base 6.0.0
+ _ZN7Purpose4Menu12aboutToShareEv@Base 6.3.0
+ _ZN7Purpose4Menu16staticMetaObjectE@Base 6.0.0
+ _ZN7Purpose4Menu6reloadEv@Base 6.0.0
+ _ZN7Purpose4Menu8finishedERK11QJsonObjectiRK7QString@Base 6.0.0
+ _ZN7Purpose4MenuC1EP7QWidget@Base 6.0.0
+ _ZN7Purpose4MenuC2EP7QWidget@Base 6.0.0
+ _ZNK7Purpose4Menu10metaObjectEv@Base 6.0.0
+ _ZNK7Purpose4Menu5modelEv@Base 6.0.0
+ (optional=templinst|arch=armhf riscv64)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE24_M_get_insert_unique_posERS2_@Base 6.5.0
+ (optional=templinst|arch=riscv64)_ZNSt8_Rb_treeI7QStringSt4pairIKS0_8QVariantESt10_Select1stIS4_ESt4lessIS0_ESaIS4_EE29_M_get_insert_hint_unique_posESt23_Rb_tree_const_iteratorIS4_ERS2_@Base 6.5.0
+ _ZTIN7Purpose4MenuE@Base 6.0.0
+ _ZTSN7Purpose4MenuE@Base 6.0.0
+ _ZTVN7Purpose4MenuE@Base 6.0.0

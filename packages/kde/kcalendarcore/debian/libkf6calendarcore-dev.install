@@ -1,0 +1,4 @@
+usr/include/KF6/KCalendarCore/
+usr/lib/*/cmake/KF6CalendarCore/
+usr/lib/*/libKF6CalendarCore.so
+usr/lib/*/pkgconfig/KF6CalendarCore.pc

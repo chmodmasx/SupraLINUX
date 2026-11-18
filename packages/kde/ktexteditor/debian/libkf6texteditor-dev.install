@@ -1,0 +1,3 @@
+usr/include/KF6/KTextEditor/
+usr/lib/*/cmake/KF6TextEditor/
+usr/lib/*/libKF6TextEditor.so

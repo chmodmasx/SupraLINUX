@@ -1,0 +1,22 @@
+From: Maximiliano Curia <maxy@gnuservers.com.ar>
+Date: Wed, 16 May 2018 19:50:55 +0200
+Subject: usermetadatawritertest: skip if xattr is not supported
+Last-Update: 2025-02-15
+
+---
+ autotests/usermetadatawritertest.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+--- a/autotests/usermetadatawritertest.cpp
++++ b/autotests/usermetadatawritertest.cpp
+@@ -70,7 +70,9 @@ void UserMetaDataWriterTest::test()
+ void UserMetaDataWriterTest::testMetadataSize()
+ {
+     KFileMetaData::UserMetaData md(testOutputPath(TEST_FILENAME));
+-    QVERIFY(md.isSupported());
++    if (!md.isSupported()) {
++        QSKIP("The system doesn't support xattr, skipping");
++    }
+
+     // In the current ext2, ext3, and ext4 filesystem implementations,
+     // the total bytes used by the names and values of all of a file's

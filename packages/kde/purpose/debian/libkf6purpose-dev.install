@@ -1,0 +1,5 @@
+usr/include/KF6/Purpose/
+usr/include/KF6/PurposeWidgets/
+usr/lib/*/cmake/KF6Purpose/
+usr/lib/*/libKF6Purpose.so
+usr/lib/*/libKF6PurposeWidgets.so

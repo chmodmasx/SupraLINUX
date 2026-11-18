@@ -1,0 +1,5 @@
+usr/include/KF6/KStatusNotifierItem/
+usr/lib/*/cmake/KF6StatusNotifierItem/
+usr/lib/*/libKF6StatusNotifierItem.so
+usr/share/dbus-1/interfaces/kf6_org.kde.StatusNotifierItem.xml
+usr/share/dbus-1/interfaces/kf6_org.kde.StatusNotifierWatcher.xml

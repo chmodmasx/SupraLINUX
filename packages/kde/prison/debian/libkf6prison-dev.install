@@ -1,0 +1,5 @@
+usr/include/KF6/Prison/
+usr/include/KF6/PrisonScanner/
+usr/lib/*/cmake/KF6Prison/
+usr/lib/*/libKF6Prison.so
+usr/lib/*/libKF6PrisonScanner.so

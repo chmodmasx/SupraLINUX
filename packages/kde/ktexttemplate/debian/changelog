@@ -1,0 +1,140 @@
+kf6-ktexttemplate (6.24.0-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Frameworks 6.24.0 LTS for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 03:40:00 +0000
+
+kf6-ktexttemplate (6.24.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.24.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Mar 2026 23:05:24 +0000
+
+kf6-ktexttemplate (6.23.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.23.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Feb 2026 11:40:50 +0000
+
+kf6-ktexttemplate (6.22.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.22.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 Jan 2026 18:32:38 +0000
+
+kf6-ktexttemplate (6.21.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.21.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 12 Dec 2025 11:53:25 +0000
+
+kf6-ktexttemplate (6.20.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.20.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 Nov 2025 16:16:04 +0000
+
+kf6-ktexttemplate (6.19.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.18.0)
+  * New upstream release (6.19.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 12 Oct 2025 15:07:51 +0100
+
+kf6-ktexttemplate (6.17.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.17.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Aug 2025 18:18:04 +0100
+
+kf6-ktexttemplate (6.16.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.16.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 11 Jul 2025 16:48:07 +0100
+
+kf6-ktexttemplate (6.15.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.15.0)
+  * Comment out .install for docs packages for now, as the qch docs are
+    currently not buildable in Ubuntu.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Jun 2025 16:35:34 +0100
+
+kf6-ktexttemplate (6.14.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.14.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 10 May 2025 07:00:24 +0100
+
+kf6-ktexttemplate (6.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Mar 2025 10:54:58 +0000
+
+kf6-ktexttemplate (6.11.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.11.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 14 Feb 2025 16:50:11 +0000
+
+kf6-ktexttemplate (6.10.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.10.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jan 2025 12:21:26 +0000
+
+kf6-ktexttemplate (6.9.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.9.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Dec 2024 14:49:07 +0000
+
+kf6-ktexttemplate (6.8.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.7.0)
+  * New upstream release (6.8.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Nov 2024 16:38:40 +0000
+
+kf6-ktexttemplate (6.6.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.6.0)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Fri, 20 Sep 2024 19:07:54 +0100
+
+kf6-ktexttemplate (6.5.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.5.0)
+  * Disable tests at build time.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Aug 2024 19:24:40 +0100
+
+kf6-ktexttemplate (6.4.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.4.0)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 13 Jul 2024 16:35:56 +0100
+
+kf6-ktexttemplate (6.3.0-1ubuntu1) oracular; urgency=medium
+
+  * Mark some symbols as optional to fix FTBFS on Ubuntu buildds.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 27 Jun 2024 07:40:16 +0100
+
+kf6-ktexttemplate (6.3.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.0).
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 09 Jun 2024 14:53:04 +0200
+
+kf6-ktexttemplate (6.0.0-1) experimental; urgency=medium
+
+  * Initial release. (Closes: #1068519)
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 07 Apr 2024 16:03:08 +0200

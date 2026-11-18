@@ -1,0 +1,63 @@
+Source: kf6-threadweaver
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/threadweaver
+Rules-Requires-Root: no
+
+Package: libkf6threadweaver-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6threadweaver6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6threadweaver-doc (= ${source:Version})
+Description: ThreadWeaver library to help multithreaded programming in Qt
+ ThreadWeaver is a helper for multithreaded programming. It uses a job-based
+ interface to queue tasks and execute them in an efficient way.  You simply
+ divide the workload into jobs, state the dependencies between the jobs and
+ ThreadWeaver will work out the most efficient way of dividing the work between
+ threads within a set of resource limits.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the development files.
+
+Package: libkf6threadweaver-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: ThreadWeaver library to help multithreaded programming in Qt
+ ThreadWeaver is a helper for multithreaded programming. It uses a job-based
+ interface to queue tasks and execute them in an efficient way.  You simply
+ divide the workload into jobs, state the dependencies between the jobs and
+ ThreadWeaver will work out the most efficient way of dividing the work between
+ threads within a set of resource limits.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6threadweaver6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: ThreadWeaver library to help multithreaded programming in Qt
+ ThreadWeaver is a helper for multithreaded programming. It uses a job-based
+ interface to queue tasks and execute them in an efficient way.  You simply
+ divide the workload into jobs, state the dependencies between the jobs and
+ ThreadWeaver will work out the most efficient way of dividing the work between
+ threads within a set of resource limits.
+ .
+ This package is part of KDE Frameworks 6.

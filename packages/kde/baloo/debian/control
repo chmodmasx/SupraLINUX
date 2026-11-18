@@ -1,0 +1,119 @@
+Source: kf6-baloo
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               dbus-test-runner <!nocheck>,
+               debhelper-compat (= 13),
+               dh-exec,
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               gettext,
+               libkf6config-dev (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6crash-dev (>= 6.24.0~),
+               libkf6dbusaddons-dev (>= 6.24.0~),
+               libkf6filemetadata-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libkf6idletime-dev (>= 6.24.0~),
+               libkf6kio-dev (>= 6.24.0~),
+               libkf6solid-dev (>= 6.24.0~),
+               liblmdb-dev,
+               libqt6sql6-sqlite <!nocheck>,
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0~),
+               qt6-declarative-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/baloo
+Rules-Requires-Root: no
+
+Package: baloo6
+Section: utils
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Breaks: baloo-kf5 (<< 5.115.0-3~)
+Replaces: baloo-kf5 (<< 5.115.0-3~)
+Description: framework for file search and metadata management
+ Baloo is the file indexing and file search framework for KDE Plasma. It
+ focuses on speed and a very small memory footprint. It maintains an index of
+ your files and optionally their contents which you can search.
+ .
+ This package contains the runtime service and baloo control binaries.
+
+Package: libkf6baloo-dev
+Section: libdevel
+Architecture: any
+Depends: baloo6 (= ${binary:Version}),
+         libkf6baloo6 (= ${binary:Version}),
+         libkf6balooengine6 (= ${binary:Version}),
+         libkf6config-dev (>= 6.24.0~),
+         libkf6coreaddons-dev (>= 6.24.0~),
+         libkf6crash-dev (>= 6.24.0~),
+         libkf6dbusaddons-dev (>= 6.24.0~),
+         libkf6filemetadata-dev (>= 6.24.0~),
+         libkf6i18n-dev (>= 6.24.0~),
+         libkf6idletime-dev (>= 6.24.0~),
+         libkf6kio-dev (>= 6.24.0~),
+         libkf6solid-dev (>= 6.24.0~),
+         qml6-module-org-kde-baloo (= ${binary:Version}),
+         qt6-declarative-dev (>= 6.8.0~),
+         ${misc:Depends}
+Recommends: libkf6baloo-doc (= ${source:Version})
+Breaks: baloo-kf5-dev (<< 5.115.0-3~)
+Replaces: baloo-kf5-dev (<< 5.115.0-3~)
+Description: framework for file search and metadata management - development files
+ Baloo is the file indexing and file search framework for KDE Plasma. It
+ focuses on speed and a very small memory footprint. It maintains an index of
+ your files and optionally their contents which you can search.
+ .
+ This package contains the development files.
+
+Package: libkf6baloo-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: framework for file search and metadata management - developer documentation
+ Baloo is the file indexing and file search framework for KDE Plasma. It
+ focuses on speed and a very small memory footprint. It maintains an index of
+ your files and optionally their contents which you can search.
+ .
+ This package contains the qch documentation files.
+
+Package: libkf6baloo6
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: framework for file search and metadata management - shared library
+ Baloo is the file indexing and file search framework for KDE Plasma. It
+ focuses on speed and a very small memory footprint. It maintains an index of
+ your files and optionally their contents which you can search.
+ .
+ This package contains the shared library.
+
+Package: libkf6balooengine6
+Section: libs
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: framework for file search and metadata management - internal library
+ Baloo is the file indexing and file search framework for KDE Plasma. It
+ focuses on speed and a very small memory footprint. It maintains an index of
+ your files and optionally their contents which you can search.
+ .
+ This package contains an internal library used by the baloo service.
+
+Package: qml6-module-org-kde-baloo
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Architecture: any
+Multi-Arch: same
+Description: framework for file search and metadata management - QML module
+ Baloo is the file indexing and file search framework for KDE Plasma. It
+ focuses on speed and a very small memory footprint. It maintains an index of
+ your files and optionally their contents which you can search.
+ .
+ This package contains the QML module.

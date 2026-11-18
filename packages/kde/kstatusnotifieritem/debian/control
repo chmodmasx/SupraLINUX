@@ -1,0 +1,60 @@
+Source: kf6-kstatusnotifieritem
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6windowsystem-dev (>= 6.24.0~),
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kstatusnotifieritem
+Rules-Requires-Root: no
+
+Package: libkf6statusnotifieritem-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Implementation of Status Notifier Items - translations
+ KStatusNotifierItem provides a framework for status notifier items.
+ .
+ This package contains the data files.
+
+Package: libkf6statusnotifieritem-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6statusnotifieritem6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6statusnotifieritem-doc (= ${source:Version})
+Description: Implementation of Status Notifier Items - development files
+ KStatusNotifierItem provides a framework for status notifier items.
+ .
+ This package contains the development files.
+
+Package: libkf6statusnotifieritem-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Implementation of Status Notifier Items - documentation files
+ KStatusNotifierItem provides a framework for status notifier items.
+ .
+ This package contains the qch documentation files.
+
+Package: libkf6statusnotifieritem6
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libkf6statusnotifieritem-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Implementation of Status Notifier Items
+ KStatusNotifierItem provides a framework for status notifier items.

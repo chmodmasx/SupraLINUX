@@ -1,0 +1,58 @@
+Source: kf6-kplotting
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kplotting
+Rules-Requires-Root: no
+
+Package: libkf6plotting-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6plotting6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6plotting-doc (= ${source:Version})
+Description: development files for kplotting
+ KPlotWidget is a QWidget-derived class that provides a virtual base class
+ for easy data-plotting. The idea behind KPlotWidget is that you only have
+ to specify information in "data units"; i.e., the natural units of the
+ data being plotted.  KPlotWidget automatically converts everything
+ to screen pixel units.
+ .
+ Contains development files for kplotting.
+
+Package: libkf6plotting-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: KPlotting provides classes to do plotting (documentation)
+ KPlotWidget is a QWidget-derived class that provides a virtual base class
+ for easy data-plotting. The idea behind KPlotWidget is that you only have
+ to specify information in "data units"; i.e., the natural units of the
+ data being plotted.  KPlotWidget automatically converts everything
+ to screen pixel units.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6plotting6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: KPlotting provides classes to do plotting
+ KPlotWidget is a QWidget-derived class that provides a virtual base class
+ for easy data-plotting. The idea behind KPlotWidget is that you only have
+ to specify information in "data units"; i.e., the natural units of the
+ data being plotted.  KPlotWidget automatically converts everything
+ to screen pixel units.

@@ -1,0 +1,5 @@
+usr/include/KF6/KPeople/
+usr/lib/*/cmake/KF6People/
+usr/lib/*/libKF6People.so
+usr/lib/*/libKF6PeopleBackend.so
+usr/lib/*/libKF6PeopleWidgets.so

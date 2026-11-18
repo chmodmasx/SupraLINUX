@@ -1,0 +1,81 @@
+Source: kf6-kxmlgui
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6configwidgets-dev (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6globalaccel-dev (>= 6.24.0~),
+               libkf6guiaddons-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libkf6iconthemes-dev (>= 6.24.0~),
+               libkf6itemviews-dev (>= 6.24.0~),
+               libkf6widgetsaddons-dev (>= 6.24.0~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kxmlgui
+Rules-Requires-Root: no
+
+Package: libkf6xmlgui-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: User configurable main windows
+ framework for designing the user interface
+ of an application using XML, using the idea
+ of actions.
+ .
+ This package contains the data files.
+
+Package: libkf6xmlgui-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6config-dev (>= 6.24.0~),
+         libkf6configwidgets-dev (>= 6.24.0~),
+         libkf6globalaccel-dev (>= 6.24.0~),
+         libkf6guiaddons-dev (>= 6.24.0~),
+         libkf6itemviews-dev (>= 6.24.0~),
+         libkf6xmlgui6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0~),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6xmlgui-doc (= ${source:Version})
+Description: User configurable main windows - development files
+ framework for designing the user interface
+ of an application using XML, using the idea
+ of actions.
+ .
+ Contains development files for kxmlgui.
+Multi-Arch: same
+
+Package: libkf6xmlgui-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: User configurable main windows - documentation
+ framework for designing the user interface
+ of an application using XML, using the idea
+ of actions.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6xmlgui6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6xmlgui-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: User configurable main windows
+ framework for designing the user interface
+ of an application using XML, using the idea
+ of actions.

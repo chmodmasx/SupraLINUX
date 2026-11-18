@@ -1,0 +1,2 @@
+# uses PHP for some unit tests, definitely not a PHP package
+kf6-kuserfeedback source: composer-package-without-pkg-php-tools-builddep [composer.json]

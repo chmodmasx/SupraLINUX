@@ -1,0 +1,88 @@
+Source: kf6-solid
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: bison (>= 2:3.0~),
+               cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               flex,
+               libimobiledevice-dev,
+               libmount-dev [linux-any],
+               libplist-dev,
+               libudev-dev [linux-any],
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/solid
+Rules-Requires-Root: no
+
+Package: libkf6solid-bin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: udisks2 [linux-any], upower
+Description: Qt library to query and control hardware
+ Solid is a device integration framework. It provides a way of querying and
+ interacting with hardware independently of the underlying operating system.
+ .
+ Solid is part of KDE Frameworks 6.
+ .
+ This package contains the solid-hardware6 tool.
+
+Package: libkf6solid-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Qt library to query and control hardware
+ Solid is a device integration framework. It provides a way of querying and
+ interacting with hardware independently of the underlying operating system.
+ .
+ Solid is part of KDE Frameworks 6.
+ .
+ This package contains shared data files.
+
+Package: libkf6solid-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6solid6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6solid-doc (= ${source:Version})
+Description: Qt library to query and control hardware
+ Solid is a device integration framework. It provides a way of querying and
+ interacting with hardware independently of the underlying operating system.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the development files.
+
+Package: libkf6solid-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Qt library to query and control hardware (documentation)
+ Solid is a device integration framework. It provides a way of querying and
+ interacting with hardware independently of the underlying operating system.
+ .
+ Solid is part of KDE Frameworks 6.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6solid6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6solid-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: media-player-info [linux-any]
+Description: Qt library to query and control hardware
+ Solid is a device integration framework. It provides a way of querying and
+ interacting with hardware independently of the underlying operating system.
+ .
+ Solid is part of KDE Frameworks 6.

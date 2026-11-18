@@ -1,0 +1,26 @@
+Description: Do not show modal dialogs for preview image errors
+ KNewStuff emits KNSCore::ErrorCode::ImageError when a preview image
+ fails to download. ErrorDisplayer treats it like a fatal error and
+ shows a modal dialog for every failed thumbnail. Preview images are
+ non-critical and the failure is already logged by the engine, so
+ ignore ImageError in the dialog while keeping the rest of the errors.
+Bug: https://bugs.kde.org/show_bug.cgi?id=518013
+Origin: SupraLINUX
+Forwarded: no
+Last-Update: 2026-11-09
+---
+--- a/src/qtquick/qml/private/ErrorDisplayer.qml
++++ b/src/qtquick/qml/private/ErrorDisplayer.qml
+@@ -21,6 +21,12 @@
+     readonly property Connections connection: Connections {
+         target: component.engine
+         function onErrorCode(errorCode, message, metadata) {
++            // Preview images are loaded opportunistically. A failed image
++            // should not interrupt the user with a modal dialog; the engine
++            // already logs the error for diagnosis.
++            if (errorCode === NewStuff.ErrorCode.ImageError) {
++                return;
++            }
+             component.showError(errorCode, message, metadata);
+         }
+     }

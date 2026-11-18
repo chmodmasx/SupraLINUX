@@ -1,0 +1,4 @@
+usr/include/KF6/FrameworkIntegration/
+usr/include/KF6/KStyle/
+usr/lib/*/cmake/KF6FrameworkIntegration/
+usr/lib/*/libKF6Style.so

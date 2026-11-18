@@ -1,0 +1,68 @@
+Source: kf6-kparts
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libkf6jobwidgets-dev (>= 6.24.0~),
+               libkf6kio-dev (>= 6.24.0~),
+               libkf6service-dev (>= 6.24.0~),
+               libkf6widgetsaddons-dev (>= 6.24.0~),
+               libkf6xmlgui-dev (>= 6.24.0~),
+               qt6-base-dev (>= 6.8.0~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kparts
+Rules-Requires-Root: no
+
+Package: libkf6parts-data
+Architecture: all
+Depends: ${misc:Depends}
+Multi-Arch: foreign
+Description: Document centric plugin system
+ Framework providing elaborate user-interface components.
+ .
+ This package contains the data files.
+
+Package: libkf6parts-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6kio-dev (>= 6.24.0~),
+         libkf6parts6 (= ${binary:Version}),
+         libkf6xmlgui-dev (>= 6.24.0~),
+         qt6-base-dev (>= 6.8.0~),
+         ${misc:Depends}
+Recommends: libkf6parts-doc (= ${source:Version})
+Description: development files for kparts
+ Framework providing elaborate user-interface components.
+ .
+ Contains development files for kparts.
+
+Package: libkf6parts-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Document centric plugin system (documentation)
+ Framework providing elaborate user-interface components.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6parts6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6parts-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Document centric plugin system
+ Framework providing elaborate user-interface components.

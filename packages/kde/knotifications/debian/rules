@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+
+# Disable fixfilepath, as it triggers build failures.
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all reproducible=-fixfilepath optimize=+lto
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	dh_auto_configure -- -DBUILD_QCH=OFF -DBUILD_PYTHON_BINDINGS=OFF
+
+override_dh_auto_test:
+	xvfb-run -a dh_auto_test

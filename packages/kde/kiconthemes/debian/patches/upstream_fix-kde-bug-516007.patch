@@ -1,0 +1,30 @@
+From 2dc30a2f27e2383994eb77e79b0c33f47ce4e0c7 Mon Sep 17 00:00:00 2001
+From: EpicTux123 Penguin <epictux123@proton.me>
+Date: Mon, 16 Mar 2026 14:18:04 +0000
+Subject: [PATCH] Revert "KIconTheme: Prefer SVG files over PNG files"
+
+Reverts a47280f3c370d4a97117d0b32682237fcd848664 until Qt implements the
+required thing upstream.
+
+BUG: 516007
+CCBUG: 502273
+---
+ src/kicontheme.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/kicontheme.cpp b/src/kicontheme.cpp
+index 817ccff..dfad309 100644
+--- a/src/kicontheme.cpp
++++ b/src/kicontheme.cpp
+@@ -436,7 +436,7 @@ KIconTheme::KIconTheme(const QString &name, const QString &appName, const QStrin
+     d->example = cfg.readPathEntry("Example", QString());
+     d->screenshot = cfg.readPathEntry("ScreenShot", QString());
+     d->mExtensions =
+-        cfg.readEntry("KDE-Extensions", QStringList{QStringLiteral(".svgz"), QStringLiteral(".svg"), QStringLiteral(".png"), QStringLiteral(".xpm")});
++        cfg.readEntry("KDE-Extensions", QStringList{QStringLiteral(".png"), QStringLiteral(".svgz"), QStringLiteral(".svg"), QStringLiteral(".xpm")});
+ 
+     QSet<QString> addedDirs; // Used for avoiding duplicates.
+     const QStringList dirs = cfg.readPathEntry("Directories", QStringList()) + cfg.readPathEntry("ScaledDirectories", QStringList());
+-- 
+GitLab
+

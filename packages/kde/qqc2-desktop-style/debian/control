@@ -1,0 +1,64 @@
+Source: kf6-qqc2-desktop-style
+Section: kde
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               dbus-x11,
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6colorscheme-dev (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6iconthemes-dev (>= 6.24.0~),
+               libkirigami-dev (>= 6.24.0~),
+               libxkbcommon-dev,
+               pkgconf,
+               qml6-module-org-kde-sonnet (>= 6.24.0~) <!nocheck>,
+               qml6-module-qtqml-workerscript <!nocheck>,
+               qml6-module-qtquick-window <!nocheck>,
+               qt6-base-dev (>= 6.8.0~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0~),
+               qt6-declarative-private-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/qqc2-desktop-style
+Rules-Requires-Root: no
+
+Package: libkf6qqc2desktopstyle-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Qt Quick Controls 2: Desktop Style - data files
+ Small style written in QML for QtQuickControls2 intended to be used
+ by default in QQC2-based apps when used in the Plasma desktop
+ .
+ This package contains the data files.
+
+Package: libkf6qqc2desktopstyle-dev
+Section: libdevel
+Architecture: any
+Depends: qml6-module-org-kde-desktop (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Qt Quick Controls 2: Desktop Style - development files
+ Small style written in QML for QtQuickControls2 intended to be used
+ by default in QQC2-based apps when used in the Plasma desktop
+ .
+ This package contains the development files.
+
+Package: qml6-module-org-kde-desktop
+Architecture: any
+Depends: libkf6qqc2desktopstyle-data,
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Breaks: qml-module-org-kde-qqc2desktopstyle (<< 5.116.1~)
+Replaces: qml-module-org-kde-qqc2desktopstyle (<< 5.116.1~)
+Description: Qt Quick Controls 2: Desktop Style
+ Small style written in QML for QtQuickControls2 intended to be used
+ by default in QQC2-based apps when used in the Plasma desktop

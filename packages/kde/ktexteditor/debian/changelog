@@ -1,0 +1,1135 @@
+kf6-ktexteditor (6.24.0-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Frameworks 6.24.0 LTS for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 05:00:00 +0000
+
+kf6-ktexteditor (6.24.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.24.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Mar 2026 23:05:18 +0000
+
+kf6-ktexteditor (6.23.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.23.0)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Feb 2026 11:40:44 +0000
+
+kf6-ktexteditor (6.22.0-0ubuntu2) resolute; urgency=medium
+
+  * No-change rebuild for kf6-kio 6.22.1.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 22 Jan 2026 21:59:09 +0000
+
+kf6-ktexteditor (6.22.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.22.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 Jan 2026 18:32:32 +0000
+
+kf6-ktexteditor (6.21.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.21.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 12 Dec 2025 11:53:19 +0000
+
+kf6-ktexteditor (6.20.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.20.0)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 Nov 2025 16:15:59 +0000
+
+kf6-ktexteditor (6.19.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.18.0)
+  * New upstream release (6.19.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 12 Oct 2025 15:07:46 +0100
+
+kf6-ktexteditor (6.17.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.17.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Aug 2025 18:17:54 +0100
+
+kf6-ktexteditor (6.16.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.16.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 11 Jul 2025 16:47:54 +0100
+
+kf6-ktexteditor (6.15.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.15.0)
+  * Comment out .install for docs packages for now, as the qch docs are
+    currently not buildable in Ubuntu.
+  * debian/rules: Do not pass -DBUILD_QCH=ON to configure.
+  * Update symbols from build logs.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Jun 2025 16:35:25 +0100
+
+kf6-ktexteditor (6.14.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.14.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 10 May 2025 07:00:16 +0100
+
+kf6-ktexteditor (6.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.12.0)
+  * Update symbols.
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Mar 2025 10:54:49 +0000
+
+kf6-ktexteditor (6.11.0-1ubuntu2) plucky; urgency=medium
+
+  * Depends on libkf6texteditor-bin not required, as this is injected
+    via the symbols file.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 12 Mar 2025 17:19:22 +0000
+
+kf6-ktexteditor (6.11.0-1ubuntu1) plucky; urgency=medium
+
+  * Merge from Debian unstable. Remaining changes:
+    - Kubuntu Vcs and maintainer fields.
+    - Build depend on current KF6 version packages.
+    - libkf6texteditor6 Depends: libkf6texteditor-bin
+    - Disable acc test.
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 12 Mar 2025 17:15:52 +0000
+
+kf6-ktexteditor (6.11.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.11.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 15 Feb 2025 17:25:21 +0100
+
+kf6-ktexteditor (6.10.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.9.0).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (6.10.0).
+  * Update build-deps and deps with the info from cmake.
+  * Drop backported commit, now part of the upstream release.
+  * Update symbols from build for 6.10.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 10 Jan 2025 23:27:14 +0100
+
+kf6-ktexteditor (6.8.0-2) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Backport upstream commit to fix full line selection behaviour.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 30 Dec 2024 09:31:34 +0100
+
+kf6-ktexteditor (6.8.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.8.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update symbols from build for 6.8.0.
+  * Add an additional dependency on libkf6texteditor-bin in the symbols
+    file so that users of the symbols get the bin package installed
+    automatically without us having to declare a circular dependency
+    between the lib and the bin packages.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 04 Dec 2024 12:48:06 +0100
+
+kf6-ktexteditor (6.7.0-2) experimental; urgency=medium
+
+  * Team upload.
+  * Update symbols from build logs.
+
+ -- Simon Quigley <tsimonq2@debian.org>  Mon, 04 Nov 2024 12:22:27 -0600
+
+kf6-ktexteditor (6.7.0-1) experimental; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- Simon Quigley <tsimonq2@debian.org>  Sun, 03 Nov 2024 19:29:27 -0600
+
+kf6-ktexteditor (6.6.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.6.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 06 Sep 2024 23:15:07 +0200
+
+kf6-ktexteditor (6.5.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * 'acc' autopkgtest: set -std=c++17, needed when using Qt 6.
+  * CI: update/simplify configuration.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 19 Aug 2024 20:37:56 +0200
+
+kf6-ktexteditor (6.5.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.5.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update symbols from build for 6.5.0.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Aug 2024 23:22:13 +0200
+
+kf6-ktexteditor (6.4.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.4.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update the list of installed files.
+  * Update symbols from build for 6.4.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 19 Jul 2024 09:25:04 +0200
+
+kf6-ktexteditor (6.3.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update symbols from buildlogs.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 09 Jun 2024 15:01:34 +0200
+
+kf6-ktexteditor (6.0.0-2) experimental; urgency=medium
+
+  * Team upload.
+  * Update symbols files from the logs of buildds.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 18 May 2024 20:27:22 +0200
+
+kf6-ktexteditor (6.0.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.0.0).
+  * Update upstream signing-key.
+  * Update build-deps and deps with the info from cmake.
+  * Create new packages.
+  * Bump Standards-Version to 4.7.0 (no changes needed).
+  * Update d/copyright.
+
+ -- Patrick Franz <deltaone@debian.org>  Thu, 16 May 2024 01:29:28 +0200
+
+ktexteditor (5.115.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.115.0).
+  * Update build-deps and deps with the info from cmake.
+  * Disable tests.
+  * Update symbols from buildlogs.
+  * Add myself to Uploaders.
+  * Build-depend on pkgconf instead of pkg-config as the latter has been
+    superseded by the former.
+  * Enable LTO (Closes: #1015463).
+
+ -- Patrick Franz <deltaone@debian.org>  Tue, 19 Mar 2024 00:08:58 +0100
+
+ktexteditor (5.107.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.105.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update symbols from build for 5.105.0.
+  * New upstream release (5.107.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 18 Jun 2023 16:08:49 +0200
+
+ktexteditor (5.104.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.104.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 15 Mar 2023 16:10:06 +0100
+
+ktexteditor (5.103.0-1.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Add missing Breaks/Replaces of ktexteditor-data against
+    libkf5texteditor-dev. Closes: #1034951
+
+ -- Andreas Metzler <ametzler@debian.org>  Thu, 18 May 2023 18:20:13 +0200
+
+ktexteditor (5.103.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.103.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 12 Feb 2023 21:44:34 +0100
+
+ktexteditor (5.102.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Update the symbols files from the logs of buildds.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 24 Jan 2023 20:05:35 +0100
+
+ktexteditor (5.102.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.102.0).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.2, no change required.
+  * Update symbols from build for 5.102.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 22 Jan 2023 21:35:12 +0100
+
+ktexteditor (5.101.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Modernize the building more:
+    - add the dh-sequence-pkgkde-symbolshelper build dependency to use the
+      pkgkde_symbolshelper automatically, removing pkg-kde-tools
+    - drop the manually specified pkgkde_symbolshelper addon for dh
+  * Update the symbols files from the logs of buildds.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 16 Dec 2022 10:11:37 +0100
+
+ktexteditor (5.101.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.101.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update symbols from build for 5.101.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 13 Dec 2022 07:40:39 +0100
+
+ktexteditor (5.100.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.99.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update the list of installed files from build logs.
+  * Update symbols from build for 5.99.0.
+  * New upstream release (5.100.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update symbols from build for 5.100.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 19 Nov 2022 23:19:08 +0100
+
+ktexteditor (5.98.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.98.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update symbols from build for 5.98.0.
+  * Add lintian override for false positive about
+    src/script/data/commands/utils.js not being the source.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 18 Sep 2022 23:13:28 +0200
+
+ktexteditor (5.97.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.97.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 14 Aug 2022 18:55:43 +0200
+
+ktexteditor (5.96.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.96.0).
+  * Update symbols from build for 5.96.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 31 Jul 2022 13:33:12 +0200
+
+ktexteditor (5.94.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols file from the logs of buildds.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 26 Jul 2022 19:30:00 +0200
+
+ktexteditor (5.94.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols file. (Closes: #1012965)
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 25 Jul 2022 22:40:16 +0200
+
+ktexteditor (5.94.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols file.
+
+ -- Pino Toscano <pino@debian.org>  Thu, 26 May 2022 22:49:48 +0200
+
+ktexteditor (5.94.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.94.0).
+  * Update symbols from build for 5.94.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 19 May 2022 23:59:08 +0200
+
+ktexteditor (5.93.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bump Standards-Version to 4.6.1, no changes required.
+  * Modernize building:
+    - add the dh-sequence-kf5 build dependency to use the kf5 addon
+      automatically
+    - drop all the manually specified addons and buildsystem for dh
+  * Remove inactive Uploaders.
+  * Update symbols file.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 15 May 2022 09:15:40 +0200
+
+ktexteditor (5.93.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.93.0). (Closes: #1010180 and CVE-2022-23853)
+  * Update the list of installed files from build logs.
+  * Update symbols from build for 5.93.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 May 2022 23:22:49 +0200
+
+ktexteditor (5.90.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * CI: enable again blhc, as it works fine now with blhc 0.13.
+  * Update symbols files from the logs of buildds.
+  * Remove 3 obsolete maintscript entries in 1 files.
+  * Drop the libqt5xmlpatterns5-dev, and qtscript5-dev build dependencies,
+    no more needed now.
+  * Mark the xauth, and xvfb build dependencies as !nocheck, as they are needed
+    only during dh_auto_test.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 26 Feb 2022 12:12:24 +0100
+
+ktexteditor (5.90.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.89.0).
+  * Update symbols.
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.90.0).
+  * Added myself to the uploaders.
+  * Update list of installed files.
+  * Update symbols from build for 5.90.0.
+  * Update lintian overrides.
+  * Update copyright information.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 11 Feb 2022 23:46:45 +0100
+
+ktexteditor (5.88.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.87.0).
+  * Update symbols (Closes: #997102).
+  * New upstream release (5.88.0).
+  * Update symbols.
+  * Force-bump frameworks internal b-d to 5.88.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Nov 2021 06:07:41 +0900
+
+ktexteditor (5.86.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.86.0).
+  * Update symbols.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 13 Sep 2021 15:02:47 +0900
+
+ktexteditor (5.85.0-3) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Norbert Preining ]
+  * Really disable BLHC of Salsa CI.
+
+  [ Pino Toscano ]
+  * Bump Standards-Version to 4.6.0, no changes required.
+  * Update symbols file.
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Mon, 30 Aug 2021 19:10:19 +0200
+
+ktexteditor (5.85.0-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 28 Aug 2021 23:42:48 +0900
+
+ktexteditor (5.85.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.85.0).
+  * Update symbols.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 16 Aug 2021 00:05:48 +0900
+
+ktexteditor (5.83.0-3) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 16 Aug 2021 11:53:10 +0900
+
+ktexteditor (5.83.0-2) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Fix symbols for 32bit archs.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 14 Jun 2021 13:30:05 +0900
+
+ktexteditor (5.83.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.83.0).
+  * Update symbols.
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 13 Jun 2021 12:48:22 +0900
+
+ktexteditor (5.82.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.82.0).
+  * Removed Maximiliano Curia from the uploaders, thanks for your work
+    on the package!
+  * Update symbols (some not exported ones are dropped).
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 09 May 2021 10:55:18 +0900
+
+ktexteditor (5.81.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream version (5.81.0)
+  * Bump inter-frameworks dependencies.
+  * Update symbols.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 12 Apr 2021 19:03:13 +0900
+
+ktexteditor (5.80.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Add libkf5syntaxhighlighting-dev to the -dev package deps.
+  * New upstream version (5.80.0)
+  * Bump inter-frameworks dependencies.
+  * Update symbols.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 15 Mar 2021 15:10:36 +0900
+
+ktexteditor (5.79.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.79.0).
+  * Update symbols.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 16 Feb 2021 06:45:29 +0900
+
+ktexteditor (5.78.0-3) unstable; urgency=medium
+
+  * Update symbols.
+  * Remove graphviz from build depends.
+  * Rebuild against new e-c-m to fix broken template tar.
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 24 Jan 2021 14:40:24 +0900
+
+ktexteditor (5.78.0-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 17 Jan 2021 12:02:25 +0900
+
+ktexteditor (5.78.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.78.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 13 Jan 2021 10:32:43 +0900
+
+ktexteditor (5.77.0-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 22 Dec 2020 10:33:36 +0900
+
+ktexteditor (5.77.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Bump Standards-Version to 4.5.1 (No changes needed).
+  * New upstream release (5.77.0).
+  * Update build-deps and deps with the info from cmake.
+  * Add myself to Uploaders.
+  * Update maintainer to Debian Qt/KDE Maintainers.
+  * Update symbols.
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 18 Dec 2020 10:03:55 +0900
+
+ktexteditor (5.74.0-3) unstable; urgency=medium
+
+  * Team upload to unstable.
+
+ -- Sandro Knauß <hefee@debian.org>  Mon, 19 Oct 2020 23:19:19 +0200
+
+ktexteditor (5.74.0-2) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * Disable autotests as they are too flaky (Closes: #964695, #946650).
+
+ -- Sandro Knauß <hefee@debian.org>  Thu, 08 Oct 2020 16:59:58 +0200
+
+ktexteditor (5.74.0-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * New upstream release (5.74.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update patch hunks.
+  * Update Homepage link to point to new invent.kde.org
+  * Update repository related entries to metadata file.
+  * Update field Source in debian/copyright to invent.kde.org move.
+  * Add Bug-* entries to metadata file.
+  * Move categories file to ktexteditor-data.
+  * Add renamecategories file to ktexteditor-data.
+  * Update symbols from build for 5.74.0 no ABI bump is needed (only private
+    symbols were changed).
+
+ -- Sandro Knauß <hefee@debian.org>  Sun, 27 Sep 2020 17:46:39 +0200
+
+ktexteditor (5.70.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Pino Toscano ]
+  * Move the kdevappwizard templates from ktexteditor-data to
+    libkf5texteditor-dev, as they are useful only with the development stuff
+    - add proper breaks/replaces
+
+  [ Sandro Knauß ]
+  * Bump compat level to 13.
+  * New upstream release (5.70.1).
+  * Update build-deps and deps with the info from cmake.
+  * Wrap long lines in changelog entries: 5.22.0-1.
+  * Set field Upstream-Contact in debian/copyright.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+  * Remove not needed Build-Depends.
+
+ -- Sandro Knauß <hefee@debian.org>  Tue, 26 May 2020 23:58:27 +0200
+
+ktexteditor (5.69.0-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * Bump compat level to 12.
+  * Bump Standards-Version to 4.5.0 (No changes needed).
+  * Get rid of debug-symbol-migration package.
+  * Add Rules-Requires-Root field to control.
+  * New upstream release (5.69.0).
+  * Update build-deps and deps with the info from cmake.
+  * Enable hardening all.
+  * Update symbols from buildds for 5.62.0
+  * Update symbols from build for 5.69.0.
+  * Cleanup copyright file.
+  * Remove not needed injection of linker flags.
+
+ -- Sandro Knauß <hefee@debian.org>  Thu, 30 Apr 2020 17:58:09 +0200
+
+ktexteditor (5.62.0-1) unstable; urgency=medium
+
+  * Update reprotest args variable
+  * New upstream release (5.62.0).
+  * Update build-deps and deps with the info from cmake
+  * Update symbols file
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 20 Sep 2019 10:13:12 -0700
+
+ktexteditor (5.61.0-1) experimental; urgency=medium
+
+  * New revision
+  * Update symbols files from buildds logs (5.54.0-1).
+    Thanks to Aurelien Jarno for the report and patch (Closes: 924722)
+
+  [ Helmut Grohne ]
+  * Fix FTCBFS: (Closes: #930496)
+    + Drop redundant perl from Build-Depends.
+    + Add missing qttools5-dev to Build-Depends (see #915122).
+
+  [ Maximiliano Curia ]
+  * Salsa CI automatic initialization by Tuco
+  * New upstream release (5.61.0).
+  * Update build-deps and deps with the info from cmake
+  * Add missing version to maintscript
+  * Update symbols file
+  * Ignore reprotest build path variations
+  * Release to experimental
+
+  [ Jonathan Riddell ]
+  * moved qdebug files
+
+  [ Rik Mills ]
+  * Move dbus policy file to new location
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 09 Sep 2019 21:10:56 +0100
+
+ktexteditor (5.54.0-1) unstable; urgency=medium
+
+  * New upstream release (5.52.0).
+  * New upstream release (5.53.0).
+  * Update build-deps and deps with the info from cmake
+  * Update symbols file
+  * New upstream release (5.54.0).
+  * Update build-deps and deps with the info from cmake
+  * Rediff patches
+  * Update symbols file
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 17 Jan 2019 19:27:20 -0300
+
+ktexteditor (5.51.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files. (Closes: #915483)
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Wed, 26 Dec 2018 17:31:20 +0100
+
+ktexteditor (5.51.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Update symbols files from logs of buildds.
+  * Small changes to copyright.
+  * Remove no more used not-installed file.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 11 Nov 2018 10:13:42 +0100
+
+ktexteditor (5.51.0-1) unstable; urgency=medium
+
+  [ Pino Toscano ]
+  * Update symbols files from logs of buildds.
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.50.0).
+  * Update build-deps and deps with the info from cmake
+  * Update symbols files
+  * Skip auto_test in armhf
+  * New upstream release (5.51.0).
+  * Update build-deps and deps with the info from cmake
+  * Update install files
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 07 Nov 2018 17:17:19 +0100
+
+ktexteditor (5.49.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Add a symbols file for libkf5texteditor5, based on all the versions of
+    this source uploaded to Debian.
+  * Bump Standards-Version to 4.2.1, no changes required.
+  * Change the section of ktexteditor-data to 'kde', instead of 'libs'.
+  * Remove the unused ${shlibs:Depends} substvar from ktexteditor-data, and
+    libkf5texteditor-dev.
+  * Tighten the libkf5texteditor5 dependency in ktexteditor-katepart to the
+    same binary version.
+  * Remove old stuff from copyright.
+  * Run the test suite during the build:
+    - add the xauth, and xvfb build dependencies
+    - run xvfb-run with the proper arguments
+    - do not run the tests in parallel, since some of them conflict with each
+      other
+  * Remove the 'testsuite' autopkgtest, no more needed with the in-build
+    testsuite.
+
+ -- Pino Toscano <pino@debian.org>  Sun, 09 Sep 2018 11:34:39 +0200
+
+ktexteditor (5.49.0-1) unstable; urgency=medium
+
+  * New upstream release (5.48.0).
+  * Update build-deps and deps with the info from cmake
+  * New upstream release (5.49.0).
+  * Update build-deps and deps with the info from cmake
+  * Drop upstream patch
+  * Disable vimode_keys failing test
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 17 Aug 2018 16:18:59 +0200
+
+ktexteditor (5.47.0-1) unstable; urgency=medium
+
+  * New upstream release (5.47.0).
+  * Update build-deps and deps with the info from cmake
+  * CVE-2018-10361: privilege escalation (Closes: 896836)
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 15 Jun 2018 12:10:22 +0200
+
+ktexteditor (5.46.0-1) unstable; urgency=medium
+
+  * New upstream release (5.46.0).
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.1.4.
+  * Use https for the debian/copyright
+  * testsuite: Run tests one at the time
+  * testsuite: Ignore stderr
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 17 May 2018 22:15:32 +0200
+
+ktexteditor (5.45.0-1) unstable; urgency=medium
+
+  * New upstream release (5.45.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 08:10:55 +0200
+
+ktexteditor (5.44.0-1) sid; urgency=medium
+
+  * New upstream release (5.44.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 21 Mar 2018 14:41:16 +0100
+
+ktexteditor (5.43.0-1) experimental; urgency=medium
+
+  * Use the salsa canonical urls
+  * New upstream release (5.43.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Feb 2018 11:44:05 +0100
+
+ktexteditor (5.42.0-2) sid; urgency=medium
+
+  * New revision
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 10 Feb 2018 11:29:11 +0100
+
+ktexteditor (5.42.0-1) experimental; urgency=medium
+
+  * New upstream release (5.42.0).
+  * Add link options as-needed
+  * Bump debhelper build-dep and compat to 11.
+  * Build without build_stamp
+  * Update build-deps and deps with the info from cmake
+  * Update install files
+  * Add new binary package libkf5texteditor-bin
+  * Bump Standards-Version to 4.1.3.
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 02 Feb 2018 12:05:52 +0100
+
+ktexteditor (5.41.0-1) experimental; urgency=medium
+
+  * Add libeditorconfig-dev build dep.
+    Thanks to Václav Doležal for the report (Closes: 876063)
+  * New upstream release (5.38.0).
+  * Update build-deps and deps with the info from cmake
+  * New upstream release (5.41.0).
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.1.2.
+  * Replace underscore using linktrees
+  * Use system copy of underscore.js for the embedded resources
+  * Use the underscore.js available in libraries
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 15 Dec 2017 10:43:06 -0300
+
+ktexteditor (5.37.0-2) sid; urgency=medium
+
+  * New revision
+  * Bump Standards-Version to 4.1.0.
+  * Update upstream metadata
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 03 Sep 2017 09:58:50 +0200
+
+ktexteditor (5.37.0-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.37.0).
+  * Update build-deps and deps with the info from cmake
+  * Add a libkf5texteditor-doc package for the qch files
+  * Bump Standards-Version to 4.0.1.
+  * Set section for the doc package
+  * Release to experimental
+
+  [ Rik Mills ]
+  * Install ktexteditor plugin template
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Aug 2017 10:43:52 +0200
+
+ktexteditor (5.36.0-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.35.0).
+  * Bump Standards-Version to 4.0.0.
+  * Update build-deps and deps with the info from cmake
+  * Drop upstream patches
+  * Update build-deps and deps with the info from cmake
+  * watch: Use https uris
+  * New upstream release (5.36.0).
+  * Update build-deps and deps with the info from cmake
+
+  [ Jonathan Riddell ]
+  * kauth stuff
+  * binary not data
+
+  [ Raymond Wooninck ]
+  * Add signing key
+  * also include signing-key
+
+  [ Harald Sitter ]
+  * acc c++11. now used more liberally
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 09 Jul 2017 23:42:41 +0200
+
+ktexteditor (5.28.0-2) unstable; urgency=medium
+
+  * Apply "Fix: Forward dragging text results in wrong selection" (a4ad36c)
+    Add the upstream patch as:
+     Fix-Forward-dragging-text-results-in-wrong-selection.patch
+    This fixes KDE#374163
+  * Apply "fix minimap rendering for HiDPI envs" (030c37b)
+    Add upstream patch as: fix-minimap-rendering-for-HiDPI-envs.patch
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 07 Apr 2017 11:57:02 +0200
+
+ktexteditor (5.28.0-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.28)
+  * Add libgit2-dev build dep back.
+    Thanks to Simon Quigley for noting this
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 18 Nov 2016 16:07:00 +0100
+
+ktexteditor (5.27.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.27)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 15 Oct 2016 17:08:16 +0200
+
+ktexteditor (5.26.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+  [ Maximiliano Curia ]
+  * Replace dbus-launch with dbus-run-session in tests
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Sep 2016 12:02:48 +0200
+
+ktexteditor (5.25.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 20 Aug 2016 16:48:15 +0200
+
+ktexteditor (5.23.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+  * Refresh patches
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 22 Jun 2016 23:54:25 +0200
+
+ktexteditor (5.22.0-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Replace the "Historical name" ddeb-migration by its "Modern, clearer"
+    replacement dbgsym-migration.
+  * Add upstream metadata (DEP-12)
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Update acc test script
+  * uscan no longer supports more than one main upstream tarball being listed
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 3.9.8
+  * Refresh patches
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 26 May 2016 00:59:32 +0200
+
+ktexteditor (5.19.0-1) experimental; urgency=medium
+
+  * New upstream release (5.19.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 13 Feb 2016 15:16:36 +0100
+
+ktexteditor (5.18.0-1) experimental; urgency=medium
+
+  * New upstream release (5.17.0).
+  * New upstream release (5.18.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 27 Jan 2016 13:34:34 +0100
+
+ktexteditor (5.16.0-1) unstable; urgency=medium
+
+  * New upstream release (5.16.0).
+  * xdg files no longer present.
+  * Update install files.
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 30 Nov 2015 12:12:29 +0100
+
+ktexteditor (5.15.0-1) unstable; urgency=medium
+
+  * Add copyright information about the current license of the linkable
+    code.
+  * Drop libgit2-dev build dep. (Closes: #799430)
+  * New upstream release (5.15.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 09 Oct 2015 19:16:48 +0200
+
+ktexteditor (5.14.0-1) unstable; urgency=medium
+
+  * New upstream release (5.14.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 15 Sep 2015 13:49:55 +0200
+
+ktexteditor (5.13.0-1) unstable; urgency=medium
+
+  * New upstream release (5.13.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 01 Sep 2015 13:28:14 +0200
+
+ktexteditor (5.12.0-1) unstable; urgency=medium
+
+  * New upstream release (5.12.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 09 Jul 2015 12:44:05 +0200
+
+ktexteditor (5.11.0-1) unstable; urgency=medium
+
+  * New upstream release (5.10.0).
+  * New upstream release (5.11.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 29 Jun 2015 13:28:11 +0200
+
+ktexteditor (5.9.0-1) experimental; urgency=medium
+
+  * New upstream release (5.9.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 23 Apr 2015 08:26:21 +0200
+
+ktexteditor (5.9.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 13 Apr 2015 23:18:59 +0200
+
+ktexteditor (5.8.0-1) experimental; urgency=medium
+
+  * New upstream release (5.8.0).
+  * New patch: katesyntaxtest_check_basename
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 22 Mar 2015 11:38:48 +0100
+
+ktexteditor (5.8.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 17 Mar 2015 15:45:26 +0100
+
+ktexteditor (5.7.0-1) experimental; urgency=medium
+
+  * New upstream release (5.7.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 06 Mar 2015 22:57:45 +0100
+
+ktexteditor (5.7.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Harald Sitter <sitter@kde.org>  Tue, 10 Feb 2015 17:00:21 +0100
+
+ktexteditor (5.6.0-1) experimental; urgency=medium
+
+  * Prepare initial Debian release.
+  * Add acc autopkgtests.
+  * Update build dependencies to build against experimental and to
+    follow cmake.
+  * Bump Standards-Version to 3.9.6, no changes needed.
+  * Update copyright information.
+  * Update watch file.
+  * Update install files.
+  * Add missing dev dependency (thanks to acc headers check)
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 03 Feb 2015 20:32:35 +0100
+
+ktexteditor (5.6.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 06 Jan 2015 20:17:44 +0100
+
+ktexteditor (5.5.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 15 Dec 2014 11:18:08 +0100
+
+ktexteditor (5.4.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Fri, 07 Nov 2014 15:14:46 +0100
+
+ktexteditor (5.3.0-0ubuntu1) utopic; urgency=medium
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+  [ Scarlett Clark ]
+  * Add missing depends pkgconfig and libgit2.
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 07 Oct 2014 11:27:26 +0100
+
+ktexteditor (5.2.0-0ubuntu1) utopic; urgency=medium
+
+  [ Jonathan Riddell ]
+  * New upstream release
+  * Use pkg-kde-tools version 3 scripts
+
+  [ Scarlett Clark ]
+  * Add missing dependency libqt5xmlpatterns5-dev.
+  * Cleanup copyright + move copyright extra details to comment to silence
+    space-in-std-shortname-in-dep5-copyright lintian error.
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 22 Sep 2014 19:37:47 +0200
+
+ktexteditor (5.1.0-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+  * Fix copyright file lintain errors.
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Tue, 05 Aug 2014 17:09:22 +0200
+
+ktexteditor (5.0.0-0ubuntu1) utopic; urgency=medium
+
+  * Initial stable upstream release
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Tue, 22 Jul 2014 15:42:40 +0200

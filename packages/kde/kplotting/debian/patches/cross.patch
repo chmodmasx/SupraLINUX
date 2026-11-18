@@ -1,0 +1,16 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -27,7 +27,12 @@
+ set(REQUIRED_QT_VERSION 6.8.0)
+ find_package(Qt6Widgets ${REQUIRED_QT_VERSION} REQUIRED NO_MODULE)
+ 
+-cmake_dependent_option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ON "NOT CMAKE_CROSSCOMPILING" OFF)
++if (CMAKE_CROSSCOMPILING)
++    set(BUILD_DESIGNERPLUGIN_DEFAULT OFF)
++else()
++    set(BUILD_DESIGNERPLUGIN_DEFAULT ON)
++endif()
++option(BUILD_DESIGNERPLUGIN "Build plugin for Qt Designer" ${BUILD_DESIGNERPLUGIN_DEFAULT})
+ add_feature_info(DESIGNERPLUGIN ${BUILD_DESIGNERPLUGIN} "Build plugin for Qt Designer")
+ 
+ set(kplotting_version_header "${CMAKE_CURRENT_BINARY_DIR}/src/kplotting_version.h")

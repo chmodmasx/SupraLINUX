@@ -1,0 +1,118 @@
+Source: kf6-purpose
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.24.0~),
+               gettext,
+               intltool,
+               libkaccounts6-dev,
+               libkf6config-dev (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libkf6kio-dev (>= 6.24.0~),
+               libkf6notifications-dev (>= 6.24.0~),
+               libkf6service-dev (>= 6.24.0~),
+               libkirigami-dev (>= 6.24.0~),
+               pkgconf,
+               qml6-module-org-kde-bluezqt (>= 6.24.0~),
+               qml6-module-org-kde-kcmutils (>= 6.24.0~),
+               qml6-module-org-kde-kitemmodels (>= 6.24.0~),
+               qml6-module-org-kde-kquickcontrolsaddons (>= 6.24.0~),
+               qml6-module-org-kde-prison (>= 6.24.0~),
+               qml6-module-sso-onlineaccounts,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/purpose
+Rules-Requires-Root: no
+
+Package: libkf6purpose-bin
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Recommends: qml6-module-org-kde-purpose
+Suggests: kdeconnect
+Description: abstraction to provide and leverage actions of a specific kind, runtime
+ Purpose offers the possibility to create integrate services and actions on
+ any application without having to implement them specifically. Purpose will
+ offer them mechanisms to list the different alternatives to execute given the
+ requested action type and will facilitate components so that all the plugins
+ can receive all the information they need.
+ .
+ This package contains the Purpose runtime elements.
+
+Package: libkf6purpose-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: abstraction to provide and leverage actions of a specific kind, translations
+ Purpose offers the possibility to create integrate services and actions on
+ any application without having to implement them specifically. Purpose will
+ offer them mechanisms to list the different alternatives to execute given the
+ requested action type and will facilitate components so that all the plugins
+ can receive all the information they need.
+ .
+ This package contains the Purpose translations.
+
+Package: libkf6purpose-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6coreaddons-dev (>= 6.24.0~),
+         libkf6purpose6 (= ${binary:Version}),
+         libkf6purposewidgets6 (= ${binary:Version}),
+         qml6-module-org-kde-purpose (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Description: abstraction to provide and leverage actions of a specific kind, devel files
+ Purpose offers the possibility to create integrate services and actions on
+ any application without having to implement them specifically. Purpose will
+ offer them mechanisms to list the different alternatives to execute given the
+ requested action type and will facilitate components so that all the plugins
+ can receive all the information they need.
+ .
+ This package contains the Purpose development files.
+
+Package: libkf6purpose6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6purpose-data (= ${source:Version}),
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Recommends: qml6-module-org-kde-purpose (= ${binary:Version})
+Description: library for abstractions to get the developer's purposes fulfilled
+ Framework for providing abstractions to get the developer's purposes fulfilled.
+ .
+ This package contains the Purpose library.
+
+Package: libkf6purposewidgets6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6purpose-data (= ${source:Version}),
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Description: library for abstractions to get the developer's purposes fulfilled
+ Framework for providing abstractions to get the developer's purposes fulfilled.
+ .
+ This package contains the Purpose widgets library.
+
+Package: qml6-module-org-kde-purpose
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Suggests: kdeconnect
+Description: abstraction to provide and leverage actions of a specific kind, qml bindings
+ Purpose offers the possibility to create integrate services and actions on
+ any application without having to implement them specifically. Purpose will
+ offer them mechanisms to list the different alternatives to execute given the
+ requested action type and will facilitate components so that all the plugins
+ can receive all the information they need.
+ .
+ This package contains the Purpose Qt Quick QML bindings.

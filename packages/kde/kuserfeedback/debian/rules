@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# do not run testOpenGLInfoSource during builds
+export KUSERFEEBACK_SKIP_TESTOPENGLINFOSOURCE=1
+
+%:
+	dh $@
+
+override_dh_auto_configure-arch:
+	dh_auto_configure -- -DENABLE_DOCS=OFF
+
+override_dh_auto_configure-indep:
+	dh_auto_configure -- -DENABLE_DOCS=ON
+
+override_dh_auto_test:
+	xvfb-run dh_auto_test --no-parallel

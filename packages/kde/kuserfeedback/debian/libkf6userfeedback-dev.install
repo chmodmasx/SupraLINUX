@@ -1,0 +1,8 @@
+usr/include/KF6/KUserFeedback/
+usr/include/KF6/KUserFeedbackCore/
+usr/include/KF6/KUserFeedbackWidgets/
+usr/lib/*/cmake/KF6UserFeedback/
+usr/lib/*/libKF6UserFeedbackCore.so
+usr/lib/*/libKF6UserFeedbackWidgets.so
+usr/lib/*/qt6/mkspecs/modules/qt_KF6UserFeedbackCore.pri
+usr/lib/*/qt6/mkspecs/modules/qt_KF6UserFeedbackWidgets.pri

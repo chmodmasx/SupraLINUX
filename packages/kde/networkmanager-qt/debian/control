@@ -1,0 +1,68 @@
+Source: kf6-networkmanager-qt
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libnm-dev (>= 1.4.0~),
+               pkgconf,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/networkmanager-qt
+Rules-Requires-Root: no
+
+Package: libkf6networkmanagerqt-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6networkmanagerqt6 (= ${binary:Version}),
+         libnm-dev (>= 1.4.0~),
+         qml6-module-org-kde-networkmanager (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6networkmanagerqt-doc (= ${source:Version})
+Description: Qt wrapper for NetworkManager - devel files
+ Qt wrapper for NetworkManager DBus API.
+ .
+ This package is part of the KDE Frameworks.
+ .
+ This package contains the development files.
+
+Package: libkf6networkmanagerqt-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Qt wrapper for NetworkManager - documentation
+ Qt wrapper for NetworkManager DBus API.
+ .
+ This package is part of the KDE Frameworks.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6networkmanagerqt6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt wrapper for NetworkManager
+ Qt wrapper for NetworkManager DBus API.
+ .
+ This package is part of the KDE Frameworks.
+
+Package: qml6-module-org-kde-networkmanager
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: Qt wrapper for NetworkManager - QML module
+ Qt wrapper for NetworkManager DBus API.
+ .
+ This package is part of the KDE Frameworks.
+ .
+ This package contains the QML module for networkmanager-qt.

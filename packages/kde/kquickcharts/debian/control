@@ -1,0 +1,109 @@
+Source: kf6-kquickcharts
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6declarative-dev (>= 6.24.0~),
+               libkirigami-dev (>= 6.24.0~),
+               libxkbcommon-dev,
+               qml6-module-qtqml-workerscript <!nocheck>,
+               qml6-module-qtquick-window <!nocheck>,
+               qml6-module-qttest <!nocheck>,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-private-dev (>= 6.8.0+dfsg~),
+               qt6-shadertools-dev (>= 6.8.0~),
+               qt6-tools-dev (>= 6.8.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kquickcharts
+Rules-Requires-Root: no
+
+Package: libquickcharts1
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Quick Charts
+ A QtQuick plugin providing high-performance charts (GPU-accelerated).
+ .
+ It supports three different chart types: pie, line and bar, which can be fed
+ from multiple types of data sources. There is also support for axis labels, an
+ axis grid and a legend.  Additionally, there is a submodule that contains some
+ convenience items.
+ .
+ The pie and line charts are rendered using a technique called signed
+ distance fields, which allows efficient GPU-accelerated rendering of 2D
+ shapes without loss of quality.
+ .
+ This package contains the core library.
+
+Package: libquickcharts-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends: libquickcharts1 (= ${binary:Version}),
+         libquickchartscontrols1 (= ${binary:Version}),
+         qml6-module-org-kde-quickcharts (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         qt6-declarative-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Description: Quick Charts - development files
+ A QtQuick plugin providing high-performance charts (GPU-accelerated).
+ .
+ It supports three different chart types: pie, line and bar, which can be fed
+ from multiple types of data sources. There is also support for axis labels, an
+ axis grid and a legend.  Additionally, there is a submodule that contains some
+ convenience items.
+ .
+ The pie and line charts are rendered using a technique called signed
+ distance fields, which allows efficient GPU-accelerated rendering of 2D
+ shapes without loss of quality.
+ .
+ This package contains the development files.
+
+Package: libquickchartscontrols1
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Quick Charts
+ A QtQuick plugin providing high-performance charts (GPU-accelerated).
+ .
+ It supports three different chart types: pie, line and bar, which can be fed
+ from multiple types of data sources. There is also support for axis labels, an
+ axis grid and a legend.  Additionally, there is a submodule that contains some
+ convenience items.
+ .
+ The pie and line charts are rendered using a technique called signed
+ distance fields, which allows efficient GPU-accelerated rendering of 2D
+ shapes without loss of quality.
+ .
+ This package contains the controls library.
+
+Package: qml6-module-org-kde-quickcharts
+Architecture: any
+Multi-Arch: same
+Depends: libquickcharts1 (= ${binary:Version}),
+         libquickchartscontrols1 (= ${binary:Version}),
+         ${misc:Depends},
+         ${qml6:Depends},
+         ${shlibs:Depends}
+Description: Quick Charts - QML module
+ A QtQuick plugin providing high-performance charts (gpu-accelerated).
+ .
+ It supports three different chart types: pie, line and bar, which can be fed
+ from multiple types of data sources. There is also support for axis labels, an
+ axis grid and a legend.  Additionally, there is a submodule that contains some
+ convenience items.
+ .
+ The pie and line charts are rendered using a technique called signed
+ distance fields, which allows efficient GPU-accelerated rendering of 2D
+ shapes without loss of quality.
+ .
+ This package contain the runtime QML module.

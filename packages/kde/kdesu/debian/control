@@ -1,0 +1,69 @@
+Source: kf6-kdesu
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libkf6pty-dev (>= 6.24.0~),
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kdesu
+Rules-Requires-Root: no
+
+Package: libkf6su-bin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: runtime files for kdesu
+ Framework to handle super user actions.
+ .
+ Contains runtime files for kdesu.
+
+Package: libkf6su-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: translation files for kdesu
+ Framework to handle super user actions
+ .
+ Contains translation files for kdesu.
+
+Package: libkf6su-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6pty-dev (>= 6.24.0~),
+         libkf6su6 (= ${binary:Version}),
+         ${misc:Depends}
+Recommends: libkf6su-doc (= ${source:Version})
+Description: development files for kdesu
+ Framework to handle super user actions.
+ .
+ Contains development files for kdesu.
+
+Package: libkf6su-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: runtime files for kdesu (documentation)
+ Framework to handle super user actions.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6su6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6su-data (= ${source:Version}),
+         sudo,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6su-bin (= ${binary:Version})
+Description: Integration with su for privilege escalation
+ Framework to handle super user actions

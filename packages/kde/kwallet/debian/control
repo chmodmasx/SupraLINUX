@@ -1,0 +1,130 @@
+Source: kf6-kwallet
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libgcrypt20-dev (>= 1.5.0~),
+               libgpgme-dev | libgpgme11-dev,
+               libgpgmepp-dev (>= 1.7.0~),
+               libkf6colorscheme-dev (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6crash-dev (>= 6.24.0~),
+               libkf6dbusaddons-dev (>= 6.24.0~),
+               libkf6doctools-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libkf6notifications-dev (>= 6.24.0~),
+               libkf6widgetsaddons-dev (>= 6.24.0~),
+               libkf6windowsystem-dev (>= 6.24.0~),
+               libqca-qt6-dev (>= 2.3.1~),
+               libqca-qt6-plugins <!nocheck>,
+               libqt6sql6-sqlite <!nocheck>,
+               libsecret-1-dev,
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.8.0~),
+               qt6-declarative-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kwallet
+Rules-Requires-Root: no
+
+Package: kwallet6
+Architecture: any
+Multi-Arch: foreign
+Depends: libkf6wallet-data (= ${source:Version}),
+         libkf6walletbackend6 (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: libkf5wallet-bin (<< 5.115.0-3~), libkf6wallet-bin
+Replaces: libkf5wallet-bin (<< 5.115.0-3~), libkf6wallet-bin
+Description: safe desktop-wide storage for passwords - kwalletd daemon
+ This framework contains two main components:
+ - Interface to KWallet, the safe desktop-wide storage for
+   passwords on KDE work spaces.
+ - The kwalletd used to safely store the passwords on KDE work spaces.
+ .
+ This package contains the kwalletd runtime daemon.
+
+Package: libkf6wallet-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: safe desktop-wide storage for passwords - data files
+ This framework contains two main components:
+ - Interface to KWallet, the safe desktop-wide storage for
+   passwords on KDE work spaces.
+ - The kwalletd used to safely store the passwords on KDE work spaces.
+ .
+ This package contains the translation files for the KWallet framework.
+
+Package: libkf6wallet-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6colorscheme-dev (>= 6.24.0~),
+         libkf6config-dev (>= 6.24.0~),
+         libkf6coreaddons-dev (>= 6.24.0~),
+         libkf6dbusaddons-dev (>= 6.24.0~),
+         libkf6i18n-dev (>= 6.24.0~),
+         libkf6notifications-dev (>= 6.24.0~),
+         libkf6wallet6 (= ${binary:Version}),
+         libkf6walletbackend6 (= ${binary:Version}),
+         libkf6widgetsaddons-dev (>= 6.24.0~),
+         libkf6windowsystem-dev (>= 6.24.0~),
+         libqca-qt6-dev (>= 2.3.1~),
+         qt6-base-dev (>= 6.8.0~),
+         ${misc:Depends}
+Recommends: libkf6wallet-doc (= ${source:Version})
+Description: safe desktop-wide storage for passwords - development files
+ This framework contains two main components:
+ - Interface to KWallet, the safe desktop-wide storage for
+   passwords on KDE work spaces.
+ - The kwalletd used to safely store the passwords on KDE work spaces.
+ .
+ This package contains the development files for the KWallet framework.
+
+Package: libkf6wallet-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: safe desktop-wide storage for passwords - developer documentation
+ This framework contains two main components:
+ - Interface to KWallet, the safe desktop-wide storage for
+   passwords on KDE work spaces.
+ - The kwalletd used to safely store the passwords on KDE work spaces.
+ .
+ This package contains the QCH developer documentation for the KWallet
+ framework.
+
+Package: libkf6wallet6
+Architecture: any
+Depends: libkf6wallet-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Multi-Arch: same
+Description: safe desktop-wide storage for passwords - shared library
+ This framework contains two main components:
+ - Interface to KWallet, the safe desktop-wide storage for
+   passwords on KDE work spaces.
+ - The kwalletd used to safely store the passwords on KDE work spaces.
+ .
+ This package contains the shared library to interface with KWallet.
+
+Package: libkf6walletbackend6
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: safe desktop-wide storage for passwords - backend library
+ This framework contains two main components:
+ - Interface to KWallet, the safe desktop-wide storage for
+   passwords on KDE work spaces.
+ - The kwalletd used to safely store the passwords on KDE work spaces.
+ .
+ This package contains the library with the password storage backend
+ implementation for the kwalletd daemon.

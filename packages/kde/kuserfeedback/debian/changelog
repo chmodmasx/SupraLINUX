@@ -1,0 +1,355 @@
+kf6-kuserfeedback (6.24.0-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Frameworks 6.24.0 LTS for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 04:40:00 +0000
+
+kf6-kuserfeedback (6.24.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.24.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 12 Mar 2026 23:05:38 +0000
+
+kf6-kuserfeedback (6.23.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.23.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Feb 2026 11:41:06 +0000
+
+kf6-kuserfeedback (6.22.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.22.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 Jan 2026 18:32:54 +0000
+
+kf6-kuserfeedback (6.21.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.21.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 12 Dec 2025 11:53:40 +0000
+
+kf6-kuserfeedback (6.20.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.20.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 Nov 2025 16:16:18 +0000
+
+kf6-kuserfeedback (6.19.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.18.0)
+  * New upstream release (6.19.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 12 Oct 2025 15:08:06 +0100
+
+kf6-kuserfeedback (6.17.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.17.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Aug 2025 18:18:24 +0100
+
+kf6-kuserfeedback (6.16.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.16.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 11 Jul 2025 16:48:39 +0100
+
+kf6-kuserfeedback (6.15.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.15.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Jun 2025 16:35:54 +0100
+
+kf6-kuserfeedback (6.14.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.14.0)
+  * Drop libkf6userfeedback-bin package, as the app and cli binaries are
+    no longer built by default.
+  * Update symbols from build logs.
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 10 May 2025 07:00:45 +0100
+
+kf6-kuserfeedback (6.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Mar 2025 10:55:14 +0000
+
+kf6-kuserfeedback (6.11.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.11.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 14 Feb 2025 16:50:26 +0000
+
+kf6-kuserfeedback (6.10.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.10.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jan 2025 12:21:43 +0000
+
+kf6-kuserfeedback (6.9.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.9.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Dec 2024 14:49:24 +0000
+
+kf6-kuserfeedback (6.8.0-0ubuntu2) plucky; urgency=medium
+
+  * Merge changes from 6.6.0-2 in Debian unstable.
+    - Use dh_qmldeps to detect QML dependencies.
+    - Add qml6-module packages to -dev package for QML dependency
+      detection.
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 01 Dec 2024 13:55:58 +0000
+
+kf6-kuserfeedback (6.8.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.7.0)
+  * New upstream release (6.8.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Nov 2024 16:38:59 +0000
+
+kf6-kuserfeedback (6.6.0-2) unstable; urgency=medium
+
+  [ Sandro Knauß ]
+  * Use dh_qmldeps to detect QML dependencies.
+  * Add qml6-module packages to -dev package for QML dependency detection.
+
+ -- Sandro Knauß <hefee@debian.org>  Mon, 18 Nov 2024 20:11:57 +0100
+
+kf6-kuserfeedback (6.6.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.6.0).
+  * Update build-deps and deps with the info from cmake.
+  * Drop backported commits now part of upstream release.
+  * Add lintian override for UserFeedbackConsole having no manual, it
+    has no command line arguments.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 06 Sep 2024 23:00:04 +0200
+
+kf6-kuserfeedback (6.6.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.6.0)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Fri, 20 Sep 2024 19:08:10 +0100
+
+kf6-kuserfeedback (6.5.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * CI: update/simplify configuration.
+  * Backport upstream commit 9bb9187846a19c0f366ab9ce6369edd25086673d to make
+    it possible to disable testOpenGLInfoSource using an environment variable;
+    patch upstream_tests-allow-to-disable-testOpenGLInfoSource-using-en.patch.
+  * Export KUSERFEEBACK_SKIP_TESTOPENGLINFOSOURCE=1 in rules to skip the
+    testOpenGLInfoSource test, as creating an OpenGL context is not reliable
+    on buildds.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 23 Aug 2024 17:12:07 +0200
+
+kf6-kuserfeedback (6.5.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.5.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 10 Aug 2024 23:22:00 +0200
+
+kf6-kuserfeedback (6.5.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Aug 2024 19:24:52 +0100
+
+kf6-kuserfeedback (6.4.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (6.4.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 19 Jul 2024 09:24:12 +0200
+
+kf6-kuserfeedback (6.4.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.4.0)
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 13 Jul 2024 16:36:09 +0100
+
+kf6-kuserfeedback (6.3.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.0).
+  * Update Vcs links to salsa.
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * Update build-deps and deps with the info from cmake.
+  * Add myself to Uploaders.
+  * Modernize building by using dh-sequence build-dependencies and
+    dropping manually specified addons and buildsystems for dh.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 09 Jun 2024 14:44:22 +0200
+
+kf6-kuserfeedback (6.0.0-2) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Add Breaks+Replaces for libkf6userfeedback-data against
+    libkuserfeedbackcoreqt6-1 which was also shipping the qt6 logging
+    categories file. (Closes: #1069655)
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 24 Apr 2024 23:42:05 +0200
+
+kf6-kuserfeedback (6.0.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * Update Vcs links for the kf6 migration.
+  * Update upstream links now that kuserfeedback is part of frameworks.
+  * New upstream release (6.0.0).
+  * Add kf6- prefix to source package, drop old libs, create new libs.
+  * Add Breaks+Replaces against pre-kf6 -bin and -doc packages.
+  * Add Breaks+Replaces against pre-kf6 libs. While the old and new libs have
+    different soname and are technically coinstallable, they provide the same
+    functionality.
+  * Update build-deps and deps with the info from cmake.
+  * Make use of declarative dh-sequence-kf6.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Mon, 15 Apr 2024 08:02:21 +0200
+
+kuserfeedback (1.3.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+
+ -- Pino Toscano <pino@debian.org>  Wed, 08 Nov 2023 07:05:26 +0100
+
+kuserfeedback (1.3.0-2) experimental; urgency=medium
+
+  * Team upload.
+  * Split the localization files from libkuserfeedbackcore1 to a new
+    libkuserfeedback-l10n, as they will be useful also for the Qt 6 version
+    - add proper breaks/replaces
+  * Build the Qt 6 libraries:
+    - add the qt6-base-dev, qt6-declarative-dev, and qt6-tools-dev build
+      dependencies
+    - do not build the console and the command line utilities, as they conflict
+      with the Qt 5 versions
+    - add new configure, build, and test steps for a separate Qt 6 variant
+    - add new qt6-kuserfeedback-dev, libkuserfeedbackcoreqt6-1,
+      libkuserfeedbackwidgetsqt6-1, and qml6-module-org-kde-userfeedback
+      binary packages as counterparts of their Qt 5 versions
+  * Tweak the descriptions of all the Qt 5 packages to mention the Qt version.
+
+ -- Pino Toscano <pino@debian.org>  Sat, 04 Nov 2023 18:16:52 +0100
+
+kuserfeedback (1.3.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+  * Update standards version to 4.6.2, no changes needed.
+  * Update the build dependencies according to the upstream build system:
+    - bump cmake to 3.16
+  * Small copyright update.
+  * Update lintian overrides.
+
+ -- Pino Toscano <pino@debian.org>  Fri, 03 Nov 2023 08:24:58 +0100
+
+kuserfeedback (1.2.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Bump the reference version used to cleanup the old
+    /etc/xdg/org_kde_UserFeedback.categories to the same version of this
+    changelog entry, as versions in the past do not work when upgrading.
+  * Mark the xauth, and xvfb build dependencies as !nocheck, as they are needed
+    only during dh_auto_test.
+
+ -- Pino Toscano <pino@debian.org>  Wed, 23 Feb 2022 07:47:33 +0100
+
+kuserfeedback (1.2.0-1) unstable; urgency=medium
+
+  * Update upstream signing key for Jonathan Ridell.
+  * New upstream release (1.2.0).
+  * Added myself to the uploaders.
+  * Update the list of installed files, gracefully handle move of
+    org_kde_UserFeedback.categories from /etc to /usr.
+  * Update symbols from build for 1.2.0.
+  * Refresh copyright information.
+  * Bump Standards-Version to 4.6.0, no changes required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 06 Feb 2022 23:45:13 +0100
+
+kuserfeedback (1.0.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Build the documentation only in -indep builds:
+    - pass -DENABLE_DOCS=OFF to cmake in dh_auto_configure of -arch builds
+    - pass -DENABLE_DOCS=ON to cmake in dh_auto_configure of -indep builds
+    - move qdoc-qt5 as Build-Depends-Indep
+    - drop the -DBUILD_QCH=ON cmake parameter, as it does not exist
+  * Remove the unused doxygen build dependency.
+  * Remove the unused debian/meta/ stuff.
+
+ -- Pino Toscano <pino@debian.org>  Tue, 27 Oct 2020 21:38:10 +0100
+
+kuserfeedback (1.0.0-2) unstable; urgency=medium
+
+  [ Sandro Knauß ]
+  * Add qdoc-qt5 to B-D needed for archs without qtdoc-qt5 dependency
+    inside qttools5-dev-tools.
+
+ -- Sandro Knauß <hefee@debian.org>  Thu, 22 Oct 2020 11:02:51 +0200
+
+kuserfeedback (1.0.0-1) unstable; urgency=medium
+
+  [ Scarlett Moore ]
+  * Remove libkuserfeedbackcore1.maintscript as this package
+    is NEW and will not have dangling maint scripts.
+  * Bump the debhelper compatibility to 13:
+    - switch the debhelper build dependency to debhelper-compat 13
+    - remove debian/compat
+  * Bump Standards-Version to 4.5.0, no changes required.
+  * Add Salsa CI config with team builder enabled.
+  * Update copyright file.
+    - Add missing copyright.
+    - Add Upstream-name, Upstream-Contact fields.
+    - Fix Source to point to invent.kde.org repo.
+  * Update Rules file.
+    - Fix dh call to use symbols helper and kf5 buildsystem.
+    - Remove defunkt qtselect export. Qt4 is no more.
+    - Add hardening options to build maint export.
+  * Update Maintainer to be debian-qt-kde team.
+  * Add myself to uploaders.
+  * Fix the control file entries.
+    - kuserfeedback-bin: fix Multi-Arch to any, it is binaries.
+      Remove section: doc as it is not docs. Fix multi-Arch to same.
+      Improve the long description.
+    - libkuserfeebackcore1: remove breaks/replace ( neon merge. ).
+      Improve long description.
+    - libkuserfeebackwidgets: remove breaks/replace ( neon merge. ).
+      Improve long description.
+    - qml-module-org-kde-userfeedback:
+      Improve long description.
+    - kuserfeedback-doc:
+      Improve long description.
+    - kuserfeedback-dev:
+      Improve long descriptions.
+  * Add VSC git entries.
+  * Update homepage links to invent.
+
+  [ Sandro Knauß ]
+  * Add Rules-Requires-Root field to control.
+  * Set upstream metadata fields: Repository, Repository-Browse.
+  * Enable running autotests.
+  * Update copyright file.
+  * kuserfeedback-bin is not Multi-Arch same compatible.
+  * Fill upstream metadata.
+  * Add symbols files.
+  * Add Build-Depends-Package to symbols file.
+  * Initial Debian release. (Closes: #970433)
+  * Add myself to Uploaders.
+
+ -- Sandro Knauß <hefee@debian.org>  Wed, 16 Sep 2020 12:53:13 +0200
+
+kuserfeedback (1.0.0-0) bionic; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Sun, 11 Aug 2019 18:49:14 +0000

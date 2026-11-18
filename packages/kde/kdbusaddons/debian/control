@@ -1,0 +1,70 @@
+Source: kf6-kdbusaddons
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               dbus-x11 <!nocheck>,
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kdbusaddons
+Rules-Requires-Root: no
+
+Package: libkf6dbusaddons-bin
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: class library for qtdbus
+ KDBusAddons provides convenience classes on top of QtDBus,
+ as well as an API to create KDED modules.
+ .
+ This package contains kquitapp6.
+
+Package: libkf6dbusaddons-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: class library for qtdbus
+ KDBusAddons provides convenience classes on top of QtDBus,
+ as well as an API to create KDED modules.
+ .
+ This package contains the translations.
+
+Package: libkf6dbusaddons-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6dbusaddons6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6dbusaddons-doc (= ${source:Version})
+Description: development files for kdbusaddons
+ KDBusAddons provides convenience classes on top of QtDBus,
+ as well as an API to create KDED modules.
+
+Package: libkf6dbusaddons-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: class library for qtdbus (documentation)
+ KDBusAddons provides convenience classes on top of QtDBus,
+ as well as an API to create KDED modules.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6dbusaddons6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6dbusaddons-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: libkf6dbusaddons-bin (= ${binary:Version})
+Description: class library for qtdbus
+ KDBusAddons provides convenience classes on top of QtDBus,
+ as well as an API to create KDED modules.

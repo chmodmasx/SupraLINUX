@@ -1,0 +1,51 @@
+Source: kf6-modemmanager-qt
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.23.0~),
+               modemmanager-dev (>= 1.0),
+               pkgconf,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/modemmanager-qt
+Rules-Requires-Root: no
+
+Package: libkf6modemmanagerqt-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Qt wrapper library for ModemManager (documentation)
+ Qt wrapper for ModemManager DBus API.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6modemmanagerqt-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6modemmanagerqt6 (= ${binary:Version}),
+         modemmanager-dev (>= 1.0),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6modemmanagerqt-doc (= ${source:Version})
+Description: Qt wrapper for ModemManager - devel files
+ Qt wrapper for ModemManager DBus API.
+ .
+ This package is part of KDE Frameworks.
+ .
+ This package contains the development files
+
+Package: libkf6modemmanagerqt6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Qt wrapper library for ModemManager
+ Qt wrapper for ModemManager DBus API.
+ .
+ This package is part of the KDE Frameworks.

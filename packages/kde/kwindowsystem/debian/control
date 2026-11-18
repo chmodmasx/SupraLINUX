@@ -1,0 +1,100 @@
+Source: kf6-kwindowsystem
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libx11-dev,
+               libxcb-icccm4-dev,
+               libxcb-keysyms1-dev,
+               libxcb-res0-dev,
+               libxcb-xfixes0-dev,
+               libxcb1-dev,
+               libxfixes-dev,
+               libxkbcommon-dev,
+               libxrender-dev,
+               pkgconf,
+               plasma-wayland-protocols [linux-any],
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-base-private-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~),
+               qt6-wayland-dev (>= 6.8.0~) [linux-any],
+               qt6-wayland-private-dev (>= 6.8.0~) [linux-any],
+               wayland-protocols (>= 1.21~) [linux-any]
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kwindowsystem
+Rules-Requires-Root: no
+
+Package: libkf6windowsystem-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Convenience access to certain properties and features of the window manager
+ The class KWindowSystem provides information about the state of the
+ window manager and allows asking the window manager to change them
+ using a more high-level interface than the NETWinInfo/NETRootInfo
+ low level classes.
+ .
+ This package contains the translations.
+
+Package: libkf6windowsystem-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6windowsystem6 (= ${binary:Version}),
+         qml6-module-org-kde-kwindowsystem (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         qt6-declarative-dev (>= 6.8.0+dfsg~),
+         qt6-wayland-dev (>= 6.8.0~) [linux-any],
+         ${misc:Depends}
+Recommends: libkf6windowsystem-doc (= ${source:Version})
+Description: development files for kwindowsystem
+ The class KWindowSystem provides information about the state of the
+ window manager and allows asking the window manager to change them
+ using a more high-level interface than the NETWinInfo/NETRootInfo
+ lowlevel classes.
+ .
+ Contains development files for kwindowsystem.
+
+Package: libkf6windowsystem-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Convenience access to certain properties and features of the window manager
+ The class KWindowSystem provides information about the state of the
+ window manager and allows asking the window manager to change them
+ using a more high-level interface than the NETWinInfo/NETRootInfo
+ low level classes.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6windowsystem6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6windowsystem-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Recommends: qt6-wayland
+Description: Convenience access to certain properties and features of the window manager
+ The class KWindowSystem provides information about the state of the
+ window manager and allows asking the window manager to change them
+ using a more high-level interface than the NETWinInfo/NETRootInfo
+ low level classes.
+
+Package: qml6-module-org-kde-kwindowsystem
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: QML module for kwindowsystem
+ The class KWindowSystem provides information about the state of the
+ window manager and allows asking the window manager to change them
+ using a more high-level interface than the NETWinInfo/NETRootInfo
+ low level classes.
+ .
+ This package contains the QML module for kwindowsystem.

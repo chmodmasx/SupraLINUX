@@ -1,0 +1,4 @@
+# SymbolsHelper-Confirmed: 6.14.0 amd64 arm64 armhf ppc64el riscv64 s390x
+libKirigamiLayoutsPrivate.so.6 libkirigamilayoutsprivate6 #MINVER#
+* Build-Depends-Package: libkirigami-dev
+ _Z51qml_register_types_org_kde_kirigami_layouts_privatev@Base 6.14.0

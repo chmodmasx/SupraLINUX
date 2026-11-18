@@ -1,0 +1,83 @@
+Source: kf6-frameworkintegration
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               extra-cmake-modules (>= 6.24.0~),
+               libappstreamqt-dev (>= 1.0~),
+               libkf6colorscheme-dev (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libkf6iconthemes-dev (>= 6.24.0~),
+               libkf6newstuff-dev (>= 6.24.0~),
+               libkf6notifications-dev (>= 6.24.0~),
+               libkf6package-dev (>= 6.24.0~),
+               libkf6widgetsaddons-dev (>= 6.24.0~),
+               libpackagekitqt6-dev,
+               libxkbcommon-dev,
+               pkgconf,
+               qt6-base-dev (>= 6.8.0~),
+               xauth <!nocheck>,
+               xvfb <!nocheck>
+Standards-Version: 4.7.2
+Homepage: https://invent.kde.org/frameworks/frameworkintegration
+Rules-Requires-Root: no
+
+Package: frameworkintegration6
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: integration of Qt application with KDE workspaces
+ Framework Integration is a set of plugins responsible for better integration
+ of Qt applications when running on a KDE Plasma workspace.
+ .
+ Applications do not need to link to this directly.
+
+Package: libkf6style-dev
+Section: libdevel
+Architecture: any
+Depends: libappstreamqt-dev (>= 1.0~),
+         libkf6colorscheme-dev (>= 6.24.0~),
+         libkf6config-dev (>= 6.24.0~),
+         libkf6i18n-dev (>= 6.24.0~),
+         libkf6iconthemes-dev (>= 6.24.0~),
+         libkf6newstuff-dev (>= 6.24.0~),
+         libkf6notifications-dev (>= 6.24.0~),
+         libkf6style6 (= ${binary:Version}),
+         libkf6widgetsaddons-dev (>= 6.24.0~),
+         libpackagekitqt6-dev,
+         qt6-base-dev (>= 6.8.0~),
+         ${misc:Depends}
+Description: integration of Qt application with KDE workspaces - KF6Style development files
+ Framework Integration is a set of plugins responsible for better integration
+ of Qt applications when running on a KDE Plasma workspace.
+ .
+ The library KF6Style provides integration with KDE Plasma Workspace settings
+ for Qt styles.
+ .
+ Derive your Qt style from KStyle to automatically inherit various settings
+ from the KDE Plasma Workspace, providing a consistent user experience. For
+ example, this will ensure a consistent single-click or double-click activation
+ setting, and the use of standard themed icons.
+ .
+ This package provides the development files.
+
+Package: libkf6style6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: integration of Qt application with KDE workspaces - KF6Style shared library
+ Framework Integration is a set of plugins responsible for better integration
+ of Qt applications when running on a KDE Plasma workspace.
+ .
+ The library KF6Style provides integration with KDE Plasma Workspace settings
+ for Qt styles.
+ .
+ Derive your Qt style from KStyle to automatically inherit various settings
+ from the KDE Plasma Workspace, providing a consistent user experience. For
+ example, this will ensure a consistent single-click or double-click activation
+ setting, and the use of standard themed icons.
+ .
+ This package contains the KF6Style shared library.

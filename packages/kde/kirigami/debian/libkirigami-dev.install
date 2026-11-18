@@ -1,0 +1,16 @@
+usr/include/KF6/Kirigami/
+usr/lib/*/cmake/KF6Kirigami/
+usr/lib/*/cmake/KF6Kirigami2/
+usr/lib/*/cmake/KF6KirigamiPlatform/
+usr/lib/*/libKirigami.so
+usr/lib/*/libKirigamiControls.so
+usr/lib/*/libKirigamiDelegates.so
+usr/lib/*/libKirigamiDialogs.so
+usr/lib/*/libKirigamiLayouts.so
+usr/lib/*/libKirigamiLayoutsPrivate.so
+usr/lib/*/libKirigamiPlatform.so
+usr/lib/*/libKirigamiPolyfill.so
+usr/lib/*/libKirigamiPrimitives.so
+usr/lib/*/libKirigamiPrivate.so
+usr/lib/*/libKirigamiTemplates.so
+usr/share/kdevappwizard/templates/

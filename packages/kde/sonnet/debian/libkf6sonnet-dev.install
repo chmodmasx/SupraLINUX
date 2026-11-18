@@ -1,0 +1,7 @@
+usr/include/KF6/Sonnet/
+usr/include/KF6/SonnetCore/
+usr/include/KF6/SonnetUi/
+usr/lib/*/cmake/KF6Sonnet/
+usr/lib/*/libKF6SonnetCore.so
+usr/lib/*/libKF6SonnetUi.so
+usr/lib/*/qt6/plugins/designer/sonnet6widgets.so

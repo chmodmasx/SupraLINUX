@@ -1,0 +1,73 @@
+Source: kf6-knotifyconfig
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libcanberra-dev,
+               libkf6completion-dev (>= 6.24.0~),
+               libkf6config-dev (>= 6.24.0~),
+               libkf6configwidgets-dev (>= 6.24.0~),
+               libkf6i18n-dev (>= 6.24.0~),
+               libkf6kio-dev (>= 6.24.0~),
+               libkf6notifications-dev (>= 6.24.0~),
+               libkf6widgetsaddons-dev (>= 6.24.0~),
+               libkf6xmlgui-dev (>= 6.24.0~),
+               libphonon4qt6-dev (>= 4:4.6.60~),
+               qt6-base-dev (>= 6.8.0~),
+               qt6-multimedia-dev,
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/knotifyconfig
+Rules-Requires-Root: no
+
+Package: libkf6notifyconfig-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Configuration system for KNotify
+ This framework offers classes to represent the configuration for an
+ event.
+ .
+ This package contains the data files.
+
+Package: libkf6notifyconfig-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6i18n-dev (>= 6.24.0~),
+         libkf6kio-dev (>= 6.24.0~),
+         libkf6notifyconfig6 (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0~),
+         ${misc:Depends}
+Recommends: libkf6notifyconfig-doc (= ${source:Version})
+Description: development files for knotifyconfig
+ This framework offers classes to represent the configuration for an
+ event.
+ .
+ Contains development files for knotifyconfig.
+
+Package: libkf6notifyconfig-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: Configuration system for KNotify (documentation)
+ This framework offers classes to represent the configuration for an
+ event.
+ .
+ This package contains the qch documentation files.
+Section: doc
+
+Package: libkf6notifyconfig6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6notifyconfig-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Configuration system for KNotify
+ This framework offers classes to represent the configuration for an
+ event.

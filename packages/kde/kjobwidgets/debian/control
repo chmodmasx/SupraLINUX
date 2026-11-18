@@ -1,0 +1,99 @@
+Source: kf6-kjobwidgets
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libkf6coreaddons-dev (>= 6.24.0~),
+               libkf6notifications-dev (>= 6.24.0~),
+               libkf6widgetsaddons-dev (>= 6.24.0~),
+               libqt6sql6-sqlite <!nocheck>,
+               libx11-dev,
+               libxkbcommon-dev (>= 0.5.0~),
+               qt6-base-dev (>= 6.8.0~),
+               qt6-base-private-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Homepage: https://invent.kde.org/frameworks/kjobwidgets
+Rules-Requires-Root: no
+
+Package: libkf6jobwidgets-data
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: widgets for tracking KJob instances - data files
+ Window class that associates this job with a window given by
+ window. This is used by KDialogJobUiDelegate as parent widget
+ for error messages, KWidgetJobTracker as parent widget for
+ progress dialogs, KIO::AbstractJobInteractionInterface as
+ parent widget for rename/skip dialogs and possibly more.
+ Overload that takes a QWindow.
+ .
+ Timestamp handling to update the last user action timestamp
+ to the given time. Returns the last user action timestamp.
+ .
+ This package contains the translations for the Qt6 version of KJobWidgets.
+
+Package: libkf6jobwidgets-dev
+Section: libdevel
+Architecture: any
+Depends: libkf6coreaddons-dev (>= 6.24.0~),
+         libkf6jobwidgets6 (= ${binary:Version}),
+         libkf6notifications-dev (>= 6.24.0~),
+         libkf6widgetsaddons-dev (>= 6.24.0~),
+         qt6-base-dev (>= 6.8.0~),
+         qt6-base-private-dev (>= 6.8.0~),
+         ${misc:Depends}
+Recommends: libkf6jobwidgets-doc (= ${source:Version})
+Description: widgets for tracking KJob instances - development files
+ Window class that associates this job with a window given by
+ window. This is used by KDialogJobUiDelegate as parent widget
+ for error messages, KWidgetJobTracker as parent widget for
+ progress dialogs, KIO::AbstractJobInteractionInterface as
+ parent widget for rename/skip dialogs and possibly more.
+ Overload that takes a QWindow.
+ .
+ Timestamp handling to update the last user action timestamp
+ to the given time. Returns the last user action timestamp.
+ .
+ This package contains development files for the Qt6 version of KJobWidgets.
+
+Package: libkf6jobwidgets-doc
+Section: doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Description: widgets for tracking KJob instances - documentation
+ Window class that associates this job with a window given by
+ window. This is used by KDialogJobUiDelegate as parent widget
+ for error messages, KWidgetJobTracker as parent widget for
+ progress dialogs, KIO::AbstractJobInteractionInterface as
+ parent widget for rename/skip dialogs and possibly more.
+ Overload that takes a QWindow.
+ .
+ Timestamp handling to update the last user action timestamp
+ to the given time. Returns the last user action timestamp.
+ .
+ This package contains the qch documentation for the Qt6 version of KJobWidgets.
+
+Package: libkf6jobwidgets6
+Architecture: any
+Multi-Arch: same
+Depends: libkf6jobwidgets-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: widgets for tracking KJob instances
+ Window class that associates this job with a window given by
+ window. This is used by KDialogJobUiDelegate as parent widget
+ for error messages, KWidgetJobTracker as parent widget for
+ progress dialogs, KIO::AbstractJobInteractionInterface as
+ parent widget for rename/skip dialogs and possibly more.
+ Overload that takes a QWindow.
+ .
+ Timestamp handling to update the last user action timestamp
+ to the given time. Returns the last user action timestamp.
+ .
+ This package contains the Qt6 version of the shared library.

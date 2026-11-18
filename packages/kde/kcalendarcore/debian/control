@@ -1,0 +1,76 @@
+Source: kf6-kcalendarcore
+Section: libs
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: bison,
+               cmake (>= 3.16~),
+               debhelper-compat (= 13),
+               dh-sequence-kf6,
+               dh-sequence-pkgkde-symbolshelper,
+               dh-sequence-qmldeps,
+               doxygen,
+               extra-cmake-modules (>= 6.24.0~),
+               libical-dev (>= 3.0~),
+               libxkbcommon-dev,
+               qt6-base-dev (>= 6.8.0+dfsg~),
+               qt6-declarative-dev (>= 6.8.0+dfsg~),
+               qt6-tools-dev (>= 6.8.0~)
+Standards-Version: 4.7.0
+Rules-Requires-Root: no
+Homepage: https://invent.kde.org/frameworks/kcalendarcore
+
+Package: libkf6calendarcore-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends: libkf6calendarcore6 (= ${binary:Version}),
+         qml6-module-org-kde-calendarcore (= ${binary:Version}),
+         qt6-base-dev (>= 6.8.0+dfsg~),
+         ${misc:Depends}
+Recommends: libkf6calendarcore-doc (= ${source:Version})
+Description: development files for kcalendarcore
+ This library provides access to and handling of calendar data.
+ It supports the standard formats iCalendar and vCalendar and the
+ group scheduling standard iTIP.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the development files.
+
+Package: libkf6calendarcore-doc
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Section: doc
+Description: calendar access framework (documentation)
+ This library provides access to and handling of calendar data.
+ It supports the standard formats iCalendar and vCalendar and the
+ group scheduling standard iTIP.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the qch documentation files.
+
+Package: libkf6calendarcore6
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: calendar access framework
+ This library provides access to and handling of calendar data.
+ It supports the standard formats iCalendar and vCalendar and the
+ group scheduling standard iTIP.
+ .
+ This package is part of KDE Frameworks 6.
+
+Package: qml6-module-org-kde-calendarcore
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends}, ${qml6:Depends}, ${shlibs:Depends}
+Description: calendar access framework (QML bindings)
+ This library provides access to and handling of calendar data.
+ It supports the standard formats iCalendar and vCalendar and the
+ group scheduling standard iTIP.
+ .
+ This package is part of KDE Frameworks 6.
+ .
+ This package contains the QML bindings.

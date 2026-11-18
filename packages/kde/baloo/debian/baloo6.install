@@ -1,0 +1,16 @@
+#!/usr/bin/dh-exec
+[linux-any] etc/xdg/autostart/baloo_file.desktop
+[linux-any] usr/bin/balooctl6
+[linux-any] usr/bin/baloosearch6
+[linux-any] usr/bin/balooshow6
+[linux-any] usr/lib/systemd/user/kde-baloo.service
+[linux-any] usr/lib/*/qt6/plugins/kf6/
+[linux-any] usr/lib/*/libexec/kf6/baloo_file
+[linux-any] usr/lib/*/libexec/kf6/baloo_file_extractor
+usr/share/locale/*/LC_MESSAGES/baloo*6.mo
+usr/share/locale/*/LC_MESSAGES/kio6_baloosearch.mo
+usr/share/locale/*/LC_MESSAGES/kio6_tags.mo
+usr/share/locale/*/LC_MESSAGES/kio6_timeline.mo
+usr/share/qlogging-categories6/baloo.categories
+usr/share/qlogging-categories6/baloo.renamecategories
+etc/xdg/baloofilerc

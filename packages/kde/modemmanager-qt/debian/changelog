@@ -1,0 +1,1023 @@
+kf6-modemmanager-qt (6.24.0-0supralinux1) resolute; urgency=medium
+
+  * Package KDE Frameworks 6.24.0 ModemManagerQt for the SupraLINUX 26.04 campaign.
+  * Reuse the reviewed Ubuntu 26.04 packaging layout.
+  * Drop the 6.23 symbols baseline; 6.24 changed the ModemSignal API and the package uses shlibs.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 30 Oct 2026 12:00:00 +0000
+
+kf6-modemmanager-qt (6.23.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.23.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Feb 2026 11:41:34 +0000
+
+kf6-modemmanager-qt (6.22.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.22.0)
+
+ -- Rik Mills <rikmills@kde.org>  Wed, 07 Jan 2026 18:33:28 +0000
+
+kf6-modemmanager-qt (6.21.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.21.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 12 Dec 2025 11:54:04 +0000
+
+kf6-modemmanager-qt (6.20.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.20.0)
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 13 Nov 2025 16:16:42 +0000
+
+kf6-modemmanager-qt (6.19.0-0ubuntu1) resolute; urgency=medium
+
+  * New upstream release (6.18.0)
+  * New upstream release (6.19.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sun, 12 Oct 2025 15:08:31 +0100
+
+kf6-modemmanager-qt (6.17.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.17.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Aug 2025 18:18:59 +0100
+
+kf6-modemmanager-qt (6.16.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.16.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 11 Jul 2025 16:49:17 +0100
+
+kf6-modemmanager-qt (6.15.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.15.0)
+  * Comment out .install for docs packages for now, as the qch docs are
+    currently not buildable in Ubuntu.
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Jun 2025 16:36:24 +0100
+
+kf6-modemmanager-qt (6.14.0-0ubuntu1) questing; urgency=medium
+
+  * New upstream release (6.14.0)
+
+ -- Rik Mills <rikmills@kde.org>  Sat, 10 May 2025 07:01:27 +0100
+
+kf6-modemmanager-qt (6.12.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.12.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 18 Mar 2025 10:55:50 +0000
+
+kf6-modemmanager-qt (6.11.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.11.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 14 Feb 2025 16:50:53 +0000
+
+kf6-modemmanager-qt (6.10.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.10.0)
+  * Disable acc test for now.
+
+ -- Rik Mills <rikmills@kde.org>  Thu, 09 Jan 2025 12:22:11 +0000
+
+kf6-modemmanager-qt (6.9.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.9.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 13 Dec 2024 14:49:58 +0000
+
+kf6-modemmanager-qt (6.8.0-0ubuntu1) plucky; urgency=medium
+
+  * New upstream release (6.7.0)
+  * New upstream release (6.8.0)
+
+ -- Rik Mills <rikmills@kde.org>  Fri, 08 Nov 2024 16:39:30 +0000
+
+kf6-modemmanager-qt (6.6.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.6.0)
+
+ -- Scarlett Moore <sgmoore@debian.org>  Fri, 20 Sep 2024 19:08:50 +0100
+
+kf6-modemmanager-qt (6.5.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.5.0)
+
+ -- Rik Mills <rikmills@kde.org>  Tue, 13 Aug 2024 19:25:14 +0100
+
+kf6-modemmanager-qt (6.4.0-0ubuntu1) oracular; urgency=medium
+
+  * New upstream release (6.4.0)
+  * Pass gcc option -std=c++17 to acc autopkgtests
+  * Update symbols
+  * Remove testsuite autopkgtest
+
+ -- José Manuel Santamaría Lema <panfaust@gmail.com>  Sat, 13 Jul 2024 16:36:31 +0100
+
+kf6-modemmanager-qt (6.3.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.3.0).
+  * Bump Standards-Version to 4.7.0 (No changes needed).
+  * Update build-deps and deps with the info from cmake.
+  * Modernize building by using dh-sequence build-dependencies and
+    dropping manually specified addons and buildsystems for dh.
+
+ -- Patrick Franz <deltaone@debian.org>  Sun, 09 Jun 2024 14:53:11 +0200
+
+kf6-modemmanager-qt (6.0.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (6.0.0).
+  * Update upstream signing-key.
+  * Update build-deps and deps with the info from cmake.
+  * Create new packages.
+  * Update d/copyright.
+
+ -- Patrick Franz <deltaone@debian.org>  Wed, 03 Apr 2024 01:24:58 +0200
+
+modemmanager-qt (5.115.0-1) experimental; urgency=medium
+
+  [ Patrick Franz ]
+  * New upstream release (5.115.0).
+  * Update build-deps and deps with the info from cmake.
+  * Add myself as uploader and remove inactive ones. Thank you for your
+    work.
+  * Build-depend on pkgconf instead of pkg-config as the latter has been
+    superseded by the former.
+
+ -- Patrick Franz <deltaone@debian.org>  Sat, 16 Mar 2024 01:21:43 +0100
+
+modemmanager-qt (5.107.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.105.0).
+  * Update build-deps and deps with the info from cmake.
+  * Update symbols from build for 5.105.0.
+  * New upstream release (5.107.0).
+  * Update build-deps and deps with the info from cmake.
+  * Release to unstable.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 18 Jun 2023 16:08:30 +0200
+
+modemmanager-qt (5.104.0-1) experimental; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.104.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 15 Mar 2023 16:09:51 +0100
+
+modemmanager-qt (5.103.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.103.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 12 Feb 2023 21:44:24 +0100
+
+modemmanager-qt (5.102.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.102.0).
+  * Update build-deps and deps with the info from cmake.
+  * Bump Standards-Version to 4.6.2, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 22 Jan 2023 21:35:02 +0100
+
+modemmanager-qt (5.101.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.101.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Tue, 13 Dec 2022 07:40:24 +0100
+
+modemmanager-qt (5.100.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.99.0).
+  * Update build-deps and deps with the info from cmake.
+  * New upstream release (5.100.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sat, 19 Nov 2022 23:18:58 +0100
+
+modemmanager-qt (5.98.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.98.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 18 Sep 2022 23:11:38 +0200
+
+modemmanager-qt (5.97.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.97.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 14 Aug 2022 18:55:29 +0200
+
+modemmanager-qt (5.96.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.96.0).
+  * Bump Standards-Version to 4.6.1, no change required.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Sun, 31 Jul 2022 13:32:58 +0200
+
+modemmanager-qt (5.94.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.94.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Thu, 19 May 2022 23:59:03 +0200
+
+modemmanager-qt (5.93.0-1) unstable; urgency=medium
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.92.0).
+  * Update the list of installed files.
+  * New upstream release (5.93.0).
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Wed, 11 May 2022 23:22:44 +0200
+
+modemmanager-qt (5.90.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.89.0).
+
+  [ Aurélien COUDERC ]
+  * New upstream release (5.90.0).
+  * Added myself to the uploaders.
+  * Update symbols from build for 5.90.0.
+
+ -- Aurélien COUDERC <coucouf@debian.org>  Fri, 11 Feb 2022 23:46:42 +0100
+
+modemmanager-qt (5.88.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.87.0).
+  * New upstream release (5.88.0).
+  * Force-bump frameworks internal b-d to 5.88.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 17 Nov 2021 06:07:42 +0900
+
+modemmanager-qt (5.86.0-1) unstable; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.86.0).
+  * Bump Standards-Version to 4.6.0, no change required.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 13 Sep 2021 11:02:45 +0900
+
+modemmanager-qt (5.85.0-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 28 Aug 2021 23:42:49 +0900
+
+modemmanager-qt (5.85.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.85.0).
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 16 Aug 2021 00:06:40 +0900
+
+modemmanager-qt (5.83.0-2) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 16 Aug 2021 11:53:12 +0900
+
+modemmanager-qt (5.83.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.83.0).
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 13 Jun 2021 09:26:33 +0900
+
+modemmanager-qt (5.82.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.82.0).
+  * Removed Maximiliano Curia from the uploaders, thanks for your work
+    on the package!
+
+ -- Norbert Preining <norbert@preining.info>  Sat, 08 May 2021 21:22:51 +0900
+
+modemmanager-qt (5.81.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream version (5.81.0)
+  * Bump inter-frameworks dependencies.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 12 Apr 2021 10:18:21 +0900
+
+modemmanager-qt (5.80.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream version (5.80.0)
+  * Bump inter-frameworks dependencies.
+
+ -- Norbert Preining <norbert@preining.info>  Mon, 15 Mar 2021 15:10:36 +0900
+
+modemmanager-qt (5.79.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Remove graphviz from build depends.
+  * New upstream release (5.79.0).
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 16 Feb 2021 06:45:30 +0900
+
+modemmanager-qt (5.78.0-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Sun, 17 Jan 2021 12:02:26 +0900
+
+modemmanager-qt (5.78.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * New upstream release (5.78.0).
+  * Update build-deps and deps with the info from cmake.
+
+ -- Norbert Preining <norbert@preining.info>  Wed, 13 Jan 2021 10:32:44 +0900
+
+modemmanager-qt (5.77.0-2) unstable; urgency=medium
+
+  * Release to unstable.
+
+ -- Norbert Preining <norbert@preining.info>  Tue, 22 Dec 2020 10:33:37 +0900
+
+modemmanager-qt (5.77.0-1) experimental; urgency=medium
+
+  [ Norbert Preining ]
+  * Bump Standards-Version to 4.5.1 (No changes needed).
+  * New upstream release (5.77.0).
+  * Update build-deps and deps with the info from cmake.
+  * Add myself to Uploaders.
+  * Update maintainer to Debian Qt/KDE Maintainers.
+
+ -- Norbert Preining <norbert@preining.info>  Fri, 18 Dec 2020 10:03:56 +0900
+
+modemmanager-qt (5.74.0-2) unstable; urgency=medium
+
+  * Team upload to unstable.
+
+ -- Sandro Knauß <hefee@debian.org>  Mon, 19 Oct 2020 23:11:55 +0200
+
+modemmanager-qt (5.74.0-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * New upstream release (5.74.0).
+  * Update build-deps and deps with the info from cmake.
+  * Add renamecategories file to libkf5modemmanagerqt6.
+  * Update Homepage link to point to new invent.kde.org
+  * Update repository related entries to metadata file.
+  * Update field Source in debian/copyright to invent.kde.org move.
+  * Add Bug-* entries to metadata file.
+
+ -- Sandro Knauß <hefee@debian.org>  Sun, 27 Sep 2020 17:43:57 +0200
+
+modemmanager-qt (5.70.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * Bump compat level to 13.
+  * New upstream release (5.70.0).
+  * Update build-deps and deps with the info from cmake.
+  * Wrap long lines in changelog entries: 5.21.0-1.
+  * Set field Upstream-Contact in debian/copyright.
+  * Remove obsolete fields Contact, Name from debian/upstream/metadata
+    (already present in machine-readable debian/copyright).
+
+ -- Sandro Knauß <hefee@debian.org>  Tue, 26 May 2020 23:56:03 +0200
+
+modemmanager-qt (5.69.0-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Sandro Knauß ]
+  * Bump compat level to 12.
+  * Bump Standards-Version to 4.5.0 (No changes needed).
+  * Get rid of debug-symbol-migration package.
+  * Add Rules-Requires-Root field to control.
+  * New upstream release (5.69.0).
+  * Update build-deps and deps with the info from cmake.
+  * Enable hardening all.
+  * Add Build-Depends-Package to symbols file.
+  * Update qtlogging categories files.
+  * Delete not created pri file.
+  * Remove not needed injection of linker flags.
+
+ -- Sandro Knauß <hefee@debian.org>  Thu, 30 Apr 2020 00:56:33 +0200
+
+modemmanager-qt (5.62.0-1) unstable; urgency=medium
+
+  * New upstream release (5.62.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 20 Sep 2019 10:13:16 -0700
+
+modemmanager-qt (5.61.0-1) experimental; urgency=medium
+
+  [ Scarlett Moore ]
+  * Build-Depend on qttools5-dev to fix a cross build failure
+    (see #915122 for more info).
+
+  [ Maximiliano Curia ]
+  * Salsa CI automatic initialization by Tuco
+  * New upstream release (5.61.0).
+  * Update symbols files.
+  * Update build-deps and deps with the info from cmake
+  * Add missing version to maintscript
+  * Release to experimental
+
+  [ Jonathan Riddell ]
+  * moved qdebug files
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 09 Sep 2019 21:11:06 +0100
+
+modemmanager-qt (5.54.0-1) unstable; urgency=medium
+
+  * New upstream release (5.52.0).
+  * Update build-deps and deps with the info from cmake
+  * Update install files
+  * New upstream release (5.53.0).
+  * Update build-deps and deps with the info from cmake
+  * New upstream release (5.54.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 17 Jan 2019 19:27:32 -0300
+
+modemmanager-qt (5.51.0-1) unstable; urgency=medium
+
+  * New upstream release (5.50.0).
+  * Update build-deps and deps with the info from cmake
+  * New upstream release (5.51.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 07 Nov 2018 17:17:30 +0100
+
+modemmanager-qt (5.49.0-1) unstable; urgency=medium
+
+  * New upstream release (5.48.0).
+  * Update build-deps and deps with the info from cmake
+  * New upstream release (5.49.0).
+  * Update build-deps and deps with the info from cmake
+  * Update symbols files.
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 17 Aug 2018 16:19:10 +0200
+
+modemmanager-qt (5.47.0-1) unstable; urgency=medium
+
+  * New upstream release (5.47.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 15 Jun 2018 12:10:50 +0200
+
+modemmanager-qt (5.46.0-1) unstable; urgency=medium
+
+  * New upstream release (5.46.0).
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.1.4.
+  * Use https for the debian/copyright
+  * Add libglib2.0-dev as a -dev dependency
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 17 May 2018 22:15:46 +0200
+
+modemmanager-qt (5.45.0-1) unstable; urgency=medium
+
+  * New upstream release (5.45.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to unstable
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 05 May 2018 08:11:07 +0200
+
+modemmanager-qt (5.44.0-2) sid; urgency=medium
+
+  * New revision
+  * Add glib build-dep, and add the include dirs
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 21 Mar 2018 21:19:32 +0100
+
+modemmanager-qt (5.44.0-1) sid; urgency=medium
+
+  * New upstream release (5.44.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 21 Mar 2018 14:41:27 +0100
+
+modemmanager-qt (5.43.0-1) experimental; urgency=medium
+
+  * Use the salsa canonical urls
+  * New upstream release (5.43.0).
+  * Update build-deps and deps with the info from cmake
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 26 Feb 2018 11:44:17 +0100
+
+modemmanager-qt (5.42.0-2) sid; urgency=medium
+
+  * New revision
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 10 Feb 2018 11:29:20 +0100
+
+modemmanager-qt (5.42.0-1) experimental; urgency=medium
+
+  * New upstream release (5.42.0).
+  * Add link options as-needed
+  * Bump debhelper build-dep and compat to 11.
+  * Build without build_stamp
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 4.1.3.
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 02 Feb 2018 12:06:08 +0100
+
+modemmanager-qt (5.41.0-1) experimental; urgency=medium
+
+  * New upstream release (5.41.0).
+  * Bump Standards-Version to 4.1.2.
+  * Update build-deps and deps with the info from cmake
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 15 Dec 2017 10:43:18 -0300
+
+modemmanager-qt (5.41.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 08 Dec 2017 14:49:08 +0000
+
+modemmanager-qt (5.40.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 10 Nov 2017 13:00:54 +0000
+
+modemmanager-qt (5.39.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Sun, 15 Oct 2017 11:47:43 +0000
+
+modemmanager-qt (5.38.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 11 Sep 2017 13:32:14 +0000
+
+modemmanager-qt (5.37.0-2) sid; urgency=medium
+
+  * New revision
+  * Bump Standards-Version to 4.1.0.
+  * Update upstream metadata
+  * Release to sid
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 03 Sep 2017 09:59:04 +0200
+
+modemmanager-qt (5.37.0-1) experimental; urgency=medium
+
+  * New upstream release (5.37.0).
+  * Update build-deps and deps with the info from cmake
+  * Add a libkf5modemmanagerqt-doc package for the qch files
+  * Bump Standards-Version to 4.0.1.
+  * Set section for the doc package
+  * Release to experimental
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 16 Aug 2017 10:42:24 +0200
+
+modemmanager-qt (5.37.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 11 Aug 2017 15:18:42 +0000
+
+modemmanager-qt (5.36.0-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.35.0).
+  * Bump Standards-Version to 4.0.0.
+  * Update build-deps and deps with the info from cmake
+  * watch: Use https uris
+  * New upstream release (5.36.0).
+  * Update build-deps and deps with the info from cmake
+
+  [ Raymond Wooninck ]
+  * Add signing key
+  * also include signing-key
+
+  [ Harald Sitter ]
+  * acc c++11. now used more liberally
+
+ -- Maximiliano Curia <maxy@debian.org>  Sun, 09 Jul 2017 23:41:27 +0200
+
+modemmanager-qt (5.36.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 10 Jul 2017 17:15:22 +0000
+
+modemmanager-qt (5.35.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Sun, 11 Jun 2017 20:38:04 +0000
+
+modemmanager-qt (5.34.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Sun, 14 May 2017 17:43:04 +0000
+
+modemmanager-qt (5.33.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 07 Apr 2017 16:25:56 +0000
+
+modemmanager-qt (5.32.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Sun, 12 Mar 2017 13:24:26 +0000
+
+modemmanager-qt (5.31.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 13 Feb 2017 14:42:02 +0000
+
+modemmanager-qt (5.30.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 16 Jan 2017 13:44:03 +0000
+
+modemmanager-qt (5.29.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 09 Dec 2016 19:10:01 +0000
+
+modemmanager-qt (5.28.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.28)
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 18 Nov 2016 16:02:55 +0100
+
+modemmanager-qt (5.28.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Thu, 17 Nov 2016 09:46:01 +0000
+
+modemmanager-qt (5.27.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.27)
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 15 Oct 2016 16:57:31 +0200
+
+modemmanager-qt (5.27.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Sat, 08 Oct 2016 11:33:50 +0000
+
+modemmanager-qt (5.26.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+  [ Maximiliano Curia ]
+  * Replace dbus-launch with dbus-run-session in tests
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 29 Sep 2016 11:57:14 +0200
+
+modemmanager-qt (5.26.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 12 Sep 2016 08:34:14 +0000
+
+modemmanager-qt (5.25.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 18 Aug 2016 17:17:58 +0200
+
+modemmanager-qt (5.25.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Sat, 13 Aug 2016 20:17:03 +0000
+
+modemmanager-qt (5.24.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 11 Jul 2016 07:43:06 +0000
+
+modemmanager-qt (5.23.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 18 Jun 2016 08:24:47 +0200
+
+modemmanager-qt (5.23.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 13 Jun 2016 09:40:03 +0000
+
+modemmanager-qt (5.22.0-1) unstable; urgency=medium
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+  * Refresh patches
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 18 May 2016 23:46:32 +0200
+
+modemmanager-qt (5.22.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Tue, 17 May 2016 07:37:23 +0000
+
+modemmanager-qt (5.21.0-1) experimental; urgency=medium
+
+  [ Maximiliano Curia ]
+  * Replace the "Historical name" ddeb-migration by its "Modern, clearer"
+    replacement dbgsym-migration.
+  * Add upstream metadata (DEP-12)
+  * debian/control: Update Vcs-Browser and Vcs-Git fields
+  * Update acc test script
+
+  [ Automatic packaging ]
+  * Update build-deps and deps with the info from cmake
+  * Bump Standards-Version to 3.9.8
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 05 May 2016 08:45:50 +0200
+
+modemmanager-qt (5.21.0-0neon) xenial; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Mon, 11 Apr 2016 09:24:12 +0000
+
+modemmanager-qt (5.20.0-0neon) wily; urgency=medium
+
+  * New release
+
+ -- Neon CI <neon@kde.org>  Fri, 01 Apr 2016 11:08:44 +0000
+
+modemmanager-qt (5.19.0-1) experimental; urgency=medium
+
+  * New upstream release (5.19.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Sat, 13 Feb 2016 15:16:12 +0100
+
+modemmanager-qt (5.18.0-1) experimental; urgency=medium
+
+  * New upstream release (5.17.0).
+  * New upstream release (5.18.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 27 Jan 2016 13:33:54 +0100
+
+modemmanager-qt (5.18.0-0ubuntu1) UNRELEASED; urgency=medium
+
+  [ Scarlett Clark ]
+  * Debian merge. No remaining changes.
+  * New upstream release Xenial
+
+  [ Philip Muškovac ]
+  * New upstream release
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Wed, 06 Jan 2016 15:10:01 +0100
+
+modemmanager-qt (5.16.0-1) unstable; urgency=medium
+
+  * New upstream release (5.16.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Mon, 30 Nov 2015 12:12:14 +0100
+
+modemmanager-qt (5.15.0-1) unstable; urgency=medium
+
+  * New upstream release (5.15.0).
+  * Update symbols files from buildds logs (5.14.0-1).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 09 Oct 2015 19:16:22 +0200
+
+modemmanager-qt (5.15.0-0ubuntu2) xenial; urgency=medium
+
+  * Fix autopackagetests by adding allow-stderr to the requirements.
+
+ -- Philip Muškovac <yofel@kubuntu.org>  Tue, 03 Nov 2015 15:34:54 +0100
+
+modemmanager-qt (5.15.0-0ubuntu1) wily; urgency=medium
+
+  [ Scarlett Clark ]
+  * Vivid backport
+
+  [ Jonathan Riddell ]
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 07 Oct 2015 13:59:11 +0100
+
+modemmanager-qt (5.14.0-1) unstable; urgency=medium
+
+  * New upstream release (5.14.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 15 Sep 2015 13:49:02 +0200
+
+modemmanager-qt (5.14.0-0ubuntu1) wily; urgency=medium
+
+  * new upstream release
+
+ -- Clive Johnston <clivejo@aol.com>  Thu, 17 Sep 2015 13:28:50 +0100
+
+modemmanager-qt (5.13.0-1) unstable; urgency=medium
+
+  * Drop XS-Testsuite field
+  * New upstream release (5.13.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 13 Aug 2015 13:50:36 +0200
+
+modemmanager-qt (5.13.0-0ubuntu1) wily; urgency=medium
+
+  * new upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 10 Aug 2015 13:35:27 +0200
+
+modemmanager-qt (5.12.0-1) unstable; urgency=medium
+
+  * New upstream release (5.12.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 09 Jul 2015 12:43:31 +0200
+
+modemmanager-qt (5.12.0-0ubuntu1) wily; urgency=medium
+
+  [ Scarlett Clark ]
+  * New upstream release
+  * Vivid backport.
+
+  [ José Manuel Santamaría Lema ]
+  * Update symbols file: mark as optional the symbols gone after
+    building with GCC 5
+
+  [ Scarlett Clark ]
+  * Manual merge.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 03 Aug 2015 16:11:42 +0200
+
+modemmanager-qt (5.11.0-1) unstable; urgency=medium
+
+  [ Maximiliano Curia ]
+  * New upstream release (5.10.0).
+  * Remove upstream applied patch: upstream_insert_missing_license_text
+  * New upstream release (5.11.0).
+
+ -- Maximiliano Curia <maxy@debian.org>  Fri, 26 Jun 2015 15:41:02 +0200
+
+modemmanager-qt (5.10.0-0ubuntu4) wily; urgency=medium
+
+  * chmod 755 debian/tests/testsuite.xsession
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 23 Jun 2015 17:21:17 +0200
+
+modemmanager-qt (5.10.0-0ubuntu3) wily; urgency=medium
+
+  * Update tests to run in xsesson with dbus
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Tue, 23 Jun 2015 14:21:19 +0200
+
+modemmanager-qt (5.10.0-0ubuntu2) wily; urgency=medium
+
+  * No change rebuild to retry tests
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Mon, 22 Jun 2015 13:47:09 +0200
+
+modemmanager-qt (5.10.0-0ubuntu1) wily; urgency=medium
+
+  [ Jonathan Riddell ]
+  * New upstream release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Wed, 03 Jun 2015 21:00:32 +0200
+
+modemmanager-qt (5.9.0-1) experimental; urgency=medium
+
+  * Prepare Debian release. (5.9.0-1)
+  * New upstream patch: upstream_insert_missing_license_text
+
+ -- Maximiliano Curia <maxy@debian.org>  Thu, 23 Apr 2015 08:25:47 +0200
+
+modemmanager-qt (5.9.0-0ubuntu1.1) vivid; urgency=medium
+
+  * Add upstream_crash.diff from upstream LP:#1448502
+   - fixes crash on login when set up to use modems
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Sat, 25 Apr 2015 19:05:43 +0200
+
+modemmanager-qt (5.9.0-0ubuntu1) vivid; urgency=medium
+
+  [ Harald Sitter ]
+  * Library moved to frameworks release scope, renamed source.
+  * So version bump 6, adjust package naming accordingly
+  * Fix install file to not wildcard the entire soversion, so the build breaks
+    when upstream does a bump again
+  * Mark the lib and dbg package multiarch same
+
+ -- Harald Sitter <sitter@kde.org>  Thu, 02 Apr 2015 10:26:25 +0200
+
+libmm-qt (4:5.2.2-1) experimental; urgency=medium
+
+  * New upstream release (5.2.1).
+  * New upstream release (5.2.2).
+
+ -- Maximiliano Curia <maxy@debian.org>  Wed, 25 Mar 2015 23:17:28 +0100
+
+libmm-qt (4:5.2.0-1) experimental; urgency=medium
+
+  * Prepare initial Debian release.
+  * Update build dependencies to build against experimental and to
+    follow cmake.
+  * Update copyright information.
+  * Update install files.
+  * Add basic autopkgtests support.
+
+ -- Maximiliano Curia <maxy@debian.org>  Tue, 10 Feb 2015 20:00:50 +0100
+
+libmm-qt (5.2.2-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Tue, 24 Mar 2015 07:35:38 -0700
+
+libmm-qt (5.2.1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 23 Feb 2015 09:44:19 -0800
+
+libmm-qt (5.2.0-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+
+ -- Harald Sitter <sitter@kde.org>  Tue, 27 Jan 2015 14:55:50 +0100
+
+libmm-qt (5.1.95-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release
+  * New upstream beta release
+
+ -- Jonathan Riddell <jriddell@ubuntu.com>  Thu, 15 Jan 2015 01:33:22 +0100
+
+libmm-qt (5.1.1-0ubuntu1) vivid; urgency=medium
+
+  * New upstream release.
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Mon, 10 Nov 2014 19:49:33 +0100
+
+libmm-qt (5.0.93-0ubuntu1) utopic; urgency=medium
+
+  * New upstream release
+
+  [ Harald Sitter ]
+  * switch to new pkg-kde-tools
+
+ -- Scarlett Clark <sgclark@kubuntu.org>  Thu, 18 Sep 2014 07:20:02 -0700
+
+libmm-qt (5.0.91-0ubuntu1) utopic; urgency=medium
+
+  [ Scarlett Clark ]
+  * Initial release.
+  * Update watch to http://download.kde.org
+  * Update extra-cmake-modules depends version
+
+ -- Scarlett Clark <scarlett@scarlettgatelyclark.com>  Thu, 10 Jul 2014 10:24:08 +0100
