@@ -110,6 +110,22 @@ Una ejecución a la vez por circuito. No se levantan más VMs suponiendo que
 eso acelera el trabajo; se presupuestan CPU, RAM, espacio y crecimiento real de
 los overlays.
 
+## User namespaces
+
+`mmdebstrap` y los hooks live usan `unshare` con mapeo subuid. En hosts con
+`kernel.apparmor_restrict_unprivileged_userns=1`, el perfil
+`unprivileged_userns` puede denegar `sys_admin`/`setgid` y el comando falla con
+`setgroups() failed: Operation not permitted`.
+
+No se cambia esa política del host sin autorización. Opciones válidas:
+
+- ejecutar el build live en una VM desechable con user namespaces permitidos;
+- usar un host de build preparado para `unshare` y mapeo subuid;
+- si se autoriza, ajustar la política del host y registrar el cambio.
+
+El build limpio de paquetes (`tools/clean_build.py`) no usa `unshare` en el
+host: arranca QEMU y ejecuta `sbuild` dentro del guest.
+
 ## Build limpio
 
 `sbuild`/`unshare` sobre un rootfs retenido. El rootfs no lleva preinstalados
