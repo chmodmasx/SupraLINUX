@@ -71,11 +71,11 @@
 | `packages/apps` | Apps propias |
 | `packages/system` | casper y hardware específico |
 | `packages/fonts` | Fuentes empaquetadas |
-| `packages/fastfetch` | Configuración de fastfetch |
 
 - `packages/gear-extras` reemplaza el nombre antiguo `complete`.
 - La lista de instalación es `packages/desktop/desktop-packages.list`.
 - `supralinux-base-files` posee la identidad con `dpkg-divert`.
+- fastfetch se consume de Ubuntu; su configuración vive en `supralinux-defaults` y no se parchea.
 - `supralinux-calamares-config` instala `/etc/calamares`; no se copia a mano.
 - No se instala `calamares-settings-kubuntu`.
 

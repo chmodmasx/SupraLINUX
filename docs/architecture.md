@@ -12,9 +12,8 @@ packages/
   apps/           Apps propias
   system/         casper y hardware específico
   fonts/          Fuentes empaquetadas
-  fastfetch/      Configuración de fastfetch
 branding/         Assets de marca, GRUB, Plymouth y wallpapers
-installer/        Configuración de Calamares y recuperación
+installer/        Fuentes APT, claves y recuperación
 tools/            Importación, build limpio, smoke tests y live
 tests/            Pruebas y fixtures
 docs/             Documentación
