@@ -51,7 +51,6 @@ mapfile -t interfaces < <(find /sys/class/net -mindepth 1 -maxdepth 1 -printf '%
 [[ "${interfaces[*]}" == lo ]] || infra_fail "Expected only loopback networking, found: ${interfaces[*]}"
 command -v sbuild >/dev/null || infra_fail "sbuild is not installed"
 command -v runuser >/dev/null || infra_fail "runuser is not installed"
-[[ "$(dpkg-query -W -f='${Version}' sbuild)" == "${SBUILD_VERSION}" ]] || infra_fail "Unexpected sbuild version"
 
 mkdir -p "${INPUT}"
 mount -o ro /dev/disk/by-label/SUPRAINPUTS "${INPUT}" || infra_fail "Cannot mount the read-only input disk"
@@ -72,6 +71,7 @@ print("DIST=" + shlex.quote(manifest["builder"]["distribution"]))
 print("GUEST_ARCH=" + shlex.quote(manifest["builder"]["architecture"]))
 PY
 )"
+[[ "$(dpkg-query -W -f='${Version}' sbuild)" == "${SBUILD_VERSION}" ]] || infra_fail "Unexpected sbuild version"
 [[ -n "${DSC_NAME}" && -f "${INPUT}/source/${DSC_NAME}" ]] || infra_fail "Source .dsc is missing"
 [[ -f "${INPUT}/rootfs/resolute-amd64.tar" ]] || infra_fail "Buildd rootfs tarball is missing"
 [[ -f "${INPUT}/repo/archive-key.gpg" ]] || infra_fail "Repository key is missing"
