@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+
+file=/usr/share/locale/es_AR/LC_MESSAGES/calamares-python.mo
+backup=${file}.calamares-data
+
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
+    if [ -e "$backup" ]; then
+        dpkg-divert --package supralinux-calamares-config --divert "$backup" --rename --remove "$file" >/dev/null
+    else
+        dpkg-divert --package supralinux-calamares-config --divert "$backup" --remove "$file" >/dev/null
+    fi
+fi
+
+exit 0
