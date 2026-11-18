@@ -1,0 +1,209 @@
+{
+  "schema": 1,
+  "scope": "native-clean-build-results",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "partial",
+  "note": "Solo paquetes nativos seleccionados. Frameworks, Plasma, Gear y la ISO siguen pendientes.",
+  "build_count": 10,
+  "builds": [
+    {
+      "package": "supralinux-build-test",
+      "version": "0.2.0",
+      "manifest": "manifests/supralinux-build-test-0.2.0-clean-build.json",
+      "test_only": true,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-build-test_0.2.0_all.deb",
+        "sha256": "091a8b3fe75fb3954f1b3539db813c56862d14657337e7b81e926a99b7ea844e"
+      },
+      "evidence": "evidence/clean-build/20261118T160938Z-cc11d0465b49",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-base-files",
+      "version": "1.0.0",
+      "manifest": "manifests/supralinux-base-files-1.0.0-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-base-files_1.0.0_all.deb",
+        "sha256": "a0b45921001a32c35d6126f490fdee819a7b7f00b09b224eb0d6c71a5110a761"
+      },
+      "evidence": "evidence/clean-build/20261118T161109Z-fd2febc12ba8",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-branding",
+      "version": "1.2.0",
+      "manifest": "manifests/supralinux-branding-1.2.0-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-branding_1.2.0_all.deb",
+        "sha256": "d14118ae4a865ce4a16cd88ffdbe595a5af8c3d47fb77731d45416ada70f9609"
+      },
+      "evidence": "evidence/clean-build/20261118T161224Z-476bc7cbdcfa",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-theme",
+      "version": "1.0.3",
+      "manifest": "manifests/supralinux-theme-1.0.3-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-theme_1.0.3_all.deb",
+        "sha256": "842d0c486a980efb008ed61babc76c54d484c347501a51d0713aa54932f3b79f"
+      },
+      "evidence": "evidence/clean-build/20261118T161346Z-69ee1d0f7bbd",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-calamares-config",
+      "version": "1.0.0",
+      "manifest": "manifests/supralinux-calamares-config-1.0.0-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-calamares-config_1.0.0_all.deb",
+        "sha256": "409cec12cedf68ea096291b7e54be854499dcbb8829576bc4d80e3119553cb4e"
+      },
+      "evidence": "evidence/clean-build/20261118T161503Z-c74c6aacfa94",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-defaults",
+      "version": "1.1.0",
+      "manifest": "manifests/supralinux-defaults-1.1.0-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-defaults_1.1.0_all.deb",
+        "sha256": "eb4026e4ce61aa8a6782e9f772a6ab0fc5ed944bc43b051cf3bf79438d748018"
+      },
+      "evidence": "evidence/clean-build/20261118T161621Z-f28f975fb459",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-hardware-support",
+      "version": "1.0.2",
+      "manifest": "manifests/supralinux-hardware-support-1.0.2-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-hardware-support_1.0.2_all.deb",
+        "sha256": "e8dd3b0d8ecd520594e4b71f2bd7b899e9d4a884bb6ef581032b69cf908b62c8"
+      },
+      "evidence": "evidence/clean-build/20261118T161738Z-6d92b2582c34",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-drivers",
+      "version": "1.0.9",
+      "manifest": "manifests/supralinux-drivers-1.0.9-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-drivers_1.0.9_all.deb",
+        "sha256": "665bcae3eec0d0575e860c2949daf8b1789cbab45c58fe8e69fc3fb62192973c"
+      },
+      "evidence": "evidence/clean-build/20261118T161853Z-2743884155f3",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "fonts-noto-color-emoji",
+      "version": "2.057+supralinux2",
+      "manifest": "manifests/fonts-noto-color-emoji-2.057+supralinux2-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "fonts-noto-color-emoji_2.057+supralinux2_all.deb",
+        "sha256": "37136a719aaf4e805ff104662d72933efbe0165ee65a808735306e4f40a6aca7"
+      },
+      "evidence": "evidence/clean-build/20261118T162012Z-6749bca7b0a7",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-ath9k-ar9565",
+      "version": "1.0.2",
+      "manifest": "manifests/supralinux-ath9k-ar9565-1.0.2-clean-build.json",
+      "test_only": false,
+      "state": "PASS",
+      "artifact": {
+        "name": "supralinux-ath9k-ar9565_1.0.2_all.deb",
+        "sha256": "a150e96204e189185efbdf66db1025d9b702f4e6221563243261cf3eba4cb5f5"
+      },
+      "evidence": "evidence/clean-build/20261118T162137Z-ee1a4ccfc870",
+      "sbuild_invoked": true,
+      "cleanup": {
+        "process_absent": true,
+        "method": "guest-powerdown",
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    }
+  ],
+  "infra_invalid_attempts": [
+    {
+      "run": "20261118T160744Z-85a9967a2a08",
+      "state": "INFRA_INVALID",
+      "error": "Guest did not produce result.json"
+    }
+  ]
+}

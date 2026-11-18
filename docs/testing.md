@@ -206,6 +206,18 @@ manifiesto de release.
 - Un fallo corregido se reproduce antes y después; el test queda como
   regresión.
 
+## Resultados actuales
+
+- Suite unitaria: `PASS`.
+- 10 paquetes nativos seleccionados: `PASS` en build limpio, con artifact y
+  evidencia retenidos. El resumen está en
+  `manifests/native-builds-1.0.0.json`.
+- Frameworks, Plasma y Gear: packaging importado; build binario pendiente.
+- ISO, instalación y recuperación: pendientes de la clave nueva y del
+  repositorio publicado.
+
+Un resultado de esta sección no se extrapola a la release completa.
+
 ## Retención y limpieza
 
 - Se conserva una ISO por fase validada con su `BUILD-ID`, `SHA256SUMS`,
