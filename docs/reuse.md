@@ -43,9 +43,9 @@ certifica un build nuevo ni una release.
 |---|---|---|---|---|
 | Portada y licencias | Textos estándar GPL/LGPL/CC/OFL/BSD | `aa80781` | Documentos nuevos; no se copió contenido del proyecto anterior | Hecho |
 | Producto, arquitectura y packaging | `docs/product.md` y notas de campaña | `94a6e55` | Reescrito para la identidad y las decisiones de 1.0.0 | Hecho |
-| Frameworks 6.24 | `packages/kde/` | — | Pendiente de revisión paquete por paquete | Pendiente |
-| Plasma 6.6.7 | `packages/plasma/` | — | Pendiente de revisión paquete por paquete | Pendiente |
-| Gear 25.12.3 | `packages/gear/` y `packages/complete/` | — | Renombrar a `gear-extras`; revisar dependencias | Pendiente |
+| Frameworks 6.24 | `packages/kde/` | `4df8d51` | 68 paquetes; controles saneados y parches conservados | Hecho |
+| Plasma 6.6.7 | `packages/plasma/` | `8331246` | 61 paquetes; incluye FreeRDP 3 con control saneado | Hecho |
+| Gear 25.12.3 | `packages/gear/` y `packages/complete/` | `8e0055a` | 20 de Gear y 15 extras; `complete` renombrado a `gear-extras` | Hecho |
 | Integración de escritorio | `packages/desktop/` | — | Revisar defaults, base-files y hardware | Pendiente |
 | Firefox y l10n | `packages/` y notas de mirror | — | Pasar al repositorio oficial de Mozilla; retirar mirror y cron | Pendiente |
 | Calamares | `installer/calamares/` | — | Empaquetar como `supralinux-calamares-config`; retirar `calamares-settings-kubuntu` | Pendiente |
