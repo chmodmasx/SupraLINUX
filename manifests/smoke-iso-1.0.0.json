@@ -37,8 +37,9 @@
     {
       "id": "SMOKE-UEFI-SB",
       "state": "PASS",
-      "result": "Arranque con OVMF Secure Boot y Plasma en Wayland",
-      "evidence": "evidence/smoke-iso/uefi-sb/screen.png"
+      "result": "Arranque con OVMF Secure Boot, Plasma en Wayland; mokutil SecureBoot enabled y efivar SecureBoot=1",
+      "evidence": "evidence/smoke-iso/uefi-sb-qga",
+      "secureboot_efivar": 1
     }
   ],
   "limitations": [

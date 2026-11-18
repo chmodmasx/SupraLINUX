@@ -223,7 +223,8 @@ manifiesto de release.
   conffile; se corrigió el paquete y se repitió el smoke.
 - ISO de humo `8994da94…`: arranque BIOS y UEFI Secure Boot hasta Plasma
   `PASS`. Se construyó desde el rootfs live anterior con 9 paquetes nuevos;
-  no es un build limpio, no se probó Calamares y no es una release.
+  no es un build limpio, no se probó Calamares y no es una release. UEFI
+  Secure Boot se verificó con `mokutil` y el efivar en `1`.
   El resumen está en `manifests/smoke-iso-1.0.0.json`.
 - Los 176 paquetes y la ISO de release siguen pendientes de build completo.
 - ISO, instalación y recuperación: pendientes de la clave nueva y del

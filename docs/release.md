@@ -146,7 +146,7 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Los 176 paquetes fuente y la ISO de release no se construyeron completos.
 - ISO de humo `8994da94…`: BIOS y UEFI Secure Boot arrancan a Plasma. Es un
   smoke sobre el rootfs anterior, no una release; Calamares y recuperación no
-  se probaron en esta ISO.
+  se probaron en esta ISO. UEFI Secure Boot: `mokutil` y efivar en `1`.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
