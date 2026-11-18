@@ -1,0 +1,20 @@
+Source: supralinux-calamares-config
+Section: admin
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13), gettext
+Standards-Version: 4.7.2
+Homepage: https://supralinux.com
+Rules-Requires-Root: no
+
+Package: supralinux-calamares-config
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, calamares
+Conflicts: calamares-settings-kubuntu, calamares-settings-ubuntu-common
+Breaks: calamares-settings-kubuntu, calamares-settings-ubuntu-common
+Replaces: calamares-settings-kubuntu, calamares-settings-ubuntu-common
+Description: SupraLINUX Calamares configuration
+ Module configuration, branding, slideshow and the Calamares launcher used
+ by SupraLINUX Aurora. Calamares itself is not patched; the distribution
+ configuration lives in /etc/calamares.

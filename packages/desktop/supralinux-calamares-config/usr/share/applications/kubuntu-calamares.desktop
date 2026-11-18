@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Install SupraLINUX
+Comment=Instalar SupraLINUX Aurora 1.0.0 en este equipo
+Exec=sudo -E calamares
+Icon=calamares
+Terminal=false
+Categories=System;
+Keywords=install;installer;setup;

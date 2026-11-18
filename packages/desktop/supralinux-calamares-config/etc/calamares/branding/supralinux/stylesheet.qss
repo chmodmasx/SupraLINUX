@@ -1,0 +1,15 @@
+/* SupraLINUX Calamares stylesheet.
+ * The palette and sidebar colors are defined in branding.desc.  The flat
+ * About/Debug buttons need an explicit ButtonText color because QPushButton
+ * does not inherit the sidebar foreground role, and their stock icons are
+ * dark grey. */
+
+#aboutButton {
+    color: #ffffff;
+    qproperty-icon: url("/etc/calamares/branding/supralinux/info-light.svg");
+}
+
+#debugButton {
+    color: #ffffff;
+    qproperty-icon: url("/etc/calamares/branding/supralinux/bugs-light.svg");
+}

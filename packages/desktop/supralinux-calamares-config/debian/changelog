@@ -1,0 +1,7 @@
+supralinux-calamares-config (1.0.0) resolute; urgency=medium
+
+  * Package the Calamares settings, modules and branding for 1.0.0.
+  * Keep the installer configuration outside Calamares itself.
+  * Compile the es_AR python catalog at build time.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000

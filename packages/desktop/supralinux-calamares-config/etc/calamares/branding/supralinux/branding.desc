@@ -1,0 +1,31 @@
+---
+componentName: supralinux
+
+windowExpanding: fullscreen
+windowPlacement: center
+sidebar: widget
+navigation: widget
+
+strings:
+    productName:         SupraLINUX
+    shortProductName:    SupraLINUX
+    version:             1.0.0
+    shortVersion:        Aurora
+    versionedName:       SupraLINUX Aurora 1.0.0
+    shortVersionedName:  SupraLINUX Aurora
+    bootloaderEntryName: SupraLINUX Aurora
+    productUrl:          https://supralinux.com/
+    supportUrl:          https://supralinux.com/
+
+images:
+    productLogo:         "logo.png"
+    productIcon:         "icon.png"
+    productWelcome:      "welcome.png"
+
+slideshow:               "show.qml"
+slideshowAPI:            1
+
+style:
+    SidebarBackground:    "#0b2a4a"
+    SidebarText:          "#ffffff"
+    SidebarTextCurrent:   "#1d99f3"

@@ -1,0 +1,9 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	install -d usr/share/locale/es_AR/LC_MESSAGES usr/share/supralinux/calamares/lang/es_AR
+	msgfmt -o usr/share/locale/es_AR/LC_MESSAGES/calamares-python.mo lang/es_AR/python.po
+	install -m 0644 lang/es_AR/python.po usr/share/supralinux/calamares/lang/es_AR/python.po

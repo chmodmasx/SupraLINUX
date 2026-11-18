@@ -1,0 +1,42 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: SupraLINUX Calamares configuration
+Source: https://supralinux.com
+
+Files: *
+Copyright: 2026 SupraLINUX Project
+License: GPL-2.0-or-later
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+Files: etc/calamares/branding/supralinux/logo.png
+       etc/calamares/branding/supralinux/icon.png
+       etc/calamares/branding/supralinux/welcome.png
+       etc/calamares/branding/supralinux/wordmark.png
+Copyright: 2026 SupraLINUX Project
+License: CC-BY-4.0
+ This work is licensed under the Creative Commons Attribution 4.0
+ International License. To view a copy of this license, visit
+ https://creativecommons.org/licenses/by/4.0/ or send a letter to
+ Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+Files: etc/calamares/branding/supralinux/bugs-light.svg
+       etc/calamares/branding/supralinux/info-light.svg
+Copyright: 2014 Teo Mrnjavac <teo@kde.org>
+License: GPL-3.0-or-later
+ This file is derived from Calamares data/images and recolored for the
+ SupraLINUX dark sidebar.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 3 can be found in "/usr/share/common-licenses/GPL-3".
+
+Files: lang/es_AR/python.po
+       usr/share/locale/es_AR/LC_MESSAGES/calamares-python.mo
+Copyright: 2017-2024 Calamares translators
+License: GPL-3.0-or-later
+ On Debian systems, the complete text of the GNU General Public License
+ version 3 can be found in "/usr/share/common-licenses/GPL-3".
