@@ -55,7 +55,7 @@ certifica un build nuevo ni una release.
 | Branding y tema | `branding/`, `packages/desktop/supralinux-branding`, `packages/desktop/supralinux-theme` | `c310739` | Assets, GRUB, Plymouth, wallpapers y tema Aurora; licencias revisadas y rutas personales normalizadas | Hecho |
 | Herramientas y pruebas | `tools/` y `tests/` | `11c0ea8` | Revisadas; workspace configurable y sin rutas del proyecto anterior | Hecho |
 | Paquete de prueba | `packages/supralinux-build-test` | `11c0ea8` | Versión 0.2.0 y licencia GPL-2.0-or-later | Hecho |
-| Evidencia anterior | `evidence/` | — | Sólo diagnóstico; no se usa como PASS de release | Pendiente |
+| Evidencia anterior | `evidence/`, `artifacts/`, `kvm/` | `c6652ae` | Base, rootfs y dependencias admitidos por hash; los PASS son de runs nuevos | Hecho |
 
 Cada importación actualiza esta tabla en el mismo commit o en el commit de
 documentación inmediatamente posterior.
