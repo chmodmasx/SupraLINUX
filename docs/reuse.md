@@ -51,7 +51,8 @@ certifica un build nuevo ni una release.
 | Calamares | `installer/calamares/` | — | Empaquetar como `supralinux-calamares-config`; retirar `calamares-settings-kubuntu` | Pendiente |
 | Live y arranque | `tools/live/` | — | Revisar hooks, shim/GRUB firmados y sellado | Pendiente |
 | Branding | `branding/` | — | Revisar licencias, assets y textos | Pendiente |
-| Herramientas y pruebas | `tools/` y `tests/` | — | Revisar contratos, quitar rutas y `__pycache__` | Pendiente |
+| Herramientas y pruebas | `tools/` y `tests/` | — | Revisadas; workspace configurable y sin rutas del proyecto anterior | En curso |
+| Paquete de prueba | `packages/supralinux-build-test` | — | Versión 0.2.0 y licencia GPL-2.0-or-later | En curso |
 | Evidencia anterior | `evidence/` | — | Sólo diagnóstico; no se usa como PASS de release | Pendiente |
 
 Cada importación actualiza esta tabla en el mismo commit o en el commit de

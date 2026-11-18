@@ -1,0 +1,6 @@
+supralinux-build-test (0.2.0) resolute; urgency=medium
+
+  * Rebuild the package-build proof for the new repository.
+  * Use GPL-2.0-or-later for the test package.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 18 Nov 2026 12:00:00 +0000
