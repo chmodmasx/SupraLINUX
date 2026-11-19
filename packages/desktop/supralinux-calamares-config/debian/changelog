@@ -1,3 +1,11 @@
+supralinux-calamares-config (1.0.1) resolute; urgency=medium
+
+  * Remove only packages present in the live rootfs. An offline install has
+    empty APT lists, so apt-get remove fails when it cannot resolve the
+    calamares-settings-* packages that are not installed.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 19 Nov 2026 13:30:00 +0000
+
 supralinux-calamares-config (1.0.0) resolute; urgency=medium
 
   * Package the Calamares settings, modules and branding for 1.0.0.
