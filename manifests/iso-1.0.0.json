@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "scope": "iso-release-validation",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "PASS",
+  "release_ready": false,
+  "note": "ISO limpia construida desde un rootfs nuevo y el Aptly supralinux-testing. Valida BIOS/UEFI Secure Boot, instalaci\u00f3n Btrfs offline y primer arranque. La matriz LUKS2, EXT4, dual-boot y recuperaci\u00f3n sigue pendiente.",
+  "iso": {
+    "name": "supralinux-aurora-1.0.0-amd64.iso",
+    "sha256": "be806212d0e979b2f45839517e2b15610e36467d466a10064d8c98f6d2216d8d",
+    "bytes": 3152103424,
+    "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64.iso",
+    "build_evidence": "evidence/live/iso-clean-20261119T142359Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-clean-20261119T140652Z.log"
+  },
+  "inputs": {
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261119b)",
+    "installer": "supralinux-calamares-config 1.0.1",
+    "kernel": "7.0.0-43-generic",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261119b",
+    "aptly_manifest": "manifests/aptly-publication-1.0.0.json"
+  },
+  "tests": [
+    {
+      "id": "ISO-BIOS-BOOT",
+      "state": "PASS",
+      "result": "Arranca a Plasma Wayland y Calamares; instalaci\u00f3n Btrfs ejecutada desde esta ISO.",
+      "evidence": "evidence/installer/bios-btrfs-v3/atspi-4.png"
+    },
+    {
+      "id": "ISO-UEFI-SB",
+      "state": "PASS",
+      "result": "mokutil SecureBoot enabled; efivar SecureBoot=1; Plasma Wayland.",
+      "evidence": "evidence/live/uefi-sb-clean-v2/screen.png"
+    },
+    {
+      "id": "INSTALL-BTRFS-OFFLINE",
+      "state": "PASS",
+      "result": "Calamares 1.0.1 instala en Btrfs sin red; crea subvol\u00famenes @, @home, @snapshots y usuario.",
+      "evidence": "evidence/installer/bios-btrfs-v3/atspi-8.png"
+    },
+    {
+      "id": "FIRST-BOOT-BTRFS",
+      "state": "PASS",
+      "result": "El disco instalado arranca en BIOS, SDDM activo, login de usuario y Plasma Wayland.",
+      "evidence": "evidence/installer/bios-installed/logged.png"
+    },
+    {
+      "id": "TARGET-CLEANUP",
+      "state": "PASS",
+      "result": "Calamares, casper y supralinux-calamares-config no quedan instalados en el target.",
+      "evidence": "evidence/installer/bios-installed/installed-checks.txt"
+    }
+  ],
+  "observed": {
+    "filesystem": "btrfs",
+    "subvolume": "/@",
+    "compression": "zstd:3",
+    "bootloader": "GRUB BIOS MBR /dev/vda",
+    "user": "suprap (autogenerado por el nombre completo en la automatizaci\u00f3n AT-SPI)",
+    "installer_removed": [
+      "calamares",
+      "casper",
+      "supralinux-calamares-config"
+    ],
+    "snapper_snapshot": "initial install"
+  },
+  "limitations": [
+    "LUKS2 no se prob\u00f3 en esta ISO.",
+    "EXT4 no se prob\u00f3 en esta ISO.",
+    "Dual-boot con otro sistema operativo no se prob\u00f3.",
+    "La recuperaci\u00f3n Btrfs/rollback no se prob\u00f3.",
+    "El login se autogener\u00f3 como suprap porque la automatizaci\u00f3n AT-SPI actualiz\u00f3 la UI pero no el modelo interno del campo de login; la creaci\u00f3n de usuario y el login funcionaron.",
+    "No se public\u00f3 stable ni se cre\u00f3 tag."
+  ]
+}

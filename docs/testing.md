@@ -231,8 +231,18 @@ manifiesto de release.
   `manifests/full-build-results-1.0.0.json`. Los cierres de `Build-Depends` se
   reutilizaron como inputs verificados por SHA-256; cada paquete se reconstruyó
   con el packaging actual.
-- La ISO de release sigue pendiente. El build de los 176 paquetes no certifica
-  la ISO, Calamares, la instalación ni la recuperación.
+- ISO limpia `be806212…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
+  `supralinux-testing-1.0.0-20261119b`; BIOS y UEFI Secure Boot hasta Plasma
+  `PASS`. UEFI Secure Boot verificado con `mokutil` y efivar `1`.
+- Instalación Btrfs offline con Calamares 1.0.1: `PASS`. Primer arranque en
+  BIOS, SDDM, login de usuario y Plasma Wayland: `PASS`. El target queda en
+  Btrfs con los subvolúmenes `@`, `@home` y `@snapshots`; Calamares, casper y
+  `supralinux-calamares-config` no quedan instalados.
+- El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
+  `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
+  Se corrigió en 1.0.1, se recompiló y se repitió la instalación.
+- LUKS2, EXT4, dual-boot y recuperación Btrfs siguen pendientes.
+- El resumen de la ISO limpia está en `manifests/iso-1.0.0.json`.
 
 Un resultado de esta sección no se extrapola a la release completa.
 

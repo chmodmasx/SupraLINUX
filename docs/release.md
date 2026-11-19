@@ -146,23 +146,31 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Los 176 paquetes fuente tienen build limpio `PASS` (176/176), con artifact,
   `.changes`, `.buildinfo`, evidencia y cleanup. El resumen está en
   `manifests/full-build-results-1.0.0.json`.
-- La ISO de release no se construyó. El build de paquetes no certifica la ISO,
-  Calamares, la instalación ni la recuperación.
+- ISO limpia `be806212…` construida desde un rootfs nuevo y el snapshot
+  `supralinux-testing-1.0.0-20261119b`: BIOS y UEFI Secure Boot `PASS`.
+- Instalación Btrfs offline con Calamares 1.0.1: `PASS`; primer arranque,
+  SDDM, login de usuario y Plasma Wayland: `PASS`. El target queda en Btrfs
+  (`@`, `@home`, `@snapshots`) y sin Calamares/casper.
+- Se corrigió `supralinux-calamares-config` 1.0.0: el módulo `packages` quitaba
+  paquetes ausentes y `apt-get` devolvía 100 sin listas APT. La 1.0.1 quedó
+  publicada y validada en la instalación.
 - ISO de humo `8994da94…`: BIOS y UEFI Secure Boot arrancan a Plasma. Es un
   smoke sobre el rootfs anterior, no una release; Calamares y recuperación no
   se probaron en esta ISO. UEFI Secure Boot: `mokutil` y efivar en `1`.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261119`
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261119b`
   con 604 binarios y 176 fuentes; publicación `testing` firmada y verificada.
   Está en el endpoint local de staging y no reemplaza a la instancia anterior.
   El resumen está en `manifests/aptly-publication-1.0.0.json`.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
-Esto no es una release validada. Los gates de la tabla siguen pendientes hasta
-completar la ISO de release y su matriz de instalación y recuperación.
+Esto no es una release validada. Faltan LUKS2, EXT4, dual-boot, recuperación
+Btrfs y la matriz completa de post-instalación. El gate `Repositorio` tampoco
+está cerrado: `supralinux-stable` sigue vacío y la ruta pública
+`testing.supralinux.com` no se cambió a la instancia nueva.
 
 ## Publicación
 

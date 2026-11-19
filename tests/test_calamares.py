@@ -30,12 +30,16 @@ class CalamaresConfigTests(unittest.TestCase):
         self.assertIn("productUrl:          https://supralinux.com/", branding)
         self.assertIn("supportUrl:          https://supralinux.com/", branding)
 
-    def test_target_removes_the_installer_stack_and_kubuntu_settings(self):
+    def test_target_removes_only_installed_installer_packages(self):
         packages = (BASE / "etc/calamares/modules/packages.conf").read_text()
-        for name in ["supralinux-calamares-config", "calamares-settings-kubuntu",
-                     "calamares-settings-ubuntu-common", "calamares", "casper"]:
+        for name in ["supralinux-calamares-config", "calamares", "calamares-data",
+                     "libcalamaresui3.3", "cifs-utils", "casper"]:
             with self.subTest(name=name):
                 self.assertIn(name, packages)
+        for name in ["calamares-settings-kubuntu", "calamares-settings-ubuntu-common",
+                     "calamares-settings-ubuntu-common-data"]:
+            with self.subTest(foreign=name):
+                self.assertNotIn(name, packages)
 
     def test_control_conflicts_with_foreign_settings_packages(self):
         control = (BASE / "debian/control").read_text()

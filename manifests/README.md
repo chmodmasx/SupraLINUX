@@ -36,9 +36,11 @@ run de evidencia. Los manifiestos fijados del lote están en
 
 `manifests/package-smoke-results-1.0.0.json` resume los smokes offline de
 instalación. `manifests/aptly-publication-1.0.0.json` registra el snapshot y la
-publicación firmada de `supralinux-testing`. `manifests/smoke-iso-1.0.0.json`
-registra la ISO de humo BIOS/UEFI Secure Boot. El build completo certifica los
-paquetes, no la ISO ni la release.
+publicación firmada de `supralinux-testing`. `manifests/iso-1.0.0.json`
+registra la ISO limpia: BIOS/UEFI Secure Boot, instalación Btrfs offline y
+primer arranque. `manifests/smoke-iso-1.0.0.json` queda como evidencia histórica
+de la ISO de humo. El build completo certifica los paquetes; la ISO limpia
+certifica esos tres flujos, no la matriz completa ni la release.
 
 ## Build limpio
 
