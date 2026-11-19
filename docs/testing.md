@@ -231,8 +231,8 @@ manifiesto de release.
   `manifests/full-build-results-1.0.0.json`. Los cierres de `Build-Depends` se
   reutilizaron como inputs verificados por SHA-256; cada paquete se reconstruyó
   con el packaging actual.
-- ISO limpia `3d17d905…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
-  `supralinux-testing-1.0.0-20261119b`; BIOS y UEFI Secure Boot hasta Plasma
+- ISO limpia `defa35f3…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
+  `supralinux-testing-1.0.0-20261119d`; BIOS y UEFI Secure Boot hasta Plasma
   `PASS`. UEFI Secure Boot verificado con `mokutil` y efivar `1`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`. Primer arranque en
   BIOS, SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en
@@ -242,6 +242,9 @@ manifiesto de release.
   testing` `PASS`; Snapper lista por D-Bus y `--no-dbus`, crea snapshot y
   registra APT pre; ksecretd expone `org.freedesktop.secrets`; Firefox abre en
   español sin pedir ser el navegador por defecto; apagado limpio `PASS`.
+- `supralinux-defaults 1.1.2`: perfil AppArmor exacto `firefox-supralinux` y
+  `obexd -P pbap,irmc`; los procesos de Firefox quedan etiquetados y
+  `journalctl -p err` no muestra EDS/Evolution.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.

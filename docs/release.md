@@ -146,14 +146,17 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Los 176 paquetes fuente tienen build limpio `PASS` (176/176), con artifact,
   `.changes`, `.buildinfo`, evidencia y cleanup. El resumen está en
   `manifests/full-build-results-1.0.0.json`.
-- ISO limpia `3d17d905…` construida desde un rootfs nuevo y el snapshot
-  `supralinux-testing-1.0.0-20261119b`: BIOS y UEFI Secure Boot `PASS`.
+- ISO limpia `defa35f3…` construida desde un rootfs nuevo y el snapshot
+  `supralinux-testing-1.0.0-20261119d`: BIOS y UEFI Secure Boot `PASS`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`; primer arranque,
   SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en Btrfs
   (`@`, `@home`, `@snapshots`) y sin Calamares/casper.
 - L5 `PASS`: APT contra `https://repo.supralinux.com/ testing`, Snapper por
   D-Bus y `--no-dbus`, Secret Service (`ksecretd`), Firefox en español sin
   prompt de navegador por defecto y apagado limpio.
+- `supralinux-defaults 1.1.2`: perfil AppArmor exacto para el Firefox de
+  Mozilla (`firefox-supralinux`) y `obexd -P pbap,irmc`; `journalctl -p err`
+  queda sin errores de EDS/Evolution.
 - Se corrigió `supralinux-calamares-config` 1.0.0: el módulo `packages` quitaba
   paquetes ausentes y `apt-get` devolvía 100 sin listas APT. La 1.0.1 quedó
   publicada y validada en la instalación.
@@ -163,7 +166,7 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261119b`
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261119d`
   con 604 binarios y 176 fuentes; publicación `testing` firmada y verificada.
   `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly viejo dejó
   de servirse. El resumen está en `manifests/aptly-publication-1.0.0.json`.

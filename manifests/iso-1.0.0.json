@@ -6,20 +6,21 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO limpia desde rootfs nuevo y repo.supralinux.com. Valida BIOS/UEFI Secure Boot, Btrfs offline, primer arranque y L5. LUKS2, EXT4, dual-boot y recuperaci\u00f3n siguen pendientes.",
+  "note": "ISO limpia desde rootfs nuevo y repo.supralinux.com. Valida BIOS/UEFI Secure Boot, Btrfs offline, primer arranque y L5 con AppArmor/obexd corregidos. LUKS2, EXT4, dual-boot y recuperaci\u00f3n siguen pendientes.",
   "iso": {
     "name": "supralinux-aurora-1.0.0-amd64.iso",
-    "sha256": "3d17d905ab17be4e8587380f9fadf6e92e26850b77d849cc378773cd91fe3954",
+    "sha256": "defa35f3bf0ef19a65483d4dc67b8716eaffae2c51040eb3c6e42fec1acb7fea",
     "bytes": 3152107520,
     "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64.iso",
-    "build_evidence": "evidence/live/iso-clean-20261119T153448Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-clean-20261119T152415Z.log"
+    "build_evidence": "evidence/live/iso-clean-20261119T182611Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-clean-20261119T181658Z.log"
   },
   "inputs": {
-    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261119b)",
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261119d)",
     "installer": "supralinux-calamares-config 1.0.1",
+    "defaults": "supralinux-defaults 1.1.2",
     "kernel": "7.0.0-43-generic",
-    "aptly_snapshot": "supralinux-testing-1.0.0-20261119b",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261119d",
     "apt_source": "https://repo.supralinux.com/",
     "aptly_manifest": "manifests/aptly-publication-1.0.0.json"
   },
@@ -27,62 +28,68 @@
     {
       "id": "ISO-BIOS-BOOT",
       "state": "PASS",
-      "result": "Arranca a Plasma Wayland y Calamares; instalaci\u00f3n Btrfs ejecutada desde esta ISO.",
-      "evidence": "evidence/installer/bios-btrfs-v4/install-start.png"
+      "result": "Arranca en BIOS a Plasma Wayland y Calamares; instalaci\u00f3n Btrfs ejecutada desde esta ISO.",
+      "evidence": "evidence/installer/bios-btrfs-v6/console.log"
     },
     {
       "id": "ISO-UEFI-SB",
       "state": "PASS",
       "result": "mokutil SecureBoot enabled; efivar SecureBoot=1; Plasma Wayland.",
-      "evidence": "evidence/live/uefi-sb-clean-v2/screen.png"
+      "evidence": "evidence/live/uefi-sb-final/screen.png"
     },
     {
       "id": "INSTALL-BTRFS-OFFLINE",
       "state": "PASS",
       "result": "Calamares 1.0.1 instala en Btrfs sin red; crea @, @home, @snapshots y usuario supratest.",
-      "evidence": "evidence/installer/bios-btrfs-v4/install-mid.png"
+      "evidence": "evidence/installer/bios-btrfs-v6/console.log"
     },
     {
       "id": "FIRST-BOOT-BTRFS",
       "state": "PASS",
       "result": "El disco instalado arranca en BIOS, SDDM activo, login supratest y Plasma Wayland.",
-      "evidence": "evidence/installer/bios-installed-v2/desktop.png"
+      "evidence": "evidence/installer/bios-installed-v5/firefox.png"
     },
     {
       "id": "TARGET-CLEANUP",
       "state": "PASS",
       "result": "Calamares, casper y supralinux-calamares-config no quedan instalados en el target.",
-      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
     },
     {
       "id": "L5-APT",
       "state": "PASS",
       "result": "apt-get update y reinstalaci\u00f3n de supralinux-theme desde https://repo.supralinux.com/ testing.",
-      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
     },
     {
       "id": "L5-SNAPPER",
       "state": "PASS",
       "result": "snapper lista por D-Bus y --no-dbus; crea snapshot y registra APT pre.",
-      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
     },
     {
       "id": "L5-KEYRING",
       "state": "PASS",
       "result": "ksecretd expone org.freedesktop.secrets y org.kde.ksecretd en la sesi\u00f3n.",
-      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
     },
     {
       "id": "L5-FIREFOX",
       "state": "PASS",
-      "result": "Firefox 160.0.1 abre en espa\u00f1ol, con l10n es-AR y sin pedir ser navegador por defecto.",
-      "evidence": "evidence/installer/bios-installed-v2/firefox4.png"
+      "result": "Firefox 160.0.1 abre en espa\u00f1ol, con l10n es-AR, sin pedir navegador por defecto y con sandbox userns.",
+      "evidence": "evidence/installer/bios-installed-v5/firefox.png"
+    },
+    {
+      "id": "L5-OBEXD",
+      "state": "PASS",
+      "result": "obexd corre con -P pbap,irmc; journalctl -p err no muestra EDS/evolution; OBEX/FTP/MAP disponibles.",
+      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
     },
     {
       "id": "L5-SHUTDOWN",
       "state": "PASS",
       "result": "systemctl poweroff apaga la VM sin cuelgues; QEMU sale limpio.",
-      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
     }
   ],
   "observed": {
@@ -93,6 +100,11 @@
     "user": "supratest",
     "firefox": "160.0.1~build1",
     "firefox_l10n": "160.0.1~build1",
+    "apparmor_labels": [
+      "firefox-supralinux",
+      "firefox-supralinux-bin"
+    ],
+    "obexd": "/usr/libexec/bluetooth/obexd -P pbap,irmc",
     "snapper_snapshots": [
       "initial install",
       "APT pre",

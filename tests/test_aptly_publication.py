@@ -12,7 +12,7 @@ class AptlyPublicationTests(unittest.TestCase):
         self.assertEqual(DATA["scope"], "aptly-publication")
         self.assertEqual(DATA["status"], "PASS")
         self.assertFalse(DATA["release_ready"])
-        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261119c")
+        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261119d")
 
     def test_counts_match_the_source_inventory(self):
         binaries = sum(len(item["binaries"]) for item in INVENTORY["packages"])

@@ -15,7 +15,7 @@ class IsoOneZeroTests(unittest.TestCase):
 
     def test_iso_is_pinned_by_sha256_and_size(self):
         self.assertEqual(DATA["iso"]["sha256"],
-                         "3d17d905ab17be4e8587380f9fadf6e92e26850b77d849cc378773cd91fe3954")
+                         "defa35f3bf0ef19a65483d4dc67b8716eaffae2c51040eb3c6e42fec1acb7fea")
         self.assertGreater(DATA["iso"]["bytes"], 2 * 1024**3)
         self.assertEqual(DATA["iso"]["name"], "supralinux-aurora-1.0.0-amd64.iso")
 
@@ -23,7 +23,7 @@ class IsoOneZeroTests(unittest.TestCase):
         tests = {item["id"]: item for item in DATA["tests"]}
         for name in ["ISO-BIOS-BOOT", "ISO-UEFI-SB", "INSTALL-BTRFS-OFFLINE",
                      "FIRST-BOOT-BTRFS", "TARGET-CLEANUP", "L5-APT",
-                     "L5-SNAPPER", "L5-KEYRING", "L5-FIREFOX", "L5-SHUTDOWN"]:
+                     "L5-SNAPPER", "L5-KEYRING", "L5-FIREFOX", "L5-OBEXD", "L5-SHUTDOWN"]:
             with self.subTest(name=name):
                 self.assertEqual(tests[name]["state"], "PASS")
                 self.assertFalse(tests[name]["evidence"].startswith("/"))
@@ -34,6 +34,7 @@ class IsoOneZeroTests(unittest.TestCase):
         self.assertIn("calamares", DATA["observed"]["installer_removed"])
         self.assertIn("casper", DATA["observed"]["installer_removed"])
         self.assertEqual(DATA["inputs"]["installer"], "supralinux-calamares-config 1.0.1")
+        self.assertEqual(DATA["inputs"]["defaults"], "supralinux-defaults 1.1.2")
         self.assertEqual(DATA["inputs"]["kernel"], "7.0.0-43-generic")
 
     def test_no_absolute_host_paths(self):
