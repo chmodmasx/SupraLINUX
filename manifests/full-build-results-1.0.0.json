@@ -160,19 +160,19 @@
     },
     {
       "package": "supralinux-defaults",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "area": "desktop",
       "manifest": "manifests/release-1.0.0/supralinux-defaults.json",
       "artifact": {
-        "name": "supralinux-defaults_1.1.0_all.deb",
-        "sha256": "eb4026e4ce61aa8a6782e9f772a6ab0fc5ed944bc43b051cf3bf79438d748018",
-        "bytes": 14152
+        "name": "supralinux-defaults_1.1.1_all.deb",
+        "sha256": "6493a3f84fbabe5c5e09c7b7b643e365db897ed6380ee3e97e1fa38d7db07fd2",
+        "bytes": 14844
       },
-      "evidence": "evidence/clean-build/20261118T161621Z-f28f975fb459",
+      "evidence": "evidence/clean-build/20261119T170016Z-1463e7000218",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 77.045,
-        "guest_build": 27.307
+        "total": 83.158,
+        "guest_build": 27.908
       },
       "cleanup": {
         "process_absent": true,

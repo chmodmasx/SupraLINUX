@@ -2,15 +2,16 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-defaults",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-defaults",
-    "original_commit": "a3a0300218bca06e45b333190e2f0fc4c88d62b2",
+    "original_commit": "1a223e14e43fca749cd11da3c51b11456019025f",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-defaults_1.1.0.dsc"
+    "dsc_name": "supralinux-defaults_1.1.1.dsc",
+    "version": "1.1.1"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
