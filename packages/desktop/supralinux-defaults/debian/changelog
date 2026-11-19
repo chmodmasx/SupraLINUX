@@ -1,3 +1,11 @@
+supralinux-defaults (1.1.2) resolute; urgency=medium
+
+  * Exclude obexd's legacy IRMC plugin together with PBAP. Both initialize
+    the Evolution phonebook backend before plugin exclusion; IRMC is the
+    source of the failed EDS activation logged at every login.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 19 Nov 2026 15:05:00 +0000
+
 supralinux-defaults (1.1.1) resolute; urgency=medium
 
   * Add an exact-path AppArmor profile for Mozilla's Firefox .deb. The
