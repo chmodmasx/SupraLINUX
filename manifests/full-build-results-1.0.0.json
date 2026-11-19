@@ -138,19 +138,19 @@
     },
     {
       "package": "supralinux-calamares-config",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "area": "desktop",
       "manifest": "manifests/release-1.0.0/supralinux-calamares-config.json",
       "artifact": {
-        "name": "supralinux-calamares-config_1.0.0_all.deb",
-        "sha256": "44b9b25f8c8248bb5d6511b026806feec0c564b978aee487e8a2eeca8dde0b08",
-        "bytes": 101278
+        "name": "supralinux-calamares-config_1.0.1_all.deb",
+        "sha256": "a34ddb6508e4b81882d1d6a804b1ccf71c15da8b6edf0fc6c7ef015140cbc458",
+        "bytes": 101428
       },
-      "evidence": "evidence/clean-build/20261118T180417Z-353767c25e7a",
+      "evidence": "evidence/clean-build/20261119T140235Z-5b781ee42ca6",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 81.706,
-        "guest_build": 28.929
+        "total": 79.216,
+        "guest_build": 27.594
       },
       "cleanup": {
         "process_absent": true,

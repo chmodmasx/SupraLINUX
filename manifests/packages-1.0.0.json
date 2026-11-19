@@ -91,7 +91,7 @@
     },
     {
       "source": "supralinux-calamares-config",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "area": "desktop",
       "path": "packages/desktop/supralinux-calamares-config",
       "binaries": [

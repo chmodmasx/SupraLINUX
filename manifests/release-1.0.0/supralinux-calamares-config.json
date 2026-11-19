@@ -2,15 +2,16 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-calamares-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-calamares-config",
-    "original_commit": "a3a0300218bca06e45b333190e2f0fc4c88d62b2",
+    "original_commit": "9bb0d230f13d0d1dbde03b9be7016af320b484a9",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13), gettext",
-    "dsc_name": "supralinux-calamares-config_1.0.0.dsc"
+    "dsc_name": "supralinux-calamares-config_1.0.1.dsc",
+    "version": "1.0.1"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
