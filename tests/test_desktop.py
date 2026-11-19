@@ -69,10 +69,10 @@ class DesktopIntegrationTests(unittest.TestCase):
 
     def test_defaults_disable_obex_pbap_plugin(self):
         base = ROOT / "packages/desktop/supralinux-defaults"
-        dropin = base / "etc/systemd/user/obex.service.d/10-supralinux-no-eds.conf"
+        dropin = base / "etc/systemd/user/obex.service.d/10-supralinux-no-pbap.conf"
         text = dropin.read_text()
         self.assertIn("ExecStart=", text)
-        self.assertIn("ExecStart=/usr/libexec/bluetooth/obexd -P pbap,irmc", text)
+        self.assertIn("ExecStart=/usr/libexec/bluetooth/obexd -P pbap", text)
 
     def test_defaults_keep_the_desktop_helpers(self):
         base = ROOT / "packages/desktop/supralinux-defaults"

@@ -182,10 +182,8 @@ global produce condiciones de carrera y diálogos fuera de la sesión.
 **Consecuencia:** la cartera está disponible desde el primer inicio. No se
 instala `evolution-data-server` para no desplazar `org.freedesktop.secrets` con
 `gnome-keyring`. La sincronización PBAP de contactos por Bluetooth queda como
-limitación conocida. Los plugins `pbap` e `irmc` de `obexd` se deshabilitan
-con `-P pbap,irmc`; ambos inicializan el backend de contactos de Evolution y
-`irmc` es el que intenta activar EDS antes de la exclusión. OBEX/FTP/MAP siguen
-disponibles.
+limitación conocida. El plugin `pbap` de `obexd` se deshabilita con
+`-P pbap` para que no intente activar EDS ni registre ese fallo en cada login.
 
 ## D-015 — zram sólo en equipos pequeños
 
