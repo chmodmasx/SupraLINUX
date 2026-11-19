@@ -154,9 +154,12 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Instancia Aptly paralela creada con `supralinux-testing` y
-  `supralinux-stable` vacíos. No está publicada ni reemplaza a la anterior.
-- No hay snapshot `stable` ni autorización de release.
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261119`
+  con 604 binarios y 176 fuentes; publicación `testing` firmada y verificada.
+  Está en el endpoint local de staging y no reemplaza a la instancia anterior.
+  El resumen está en `manifests/aptly-publication-1.0.0.json`.
+- `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
+  release.
 
 Esto no es una release validada. Los gates de la tabla siguen pendientes hasta
 completar la ISO de release y su matriz de instalación y recuperación.

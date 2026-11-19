@@ -35,8 +35,10 @@ run de evidencia. Los manifiestos fijados del lote están en
 `manifests/release-1.0.0/`.
 
 `manifests/package-smoke-results-1.0.0.json` resume los smokes offline de
-instalación. `manifests/smoke-iso-1.0.0.json` registra la ISO de humo BIOS/UEFI
-Secure Boot. El build completo certifica los paquetes, no la ISO ni la release.
+instalación. `manifests/aptly-publication-1.0.0.json` registra el snapshot y la
+publicación firmada de `supralinux-testing`. `manifests/smoke-iso-1.0.0.json`
+registra la ISO de humo BIOS/UEFI Secure Boot. El build completo certifica los
+paquetes, no la ISO ni la release.
 
 ## Build limpio
 

@@ -1,0 +1,41 @@
+import json
+import unittest
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA = json.loads((ROOT / "manifests/aptly-publication-1.0.0.json").read_text())
+INVENTORY = json.loads((ROOT / "manifests/packages-1.0.0.json").read_text())
+
+
+class AptlyPublicationTests(unittest.TestCase):
+    def test_publication_is_pinned_but_not_a_release(self):
+        self.assertEqual(DATA["scope"], "aptly-publication")
+        self.assertEqual(DATA["status"], "PASS")
+        self.assertFalse(DATA["release_ready"])
+        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261119")
+
+    def test_counts_match_the_source_inventory(self):
+        binaries = sum(len(item["binaries"]) for item in INVENTORY["packages"])
+        sources = len(INVENTORY["packages"])
+        self.assertEqual(DATA["counts"], {
+            "binary_packages": binaries,
+            "source_packages": sources,
+            "total": binaries + sources,
+        })
+
+    def test_publication_has_the_release_key_and_source_endpoint(self):
+        self.assertEqual(DATA["key"]["fingerprint"],
+                         "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8")
+        self.assertTrue((ROOT / DATA["key"]["public_file"]).is_file())
+        sources = (ROOT / "installer/apt/supralinux-testing.sources").read_text()
+        self.assertIn(DATA["endpoints"]["shipped_source"], sources)
+        self.assertEqual(DATA["verification"]["inrelease_signature"], "PASS")
+
+    def test_no_absolute_host_paths(self):
+        text = (ROOT / "manifests/aptly-publication-1.0.0.json").read_text()
+        self.assertNotIn("/mnt/RAID0/", text)
+        self.assertNotRegex(text, r"\"/home/")
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "scope": "aptly-publication",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "PASS",
+  "release_ready": false,
+  "repository": "supralinux-testing",
+  "snapshot": "supralinux-testing-1.0.0-20261119",
+  "snapshot_created_at": "2026-11-19T12:50:48Z",
+  "publication": {
+    "name": "testing",
+    "distribution": "testing",
+    "codename": "testing",
+    "component": "main",
+    "origin": "SupraLINUX",
+    "label": "SupraLINUX",
+    "architectures": [
+      "amd64"
+    ]
+  },
+  "counts": {
+    "binary_packages": 604,
+    "source_packages": 176,
+    "total": 780
+  },
+  "key": {
+    "fingerprint": "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8",
+    "public_file": "installer/keys/supralinux-archive-key.asc"
+  },
+  "endpoints": {
+    "staging": "http://127.0.0.1:18080/",
+    "shipped_source": "https://testing.supralinux.com/"
+  },
+  "verification": {
+    "inrelease_signature": "PASS",
+    "inrelease_sha256": "08e9a6a070941ad02f450848185dd1bc1c8edbcff5212cff39c409435ab47cd5",
+    "release_sha256": "e1b1db139f9905ffa781890302edc8413bb528865be1837fac7821f75c67657d",
+    "binary_index_count": 604,
+    "source_index_count": 176
+  },
+  "notes": [
+    "La instancia nueva publica en el puerto local 18080 y no reemplaza a la instancia anterior.",
+    "La ruta p\u00fablica testing.supralinux.com todav\u00eda no se cambi\u00f3; el cambio de NPM/DNS es un paso separado.",
+    "El rootfs de la ISO puede instalar desde el endpoint de staging y conserva la fuente p\u00fablica final."
+  ]
+}
