@@ -1,5 +1,5 @@
-// Use the official Mozilla packages and never the Ubuntu transitional snap
-// packages for Firefox or Thunderbird.
+# Use the official Mozilla packages and never the Ubuntu transitional snap
+# packages for Firefox or Thunderbird.
 Package: firefox
 Pin: release o=Ubuntu
 Pin-Priority: -1

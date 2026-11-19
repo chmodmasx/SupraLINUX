@@ -69,6 +69,19 @@ class LiveImageTests(unittest.TestCase):
         self.assertIn("/etc/apt/sources.list.d/supralinux.sources", text)
         self.assertIn("http://*|https://*", text)
 
+    def test_apt_preferences_use_valid_comment_syntax(self):
+        for name in ["90-mozilla.pref", "90-supralinux.pref"]:
+            text = (ROOT / "installer/apt" / name).read_text()
+            for line in text.splitlines():
+                if not line.strip():
+                    continue
+                with self.subTest(file=name, line=line):
+                    self.assertTrue(
+                        line.startswith(("#", "Package:", "Pin:", "Pin-Priority:"))
+                        or line.startswith((" ", "\t")),
+                        line,
+                    )
+
     def test_iso_defaults_to_the_1_0_0_live_tree(self):
         for name in ["build-iso.sh", "secureboot-efi.sh", "seal-rootfs.sh", "customize-rootfs.sh"]:
             text = (ROOT / "tools/live" / name).read_text()
