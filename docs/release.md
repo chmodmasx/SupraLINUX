@@ -134,7 +134,7 @@ Un gate `BLOCKED` o `INFRA_INVALID` no se convierte en `PASS`. Si un gate no se
 puede completar, la release se detiene o se publica con un alcance menor
 explícitamente documentado, nunca con una afirmación falsa.
 
-## Estado de validación (2026-11-18)
+## Estado de validación (2026-11-19)
 
 - Suite unitaria: `PASS`.
 - 9 paquetes nativos del producto y el paquete sintético: build limpio `PASS`,
@@ -143,7 +143,11 @@ explícitamente documentado, nunca con una afirmación falsa.
   `libkf6coreaddons6`, `libkwin6` y `dolphin` con build limpio `PASS`.
 - Smoke offline: `supralinux-build-test` y `supralinux-base-files` con
   instalación, control negativo y rechazo de índices manipulados `PASS`.
-- Los 176 paquetes fuente y la ISO de release no se construyeron completos.
+- Los 176 paquetes fuente tienen build limpio `PASS` (176/176), con artifact,
+  `.changes`, `.buildinfo`, evidencia y cleanup. El resumen está en
+  `manifests/full-build-results-1.0.0.json`.
+- La ISO de release no se construyó. El build de paquetes no certifica la ISO,
+  Calamares, la instalación ni la recuperación.
 - ISO de humo `8994da94…`: BIOS y UEFI Secure Boot arrancan a Plasma. Es un
   smoke sobre el rootfs anterior, no una release; Calamares y recuperación no
   se probaron en esta ISO. UEFI Secure Boot: `mokutil` y efivar en `1`.
@@ -155,7 +159,7 @@ explícitamente documentado, nunca con una afirmación falsa.
 - No hay snapshot `stable` ni autorización de release.
 
 Esto no es una release validada. Los gates de la tabla siguen pendientes hasta
-completar el build de todos los paquetes y la matriz de ISO.
+completar la ISO de release y su matriz de instalación y recuperación.
 
 ## Publicación
 

@@ -93,9 +93,23 @@ Fuente, binario, `.changes`, `.buildinfo`, logs y hashes se conservan en el
 workspace. Los artifacts se direccionan por SHA-256 en
 `artifacts/sha256/<sha256>/`. El repositorio no guarda binarios ni logs.
 
+## Lote completo
+
+`tools/build_release.py` recorre `manifests/release-1.0.0/` en orden, ejecuta un
+`clean_build.py` por paquete y guarda el estado fuera de Git para poder
+reanudar. Un `FAIL` de paquete no detiene el lote; los `INFRA_INVALID`
+consecutivos sí.
+
+```sh
+python3 tools/build_release.py
+```
+
+El estado queda en `SUPRALINUX_WORKSPACE/state/full-build-1.0.0.json` y los
+logs en `evidence/full-build/`.
+
 ## Estado en el repo nuevo
 
-Las herramientas y sus pruebas unitarias están incorporadas. El primer build
-limpio de 1.0.0 se ejecuta cuando estén disponibles la imagen base, el rootfs y
-la clave pública del repositorio nuevo; hasta entonces no se declara un PASS de
-build.
+Los 176 paquetes fuente de 1.0.0 tienen build limpio `PASS`, con artifact,
+`.changes`, `.buildinfo`, evidencia y cleanup comprobado. El resumen está en
+`manifests/full-build-results-1.0.0.json`. El build de paquetes no certifica la
+ISO, la instalación ni la recuperación.

@@ -226,9 +226,13 @@ manifiesto de release.
   no es un build limpio, no se probó Calamares y no es una release. UEFI
   Secure Boot se verificó con `mokutil` y el efivar en `1`.
   El resumen está en `manifests/smoke-iso-1.0.0.json`.
-- Los 176 paquetes y la ISO de release siguen pendientes de build completo.
-- ISO, instalación y recuperación: pendientes de la clave nueva y del
-  repositorio publicado.
+- Los 176 paquetes fuente: build limpio `PASS` (176/176), con artifact,
+  `.changes`, `.buildinfo`, evidencia y cleanup comprobado. El resumen está en
+  `manifests/full-build-results-1.0.0.json`. Los cierres de `Build-Depends` se
+  reutilizaron como inputs verificados por SHA-256; cada paquete se reconstruyó
+  con el packaging actual.
+- La ISO de release sigue pendiente. El build de los 176 paquetes no certifica
+  la ISO, Calamares, la instalación ni la recuperación.
 
 Un resultado de esta sección no se extrapola a la release completa.
 

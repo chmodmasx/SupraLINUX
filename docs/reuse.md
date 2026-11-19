@@ -56,6 +56,7 @@ certifica un build nuevo ni una release.
 | Herramientas y pruebas | `tools/` y `tests/` | `11c0ea8` | Revisadas; workspace configurable y sin rutas del proyecto anterior | Hecho |
 | Paquete de prueba | `packages/supralinux-build-test` | `11c0ea8` | Versión 0.2.0 y licencia GPL-2.0-or-later | Hecho |
 | Evidencia anterior | `evidence/`, `artifacts/`, `kvm/` | `c6652ae` | Base, rootfs y dependencias admitidos por hash; los PASS son de runs nuevos | Hecho |
+| Cierres de Build-Depends | `artifacts/build-deps/` de la campaña anterior | `3bc1164`, `cf1ca4b` | 106.200 entradas verificadas por SHA-256 y enlazadas al workspace; sólo se usan como inputs, los 176 builds son nuevos | Hecho |
 
 Cada importación actualiza esta tabla en el mismo commit o en el commit de
 documentación inmediatamente posterior.

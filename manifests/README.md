@@ -29,11 +29,14 @@ python3 tools/package_inventory.py --check
 
 `manifests/native-builds-1.0.0.json` resume los builds nativos ejecutados.
 `manifests/stack-builds-1.0.0.json` resume las muestras de Frameworks, Plasma
-y Gear. Cada entrada enlaza su manifiesto, artifact por SHA-256 y run de
-evidencia. `manifests/package-smoke-results-1.0.0.json` resume los smokes offline de
+y Gear. `manifests/full-build-results-1.0.0.json` resume los **176 builds
+limpios** de 1.0.0; cada entrada enlaza su manifiesto, artifact por SHA-256 y
+run de evidencia. Los manifiestos fijados del lote están en
+`manifests/release-1.0.0/`.
+
+`manifests/package-smoke-results-1.0.0.json` resume los smokes offline de
 instalación. `manifests/smoke-iso-1.0.0.json` registra la ISO de humo BIOS/UEFI
-Secure Boot. Todos los estados son `partial` o `smoke`: no cubren los 176
-paquetes ni la ISO de release.
+Secure Boot. El build completo certifica los paquetes, no la ISO ni la release.
 
 ## Build limpio
 
