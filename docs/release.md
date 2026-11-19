@@ -162,15 +162,14 @@ explícitamente documentado, nunca con una afirmación falsa.
   `SUPRALINUX_SECRETS`.
 - Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261119b`
   con 604 binarios y 176 fuentes; publicación `testing` firmada y verificada.
-  Está en el endpoint local de staging y no reemplaza a la instancia anterior.
-  El resumen está en `manifests/aptly-publication-1.0.0.json`.
+  `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly viejo dejó
+  de servirse. El resumen está en `manifests/aptly-publication-1.0.0.json`.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
 Esto no es una release validada. Faltan LUKS2, EXT4, dual-boot, recuperación
 Btrfs y la matriz completa de post-instalación. El gate `Repositorio` tampoco
-está cerrado: `supralinux-stable` sigue vacío y la ruta pública
-`testing.supralinux.com` no se cambió a la instancia nueva.
+está cerrado: `supralinux-stable` sigue vacío.
 
 ## Publicación
 

@@ -39,8 +39,8 @@ class LiveImageTests(unittest.TestCase):
         testing = (ROOT / "installer/apt/supralinux-testing.sources").read_text()
         stable = (ROOT / "installer/apt/supralinux-stable.sources").read_text()
         for text, host, suite in [
-            (testing, "https://testing.supralinux.com/", "testing"),
-            (stable, "https://stable.supralinux.com/", "stable"),
+            (testing, "https://repo.supralinux.com/", "testing"),
+            (stable, "https://repo.supralinux.com/", "stable"),
         ]:
             with self.subTest(suite=suite):
                 self.assertIn(host, text)

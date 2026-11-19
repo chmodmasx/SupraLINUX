@@ -1,5 +1,5 @@
 Types: deb
-URIs: https://stable.supralinux.com/
+URIs: https://repo.supralinux.com/
 Suites: stable
 Components: main
 Architectures: amd64

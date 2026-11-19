@@ -31,7 +31,7 @@
   },
   "endpoints": {
     "staging": "http://127.0.0.1:18080/",
-    "shipped_source": "https://testing.supralinux.com/"
+    "shipped_source": "https://repo.supralinux.com/"
   },
   "verification": {
     "inrelease_signature": "PASS",
@@ -41,8 +41,8 @@
     "source_index_count": 176
   },
   "notes": [
-    "La instancia nueva publica en el puerto local 18080 y no reemplaza a la instancia anterior.",
-    "La ruta p\u00fablica testing.supralinux.com todav\u00eda no se cambi\u00f3; el cambio de NPM/DNS es un paso separado.",
-    "El rootfs de la ISO puede instalar desde el endpoint de staging y conserva la fuente p\u00fablica final."
+    "El host p\u00fablico repo.supralinux.com apunta al Aptly nuevo y sirve la suite testing.",
+    "El Aptly viejo y su stack quedan intactos pero ya no se publican en repo.supralinux.com.",
+    "supralinux-stable sigue vac\u00edo; no hay publicaci\u00f3n stable."
   ]
 }

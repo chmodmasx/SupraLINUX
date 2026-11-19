@@ -268,14 +268,16 @@ firmados no se modifican.
 
 ## D-022 — URLs públicas
 
-**Decisión:** las URLs públicas del proyecto son `supralinux.com`,
-`stable.supralinux.com` y `testing.supralinux.com`.
+**Decisión:** la URL pública del sitio es `supralinux.com` y la del
+repositorio APT es `repo.supralinux.com`. Los canales se separan por suite:
+`testing` y `stable`, no por subdominio.
 
-**Motivo:** separar el sitio de los canales de paquetes y evitar nombres
-internos en la documentación y en la configuración del producto.
+**Motivo:** un solo host de repositorio simplifica DNS, TLS y la configuración
+de APT; la suite sigue separando QA de release.
 
-**Consecuencia:** la documentación y los ejemplos usan esas URLs. La
-infraestructura interna no se publica.
+**Consecuencia:** `supralinux-testing.sources` y `supralinux-stable.sources`
+usan `https://repo.supralinux.com/` con `Suites: testing` o `Suites: stable`.
+La infraestructura interna no se publica.
 
 ## D-023 — Sin promesa de fin de soporte
 
