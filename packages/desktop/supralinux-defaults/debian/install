@@ -1,4 +1,5 @@
 etc/apt etc
+etc/apparmor.d etc
 etc/default etc
 etc/fastfetch etc
 etc/firefox etc

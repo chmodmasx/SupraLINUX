@@ -1,0 +1,21 @@
+# SupraLINUX: Ubuntu 26.04's /etc/apparmor.d/firefox pattern does not attach
+# to the Mozilla .deb at /usr/lib/firefox. Keep exact paths with userns so the
+# Firefox sandbox works with restricted unprivileged user namespaces.
+abi <abi/5.0>,
+include <tunables/global>
+
+profile firefox-supralinux /usr/lib/firefox/firefox flags=(unconfined) {
+  userns,
+
+  @{exec_path} mr,
+
+  include if exists <local/firefox-supralinux>
+}
+
+profile firefox-supralinux-bin /usr/lib/firefox/firefox-bin flags=(unconfined) {
+  userns,
+
+  @{exec_path} mr,
+
+  include if exists <local/firefox-supralinux-bin>
+}

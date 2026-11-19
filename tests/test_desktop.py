@@ -55,6 +55,25 @@ class DesktopIntegrationTests(unittest.TestCase):
         self.assertIn("supralinux-theme (>= 1.0.3)", control)
         self.assertIn("supralinux-base-files (>= 1.0.0)", control)
 
+    def test_defaults_add_the_exact_firefox_apparmor_profile(self):
+        base = ROOT / "packages/desktop/supralinux-defaults"
+        profile = base / "etc/apparmor.d/firefox-supralinux"
+        text = profile.read_text()
+        self.assertIn("profile firefox-supralinux /usr/lib/firefox/firefox", text)
+        self.assertIn("profile firefox-supralinux-bin /usr/lib/firefox/firefox-bin", text)
+        self.assertIn("userns,", text)
+        self.assertIn("etc/apparmor.d etc", (base / "debian/install").read_text())
+        result = subprocess.run(["apparmor_parser", "-Q", "-K", str(profile)],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_defaults_disable_obex_pbap_plugin(self):
+        base = ROOT / "packages/desktop/supralinux-defaults"
+        dropin = base / "etc/systemd/user/obex.service.d/10-supralinux-no-pbap.conf"
+        text = dropin.read_text()
+        self.assertIn("ExecStart=", text)
+        self.assertIn("ExecStart=/usr/libexec/bluetooth/obexd -P pbap", text)
+
     def test_defaults_keep_the_desktop_helpers(self):
         base = ROOT / "packages/desktop/supralinux-defaults"
         for relative in [

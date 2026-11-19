@@ -1,3 +1,15 @@
+supralinux-defaults (1.1.1) resolute; urgency=medium
+
+  * Add an exact-path AppArmor profile for Mozilla's Firefox .deb. The
+    Ubuntu 26.04 firefox profile pattern does not attach to
+    /usr/lib/firefox, which disables user namespaces in the content sandbox
+    under kernel.apparmor_restrict_unprivileged_userns=1.
+  * Disable obexd's PBAP plugin. evolution-data-server is intentionally not
+    installed, so PBAP contact sync is a documented limitation and obexd
+    should not log failed EDS activation at every login.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Thu, 19 Nov 2026 14:10:00 +0000
+
 supralinux-defaults (1.1.0) resolute; urgency=medium
 
   * Refresh the desktop defaults for SupraLINUX 1.0.0 Aurora.

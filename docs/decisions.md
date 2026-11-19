@@ -118,6 +118,12 @@ de Mozilla. Los paquetes `firefox-l10n-es-ar`, `firefox-l10n-es-es` y
 `firefox-l10n-es-mx` se instalan; el inglés queda incorporado. No se usa el
 paquete transicional de Ubuntu ni snap.
 
+El `.deb` de Mozilla en `/usr/lib/firefox` no coincide con el patrón del perfil
+AppArmor de Ubuntu 26.04. Se instala un perfil exacto
+`/etc/apparmor.d/firefox-supralinux` con `userns,` para que el sandbox de
+Firefox conserve los user namespaces con
+`kernel.apparmor_restrict_unprivileged_userns=1`.
+
 ## D-010 — Sin snapd en 1.0.0
 
 **Decisión:** la release no incluye `snapd`. Usa APT, el repositorio propio y
@@ -176,7 +182,8 @@ global produce condiciones de carrera y diálogos fuera de la sesión.
 **Consecuencia:** la cartera está disponible desde el primer inicio. No se
 instala `evolution-data-server` para no desplazar `org.freedesktop.secrets` con
 `gnome-keyring`. La sincronización PBAP de contactos por Bluetooth queda como
-limitación conocida.
+limitación conocida. El plugin `pbap` de `obexd` se deshabilita con
+`-P pbap` para que no intente activar EDS ni registre ese fallo en cada login.
 
 ## D-015 — zram sólo en equipos pequeños
 
