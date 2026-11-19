@@ -25,8 +25,21 @@ if [ ! -s "$root/run/systemd/resolve/stub-resolv.conf" ]; then
         > "$root/run/systemd/resolve/stub-resolv.conf"
 fi
 
-install -m 0644 "$root/usr/share/supralinux/apt/supralinux.sources" \
-        "$root/etc/apt/sources.list.d/supralinux.sources"
+if [ -n "${SUPRALINUX_APT_BUILD_URL:-}" ]; then
+    case "$SUPRALINUX_APT_BUILD_URL" in
+        http://*|https://*) ;;
+        *)
+            echo "Invalid SUPRALINUX_APT_BUILD_URL: $SUPRALINUX_APT_BUILD_URL" >&2
+            exit 1
+            ;;
+    esac
+    sed "s|^URIs:.*|URIs: $SUPRALINUX_APT_BUILD_URL|" \
+        "$root/usr/share/supralinux/apt/supralinux.sources" \
+        > "$root/etc/apt/sources.list.d/supralinux.sources"
+else
+    install -m 0644 "$root/usr/share/supralinux/apt/supralinux.sources" \
+            "$root/etc/apt/sources.list.d/supralinux.sources"
+fi
 install -m 0644 "$root/usr/share/supralinux/apt/mozilla.sources" \
         "$root/etc/apt/sources.list.d/mozilla.sources"
 install -m 0644 "$root/usr/share/supralinux/apt/90-supralinux.pref" \
@@ -144,6 +157,13 @@ NM
 
 # The published SupraLINUX and Mozilla sources stay configured for updates.
 chroot "$root" apt-get clean
+
+# A build-time repository URL is only for installing from a local staging
+# mirror. The shipped sources must always point at the public endpoint.
+if [ -n "${SUPRALINUX_APT_BUILD_URL:-}" ]; then
+    install -m 0644 "$root/usr/share/supralinux/apt/supralinux.sources" \
+            "$root/etc/apt/sources.list.d/supralinux.sources"
+fi
 
 # Calamares itself comes from Ubuntu; the settings, branding and launcher
 # come from supralinux-calamares-config. Do not copy them from the repo here.

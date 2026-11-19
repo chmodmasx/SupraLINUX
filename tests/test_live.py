@@ -62,6 +62,13 @@ class LiveImageTests(unittest.TestCase):
         self.assertIn("supralinux-calamares-config", (ROOT / "packages/desktop/desktop-packages.list").read_text())
         self.assertNotIn("cp -a \"$repo_root/installer/calamares", text)
 
+    def test_customize_can_use_a_build_time_repository_url(self):
+        text = (ROOT / "tools/live/customize-rootfs.sh").read_text()
+        self.assertIn("SUPRALINUX_APT_BUILD_URL", text)
+        self.assertIn("URIs: $SUPRALINUX_APT_BUILD_URL", text)
+        self.assertIn("/etc/apt/sources.list.d/supralinux.sources", text)
+        self.assertIn("http://*|https://*", text)
+
     def test_iso_defaults_to_the_1_0_0_live_tree(self):
         for name in ["build-iso.sh", "secureboot-efi.sh", "seal-rootfs.sh", "customize-rootfs.sh"]:
             text = (ROOT / "tools/live" / name).read_text()

@@ -31,6 +31,11 @@ export SUPRALINUX_APT_CHANNEL=testing
 Elige `supralinux-testing.sources` o `supralinux-stable.sources` según
 `SUPRALINUX_APT_CHANNEL`.
 
+`SUPRALINUX_APT_BUILD_URL` permite instalar desde un mirror de staging, por
+ejemplo el Aptly local en `http://127.0.0.1:18080/`. El rootfs usa esa URL
+durante el build y, antes de sellarse, restaura la fuente pública de
+`supralinux-*.sources`. La ISO no queda apuntando al mirror temporal.
+
 `customize-rootfs.sh` instala el escritorio desde
 `packages/desktop/desktop-packages.list`, configura SDDM, locale, teclado,
 KWallet, red, RAID, los hooks de casper y la recuperación.
