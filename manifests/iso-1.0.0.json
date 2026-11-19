@@ -6,20 +6,21 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO limpia construida desde un rootfs nuevo y el Aptly supralinux-testing. Valida BIOS/UEFI Secure Boot, instalaci\u00f3n Btrfs offline y primer arranque. La matriz LUKS2, EXT4, dual-boot y recuperaci\u00f3n sigue pendiente.",
+  "note": "ISO limpia desde rootfs nuevo y repo.supralinux.com. Valida BIOS/UEFI Secure Boot, Btrfs offline, primer arranque y L5. LUKS2, EXT4, dual-boot y recuperaci\u00f3n siguen pendientes.",
   "iso": {
     "name": "supralinux-aurora-1.0.0-amd64.iso",
-    "sha256": "be806212d0e979b2f45839517e2b15610e36467d466a10064d8c98f6d2216d8d",
-    "bytes": 3152103424,
+    "sha256": "3d17d905ab17be4e8587380f9fadf6e92e26850b77d849cc378773cd91fe3954",
+    "bytes": 3152107520,
     "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64.iso",
-    "build_evidence": "evidence/live/iso-clean-20261119T142359Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-clean-20261119T140652Z.log"
+    "build_evidence": "evidence/live/iso-clean-20261119T153448Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-clean-20261119T152415Z.log"
   },
   "inputs": {
     "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261119b)",
     "installer": "supralinux-calamares-config 1.0.1",
     "kernel": "7.0.0-43-generic",
     "aptly_snapshot": "supralinux-testing-1.0.0-20261119b",
+    "apt_source": "https://repo.supralinux.com/",
     "aptly_manifest": "manifests/aptly-publication-1.0.0.json"
   },
   "tests": [
@@ -27,7 +28,7 @@
       "id": "ISO-BIOS-BOOT",
       "state": "PASS",
       "result": "Arranca a Plasma Wayland y Calamares; instalaci\u00f3n Btrfs ejecutada desde esta ISO.",
-      "evidence": "evidence/installer/bios-btrfs-v3/atspi-4.png"
+      "evidence": "evidence/installer/bios-btrfs-v4/install-start.png"
     },
     {
       "id": "ISO-UEFI-SB",
@@ -38,20 +39,50 @@
     {
       "id": "INSTALL-BTRFS-OFFLINE",
       "state": "PASS",
-      "result": "Calamares 1.0.1 instala en Btrfs sin red; crea subvol\u00famenes @, @home, @snapshots y usuario.",
-      "evidence": "evidence/installer/bios-btrfs-v3/atspi-8.png"
+      "result": "Calamares 1.0.1 instala en Btrfs sin red; crea @, @home, @snapshots y usuario supratest.",
+      "evidence": "evidence/installer/bios-btrfs-v4/install-mid.png"
     },
     {
       "id": "FIRST-BOOT-BTRFS",
       "state": "PASS",
-      "result": "El disco instalado arranca en BIOS, SDDM activo, login de usuario y Plasma Wayland.",
-      "evidence": "evidence/installer/bios-installed/logged.png"
+      "result": "El disco instalado arranca en BIOS, SDDM activo, login supratest y Plasma Wayland.",
+      "evidence": "evidence/installer/bios-installed-v2/desktop.png"
     },
     {
       "id": "TARGET-CLEANUP",
       "state": "PASS",
       "result": "Calamares, casper y supralinux-calamares-config no quedan instalados en el target.",
-      "evidence": "evidence/installer/bios-installed/installed-checks.txt"
+      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+    },
+    {
+      "id": "L5-APT",
+      "state": "PASS",
+      "result": "apt-get update y reinstalaci\u00f3n de supralinux-theme desde https://repo.supralinux.com/ testing.",
+      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+    },
+    {
+      "id": "L5-SNAPPER",
+      "state": "PASS",
+      "result": "snapper lista por D-Bus y --no-dbus; crea snapshot y registra APT pre.",
+      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+    },
+    {
+      "id": "L5-KEYRING",
+      "state": "PASS",
+      "result": "ksecretd expone org.freedesktop.secrets y org.kde.ksecretd en la sesi\u00f3n.",
+      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
+    },
+    {
+      "id": "L5-FIREFOX",
+      "state": "PASS",
+      "result": "Firefox 160.0.1 abre en espa\u00f1ol, con l10n es-AR y sin pedir ser navegador por defecto.",
+      "evidence": "evidence/installer/bios-installed-v2/firefox4.png"
+    },
+    {
+      "id": "L5-SHUTDOWN",
+      "state": "PASS",
+      "result": "systemctl poweroff apaga la VM sin cuelgues; QEMU sale limpio.",
+      "evidence": "evidence/installer/bios-installed-v2/postinstall.log"
     }
   ],
   "observed": {
@@ -59,20 +90,25 @@
     "subvolume": "/@",
     "compression": "zstd:3",
     "bootloader": "GRUB BIOS MBR /dev/vda",
-    "user": "suprap (autogenerado por el nombre completo en la automatizaci\u00f3n AT-SPI)",
+    "user": "supratest",
+    "firefox": "160.0.1~build1",
+    "firefox_l10n": "160.0.1~build1",
+    "snapper_snapshots": [
+      "initial install",
+      "APT pre",
+      "post-install-test"
+    ],
     "installer_removed": [
       "calamares",
       "casper",
       "supralinux-calamares-config"
-    ],
-    "snapper_snapshot": "initial install"
+    ]
   },
   "limitations": [
     "LUKS2 no se prob\u00f3 en esta ISO.",
     "EXT4 no se prob\u00f3 en esta ISO.",
     "Dual-boot con otro sistema operativo no se prob\u00f3.",
     "La recuperaci\u00f3n Btrfs/rollback no se prob\u00f3.",
-    "El login se autogener\u00f3 como suprap porque la automatizaci\u00f3n AT-SPI actualiz\u00f3 la UI pero no el modelo interno del campo de login; la creaci\u00f3n de usuario y el login funcionaron.",
     "No se public\u00f3 stable ni se cre\u00f3 tag."
   ]
 }

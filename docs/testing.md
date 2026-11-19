@@ -231,13 +231,17 @@ manifiesto de release.
   `manifests/full-build-results-1.0.0.json`. Los cierres de `Build-Depends` se
   reutilizaron como inputs verificados por SHA-256; cada paquete se reconstruyó
   con el packaging actual.
-- ISO limpia `be806212…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
+- ISO limpia `3d17d905…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
   `supralinux-testing-1.0.0-20261119b`; BIOS y UEFI Secure Boot hasta Plasma
   `PASS`. UEFI Secure Boot verificado con `mokutil` y efivar `1`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`. Primer arranque en
-  BIOS, SDDM, login de usuario y Plasma Wayland: `PASS`. El target queda en
+  BIOS, SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en
   Btrfs con los subvolúmenes `@`, `@home` y `@snapshots`; Calamares, casper y
   `supralinux-calamares-config` no quedan instalados.
+- L5: `apt-get update` y reinstalación desde `https://repo.supralinux.com/
+  testing` `PASS`; Snapper lista por D-Bus y `--no-dbus`, crea snapshot y
+  registra APT pre; ksecretd expone `org.freedesktop.secrets`; Firefox abre en
+  español sin pedir ser el navegador por defecto; apagado limpio `PASS`.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.

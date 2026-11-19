@@ -146,11 +146,14 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Los 176 paquetes fuente tienen build limpio `PASS` (176/176), con artifact,
   `.changes`, `.buildinfo`, evidencia y cleanup. El resumen está en
   `manifests/full-build-results-1.0.0.json`.
-- ISO limpia `be806212…` construida desde un rootfs nuevo y el snapshot
+- ISO limpia `3d17d905…` construida desde un rootfs nuevo y el snapshot
   `supralinux-testing-1.0.0-20261119b`: BIOS y UEFI Secure Boot `PASS`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`; primer arranque,
-  SDDM, login de usuario y Plasma Wayland: `PASS`. El target queda en Btrfs
+  SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en Btrfs
   (`@`, `@home`, `@snapshots`) y sin Calamares/casper.
+- L5 `PASS`: APT contra `https://repo.supralinux.com/ testing`, Snapper por
+  D-Bus y `--no-dbus`, Secret Service (`ksecretd`), Firefox en español sin
+  prompt de navegador por defecto y apagado limpio.
 - Se corrigió `supralinux-calamares-config` 1.0.0: el módulo `packages` quitaba
   paquetes ausentes y `apt-get` devolvía 100 sin listas APT. La 1.0.1 quedó
   publicada y validada en la instalación.
@@ -167,9 +170,9 @@ explícitamente documentado, nunca con una afirmación falsa.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
-Esto no es una release validada. Faltan LUKS2, EXT4, dual-boot, recuperación
-Btrfs y la matriz completa de post-instalación. El gate `Repositorio` tampoco
-está cerrado: `supralinux-stable` sigue vacío.
+Esto no es una release validada. Faltan LUKS2, EXT4, dual-boot y recuperación
+Btrfs. El gate `Repositorio` tampoco está cerrado: `supralinux-stable` sigue
+vacío.
 
 ## Publicación
 

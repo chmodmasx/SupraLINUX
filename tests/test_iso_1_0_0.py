@@ -15,14 +15,15 @@ class IsoOneZeroTests(unittest.TestCase):
 
     def test_iso_is_pinned_by_sha256_and_size(self):
         self.assertEqual(DATA["iso"]["sha256"],
-                         "be806212d0e979b2f45839517e2b15610e36467d466a10064d8c98f6d2216d8d")
+                         "3d17d905ab17be4e8587380f9fadf6e92e26850b77d849cc378773cd91fe3954")
         self.assertGreater(DATA["iso"]["bytes"], 2 * 1024**3)
         self.assertEqual(DATA["iso"]["name"], "supralinux-aurora-1.0.0-amd64.iso")
 
     def test_bios_uefi_btrfs_and_first_boot_passed(self):
         tests = {item["id"]: item for item in DATA["tests"]}
         for name in ["ISO-BIOS-BOOT", "ISO-UEFI-SB", "INSTALL-BTRFS-OFFLINE",
-                     "FIRST-BOOT-BTRFS", "TARGET-CLEANUP"]:
+                     "FIRST-BOOT-BTRFS", "TARGET-CLEANUP", "L5-APT",
+                     "L5-SNAPPER", "L5-KEYRING", "L5-FIREFOX", "L5-SHUTDOWN"]:
             with self.subTest(name=name):
                 self.assertEqual(tests[name]["state"], "PASS")
                 self.assertFalse(tests[name]["evidence"].startswith("/"))
