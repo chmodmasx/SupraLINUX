@@ -1,3 +1,11 @@
+ark (4:25.12.3-0supralinux2) resolute; urgency=medium
+
+  * Keep the internal viewer window size in its own state group.
+  * Skip the free-space pre-check for multi-volume archives; their listing
+    repeats entries once per volume and overestimates the payload.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 20 Nov 2026 12:00:00 +0000
+
 ark (4:25.12.3-0supralinux1) resolute; urgency=medium
 
   * Package KDE Gear 25.12.3 ark for the SupraLINUX 26.04 campaign.

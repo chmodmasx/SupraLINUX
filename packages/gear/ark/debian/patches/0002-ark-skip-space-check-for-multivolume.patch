@@ -1,0 +1,54 @@
+Description: Skip the free-space pre-check for multi-volume archives
+ The unrar backend lists the same entry once per volume, and Ark sums the
+ full size for every copy. For a multi-volume archive the estimate is
+ therefore several times larger than the real payload, so the
+ pre-extraction check can reject an extraction that would fit. Keep the
+ real extraction path, where the backend reports ENOSPC, and skip the
+ pre-check when the archive is multi-volume.
+Forwarded: no
+Last-Update: 2026-11-20
+
+--- a/kerfuffle/jobs.cpp
++++ b/kerfuffle/jobs.cpp
+@@ -404,11 +404,16 @@
+     // Block extraction if there's no space on the device.
+     // Probably we need to take into account a small delta too,
+     // so, free space + 1% just for the sake of it.
+-    QStorageInfo destinationStorage(m_destination);
+-    if (m_loadJob->extractedFilesSize() * 1.01 > destinationStorage.bytesAvailable()) {
+-        onError(xi18n("No space available on device <filename>%1</filename>", m_destination), QString(), Kerfuffle::DestinationNotWritableError);
+-        onFinished(false);
+-        return;
++    // Multi-volume listings repeat every entry once per volume, so the
++    // accumulated size is not a reliable estimate. Let the backend report a
++    // real ENOSPC error instead of rejecting a valid extraction.
++    if (!archiveInterface()->isMultiVolume()) {
++        QStorageInfo destinationStorage(m_destination);
++        if (m_loadJob->extractedFilesSize() * 1.01 > destinationStorage.bytesAvailable()) {
++            onError(xi18n("No space available on device <filename>%1</filename>", m_destination), QString(), Kerfuffle::DestinationNotWritableError);
++            onFinished(false);
++            return;
++        }
+     }
+ 
+     // Now we can start extraction.
+@@ -575,12 +580,13 @@
+         }
+     }
+ 
+-    QStorageInfo destinationStorage(m_destinationDir);
+-
+-    if (totalUncompressedSize > static_cast<qulonglong>(destinationStorage.bytesAvailable())) {
+-        onError(xi18n("No space available on device <filename>%1</filename>", m_destinationDir), QString(), Kerfuffle::DestinationNotWritableError);
+-        onFinished(false);
+-        return;
++    if (!archiveInterface()->isMultiVolume()) {
++        QStorageInfo destinationStorage(m_destinationDir);
++        if (totalUncompressedSize > static_cast<qulonglong>(destinationStorage.bytesAvailable())) {
++            onError(xi18n("No space available on device <filename>%1</filename>", m_destinationDir), QString(), Kerfuffle::DestinationNotWritableError);
++            onFinished(false);
++            return;
++        }
+     }
+ 
+     bool ret = archiveInterface()->extractFiles(m_entries, m_destinationDir, m_options);
