@@ -2,7 +2,7 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-base-files",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "architecture": "all",
   "source": {
     "kind": "native",
@@ -10,7 +10,7 @@
     "original_commit": "a3a0300218bca06e45b333190e2f0fc4c88d62b2",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-base-files_1.0.1.dsc"
+    "dsc_name": "supralinux-base-files_1.0.2.dsc"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",

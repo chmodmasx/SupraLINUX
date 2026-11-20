@@ -29,8 +29,11 @@ class DesktopIntegrationTests(unittest.TestCase):
         self.assertEqual(values["VERSION"], "1.0.0 (Aurora)")
         self.assertEqual(values["SUPRALINUX_VERSION"], "1.0.0")
         self.assertEqual(values["SUPRALINUX_CODENAME"], "aurora")
+        self.assertEqual(values["BUG_REPORT_URL"], "https://supralinux.com/bugs")
         self.assertNotIn("SUPPORT_END", values)
         self.assertIn("DISTRIB_ID=SupraLINUX", (base / "usr/share/supralinux/base-files/lsb-release").read_text())
+        self.assertIn("https://supralinux.com/bugs",
+                      (base / "usr/share/supralinux/base-files/10-help-text").read_text())
 
     def test_os_release_logo_resolves_to_a_branded_icon(self):
         values = os_release(ROOT / "packages/desktop/supralinux-base-files/usr/lib/os-release")

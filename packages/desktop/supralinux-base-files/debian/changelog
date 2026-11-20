@@ -1,3 +1,10 @@
+supralinux-base-files (1.0.2) resolute; urgency=medium
+
+  * Point BUG_REPORT_URL and the MOTD bugs link at the clean /bugs URL,
+    now served by the website without a .html suffix.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 20 Nov 2026 13:20:00 +0000
+
 supralinux-base-files (1.0.1) resolute; urgency=medium
 
   * Point LOGO in os-release at the distributor-logo icon shipped by

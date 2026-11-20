@@ -1,4 +1,4 @@
 #!/bin/sh
 printf "\n"
 printf " * Homepage: https://supralinux.com/\n"
-printf " * Bugs:     https://supralinux.com/bugs.html\n"
+printf " * Bugs:     https://supralinux.com/bugs\n"
