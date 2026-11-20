@@ -45,13 +45,14 @@ unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
   --setuid=0 --setgid=0 \
   mmdebstrap --mode=unshare --variant=minbase \
   --components=main,universe,restricted,multiverse \
-  --include=linux-image-generic,casper,squashfs-tools,systemd-sysv,initramfs-tools,sudo,dbus,polkitd,pkexec,fonts-dejavu-core,libgl1-mesa-dri,network-manager,ca-certificates,xkb-data,console-setup,keyboard-configuration,qemu-guest-agent \
+  --include=linux-image-generic=7.0.0-43.43,casper,squashfs-tools,systemd-sysv,initramfs-tools,sudo,dbus,polkitd,pkexec,fonts-dejavu-core,libgl1-mesa-dri,network-manager,ca-certificates,xkb-data,console-setup,keyboard-configuration,qemu-guest-agent \
   --setup-hook="$REPO/tools/live/setup-repo.sh" \
   --customize-hook="$REPO/tools/live/customize-rootfs.sh" \
   resolute "$ROOTFS"
 ```
 
-La versión exacta del kernel se fija en el manifiesto del build. No se instala
+La versión exacta del kernel se fija en el comando y en el manifiesto del build
+(`linux-image-generic=7.0.0-43.43`; `resolute-security` conserva esa versión). No se instala
 `calamares-settings-kubuntu`; la configuración viene de
 `supralinux-calamares-config` y la identidad de `supralinux-base-files`.
 
@@ -142,6 +143,7 @@ Comprobaciones:
 - Sesión `plasma.desktop` en Wayland, `kwin_wayland`, XWayland, `plasmashell`
   y `systemsettings`.
 - `supralinux-base-files` presente y `ID=supralinux`.
+- `LOGO=distributor-logo` y el icono `distributor-logo` presente en el tema.
 - Firefox abre y tiene español.
 - Calamares abre y ve los discos.
 - La entrada Recovery arranca en multi-user y permite `supralinux-recover`.

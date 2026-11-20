@@ -298,3 +298,32 @@ soporte que dependa de Ubuntu, KDE y del tiempo disponible.
 **Consecuencia:** la documentación informa que las actualizaciones de seguridad
 siguen el ciclo de Ubuntu 26.04 mientras el proyecto se mantenga, sin SLA ni
 fecha garantizada.
+
+## D-024 — Logo de os-release resuelto en el tema
+
+**Decisión:** `LOGO=distributor-logo` en `os-release`. Ese nombre lo instala
+`supralinux-branding` y su contenido es idéntico al logo `supralinux-color`.
+
+**Motivo:** `LOGO=supralinux` no tenía un icono instalado y KDE mostraba una
+imagen rota en “Acerca de este sistema”.
+
+**Consecuencia:** el test `test_os_release_logo_resolves_to_a_branded_icon`
+falla si el nombre de `LOGO` no existe en el tema. No se duplica el archivo.
+
+## D-025 — WiFi live: límite de plasma-nm en la primera conexión
+
+**Decisión:** no se aplica un parche local a `plasma-nm` en 1.0.0. Se documenta
+el límite y el workaround; la corrección corresponde aguas arriba.
+
+**Motivo:** en una red sin perfil guardado, el ítem del applet conserva el
+`AccessPoint` del escaneo. `NetworkModel::wirelessNetworkReferenceApChanged()`
+sólo actualiza `specificPath` cuando existe una conexión guardada. Si el AP de
+referencia cambia mientras el diálogo de contraseña está abierto, NM responde
+`specific_object_not_found` (“The access point ... was not in the scan list”).
+En un sistema instalado el perfil ya existe y el camino se refresca; en live
+no. La pila de usuarios (NetworkManager, wpa_supplicant, firmware, regdb y
+configuración) coincide con Kubuntu 26.04.
+
+**Consecuencia:** en live, conectar con `nmcli device wifi connect "<SSID>"
+--ask` o `nmtui`. Calamares conserva el perfil del live en el sistema instalado
+con `networkcfg`. Se reevalúa si upstream publica la corrección.
