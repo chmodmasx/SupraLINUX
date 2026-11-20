@@ -1,3 +1,11 @@
+supralinux-defaults (1.1.3) resolute; urgency=medium
+
+  * Set Gwenview's mouse wheel behavior to Zoom in the system-wide
+    gwenviewrc. Users can still override it from Preferences; an explicit
+    user setting wins over /etc/xdg.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 20 Nov 2026 13:30:00 +0000
+
 supralinux-defaults (1.1.2) resolute; urgency=medium
 
   * Exclude obexd's legacy IRMC plugin together with PBAP. Both initialize

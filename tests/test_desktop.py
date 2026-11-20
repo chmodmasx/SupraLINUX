@@ -77,6 +77,12 @@ class DesktopIntegrationTests(unittest.TestCase):
                                 capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def test_defaults_set_gwenview_wheel_to_zoom(self):
+        base = ROOT / "packages/desktop/supralinux-defaults"
+        config = (base / "etc/xdg/gwenviewrc").read_text()
+        self.assertIn("[ImageView]", config)
+        self.assertIn("MouseWheelBehavior=2", config)
+
     def test_defaults_disable_obex_pbap_plugin(self):
         base = ROOT / "packages/desktop/supralinux-defaults"
         dropin = base / "etc/systemd/user/obex.service.d/10-supralinux-no-eds.conf"
