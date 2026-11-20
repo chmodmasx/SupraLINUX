@@ -6,50 +6,63 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO limpia desde rootfs nuevo y repo.supralinux.com. Incluye supralinux-base-files 1.0.1 con LOGO=distributor-logo y revalida BIOS/UEFI Secure Boot, identidad y Acerca de este sistema. La matriz de instalaci\u00f3n Btrfs/L5 se valid\u00f3 sobre la ISO candidata anterior; ver regression_scope. LUKS2, EXT4, dual-boot y recuperaci\u00f3n siguen pendientes.",
-  "regression_scope": "BIOS y UEFI Secure Boot se revalidaron sobre esta ISO (supralinux-base-files 1.0.1, LOGO=distributor-logo, kernel 7.0.0-43.43). La instalaci\u00f3n Btrfs, primer arranque y L5 se validaron sobre la ISO candidata anterior (base-files 1.0.0); el delta es s\u00f3lo os-release y el icono ya instalado por supralinux-branding.",
+  "note": "ISO limpia desde rootfs nuevo y repo.supralinux.com. Incluye supralinux-base-files 1.0.1 (LOGO=distributor-logo) y ark 4:25.12.3-0supralinux2 (visor con estado propio y extracción multivolumen sin falso ENOSPC). Revalida BIOS/UEFI Secure Boot, identidad, logo, visor de Ark y RAR multivolumen. La matriz de instalación Btrfs/L5 se validó sobre la ISO candidata anterior; ver regression_scope. LUKS2, EXT4, dual-boot y recuperación siguen pendientes.",
+  "regression_scope": "BIOS y UEFI Secure Boot se revalidaron sobre esta ISO (supralinux-base-files 1.0.1, ark 4:25.12.3-0supralinux2, kernel 7.0.0-43.43). La instalación Btrfs, primer arranque y L5 se validaron sobre la ISO candidata del 19/11 (base-files 1.0.0); los deltas acumulados son os-release/LOGO y Ark (visor/multivolumen), ninguno afecta al instalador.",
   "iso": {
     "name": "supralinux-aurora-1.0.0-amd64.iso",
-    "sha256": "0941c1f97967b0c93728ab478f07db0bc0ebd33d153ef2ede0e1efd4973104a0",
-    "bytes": 3152121856,
+    "sha256": "93f2fef41e11de6509162298b15892e8d329c93f7a86d5d594f061de7708fb9d",
+    "bytes": 3152117760,
     "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64.iso",
-    "build_evidence": "evidence/live/iso-clean-20261120T022454Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-clean-20261120T021523Z.log"
+    "build_evidence": "evidence/live/iso-clean-20261120T044138Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-clean-20261120T043214Z.log"
   },
   "inputs": {
-    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261120b)",
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261120c)",
     "installer": "supralinux-calamares-config 1.0.1",
     "defaults": "supralinux-defaults 1.1.2",
     "kernel": "7.0.0-43-generic",
-    "aptly_snapshot": "supralinux-testing-1.0.0-20261120b",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261120c",
     "apt_source": "https://repo.supralinux.com/",
     "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
-    "base_files": "supralinux-base-files 1.0.1"
+    "base_files": "supralinux-base-files 1.0.1",
+    "ark": "ark 4:25.12.3-0supralinux2"
   },
   "tests": [
     {
       "id": "ISO-BIOS-BOOT",
       "state": "PASS",
-      "result": "Arranca en BIOS a Plasma Wayland; base-files 1.0.1 y Acerca de este sistema con el logo SL.",
-      "evidence": "evidence/live/bios-logo-20261120b/about.png"
+      "result": "Arranca en BIOS a Plasma Wayland; ark 0supralinux2, base-files 1.0.1 y visor de Ark en 1000×700.",
+      "evidence": "evidence/live/bios-ark-20261120/ark-viewer.png"
     },
     {
       "id": "ISO-UEFI-SB",
       "state": "PASS",
-      "result": "mokutil SecureBoot enabled; efivar SecureBoot=1; Plasma Wayland; logo SL en Acerca de este sistema.",
-      "evidence": "evidence/live/uefi-sb-logo-20261120/about.png"
+      "result": "mokutil SecureBoot enabled; efivar SecureBoot=1; ark 0supralinux2 y logo SL en Acerca de este sistema.",
+      "evidence": "evidence/live/uefi-sb-ark-20261120/about.png"
     },
     {
       "id": "LIVE-IDENTITY",
       "state": "PASS",
-      "result": "Live UEFI Secure Boot: supralinux-base-files 1.0.1, LOGO=distributor-logo, icono distributor-logo presente, kernel 7.0.0-43.43.",
-      "evidence": "evidence/live/uefi-sb-logo-20261120/checks.txt"
+      "result": "Live UEFI Secure Boot: ark 4:25.12.3-0supralinux2, supralinux-base-files 1.0.1, LOGO=distributor-logo, kernel 7.0.0-43.43.",
+      "evidence": "evidence/live/uefi-sb-ark-20261120/checks.txt"
     },
     {
       "id": "LIVE-ABOUT-LOGO",
       "state": "PASS",
-      "result": "Acerca de este sistema muestra el logo SL en BIOS (bios-logo-20261120b/about.png) y en UEFI Secure Boot (uefi-sb-logo-20261120/about.png).",
-      "evidence": "evidence/live/bios-logo-20261120b/about.png"
+      "result": "Acerca de este sistema muestra el logo SL en BIOS y en UEFI Secure Boot con la ISO nueva.",
+      "evidence": "evidence/live/uefi-sb-ark-20261120/about.png"
+    },
+    {
+      "id": "LIVE-ARK-VIEWER",
+      "state": "PASS",
+      "result": "El visor interno de Ark restaura 1000×700 desde [Viewer] y conserva el tamaño al cerrar y reabrir Ark.",
+      "evidence": "evidence/live/bios-ark-20261120/ark-viewer.png"
+    },
+    {
+      "id": "LIVE-ARK-MULTIVOLUME",
+      "state": "PASS",
+      "result": "RAR de 4 volúmenes: 3 MB reales, 12 MB estimados; extraído a un tmpfs de 5 MB con ark --batch (3 MB, rc=0).",
+      "evidence": "evidence/live/bios-ark-20261120/ark-rar.txt"
     },
     {
       "id": "INSTALL-BTRFS-OFFLINE",
@@ -72,7 +85,7 @@
     {
       "id": "L5-APT",
       "state": "PASS",
-      "result": "apt-get update y reinstalaci\u00f3n de supralinux-theme desde https://repo.supralinux.com/ testing.",
+      "result": "apt-get update y reinstalación de supralinux-theme desde https://repo.supralinux.com/ testing.",
       "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
     },
     {
@@ -84,13 +97,13 @@
     {
       "id": "L5-KEYRING",
       "state": "PASS",
-      "result": "ksecretd expone org.freedesktop.secrets y org.kde.ksecretd en la sesi\u00f3n.",
+      "result": "ksecretd expone org.freedesktop.secrets y org.kde.ksecretd en la sesión.",
       "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
     },
     {
       "id": "L5-FIREFOX",
       "state": "PASS",
-      "result": "Firefox 160.0.1 abre en espa\u00f1ol, con l10n es-AR, sin pedir navegador por defecto y con sandbox userns.",
+      "result": "Firefox 160.0.1 abre en español, con l10n es-AR, sin pedir navegador por defecto y con sandbox userns.",
       "evidence": "evidence/installer/bios-installed-v5/firefox.png"
     },
     {
@@ -131,11 +144,11 @@
     ]
   },
   "limitations": [
-    "LUKS2 no se prob\u00f3 en esta ISO.",
-    "EXT4 no se prob\u00f3 en esta ISO.",
-    "Dual-boot con otro sistema operativo no se prob\u00f3.",
-    "La recuperaci\u00f3n Btrfs/rollback no se prob\u00f3.",
-    "No se public\u00f3 stable ni se cre\u00f3 tag.",
-    "La instalaci\u00f3n Btrfs, primer arranque y L5 no se repitieron completas sobre esta ISO; el delta es s\u00f3lo os-release/LOGO."
+    "LUKS2 no se probó en esta ISO.",
+    "EXT4 no se probó en esta ISO.",
+    "Dual-boot con otro sistema operativo no se probó.",
+    "La recuperación Btrfs/rollback no se probó.",
+    "No se publicó stable ni se creó tag.",
+    "La instalación Btrfs, primer arranque y L5 no se repitieron completas sobre esta ISO; los deltas son os-release/LOGO y Ark."
   ]
 }

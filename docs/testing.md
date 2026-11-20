@@ -231,8 +231,8 @@ manifiesto de release.
   `manifests/full-build-results-1.0.0.json`. Los cierres de `Build-Depends` se
   reutilizaron como inputs verificados por SHA-256; cada paquete se reconstruyó
   con el packaging actual.
-- ISO limpia `0941c1f9…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
-  `supralinux-testing-1.0.0-20261120b`; BIOS y UEFI Secure Boot hasta Plasma
+- ISO limpia `93f2fef4…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
+  `supralinux-testing-1.0.0-20261120c`; BIOS y UEFI Secure Boot hasta Plasma
   `PASS`. UEFI Secure Boot verificado con `mokutil` y efivar `1`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`. Primer arranque en
   BIOS, SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en

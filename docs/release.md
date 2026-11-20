@@ -146,10 +146,13 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Los 176 paquetes fuente tienen build limpio `PASS` (176/176), con artifact,
   `.changes`, `.buildinfo`, evidencia y cleanup. El resumen está en
   `manifests/full-build-results-1.0.0.json`.
-- ISO limpia `0941c1f9…` construida desde un rootfs nuevo y el snapshot
-  `supralinux-testing-1.0.0-20261120b`: BIOS y UEFI Secure Boot `PASS`.
+- ISO limpia `93f2fef4…` construida desde un rootfs nuevo y el snapshot
+  `supralinux-testing-1.0.0-20261120c`: BIOS y UEFI Secure Boot `PASS`.
 - `supralinux-base-files 1.0.1`: `LOGO=distributor-logo`; Acerca de este
   sistema muestra el logo SL en BIOS y UEFI Secure Boot.
+- `ark 25.12.3-0supralinux2`: el visor interno conserva su tamaño entre
+  sesiones y la extracción de RAR multivolumen no se bloquea por el tamaño
+  estimado inflado.
 - La instalación Btrfs y L5 se validaron sobre la ISO candidata anterior;
   el delta de esta ISO es sólo `os-release`/LOGO. Ver `regression_scope` en
   `manifests/iso-1.0.0.json`.
@@ -171,7 +174,7 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261120b`
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261120c`
   con 604 binarios y 176 fuentes; publicación `testing` firmada y verificada.
   `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly viejo dejó
   de servirse. El resumen está en `manifests/aptly-publication-1.0.0.json`.
