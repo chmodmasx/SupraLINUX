@@ -245,6 +245,12 @@ manifiesto de release.
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en
   `evidence/live/gwenview-default-20261120/`.
+- ISO candidata `1c79f343…`
+  (`supralinux-aurora-1.0.0-amd64-20261120T134809Z-g6e17fa1.iso`): BIOS y
+  UEFI Secure Boot `PASS`; `BUG_REPORT_URL=/bugs` responde 200 desde la VM;
+  Gwenview abre en 33% y la rueda lo lleva a 94%; Preferencias muestra
+  “Ampliar”. Evidencia en `evidence/live/bios-20261120f/` y
+  `evidence/live/uefi-sb-20261120f/`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`. Primer arranque en
   BIOS, SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en
   Btrfs con los subvolúmenes `@`, `@home` y `@snapshots`; Calamares, casper y

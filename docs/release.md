@@ -179,6 +179,12 @@ explícitamente documentado, nunca con una afirmación falsa.
 - La ISO `93f2fef4…` se construyó antes de la convención de nombres de
   candidato y conserva el nombre limpio; la candidata nueva ya usa
   fecha/commit.
+- ISO candidata `1c79f343…`
+  (`supralinux-aurora-1.0.0-amd64-20261120T134809Z-g6e17fa1.iso`)
+  construida desde un rootfs nuevo y el snapshot `20261120f`: BIOS y UEFI
+  Secure Boot `PASS`, `BUG_REPORT_URL=/bugs`, `supralinux-defaults 1.1.3`
+  con la rueda de Gwenview en Ampliar y el logo SL en Acerca de este sistema.
+  Ark y RAR conservan el mismo paquete validado en la ISO anterior.
 - `supralinux-base-files 1.0.1`: `LOGO=distributor-logo`; Acerca de este
   sistema muestra el logo SL en BIOS y UEFI Secure Boot.
 - `ark 25.12.3-0supralinux2`: el visor interno conserva su tamaño entre

@@ -6,57 +6,70 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO candidata desde rootfs nuevo y repo.supralinux.com. Incluye supralinux-base-files 1.0.1 (LOGO=distributor-logo) y ark 4:25.12.3-0supralinux3 (visor 800x600 por defecto, estado propio y extraccion multivolumen sin falso ENOSPC). Revalida BIOS/UEFI Secure Boot, identidad, logo, visor de Ark y RAR multivolumen. La matriz de instalacion Btrfs/L5 se valido sobre la ISO candidata anterior; ver regression_scope. LUKS2, EXT4, dual-boot y recuperacion siguen pendientes.",
-  "regression_scope": "BIOS y UEFI Secure Boot se revalidaron sobre esta ISO (supralinux-base-files 1.0.1, ark 4:25.12.3-0supralinux3, kernel 7.0.0-43.43). La instalacion Btrfs, primer arranque y L5 se validaron sobre la ISO candidata del 19/11 (base-files 1.0.0); los deltas acumulados son os-release/LOGO y Ark (visor/multivolumen), ninguno afecta al instalador.",
+  "note": "ISO candidata desde rootfs nuevo y repo.supralinux.com. Incluye supralinux-base-files 1.0.2 (BUG_REPORT_URL=https://supralinux.com/bugs, LOGO=distributor-logo), supralinux-defaults 1.1.3 (rueda de Gwenview en Ampliar) y ark 4:25.12.3-0supralinux3 (visor 800x600 por defecto, estado propio y extraccion multivolumen sin falso ENOSPC). Revalida BIOS/UEFI Secure Boot, identidad, logo, URL limpia /bugs y Gwenview; Ark y RAR se validaron en la ISO anterior con el mismo paquete. La matriz de instalacion Btrfs/L5 se valido sobre una ISO candidata anterior; ver regression_scope. LUKS2, EXT4, dual-boot y recuperacion siguen pendientes.",
+  "regression_scope": "BIOS y UEFI Secure Boot se revalidaron sobre esta ISO (supralinux-base-files 1.0.2, supralinux-defaults 1.1.3, ark 4:25.12.3-0supralinux3, kernel 7.0.0-43.43). La instalacion Btrfs, primer arranque y L5 se validaron sobre la ISO candidata del 19/11 (base-files 1.0.0); los deltas acumulados son os-release/LOGO, BUG_REPORT_URL, gwenviewrc y Ark (visor/multivolumen), ninguno afecta al instalador. No se repite la matriz completa de instalacion sobre esta ISO.",
   "iso": {
-    "name": "supralinux-aurora-1.0.0-amd64-20261120T061139Z-g25bf91c.iso",
-    "sha256": "fef5990ffffdeb14e1879546d0e1b067ad02d37f71b709793369a3722d57ab9b",
-    "bytes": 3152121856,
-    "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64-20261120T061139Z-g25bf91c.iso",
-    "build_evidence": "evidence/live/iso-clean-20261120T061139Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-clean-20261120T060444Z.log"
+    "name": "supralinux-aurora-1.0.0-amd64-20261120T134809Z-g6e17fa1.iso",
+    "sha256": "1c79f343c860d80b17f8a40aa218a991942698d617a9a636c7f56b19152b7901",
+    "bytes": 3152107520,
+    "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64-20261120T134809Z-g6e17fa1.iso",
+    "build_evidence": "evidence/live/iso-clean-20261120T134809Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-clean-20261120T133853Z.log"
   },
   "inputs": {
-    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261120d)",
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261120f)",
     "installer": "supralinux-calamares-config 1.0.1",
-    "defaults": "supralinux-defaults 1.1.2",
+    "defaults": "supralinux-defaults 1.1.3",
     "kernel": "7.0.0-43-generic",
-    "aptly_snapshot": "supralinux-testing-1.0.0-20261120d",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261120f",
     "apt_source": "https://repo.supralinux.com/",
     "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
-    "base_files": "supralinux-base-files 1.0.1",
-    "ark": "ark 4:25.12.3-0supralinux3"
+    "base_files": "supralinux-base-files 1.0.2",
+    "ark": "ark 4:25.12.3-0supralinux3",
+    "gwenview": "gwenview 4:25.12.3-0supralinux1"
   },
   "tests": [
     {
       "id": "ISO-BIOS-BOOT",
       "state": "PASS",
-      "result": "Arranca en BIOS a Plasma Wayland; ark 0supralinux3, base-files 1.0.1 y visor de Ark en 800x600 por defecto.",
-      "evidence": "evidence/live/bios-ark3-20261120/viewer.png"
+      "result": "Arranca en BIOS a Plasma Wayland; ark 0supralinux3, base-files 1.0.2, defaults 1.1.3 y visor de Gwenview con rueda en Ampliar (33% a 94%).",
+      "evidence": "evidence/live/bios-20261120f/gwenview-wheel-up.png"
     },
     {
       "id": "ISO-UEFI-SB",
       "state": "PASS",
-      "result": "mokutil SecureBoot enabled; ark 0supralinux3 y logo SL en Acerca de este sistema.",
-      "evidence": "evidence/live/uefi-sb-ark3-20261120/about.png"
+      "result": "mokutil SecureBoot enabled; base-files 1.0.2, defaults 1.1.3, BUG_REPORT_URL=/bugs y logo SL en Acerca de este sistema.",
+      "evidence": "evidence/live/uefi-sb-20261120f/about.png"
     },
     {
       "id": "LIVE-IDENTITY",
       "state": "PASS",
-      "result": "Live UEFI Secure Boot: ark 4:25.12.3-0supralinux3, supralinux-base-files 1.0.1, LOGO=distributor-logo, kernel 7.0.0-43.43.",
-      "evidence": "evidence/live/uefi-sb-ark3-20261120/checks.txt"
+      "result": "Live UEFI Secure Boot: ark 4:25.12.3-0supralinux3, base-files 1.0.2, defaults 1.1.3, BUG_REPORT_URL=https://supralinux.com/bugs, LOGO=distributor-logo, kernel 7.0.0-43.43; /bugs responde 200.",
+      "evidence": "evidence/live/uefi-sb-20261120f/checks.txt"
     },
     {
       "id": "LIVE-ABOUT-LOGO",
       "state": "PASS",
       "result": "Acerca de este sistema muestra el logo SL en BIOS y en UEFI Secure Boot con la ISO nueva.",
-      "evidence": "evidence/live/uefi-sb-ark3-20261120/about.png"
+      "evidence": "evidence/live/uefi-sb-20261120f/about.png"
     },
     {
       "id": "LIVE-ARK-VIEWER",
       "state": "PASS",
-      "result": "Sin tamano guardado el visor abre en 800x600; con 600x420 guardado lo restaura tras cerrar y reabrir. Validado en la ISO (800x600) y con el paquete en VM desechable (600x420).",
+      "result": "Paquete 0supralinux3 revalidado en la ISO anterior; el visor abre en 800x600 y conserva el tamano. La ISO nueva incluye el mismo paquete.",
       "evidence": "evidence/live/bios-ark3-20261120/viewer.png"
+    },
+    {
+      "id": "LIVE-GWENVIEW-WHEEL",
+      "state": "PASS",
+      "result": "Con /etc/xdg/gwenviewrc de defaults 1.1.3, la rueda amplia por defecto: 33% -> 94%; Preferencias muestra Ampliar. Una preferencia explicita de Desplazamiento sigue ganando.",
+      "evidence": "evidence/live/bios-20261120f/gwenview-settings-imageview.png"
+    },
+    {
+      "id": "LIVE-WEB-CLEAN-URLS",
+      "state": "PASS",
+      "result": "Desde la ISO, https://supralinux.com/bugs responde 200; la web sirve URLs limpias y redirige /bugs.html con 301.",
+      "evidence": "evidence/live/bios-20261120f/checks.txt"
     },
     {
       "id": "LIVE-ARK-VIEWER-PERSIST",
@@ -67,7 +80,7 @@
     {
       "id": "LIVE-ARK-MULTIVOLUME",
       "state": "PASS",
-      "result": "RAR de 4 volumenes: 3 MB reales, 12 MB estimados; extraido a un tmpfs de 5 MB con ark --batch (3 MB, rc=0).",
+      "result": "RAR de 4 volumenes extraido a tmpfs de 5 MB con ark --batch (3 MB, rc=0) en la ISO anterior; la ISO nueva incluye el mismo paquete.",
       "evidence": "evidence/live/bios-ark3-20261120/ark-rar.txt"
     },
     {
@@ -155,6 +168,7 @@
     "Dual-boot con otro sistema operativo no se probo.",
     "La recuperacion Btrfs/rollback no se probo.",
     "No se publico stable ni se creo tag.",
-    "La instalacion Btrfs, primer arranque y L5 no se repitieron completas sobre esta ISO; los deltas son os-release/LOGO y Ark."
+    "La instalacion Btrfs, primer arranque y L5 no se repitieron completas sobre esta ISO; los deltas son os-release/LOGO, BUG_REPORT_URL, gwenviewrc y Ark.",
+    "No se integro envio automatico desde DrKonqi; el formulario web sigue siendo el canal."
   ]
 }
