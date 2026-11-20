@@ -330,21 +330,24 @@ con `networkcfg`. Se reevalúa si upstream publica la corrección.
 
 ## D-026 — Ark: visor con estado propio y multivolumen sin falso ENOSPC
 
-**Decisión:** se mantiene un parche local en `ark`:
+**Decisión:** se mantienen dos parches locales en `ark`:
 
-- `ArkViewer` usa `setStateConfigGroup("Viewer")` para guardar su tamaño y
-  posición en un grupo propio de `arkstaterc`.
+- `ArkViewer` abre en 800×600 cuando no hay tamaño guardado —pasando la
+  geometría del `.ui` a `setupGUI(size(), ToolBar)`— y usa
+  `setStateConfigGroup("Viewer")` para guardar su tamaño y posición en un
+  grupo propio de `arkstaterc`.
 - Los chequeos de espacio previos a la extracción se omiten cuando el
   archivo es multivolumen; el backend sigue reportando un ENOSPC real.
 
-**Motivo:** el visor interno abría en su tamaño mínimo y no recordaba el
-tamaño entre sesiones de Ark. Además, el listado de un RAR multivolumen
-repite cada entrada una vez por volumen e infla el tamaño estimado (4
-entradas de 3 MiB para un archivo de 3 MiB), bloqueando extracciones que
-sí caben.
+**Motivo:** `setupGUI(ToolBar)` llamaba `adjustSize()` con la ventana vacía
+y el visor abría en su tamaño mínimo (~224×148), sin recordar el tamaño
+entre sesiones de Ark. Además, el listado de un RAR multivolumen repite
+cada entrada una vez por volumen e infla el tamaño estimado (4 entradas de
+3 MiB para un archivo de 3 MiB), bloqueando extracciones que sí caben.
 
-**Consecuencia:** el parche no está upstream (Ark master, 26.08.3 y
-26.04.3 mantienen el código); se revisa al actualizar Ark. El visor
-conserva su tamaño entre sesiones y la extracción real sigue fallando si
-de verdad falta espacio. Probado en VM desechable con un RAR de 4
-volúmenes y un tmpfs de 5 MiB.
+**Consecuencia:** el fix de tamaño es el backport del MR upstream !360 (KDE
+bug 503213, Ark 26.12); el de multivolumen sigue local. Se revisan al
+actualizar Ark. El visor abre en 800×600 por defecto, conserva el tamaño
+elegido entre sesiones y la extracción real sigue fallando si de verdad
+falta espacio. Probado en VM desechable con un RAR de 4 volúmenes y un
+tmpfs de 5 MiB, y con apertura, resize, cierre y reapertura del visor.

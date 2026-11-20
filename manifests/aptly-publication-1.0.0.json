@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261120c",
-  "snapshot_created_at": "2026-11-20T04:31:51Z",
+  "snapshot": "supralinux-testing-1.0.0-20261120d",
+  "snapshot_created_at": "2026-11-20T05:58:00Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -35,8 +35,8 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "4676ca2bdd6f6103ad82e323c67f0aeab4285d4ccd4a2b2b39e26180fad3cc98",
-    "release_sha256": "1ec3d10fad279b11f63b2b8ee5d04f8ab10555c08bb04ed332d2f0e11531d63d",
+    "inrelease_sha256": "cdc20324be6b6a076846f1ac5ba8bb7f6e1385bedf97a9e05a2a42b5d3f9559a",
+    "release_sha256": "34be6d11e61270d3d8249627aacaec3a1127954fe60ec01dd5f49981a653919f",
     "binary_index_count": 604,
     "source_index_count": 176
   },

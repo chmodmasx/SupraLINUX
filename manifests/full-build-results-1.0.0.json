@@ -248,19 +248,19 @@
     },
     {
       "package": "ark",
-      "version": "4:25.12.3-0supralinux2",
+      "version": "4:25.12.3-0supralinux3",
       "area": "gear",
       "manifest": "manifests/release-1.0.0/ark.json",
       "artifact": {
-        "name": "ark_25.12.3-0supralinux2_amd64.deb",
-        "sha256": "42ecdeed13b384a9979e6343025521c42ff48ce8f1aafa544eac5f92baabe2c2",
-        "bytes": 1508272
+        "name": "ark_25.12.3-0supralinux3_amd64.deb",
+        "sha256": "a5ddea266f85fc900bbe69ace9d90c0a6954928fae92eef112b52f831f43c0ac",
+        "bytes": 1508204
       },
-      "evidence": "evidence/clean-build/20261120T040842Z-d58b945eec8d",
+      "evidence": "evidence/clean-build/20261120T055208Z-964c90136cb2",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 353.408,
-        "guest_build": 293.219
+        "total": 310.063,
+        "guest_build": 252.122
       },
       "cleanup": {
         "process_absent": true,

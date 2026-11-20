@@ -180,6 +180,10 @@ explícitamente documentado, nunca con una afirmación falsa.
 - `ark 25.12.3-0supralinux2`: el visor interno conserva su tamaño entre
   sesiones y la extracción de RAR multivolumen no se bloquea por el tamaño
   estimado inflado.
+- `ark 25.12.3-0supralinux3`: backport del MR upstream !360 (KDE bug
+  503213); el visor abre en 800×600 cuando no hay tamaño guardado y
+  conserva el tamaño elegido. Probado en VM desechable: apertura por
+  defecto, resize a 600×420, cierre y reapertura.
 - La instalación Btrfs y L5 se validaron sobre la ISO candidata anterior;
   el delta de esta ISO es sólo `os-release`/LOGO. Ver `regression_scope` en
   `manifests/iso-1.0.0.json`.
@@ -201,7 +205,7 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261120c`
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261120d`
   con 604 binarios y 176 fuentes; publicación `testing` firmada y verificada.
   `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly viejo dejó
   de servirse. El resumen está en `manifests/aptly-publication-1.0.0.json`.

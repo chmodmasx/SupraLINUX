@@ -44,9 +44,9 @@ Primera release pública de SupraLINUX, nombre clave **Aurora**.
 - Documentado el límite de WiFi en live: la primera conexión sin perfil
   guardado puede conservar un `AccessPoint` obsoleto en `plasma-nm`; usar
   `nmcli`/`nmtui` o reintentar (D-025).
-- `ark`: el visor interno recuerda su tamaño entre sesiones y la
-  extracción de RAR multivolumen ya no se bloquea por un tamaño estimado
-  inflado (D-026).
+- `ark`: el visor interno abre en 800×600 cuando no hay tamaño guardado,
+  recuerda su tamaño entre sesiones y la extracción de RAR multivolumen ya
+  no se bloquea por un tamaño estimado inflado (D-026).
 
 [Unreleased]: https://supralinux.com/
 [1.0.0]: https://supralinux.com/
