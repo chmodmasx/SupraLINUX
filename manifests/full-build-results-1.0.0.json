@@ -94,19 +94,19 @@
     },
     {
       "package": "supralinux-base-files",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "area": "desktop",
       "manifest": "manifests/release-1.0.0/supralinux-base-files.json",
       "artifact": {
-        "name": "supralinux-base-files_1.0.0_all.deb",
-        "sha256": "9b75550d48b217e86395f1f64ce01f51df8ab3047bc9ad7ca19c0556071b420d",
-        "bytes": 2838
+        "name": "supralinux-base-files_1.0.1_all.deb",
+        "sha256": "625fda278c8975629c8f8d25cdd59ea515412858ee9a5c796ee4a71740622051",
+        "bytes": 2964
       },
-      "evidence": "evidence/clean-build/20261118T171533Z-eb6c08e3d964",
+      "evidence": "evidence/clean-build/20261120T015541Z-db38495b7363",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 76.252,
-        "guest_build": 24.586
+        "total": 81.799,
+        "guest_build": 29.573
       },
       "cleanup": {
         "process_absent": true,

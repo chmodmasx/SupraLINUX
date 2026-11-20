@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "codename": "Aurora",
   "status": "partial",
-  "note": "9 paquetes nativos del producto y el paquete sint\u00e9tico de prueba. Frameworks, Plasma, Gear y la ISO siguen pendientes.",
+  "note": "9 paquetes nativos del producto y el paquete sintético de prueba. Frameworks, Plasma, Gear y la ISO siguen pendientes.",
   "build_count": 10,
   "builds": [
     {
@@ -29,15 +29,15 @@
     },
     {
       "package": "supralinux-base-files",
-      "version": "1.0.0",
-      "manifest": "manifests/supralinux-base-files-1.0.0-clean-build.json",
+      "version": "1.0.1",
+      "manifest": "manifests/supralinux-base-files-1.0.1-clean-build.json",
       "test_only": false,
       "state": "PASS",
       "artifact": {
-        "name": "supralinux-base-files_1.0.0_all.deb",
-        "sha256": "9b75550d48b217e86395f1f64ce01f51df8ab3047bc9ad7ca19c0556071b420d"
+        "name": "supralinux-base-files_1.0.1_all.deb",
+        "sha256": "625fda278c8975629c8f8d25cdd59ea515412858ee9a5c796ee4a71740622051"
       },
-      "evidence": "evidence/clean-build/20261118T171533Z-eb6c08e3d964",
+      "evidence": "evidence/clean-build/20261120T015541Z-db38495b7363",
       "sbuild_invoked": true,
       "cleanup": {
         "process_absent": true,
