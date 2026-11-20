@@ -63,8 +63,7 @@ No se modifica ninguna distribución instalada. Las pruebas se hacen en ISO, roo
 
 Para fallos en KDE o Ubuntu, usá sus canales oficiales. Para fallos en el packaging, los defaults o la integración de SupraLINUX, reportá en privado:
 
-- `https://supralinux.com/bugs.html` (marcá “seguridad” en el resumen).
-- Cuando el repositorio esté público, se habilitará un aviso privado de seguridad.
+- `https://supralinux.com/bugs` (marcá “seguridad” en el resumen).
 
 No abras issues públicos para vulnerabilidades. Ver [SECURITY.md](SECURITY.md).
 

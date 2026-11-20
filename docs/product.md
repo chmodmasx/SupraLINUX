@@ -74,7 +74,7 @@ SUPRALINUX_BASE="Ubuntu 26.04 LTS"
 
 - Arquitectura amd64 para 1.0.0.
 - Proyecto personal, sin garantía ni soporte comercial.
-- Sin SLA; soporte comunitario best-effort.
+- Sin SLA; soporte del proyecto best-effort.
 - Sin promesa de soporte de hardware que no se haya probado.
 - Sin cadena Secure Boot propia en 1.0.0; se usa la de Ubuntu.
 - Sin snapd en la release 1.0.0.

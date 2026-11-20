@@ -22,9 +22,7 @@ scripts privilegiados, tema y ajustes del sistema.
 
 Reportá en privado:
 
-1. `https://supralinux.com/bugs.html`, marcando “seguridad” en el resumen.
-2. Cuando el repositorio esté público, se habilitará un aviso privado de
-   seguridad (GitHub Security Advisory o equivalente).
+1. `https://supralinux.com/bugs`, marcando “seguridad” en el resumen.
 
 No abras issues públicos para vulnerabilidades.
 
