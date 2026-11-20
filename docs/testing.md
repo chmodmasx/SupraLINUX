@@ -251,6 +251,10 @@ manifiesto de release.
   Gwenview abre en 33% y la rueda lo lleva a 94%; Preferencias muestra
   “Ampliar”. Evidencia en `evidence/live/bios-20261120f/` y
   `evidence/live/uefi-sb-20261120f/`.
+- Simulación de actualización desde la ISO anterior: `apt-get update` ve
+  `supralinux-base-files 1.0.2` y `supralinux-defaults 1.1.3` con prioridad
+  1001; `apt-get -s install --only-upgrade` selecciona ambos. Evidencia en
+  `evidence/live/apt-upgrade-sim-20261120f/checks.txt`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`. Primer arranque en
   BIOS, SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en
   Btrfs con los subvolúmenes `@`, `@home` y `@snapshots`; Calamares, casper y

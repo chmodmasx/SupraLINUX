@@ -136,6 +136,12 @@
       "state": "PASS",
       "result": "systemctl poweroff apaga la VM sin cuelgues; QEMU sale limpio.",
       "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
+    },
+    {
+      "id": "LIVE-APT-UPGRADE-SIM",
+      "state": "PASS",
+      "result": "Sobre la ISO anterior con base-files 1.0.1/defaults 1.1.2, apt-get update ve candidatos 1.0.2/1.1.3 con prioridad 1001 y apt-get -s install --only-upgrade selecciona ambos. No se instalo nada; es una simulacion.",
+      "evidence": "evidence/live/apt-upgrade-sim-20261120f/checks.txt"
     }
   ],
   "observed": {
