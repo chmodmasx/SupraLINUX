@@ -37,5 +37,13 @@ Primera release pública de SupraLINUX, nombre clave **Aurora**.
 - Firefox con español preinstalado.
 - Repositorio APT firmado y manifiestos de build.
 
+### Fixed
+
+- `supralinux-base-files 1.0.1`: `LOGO=distributor-logo` para que Acerca de
+  este sistema muestre el logo; el icono ya lo instala `supralinux-branding`.
+- Documentado el límite de WiFi en live: la primera conexión sin perfil
+  guardado puede conservar un `AccessPoint` obsoleto en `plasma-nm`; usar
+  `nmcli`/`nmtui` o reintentar (D-025).
+
 [Unreleased]: https://supralinux.com/
 [1.0.0]: https://supralinux.com/

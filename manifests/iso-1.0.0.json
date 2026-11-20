@@ -6,36 +6,50 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO limpia desde rootfs nuevo y repo.supralinux.com. Valida BIOS/UEFI Secure Boot, Btrfs offline, primer arranque y L5 con AppArmor/obexd corregidos. LUKS2, EXT4, dual-boot y recuperaci\u00f3n siguen pendientes.",
+  "note": "ISO limpia desde rootfs nuevo y repo.supralinux.com. Incluye supralinux-base-files 1.0.1 con LOGO=distributor-logo y revalida BIOS/UEFI Secure Boot, identidad y Acerca de este sistema. La matriz de instalaci\u00f3n Btrfs/L5 se valid\u00f3 sobre la ISO candidata anterior; ver regression_scope. LUKS2, EXT4, dual-boot y recuperaci\u00f3n siguen pendientes.",
+  "regression_scope": "BIOS y UEFI Secure Boot se revalidaron sobre esta ISO (supralinux-base-files 1.0.1, LOGO=distributor-logo, kernel 7.0.0-43.43). La instalaci\u00f3n Btrfs, primer arranque y L5 se validaron sobre la ISO candidata anterior (base-files 1.0.0); el delta es s\u00f3lo os-release y el icono ya instalado por supralinux-branding.",
   "iso": {
     "name": "supralinux-aurora-1.0.0-amd64.iso",
-    "sha256": "defa35f3bf0ef19a65483d4dc67b8716eaffae2c51040eb3c6e42fec1acb7fea",
-    "bytes": 3152107520,
+    "sha256": "0941c1f97967b0c93728ab478f07db0bc0ebd33d153ef2ede0e1efd4973104a0",
+    "bytes": 3152121856,
     "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64.iso",
-    "build_evidence": "evidence/live/iso-clean-20261119T182611Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-clean-20261119T181658Z.log"
+    "build_evidence": "evidence/live/iso-clean-20261120T022454Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-clean-20261120T021523Z.log"
   },
   "inputs": {
-    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261119d)",
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261120b)",
     "installer": "supralinux-calamares-config 1.0.1",
     "defaults": "supralinux-defaults 1.1.2",
     "kernel": "7.0.0-43-generic",
-    "aptly_snapshot": "supralinux-testing-1.0.0-20261119d",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261120b",
     "apt_source": "https://repo.supralinux.com/",
-    "aptly_manifest": "manifests/aptly-publication-1.0.0.json"
+    "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
+    "base_files": "supralinux-base-files 1.0.1"
   },
   "tests": [
     {
       "id": "ISO-BIOS-BOOT",
       "state": "PASS",
-      "result": "Arranca en BIOS a Plasma Wayland y Calamares; instalaci\u00f3n Btrfs ejecutada desde esta ISO.",
-      "evidence": "evidence/installer/bios-btrfs-v6/console.log"
+      "result": "Arranca en BIOS a Plasma Wayland; base-files 1.0.1 y Acerca de este sistema con el logo SL.",
+      "evidence": "evidence/live/bios-logo-20261120b/about.png"
     },
     {
       "id": "ISO-UEFI-SB",
       "state": "PASS",
-      "result": "mokutil SecureBoot enabled; efivar SecureBoot=1; Plasma Wayland.",
-      "evidence": "evidence/live/uefi-sb-final/screen.png"
+      "result": "mokutil SecureBoot enabled; efivar SecureBoot=1; Plasma Wayland; logo SL en Acerca de este sistema.",
+      "evidence": "evidence/live/uefi-sb-logo-20261120/about.png"
+    },
+    {
+      "id": "LIVE-IDENTITY",
+      "state": "PASS",
+      "result": "Live BIOS/UEFI: supralinux-base-files 1.0.1, LOGO=distributor-logo, icono distributor-logo presente, kernel 7.0.0-43.43.",
+      "evidence": "evidence/live/bios-logo-20261120b/checks.txt"
+    },
+    {
+      "id": "LIVE-ABOUT-LOGO",
+      "state": "PASS",
+      "result": "Acerca de este sistema muestra el logo SL en BIOS (bios-logo-20261120b/about.png) y en UEFI Secure Boot (uefi-sb-logo-20261120/about.png).",
+      "evidence": "evidence/live/bios-logo-20261120b/about.png"
     },
     {
       "id": "INSTALL-BTRFS-OFFLINE",
@@ -121,6 +135,7 @@
     "EXT4 no se prob\u00f3 en esta ISO.",
     "Dual-boot con otro sistema operativo no se prob\u00f3.",
     "La recuperaci\u00f3n Btrfs/rollback no se prob\u00f3.",
-    "No se public\u00f3 stable ni se cre\u00f3 tag."
+    "No se public\u00f3 stable ni se cre\u00f3 tag.",
+    "La instalaci\u00f3n Btrfs, primer arranque y L5 no se repitieron completas sobre esta ISO; el delta es s\u00f3lo os-release/LOGO."
   ]
 }
