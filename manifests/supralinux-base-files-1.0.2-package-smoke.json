@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "scope": "offline-artifact-installation-smoke",
+  "package": "supralinux-base-files",
+  "version": "1.0.2",
+  "architecture": "all",
+  "artifact": {
+    "path": "artifacts/sha256/16aa110416326948455081b77956f76814355ce23422ed27e67bc1fa51776d92/supralinux-base-files_1.0.2_all.deb",
+    "sha256": "16aa110416326948455081b77956f76814355ce23422ed27e67bc1fa51776d92"
+  },
+  "base_image": {
+    "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
+    "sha256": "0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7",
+    "format": "qcow2"
+  },
+  "test": {
+    "path": "tests/fixtures/identity-smoke",
+    "sha256": "ad7d09e4ffc7815ce3c0029a17f647f9b3e184c806d6fd52351889f4171de93d"
+  },
+  "installed_files": {
+    "/usr/lib/os-release": "0bb8489e767bc908fbb3953fe28ef5204fd0bf1e376acbc5460344daabe0a80b",
+    "/etc/lsb-release": "e98c3015b3bcc750e43b9efaa72c49f0b35a7281baf73370f8ae96efe77c66da",
+    "/etc/issue": "77d64ec616394243267524f460bcac1c40eba68d7571b6abd3cfaac757341a79",
+    "/etc/issue.net": "9a749eab623c4ea66c36d8eb2cf7e4a43c8e3ab2c4daedc4345567254314b04c",
+    "/etc/legal": "af4fc20ac06280bbcc73530309e7e2f5f29ca030e2fc6d25d60e9b3f1e058350",
+    "/etc/update-motd.d/10-help-text": "d2e2dec06df4fe7e4ee6d87467bf3869dfd66bd5a7d64b618a46655e02fd5966"
+  },
+  "negative_test": {
+    "path": "/etc/legal",
+    "suffix": ".hidden-for-smoke"
+  }
+}
