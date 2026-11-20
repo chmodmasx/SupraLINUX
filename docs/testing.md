@@ -234,6 +234,10 @@ manifiesto de release.
 - ISO limpia `93f2fef4…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
   `supralinux-testing-1.0.0-20261120c`; BIOS y UEFI Secure Boot hasta Plasma
   `PASS`. UEFI Secure Boot verificado con `mokutil` y efivar `1`.
+- ISO candidata `fef5990f…`
+  (`supralinux-aurora-1.0.0-amd64-20261120T061139Z-g25bf91c.iso`): rootfs
+  nuevo desde Ubuntu 26.04 + snapshot `20261120d`; BIOS y UEFI Secure Boot
+  `PASS`, visor de Ark en 800×600 por defecto y RAR multivolumen `PASS`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`. Primer arranque en
   BIOS, SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en
   Btrfs con los subvolúmenes `@`, `@home` y `@snapshots`; Calamares, casper y

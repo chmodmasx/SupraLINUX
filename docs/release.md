@@ -172,9 +172,13 @@ explícitamente documentado, nunca con una afirmación falsa.
   `manifests/full-build-results-1.0.0.json`.
 - ISO limpia `93f2fef4…` construida desde un rootfs nuevo y el snapshot
   `supralinux-testing-1.0.0-20261120c`: BIOS y UEFI Secure Boot `PASS`.
-- Esa ISO se construyó antes de la convención de nombres de candidato y
-  conserva el nombre limpio; la convención aplica a los próximos builds de
-  `testing`.
+- ISO candidata `fef5990f…`
+  (`supralinux-aurora-1.0.0-amd64-20261120T061139Z-g25bf91c.iso`) construida
+  desde un rootfs nuevo y el snapshot `20261120d`: BIOS y UEFI Secure Boot
+  `PASS`, visor de Ark en 800×600 por defecto y RAR multivolumen `PASS`.
+- La ISO `93f2fef4…` se construyó antes de la convención de nombres de
+  candidato y conserva el nombre limpio; la candidata nueva ya usa
+  fecha/commit.
 - `supralinux-base-files 1.0.1`: `LOGO=distributor-logo`; Acerca de este
   sistema muestra el logo SL en BIOS y UEFI Secure Boot.
 - `ark 25.12.3-0supralinux2`: el visor interno conserva su tamaño entre
@@ -185,8 +189,8 @@ explícitamente documentado, nunca con una afirmación falsa.
   conserva el tamaño elegido. Probado en VM desechable: apertura por
   defecto, resize a 600×420, cierre y reapertura.
 - La instalación Btrfs y L5 se validaron sobre la ISO candidata anterior;
-  el delta de esta ISO es sólo `os-release`/LOGO. Ver `regression_scope` en
-  `manifests/iso-1.0.0.json`.
+  el delta de esta ISO es Ark (visor), no el instalador. Ver
+  `regression_scope` en `manifests/iso-1.0.0.json`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`; primer arranque,
   SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en Btrfs
   (`@`, `@home`, `@snapshots`) y sin Calamares/casper.

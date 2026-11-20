@@ -6,63 +6,69 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO limpia desde rootfs nuevo y repo.supralinux.com. Incluye supralinux-base-files 1.0.1 (LOGO=distributor-logo) y ark 4:25.12.3-0supralinux2 (visor con estado propio y extracción multivolumen sin falso ENOSPC). Revalida BIOS/UEFI Secure Boot, identidad, logo, visor de Ark y RAR multivolumen. La matriz de instalación Btrfs/L5 se validó sobre la ISO candidata anterior; ver regression_scope. LUKS2, EXT4, dual-boot y recuperación siguen pendientes.",
-  "regression_scope": "BIOS y UEFI Secure Boot se revalidaron sobre esta ISO (supralinux-base-files 1.0.1, ark 4:25.12.3-0supralinux2, kernel 7.0.0-43.43). La instalación Btrfs, primer arranque y L5 se validaron sobre la ISO candidata del 19/11 (base-files 1.0.0); los deltas acumulados son os-release/LOGO y Ark (visor/multivolumen), ninguno afecta al instalador.",
+  "note": "ISO candidata desde rootfs nuevo y repo.supralinux.com. Incluye supralinux-base-files 1.0.1 (LOGO=distributor-logo) y ark 4:25.12.3-0supralinux3 (visor 800x600 por defecto, estado propio y extraccion multivolumen sin falso ENOSPC). Revalida BIOS/UEFI Secure Boot, identidad, logo, visor de Ark y RAR multivolumen. La matriz de instalacion Btrfs/L5 se valido sobre la ISO candidata anterior; ver regression_scope. LUKS2, EXT4, dual-boot y recuperacion siguen pendientes.",
+  "regression_scope": "BIOS y UEFI Secure Boot se revalidaron sobre esta ISO (supralinux-base-files 1.0.1, ark 4:25.12.3-0supralinux3, kernel 7.0.0-43.43). La instalacion Btrfs, primer arranque y L5 se validaron sobre la ISO candidata del 19/11 (base-files 1.0.0); los deltas acumulados son os-release/LOGO y Ark (visor/multivolumen), ninguno afecta al instalador.",
   "iso": {
-    "name": "supralinux-aurora-1.0.0-amd64.iso",
-    "sha256": "93f2fef41e11de6509162298b15892e8d329c93f7a86d5d594f061de7708fb9d",
-    "bytes": 3152117760,
-    "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64.iso",
-    "build_evidence": "evidence/live/iso-clean-20261120T044138Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-clean-20261120T043214Z.log"
+    "name": "supralinux-aurora-1.0.0-amd64-20261120T061139Z-g25bf91c.iso",
+    "sha256": "fef5990ffffdeb14e1879546d0e1b067ad02d37f71b709793369a3722d57ab9b",
+    "bytes": 3152121856,
+    "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64-20261120T061139Z-g25bf91c.iso",
+    "build_evidence": "evidence/live/iso-clean-20261120T061139Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-clean-20261120T060444Z.log"
   },
   "inputs": {
-    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261120c)",
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261120d)",
     "installer": "supralinux-calamares-config 1.0.1",
     "defaults": "supralinux-defaults 1.1.2",
     "kernel": "7.0.0-43-generic",
-    "aptly_snapshot": "supralinux-testing-1.0.0-20261120c",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261120d",
     "apt_source": "https://repo.supralinux.com/",
     "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
     "base_files": "supralinux-base-files 1.0.1",
-    "ark": "ark 4:25.12.3-0supralinux2"
+    "ark": "ark 4:25.12.3-0supralinux3"
   },
   "tests": [
     {
       "id": "ISO-BIOS-BOOT",
       "state": "PASS",
-      "result": "Arranca en BIOS a Plasma Wayland; ark 0supralinux2, base-files 1.0.1 y visor de Ark en 1000×700.",
-      "evidence": "evidence/live/bios-ark-20261120/ark-viewer.png"
+      "result": "Arranca en BIOS a Plasma Wayland; ark 0supralinux3, base-files 1.0.1 y visor de Ark en 800x600 por defecto.",
+      "evidence": "evidence/live/bios-ark3-20261120/viewer.png"
     },
     {
       "id": "ISO-UEFI-SB",
       "state": "PASS",
-      "result": "mokutil SecureBoot enabled; efivar SecureBoot=1; ark 0supralinux2 y logo SL en Acerca de este sistema.",
-      "evidence": "evidence/live/uefi-sb-ark-20261120/about.png"
+      "result": "mokutil SecureBoot enabled; ark 0supralinux3 y logo SL en Acerca de este sistema.",
+      "evidence": "evidence/live/uefi-sb-ark3-20261120/about.png"
     },
     {
       "id": "LIVE-IDENTITY",
       "state": "PASS",
-      "result": "Live UEFI Secure Boot: ark 4:25.12.3-0supralinux2, supralinux-base-files 1.0.1, LOGO=distributor-logo, kernel 7.0.0-43.43.",
-      "evidence": "evidence/live/uefi-sb-ark-20261120/checks.txt"
+      "result": "Live UEFI Secure Boot: ark 4:25.12.3-0supralinux3, supralinux-base-files 1.0.1, LOGO=distributor-logo, kernel 7.0.0-43.43.",
+      "evidence": "evidence/live/uefi-sb-ark3-20261120/checks.txt"
     },
     {
       "id": "LIVE-ABOUT-LOGO",
       "state": "PASS",
       "result": "Acerca de este sistema muestra el logo SL en BIOS y en UEFI Secure Boot con la ISO nueva.",
-      "evidence": "evidence/live/uefi-sb-ark-20261120/about.png"
+      "evidence": "evidence/live/uefi-sb-ark3-20261120/about.png"
     },
     {
       "id": "LIVE-ARK-VIEWER",
       "state": "PASS",
-      "result": "El visor interno de Ark restaura 1000×700 desde [Viewer] y conserva el tamaño al cerrar y reabrir Ark.",
-      "evidence": "evidence/live/bios-ark-20261120/ark-viewer.png"
+      "result": "Sin tamano guardado el visor abre en 800x600; con 600x420 guardado lo restaura tras cerrar y reabrir. Validado en la ISO (800x600) y con el paquete en VM desechable (600x420).",
+      "evidence": "evidence/live/bios-ark3-20261120/viewer.png"
+    },
+    {
+      "id": "LIVE-ARK-VIEWER-PERSIST",
+      "state": "PASS",
+      "result": "Con el paquete 0supralinux3, el visor abre en 800x600 sin estado, se redimensiona a 600x420, se cierra y reabre en 600x420; arkstaterc guarda Width=600 Height=420 en [Viewer].",
+      "evidence": "evidence/live/ark-default-20261120/viewer-persist-final.png"
     },
     {
       "id": "LIVE-ARK-MULTIVOLUME",
       "state": "PASS",
-      "result": "RAR de 4 volúmenes: 3 MB reales, 12 MB estimados; extraído a un tmpfs de 5 MB con ark --batch (3 MB, rc=0).",
-      "evidence": "evidence/live/bios-ark-20261120/ark-rar.txt"
+      "result": "RAR de 4 volumenes: 3 MB reales, 12 MB estimados; extraido a un tmpfs de 5 MB con ark --batch (3 MB, rc=0).",
+      "evidence": "evidence/live/bios-ark3-20261120/ark-rar.txt"
     },
     {
       "id": "INSTALL-BTRFS-OFFLINE",
@@ -144,11 +150,11 @@
     ]
   },
   "limitations": [
-    "LUKS2 no se probó en esta ISO.",
-    "EXT4 no se probó en esta ISO.",
-    "Dual-boot con otro sistema operativo no se probó.",
-    "La recuperación Btrfs/rollback no se probó.",
-    "No se publicó stable ni se creó tag.",
-    "La instalación Btrfs, primer arranque y L5 no se repitieron completas sobre esta ISO; los deltas son os-release/LOGO y Ark."
+    "LUKS2 no se probo en esta ISO.",
+    "EXT4 no se probo en esta ISO.",
+    "Dual-boot con otro sistema operativo no se probo.",
+    "La recuperacion Btrfs/rollback no se probo.",
+    "No se publico stable ni se creo tag.",
+    "La instalacion Btrfs, primer arranque y L5 no se repitieron completas sobre esta ISO; los deltas son os-release/LOGO y Ark."
   ]
 }
