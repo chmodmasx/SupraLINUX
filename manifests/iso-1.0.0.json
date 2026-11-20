@@ -42,8 +42,8 @@
     {
       "id": "LIVE-IDENTITY",
       "state": "PASS",
-      "result": "Live BIOS/UEFI: supralinux-base-files 1.0.1, LOGO=distributor-logo, icono distributor-logo presente, kernel 7.0.0-43.43.",
-      "evidence": "evidence/live/bios-logo-20261120b/checks.txt"
+      "result": "Live UEFI Secure Boot: supralinux-base-files 1.0.1, LOGO=distributor-logo, icono distributor-logo presente, kernel 7.0.0-43.43.",
+      "evidence": "evidence/live/uefi-sb-logo-20261120/checks.txt"
     },
     {
       "id": "LIVE-ABOUT-LOGO",
