@@ -32,6 +32,13 @@ class DesktopIntegrationTests(unittest.TestCase):
         self.assertNotIn("SUPPORT_END", values)
         self.assertIn("DISTRIB_ID=SupraLINUX", (base / "usr/share/supralinux/base-files/lsb-release").read_text())
 
+    def test_os_release_logo_resolves_to_a_branded_icon(self):
+        values = os_release(ROOT / "packages/desktop/supralinux-base-files/usr/lib/os-release")
+        logo = values["LOGO"]
+        icons = ROOT / "packages/desktop/supralinux-branding/usr/share/icons/hicolor"
+        matches = list(icons.glob(f"*/apps/{logo}.png")) + list(icons.glob(f"*/apps/{logo}.svg"))
+        self.assertTrue(matches, f"LOGO={logo} has no icon in supralinux-branding")
+
     def test_base_files_use_dpkg_divert(self):
         base = ROOT / "packages/desktop/supralinux-base-files"
         preinst = (base / "debian/preinst").read_text()

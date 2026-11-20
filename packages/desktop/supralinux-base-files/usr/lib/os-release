@@ -11,5 +11,5 @@ SUPRALINUX_CODENAME="aurora"
 SUPRALINUX_BASE="Ubuntu 26.04 LTS"
 HOME_URL="https://supralinux.com/"
 BUG_REPORT_URL="https://supralinux.com/bugs.html"
-LOGO=supralinux
+LOGO=distributor-logo
 ANSI_COLOR="1;34"
