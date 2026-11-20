@@ -162,7 +162,7 @@
     },
     {
       "source": "ark",
-      "version": "4:25.12.3-0supralinux1",
+      "version": "4:25.12.3-0supralinux2",
       "area": "gear",
       "path": "packages/gear/ark",
       "binaries": [
