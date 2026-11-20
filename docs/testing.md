@@ -238,6 +238,13 @@ manifiesto de release.
   (`supralinux-aurora-1.0.0-amd64-20261120T061139Z-g25bf91c.iso`): rootfs
   nuevo desde Ubuntu 26.04 + snapshot `20261120d`; BIOS y UEFI Secure Boot
   `PASS`, visor de Ark en 800×600 por defecto y RAR multivolumen `PASS`.
+- Snapshot `supralinux-testing-1.0.0-20261120f`: 604 binarios y 176 fuentes.
+  Incluye `supralinux-base-files 1.0.2` (`BUG_REPORT_URL=/bugs`) y
+  `supralinux-defaults 1.1.3` (rueda de Gwenview en Ampliar).
+- Gwenview en VM desechable: sin configuración de usuario la rueda cambió
+  33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
+  de “Desplazamiento” dejó el zoom en 33%. Evidencia en
+  `evidence/live/gwenview-default-20261120/`.
 - Instalación Btrfs offline con Calamares 1.0.1: `PASS`. Primer arranque en
   BIOS, SDDM, login `supratest` y Plasma Wayland: `PASS`. El target queda en
   Btrfs con los subvolúmenes `@`, `@home` y `@snapshots`; Calamares, casper y

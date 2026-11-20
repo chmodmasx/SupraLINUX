@@ -27,14 +27,14 @@
     },
     {
       "package": "supralinux-base-files",
-      "version": "1.0.1",
-      "manifest": "manifests/supralinux-base-files-1.0.1-package-smoke.json",
+      "version": "1.0.2",
+      "manifest": "manifests/supralinux-base-files-1.0.2-package-smoke.json",
       "state": "PASS",
       "artifact": {
-        "name": "supralinux-base-files_1.0.1_all.deb",
-        "sha256": "625fda278c8975629c8f8d25cdd59ea515412858ee9a5c796ee4a71740622051"
+        "name": "supralinux-base-files_1.0.2_all.deb",
+        "sha256": "16aa110416326948455081b77956f76814355ce23422ed27e67bc1fa51776d92"
       },
-      "evidence": "evidence/package-smoke/20261120T015802Z-9b2b23c8d8f2",
+      "evidence": "evidence/package-smoke/20261120T131853Z-5c18739abc01",
       "cleanup": {
         "process_absent": true,
         "method": "guest-powerdown",

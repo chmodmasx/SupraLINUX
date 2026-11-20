@@ -20,6 +20,9 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - Identidad `supralinux-base-files`, fuentes y defaults.
 - Firefox con paquetes de idioma español.
 - Repositorio APT firmado y fuentes de paquetes modificados.
+- URLs limpias en el sitio (`/bugs`, `/download`, `/docs`) con redirecciones
+  301 desde `.html`, `security.txt` y cabeceras COOP/CORP.
+- Gwenview con la rueda del ratón en “Ampliar” por defecto.
 
 ## [1.0.0] - Por anunciar
 
@@ -38,6 +41,10 @@ Primera release pública de SupraLINUX, nombre clave **Aurora**.
 - Repositorio APT firmado y manifiestos de build.
 
 ### Fixed
+
+- El formulario de bugs usa `X-Real-IP` para el rate limit, rechaza
+  `Origin` externo y responde con `Cache-Control: no-store`.
+- `BUG_REPORT_URL` apunta a `https://supralinux.com/bugs`.
 
 - `supralinux-base-files 1.0.1`: `LOGO=distributor-logo` para que Acerca de
   este sistema muestre el logo; el icono ya lo instala `supralinux-branding`.

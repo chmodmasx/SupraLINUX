@@ -197,6 +197,11 @@ explícitamente documentado, nunca con una afirmación falsa.
 - L5 `PASS`: APT contra `https://repo.supralinux.com/ testing`, Snapper por
   D-Bus y `--no-dbus`, Secret Service (`ksecretd`), Firefox en español sin
   prompt de navegador por defecto y apagado limpio.
+- `supralinux-base-files 1.0.2`: `BUG_REPORT_URL` y el MOTD apuntan a
+  `https://supralinux.com/bugs`, servido por el sitio con URL limpia.
+- `supralinux-defaults 1.1.3`: Gwenview abre con la rueda configurada en
+  “Ampliar” mediante `/etc/xdg/gwenviewrc`; una preferencia explícita del
+  usuario sigue ganando.
 - `supralinux-defaults 1.1.2`: perfil AppArmor exacto para el Firefox de
   Mozilla (`firefox-supralinux`) y `obexd -P pbap,irmc`; `journalctl -p err`
   queda sin errores de EDS/Evolution.
@@ -209,7 +214,7 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261120d`
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261120f`
   con 604 binarios y 176 fuentes; publicación `testing` firmada y verificada.
   `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly viejo dejó
   de servirse. El resumen está en `manifests/aptly-publication-1.0.0.json`.

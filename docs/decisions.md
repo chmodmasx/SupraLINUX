@@ -351,3 +351,37 @@ actualizar Ark. El visor abre en 800×600 por defecto, conserva el tamaño
 elegido entre sesiones y la extracción real sigue fallando si de verdad
 falta espacio. Probado en VM desechable con un RAR de 4 volúmenes y un
 tmpfs de 5 MiB, y con apertura, resize, cierre y reapertura del visor.
+
+## D-027 — URLs limpias y formulario de bugs privado
+
+**Decisión:** el sitio sirve URLs sin `.html` (`/bugs`, `/download`, `/docs`)
+y redirige con 301 las direcciones viejas. `BUG_REPORT_URL` y el MOTD usan
+`https://supralinux.com/bugs`. El formulario mantiene el endpoint
+`POST /api/bugs` y no tiene usuarios, login ni panel de lectura. Los reportes
+se leen por SSH desde `/data`.
+
+**Motivo:** las URLs con `.html` son innecesarias para el usuario y el
+formulario no necesita cuentas. Un panel de administración público ampliaría
+la superficie de ataque sin aportar nada al flujo de diagnóstico.
+
+**Consecuencia:** nginx del sitio implementa `try_files $uri $uri.html` y los
+301; NPM sigue siendo sólo el proxy TLS. El rate limit usa `X-Real-IP` puesto
+por el proxy y no confía en `X-Forwarded-For` del cliente. Se agregaron
+`security.txt`, COOP/CORP, `Cache-Control: no-store` en `/api/bugs` y
+normalización de hostname/UUID/IPv6. No se parchea DrKonqi: el botón existente
+abre el formulario y el usuario pega el informe si lo necesita.
+
+## D-028 — Gwenview: rueda para ampliar por defecto
+
+**Decisión:** `supralinux-defaults` instala `/etc/xdg/gwenviewrc` con
+`[ImageView] MouseWheelBehavior=2` (Ampliar). No se parchea Gwenview.
+
+**Motivo:** el default upstream es Desplazamiento. La configuración de sistema
+es suficiente y mantiene la posibilidad de que cada usuario elija otra cosa
+desde Preferencias; una preferencia explícita en `~/.config/gwenviewrc` gana
+sobre `/etc/xdg`.
+
+**Consecuencia:** probado en VM desechable: sin configuración de usuario la
+rueda cambia el zoom de 33% a 94% y vuelve a 33%; Preferencias muestra
+“Ampliar”; al elegir “Desplazamiento” el zoom queda en 33% y la preferencia
+persiste. Evidencia en `evidence/live/gwenview-default-20261120/`.
