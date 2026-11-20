@@ -43,6 +43,7 @@
   "notes": [
     "El host público repo.supralinux.com apunta al Aptly nuevo y sirve la suite testing.",
     "El Aptly viejo y su stack quedan intactos pero ya no se publican en repo.supralinux.com.",
-    "supralinux-stable sigue vacío; no hay publicación stable."
+    "supralinux-stable sigue vacío; no hay publicación stable.",
+    "El snapshot f reemplaza las versiones anteriores de base-files y defaults; el repositorio testing queda con 604 binarios y 176 fuentes."
   ]
 }
