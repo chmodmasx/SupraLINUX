@@ -15,9 +15,15 @@ root=${1:?rootfs}
 workspace=$(dirname -- "$repo_root")
 live=${SUPRALINUX_LIVE_DIR:-$workspace/live/1.0.0}
 iso_tree=$live/build/iso
-output=${2:-${SUPRALINUX_ISO_NAME:-$live/build/supralinux-aurora-1.0.0-amd64.iso}}
 
 test -d "$root"
+if [ -n "${2:-}" ]; then
+    output=$2
+elif [ -n "${SUPRALINUX_ISO_NAME:-}" ]; then
+    output=$SUPRALINUX_ISO_NAME
+else
+    output=$(iso_candidate_path "$root" "$repo_root" "$live/build")
+fi
 if [ "$(stat -c %u "$root")" -ne "$(id -u)" ] || [ "$(stat -c %g "$root")" -ne "$(id -g)" ]; then
     echo "Rootfs ownership does not match the current uid/gid." >&2
     echo "Run inside the documented unshare mapping, not as real root." >&2

@@ -83,20 +83,30 @@ unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
   sh "$REPO/tools/live/build-iso.sh" "$ROOTFS"
 ```
 
-Salida por defecto:
+Salida por defecto para un candidato de `testing`:
 
 ```text
-$LIVE/build/supralinux-aurora-1.0.0-amd64.iso
-$LIVE/build/supralinux-aurora-1.0.0-amd64.iso.sha256
+$LIVE/build/supralinux-aurora-1.0.0-amd64-20261120T044138Z-gc292031.iso
+$LIVE/build/supralinux-aurora-1.0.0-amd64-20261120T044138Z-gc292031.iso.sha256
 ```
 
-`SUPRALINUX_ISO_NAME` permite un nombre de prueba. `SUPRALINUX_SIGNING_KEY`
-firma el checksum. El squashfs usa `-all-time 0`, `-xattrs`, `zstd` y pseudo
-nodos para `/dev`; no se usa `-all-root`.
+La versión, el codename, la fecha UTC y el commit salen del rootfs y del
+repositorio. Para construir la ISO de release, fijar el nombre limpio:
+
+```sh
+SUPRALINUX_ISO_NAME="$LIVE/build/supralinux-aurora-1.0.0-amd64.iso" \
+unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
+  --setuid=0 --setgid=0 \
+  sh "$REPO/tools/live/build-iso.sh" "$ROOTFS"
+```
+
+`SUPRALINUX_SIGNING_KEY` firma el checksum. El squashfs usa `-all-time 0`,
+`-xattrs`, `zstd` y pseudo nodos para `/dev`; no se usa `-all-root`.
 
 El árbol `$LIVE/build/iso` conserva el tema GRUB, `casper/`, la ESP firmada y
 `md5sum.txt`. `secureboot-efi.sh` recompone la ESP y la ISO desde ese árbol sin
-rehacer el squashfs.
+rehacer el squashfs. Para reparar un archivo existente, pasar su ruta como
+segundo argumento o fijar `SUPRALINUX_ISO_NAME`.
 
 ## Secure Boot
 
@@ -108,11 +118,17 @@ La cadena y las pruebas están en [secure-boot.md](secure-boot.md).
 
 ## Prueba
 
+Elegir la ISO construida, sea un candidato o la release:
+
+```sh
+ISO=$(ls -t "$LIVE"/build/supralinux-aurora-1.0.0-amd64-*.iso | head -n 1)
+```
+
 BIOS:
 
 ```sh
 qemu-system-x86_64 -machine q35,accel=kvm -cpu host -m 6144 -smp 4 \
-  -cdrom "$LIVE/build/supralinux-aurora-1.0.0-amd64.iso" -boot d -nic none \
+  -cdrom "$ISO" -boot d -nic none \
   -vga virtio -display none \
   -chardev socket,id=qga0,path="$RUN/qga.sock",server=on,wait=off \
   -device virtio-serial-pci \
@@ -127,7 +143,7 @@ UEFI Secure Boot:
 qemu-system-x86_64 -machine q35,accel=kvm -cpu host -m 6144 -smp 4 \
   -drive if=pflash,format=raw,readonly=on,file=/usr/share/OVMF/OVMF_CODE_4M.secboot.fd \
   -drive if=pflash,format=raw,file="$RUN/OVMF_VARS_4M.ms.fd" \
-  -cdrom "$LIVE/build/supralinux-aurora-1.0.0-amd64.iso" -boot d -nic none \
+  -cdrom "$ISO" -boot d -nic none \
   -vga virtio -display none \
   -chardev socket,id=qga0,path="$RUN/qga.sock",server=on,wait=off \
   -device virtio-serial-pci \

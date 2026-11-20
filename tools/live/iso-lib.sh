@@ -1,10 +1,54 @@
 #!/bin/sh
-# Shared live-ISO GRUB assembly helpers.
+# Shared live-ISO GRUB assembly and naming helpers.
 #
 # Every GRUB payload copied into the ISO comes from the rootfs packages that
 # will be installed (grub-pc-bin, grub-efi-amd64-bin, grub-efi-amd64-signed,
 # shim-signed).  The build host only provides generic tools such as xorriso,
 # mcopy and mkfs.vfat.  Never read /boot/grub or /usr/lib/grub from the host.
+
+iso_os_release_value() {
+    file=$1
+    key=$2
+    sed -n "s/^${key}=//p" "$file" | head -n 1 | tr -d '"'
+}
+
+# Candidate name for a version still in testing.  The version and codename
+# come from the rootfs; the timestamp and commit identify the build, not a new
+# product version.
+iso_candidate_name() {
+    version=$1
+    codename=$2
+    stamp=$3
+    commit=$4
+    printf 'supralinux-%s-%s-amd64-%s-g%s.iso\n' \
+        "$codename" "$version" "$stamp" "$commit"
+}
+
+# Default output for a testing build.  Callers that build a release must set
+# SUPRALINUX_ISO_NAME to the clean release name explicitly.
+iso_candidate_path() {
+    root=$1
+    repo=$2
+    directory=$3
+    os_release=$root/usr/lib/os-release
+
+    if [ ! -f "$os_release" ]; then
+        echo "Missing $os_release" >&2
+        return 1
+    fi
+    version=$(iso_os_release_value "$os_release" SUPRALINUX_VERSION)
+    codename=$(iso_os_release_value "$os_release" SUPRALINUX_CODENAME)
+    if [ -z "$version" ] || [ -z "$codename" ]; then
+        echo "Missing SUPRALINUX_VERSION/SUPRALINUX_CODENAME in $os_release" >&2
+        return 1
+    fi
+    stamp=$(date -u +%Y%m%dT%H%M%SZ)
+    commit=$(git -c safe.directory="$repo" -C "$repo" \
+        rev-parse --short=7 HEAD 2>/dev/null || true)
+    [ -n "$commit" ] || commit=unknown
+    printf '%s/%s\n' "$directory" \
+        "$(iso_candidate_name "$version" "$codename" "$stamp" "$commit")"
+}
 
 iso_install_grub_bios() {
     root=$1

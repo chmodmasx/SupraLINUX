@@ -52,7 +52,7 @@ Los paquetes modificados publican su fuente en `deb-src`.
    `InRelease`.
 5. **Crear snapshot.** Snapshot inmutable de `testing` para la release.
 6. **Construir la ISO.** Rootfs, squashfs, ISO BIOS/UEFI/Secure Boot y
-   checksums.
+   checksums, con el nombre limpio de release.
 7. **Ejecutar la matriz.** L0 a L7 de [pruebas](testing.md). Los bloqueantes
    deben estar en `PASS`.
 8. **Cerrar documentación.** Producto, arquitectura, packaging, desarrollo,
@@ -70,7 +70,7 @@ Los paquetes modificados publican su fuente en `deb-src`.
 
 ## Artefactos
 
-Nombres:
+La ISO de release usa el nombre limpio, sin sufijo de build:
 
 ```text
 supralinux-aurora-1.0.0-amd64.iso
@@ -78,6 +78,30 @@ supralinux-aurora-1.0.0-amd64.iso.sha256
 supralinux-aurora-1.0.0-amd64.iso.sha256.asc
 supralinux-aurora-1.0.0-amd64.manifest.json
 ```
+
+Mientras la versión está en `testing`, cada build es un candidato y lleva
+fecha UTC y commit corto:
+
+```text
+supralinux-aurora-1.0.0-amd64-20261120T044138Z-gc292031.iso
+supralinux-aurora-1.0.0-amd64-20261120T044138Z-gc292031.iso.sha256
+```
+
+Reglas:
+
+- La versión y el codename salen de `os-release` del rootfs. El sufijo
+  `YYYYMMDDTHHMMSSZ-g<commit>` identifica el build, no la versión del producto.
+- El nombre limpio se reserva para la release. Se construye explícitamente con
+  `SUPRALINUX_ISO_NAME` una vez congelado `testing`, y se valida ese mismo
+  archivo. No se renombra ni se reconstruye después de la validación.
+- Si el candidato de release falla la matriz, se corrige y se reconstruye con
+  nombre de candidato. El nombre limpio se genera de nuevo sólo para el intento
+  final que se va a publicar.
+- Un build de `testing` nunca se publica con el nombre limpio. Dos candidatos
+  de la misma versión se distinguen por fecha, commit y SHA-256.
+- El nombre del archivo debe coincidir con `manifests/iso-<versión>.json` y con
+  el `os-release` del rootfs. Un cambio de nombre no cambia el SHA-256, pero
+  obliga a regenerar el `.sha256` y actualizar el manifiesto.
 
 Se conservan, además:
 
@@ -148,6 +172,9 @@ explícitamente documentado, nunca con una afirmación falsa.
   `manifests/full-build-results-1.0.0.json`.
 - ISO limpia `93f2fef4…` construida desde un rootfs nuevo y el snapshot
   `supralinux-testing-1.0.0-20261120c`: BIOS y UEFI Secure Boot `PASS`.
+- Esa ISO se construyó antes de la convención de nombres de candidato y
+  conserva el nombre limpio; la convención aplica a los próximos builds de
+  `testing`.
 - `supralinux-base-files 1.0.1`: `LOGO=distributor-logo`; Acerca de este
   sistema muestra el logo SL en BIOS y UEFI Secure Boot.
 - `ark 25.12.3-0supralinux2`: el visor interno conserva su tamaño entre
