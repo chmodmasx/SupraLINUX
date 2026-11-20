@@ -1,3 +1,11 @@
+ark (4:25.12.3-0supralinux3) resolute; urgency=medium
+
+  * Backport upstream Ark merge request !360 (KDE bug 503213): the internal
+    viewer opens at 800x600 when no size is saved and remembers its own size
+    in the "Viewer" state group.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 20 Nov 2026 12:00:00 +0000
+
 ark (4:25.12.3-0supralinux2) resolute; urgency=medium
 
   * Keep the internal viewer window size in its own state group.
