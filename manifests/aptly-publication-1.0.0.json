@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261119d",
-  "snapshot_created_at": "2026-11-19T18:14:00Z",
+  "snapshot": "supralinux-testing-1.0.0-20261120b",
+  "snapshot_created_at": "2026-11-20T02:02:24Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -35,14 +35,14 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "6ed6357144e7bc3bd8f590535f688e060d955bfa24e083969f5be2c861e09ce5",
-    "release_sha256": "e1b1db139f9905ffa781890302edc8413bb528865be1837fac7821f75c67657d",
+    "inrelease_sha256": "5d47ae71392d8dd00cc68063368d9d125886176d636f6a11c37e5c04318f0833",
+    "release_sha256": "29a3fbb33b387c82dcaa1e21ca8188768cfa0946dd0a8f3e4e30c7bbf4c0d74a",
     "binary_index_count": 604,
     "source_index_count": 176
   },
   "notes": [
-    "El host p\u00fablico repo.supralinux.com apunta al Aptly nuevo y sirve la suite testing.",
+    "El host público repo.supralinux.com apunta al Aptly nuevo y sirve la suite testing.",
     "El Aptly viejo y su stack quedan intactos pero ya no se publican en repo.supralinux.com.",
-    "supralinux-stable sigue vac\u00edo; no hay publicaci\u00f3n stable."
+    "supralinux-stable sigue vacío; no hay publicación stable."
   ]
 }
