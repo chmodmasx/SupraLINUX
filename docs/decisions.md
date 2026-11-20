@@ -327,3 +327,24 @@ configuración) coincide con Kubuntu 26.04.
 **Consecuencia:** en live, conectar con `nmcli device wifi connect "<SSID>"
 --ask` o `nmtui`. Calamares conserva el perfil del live en el sistema instalado
 con `networkcfg`. Se reevalúa si upstream publica la corrección.
+
+## D-026 — Ark: visor con estado propio y multivolumen sin falso ENOSPC
+
+**Decisión:** se mantiene un parche local en `ark`:
+
+- `ArkViewer` usa `setStateConfigGroup("Viewer")` para guardar su tamaño y
+  posición en un grupo propio de `arkstaterc`.
+- Los chequeos de espacio previos a la extracción se omiten cuando el
+  archivo es multivolumen; el backend sigue reportando un ENOSPC real.
+
+**Motivo:** el visor interno abría en su tamaño mínimo y no recordaba el
+tamaño entre sesiones de Ark. Además, el listado de un RAR multivolumen
+repite cada entrada una vez por volumen e infla el tamaño estimado (4
+entradas de 3 MiB para un archivo de 3 MiB), bloqueando extracciones que
+sí caben.
+
+**Consecuencia:** el parche no está upstream (Ark master, 26.08.3 y
+26.04.3 mantienen el código); se revisa al actualizar Ark. El visor
+conserva su tamaño entre sesiones y la extracción real sigue fallando si
+de verdad falta espacio. Probado en VM desechable con un RAR de 4
+volúmenes y un tmpfs de 5 MiB.
