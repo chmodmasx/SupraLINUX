@@ -145,7 +145,7 @@ keyring personal del desarrollador.
 | Build | Todos los paquetes de la release con build limpio `PASS`. |
 | Smoke | Instalación offline y control negativo `PASS`. |
 | Live | BIOS, UEFI y Secure Boot `PASS`. |
-| Instalador | Btrfs, LUKS2, EXT4, dual-boot y offline `PASS`. |
+| Instalador | Btrfs, LUKS2, EXT4, dual-boot Linux y offline `PASS`. |
 | Post-instalación | Keyring, Firefox, APT, Snapper y apagado `PASS`. |
 | Recuperación | Rollback y preservación de `/home` `PASS`. |
 | Repositorio | `InRelease` verificado y snapshot `stable` exacto. |
@@ -227,9 +227,20 @@ explícitamente documentado, nunca con una afirmación falsa.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
-Esto no es una release validada. Faltan LUKS2, EXT4, dual-boot y recuperación
-Btrfs. El gate `Repositorio` tampoco está cerrado: `supralinux-stable` sigue
-vacío.
+Esto no es una release validada. Faltan LUKS2, EXT4, dual-boot Linux y la
+matriz final de la GUI de recuperación. El gate `Repositorio` tampoco está
+cerrado: `supralinux-stable` sigue vacío.
+
+Preflight de la GUI (`b830b764…`, rootfs de prueba): icono en el escritorio,
+lista de instantáneas, rollback, `/home` intacto, `@pre-rollback-*` y entrada
+Recovery con autostart gráfico. Es un preflight, no un PASS de release; la ISO
+final debe construirse con los paquetes 1.0.2/1.1.3 y repetir L4/L6.
+
+Pendiente antes de release: build limpio de `supralinux-recovery-gui 1.0.0` y
+`supralinux-calamares-config 1.0.2`, publicación de ambos en `testing`, y
+actualización de `manifests/full-build-results-1.0.0.json` y
+`manifests/aptly-publication-1.0.0.json`. Los tests marcan esos dos paquetes
+como pendientes; no se declaran PASS.
 
 ## Publicación
 

@@ -56,6 +56,11 @@ La versión exacta del kernel se fija en el comando y en el manifiesto del build
 `calamares-settings-kubuntu`; la configuración viene de
 `supralinux-calamares-config` y la identidad de `supralinux-base-files`.
 
+La base es Ubuntu 26.04 LTS (`resolute`) con actualizaciones de
+`resolute-updates`. No es una ISO 26.04.1 separada: los paquetes con sufijo
+`26.04.1` vienen del ciclo de actualizaciones y la identidad del producto sigue
+siendo 26.04.
+
 ## Sellado
 
 `seal-rootfs.sh` verifica la identidad instalada, limpia listas y cachés de APT,
@@ -162,7 +167,8 @@ Comprobaciones:
 - `LOGO=distributor-logo` y el icono `distributor-logo` presente en el tema.
 - Firefox abre y tiene español.
 - Calamares abre y ve los discos.
-- La entrada Recovery arranca en multi-user y permite `supralinux-recover`.
+- El icono «Recuperar SupraLINUX» aparece en el escritorio junto a Calamares.
+- La entrada Recovery arranca el live gráfico y autolanza la GUI de recuperación.
 
 La matriz completa y los estados están en [testing.md](testing.md).
 

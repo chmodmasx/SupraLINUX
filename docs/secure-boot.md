@@ -73,8 +73,9 @@ Calamares instala GRUB con `efiBootloaderId=supralinux`.
 - `EFI/BOOT/BOOTX64.EFI` conserva el fallback del shim firmado. Si
   `grub-install` deja un GRUB propio como fallback, se reemplaza por el shim
   firmado y se completan `grubx64.efi`, `mmx64.efi` y `grub.cfg`.
-- No se pisa el arranque de otro sistema. `os-prober` agrega Windows y otras
-  raíces Linux, y las entradas ajenas de la ESP se conservan.
+- No se pisa el arranque de otro sistema. `os-prober` agrega otras raíces
+  Linux y las entradas ajenas de la ESP se conservan. Windows no se declara
+  validado en 1.0.0.
 - La ESP se monta con `umask=0077`; el firmware puede leerla y el usuario no
   necesita acceso directo.
 

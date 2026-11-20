@@ -104,7 +104,7 @@ Casos mínimos:
 | L3-SB | UEFI Secure Boot | `SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c` vale `1`. |
 | L3-MD5 | Integridad del medio | `md5sum -c /cdrom/md5sum.txt` sin errores. |
 | L3-SAFE | Safe graphics | Arranca con `nomodeset` y permite diagnóstico. |
-| L3-REC | Entrada Recovery | Arranca en multi-user y permite `supralinux-recover`. |
+| L3-REC | Entrada Recovery | Arranca el live gráfico, autolanza la GUI y permite restaurar. |
 | L3-DEBUG | Entrada debug | Arranca con logs de systemd y consola serie. |
 | L3-SESSION | Sesión | `plasmashell`, `kwin_wayland`, XWayland y `systemsettings`. |
 | L3-APPS | Apps base | Dolphin, Konsole, Kate, Ark, Gwenview, Okular, Firefox. |
@@ -125,7 +125,7 @@ Matriz mínima:
 | L4-BTRFS | Btrfs estándar | Instala, arranca y crea `@`, `@home`, `@snapshots`. |
 | L4-LUKS | Btrfs + LUKS2 | `/boot` ext4 separado; initramfs desbloquea la raíz. |
 | L4-EXT4 | EXT4 | Instala y arranca; sin Snapper. |
-| L4-DUAL | Dual-boot | Detecta Windows/Linux existente sin pisar su arranque. |
+| L4-DUAL | Dual-boot Linux | Detecta otra instalación Linux existente sin pisar su arranque. Se prueba en el mismo disco y en dos discos. Windows no se declara validado en 1.0.0. |
 | L4-UEFI | UEFI | Entrada `SupraLINUX` apunta al shim firmado. |
 | L4-BIOS | BIOS | GRUB instala y arranca. |
 | L4-SB | Secure Boot | El sistema instalado arranca con Secure Boot activo. |
@@ -157,13 +157,18 @@ del host es `INFRA_INVALID`, no `FAIL` del instalador.
 | ID | Caso | Criterio |
 |---|---|---|
 | L6-SNAP | Instantáneas APT | El hook crea una instantánea PRE antes de dpkg. |
+| L6-GUI | GUI de recuperación | Lista las instantáneas con fecha y descripción desde el live. |
 | L6-ROLLBACK | Rollback | `supralinux-recover` crea un `@` nuevo desde la instantánea. |
 | L6-HOME | `/home` | `@home` no se modifica durante el rollback. |
 | L6-RETENTION | Retención | Se conservan las tres raíces `@pre-rollback-*` más recientes. |
 | L6-BOOT | Arranque posterior | El sistema vuelve a arrancar y es utilizable. |
+| L6-POLKIT | Polkit | La GUI no corre como root; el helper autoriza al usuario live. |
+| L6-DESKTOP | Escritorio live | El icono «Recuperar SupraLINUX» aparece junto a Calamares y la entrada Recovery autolanza la GUI. |
 
-El sistema instalado no conserva una entrada de recuperación propia: el script
-necesita que `@` no esté montado y se ejecuta desde el live.
+El sistema instalado no conserva una entrada de recuperación propia ni la GUI:
+el backend necesita que `@` no esté montado y se ejecuta desde el live. La
+recuperación guiada cubre Btrfs sin cifrar; con LUKS2 el rollback no está
+soportado en 1.0.0 y debe documentarse como limitación.
 
 ## L7: release
 
@@ -269,7 +274,13 @@ manifiesto de release.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.
-- LUKS2, EXT4, dual-boot y recuperación Btrfs siguen pendientes.
+- LUKS2, EXT4, dual-boot y la matriz final de la GUI de recuperación siguen
+  pendientes.
+- Preflight de la GUI de recuperación (ISO `b830b764…`, rootfs de prueba con
+  paquetes 1.0.1/1.1.2): el icono aparece junto a Calamares, la GUI lista dos
+  instantáneas, restaura la raíz, conserva `@home`, deja `@pre-rollback-*` y la
+  entrada Recovery autolanza la GUI. Es un preflight, no un PASS de release.
+  Evidencia: `evidence/live/gui-recovery-preflight-20261120/`.
 - El resumen de la ISO limpia está en `manifests/iso-1.0.0.json`.
 
 Un resultado de esta sección no se extrapola a la release completa.

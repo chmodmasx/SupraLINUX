@@ -25,17 +25,20 @@ La release 1.0.0 se llama **Aurora**.
 - Instalador **Calamares**.
 - Btrfs por defecto, con subvolúmenes y Snapper.
 - LUKS2 con `/boot` ext4 separado cuando corresponde.
-- RAID de datos y dual-boot con Windows/Linux.
+- RAID de datos y dual-boot con otra instalación Linux. Windows no se declara
+  validado en 1.0.0.
 - BIOS y UEFI; Secure Boot con la cadena firmada de Ubuntu.
 - Instalación offline-first y online.
 
 ## Recuperación
 
 - Snapper crea instantáneas de la raíz.
-- Rollback desde el entorno live.
+- Rollback guiado desde el entorno live, con una app Kirigami propia.
 - `/home` no se modifica durante el rollback.
 - La raíz anterior se conserva como `@pre-rollback-<fecha>`.
 - El sistema instalado debe quedar utilizable después de una actualización fallida.
+- La recuperación guiada cubre Btrfs sin cifrar; LUKS2 no tiene rollback
+  automático en 1.0.0.
 
 ## Aplicaciones y actualizaciones
 

@@ -94,15 +94,20 @@ firmware que confía en Canonical. Los módulos propios requieren MOK. Ver
 ## D-008 — Btrfs, Snapper y recuperación desde el live
 
 **Decisión:** Btrfs por defecto, con `@`, `@home` y `@snapshots`; Snapper en la
-raíz; rollback desde el live con `supralinux-recover`.
+raíz; rollback desde el live con `supralinux-recover` y una GUI Kirigami
+propia, live-only.
 
 **Motivo:** permitir volver a un estado anterior sin revertir los datos
 personales y sin depender de una entrada de recuperación en el sistema
-instalado.
+instalado. Una terminal cruda no es una experiencia aceptable para un usuario
+común.
 
 **Consecuencia:** `@home` no se toca en el rollback. La raíz anterior se
 conserva como `@pre-rollback-<fecha>` y se retienen las tres más recientes. EXT4
-sigue disponible, pero sin rollback.
+sigue disponible, pero sin rollback. La GUI no se instala en el target; el
+sistema instalado no conserva entrada de recuperación ni backend. La
+recuperación guiada cubre Btrfs sin cifrar; LUKS2 no tiene rollback automático
+en 1.0.0.
 
 ## D-009 — Firefox desde el repositorio oficial de Mozilla
 
@@ -385,3 +390,56 @@ sobre `/etc/xdg`.
 rueda cambia el zoom de 33% a 94% y vuelve a 33%; Preferencias muestra
 “Ampliar”; al elegir “Desplazamiento” el zoom queda en 33% y la preferencia
 persiste. Evidencia en `evidence/live/gwenview-default-20261120/`.
+
+## D-029 — GUI de recuperación propia, live-only
+
+**Decisión:** crear `supralinux-recovery-gui`, una app Qt 6/QML/Kirigami,
+GPL-2.0-or-later, que lista instantáneas, pide confirmación, muestra progreso y
+restaura desde el live. No crea, borra ni compara instantáneas. Usa `pkexec` y
+una política polkit para llamar a `supralinux-recover`; no corre como root.
+
+**Motivo:** la recuperación es una promesa central del producto y una TUI no es
+aceptable para un usuario común. Las GUIs existentes (qSnapper, Btrfs
+Assistant, snapper-gui, Timeshift) administran el sistema en ejecución o usan
+otro store; no son un drop-in para restaurar un `@` desmontado desde el live.
+
+**Consecuencia:** la GUI y el helper se instalan sólo en el live y Calamares los
+elimina del target. No se agrega `grub-btrfs` ni una entrada de recuperación al
+GRUB instalado. La entrada Recovery del live arranca gráfica y autolanza la
+GUI. La app se prueba en VM desechable con un disco Btrfs y snapshots.
+
+## D-030 — Dual-boot de 1.0.0 limitado a Linux
+
+**Decisión:** validar dual-boot con otra instalación Linux, en el mismo disco y
+en dos discos. No declarar Windows validado en 1.0.0.
+
+**Motivo:** el flujo de Windows necesita una ISO, BitLocker y pruebas de
+firmware que no forman parte del alcance actual. `os-prober` ya detecta otras
+raíces Linux y el instalador conserva las entradas ajenas de la ESP.
+
+**Consecuencia:** la matriz L4-DUAL y la web hablan de dual-boot Linux. Windows
+queda como trabajo futuro; no se promete en la home ni en la FAQ.
+
+## D-031 — Snapper se mantiene; Timeshift no se migra
+
+**Decisión:** conservar Snapper, el layout `@`/`@home`/`@snapshots` y el hook
+APT. Timeshift no se instala ni se usa como store paralelo.
+
+**Motivo:** Snapper ya está configurado, validado en hardware y conectado al
+backend de recuperación. Migrar a Timeshift implicaría otro store, otro hook y
+repetir la matriz de recuperación.
+
+**Consecuencia:** Timeshift sirve sólo como referencia de UX. La GUI propia
+llama al backend existente.
+
+## D-032 — LUKS2 sin rollback automático en 1.0.0
+
+**Decisión:** la recuperación guiada desde el live cubre Btrfs sin cifrar. Una
+instalación LUKS2 no tiene rollback automático en 1.0.0.
+
+**Motivo:** el live necesitaría desbloquear LUKS2, montar el Btrfs interno y
+pedir la contraseña de forma segura; además, `/boot` es una partición ext4
+separada y no forma parte del snapshot de `@`.
+
+**Consecuencia:** la GUI debe mostrar un estado claro para LUKS2. La
+recuperación de LUKS2 queda para una versión futura; no se promete en la web.

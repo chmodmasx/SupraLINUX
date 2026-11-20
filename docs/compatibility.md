@@ -122,8 +122,8 @@ se empaqueta en esta release.
 - EXT4 disponible como alternativa, sin Snapper ni rollback.
 - RAID de datos con `mdadm`; no se ofrece instalar el SO sobre RAID en el flujo
   automático.
-- Dual-boot con Windows/Linux mediante `os-prober`, conservando las entradas
-  ajenas de la ESP.
+- Dual-boot con otra instalación Linux mediante `os-prober`, conservando las
+  entradas ajenas de la ESP. Windows no se declara validado en 1.0.0.
 - Swap: `none`, `file` (512 MiB en `@swap`), `small` (hasta 4 GiB) o `suspend`
   (partición >= RAM). La reanudación desde hibernación no se probó.
 - zram sólo en equipos de hasta 8 GB; zswap desactivado.
@@ -134,9 +134,12 @@ se empaqueta en esta release.
 - `@home` es un subvolumen separado y no se revierte.
 - `supralinux-recover` se ejecuta desde el live y conserva la raíz anterior como
   `@pre-rollback-<fecha>`.
+- La GUI `supralinux-recovery-gui` envuelve al backend y se elimina del target.
 - Se retienen las tres raíces `@pre-rollback-*` más recientes.
-- El sistema instalado no conserva una entrada de recuperación propia.
+- El sistema instalado no conserva una entrada de recuperación propia ni la GUI.
 - EXT4 no tiene rollback.
+- La recuperación guiada cubre Btrfs sin cifrar; LUKS2 no tiene rollback
+  automático en 1.0.0.
 
 ## Actualizaciones
 

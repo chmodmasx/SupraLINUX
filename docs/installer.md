@@ -66,9 +66,11 @@ instalador para que no se ofrezcan como disco de borrado. El target recibe
 `/etc/mdadm/mdadm.conf` y `mdmonitor`; el SO no se instala sobre RAID en el
 flujo automático.
 
-`os-prober` detecta Windows y otras raíces Linux. El instalador conserva las
-entradas ajenas de la ESP y no pisa su arranque. Secure Boot usa la cadena de
-Ubuntu; ver [secure-boot.md](secure-boot.md).
+`os-prober` detecta otras raíces Linux. El instalador conserva las entradas
+ajenas de la ESP y no pisa su arranque. Para 1.0.0 se valida dual-boot con
+otra instalación Linux, en el mismo disco y en dos discos; Windows no se
+declara validado. Secure Boot usa la cadena de Ubuntu; ver
+[secure-boot.md](secure-boot.md).
 
 ## Usuarios
 
@@ -101,16 +103,25 @@ La instalación Btrfs crea una instantánea base y un hook APT que toma una
 instantánea PRE antes de cada operación de dpkg. `@home` es un subvolumen
 separado y no se revierte.
 
-El sistema instalado no conserva una entrada de recuperación propia. Se arranca
-el live, se elige **SupraLINUX Aurora Recovery** y se ejecuta:
+El sistema instalado no conserva una entrada de recuperación propia ni la GUI.
+Se arranca el live, se elige **SupraLINUX Aurora Recovery** y la aplicación
+gráfica se abre automáticamente. También se puede abrir desde el icono
+«Recuperar SupraLINUX» del escritorio.
 
-```sh
-sudo supralinux-recover
-```
+La GUI lista las instantáneas con fecha y descripción, pide confirmación y
+muestra el progreso. No crea, borra ni compara instantáneas. No reimplementa
+Btrfs: llama al backend `supralinux-recover` con `--list-tsv` y
+`--snapshot N --yes --progress=json` a través de `pkexec` y la política
+`com.supralinux.recovery.run`. El paquete y el helper se eliminan del sistema
+instalado.
 
-El script lista las instantáneas, crea un `@` nuevo desde la elegida y conserva
-la raíz anterior como `@pre-rollback-<fecha>`. Se retienen las tres raíces
-previas más recientes. Ver [compatibility.md](compatibility.md).
+El backend crea un `@` nuevo desde la instantánea elegida y conserva la raíz
+anterior como `@pre-rollback-<fecha>`. Se retienen las tres raíces previas más
+recientes. Ver [compatibility.md](compatibility.md).
+
+La recuperación guiada cubre Btrfs sin cifrar. En una instalación LUKS2 el
+rollback automático no está soportado en 1.0.0: el live no desbloquea la
+partición cifrada y la GUI debe informar la limitación.
 
 ## Límites
 
@@ -118,6 +129,9 @@ previas más recientes. Ver [compatibility.md](compatibility.md).
 - No se probó la reanudación desde hibernación.
 - El hardware físico se prueba best-effort; QEMU es la validación primaria.
 - La matriz de instalación se ejecuta sobre discos desechables.
+- Dual-boot validado con Linux; Windows queda fuera de 1.0.0.
+- Rollback guiado soportado en Btrfs sin cifrar; LUKS2 no tiene rollback
+  automático en 1.0.0.
 - No hay SLA ni soporte comercial.
 
 ## Estado en el repo nuevo
