@@ -1,0 +1,8 @@
+qml/Main.qml usr/share/supralinux/recovery
+qml/Strings.js usr/share/supralinux/recovery
+data/supralinux-recovery.desktop usr/share/applications
+data/autostart/supralinux-recovery.desktop etc/xdg/autostart
+data/com.supralinux.recovery.policy usr/share/polkit-1/actions
+data/49-supralinux-recovery.rules etc/polkit-1/rules.d
+data/supralinux-recovery-helper usr/libexec
+data/supralinux-recovery.svg usr/share/icons/hicolor/scalable/apps

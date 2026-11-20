@@ -114,7 +114,7 @@ menuentry "SupraLINUX Aurora 1.0.0 Live (safe graphics)" --class ubuntu --class 
     initrd /casper/initrd.img
 }
 menuentry "SupraLINUX Aurora Recovery (Btrfs rollback)" --class recovery --class os {
-    linux /casper/vmlinuz boot=casper noswap systemd.unit=multi-user.target supralinux.recovery=1 console=tty0 console=ttyS0,115200 ---
+    linux /casper/vmlinuz boot=casper noswap quiet splash supralinux.recovery=1 console=tty0 console=ttyS0,115200 ---
     initrd /casper/initrd.img
 }
 menuentry "SupraLINUX Aurora 1.0.0 Live (debug)" --class ubuntu --class gnu-linux --class os {

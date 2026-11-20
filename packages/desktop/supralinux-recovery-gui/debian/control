@@ -1,0 +1,27 @@
+Source: supralinux-recovery-gui
+Section: admin
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13),
+ cmake,
+ qt6-base-dev,
+ qt6-declarative-dev
+Standards-Version: 4.7.2
+Homepage: https://supralinux.com/
+Rules-Requires-Root: no
+
+Package: supralinux-recovery-gui
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},
+ pkexec,
+ qml6-module-org-kde-kirigami,
+ qml6-module-org-kde-breeze,
+ qml6-module-qtquick-controls,
+ qml6-module-qtquick-layouts,
+ qml6-module-qtquick-window,
+ qml6-module-qtquick-templates,
+ qml6-module-qtquick-dialogs
+Description: SupraLINUX graphical recovery application
+ A small Kirigami application that lists Snapper snapshots and restores the
+ Btrfs root subvolume from the live environment. It is installed only in the
+ live image and is removed from the installed system by Calamares.

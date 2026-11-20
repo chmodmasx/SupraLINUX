@@ -6,6 +6,9 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / "manifests/aptly-publication-1.0.0.json").read_text())
 INVENTORY = json.loads((ROOT / "manifests/packages-1.0.0.json").read_text())
 
+# The GUI package is not part of the historical snapshot f publication yet.
+PENDING_PUBLICATION = {"supralinux-recovery-gui"}
+
 
 class AptlyPublicationTests(unittest.TestCase):
     def test_publication_is_pinned_but_not_a_release(self):
@@ -15,8 +18,10 @@ class AptlyPublicationTests(unittest.TestCase):
         self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261120f")
 
     def test_counts_match_the_source_inventory(self):
-        binaries = sum(len(item["binaries"]) for item in INVENTORY["packages"])
-        sources = len(INVENTORY["packages"])
+        published = [item for item in INVENTORY["packages"]
+                     if item["source"] not in PENDING_PUBLICATION]
+        binaries = sum(len(item["binaries"]) for item in published)
+        sources = len(published)
         self.assertEqual(DATA["counts"], {
             "binary_packages": binaries,
             "source_packages": sources,

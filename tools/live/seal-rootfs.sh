@@ -24,6 +24,21 @@ test -s "$root/etc/lsb-release"
 test -L "$root/etc/os-release"
 test -x "$root/etc/update-motd.d/10-help-text"
 
+# A lost setuid bit breaks pkexec, sudo and the live installer. These tools
+# must keep the modes shipped by their packages.
+for path in usr/bin/pkexec usr/bin/sudo.ws usr/bin/su \
+            usr/bin/mount usr/bin/umount usr/bin/passwd; do
+    [ -e "$root/$path" ] || continue
+    mode=$(stat -c '%a' "$root/$path")
+    case "$mode" in
+        4755) ;;
+        *)
+            echo "ERROR: $path has mode $mode; expected 4755." >&2
+            exit 1
+            ;;
+    esac
+done
+
 # Do not let a login fetch Ubuntu's motd news in the live image.
 rm -f "$root/etc/update-motd.d/50-motd-news"
 chroot "$root" systemctl disable motd-news.timer >/dev/null 2>&1 || true

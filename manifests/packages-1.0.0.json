@@ -10,7 +10,7 @@
     "plasma": 61,
     "gear": 20,
     "gear-extras": 15,
-    "desktop": 7,
+    "desktop": 8,
     "apps": 2,
     "fonts": 1,
     "system": 2
@@ -91,7 +91,7 @@
     },
     {
       "source": "supralinux-calamares-config",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "area": "desktop",
       "path": "packages/desktop/supralinux-calamares-config",
       "binaries": [
@@ -127,6 +127,19 @@
       ],
       "licenses": [
         "GPL-2.0-or-later"
+      ],
+      "test_only": false
+    },
+    {
+      "source": "supralinux-recovery-gui",
+      "version": "1.0.0",
+      "area": "desktop",
+      "path": "packages/desktop/supralinux-recovery-gui",
+      "binaries": [
+        "supralinux-recovery-gui"
+      ],
+      "licenses": [
+        "GPL-2+"
       ],
       "test_only": false
     },

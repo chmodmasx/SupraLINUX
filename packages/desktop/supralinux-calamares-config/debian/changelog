@@ -1,3 +1,10 @@
+supralinux-calamares-config (1.0.2) resolute; urgency=medium
+
+  * Remove the graphical recovery package and its files from the installed
+    system. The live image keeps them; the target only gets the installer.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 20 Nov 2026 18:00:00 +0000
+
 supralinux-calamares-config (1.0.1) resolute; urgency=medium
 
   * Remove only packages present in the live rootfs. An offline install has

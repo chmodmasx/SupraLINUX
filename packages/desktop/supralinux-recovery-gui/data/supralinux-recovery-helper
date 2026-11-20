@@ -1,0 +1,11 @@
+#!/bin/sh
+# Privileged entry point for the SupraLINUX recovery GUI.
+# The real backend lives in the live image at /usr/local/sbin/supralinux-recover.
+set -eu
+
+if [ ! -x /usr/local/sbin/supralinux-recover ]; then
+    echo "No se encontró /usr/local/sbin/supralinux-recover." >&2
+    exit 1
+fi
+
+exec /usr/local/sbin/supralinux-recover "$@"

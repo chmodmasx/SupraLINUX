@@ -1,0 +1,8 @@
+supralinux-recovery-gui (1.0.0) resolute; urgency=medium
+
+  * Initial SupraLINUX Aurora graphical recovery application.
+  * Lists Snapper snapshots and restores the Btrfs root from the live image.
+  * Uses polkit to run the existing supralinux-recover backend.
+  * Live-only: Calamares removes the package from the installed system.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Fri, 20 Nov 2026 18:00:00 +0000

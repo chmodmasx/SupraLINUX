@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Recuperar SupraLINUX
+Name[en]=Recover SupraLINUX
+Comment=Restaurar una instantánea del sistema
+Comment[en]=Restore a system snapshot
+Exec=supralinux-recovery-gui --autostart
+Icon=supralinux-recovery
+Terminal=false
+NoDisplay=true
+OnlyShowIn=KDE;
+X-KDE-autostart-after=panel

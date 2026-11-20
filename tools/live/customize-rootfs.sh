@@ -184,9 +184,20 @@ done
 # supralinux-defaults, not copied or patched here.
 install -m 0755 "$repo_root/installer/recovery/supralinux-recover.sh" \
         "$root/usr/local/sbin/supralinux-recover"
-install -d -m 0755 "$root/etc/systemd/system" "$root/etc/systemd"
-install -m 0644 "$repo_root/installer/recovery/supralinux-recovery.service" \
-        "$root/etc/systemd/system/supralinux-recovery.service"
+
+# The graphical recovery application is live-only. It is installed from the
+# signed repository in release builds, or injected as a local deb for testing.
+if chroot "$root" apt-cache show supralinux-recovery-gui >/dev/null 2>&1; then
+    apt_run install --no-install-recommends supralinux-recovery-gui
+fi
+
+if [ ! -f "$root/usr/share/applications/supralinux-recovery.desktop" ]; then
+    if [ "${SUPRALINUX_REQUIRE_RECOVERY_GUI:-0}" = 1 ]; then
+        echo "ERROR: supralinux-recovery-gui is required but was not installed." >&2
+        exit 1
+    fi
+    echo "WARNING: supralinux-recovery-gui is not installed; live recovery GUI will be unavailable." >&2
+fi
 
 install -d -m 0755 "$root/etc/sddm.conf.d"
 cat > "$root/etc/sddm.conf.d/10-supralinux.conf" <<SDDM
@@ -249,7 +260,6 @@ chroot "$root" systemctl enable chrony
 chroot "$root" systemctl enable sddm
 chroot "$root" systemctl enable systemd-resolved
 chroot "$root" systemctl enable NetworkManager
-chroot "$root" systemctl enable supralinux-recovery.service
 chroot "$root" systemctl set-default graphical.target
 
 # Never let the live session auto-assemble an existing mdadm array.  The
@@ -350,6 +360,44 @@ if [ -f "$root/usr/share/initramfs-tools/scripts/casper-bottom/41apt_build_cache
     sed -i '/^\. \/scripts\/casper-functions$/a [ -e /root/etc/apt/sources.list.d/cdrom.sources ] || { echo "SupraLINUX: no cdrom.sources, skipping APT cache build"; exit 0; }' \
         "$root/usr/share/initramfs-tools/scripts/casper-bottom/41apt_build_cache_cdrom"
 fi
+
+# Casper copies the installer launcher to the live user's Desktop. Put the
+# recovery launcher next to it, using the same ownership and trust handling.
+cat > "$root/usr/share/initramfs-tools/scripts/casper-bottom/27supralinux-recovery-icon" <<'RECOVERYICON'
+#!/bin/sh
+PREREQ=""
+DESCRIPTION="Adding the SupraLINUX recovery desktop icon..."
+
+prereqs()
+{
+    echo "$PREREQ"
+}
+
+case $1 in
+prereqs)
+    prereqs
+    exit 0
+    ;;
+esac
+
+. /scripts/casper-functions
+load_confmodule
+
+log_begin_msg "$DESCRIPTION"
+src=/usr/share/applications/supralinux-recovery.desktop
+if [ -f "/root$src" ] && [ -n "$USERNAME" ]; then
+    chroot /root install -d -o "$USERNAME" -g "$USERNAME" "/home/$USERNAME/Desktop"
+    chroot /root install -D -o "$USERNAME" -g "$USERNAME" "$src" \
+        "/home/$USERNAME/Desktop/supralinux-recovery.desktop"
+    if [ -x /root/usr/bin/dbus-run-session ] && [ -x /root/usr/bin/gio ]; then
+        chroot /root sudo -i -u "$USERNAME" dbus-run-session -- \
+            gio set "/home/$USERNAME/Desktop/supralinux-recovery.desktop" \
+            metadata::trusted true >/dev/null 2>&1 || true
+    fi
+fi
+log_end_msg
+RECOVERYICON
+chmod 0755 "$root/usr/share/initramfs-tools/scripts/casper-bottom/27supralinux-recovery-icon"
 
 chroot "$root" update-initramfs -u -k all
 

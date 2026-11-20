@@ -91,8 +91,24 @@ class LiveImageTests(unittest.TestCase):
     def test_recovery_helper_is_present(self):
         script = ROOT / "installer/recovery/supralinux-recover.sh"
         self.assertTrue(script.is_file())
-        self.assertIn("@pre-rollback-", script.read_text())
-        self.assertTrue((ROOT / "installer/recovery/supralinux-recovery.service").is_file())
+        text = script.read_text()
+        self.assertIn("@pre-rollback-", text)
+        self.assertIn("--list-tsv", text)
+        self.assertIn("--progress=json", text)
+        self.assertFalse((ROOT / "installer/recovery/supralinux-recovery.service").exists())
+
+    def test_graphical_recovery_package_is_present(self):
+        base = ROOT / "packages/desktop/supralinux-recovery-gui"
+        self.assertTrue((base / "debian/control").is_file())
+        self.assertTrue((base / "qml/Main.qml").is_file())
+        self.assertTrue((base / "data/supralinux-recovery.desktop").is_file())
+        self.assertTrue((base / "data/com.supralinux.recovery.policy").is_file())
+        self.assertIn("supralinux-recovery-gui",
+                      (ROOT / "tools/live/customize-rootfs.sh").read_text())
+        self.assertIn("supralinux.recovery=1",
+                      (ROOT / "tools/live/build-iso.sh").read_text())
+        self.assertNotIn("systemd.unit=multi-user.target",
+                         (ROOT / "tools/live/build-iso.sh").read_text())
 
     def test_repository_public_key_is_shipped(self):
         keys = sorted(path.name for path in (ROOT / "installer/keys").iterdir())
