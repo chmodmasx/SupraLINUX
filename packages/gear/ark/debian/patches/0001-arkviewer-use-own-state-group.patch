@@ -1,0 +1,22 @@
+Description: Use a dedicated state group for the internal viewer window
+ The internal viewer is a separate KParts::MainWindow. It calls
+ setAutoSaveSettings("Viewer", true), but KMainWindow 6.x stores the
+ window size, position and state in the "MainWindow" group of the state
+ config unless a dedicated group is set. As a result the viewer shares
+ the main Ark window's state and does not remember its own size across
+ Ark sessions. Give it its own "Viewer" state group.
+Forwarded: no
+Last-Update: 2026-11-20
+
+--- a/part/arkviewer.cpp
++++ b/part/arkviewer.cpp
+@@ -34,6 +34,9 @@
+ ArkViewer::ArkViewer()
+     : KParts::MainWindow()
+ {
++    // Keep the internal viewer's window size/state separate from Ark's main window.
++    setStateConfigGroup(QStringLiteral("Viewer"));
++
+     setupUi(this);
+ 
+     KStandardAction::close(this, &QMainWindow::close, actionCollection());
