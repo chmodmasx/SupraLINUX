@@ -38,7 +38,9 @@ durante el build y, antes de sellarse, restaura la fuente pública de
 
 `customize-rootfs.sh` instala el escritorio desde
 `packages/desktop/desktop-packages.list`, configura SDDM, locale, teclado,
-KWallet, red, RAID, los hooks de casper y la recuperación.
+KWallet, red, RAID, los hooks de casper y la recuperación. Para un build de
+release, exportar `SUPRALINUX_REQUIRE_RECOVERY_GUI=1`: el build falla si
+`supralinux-recovery-gui` no está instalado.
 
 ```sh
 unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \

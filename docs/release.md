@@ -52,7 +52,9 @@ Los paquetes modificados publican su fuente en `deb-src`.
    `InRelease`.
 5. **Crear snapshot.** Snapshot inmutable de `testing` para la release.
 6. **Construir la ISO.** Rootfs, squashfs, ISO BIOS/UEFI/Secure Boot y
-   checksums, con el nombre limpio de release.
+   checksums, con el nombre limpio de release y
+   `SUPRALINUX_REQUIRE_RECOVERY_GUI=1` para que el build falle si falta la GUI
+   de recuperación.
 7. **Ejecutar la matriz.** L0 a L7 de [pruebas](testing.md). Los bloqueantes
    deben estar en `PASS`.
 8. **Cerrar documentación.** Producto, arquitectura, packaging, desarrollo,
