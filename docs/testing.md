@@ -231,11 +231,15 @@ manifiesto de release.
   no es un build limpio, no se probó Calamares y no es una release. UEFI
   Secure Boot se verificó con `mokutil` y el efivar en `1`.
   El resumen está en `manifests/smoke-iso-1.0.0.json`.
-- Los 176 paquetes fuente: build limpio `PASS` (176/176), con artifact,
+- Los 177 paquetes fuente: build limpio `PASS` (177/177), con artifact,
   `.changes`, `.buildinfo`, evidencia y cleanup comprobado. El resumen está en
   `manifests/full-build-results-1.0.0.json`. Los cierres de `Build-Depends` se
   reutilizaron como inputs verificados por SHA-256; cada paquete se reconstruyó
   con el packaging actual.
+- `supralinux-recovery-gui 1.0.0` y `supralinux-calamares-config 1.0.2`: build
+  limpio `PASS` en VMs desechables; el `.deb` de la GUI incluye binario, QML,
+  polkit, autostart, icono y helper, y el de Calamares incluye el payload de
+  limpieza del target. Evidencia en `evidence/clean-build/`.
 - ISO limpia `93f2fef4…`: rootfs nuevo desde Ubuntu 26.04 + snapshot
   `supralinux-testing-1.0.0-20261120c`; BIOS y UEFI Secure Boot hasta Plasma
   `PASS`. UEFI Secure Boot verificado con `mokutil` y efivar `1`.
@@ -246,6 +250,10 @@ manifiesto de release.
 - Snapshot `supralinux-testing-1.0.0-20261120f`: 604 binarios y 176 fuentes.
   Incluye `supralinux-base-files 1.0.2` (`BUG_REPORT_URL=/bugs`) y
   `supralinux-defaults 1.1.3` (rueda de Gwenview en Ampliar).
+- Snapshot `supralinux-testing-1.0.0-20261121g`: 605 binarios y 177 fuentes.
+  Agrega `supralinux-recovery-gui 1.0.0` y actualiza
+  `supralinux-calamares-config` a 1.0.2; `InRelease` verificado con la clave
+  Ed25519. El resumen está en `manifests/aptly-publication-1.0.0.json`.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en
@@ -274,8 +282,8 @@ manifiesto de release.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.
-- LUKS2, EXT4, dual-boot y la matriz final de la GUI de recuperación siguen
-  pendientes.
+- LUKS2, EXT4, dual-boot y la matriz final de la GUI de recuperación sobre la
+  ISO final siguen pendientes.
 - Preflight de la GUI de recuperación (ISO `b830b764…`, rootfs de prueba con
   paquetes 1.0.1/1.1.2): el icono aparece junto a Calamares, la GUI lista dos
   instantáneas, restaura la raíz, conserva `@home`, deja `@pre-rollback-*` y la

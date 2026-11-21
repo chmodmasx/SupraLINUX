@@ -23,6 +23,9 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - URLs limpias en el sitio (`/bugs`, `/download`, `/docs`) con redirecciones
   301 desde `.html`, `security.txt` y cabeceras COOP/CORP.
 - Gwenview con la rueda del ratón en “Ampliar” por defecto.
+- Recuperación gráfica live-only (`supralinux-recovery-gui 1.0.0`): lista las
+  instantáneas de Snapper, restaura la raíz Btrfs con progreso y se lanza desde
+  la entrada Recovery del GRUB; se elimina del sistema instalado.
 
 ## [1.0.0] - Por anunciar
 

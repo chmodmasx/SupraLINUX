@@ -151,7 +151,7 @@ keyring personal del desarrollador.
 | Post-instalación | Keyring, Firefox, APT, Snapper y apagado `PASS`. |
 | Recuperación | Rollback y preservación de `/home` `PASS`. |
 | Repositorio | `InRelease` verificado y snapshot `stable` exacto. |
-| Inventario | 176 paquetes fuente listados y sin paquetes de prueba. |
+| Inventario | 177 paquetes fuente listados y sin paquetes de prueba. |
 | Documentación | Sin enlaces rotos; versión y changelog coherentes. |
 | Higiene | Sin secretos, artifacts ni datos personales en Git. |
 | Autorización | Publicación estable aprobada explícitamente. |
@@ -160,7 +160,7 @@ Un gate `BLOCKED` o `INFRA_INVALID` no se convierte en `PASS`. Si un gate no se
 puede completar, la release se detiene o se publica con un alcance menor
 explícitamente documentado, nunca con una afirmación falsa.
 
-## Estado de validación (2026-11-19)
+## Estado de validación (2026-11-21)
 
 - Suite unitaria: `PASS`.
 - 9 paquetes nativos del producto y el paquete sintético: build limpio `PASS`,
@@ -169,8 +169,10 @@ explícitamente documentado, nunca con una afirmación falsa.
   `libkf6coreaddons6`, `libkwin6` y `dolphin` con build limpio `PASS`.
 - Smoke offline: `supralinux-build-test` y `supralinux-base-files` con
   instalación, control negativo y rechazo de índices manipulados `PASS`.
-- Los 176 paquetes fuente tienen build limpio `PASS` (176/176), con artifact,
-  `.changes`, `.buildinfo`, evidencia y cleanup. El resumen está en
+- Los 177 paquetes fuente tienen build limpio `PASS` (177/177), con artifact,
+  `.changes`, `.buildinfo`, evidencia y cleanup. Incluye
+  `supralinux-recovery-gui 1.0.0` y `supralinux-calamares-config 1.0.2`,
+  reconstruidos después del lote original. El resumen está en
   `manifests/full-build-results-1.0.0.json`.
 - ISO limpia `93f2fef4…` construida desde un rootfs nuevo y el snapshot
   `supralinux-testing-1.0.0-20261120c`: BIOS y UEFI Secure Boot `PASS`.
@@ -222,10 +224,12 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261120f`
-  con 604 binarios y 176 fuentes; publicación `testing` firmada y verificada.
-  `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly viejo dejó
-  de servirse. El resumen está en `manifests/aptly-publication-1.0.0.json`.
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261121g`
+  con 605 binarios y 177 fuentes; publicación `testing` firmada y verificada.
+  Incluye `supralinux-recovery-gui 1.0.0` y `supralinux-calamares-config
+  1.0.2`. `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly
+  viejo dejó de servirse. El resumen está en
+  `manifests/aptly-publication-1.0.0.json`.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
@@ -238,11 +242,11 @@ lista de instantáneas, rollback, `/home` intacto, `@pre-rollback-*` y entrada
 Recovery con autostart gráfico. Es un preflight, no un PASS de release; la ISO
 final debe construirse con los paquetes 1.0.2/1.1.3 y repetir L4/L6.
 
-Pendiente antes de release: build limpio de `supralinux-recovery-gui 1.0.0` y
-`supralinux-calamares-config 1.0.2`, publicación de ambos en `testing`, y
-actualización de `manifests/full-build-results-1.0.0.json` y
-`manifests/aptly-publication-1.0.0.json`. Los tests marcan esos dos paquetes
-como pendientes; no se declaran PASS.
+El build limpio y la publicación de `supralinux-recovery-gui 1.0.0` y
+`supralinux-calamares-config 1.0.2` ya están en `PASS` y forman parte del
+snapshot `g`. Falta construir la ISO final desde ese snapshot y correr sobre
+ella LUKS2, EXT4, dual-boot Linux (mismo disco y dos discos), RAID,
+UEFI/Secure Boot instalado y la matriz L6 de recuperación.
 
 ## Publicación
 

@@ -6,8 +6,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / "manifests/aptly-publication-1.0.0.json").read_text())
 INVENTORY = json.loads((ROOT / "manifests/packages-1.0.0.json").read_text())
 
-# The GUI package is not part of the historical snapshot f publication yet.
-PENDING_PUBLICATION = {"supralinux-recovery-gui"}
+# Snapshot g includes the recovery GUI and the current Calamares config.
+PENDING_PUBLICATION = set()
 
 
 class AptlyPublicationTests(unittest.TestCase):
@@ -15,7 +15,7 @@ class AptlyPublicationTests(unittest.TestCase):
         self.assertEqual(DATA["scope"], "aptly-publication")
         self.assertEqual(DATA["status"], "PASS")
         self.assertFalse(DATA["release_ready"])
-        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261120f")
+        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261121g")
 
     def test_counts_match_the_source_inventory(self):
         published = [item for item in INVENTORY["packages"]

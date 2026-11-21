@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261120f",
-  "snapshot_created_at": "2026-11-20T13:36:55Z",
+  "snapshot": "supralinux-testing-1.0.0-20261121g",
+  "snapshot_created_at": "2026-11-21T06:28:30Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -21,9 +21,9 @@
     ]
   },
   "counts": {
-    "binary_packages": 604,
-    "source_packages": 176,
-    "total": 780
+    "binary_packages": 605,
+    "source_packages": 177,
+    "total": 782
   },
   "key": {
     "fingerprint": "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8",
@@ -35,15 +35,15 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "da7177b57de79f1c6447945fff68e208d58b7cfbc0351b2e74c63ffb18c1b03b",
-    "release_sha256": "c343f2a33316e53886c8755079366605f7f80250874b1be927737c672aa2759b",
-    "binary_index_count": 604,
-    "source_index_count": 176
+    "inrelease_sha256": "a96df97026984905e38e3171663fa23558ae8860e43047a892443951ceb6c07a",
+    "release_sha256": "9f37b4cf5b0eba934f5075e951a2cf4300af53e5b514a966d55b7163cf8a6f61",
+    "binary_index_count": 605,
+    "source_index_count": 177
   },
   "notes": [
     "El host público repo.supralinux.com apunta al Aptly nuevo y sirve la suite testing.",
     "El Aptly viejo y su stack quedan intactos pero ya no se publican en repo.supralinux.com.",
     "supralinux-stable sigue vacío; no hay publicación stable.",
-    "El snapshot f reemplaza las versiones anteriores de base-files y defaults; el repositorio testing queda con 604 binarios y 176 fuentes."
+    "El snapshot g reemplaza a f, agrega supralinux-recovery-gui 1.0.0 y actualiza supralinux-calamares-config a 1.0.2; el repositorio testing queda con 605 binarios y 177 fuentes."
   ]
 }
