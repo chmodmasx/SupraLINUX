@@ -5,6 +5,8 @@ supralinux-defaults (1.1.4) resolute; urgency=medium
     probe did not see /etc/os-release; grub-mkconfig now detects other
     SupraLINUX installations for dual-boot.
 
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sat, 21 Nov 2026 09:00:00 +0000
+
 supralinux-defaults (1.1.3) resolute; urgency=medium
 
   * Set Gwenview's mouse wheel behavior to Zoom in the system-wide
