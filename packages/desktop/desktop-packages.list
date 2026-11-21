@@ -319,6 +319,7 @@ supralinux-calamares-config
 grub-efi-amd64-signed
 shim-signed
 grub-pc-bin
+os-prober
 efibootmgr
 dosfstools
 btrfs-progs
