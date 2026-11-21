@@ -66,8 +66,9 @@ instalador para que no se ofrezcan como disco de borrado. El target recibe
 `/etc/mdadm/mdadm.conf` y `mdmonitor`; el SO no se instala sobre RAID en el
 flujo automático.
 
-`os-prober` detecta otras raíces Linux. El instalador conserva las entradas
-ajenas de la ESP y no pisa su arranque. Para 1.0.0 se valida dual-boot con
+`os-prober` se instala en el live y en el target; `grub-mkconfig` lo usa para
+detectar otras raíces Linux. El instalador conserva las entradas ajenas de la
+ESP y no pisa su arranque. Para 1.0.0 se valida dual-boot con
 otra instalación Linux, en el mismo disco y en dos discos; Windows no se
 declara validado. Secure Boot usa la cadena de Ubuntu; ver
 [secure-boot.md](secure-boot.md).

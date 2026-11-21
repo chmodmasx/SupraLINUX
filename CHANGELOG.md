@@ -26,6 +26,8 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - Recuperación gráfica live-only (`supralinux-recovery-gui 1.0.0`): lista las
   instantáneas de Snapper, restaura la raíz Btrfs con progreso y se lanza desde
   la entrada Recovery del GRUB; se elimina del sistema instalado.
+- `os-prober` en el live y en el sistema instalado para que GRUB detecte otras
+  instalaciones Linux en dual-boot.
 
 ## [1.0.0] - Por anunciar
 
