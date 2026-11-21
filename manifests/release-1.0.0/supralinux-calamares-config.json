@@ -2,16 +2,16 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-calamares-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-calamares-config",
-    "original_commit": "9bb0d230f13d0d1dbde03b9be7016af320b484a9",
+    "original_commit": "e32091f454be102a21802d7570092c9cf8891857",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13), gettext",
-    "dsc_name": "supralinux-calamares-config_1.0.1.dsc",
-    "version": "1.0.1"
+    "dsc_name": "supralinux-calamares-config_1.0.2.dsc",
+    "version": "1.0.2"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
@@ -307,7 +307,8 @@
       "/etc/calamares/settings.conf",
       "/etc/calamares/branding/supralinux/branding.desc",
       "/usr/share/applications/kubuntu-calamares.desktop",
-      "/usr/share/locale/es_AR/LC_MESSAGES/calamares-python.mo"
+      "/usr/share/locale/es_AR/LC_MESSAGES/calamares-python.mo",
+      "/etc/calamares/modules/shellprocess_supralinux.conf"
     ]
   }
 }

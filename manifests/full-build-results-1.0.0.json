@@ -6,246 +6,26 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "Los 176 paquetes se reconstruyeron con el packaging actual en VMs desechables. Los cierres de Build-Depends se reutilizaron como inputs verificados por SHA-256. Esto certifica los paquetes, no la ISO ni la release.",
+  "note": "Los 176 paquetes del lote original se reconstruyeron con el packaging actual en VMs desechables; después se agregaron supralinux-recovery-gui 1.0.0 y supralinux-calamares-config 1.0.2 con el mismo circuito. Los cierres de Build-Depends se reutilizaron como inputs verificados por SHA-256. Esto certifica los paquetes, no la ISO ni la release.",
   "started_at": "2026-11-18T19:30:00+00:00",
-  "finished_at": "2026-11-19T12:41:39.288151+00:00",
-  "build_count": 176,
+  "finished_at": "2026-11-21T06:27:29.209097+00:00",
+  "build_count": 177,
   "areas": {
     "kde": 68,
     "plasma": 61,
     "gear": 20,
     "gear-extras": 15,
-    "desktop": 7,
+    "desktop": 8,
     "apps": 2,
     "fonts": 1,
     "system": 2
   },
   "counts": {
-    "pass": 176,
+    "pass": 177,
     "fail": 0,
     "infra_invalid": 0
   },
   "builds": [
-    {
-      "package": "supralinux-drivers",
-      "version": "1.0.9",
-      "area": "apps",
-      "manifest": "manifests/release-1.0.0/supralinux-drivers.json",
-      "artifact": {
-        "name": "supralinux-drivers_1.0.9_all.deb",
-        "sha256": "665bcae3eec0d0575e860c2949daf8b1789cbab45c58fe8e69fc3fb62192973c",
-        "bytes": 16956
-      },
-      "evidence": "evidence/clean-build/20261118T161853Z-2743884155f3",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 79.001,
-        "guest_build": 29.219
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "supralinux-kdeconnect-sftp",
-      "version": "1.0.2",
-      "area": "apps",
-      "manifest": "manifests/release-1.0.0/supralinux-kdeconnect-sftp.json",
-      "artifact": {
-        "name": "supralinux-kdeconnect-sftp_1.0.2_amd64.deb",
-        "sha256": "d4339e4f00fc5f64a4b8079ab1e948e4fa1fd5ae5b9c502c885d1d868465f6d8",
-        "bytes": 1731796
-      },
-      "evidence": "evidence/clean-build/20261118T184646Z-3ec077815134",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 106.46,
-        "guest_build": 52.198
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "plasma-wayland-protocols",
-      "version": "1.20.0-2supralinux2",
-      "area": "desktop",
-      "manifest": "manifests/release-1.0.0/plasma-wayland-protocols.json",
-      "artifact": {
-        "name": "plasma-wayland-protocols_1.20.0-2supralinux2_all.deb",
-        "sha256": "52be4106cf8e17b098278f5be3ed52e661db07bb62876f7c031b436d46e253ef",
-        "bytes": 39908
-      },
-      "evidence": "evidence/clean-build/20261118T184252Z-8949e9abf554",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 137.593,
-        "guest_build": 82.639
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "supralinux-base-files",
-      "version": "1.0.2",
-      "area": "desktop",
-      "manifest": "manifests/release-1.0.0/supralinux-base-files.json",
-      "artifact": {
-        "name": "supralinux-base-files_1.0.2_all.deb",
-        "sha256": "16aa110416326948455081b77956f76814355ce23422ed27e67bc1fa51776d92",
-        "bytes": 3066
-      },
-      "evidence": "evidence/clean-build/20261120T131657Z-5dbadb26c985",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 74.366,
-        "guest_build": 25.293
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "supralinux-branding",
-      "version": "1.2.0",
-      "area": "desktop",
-      "manifest": "manifests/release-1.0.0/supralinux-branding.json",
-      "artifact": {
-        "name": "supralinux-branding_1.2.0_all.deb",
-        "sha256": "d14118ae4a865ce4a16cd88ffdbe595a5af8c3d47fb77731d45416ada70f9609",
-        "bytes": 4452578
-      },
-      "evidence": "evidence/clean-build/20261118T161224Z-476bc7cbdcfa",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 81.524,
-        "guest_build": 30.864
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "supralinux-calamares-config",
-      "version": "1.0.1",
-      "area": "desktop",
-      "manifest": "manifests/release-1.0.0/supralinux-calamares-config.json",
-      "artifact": {
-        "name": "supralinux-calamares-config_1.0.1_all.deb",
-        "sha256": "a34ddb6508e4b81882d1d6a804b1ccf71c15da8b6edf0fc6c7ef015140cbc458",
-        "bytes": 101428
-      },
-      "evidence": "evidence/clean-build/20261119T140235Z-5b781ee42ca6",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 79.216,
-        "guest_build": 27.594
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "supralinux-defaults",
-      "version": "1.1.3",
-      "area": "desktop",
-      "manifest": "manifests/release-1.0.0/supralinux-defaults.json",
-      "artifact": {
-        "name": "supralinux-defaults_1.1.3_all.deb",
-        "sha256": "be633aff5090f98f6e9ba71f864727bde13b77769a0f9986cc0b937f2128747a",
-        "bytes": 15122
-      },
-      "evidence": "evidence/clean-build/20261120T133119Z-9140567d6dac",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 74.912,
-        "guest_build": 23.096
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "supralinux-hardware-support",
-      "version": "1.0.2",
-      "area": "desktop",
-      "manifest": "manifests/release-1.0.0/supralinux-hardware-support.json",
-      "artifact": {
-        "name": "supralinux-hardware-support_1.0.2_all.deb",
-        "sha256": "e8dd3b0d8ecd520594e4b71f2bd7b899e9d4a884bb6ef581032b69cf908b62c8",
-        "bytes": 2004
-      },
-      "evidence": "evidence/clean-build/20261118T161738Z-6d92b2582c34",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 74.205,
-        "guest_build": 24.799
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "supralinux-theme",
-      "version": "1.0.3",
-      "area": "desktop",
-      "manifest": "manifests/release-1.0.0/supralinux-theme.json",
-      "artifact": {
-        "name": "supralinux-theme_1.0.3_all.deb",
-        "sha256": "842d0c486a980efb008ed61babc76c54d484c347501a51d0713aa54932f3b79f",
-        "bytes": 3218590
-      },
-      "evidence": "evidence/clean-build/20261118T161346Z-69ee1d0f7bbd",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 76.705,
-        "guest_build": 27.22
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "fonts-noto-color-emoji",
-      "version": "2.057+supralinux2",
-      "area": "fonts",
-      "manifest": "manifests/release-1.0.0/fonts-noto-color-emoji.json",
-      "artifact": {
-        "name": "fonts-noto-color-emoji_2.057+supralinux2_all.deb",
-        "sha256": "37136a719aaf4e805ff104662d72933efbe0165ee65a808735306e4f40a6aca7",
-        "bytes": 9675536
-      },
-      "evidence": "evidence/clean-build/20261118T162012Z-6749bca7b0a7",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 84.5,
-        "guest_build": 31.975
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
     {
       "package": "ark",
       "version": "4:25.12.3-0supralinux3",
@@ -261,6 +41,50 @@
       "timings_seconds": {
         "total": 310.063,
         "guest_build": 252.122
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "audiocd-kio",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/audiocd-kio.json",
+      "artifact": {
+        "name": "kio-audiocd_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "a74b18db8eeca65e2a5ef64714cd5098df7ad940cda2620e1c273db7fa2e19a3",
+        "bytes": 745070
+      },
+      "evidence": "evidence/clean-build/20261118T211034Z-3e01dbb90146",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 329.545,
+        "guest_build": 270.029
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "aurorae",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/aurorae.json",
+      "artifact": {
+        "name": "kwin-style-aurorae_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "1982eb2dcbcebe2c2844069a57fbbaba438d5912e91d3bc3955271f446759502",
+        "bytes": 141260
+      },
+      "evidence": "evidence/clean-build/20261119T051859Z-23814429d427",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 418.765,
+        "guest_build": 266.769
       },
       "cleanup": {
         "process_absent": true,
@@ -291,6 +115,138 @@
       }
     },
     {
+      "package": "bluedevil",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/bluedevil.json",
+      "artifact": {
+        "name": "bluedevil_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "8255f6db379519c50c0f7d3b5fd0eadae5e71feff42cfc5d7efbb0ef47e73ccf",
+        "bytes": 679582
+      },
+      "evidence": "evidence/clean-build/20261119T052601Z-95228a8061d5",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 489.579,
+        "guest_build": 395.402
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "breeze",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/breeze.json",
+      "artifact": {
+        "name": "breeze_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "ae6733770c0ebb1adc1c1698777076e443fe705a994c859d555fcbd9d9c89d8c",
+        "bytes": 32316
+      },
+      "evidence": "evidence/clean-build/20261119T053413Z-e7e4466c7f97",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 714.031,
+        "guest_build": 486.028
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "breeze-grub",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/breeze-grub.json",
+      "artifact": {
+        "name": "grub-theme-breeze_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "62e095d51500b8119cbf26a4addf31ca9b10083d57d03c8e9a8d4bec702c75c2",
+        "bytes": 1603206
+      },
+      "evidence": "evidence/clean-build/20261119T054610Z-100779188189",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 244.425,
+        "guest_build": 95.843
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "breeze-gtk",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/breeze-gtk.json",
+      "artifact": {
+        "name": "breeze-gtk-theme_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "fdc2e5e1de52f70aa3e80e74f44743c7ce79f0290549e8b2c4d4118a3ae4e05d",
+        "bytes": 177756
+      },
+      "evidence": "evidence/clean-build/20261119T055016Z-19d63bdf2038",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 456.046,
+        "guest_build": 309.389
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "breeze-plymouth",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/breeze-plymouth.json",
+      "artifact": {
+        "name": "plymouth-theme-breeze_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "9f8821d43fd2246ee3d6249225b4b6f912d24fca6b90dfa42d01a1b342805ef9",
+        "bytes": 95264
+      },
+      "evidence": "evidence/clean-build/20261119T055755Z-7a6d1ab89da6",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 298.191,
+        "guest_build": 152.716
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "casper",
+      "version": "26.04.2-0supralinux3",
+      "area": "system",
+      "manifest": "manifests/release-1.0.0/casper.json",
+      "artifact": {
+        "name": "casper_26.04.2-0supralinux3_amd64.deb",
+        "sha256": "de6efa1134546f93183150f779a4ea050a64c319dfcd57c5512f85b8190ea25f",
+        "bytes": 51338
+      },
+      "evidence": "evidence/clean-build/20261118T184519Z-863a1d44ec39",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 86.471,
+        "guest_build": 36.455
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "dolphin",
       "version": "4:25.12.3-0supralinux3",
       "area": "gear",
@@ -305,6 +261,50 @@
       "timings_seconds": {
         "total": 501.75,
         "guest_build": 436.892
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "dolphin-plugins",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/dolphin-plugins.json",
+      "artifact": {
+        "name": "dolphin-plugins_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "4f7edb3643d7a5de2be27cfbd584411bc753311674356926451028ea900cca7f",
+        "bytes": 547984
+      },
+      "evidence": "evidence/clean-build/20261118T211605Z-b1bd80820873",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 311.561,
+        "guest_build": 249.705
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "drkonqi",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/drkonqi.json",
+      "artifact": {
+        "name": "drkonqi_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "2cb670f2a0d2cb9c64dba1379da6785cb6f3b3ef88b00f3eaea111773ccb85e4",
+        "bytes": 735448
+      },
+      "evidence": "evidence/clean-build/20261119T060254Z-5f20c6a5c48e",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 522.255,
+        "guest_build": 417.037
       },
       "cleanup": {
         "process_absent": true,
@@ -335,6 +335,28 @@
       }
     },
     {
+      "package": "ffmpegthumbs",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/ffmpegthumbs.json",
+      "artifact": {
+        "name": "ffmpegthumbs_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "3d1509f814f3f4b4017ffa8c21af0eeae66ae05ad76cc91a4188fb13a9ed2187",
+        "bytes": 34788
+      },
+      "evidence": "evidence/clean-build/20261118T212118Z-dd9deb5a82d6",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 261.856,
+        "guest_build": 201.445
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "filelight",
       "version": "4:25.12.3-0supralinux1",
       "area": "gear",
@@ -349,6 +371,72 @@
       "timings_seconds": {
         "total": 213.106,
         "guest_build": 154.614
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "flatpak-kcm",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/flatpak-kcm.json",
+      "artifact": {
+        "name": "kde-config-flatpak_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "0ab3ec0cdcfaca1f6c63da7cee3398ce805bfbf6ee01cd2a4a32c567bccf7a05",
+        "bytes": 209574
+      },
+      "evidence": "evidence/clean-build/20261119T061138Z-f47fbf43752a",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 444.431,
+        "guest_build": 354.709
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "fonts-noto-color-emoji",
+      "version": "2.057+supralinux2",
+      "area": "fonts",
+      "manifest": "manifests/release-1.0.0/fonts-noto-color-emoji.json",
+      "artifact": {
+        "name": "fonts-noto-color-emoji_2.057+supralinux2_all.deb",
+        "sha256": "37136a719aaf4e805ff104662d72933efbe0165ee65a808735306e4f40a6aca7",
+        "bytes": 9675536
+      },
+      "evidence": "evidence/clean-build/20261118T162012Z-6749bca7b0a7",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 84.5,
+        "guest_build": 31.975
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "freerdp3",
+      "version": "3.32.1+dfsg-0ubuntu0.26.04.1+supralinux2",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/freerdp3.json",
+      "artifact": {
+        "name": "freerdp-proxy_3.32.1+dfsg-0ubuntu0.26.04.1+supralinux2_amd64.deb",
+        "sha256": "ff884897fb98cb99edc3ffe8008f2a5b1d34827d08b0760da4f94e142d3f7cc7",
+        "bytes": 6142
+      },
+      "evidence": "evidence/clean-build/20261118T185958Z-53729051c226",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 252.413,
+        "guest_build": 194.376
       },
       "cleanup": {
         "process_absent": true,
@@ -401,6 +489,50 @@
       }
     },
     {
+      "package": "kaccounts-providers",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/kaccounts-providers.json",
+      "artifact": {
+        "name": "kaccounts-providers_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "fed8c6ff98b545638f94318a1848c39a18f94d158eaafb5547d025d755f457e7",
+        "bytes": 79956
+      },
+      "evidence": "evidence/clean-build/20261118T212541Z-e74c2bb85ba3",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 293.55,
+        "guest_build": 224.896
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kactivitymanagerd",
+      "version": "6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/kactivitymanagerd.json",
+      "artifact": {
+        "name": "kactivitymanagerd_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "06893619e23a397b08d35a9164d25303c11092e648a5fbbf92b916d349c7c2bd",
+        "bytes": 203568
+      },
+      "evidence": "evidence/clean-build/20261119T061905Z-3d964c217174",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 464.528,
+        "guest_build": 371.293
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "kate",
       "version": "4:25.12.3-0supralinux1",
       "area": "gear",
@@ -445,336 +577,6 @@
       }
     },
     {
-      "package": "kdeconnect",
-      "version": "25.12.3-0supralinux7",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/kdeconnect.json",
-      "artifact": {
-        "name": "kdeconnect_25.12.3-0supralinux7_amd64.deb",
-        "sha256": "93c8f23de7f03c0010b1b002e536615674e24e3160f915c2b5577a31033b9eea",
-        "bytes": 1121550
-      },
-      "evidence": "evidence/clean-build/20261118T195559Z-a5e231de9553",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 714.745,
-        "guest_build": 651.778
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kfind",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/kfind.json",
-      "artifact": {
-        "name": "kfind_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "fd25f6b5bcbe88c4b8ec381dcacb96a2dad02fc24fd7b79fbce629485b1a3160",
-        "bytes": 446290
-      },
-      "evidence": "evidence/clean-build/20261118T200757Z-37f5e31252a8",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 232.254,
-        "guest_build": 170.64
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kgpg",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/kgpg.json",
-      "artifact": {
-        "name": "kgpg_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "2f33d61ebaba70a3f28c683f5fce1209e446a7a5f661b984c3a6645b9c3f0528",
-        "bytes": 3330274
-      },
-      "evidence": "evidence/clean-build/20261118T201150Z-9fb06be10f6f",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 402.026,
-        "guest_build": 337.574
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "khelpcenter",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/khelpcenter.json",
-      "artifact": {
-        "name": "khelpcenter_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "26a7abc25e05781ebd02fa71d8b8d4f7ea630c389fa8039c428fb282cb131e40",
-        "bytes": 219570
-      },
-      "evidence": "evidence/clean-build/20261118T201834Z-2b697d3c188a",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 302.343,
-        "guest_build": 231.867
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kio-extras",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/kio-extras.json",
-      "artifact": {
-        "name": "kio-extras_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "04ad686b2e0696a1f8be6c4b5745b495d3d94f04de6dbf4702541ae039b0ae4e",
-        "bytes": 738628
-      },
-      "evidence": "evidence/clean-build/20261118T202338Z-59c5a8d63878",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 532.145,
-        "guest_build": 451.937
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "konsole",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/konsole.json",
-      "artifact": {
-        "name": "konsole_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "aaab9fdf8c67e8fb2d53331f3784bb7da3965cb2f43d7ac241e92fc4a9273063",
-        "bytes": 1493188
-      },
-      "evidence": "evidence/clean-build/20261118T203232Z-46cf5acce3ea",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 455.861,
-        "guest_build": 358.041
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kpmcore",
-      "version": "25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/kpmcore.json",
-      "artifact": {
-        "name": "libkpmcore-dev_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "3477ec3d3cf09d9cbd22c0524dd1da61b1ac6005a3d551c9ddacebcdc78f7d9e",
-        "bytes": 43424
-      },
-      "evidence": "evidence/clean-build/20261118T204010Z-806d747527fa",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 277.725,
-        "guest_build": 215.195
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "libkexiv2",
-      "version": "25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/libkexiv2.json",
-      "artifact": {
-        "name": "libkexiv2qt6-0_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "e6053addd81fd65fd77668b01067fa48bac3df5a4b14f177ee425d5ab8e8566f",
-        "bytes": 143020
-      },
-      "evidence": "evidence/clean-build/20261118T204449Z-8989af2db813",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 272.996,
-        "guest_build": 211.709
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "okular",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/okular.json",
-      "artifact": {
-        "name": "okular_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "6585fe0d41dfbe9cf2e81428ff3b552d166165225faa16114b56e14b66733062",
-        "bytes": 1129906
-      },
-      "evidence": "evidence/clean-build/20261118T204923Z-4152dca90059",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 662.311,
-        "guest_build": 594.971
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "partitionmanager",
-      "version": "25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/partitionmanager.json",
-      "artifact": {
-        "name": "partitionmanager_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "a2f37398b0f0fa671a4da4f284d8b6d22399817976d89d0467b7950292e8d61b",
-        "bytes": 2514294
-      },
-      "evidence": "evidence/clean-build/20261118T210027Z-f42e1bcc2066",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 279.876,
-        "guest_build": 223.016
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "sweeper",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear",
-      "manifest": "manifests/release-1.0.0/sweeper.json",
-      "artifact": {
-        "name": "sweeper_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "95561efdc8f97d72b7c185c38ed29c135de40743d80aea8292300e46c884cdfd",
-        "bytes": 414312
-      },
-      "evidence": "evidence/clean-build/20261118T210508Z-066803ccd0b8",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 324.606,
-        "guest_build": 255.448
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "audiocd-kio",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/audiocd-kio.json",
-      "artifact": {
-        "name": "kio-audiocd_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "a74b18db8eeca65e2a5ef64714cd5098df7ad940cda2620e1c273db7fa2e19a3",
-        "bytes": 745070
-      },
-      "evidence": "evidence/clean-build/20261118T211034Z-3e01dbb90146",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 329.545,
-        "guest_build": 270.029
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "dolphin-plugins",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/dolphin-plugins.json",
-      "artifact": {
-        "name": "dolphin-plugins_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "4f7edb3643d7a5de2be27cfbd584411bc753311674356926451028ea900cca7f",
-        "bytes": 547984
-      },
-      "evidence": "evidence/clean-build/20261118T211605Z-b1bd80820873",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 311.561,
-        "guest_build": 249.705
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "ffmpegthumbs",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/ffmpegthumbs.json",
-      "artifact": {
-        "name": "ffmpegthumbs_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "3d1509f814f3f4b4017ffa8c21af0eeae66ae05ad76cc91a4188fb13a9ed2187",
-        "bytes": 34788
-      },
-      "evidence": "evidence/clean-build/20261118T212118Z-dd9deb5a82d6",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 261.856,
-        "guest_build": 201.445
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kaccounts-providers",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/kaccounts-providers.json",
-      "artifact": {
-        "name": "kaccounts-providers_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "fed8c6ff98b545638f94318a1848c39a18f94d158eaafb5547d025d755f457e7",
-        "bytes": 79956
-      },
-      "evidence": "evidence/clean-build/20261118T212541Z-e74c2bb85ba3",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 293.55,
-        "guest_build": 224.896
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
       "package": "kcharselect",
       "version": "4:25.12.3-0supralinux1",
       "area": "gear-extras",
@@ -789,6 +591,50 @@
       "timings_seconds": {
         "total": 211.897,
         "guest_build": 154.577
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kde-cli-tools",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/kde-cli-tools.json",
+      "artifact": {
+        "name": "kde-cli-tools_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "eb4ba695bd72534aa5e8a0e4b17869480f1e5f9747dca9d8535034077d55723b",
+        "bytes": 177512
+      },
+      "evidence": "evidence/clean-build/20261119T062652Z-95307914168b",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 464.92,
+        "guest_build": 371.951
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kde-gtk-config",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/kde-gtk-config.json",
+      "artifact": {
+        "name": "kde-config-gtk-style_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "6a014ea2ba57ed6f4ad16ebc619f3c557efcde1a8981a0283089663e78e04f7d",
+        "bytes": 92616
+      },
+      "evidence": "evidence/clean-build/20261119T063439Z-67c4639487de",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 464.71,
+        "guest_build": 349.383
       },
       "cleanup": {
         "process_absent": true,
@@ -833,6 +679,50 @@
       "timings_seconds": {
         "total": 471.526,
         "guest_build": 390.783
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kdeconnect",
+      "version": "25.12.3-0supralinux7",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/kdeconnect.json",
+      "artifact": {
+        "name": "kdeconnect_25.12.3-0supralinux7_amd64.deb",
+        "sha256": "93c8f23de7f03c0010b1b002e536615674e24e3160f915c2b5577a31033b9eea",
+        "bytes": 1121550
+      },
+      "evidence": "evidence/clean-build/20261118T195559Z-a5e231de9553",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 714.745,
+        "guest_build": 651.778
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kdecoration",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "plasma",
+      "manifest": "manifests/release-1.0.0/kdecoration.json",
+      "artifact": {
+        "name": "libkdecorations3-6_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "b72f7b7870d4b63239c7fc100f6a620d6e74a7cba564ffb31b8a8b87c09377c6",
+        "bytes": 82714
+      },
+      "evidence": "evidence/clean-build/20261119T064226Z-fe3ecb42a7e7",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 343.898,
+        "guest_build": 264.38
       },
       "cleanup": {
         "process_absent": true,
@@ -899,116 +789,6 @@
       "timings_seconds": {
         "total": 716.206,
         "guest_build": 650.753
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kio-admin",
-      "version": "25.12.3-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/kio-admin.json",
-      "artifact": {
-        "name": "kio-admin_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "1cce0ad1c308ae7725b0d9a6724cc6468fc6a06de15aed28dc92282a13c32beb",
-        "bytes": 83892
-      },
-      "evidence": "evidence/clean-build/20261118T215716Z-4af97dfa4847",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 276.141,
-        "guest_build": 211.635
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "ksystemlog",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/ksystemlog.json",
-      "artifact": {
-        "name": "ksystemlog_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "0a7b2bf4442d96144be75fb9b57a5fa821faf5ca7a40f673baec912ca88f8de6",
-        "bytes": 2137048
-      },
-      "evidence": "evidence/clean-build/20261118T220153Z-87959b4d0a96",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 420.259,
-        "guest_build": 324.671
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kwalletmanager",
-      "version": "4:25.12.3-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/kwalletmanager.json",
-      "artifact": {
-        "name": "kwalletmanager_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "2040c6d0ac2e716919c57b549e871af71474598a990288fb6086776c43291aa3",
-        "bytes": 1253784
-      },
-      "evidence": "evidence/clean-build/20261118T220855Z-b7467e8055fa",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 287.91,
-        "guest_build": 212.373
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "oxygen",
-      "version": "4:6.6.7-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/oxygen.json",
-      "artifact": {
-        "name": "kde-style-oxygen-qt5_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "0880241bda137a50d3b822dd97d26b0ab42982ce22184c05a4457e069929a02e",
-        "bytes": 273308
-      },
-      "evidence": "evidence/clean-build/20261118T221344Z-1c2bda2184b3",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 478.967,
-        "guest_build": 416.197
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "skanpage",
-      "version": "25.12.3-0supralinux1",
-      "area": "gear-extras",
-      "manifest": "manifests/release-1.0.0/skanpage.json",
-      "artifact": {
-        "name": "skanpage_25.12.3-0supralinux1_amd64.deb",
-        "sha256": "9c5738907b8bcc1cc2c8a040ff815289c0543f273878684c896f12adfee8a767",
-        "bytes": 246716
-      },
-      "evidence": "evidence/clean-build/20261118T222145Z-d3d2b52f0815",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 328.411,
-        "guest_build": 267.313
       },
       "cleanup": {
         "process_absent": true,
@@ -2513,284 +2293,20 @@
       }
     },
     {
-      "package": "aurorae",
-      "version": "6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/aurorae.json",
+      "package": "kfind",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/kfind.json",
       "artifact": {
-        "name": "kwin-style-aurorae_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "1982eb2dcbcebe2c2844069a57fbbaba438d5912e91d3bc3955271f446759502",
-        "bytes": 141260
+        "name": "kfind_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "fd25f6b5bcbe88c4b8ec381dcacb96a2dad02fc24fd7b79fbce629485b1a3160",
+        "bytes": 446290
       },
-      "evidence": "evidence/clean-build/20261119T051859Z-23814429d427",
+      "evidence": "evidence/clean-build/20261118T200757Z-37f5e31252a8",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 418.765,
-        "guest_build": 266.769
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "bluedevil",
-      "version": "4:6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/bluedevil.json",
-      "artifact": {
-        "name": "bluedevil_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "8255f6db379519c50c0f7d3b5fd0eadae5e71feff42cfc5d7efbb0ef47e73ccf",
-        "bytes": 679582
-      },
-      "evidence": "evidence/clean-build/20261119T052601Z-95228a8061d5",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 489.579,
-        "guest_build": 395.402
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "breeze",
-      "version": "4:6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/breeze.json",
-      "artifact": {
-        "name": "breeze_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "ae6733770c0ebb1adc1c1698777076e443fe705a994c859d555fcbd9d9c89d8c",
-        "bytes": 32316
-      },
-      "evidence": "evidence/clean-build/20261119T053413Z-e7e4466c7f97",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 714.031,
-        "guest_build": 486.028
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "breeze-grub",
-      "version": "6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/breeze-grub.json",
-      "artifact": {
-        "name": "grub-theme-breeze_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "62e095d51500b8119cbf26a4addf31ca9b10083d57d03c8e9a8d4bec702c75c2",
-        "bytes": 1603206
-      },
-      "evidence": "evidence/clean-build/20261119T054610Z-100779188189",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 244.425,
-        "guest_build": 95.843
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "breeze-gtk",
-      "version": "6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/breeze-gtk.json",
-      "artifact": {
-        "name": "breeze-gtk-theme_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "fdc2e5e1de52f70aa3e80e74f44743c7ce79f0290549e8b2c4d4118a3ae4e05d",
-        "bytes": 177756
-      },
-      "evidence": "evidence/clean-build/20261119T055016Z-19d63bdf2038",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 456.046,
-        "guest_build": 309.389
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "breeze-plymouth",
-      "version": "6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/breeze-plymouth.json",
-      "artifact": {
-        "name": "plymouth-theme-breeze_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "9f8821d43fd2246ee3d6249225b4b6f912d24fca6b90dfa42d01a1b342805ef9",
-        "bytes": 95264
-      },
-      "evidence": "evidence/clean-build/20261119T055755Z-7a6d1ab89da6",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 298.191,
-        "guest_build": 152.716
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "drkonqi",
-      "version": "6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/drkonqi.json",
-      "artifact": {
-        "name": "drkonqi_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "2cb670f2a0d2cb9c64dba1379da6785cb6f3b3ef88b00f3eaea111773ccb85e4",
-        "bytes": 735448
-      },
-      "evidence": "evidence/clean-build/20261119T060254Z-5f20c6a5c48e",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 522.255,
-        "guest_build": 417.037
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "flatpak-kcm",
-      "version": "6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/flatpak-kcm.json",
-      "artifact": {
-        "name": "kde-config-flatpak_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "0ab3ec0cdcfaca1f6c63da7cee3398ce805bfbf6ee01cd2a4a32c567bccf7a05",
-        "bytes": 209574
-      },
-      "evidence": "evidence/clean-build/20261119T061138Z-f47fbf43752a",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 444.431,
-        "guest_build": 354.709
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "freerdp3",
-      "version": "3.32.1+dfsg-0ubuntu0.26.04.1+supralinux2",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/freerdp3.json",
-      "artifact": {
-        "name": "freerdp-proxy_3.32.1+dfsg-0ubuntu0.26.04.1+supralinux2_amd64.deb",
-        "sha256": "ff884897fb98cb99edc3ffe8008f2a5b1d34827d08b0760da4f94e142d3f7cc7",
-        "bytes": 6142
-      },
-      "evidence": "evidence/clean-build/20261118T185958Z-53729051c226",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 252.413,
-        "guest_build": 194.376
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kactivitymanagerd",
-      "version": "6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/kactivitymanagerd.json",
-      "artifact": {
-        "name": "kactivitymanagerd_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "06893619e23a397b08d35a9164d25303c11092e648a5fbbf92b916d349c7c2bd",
-        "bytes": 203568
-      },
-      "evidence": "evidence/clean-build/20261119T061905Z-3d964c217174",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 464.528,
-        "guest_build": 371.293
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kde-cli-tools",
-      "version": "4:6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/kde-cli-tools.json",
-      "artifact": {
-        "name": "kde-cli-tools_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "eb4ba695bd72534aa5e8a0e4b17869480f1e5f9747dca9d8535034077d55723b",
-        "bytes": 177512
-      },
-      "evidence": "evidence/clean-build/20261119T062652Z-95307914168b",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 464.92,
-        "guest_build": 371.951
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kde-gtk-config",
-      "version": "4:6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/kde-gtk-config.json",
-      "artifact": {
-        "name": "kde-config-gtk-style_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "6a014ea2ba57ed6f4ad16ebc619f3c557efcde1a8981a0283089663e78e04f7d",
-        "bytes": 92616
-      },
-      "evidence": "evidence/clean-build/20261119T063439Z-67c4639487de",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 464.71,
-        "guest_build": 349.383
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "kdecoration",
-      "version": "4:6.6.7-0supralinux1",
-      "area": "plasma",
-      "manifest": "manifests/release-1.0.0/kdecoration.json",
-      "artifact": {
-        "name": "libkdecorations3-6_6.6.7-0supralinux1_amd64.deb",
-        "sha256": "b72f7b7870d4b63239c7fc100f6a620d6e74a7cba564ffb31b8a8b87c09377c6",
-        "bytes": 82714
-      },
-      "evidence": "evidence/clean-build/20261119T064226Z-fe3ecb42a7e7",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 343.898,
-        "guest_build": 264.38
+        "total": 232.254,
+        "guest_build": 170.64
       },
       "cleanup": {
         "process_absent": true,
@@ -2821,6 +2337,50 @@
       }
     },
     {
+      "package": "kgpg",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/kgpg.json",
+      "artifact": {
+        "name": "kgpg_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "2f33d61ebaba70a3f28c683f5fce1209e446a7a5f661b984c3a6645b9c3f0528",
+        "bytes": 3330274
+      },
+      "evidence": "evidence/clean-build/20261118T201150Z-9fb06be10f6f",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 402.026,
+        "guest_build": 337.574
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "khelpcenter",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/khelpcenter.json",
+      "artifact": {
+        "name": "khelpcenter_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "26a7abc25e05781ebd02fa71d8b8d4f7ea630c389fa8039c428fb282cb131e40",
+        "bytes": 219570
+      },
+      "evidence": "evidence/clean-build/20261118T201834Z-2b697d3c188a",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 302.343,
+        "guest_build": 231.867
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "kinfocenter",
       "version": "4:6.6.7-0supralinux1",
       "area": "plasma",
@@ -2835,6 +2395,50 @@
       "timings_seconds": {
         "total": 388.933,
         "guest_build": 317.753
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kio-admin",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/kio-admin.json",
+      "artifact": {
+        "name": "kio-admin_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "1cce0ad1c308ae7725b0d9a6724cc6468fc6a06de15aed28dc92282a13c32beb",
+        "bytes": 83892
+      },
+      "evidence": "evidence/clean-build/20261118T215716Z-4af97dfa4847",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 276.141,
+        "guest_build": 211.635
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kio-extras",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/kio-extras.json",
+      "artifact": {
+        "name": "kio-extras_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "04ad686b2e0696a1f8be6c4b5745b495d3d94f04de6dbf4702541ae039b0ae4e",
+        "bytes": 738628
+      },
+      "evidence": "evidence/clean-build/20261118T202338Z-59c5a8d63878",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 532.145,
+        "guest_build": 451.937
       },
       "cleanup": {
         "process_absent": true,
@@ -2887,6 +2491,28 @@
       }
     },
     {
+      "package": "konsole",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/konsole.json",
+      "artifact": {
+        "name": "konsole_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "aaab9fdf8c67e8fb2d53331f3784bb7da3965cb2f43d7ac241e92fc4a9273063",
+        "bytes": 1493188
+      },
+      "evidence": "evidence/clean-build/20261118T203232Z-46cf5acce3ea",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 455.861,
+        "guest_build": 358.041
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "kpipewire",
       "version": "6.6.7-0supralinux1",
       "area": "plasma",
@@ -2901,6 +2527,28 @@
       "timings_seconds": {
         "total": 385.616,
         "guest_build": 318.384
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kpmcore",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/kpmcore.json",
+      "artifact": {
+        "name": "libkpmcore-dev_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "3477ec3d3cf09d9cbd22c0524dd1da61b1ac6005a3d551c9ddacebcdc78f7d9e",
+        "bytes": 43424
+      },
+      "evidence": "evidence/clean-build/20261118T204010Z-806d747527fa",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 277.725,
+        "guest_build": 215.195
       },
       "cleanup": {
         "process_absent": true,
@@ -2997,6 +2645,28 @@
       }
     },
     {
+      "package": "ksystemlog",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/ksystemlog.json",
+      "artifact": {
+        "name": "ksystemlog_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "0a7b2bf4442d96144be75fb9b57a5fa821faf5ca7a40f673baec912ca88f8de6",
+        "bytes": 2137048
+      },
+      "evidence": "evidence/clean-build/20261118T220153Z-87959b4d0a96",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 420.259,
+        "guest_build": 324.671
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "ksystemstats",
       "version": "6.6.7-0supralinux1",
       "area": "plasma",
@@ -3033,6 +2703,28 @@
       "timings_seconds": {
         "total": 293.706,
         "guest_build": 228.317
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "kwalletmanager",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/kwalletmanager.json",
+      "artifact": {
+        "name": "kwalletmanager_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "2040c6d0ac2e716919c57b549e871af71474598a990288fb6086776c43291aa3",
+        "bytes": 1253784
+      },
+      "evidence": "evidence/clean-build/20261118T220855Z-b7467e8055fa",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 287.91,
+        "guest_build": 212.373
       },
       "cleanup": {
         "process_absent": true,
@@ -3121,6 +2813,28 @@
       "timings_seconds": {
         "total": 298.805,
         "guest_build": 239.979
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "libkexiv2",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/libkexiv2.json",
+      "artifact": {
+        "name": "libkexiv2qt6-0_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "e6053addd81fd65fd77668b01067fa48bac3df5a4b14f177ee425d5ab8e8566f",
+        "bytes": 143020
+      },
+      "evidence": "evidence/clean-build/20261118T204449Z-8989af2db813",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 272.996,
+        "guest_build": 211.709
       },
       "cleanup": {
         "process_absent": true,
@@ -3239,6 +2953,50 @@
       }
     },
     {
+      "package": "okular",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/okular.json",
+      "artifact": {
+        "name": "okular_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "6585fe0d41dfbe9cf2e81428ff3b552d166165225faa16114b56e14b66733062",
+        "bytes": 1129906
+      },
+      "evidence": "evidence/clean-build/20261118T204923Z-4152dca90059",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 662.311,
+        "guest_build": 594.971
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "oxygen",
+      "version": "4:6.6.7-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/oxygen.json",
+      "artifact": {
+        "name": "kde-style-oxygen-qt5_6.6.7-0supralinux1_amd64.deb",
+        "sha256": "0880241bda137a50d3b822dd97d26b0ab42982ce22184c05a4457e069929a02e",
+        "bytes": 273308
+      },
+      "evidence": "evidence/clean-build/20261118T221344Z-1c2bda2184b3",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 478.967,
+        "guest_build": 416.197
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "oxygen-sounds",
       "version": "4:6.6.7-0supralinux1",
       "area": "plasma",
@@ -3253,6 +3011,28 @@
       "timings_seconds": {
         "total": 234.784,
         "guest_build": 182.722
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "partitionmanager",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/partitionmanager.json",
+      "artifact": {
+        "name": "partitionmanager_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "a2f37398b0f0fa671a4da4f284d8b6d22399817976d89d0467b7950292e8d61b",
+        "bytes": 2514294
+      },
+      "evidence": "evidence/clean-build/20261118T210027Z-f42e1bcc2066",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 279.876,
+        "guest_build": 223.016
       },
       "cleanup": {
         "process_absent": true,
@@ -3569,6 +3349,28 @@
       }
     },
     {
+      "package": "plasma-wayland-protocols",
+      "version": "1.20.0-2supralinux2",
+      "area": "desktop",
+      "manifest": "manifests/release-1.0.0/plasma-wayland-protocols.json",
+      "artifact": {
+        "name": "plasma-wayland-protocols_1.20.0-2supralinux2_all.deb",
+        "sha256": "52be4106cf8e17b098278f5be3ed52e661db07bb62876f7c031b436d46e253ef",
+        "bytes": 39908
+      },
+      "evidence": "evidence/clean-build/20261118T184252Z-8949e9abf554",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 137.593,
+        "guest_build": 82.639
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "plasma-welcome",
       "version": "6.6.7-0supralinux2",
       "area": "plasma",
@@ -3789,6 +3591,270 @@
       }
     },
     {
+      "package": "skanpage",
+      "version": "25.12.3-0supralinux1",
+      "area": "gear-extras",
+      "manifest": "manifests/release-1.0.0/skanpage.json",
+      "artifact": {
+        "name": "skanpage_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "9c5738907b8bcc1cc2c8a040ff815289c0543f273878684c896f12adfee8a767",
+        "bytes": 246716
+      },
+      "evidence": "evidence/clean-build/20261118T222145Z-d3d2b52f0815",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 328.411,
+        "guest_build": 267.313
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-ath9k-ar9565",
+      "version": "1.0.2",
+      "area": "system",
+      "manifest": "manifests/release-1.0.0/supralinux-ath9k-ar9565.json",
+      "artifact": {
+        "name": "supralinux-ath9k-ar9565_1.0.2_all.deb",
+        "sha256": "a150e96204e189185efbdf66db1025d9b702f4e6221563243261cf3eba4cb5f5",
+        "bytes": 3176
+      },
+      "evidence": "evidence/clean-build/20261118T162137Z-ee1a4ccfc870",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 82.25,
+        "guest_build": 26.786
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-base-files",
+      "version": "1.0.2",
+      "area": "desktop",
+      "manifest": "manifests/release-1.0.0/supralinux-base-files.json",
+      "artifact": {
+        "name": "supralinux-base-files_1.0.2_all.deb",
+        "sha256": "16aa110416326948455081b77956f76814355ce23422ed27e67bc1fa51776d92",
+        "bytes": 3066
+      },
+      "evidence": "evidence/clean-build/20261120T131657Z-5dbadb26c985",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 74.366,
+        "guest_build": 25.293
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-branding",
+      "version": "1.2.0",
+      "area": "desktop",
+      "manifest": "manifests/release-1.0.0/supralinux-branding.json",
+      "artifact": {
+        "name": "supralinux-branding_1.2.0_all.deb",
+        "sha256": "d14118ae4a865ce4a16cd88ffdbe595a5af8c3d47fb77731d45416ada70f9609",
+        "bytes": 4452578
+      },
+      "evidence": "evidence/clean-build/20261118T161224Z-476bc7cbdcfa",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 81.524,
+        "guest_build": 30.864
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-calamares-config",
+      "version": "1.0.2",
+      "area": "desktop",
+      "manifest": "manifests/release-1.0.0/supralinux-calamares-config.json",
+      "artifact": {
+        "name": "supralinux-calamares-config_1.0.2_all.deb",
+        "sha256": "be77cb9b77da20aa58e0cda8576434effa5d566287f21799c907fa08c43b0bbb",
+        "bytes": 101642
+      },
+      "evidence": "evidence/clean-build/20261121T062548Z-1fe7e014905c",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 74.514,
+        "guest_build": 26.506
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-defaults",
+      "version": "1.1.3",
+      "area": "desktop",
+      "manifest": "manifests/release-1.0.0/supralinux-defaults.json",
+      "artifact": {
+        "name": "supralinux-defaults_1.1.3_all.deb",
+        "sha256": "be633aff5090f98f6e9ba71f864727bde13b77769a0f9986cc0b937f2128747a",
+        "bytes": 15122
+      },
+      "evidence": "evidence/clean-build/20261120T133119Z-9140567d6dac",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 74.912,
+        "guest_build": 23.096
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-drivers",
+      "version": "1.0.9",
+      "area": "apps",
+      "manifest": "manifests/release-1.0.0/supralinux-drivers.json",
+      "artifact": {
+        "name": "supralinux-drivers_1.0.9_all.deb",
+        "sha256": "665bcae3eec0d0575e860c2949daf8b1789cbab45c58fe8e69fc3fb62192973c",
+        "bytes": 16956
+      },
+      "evidence": "evidence/clean-build/20261118T161853Z-2743884155f3",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 79.001,
+        "guest_build": 29.219
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-hardware-support",
+      "version": "1.0.2",
+      "area": "desktop",
+      "manifest": "manifests/release-1.0.0/supralinux-hardware-support.json",
+      "artifact": {
+        "name": "supralinux-hardware-support_1.0.2_all.deb",
+        "sha256": "e8dd3b0d8ecd520594e4b71f2bd7b899e9d4a884bb6ef581032b69cf908b62c8",
+        "bytes": 2004
+      },
+      "evidence": "evidence/clean-build/20261118T161738Z-6d92b2582c34",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 74.205,
+        "guest_build": 24.799
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-kdeconnect-sftp",
+      "version": "1.0.2",
+      "area": "apps",
+      "manifest": "manifests/release-1.0.0/supralinux-kdeconnect-sftp.json",
+      "artifact": {
+        "name": "supralinux-kdeconnect-sftp_1.0.2_amd64.deb",
+        "sha256": "d4339e4f00fc5f64a4b8079ab1e948e4fa1fd5ae5b9c502c885d1d868465f6d8",
+        "bytes": 1731796
+      },
+      "evidence": "evidence/clean-build/20261118T184646Z-3ec077815134",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 106.46,
+        "guest_build": 52.198
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-recovery-gui",
+      "version": "1.0.0",
+      "area": "desktop",
+      "manifest": "manifests/release-1.0.0/supralinux-recovery-gui.json",
+      "artifact": {
+        "name": "supralinux-recovery-gui_1.0.0_amd64.deb",
+        "sha256": "c9ed0f7334e1c669f35c9ef4740a4e8ea34b44c56db9f9bca9aecf33e738a524",
+        "bytes": 40480
+      },
+      "evidence": "evidence/clean-build/20261121T062321Z-5b85fce4774e",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 123.737,
+        "guest_build": 70.381
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "supralinux-theme",
+      "version": "1.0.3",
+      "area": "desktop",
+      "manifest": "manifests/release-1.0.0/supralinux-theme.json",
+      "artifact": {
+        "name": "supralinux-theme_1.0.3_all.deb",
+        "sha256": "842d0c486a980efb008ed61babc76c54d484c347501a51d0713aa54932f3b79f",
+        "bytes": 3218590
+      },
+      "evidence": "evidence/clean-build/20261118T161346Z-69ee1d0f7bbd",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 76.705,
+        "guest_build": 27.22
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
+      "package": "sweeper",
+      "version": "4:25.12.3-0supralinux1",
+      "area": "gear",
+      "manifest": "manifests/release-1.0.0/sweeper.json",
+      "artifact": {
+        "name": "sweeper_25.12.3-0supralinux1_amd64.deb",
+        "sha256": "95561efdc8f97d72b7c185c38ed29c135de40743d80aea8292300e46c884cdfd",
+        "bytes": 414312
+      },
+      "evidence": "evidence/clean-build/20261118T210508Z-066803ccd0b8",
+      "sbuild_invoked": true,
+      "timings_seconds": {
+        "total": 324.606,
+        "guest_build": 255.448
+      },
+      "cleanup": {
+        "process_absent": true,
+        "overlay_absent": true,
+        "run_directory_absent": true
+      }
+    },
+    {
       "package": "systemsettings",
       "version": "4:6.6.7-0supralinux1",
       "area": "plasma",
@@ -3847,50 +3913,6 @@
       "timings_seconds": {
         "total": 485.003,
         "guest_build": 397.908
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "casper",
-      "version": "26.04.2-0supralinux3",
-      "area": "system",
-      "manifest": "manifests/release-1.0.0/casper.json",
-      "artifact": {
-        "name": "casper_26.04.2-0supralinux3_amd64.deb",
-        "sha256": "de6efa1134546f93183150f779a4ea050a64c319dfcd57c5512f85b8190ea25f",
-        "bytes": 51338
-      },
-      "evidence": "evidence/clean-build/20261118T184519Z-863a1d44ec39",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 86.471,
-        "guest_build": 36.455
-      },
-      "cleanup": {
-        "process_absent": true,
-        "overlay_absent": true,
-        "run_directory_absent": true
-      }
-    },
-    {
-      "package": "supralinux-ath9k-ar9565",
-      "version": "1.0.2",
-      "area": "system",
-      "manifest": "manifests/release-1.0.0/supralinux-ath9k-ar9565.json",
-      "artifact": {
-        "name": "supralinux-ath9k-ar9565_1.0.2_all.deb",
-        "sha256": "a150e96204e189185efbdf66db1025d9b702f4e6221563243261cf3eba4cb5f5",
-        "bytes": 3176
-      },
-      "evidence": "evidence/clean-build/20261118T162137Z-ee1a4ccfc870",
-      "sbuild_invoked": true,
-      "timings_seconds": {
-        "total": 82.25,
-        "guest_build": 26.786
       },
       "cleanup": {
         "process_absent": true,

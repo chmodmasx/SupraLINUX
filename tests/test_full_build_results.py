@@ -6,21 +6,20 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULTS = json.loads((ROOT / "manifests/full-build-results-1.0.0.json").read_text())
 INVENTORY = json.loads((ROOT / "manifests/packages-1.0.0.json").read_text())
 
-# New in 1.0.0: the GUI package has no historical full-build result yet and
-# calamares-config changed after its 1.0.1 build. Both must be rebuilt before
-# the release gate; they are deliberately excluded from the historical result.
-PENDING_BUILDS = {"supralinux-recovery-gui"}
-STALE_BUILD_VERSIONS = {"supralinux-calamares-config": "1.0.1"}
+# The GUI package and calamares-config 1.0.2 were rebuilt after the historical
+# batch; both results are part of the summary.
+PENDING_BUILDS = set()
+STALE_BUILD_VERSIONS = {}
 
 
 class FullBuildResultsTests(unittest.TestCase):
     def test_every_inventory_package_has_a_passing_build(self):
         builds = {item["package"]: item for item in RESULTS["builds"]}
         inventory = {item["source"] for item in INVENTORY["packages"]}
-        self.assertEqual(len(builds), 176)
+        self.assertEqual(len(builds), 177)
         self.assertEqual(set(builds) | PENDING_BUILDS, inventory)
-        self.assertEqual(RESULTS["build_count"], 176)
-        self.assertEqual(RESULTS["counts"], {"pass": 176, "fail": 0, "infra_invalid": 0})
+        self.assertEqual(RESULTS["build_count"], 177)
+        self.assertEqual(RESULTS["counts"], {"pass": 177, "fail": 0, "infra_invalid": 0})
 
     def test_results_do_not_claim_a_release(self):
         self.assertEqual(RESULTS["status"], "PASS")
