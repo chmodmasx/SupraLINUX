@@ -1,0 +1,32 @@
+#!/bin/sh
+# os-prober probe for Linux roots stored in the Btrfs subvolume "@".
+#
+# GRUB's Btrfs FUSE driver (grub-mount) exposes the filesystem top level, so
+# the generic 90linux-distro probe does not see /etc/os-release. SupraLINUX
+# installs the root in @ (with @home/@snapshots as siblings); detect that
+# layout explicitly. Other filesystems keep using 90linux-distro.
+set -e
+
+partition="$1"
+dir="$2"
+
+. /usr/share/os-prober/common.sh
+
+root="$dir/@"
+[ -e "$root/etc/os-release" ] || [ -e "$root/usr/lib/os-release" ] || exit 1
+[ -d "$root/boot" ] || exit 1
+
+if [ -e "$root/etc/os-release" ]; then
+    release="$root/etc/os-release"
+else
+    release="$root/usr/lib/os-release"
+fi
+
+short="$(grep ^NAME= "$release" | sed 's/^[^=]*=//; s/^['\''"]\(.*\)['\''"]$/\1/; s/\\\(.\)/\1/g; s/[[:space:]].*//')"
+long="$(grep ^PRETTY_NAME= "$release" | sed 's/^[^=]*=//; s/^['\''"]\(.*\)['\''"]$/\1/; s/\\\(.\)/\1/g')"
+[ -n "$short" ] || short="Linux"
+[ -n "$long" ] || long="unknown Linux distribution"
+
+label="$(count_next_label "$short")"
+result "$partition:$long:$label:linux"
+exit 0
