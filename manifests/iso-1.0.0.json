@@ -6,175 +6,149 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO candidata desde rootfs nuevo y repo.supralinux.com. Incluye supralinux-base-files 1.0.2 (BUG_REPORT_URL=https://supralinux.com/bugs, LOGO=distributor-logo), supralinux-defaults 1.1.3 (rueda de Gwenview en Ampliar) y ark 4:25.12.3-0supralinux3 (visor 800x600 por defecto, estado propio y extraccion multivolumen sin falso ENOSPC). Revalida BIOS/UEFI Secure Boot, identidad, logo, URL limpia /bugs y Gwenview; Ark y RAR se validaron en la ISO anterior con el mismo paquete. La matriz de instalacion Btrfs/L5 se valido sobre una ISO candidata anterior; ver regression_scope. LUKS2, EXT4, dual-boot y recuperacion siguen pendientes.",
-  "regression_scope": "BIOS y UEFI Secure Boot se revalidaron sobre esta ISO (supralinux-base-files 1.0.2, supralinux-defaults 1.1.3, ark 4:25.12.3-0supralinux3, kernel 7.0.0-43.43). La instalacion Btrfs, primer arranque y L5 se validaron sobre la ISO candidata del 19/11 (base-files 1.0.0); los deltas acumulados son os-release/LOGO, BUG_REPORT_URL, gwenviewrc y Ark (visor/multivolumen), ninguno afecta al instalador. No se repite la matriz completa de instalacion sobre esta ISO.",
+  "note": "ISO final construida desde el rootfs nuevo (snapshot h) con supralinux-recovery-gui 1.0.0, supralinux-calamares-config 1.0.2, supralinux-defaults 1.1.4 y os-prober. Matriz L3/L4/L6 ejecutada sobre esta misma ISO: BIOS, UEFI Secure Boot, Btrfs, EXT4, LUKS2, dual-boot Linux en el mismo disco y en dos discos, RAID de datos y recuperación gráfica con Snapper. El selector de Calamares mostró una etiqueta md0 obsoleta en el caso RAID, pero el array estaba detenido y la instalación fue a /dev/vda; los datos del array quedaron intactos.",
+  "regression_scope": "Matriz completa ejecutada sobre esta ISO. Los casos A/B/C, dual-boot, RAID y L6 usan discos desechables y arranque del kernel/initrd de esta ISO con el agente QEMU; L3 usa el arranque real por GRUB/OVMF. La instalación es offline (-nic none).",
   "iso": {
-    "name": "supralinux-aurora-1.0.0-amd64-20261120T134809Z-g6e17fa1.iso",
-    "sha256": "1c79f343c860d80b17f8a40aa218a991942698d617a9a636c7f56b19152b7901",
-    "bytes": 3152107520,
-    "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64-20261120T134809Z-g6e17fa1.iso",
-    "build_evidence": "evidence/live/iso-clean-20261120T134809Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-clean-20261120T133853Z.log"
+    "name": "supralinux-aurora-1.0.0-amd64-20261121T093006Z-g166a1c1.iso",
+    "sha256": "547fd33b5e5f286bdc3a376038c063139e4fed3ae2b2eb972a5d9ab129a0c183",
+    "bytes": 3152164864,
+    "workspace_path": "live/1.0.0/build/supralinux-aurora-1.0.0-amd64-20261121T093006Z-g166a1c1.iso",
+    "build_evidence": "evidence/live/iso-clean-20261121T093006Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-clean-20261121T092108Z.log"
   },
   "inputs": {
-    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261120f)",
-    "installer": "supralinux-calamares-config 1.0.1",
-    "defaults": "supralinux-defaults 1.1.3",
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261121h)",
+    "installer": "supralinux-calamares-config 1.0.2",
+    "defaults": "supralinux-defaults 1.1.4",
     "kernel": "7.0.0-43-generic",
-    "aptly_snapshot": "supralinux-testing-1.0.0-20261120f",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261121h",
     "apt_source": "https://repo.supralinux.com/",
     "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
     "base_files": "supralinux-base-files 1.0.2",
+    "recovery_gui": "supralinux-recovery-gui 1.0.0",
+    "os_prober": "os-prober 1.84ubuntu1",
     "ark": "ark 4:25.12.3-0supralinux3",
     "gwenview": "gwenview 4:25.12.3-0supralinux1"
   },
   "tests": [
     {
-      "id": "ISO-BIOS-BOOT",
+      "id": "L3-BIOS",
       "state": "PASS",
-      "result": "Arranca en BIOS a Plasma Wayland; ark 0supralinux3, base-files 1.0.2, defaults 1.1.3 y visor de Gwenview con rueda en Ampliar (33% a 94%).",
-      "evidence": "evidence/live/bios-20261120f/gwenview-wheel-up.png"
+      "result": "Arranca por GRUB BIOS a Plasma; iconos Install y Recuperar visibles.",
+      "evidence": "evidence/qa/l3-bios-final/03-desktop.png"
     },
     {
-      "id": "ISO-UEFI-SB",
+      "id": "L3-UEFI-SB",
       "state": "PASS",
-      "result": "mokutil SecureBoot enabled; base-files 1.0.2, defaults 1.1.3, BUG_REPORT_URL=/bugs y logo SL en Acerca de este sistema.",
-      "evidence": "evidence/live/uefi-sb-20261120f/about.png"
+      "result": "Arranca por OVMF Secure Boot; mokutil informa SecureBoot enabled y efivar presente.",
+      "evidence": "evidence/qa/l3-uefi-sb-final/04-sb-state.png"
     },
     {
-      "id": "LIVE-IDENTITY",
+      "id": "L3-RECOVERY-AUTOSTART",
       "state": "PASS",
-      "result": "Live UEFI Secure Boot: ark 4:25.12.3-0supralinux3, base-files 1.0.2, defaults 1.1.3, BUG_REPORT_URL=https://supralinux.com/bugs, LOGO=distributor-logo, kernel 7.0.0-43.43; /bugs responde 200.",
-      "evidence": "evidence/live/uefi-sb-20261120f/checks.txt"
+      "result": "La entrada Recovery arranca el live gráfico y autolança supralinux-recovery-gui --autostart; lista instantáneas.",
+      "evidence": "evidence/qa/recovery-autostart/01-recovery-autostart.png"
     },
     {
-      "id": "LIVE-ABOUT-LOGO",
+      "id": "L4-A-UEFI-BTRFS",
       "state": "PASS",
-      "result": "Acerca de este sistema muestra el logo SL en BIOS y en UEFI Secure Boot con la ISO nueva.",
-      "evidence": "evidence/live/uefi-sb-20261120f/about.png"
+      "result": "Instalación UEFI offline en Btrfs; @, @home, @snapshots y @swap; primer arranque con Secure Boot; target sin Calamares/casper/GUI.",
+      "evidence": "evidence/qa/l4-a-uefi-btrfs/boot-sb/02-desktop.png"
     },
     {
-      "id": "LIVE-ARK-VIEWER",
+      "id": "L4-B-BIOS-EXT4",
       "state": "PASS",
-      "result": "Paquete 0supralinux3 revalidado en la ISO anterior; el visor abre en 800x600 y conserva el tamano. La ISO nueva incluye el mismo paquete.",
-      "evidence": "evidence/live/bios-ark3-20261120/viewer.png"
+      "result": "Instalación BIOS offline en EXT4; arranque BIOS; sin Snapper; target limpio.",
+      "evidence": "evidence/qa/l4-b-ext4-bios/boot-bios/02-desktop.png"
     },
     {
-      "id": "LIVE-GWENVIEW-WHEEL",
+      "id": "L4-C-LUKS2",
       "state": "PASS",
-      "result": "Con /etc/xdg/gwenviewrc de defaults 1.1.3, la rueda amplia por defecto: 33% -> 94%; Preferencias muestra Ampliar. Una preferencia explicita de Desplazamiento sigue ganando.",
-      "evidence": "evidence/live/bios-20261120f/gwenview-settings-imageview.png"
+      "result": "LUKS2 Argon2id con /boot ext4 separado; initramfs desbloquea; arranque UEFI Secure Boot; target limpio.",
+      "evidence": "evidence/qa/l4-c-luks2-uefi/boot/02-desktop.png"
     },
     {
-      "id": "LIVE-WEB-CLEAN-URLS",
+      "id": "L4-D1-SAME-DISK",
       "state": "PASS",
-      "result": "Desde la ISO, https://supralinux.com/bugs responde 200; la web sirve URLs limpias y redirige /bugs.html con 301.",
-      "evidence": "evidence/live/bios-20261120f/checks.txt"
+      "result": "Dos SupraLINUX en el mismo disco (ESP compartida, vda2 y vda3); GRUB del segundo detecta al primero por os-prober; ambas raíces arrancan.",
+      "evidence": "evidence/qa/l4-d1-same-disk/grub-second.txt"
     },
     {
-      "id": "LIVE-ARK-VIEWER-PERSIST",
+      "id": "L4-D2-TWO-DISKS",
       "state": "PASS",
-      "result": "Con el paquete 0supralinux3, el visor abre en 800x600 sin estado, se redimensiona a 600x420, se cierra y reabre en 600x420; arkstaterc guarda Width=600 Height=420 en [Viewer].",
-      "evidence": "evidence/live/ark-default-20261120/viewer-persist-final.png"
+      "result": "Dos SupraLINUX en dos discos con ESP propia; GRUB del segundo incluye la entrada osprober del primero; ambos discos arrancan.",
+      "evidence": "evidence/qa/l4-d2-two-disks/disk2-grub.txt"
     },
     {
-      "id": "LIVE-ARK-MULTIVOLUME",
+      "id": "L4-E-RAID",
       "state": "PASS",
-      "result": "RAR de 4 volumenes extraido a tmpfs de 5 MB con ark --batch (3 MB, rc=0) en la ISO anterior; la ISO nueva incluye el mismo paquete.",
-      "evidence": "evidence/live/bios-ark3-20261120/ark-rar.txt"
+      "result": "Array mdadm detenido en el live (sin /dev/md*), instalación en vda; target con mdadm.conf; array reensamblado y marker intacto; sistema instalado arranca.",
+      "evidence": "evidence/qa/l4-e-raid-bios/assemble.txt"
     },
     {
-      "id": "INSTALL-BTRFS-OFFLINE",
+      "id": "L6-GUI",
       "state": "PASS",
-      "result": "Calamares 1.0.1 instala en Btrfs sin red; crea @, @home, @snapshots y usuario supratest.",
-      "evidence": "evidence/installer/bios-btrfs-v6/console.log"
+      "result": "GUI lista instantáneas 1 y 2 desde el icono del escritorio; polkit permite el helper al usuario live.",
+      "evidence": "evidence/qa/l6-gui-rollback/01-gui.png"
     },
     {
-      "id": "FIRST-BOOT-BTRFS",
+      "id": "L6-ROLLBACK",
       "state": "PASS",
-      "result": "El disco instalado arranca en BIOS, SDDM activo, login supratest y Plasma Wayland.",
-      "evidence": "evidence/installer/bios-installed-v5/firefox.png"
+      "result": "Restauración completada desde la GUI; raíz vuelve al estado previo; marcador raíz restaurado.",
+      "evidence": "evidence/qa/l6-gui-rollback/restore/05-result.png"
+    },
+    {
+      "id": "L6-HOME-RETENTION",
+      "state": "PASS",
+      "result": "@home intacto; quedan exactamente 3 @pre-rollback-* tras eliminar el más antiguo.",
+      "evidence": "evidence/qa/l6-gui-rollback/restore/verify.txt"
+    },
+    {
+      "id": "L6-BOOT-AFTER-ROLLBACK",
+      "state": "PASS",
+      "result": "El sistema instalado arranca con Secure Boot después del rollback.",
+      "evidence": "evidence/qa/l4-a-uefi-btrfs/boot-sb/02-desktop.png"
     },
     {
       "id": "TARGET-CLEANUP",
       "state": "PASS",
-      "result": "Calamares, casper y supralinux-calamares-config no quedan instalados en el target.",
-      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
-    },
-    {
-      "id": "L5-APT",
-      "state": "PASS",
-      "result": "apt-get update y reinstalación de supralinux-theme desde https://repo.supralinux.com/ testing.",
-      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
-    },
-    {
-      "id": "L5-SNAPPER",
-      "state": "PASS",
-      "result": "snapper lista por D-Bus y --no-dbus; crea snapshot y registra APT pre.",
-      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
-    },
-    {
-      "id": "L5-KEYRING",
-      "state": "PASS",
-      "result": "ksecretd expone org.freedesktop.secrets y org.kde.ksecretd en la sesión.",
-      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
-    },
-    {
-      "id": "L5-FIREFOX",
-      "state": "PASS",
-      "result": "Firefox 160.0.1 abre en español, con l10n es-AR, sin pedir navegador por defecto y con sandbox userns.",
-      "evidence": "evidence/installer/bios-installed-v5/firefox.png"
-    },
-    {
-      "id": "L5-OBEXD",
-      "state": "PASS",
-      "result": "obexd corre con -P pbap,irmc; journalctl -p err no muestra EDS/evolution; OBEX/FTP/MAP disponibles.",
-      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
-    },
-    {
-      "id": "L5-SHUTDOWN",
-      "state": "PASS",
-      "result": "systemctl poweroff apaga la VM sin cuelgues; QEMU sale limpio.",
-      "evidence": "evidence/installer/bios-installed-v5/postinstall.log"
-    },
-    {
-      "id": "LIVE-APT-UPGRADE-SIM",
-      "state": "PASS",
-      "result": "Sobre la ISO anterior con base-files 1.0.1/defaults 1.1.2, apt-get update ve candidatos 1.0.2/1.1.3 con prioridad 1001 y apt-get -s install --only-upgrade selecciona ambos. No se instalo nada; es una simulacion.",
-      "evidence": "evidence/live/apt-upgrade-sim-20261120f/checks.txt"
+      "result": "Calamares, casper, supralinux-calamares-config y supralinux-recovery-gui ausentes del target; sin autostart ni helper.",
+      "evidence": "evidence/qa/l4-a-uefi-btrfs/inspect-target-cleanup.txt"
     }
   ],
   "observed": {
-    "filesystem": "btrfs",
+    "filesystems": [
+      "btrfs",
+      "ext4",
+      "luks2"
+    ],
     "subvolume": "/@",
-    "compression": "zstd:3",
-    "bootloader": "GRUB BIOS MBR /dev/vda",
-    "user": "supratest",
-    "firefox": "160.0.1~build1",
-    "firefox_l10n": "160.0.1~build1",
-    "apparmor_labels": [
-      "firefox-supralinux",
-      "firefox-supralinux-bin"
-    ],
-    "obexd": "/usr/libexec/bluetooth/obexd -P pbap,irmc",
-    "snapper_snapshots": [
-      "initial install",
-      "APT pre",
-      "post-install-test"
-    ],
     "installer_removed": [
       "calamares",
       "casper",
-      "supralinux-calamares-config"
-    ]
+      "supralinux-calamares-config",
+      "supralinux-recovery-gui"
+    ],
+    "user_groups": [
+      "sudo",
+      "gamemode",
+      "audio",
+      "video",
+      "render",
+      "netdev",
+      "scanner",
+      "bluetooth",
+      "i2c",
+      "lpadmin",
+      "sambashare"
+    ],
+    "locale": "es_AR.UTF-8",
+    "timezone": "America/Argentina/Buenos_Aires"
   },
   "limitations": [
-    "LUKS2 no se probo en esta ISO.",
-    "EXT4 no se probo en esta ISO.",
-    "Dual-boot con otro sistema operativo no se probo.",
-    "La recuperacion Btrfs/rollback no se probo.",
-    "No se publico stable ni se creo tag.",
-    "La instalacion Btrfs, primer arranque y L5 no se repitieron completas sobre esta ISO; los deltas son os-release/LOGO, BUG_REPORT_URL, gwenviewrc y Ark.",
-    "No se integro envio automatico desde DrKonqi; el formulario web sigue siendo el canal."
+    "LUKS2 no tiene rollback automático en 1.0.0.",
+    "Windows no se declara validado.",
+    "Secure Boot en hardware real sigue pendiente; la evidencia formal es OVMF.",
+    "En el caso RAID el selector de Calamares mostró una etiqueta md0 obsoleta; el array estaba detenido y la instalación fue a /dev/vda. Se registra como defecto cosmético conocido."
   ]
 }

@@ -254,6 +254,10 @@ manifiesto de release.
   Agrega `supralinux-recovery-gui 1.0.0` y actualiza
   `supralinux-calamares-config` a 1.0.2; `InRelease` verificado con la clave
   Ed25519. El resumen está en `manifests/aptly-publication-1.0.0.json`.
+- Snapshot `supralinux-testing-1.0.0-20261121h`: 605 binarios y 177 fuentes.
+  Actualiza `supralinux-defaults` a 1.1.4 con el probe de os-prober para
+  raíces Btrfs `@`; mantiene GUI 1.0.0 y Calamares 1.0.2. `InRelease`
+  verificado con la clave Ed25519.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en
@@ -282,8 +286,16 @@ manifiesto de release.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.
-- LUKS2, EXT4, dual-boot y la matriz final de la GUI de recuperación sobre la
-  ISO final siguen pendientes.
+- ISO final `547fd33b…`
+  (`supralinux-aurora-1.0.0-amd64-20261121T093006Z-g166a1c1.iso`): matriz
+  L3/L4/L6 sobre la misma ISO. BIOS y UEFI Secure Boot `PASS`; UEFI+Btrfs,
+  BIOS+EXT4, UEFI+LUKS2, dual-boot Linux en el mismo disco y en dos discos,
+  RAID de datos y recuperación gráfica `PASS`. Los detalles y la evidencia
+  están en `manifests/iso-1.0.0.json` y `evidence/qa/`.
+- LUKS2: rollback automático sigue fuera de alcance en 1.0.0. RAID: el
+  selector de Calamares mostró una etiqueta `md0` obsoleta en el caso de
+  prueba, aunque el array estaba detenido y la instalación fue a `/dev/vda`;
+  se registra como defecto cosmético conocido.
 - Preflight de la GUI de recuperación (ISO `b830b764…`, rootfs de prueba con
   paquetes 1.0.1/1.1.2): el icono aparece junto a Calamares, la GUI lista dos
   instantáneas, restaura la raíz, conserva `@home`, deja `@pre-rollback-*` y la

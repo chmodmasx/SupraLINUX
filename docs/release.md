@@ -224,29 +224,30 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261121g`
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261121h`
   con 605 binarios y 177 fuentes; publicación `testing` firmada y verificada.
-  Incluye `supralinux-recovery-gui 1.0.0` y `supralinux-calamares-config
-  1.0.2`. `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly
+  Incluye `supralinux-recovery-gui 1.0.0`, `supralinux-calamares-config
+  1.0.2` y `supralinux-defaults 1.1.4` con el probe os-prober para Btrfs
+  `@`. `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly
   viejo dejó de servirse. El resumen está en
   `manifests/aptly-publication-1.0.0.json`.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
-Esto no es una release validada. Faltan LUKS2, EXT4, dual-boot Linux y la
-matriz final de la GUI de recuperación. El gate `Repositorio` tampoco está
-cerrado: `supralinux-stable` sigue vacío.
+La ISO final `547fd33b…`
+(`supralinux-aurora-1.0.0-amd64-20261121T093006Z-g166a1c1.iso`) pasó la
+matriz L3/L4/L6: BIOS, UEFI Secure Boot, Btrfs, EXT4, LUKS2, dual-boot Linux
+en el mismo disco y en dos discos, RAID de datos y recuperación gráfica con
+Snapper. El detalle está en `manifests/iso-1.0.0.json` y `evidence/qa/`.
 
-Preflight de la GUI (`b830b764…`, rootfs de prueba): icono en el escritorio,
-lista de instantáneas, rollback, `/home` intacto, `@pre-rollback-*` y entrada
-Recovery con autostart gráfico. Es un preflight, no un PASS de release; la ISO
-final debe construirse con los paquetes 1.0.2/1.1.3 y repetir L4/L6.
+Quedan como limitaciones explícitas: LUKS2 no tiene rollback automático en
+1.0.0, Windows no se declara validado, Secure Boot en hardware real sigue
+pendiente (la evidencia formal es OVMF) y el selector de Calamares mostró una
+etiqueta `md0` obsoleta en el caso RAID, aunque el array estaba detenido y la
+instalación fue a `/dev/vda`.
 
-El build limpio y la publicación de `supralinux-recovery-gui 1.0.0` y
-`supralinux-calamares-config 1.0.2` ya están en `PASS` y forman parte del
-snapshot `g`. Falta construir la ISO final desde ese snapshot y correr sobre
-ella LUKS2, EXT4, dual-boot Linux (mismo disco y dos discos), RAID,
-UEFI/Secure Boot instalado y la matriz L6 de recuperación.
+El gate `Repositorio` sigue abierto: `supralinux-stable` está vacío y la
+publicación estable no se ejecuta sin autorización explícita.
 
 ## Publicación
 

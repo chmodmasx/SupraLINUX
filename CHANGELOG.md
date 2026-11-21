@@ -28,6 +28,8 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
   la entrada Recovery del GRUB; se elimina del sistema instalado.
 - `os-prober` en el live y en el sistema instalado para que GRUB detecte otras
   instalaciones Linux en dual-boot.
+- Probe propio de os-prober para raíces Btrfs en `@`, de modo que GRUB detecte
+  otras instalaciones SupraLINUX en el mismo disco o en dos discos.
 
 ## [1.0.0] - Por anunciar
 

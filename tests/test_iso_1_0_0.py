@@ -15,31 +15,36 @@ class IsoOneZeroTests(unittest.TestCase):
 
     def test_iso_is_pinned_by_sha256_and_size(self):
         self.assertEqual(DATA["iso"]["sha256"],
-                         "1c79f343c860d80b17f8a40aa218a991942698d617a9a636c7f56b19152b7901")
+                         "547fd33b5e5f286bdc3a376038c063139e4fed3ae2b2eb972a5d9ab129a0c183")
         self.assertGreater(DATA["iso"]["bytes"], 2 * 1024**3)
-        self.assertEqual(DATA["iso"]["name"], "supralinux-aurora-1.0.0-amd64-20261120T134809Z-g6e17fa1.iso")
+        self.assertEqual(DATA["iso"]["name"],
+                         "supralinux-aurora-1.0.0-amd64-20261121T093006Z-g166a1c1.iso")
 
-    def test_bios_uefi_btrfs_and_first_boot_passed(self):
+    def test_l3_l4_l6_matrix_passed(self):
         tests = {item["id"]: item for item in DATA["tests"]}
-        for name in ["ISO-BIOS-BOOT", "ISO-UEFI-SB", "INSTALL-BTRFS-OFFLINE",
-                     "FIRST-BOOT-BTRFS", "TARGET-CLEANUP", "L5-APT",
-                     "L5-SNAPPER", "L5-KEYRING", "L5-FIREFOX", "L5-OBEXD", "L5-SHUTDOWN",
-                     "LIVE-IDENTITY", "LIVE-ABOUT-LOGO",
-                     "LIVE-ARK-VIEWER", "LIVE-ARK-VIEWER-PERSIST", "LIVE-GWENVIEW-WHEEL",
-                     "LIVE-WEB-CLEAN-URLS", "LIVE-ARK-MULTIVOLUME"]:
+        for name in ["L3-BIOS", "L3-UEFI-SB", "L3-RECOVERY-AUTOSTART",
+                     "L4-A-UEFI-BTRFS", "L4-B-BIOS-EXT4", "L4-C-LUKS2",
+                     "L4-D1-SAME-DISK", "L4-D2-TWO-DISKS", "L4-E-RAID",
+                     "L6-GUI", "L6-ROLLBACK", "L6-HOME-RETENTION",
+                     "L6-BOOT-AFTER-ROLLBACK", "TARGET-CLEANUP"]:
             with self.subTest(name=name):
                 self.assertEqual(tests[name]["state"], "PASS")
                 self.assertFalse(tests[name]["evidence"].startswith("/"))
 
-    def test_target_observed_btrfs_and_no_installer(self):
-        self.assertEqual(DATA["observed"]["filesystem"], "btrfs")
+    def test_target_observed_matrix_and_no_installer(self):
+        self.assertIn("btrfs", DATA["observed"]["filesystems"])
+        self.assertIn("ext4", DATA["observed"]["filesystems"])
+        self.assertIn("luks2", DATA["observed"]["filesystems"])
         self.assertEqual(DATA["observed"]["subvolume"], "/@")
         self.assertIn("calamares", DATA["observed"]["installer_removed"])
         self.assertIn("casper", DATA["observed"]["installer_removed"])
-        self.assertEqual(DATA["inputs"]["installer"], "supralinux-calamares-config 1.0.1")
+        self.assertIn("supralinux-recovery-gui", DATA["observed"]["installer_removed"])
+        self.assertIn("gamemode", DATA["observed"]["user_groups"])
+        self.assertEqual(DATA["inputs"]["installer"], "supralinux-calamares-config 1.0.2")
         self.assertEqual(DATA["inputs"]["base_files"], "supralinux-base-files 1.0.2")
-        self.assertEqual(DATA["inputs"]["ark"], "ark 4:25.12.3-0supralinux3")
-        self.assertEqual(DATA["inputs"]["defaults"], "supralinux-defaults 1.1.3")
+        self.assertEqual(DATA["inputs"]["defaults"], "supralinux-defaults 1.1.4")
+        self.assertEqual(DATA["inputs"]["recovery_gui"], "supralinux-recovery-gui 1.0.0")
+        self.assertEqual(DATA["inputs"]["os_prober"], "os-prober 1.84ubuntu1")
         self.assertEqual(DATA["inputs"]["kernel"], "7.0.0-43-generic")
 
     def test_no_absolute_host_paths(self):
