@@ -292,10 +292,11 @@ manifiesto de release.
   BIOS+EXT4, UEFI+LUKS2, dual-boot Linux en el mismo disco y en dos discos,
   RAID de datos y recuperación gráfica `PASS`. Los detalles y la evidencia
   están en `manifests/iso-1.0.0.json` y `evidence/qa/`.
-- LUKS2: rollback automático sigue fuera de alcance en 1.0.0. RAID: el
-  selector de Calamares mostró una etiqueta `md0` obsoleta en el caso de
-  prueba, aunque el array estaba detenido y la instalación fue a `/dev/vda`;
-  se registra como defecto cosmético conocido.
+- LUKS2: rollback automático sigue fuera de alcance en 1.0.0.
+- RAID: en un arranque limpio, el live detiene el array (sin `/dev/md*`) y
+  Calamares ofrece solo `vda`, `vdb` y `vdc`; el target recibe `mdadm.conf` y
+  reensambla el array con los datos intactos. Evidencia:
+  `evidence/qa/l4-e-raid-clean/`.
 - Preflight de la GUI de recuperación (ISO `b830b764…`, rootfs de prueba con
   paquetes 1.0.1/1.1.2): el icono aparece junto a Calamares, la GUI lista dos
   instantáneas, restaura la raíz, conserva `@home`, deja `@pre-rollback-*` y la

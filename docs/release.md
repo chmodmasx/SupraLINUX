@@ -241,10 +241,10 @@ en el mismo disco y en dos discos, RAID de datos y recuperación gráfica con
 Snapper. El detalle está en `manifests/iso-1.0.0.json` y `evidence/qa/`.
 
 Quedan como limitaciones explícitas: LUKS2 no tiene rollback automático en
-1.0.0, Windows no se declara validado, Secure Boot en hardware real sigue
-pendiente (la evidencia formal es OVMF) y el selector de Calamares mostró una
-etiqueta `md0` obsoleta en el caso RAID, aunque el array estaba detenido y la
-instalación fue a `/dev/vda`.
+1.0.0, Windows no se declara validado y Secure Boot en hardware real sigue
+pendiente (la evidencia formal es OVMF). RAID se validó con el array detenido
+en el live (sin `/dev/md*`), instalación en `vda`, `mdadm.conf` en el target y
+datos intactos tras reensamblar.
 
 El gate `Repositorio` sigue abierto: `supralinux-stable` está vacío y la
 publicación estable no se ejecuta sin autorización explícita.

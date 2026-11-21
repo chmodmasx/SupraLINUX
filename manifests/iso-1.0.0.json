@@ -6,7 +6,7 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO final construida desde el rootfs nuevo (snapshot h) con supralinux-recovery-gui 1.0.0, supralinux-calamares-config 1.0.2, supralinux-defaults 1.1.4 y os-prober. Matriz L3/L4/L6 ejecutada sobre esta misma ISO: BIOS, UEFI Secure Boot, Btrfs, EXT4, LUKS2, dual-boot Linux en el mismo disco y en dos discos, RAID de datos y recuperación gráfica con Snapper. El selector de Calamares mostró una etiqueta md0 obsoleta en el caso RAID, pero el array estaba detenido y la instalación fue a /dev/vda; los datos del array quedaron intactos.",
+  "note": "ISO final construida desde el rootfs nuevo (snapshot h) con supralinux-recovery-gui 1.0.0, supralinux-calamares-config 1.0.2, supralinux-defaults 1.1.4 y os-prober. Matriz L3/L4/L6 ejecutada sobre esta misma ISO: BIOS, UEFI Secure Boot, Btrfs, EXT4, LUKS2, dual-boot Linux en el mismo disco y en dos discos, RAID de datos y recuperación gráfica con Snapper.",
   "regression_scope": "Matriz completa ejecutada sobre esta ISO. Los casos A/B/C, dual-boot, RAID y L6 usan discos desechables y arranque del kernel/initrd de esta ISO con el agente QEMU; L3 usa el arranque real por GRUB/OVMF. La instalación es offline (-nic none).",
   "iso": {
     "name": "supralinux-aurora-1.0.0-amd64-20261121T093006Z-g166a1c1.iso",
@@ -82,8 +82,8 @@
     {
       "id": "L4-E-RAID",
       "state": "PASS",
-      "result": "Array mdadm detenido en el live (sin /dev/md*), instalación en vda; target con mdadm.conf; array reensamblado y marker intacto; sistema instalado arranca.",
-      "evidence": "evidence/qa/l4-e-raid-bios/assemble.txt"
+      "result": "Array mdadm detenido en el live (sin /dev/md*); Calamares ofrece solo vda, vdb y vdc, sin md0. Instalación en vda; target con mdadm.conf; array reensamblado y marker intacto; sistema instalado arranca.",
+      "evidence": "evidence/qa/l4-e-raid-clean/target-mdadm-correct.txt"
     },
     {
       "id": "L6-GUI",
@@ -148,7 +148,6 @@
   "limitations": [
     "LUKS2 no tiene rollback automático en 1.0.0.",
     "Windows no se declara validado.",
-    "Secure Boot en hardware real sigue pendiente; la evidencia formal es OVMF.",
-    "En el caso RAID el selector de Calamares mostró una etiqueta md0 obsoleta; el array estaba detenido y la instalación fue a /dev/vda. Se registra como defecto cosmético conocido."
+    "Secure Boot en hardware real sigue pendiente; la evidencia formal es OVMF."
   ]
 }
