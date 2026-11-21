@@ -15,7 +15,7 @@ class AptlyPublicationTests(unittest.TestCase):
         self.assertEqual(DATA["scope"], "aptly-publication")
         self.assertEqual(DATA["status"], "PASS")
         self.assertFalse(DATA["release_ready"])
-        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261121g")
+        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261121h")
 
     def test_counts_match_the_source_inventory(self):
         published = [item for item in INVENTORY["packages"]

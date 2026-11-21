@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261121g",
-  "snapshot_created_at": "2026-11-21T06:28:30Z",
+  "snapshot": "supralinux-testing-1.0.0-20261121h",
+  "snapshot_created_at": "2026-11-21T09:20:50Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -35,8 +35,8 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "a96df97026984905e38e3171663fa23558ae8860e43047a892443951ceb6c07a",
-    "release_sha256": "9f37b4cf5b0eba934f5075e951a2cf4300af53e5b514a966d55b7163cf8a6f61",
+    "inrelease_sha256": "428c80fc2b9dd178b7e11caa504f5807cc244bc0af88392468d02d673d141861",
+    "release_sha256": "943142567bac7d6595e680e9a170b6092906cdce6c603b5225b0dc629c59801b",
     "binary_index_count": 605,
     "source_index_count": 177
   },
@@ -44,6 +44,6 @@
     "El host público repo.supralinux.com apunta al Aptly nuevo y sirve la suite testing.",
     "El Aptly viejo y su stack quedan intactos pero ya no se publican en repo.supralinux.com.",
     "supralinux-stable sigue vacío; no hay publicación stable.",
-    "El snapshot g reemplaza a f, agrega supralinux-recovery-gui 1.0.0 y actualiza supralinux-calamares-config a 1.0.2; el repositorio testing queda con 605 binarios y 177 fuentes."
+    "El snapshot h reemplaza a g: agrega supralinux-defaults 1.1.4 con el probe os-prober para raíces Btrfs @; mantiene la GUI 1.0.0 y Calamares 1.0.2. El repositorio testing queda con 605 binarios y 177 fuentes."
   ]
 }

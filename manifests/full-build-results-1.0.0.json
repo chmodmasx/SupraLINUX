@@ -8,7 +8,7 @@
   "release_ready": false,
   "note": "Los 176 paquetes del lote original se reconstruyeron con el packaging actual en VMs desechables; después se agregaron supralinux-recovery-gui 1.0.0 y supralinux-calamares-config 1.0.2 con el mismo circuito. Los cierres de Build-Depends se reutilizaron como inputs verificados por SHA-256. Esto certifica los paquetes, no la ISO ni la release.",
   "started_at": "2026-11-18T19:30:00+00:00",
-  "finished_at": "2026-11-21T06:27:29.209097+00:00",
+  "finished_at": "2026-11-21T09:21:39.598773+00:00",
   "build_count": 177,
   "areas": {
     "kde": 68,
@@ -3702,19 +3702,19 @@
     },
     {
       "package": "supralinux-defaults",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "area": "desktop",
       "manifest": "manifests/release-1.0.0/supralinux-defaults.json",
       "artifact": {
-        "name": "supralinux-defaults_1.1.3_all.deb",
-        "sha256": "be633aff5090f98f6e9ba71f864727bde13b77769a0f9986cc0b937f2128747a",
-        "bytes": 15122
+        "name": "supralinux-defaults_1.1.4_all.deb",
+        "sha256": "4a9eaccee0c84a8f04983308122af510423f5625a7579b704517de1c9550c336",
+        "bytes": 15752
       },
-      "evidence": "evidence/clean-build/20261120T133119Z-9140567d6dac",
+      "evidence": "evidence/clean-build/20261121T091811Z-e3f43e8acb02",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 74.912,
-        "guest_build": 23.096
+        "total": 71.503,
+        "guest_build": 27.507
       },
       "cleanup": {
         "process_absent": true,
