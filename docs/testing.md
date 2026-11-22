@@ -270,6 +270,10 @@ manifiesto de release.
   Agrega `supralinux-branding 1.3.2` con el icono opcional
   `supralinux-white-blue` para el menú Inicio. `InRelease` verificado con la
   clave Ed25519.
+- Snapshot `supralinux-testing-1.0.0-20261122e`: 614 binarios y 186 fuentes.
+  Agrega `supralinux-defaults 1.2.3` con la página por defecto del Monitor del
+  sistema y colores distintos para CPU, GPU, memoria e intercambio.
+  `InRelease` verificado con la clave Ed25519.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en
@@ -298,12 +302,12 @@ manifiesto de release.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.
-- ISO final `a0ca294d…` (`supralinux-aurora-1.0.0-amd64.iso`, snapshot
-  `20261122d`): BIOS y UEFI Secure Boot `PASS` con `supralinux-theme 1.1.3`,
-  `supralinux-defaults 1.2.2` y `supralinux-branding 1.3.2`; default oscuro,
+- ISO final `49c0dda2…` (`supralinux-aurora-1.0.0-amd64.iso`, snapshot
+  `20261122e`): BIOS y UEFI Secure Boot `PASS` con `supralinux-theme 1.1.3`,
+  `supralinux-defaults 1.2.3` y `supralinux-branding 1.3.2`; default oscuro,
   tema claro con selección `#51A2DA`/neutral `#F67400`, SDDM claro disponible,
-  wallpapers Light/Dark, icono `supralinux-white-blue` opcional y
-  `switchCategoryOnHover=true`. `GRUB_GFXMODE` y sonido `Supralinux-KDE3`
+  wallpapers Light/Dark, icono `supralinux-white-blue` opcional, página del
+  Monitor con colores distintos y `switchCategoryOnHover=true`. `GRUB_GFXMODE` y sonido `Supralinux-KDE3`
   presentes. La matriz L3/L4/L6 se ejecutó sobre la ISO `547fd33b…`, que
   comparte instalador, base y kernel; el delta son los paquetes de escritorio.
   Los detalles y la evidencia están en `manifests/iso-1.0.0.json` y
