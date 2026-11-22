@@ -2,15 +2,15 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-branding",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-branding",
-    "original_commit": "a3a0300218bca06e45b333190e2f0fc4c88d62b2",
+    "original_commit": "f5f4131fdbceaab2ddd9bc6bb343398814b37982",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-branding_1.2.0.dsc"
+    "dsc_name": "supralinux-branding_1.3.0.dsc"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
@@ -306,6 +306,8 @@
       "/usr/share/grub/themes/supralinux/theme.txt",
       "/usr/share/plymouth/themes/supralinux/supralinux.plymouth",
       "/usr/share/wallpapers/SupraLINUX/metadata.json",
+      "/usr/share/wallpapers/SupraLINUX/contents/images/3840x2160.png",
+      "/usr/share/wallpapers/SupraLINUX/contents/images_dark/1920x1080.png",
       "/usr/share/icons/hicolor/512x512/apps/supralinux-color.png"
     ]
   }

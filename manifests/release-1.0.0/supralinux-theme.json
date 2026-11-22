@@ -2,15 +2,15 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-theme",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-theme",
-    "original_commit": "a3a0300218bca06e45b333190e2f0fc4c88d62b2",
+    "original_commit": "f5f4131fdbceaab2ddd9bc6bb343398814b37982",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-theme_1.0.3.dsc"
+    "dsc_name": "supralinux-theme_1.1.0.dsc"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
@@ -303,10 +303,16 @@
   ],
   "verification": {
     "expected_paths": [
-      "/usr/share/plasma/look-and-feel/org.kde.supralinux.desktop/metadata.json",
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.desktop/metadata.json",
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.light.desktop/metadata.json",
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.desktop/contents/logout/sound.wav",
+      "/usr/share/plasma/desktoptheme/org.kde.supralinux/metadata.json",
+      "/usr/share/plasma/desktoptheme/org.kde.supralinux.light/metadata.json",
       "/usr/share/color-schemes/SupralinuxAurora.colors",
+      "/usr/share/color-schemes/SupralinuxAuroraLight.colors",
       "/usr/share/sddm/themes/supralinux/theme.conf",
-      "/usr/share/sounds/Supralinux/index.theme"
+      "/usr/share/sounds/Supralinux-KDE3/index.theme",
+      "/usr/share/themes/Supralinux-Aurora-Light/gtk-3.0/gtk-dark.css"
     ]
   }
 }
