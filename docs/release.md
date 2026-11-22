@@ -224,29 +224,31 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261122c`
-  con 612 binarios y 184 fuentes; publicación `testing` firmada y verificada.
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261122d`
+  con 613 binarios y 185 fuentes; publicación `testing` firmada y verificada.
   Incluye `supralinux-recovery-gui 1.0.0`, `supralinux-calamares-config
   1.0.2`, `supralinux-theme 1.1.3`, `supralinux-defaults 1.2.2` y
-  `supralinux-branding 1.3.1`. El default para instalaciones nuevas es el
-  tema global oscuro Aurora; el claro sigue instalado y seleccionable, ahora
-  con selección `#51A2DA`, neutral `#F67400`, SDDM claro disponible y
-  wallpapers Light/Dark sueltos. `https://repo.supralinux.com/` ya apunta al
-  Aptly nuevo; el Aptly viejo dejó de servirse. El resumen está en
+  `supralinux-branding 1.3.2`. El default para instalaciones nuevas es el
+  tema global oscuro Aurora; el claro sigue instalado y seleccionable, con
+  selección `#51A2DA`, neutral `#F67400`, SDDM claro disponible, wallpapers
+  Light/Dark sueltos e icono de menú `supralinux-white-blue` opcional.
+  `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly viejo
+  dejó de servirse. El resumen está en
   `manifests/aptly-publication-1.0.0.json`.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
-La ISO final `d8fbc9dd…` (`supralinux-aurora-1.0.0-amd64.iso`, construida
-desde el snapshot `20261122c`) arranca en BIOS y UEFI Secure Boot con
+La ISO final `a0ca294d…` (`supralinux-aurora-1.0.0-amd64.iso`, construida
+desde el snapshot `20261122d`) arranca en BIOS y UEFI Secure Boot con
 `supralinux-theme 1.1.3`, `supralinux-defaults 1.2.2` y
-`supralinux-branding 1.3.1`. El tema global oscuro Aurora es el default; el
+`supralinux-branding 1.3.2`. El tema global oscuro Aurora es el default; el
 claro sigue instalado y seleccionable, con selección `#51A2DA`, neutral
-`#F67400`, SDDM claro disponible y wallpapers Light/Dark sueltos. La matriz
-L3/L4/L6 se ejecutó sobre la ISO `547fd33b…`, que comparte instalador, base y
-kernel; el delta de esta ISO son los paquetes de escritorio, que no modifican
-las rutas de instalación ni de almacenamiento. El detalle está en
-`manifests/iso-1.0.0.json` y `evidence/qa/`.
+`#F67400`, SDDM claro disponible, wallpapers Light/Dark sueltos e icono de menú
+`supralinux-white-blue` opcional. La matriz L3/L4/L6 se ejecutó sobre la ISO
+`547fd33b…`, que comparte instalador, base y kernel; el delta de esta ISO son
+los paquetes de escritorio, que no modifican las rutas de instalación ni de
+almacenamiento. El detalle está en `manifests/iso-1.0.0.json` y
+`evidence/qa/`.
 
 Quedan como limitaciones explícitas: LUKS2 no tiene rollback automático en
 1.0.0, Windows no se declara validado y Secure Boot en hardware real sigue

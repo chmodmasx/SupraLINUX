@@ -6,24 +6,24 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO final construida desde un rootfs limpio del snapshot 20261122c con supralinux-recovery-gui 1.0.0, supralinux-calamares-config 1.0.2, supralinux-theme 1.1.3, supralinux-defaults 1.2.2, supralinux-branding 1.3.1 y os-prober. El tema global oscuro Aurora es el default; el claro sigue instalado y seleccionable, con selección #51A2DA, neutral #F67400, SDDM claro disponible y wallpapers Light/Dark sueltos. BIOS y UEFI Secure Boot revalidados sobre esta ISO. La matriz L3/L4/L6 se ejecutó sobre la ISO 20261121 (mismo instalador, base y kernel); el delta de esta ISO son los paquetes de escritorio, que no modifican las rutas de instalación ni de almacenamiento.",
+  "note": "ISO final construida desde un rootfs limpio del snapshot 20261122d con supralinux-recovery-gui 1.0.0, supralinux-calamares-config 1.0.2, supralinux-theme 1.1.3, supralinux-defaults 1.2.2, supralinux-branding 1.3.2 y os-prober. El tema global oscuro Aurora es el default; el claro sigue instalado y seleccionable, con selección #51A2DA, neutral #F67400, SDDM claro disponible, wallpapers Light/Dark sueltos e icono de menú supralinux-white-blue opcional. BIOS y UEFI Secure Boot revalidados sobre esta ISO. La matriz L3/L4/L6 se ejecutó sobre la ISO 20261121 (mismo instalador, base y kernel); el delta de esta ISO son los paquetes de escritorio, que no modifican las rutas de instalación ni de almacenamiento.",
   "regression_scope": "La matriz L3/L4/L6 se ejecutó sobre la ISO 20261121T093006Z: casos A/B/C, dual-boot, RAID y L6 con discos desechables y arranque del kernel/initrd de esa ISO con el agente QEMU; L3 por GRUB/OVMF real. La ISO 20261122c conserva instalador, base y kernel y solo actualiza theme/defaults/branding; sobre ella se revalidaron el arranque BIOS y UEFI Secure Boot, las versiones instaladas, el default oscuro, los wallpapers Light/Dark y el ajuste de hover. La instalación es offline (-nic none).",
   "iso": {
     "name": "supralinux-aurora-1.0.0-amd64.iso",
-    "sha256": "d8fbc9dd1696bdcdf57603c795e5b6843feb3cd9b71fb46b584e1d697d40f154",
-    "bytes": 3175970816,
-    "workspace_path": "live/1.0.0-final-20261122c/build/supralinux-aurora-1.0.0-amd64.iso",
-    "build_evidence": "evidence/live/iso-final-20261122T202353Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-final-20261122T201018Z.log"
+    "sha256": "a0ca294d97c23190dccab0e7f3bf489c421458923368001595c926c7865bff7c",
+    "bytes": 3176015872,
+    "workspace_path": "live/1.0.0-final-20261122d/build/supralinux-aurora-1.0.0-amd64.iso",
+    "build_evidence": "evidence/live/iso-final-20261122T205714Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-final-20261122T204423Z.log"
   },
   "inputs": {
-    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261122c)",
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261122d)",
     "installer": "supralinux-calamares-config 1.0.2",
     "defaults": "supralinux-defaults 1.2.2",
     "theme": "supralinux-theme 1.1.3",
-    "branding": "supralinux-branding 1.3.1",
+    "branding": "supralinux-branding 1.3.2",
     "kernel": "7.0.0-43-generic",
-    "aptly_snapshot": "supralinux-testing-1.0.0-20261122c",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261122d",
     "apt_source": "https://repo.supralinux.com/",
     "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
     "base_files": "supralinux-base-files 1.0.2",
@@ -36,20 +36,20 @@
     {
       "id": "L3-BIOS",
       "state": "PASS",
-      "result": "La ISO 20261122c arranca por GRUB BIOS a Plasma con el tema oscuro Aurora; iconos Install y Recuperar visibles.",
-      "evidence": "evidence/qa/iso-final-20261122c-live/bios-dark-desktop.png"
+      "result": "La ISO 20261122d arranca por GRUB BIOS a Plasma con el tema oscuro Aurora; iconos Install y Recuperar visibles.",
+      "evidence": "evidence/qa/iso-final-20261122d-live/bios-dark-desktop.png"
     },
     {
       "id": "L3-UEFI-SB",
       "state": "PASS",
-      "result": "La ISO 20261122c arranca por OVMF Secure Boot; mokutil informa SecureBoot enabled y la live muestra el tema oscuro Aurora.",
-      "evidence": "evidence/qa/iso-final-20261122c-live/uefi-sb-dark-desktop.png"
+      "result": "La ISO 20261122d arranca por OVMF Secure Boot; mokutil informa SecureBoot enabled y la live muestra el tema oscuro Aurora.",
+      "evidence": "evidence/qa/iso-final-20261122d-live/uefi-sb-dark-desktop.png"
     },
     {
       "id": "L3-LIVE-DEFAULTS",
       "state": "PASS",
-      "result": "La live instala theme 1.1.3, defaults 1.2.2 y branding 1.3.1; default oscuro, wallpapers SupraLINUX/Light/Dark, SDDM dark+light y switchCategoryOnHover=true en BIOS y UEFI.",
-      "evidence": "evidence/qa/iso-final-20261122c-live/uefi-checks.txt"
+      "result": "La live instala theme 1.1.3, defaults 1.2.2 y branding 1.3.2; default oscuro, icono de menú supralinux-color, icono opcional supralinux-white-blue, wallpapers SupraLINUX/Light/Dark, SDDM dark+light y switchCategoryOnHover=true en BIOS y UEFI.",
+      "evidence": "evidence/qa/iso-final-20261122d-live/uefi-sb-checks.txt"
     },
     {
       "id": "L3-RECOVERY-AUTOSTART",

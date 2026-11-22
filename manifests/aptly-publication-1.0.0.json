@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261122c",
-  "snapshot_created_at": "2026-11-22T20:09:49Z",
+  "snapshot": "supralinux-testing-1.0.0-20261122d",
+  "snapshot_created_at": "2026-11-22T20:43:54Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -21,9 +21,9 @@
     ]
   },
   "counts": {
-    "binary_packages": 612,
-    "source_packages": 184,
-    "total": 796
+    "binary_packages": 613,
+    "source_packages": 185,
+    "total": 798
   },
   "key": {
     "fingerprint": "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8",
@@ -35,15 +35,15 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "ec3448688cff7e7a3d26df9904098523c79c89da501e37159a9220ba7817c05c",
-    "release_sha256": "553aeb44950da5b0be9e264c4010a0b047d8697b06b6e2ff1f47dd1262ca5e99",
-    "binary_index_count": 612,
-    "source_index_count": 184
+    "inrelease_sha256": "4a09fba6d3e580265d1194f74bdde025b84070f24364dbf790781effac4b4049",
+    "release_sha256": "5b4f6d1967595c03231d67750856b9a29f073ec3637df5d5eff54e48a00b506f",
+    "binary_index_count": 613,
+    "source_index_count": 185
   },
   "notes": [
-    "El snapshot supralinux-testing-1.0.0-20261122c reemplaza al 20261122b.",
-    "Publica supralinux-theme 1.1.3 (selección #51A2DA, neutral #F67400, SDDM claro y hover) y supralinux-branding 1.3.1 (wallpapers Light/Dark); defaults sigue en 1.2.2.",
-    "El repo testing queda con 612 binarios y 184 fuentes; las versiones anteriores siguen disponibles.",
+    "El snapshot supralinux-testing-1.0.0-20261122d reemplaza al 20261122c.",
+    "Publica supralinux-branding 1.3.2 con el icono opcional supralinux-white-blue; theme 1.1.3 y defaults 1.2.2 no cambian.",
+    "El repo testing queda con 613 binarios y 185 fuentes; las versiones anteriores siguen disponibles.",
     "El stack viejo aptly fue retirado; testing se sirve desde el stack nuevo con la carpeta supralinux-aptly."
   ]
 }
