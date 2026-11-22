@@ -2,16 +2,16 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-defaults",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-defaults",
-    "original_commit": "d844bf0239b3b48874707edc55d4bb3cd5b41893",
+    "original_commit": "06d08d754a390e5dcff51f434338c76c1486d664",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-defaults_1.2.2.dsc",
-    "version": "1.2.2"
+    "dsc_name": "supralinux-defaults_1.2.3.dsc",
+    "version": "1.2.3"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
@@ -315,7 +315,8 @@
       "/etc/xdg/gwenviewrc",
       "/usr/lib/os-probes/mounted/91supralinux",
       "/etc/xdg/plasmarc",
-      "/etc/xdg/ksplashrc"
+      "/etc/xdg/ksplashrc",
+      "/etc/skel/.local/share/plasma-systemmonitor/overview.page"
     ]
   }
 }
