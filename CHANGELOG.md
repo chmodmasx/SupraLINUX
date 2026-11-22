@@ -32,6 +32,8 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
   otras instalaciones SupraLINUX en el mismo disco o en dos discos.
 - Icono opcional `supralinux-white-blue` para el menú Inicio, con SVG y PNGs
   16–512; el default sigue siendo `supralinux-color`.
+- Página por defecto del Monitor del sistema con colores distintos para CPU,
+  GPU, memoria e intercambio, pensada para usuarios nuevos y la live.
 
 ### Changed
 
