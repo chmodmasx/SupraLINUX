@@ -2,15 +2,15 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-defaults",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-defaults",
-    "original_commit": "f5f4131fdbceaab2ddd9bc6bb343398814b37982",
+    "original_commit": "131d28f94a2015afb8cc0289f5a75b5f9e81f96e",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-defaults_1.2.0.dsc",
+    "dsc_name": "supralinux-defaults_1.2.1.dsc",
     "version": "1.1.4"
   },
   "base_image": {
@@ -309,6 +309,7 @@
       "/etc/xdg/kscreenlockerrc",
       "/etc/xdg/autostart/supralinux-login-sound.desktop",
       "/usr/bin/supralinux-play-sound",
+      "/etc/default/grub.d/99-supralinux.cfg",
       "/usr/lib/supralinux/fix-firefox-desktop",
       "/usr/share/supralinux/fastfetch-logo.txt",
       "/etc/xdg/gwenviewrc",
