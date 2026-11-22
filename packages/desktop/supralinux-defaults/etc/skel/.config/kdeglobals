@@ -3,3 +3,9 @@ LookAndFeelPackage=org.kde.supralinux.aurora.light.desktop
 DefaultLightLookAndFeel=org.kde.supralinux.aurora.light.desktop
 DefaultDarkLookAndFeel=org.kde.supralinux.aurora.desktop
 AutomaticLookAndFeel=false
+
+[General]
+SoundTheme=Supralinux-KDE3
+
+[Sounds]
+Theme=Supralinux-KDE3

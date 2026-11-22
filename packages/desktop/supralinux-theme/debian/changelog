@@ -1,3 +1,11 @@
+supralinux-theme (1.1.1) resolute; urgency=medium
+
+  * Correct the light Aurora palette: brighter accent (#51A2DA), pale
+    selection with dark text and Breeze neutral (#F67400); update the light
+    LNF accent, GTK 3/4 and previews.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 06:30:00 +0000
+
 supralinux-theme (1.1.0) resolute; urgency=medium
 
   * Port the validated Aurora host theme to the real package IDs.

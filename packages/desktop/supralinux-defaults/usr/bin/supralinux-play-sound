@@ -1,8 +1,9 @@
 #!/bin/sh
 # Play a KDE sound theme event for SupraLINUX.
 event="${1:?event required}"
-theme=$(kreadconfig6 --file kdeglobals --group General --key SoundTheme 2>/dev/null)
-[ -n "$theme" ] || theme=ocean
+theme=$(kreadconfig6 --file kdeglobals --group Sounds --key Theme 2>/dev/null)
+[ -n "$theme" ] || theme=$(kreadconfig6 --file kdeglobals --group General --key SoundTheme 2>/dev/null)
+[ -n "$theme" ] || theme=Supralinux-KDE3
 for base in "$HOME/.local/share/sounds/$theme" "/usr/share/sounds/$theme"; do
     for ext in oga ogg wav; do
         file="$base/stereo/$event.$ext"

@@ -1,3 +1,11 @@
+supralinux-defaults (1.2.1) resolute; urgency=medium
+
+  * Set GRUB_GFXMODE so installed GRUB matches the live ISO resolution.
+  * Enable Supralinux-KDE3 in system and skel defaults and make the login
+    sound helper follow the sound theme selected in the KCM.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 06:30:00 +0000
+
 supralinux-defaults (1.2.0) resolute; urgency=medium
 
   * Make SupraLINUX Aurora Light the system default, with the dark global
