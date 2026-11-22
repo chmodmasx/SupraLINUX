@@ -1,3 +1,10 @@
+supralinux-defaults (1.2.3) resolute; urgency=medium
+
+  * Add a default System Monitor overview page for new users with distinct
+    sensor colors for CPU, GPU, memory and swap.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 19:20:24 -0300
+
 supralinux-defaults (1.2.2) resolute; urgency=medium
 
   * Make the dark Aurora global theme the default for new installations,

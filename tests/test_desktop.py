@@ -90,6 +90,16 @@ class DesktopIntegrationTests(unittest.TestCase):
         self.assertIn("ExecStart=", text)
         self.assertIn("ExecStart=/usr/libexec/bluetooth/obexd -P pbap,irmc", text)
 
+    def test_defaults_install_a_branded_system_monitor_page(self):
+        base = ROOT / "packages/desktop/supralinux-defaults"
+        page = (base / "etc/skel/.local/share/plasma-systemmonitor/overview.page").read_text()
+        self.assertIn("cpu/all/usage=61,174,233", page)
+        self.assertIn("gpu/all/usage=233,120,61", page)
+        self.assertIn("memory/physical/used=76,154,76", page)
+        self.assertIn("memory/swap/used=206,61,233", page)
+        self.assertNotRegex(page, r"\ndisk/[0-9a-f-]{36}/")
+        self.assertNotIn("network/eno1/", page)
+
     def test_defaults_keep_the_desktop_helpers(self):
         base = ROOT / "packages/desktop/supralinux-defaults"
         for relative in [
