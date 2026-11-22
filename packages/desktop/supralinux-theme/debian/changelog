@@ -1,3 +1,11 @@
+supralinux-theme (1.1.2) resolute; urgency=medium
+
+  * Point the system GTK 3/4 defaults at the dark Aurora theme and dark icon
+    theme, with prefer-dark enabled, so the new dark default is coherent
+    across Plasma and GTK applications.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 13:54:14 -0300
+
 supralinux-theme (1.1.1) resolute; urgency=medium
 
   * Correct the light Aurora palette: brighter accent (#51A2DA), pale

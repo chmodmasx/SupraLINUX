@@ -1,3 +1,12 @@
+supralinux-defaults (1.2.2) resolute; urgency=medium
+
+  * Make the dark Aurora global theme the default for new installations,
+    keeping the light theme installed and selectable.
+  * Align the default Plasma style and splash with the dark global theme.
+    GTK 3/4 follow the dark theme from supralinux-theme 1.1.2.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 13:54:14 -0300
+
 supralinux-defaults (1.2.1) resolute; urgency=medium
 
   * Set GRUB_GFXMODE so installed GRUB matches the live ISO resolution.
