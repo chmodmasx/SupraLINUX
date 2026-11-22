@@ -36,22 +36,8 @@ Item {
     Kirigami.Theme.neutralTextColor: "#8A5600"
     Kirigami.Theme.positiveTextColor: "#187A58"
     Kirigami.Theme.activeTextColor: "#2A6F9F"
-    Kirigami.Theme.inactiveTextColor: "#5C697A"
     Kirigami.Theme.focusColor: "#3E93CC"
     Kirigami.Theme.hoverColor: "#51A2DA"
-    Kirigami.Theme.buttonTextColor: "#1B2430"
-    Kirigami.Theme.buttonBackgroundColor: "#FFFFFF"
-    Kirigami.Theme.buttonAlternateBackgroundColor: "#E8EDF4"
-    Kirigami.Theme.buttonHoverColor: "#D6E9F7"
-    Kirigami.Theme.buttonFocusColor: "#3E93CC"
-    Kirigami.Theme.viewTextColor: "#1B2430"
-    Kirigami.Theme.viewBackgroundColor: "#FFFFFF"
-    Kirigami.Theme.viewAlternateBackgroundColor: "#F0F4FA"
-    Kirigami.Theme.selectionTextColor: "#1B2430"
-    Kirigami.Theme.selectionBackgroundColor: "#3E93CC"
-    Kirigami.Theme.selectionAlternateBackgroundColor: "#51A2DA"
-    Kirigami.Theme.selectionHoverColor: "#51A2DA"
-    Kirigami.Theme.selectionFocusColor: "#2A6F9F"
 
     width: 1600
     height: 900
