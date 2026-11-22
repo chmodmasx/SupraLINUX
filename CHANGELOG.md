@@ -48,6 +48,9 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
   la automática.
 - El lanzador cambia de categoría al pasar el puntero por defecto en paneles
   nuevos.
+- Dolphin muestra “Abrir como administrador” en todas las carpetas locales,
+  incluido el home. Se puede recuperar el comportamiento original de KDE con
+  `ShowInHome=false` en `~/.config/kio-adminrc`.
 
 ## [1.0.0] - Por anunciar
 

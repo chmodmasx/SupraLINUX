@@ -443,3 +443,20 @@ separada y no forma parte del snapshot de `@`.
 
 **Consecuencia:** la GUI debe mostrar un estado claro para LUKS2. La
 recuperación de LUKS2 queda para una versión futura; no se promete en la web.
+
+## D-033 — Acción administrativa de Dolphin también en el home
+
+**Decisión:** `kio-admin` lee `ShowInHome` desde `kio-adminrc` (default `true`)
+y `supralinux-defaults` instala `/etc/xdg/kio-adminrc` con `true`. La acción
+“Abrir como administrador” aparece en todas las ubicaciones locales, incluido
+el home. Un usuario puede poner `false` en `~/.config/kio-adminrc` para
+recuperar el comportamiento original de KDE.
+
+**Motivo:** el plugin upstream oculta la acción cuando todo lo seleccionado está
+bajo `$HOME`. SupraLINUX quiere la misma acción en cualquier carpeta local, sin
+parchear Dolphin ni agregar helpers.
+
+**Consecuencia:** con `true` la acción aparece en el home; con `false`
+desaparece allí y sigue apareciendo fuera. Probado en live desechable, sin red:
+evidencia en `evidence/qa/kio-admin-home-20261122/`. Abrir el home como root
+puede dejar archivos con dueño root; la opción existe para desactivarlo.
