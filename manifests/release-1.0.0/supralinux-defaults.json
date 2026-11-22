@@ -7,7 +7,7 @@
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-defaults",
-    "original_commit": "06d08d754a390e5dcff51f434338c76c1486d664",
+    "original_commit": "fdffe69c0cec932904afed215436e0b27fc5ba5d",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
     "dsc_name": "supralinux-defaults_1.2.3.dsc",
