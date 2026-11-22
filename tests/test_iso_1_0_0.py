@@ -15,7 +15,7 @@ class IsoOneZeroTests(unittest.TestCase):
 
     def test_iso_is_pinned_by_sha256_and_size(self):
         self.assertEqual(DATA["iso"]["sha256"],
-                         "7eb07d4bef0e165fbf99f348e5a77294dc4c1e9f3f24d1394606492a9aa1dd95")
+                         "f66ef10490b7e65acaf49e14d48d01062d627074f838f2fc995eb79be7bd18b1")
         self.assertGreater(DATA["iso"]["bytes"], 2 * 1024**3)
         self.assertEqual(DATA["iso"]["name"],
                          "supralinux-aurora-1.0.0-amd64.iso")
@@ -43,11 +43,11 @@ class IsoOneZeroTests(unittest.TestCase):
         self.assertIn("gamemode", DATA["observed"]["user_groups"])
         self.assertEqual(DATA["inputs"]["installer"], "supralinux-calamares-config 1.0.2")
         self.assertEqual(DATA["inputs"]["base_files"], "supralinux-base-files 1.0.2")
-        self.assertEqual(DATA["inputs"]["defaults"], "supralinux-defaults 1.2.1")
-        self.assertEqual(DATA["inputs"]["theme"], "supralinux-theme 1.1.1")
+        self.assertEqual(DATA["inputs"]["defaults"], "supralinux-defaults 1.2.2")
+        self.assertEqual(DATA["inputs"]["theme"], "supralinux-theme 1.1.2")
         self.assertEqual(DATA["inputs"]["branding"], "supralinux-branding 1.3.0")
         self.assertEqual(DATA["inputs"]["aptly_snapshot"],
-                         "supralinux-testing-1.0.0-20261122a")
+                         "supralinux-testing-1.0.0-20261122b")
         self.assertEqual(DATA["inputs"]["recovery_gui"], "supralinux-recovery-gui 1.0.0")
         self.assertEqual(DATA["inputs"]["os_prober"], "os-prober 1.84ubuntu1")
         self.assertEqual(DATA["inputs"]["kernel"], "7.0.0-43-generic")

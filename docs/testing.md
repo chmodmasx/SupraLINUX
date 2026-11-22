@@ -258,6 +258,10 @@ manifiesto de release.
   Actualiza `supralinux-defaults` a 1.1.4 con el probe de os-prober para
   raíces Btrfs `@`; mantiene GUI 1.0.0 y Calamares 1.0.2. `InRelease`
   verificado con la clave Ed25519.
+- Snapshot `supralinux-testing-1.0.0-20261122b`: 610 binarios y 182 fuentes.
+  Publica `supralinux-theme 1.1.2` (GTK 3/4 oscuro) y `supralinux-defaults
+  1.2.2` (Aurora oscuro por defecto, claro seleccionable); branding sigue en
+  1.3.0. `InRelease` verificado con la clave Ed25519.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en
@@ -286,13 +290,15 @@ manifiesto de release.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.
-- ISO final `7eb07d4b…` (`supralinux-aurora-1.0.0-amd64.iso`, snapshot
-  `20261122a`): BIOS y UEFI Secure Boot `PASS` con `supralinux-theme 1.1.1`,
-  `supralinux-defaults 1.2.1` y `supralinux-branding 1.3.0`; LNF claro,
-  `GRUB_GFXMODE` y sonido `Supralinux-KDE3` presentes. La matriz L3/L4/L6 se
-  ejecutó sobre la ISO `547fd33b…`, que comparte instalador, base y kernel; el
-  delta son los paquetes de escritorio. Los detalles y la evidencia están en
-  `manifests/iso-1.0.0.json` y `evidence/qa/`.
+- ISO final `f66ef104…` (`supralinux-aurora-1.0.0-amd64.iso`, snapshot
+  `20261122b`): BIOS y UEFI Secure Boot `PASS` con `supralinux-theme 1.1.2`,
+  `supralinux-defaults 1.2.2` y `supralinux-branding 1.3.0`; LNF, Plasma
+  style, splash y GTK 3/4 oscuros por defecto, con el tema claro instalado y
+  seleccionable. `GRUB_GFXMODE` y sonido `Supralinux-KDE3` presentes. La
+  matriz L3/L4/L6 se ejecutó sobre la ISO `547fd33b…`, que comparte
+  instalador, base y kernel; el delta son los paquetes de escritorio. Los
+  detalles y la evidencia están en `manifests/iso-1.0.0.json` y
+  `evidence/qa/`.
 - LUKS2: rollback automático sigue fuera de alcance en 1.0.0.
 - RAID: en un arranque limpio, el live detiene el array (sin `/dev/md*`) y
   Calamares ofrece solo `vda`, `vdb` y `vdc`; el target recibe `mdadm.conf` y

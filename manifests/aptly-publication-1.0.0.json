@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261122a",
-  "snapshot_created_at": "2026-11-22T08:24:28Z",
+  "snapshot": "supralinux-testing-1.0.0-20261122b",
+  "snapshot_created_at": "2026-11-22T16:58:56Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -21,9 +21,9 @@
     ]
   },
   "counts": {
-    "binary_packages": 608,
-    "source_packages": 180,
-    "total": 788
+    "binary_packages": 610,
+    "source_packages": 182,
+    "total": 792
   },
   "key": {
     "fingerprint": "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8",
@@ -35,15 +35,15 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "5bdb823950903a60c10001667cf406928d4b27a02c71e886bc8b3953a386f237",
-    "release_sha256": "803a488935c62114afd9b8db9e9c4dff63042254b986870dee2f866607fbddc8",
-    "binary_index_count": 608,
-    "source_index_count": 180
+    "inrelease_sha256": "9b3500865bac5fb1f6ac5b8da61176c0518b6658c01a18d66bb10bd89f6d7b3c",
+    "release_sha256": "828f9c04f8ad6934db0abc7213373633935b1ed6e03d21e5c9030d85e866d03a",
+    "binary_index_count": 610,
+    "source_index_count": 182
   },
   "notes": [
-    "El snapshot supralinux-testing-1.0.0-20261122a reemplaza al 20261121h.",
-    "Publica supralinux-theme 1.1.1 (paleta clara), supralinux-defaults 1.2.1 (GRUB y sonido) y supralinux-branding 1.3.0.",
-    "El repo testing queda con 608 binarios y 180 fuentes; las versiones anteriores siguen disponibles.",
+    "El snapshot supralinux-testing-1.0.0-20261122b reemplaza al 20261122a.",
+    "Publica supralinux-theme 1.1.2 (GTK 3/4 oscuro) y supralinux-defaults 1.2.2 (Aurora oscuro por defecto, claro seleccionable); branding sigue en 1.3.0.",
+    "El repo testing queda con 610 binarios y 182 fuentes; las versiones anteriores siguen disponibles.",
     "El stack viejo aptly fue retirado; testing se sirve desde el stack nuevo con la carpeta supralinux-aptly."
   ]
 }

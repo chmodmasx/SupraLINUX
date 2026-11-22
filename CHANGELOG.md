@@ -31,6 +31,12 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - Probe propio de os-prober para raíces Btrfs en `@`, de modo que GRUB detecte
   otras instalaciones SupraLINUX en el mismo disco o en dos discos.
 
+### Changed
+
+- El tema global oscuro Aurora es el default para instalaciones nuevas; el
+  tema claro sigue instalado y seleccionable. GTK 3/4, el estilo Plasma y el
+  splash acompañan el default oscuro.
+
 ## [1.0.0] - Por anunciar
 
 Primera release pública de SupraLINUX, nombre clave **Aurora**.
