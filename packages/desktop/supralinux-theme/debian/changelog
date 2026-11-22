@@ -1,6 +1,6 @@
 supralinux-theme (1.1.3) resolute; urgency=medium
 
-  * Use #3E93CC for the light selection so progress bars, rings and selected
+  * Use #51A2DA for the light selection so progress bars, rings and selected
     rows are visible; align the light Plasma style.
   * Add the SupraLINUX Aurora Light SDDM theme with explicit light colors.
   * Enable switchCategoryOnHover for new Kicker/Kickoff panels in both LNFs.
