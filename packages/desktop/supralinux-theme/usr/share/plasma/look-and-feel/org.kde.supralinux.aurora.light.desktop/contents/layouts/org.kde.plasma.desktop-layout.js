@@ -8,6 +8,7 @@ var kickoff = panel.addWidget("org.kde.plasma.kickoff")
 kickoff.currentConfigGroup = ["General"]
 kickoff.writeConfig("icon", "supralinux-color")
 kickoff.writeConfig("decoration", "supralinux-color")
+kickoff.writeConfig("switchCategoryOnHover", true)
 
 panel.addWidget("org.kde.plasma.pager")
 panel.addWidget("org.kde.plasma.icontasks")

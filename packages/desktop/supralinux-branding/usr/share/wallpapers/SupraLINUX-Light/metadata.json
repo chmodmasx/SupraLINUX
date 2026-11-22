@@ -1,0 +1,18 @@
+{
+  "KPackageStructure": "Plasma/Wallpaper",
+  "KPlugin": {
+    "Authors": [
+      {
+        "Name": "SupraLINUX"
+      }
+    ],
+    "Id": "SupraLINUX-Light",
+    "License": "CC-BY-4.0",
+    "Name": "SupraLINUX Aurora Light"
+  },
+  "X-KDE-CrossFade": true,
+  "X-KDE-PlasmaImageWallpaper-AccentColor": {
+    "Light": "#2F7FB8"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0"
+}

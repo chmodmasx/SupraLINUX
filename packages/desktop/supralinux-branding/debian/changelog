@@ -1,3 +1,10 @@
+supralinux-branding (1.3.1) resolute; urgency=medium
+
+  * Add standalone SupraLINUX Aurora Light and Dark wallpaper entries,
+    reusing the existing images, alongside the automatic wallpaper.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 16:32:46 -0300
+
 supralinux-branding (1.3.0) resolute; urgency=medium
 
   * Add the dark Aurora wallpaper and 2560x1440 / 3840x2160 variants for
