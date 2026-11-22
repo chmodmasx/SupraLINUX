@@ -2,16 +2,16 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "kio-admin",
-  "version": "25.12.3-0supralinux1",
+  "version": "25.12.3-0supralinux2",
   "architecture": "amd64",
   "release_scope": "full-1.0.0",
   "source": {
     "kind": "quilt",
     "path": "packages/gear-extras/kio-admin",
     "source_package": "kio-admin",
-    "version": "25.12.3-0supralinux1",
+    "version": "25.12.3-0supralinux2",
     "upstream_version": "25.12.3",
-    "dsc_name": "kio-admin_25.12.3-0supralinux1.dsc",
+    "dsc_name": "kio-admin_25.12.3-0supralinux2.dsc",
     "declared_build_depends": "cmake (>= 3.22~), debhelper-compat (= 13), dh-sequence-kf6, extra-cmake-modules (>= 5.98.0~), gettext, libkf6i18n-dev (>= 5.98.0~), libkf6kio-dev (>= 5.98.0~), libpolkit-qt6-1-dev, qt6-base-dev (>= 5.15.0~)",
     "upstream": {
       "url": "https://download.kde.org/stable/release-service/25.12.3/src/kio-admin-25.12.3.tar.xz",
@@ -4269,6 +4269,9 @@
     }
   ],
   "verification": {
-    "expected_paths": []
+    "expected_paths": [
+      "/usr/lib/x86_64-linux-gnu/qt6/plugins/kf6/kfileitemaction/kio-admin.so",
+      "/usr/lib/x86_64-linux-gnu/libexec/kf6/kio-admin-helper"
+    ]
   }
 }
