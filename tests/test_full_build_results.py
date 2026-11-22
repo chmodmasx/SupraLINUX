@@ -9,7 +9,13 @@ INVENTORY = json.loads((ROOT / "manifests/packages-1.0.0.json").read_text())
 # The GUI package and calamares-config 1.0.2 were rebuilt after the historical
 # batch; both results are part of the summary.
 PENDING_BUILDS = set()
-STALE_BUILD_VERSIONS = {}
+STALE_BUILD_VERSIONS = {
+    # Desktop theme/defaults/branding were version-bumped after the 1.0.0
+    # full-build batch; their 1.0.0 artifacts remain historical evidence.
+    "supralinux-theme": "1.0.3",
+    "supralinux-defaults": "1.1.4",
+    "supralinux-branding": "1.2.0",
+}
 
 
 class FullBuildResultsTests(unittest.TestCase):

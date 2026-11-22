@@ -11,3 +11,4 @@ etc/xdg etc
 usr/lib usr
 usr/local usr
 usr/share usr
+usr/bin usr

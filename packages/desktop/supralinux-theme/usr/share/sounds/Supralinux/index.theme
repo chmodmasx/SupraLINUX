@@ -1,6 +1,0 @@
-[Sound Theme]
-Name=Supralinux
-Name[es]=Supralinux
-Comment=SupraLINUX Aurora sound theme
-Inherits=ocean
-Directories=stereo

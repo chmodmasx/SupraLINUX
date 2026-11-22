@@ -1,0 +1,10 @@
+[Sound Theme]
+Name=KDE 3 - SupraLINUX
+Name[es]=KDE 3 - SupraLINUX
+Comment=Sonidos clásicos de KDE 3.5, recuperados por SupraLINUX
+Comment[es]=Sonidos clásicos de KDE 3.5, recuperados por SupraLINUX
+Inherits=ocean
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo

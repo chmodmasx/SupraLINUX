@@ -1,2 +1,5 @@
 [KDE]
-LookAndFeelPackage=org.kde.supralinux.desktop
+LookAndFeelPackage=org.kde.supralinux.aurora.light.desktop
+DefaultLightLookAndFeel=org.kde.supralinux.aurora.light.desktop
+DefaultDarkLookAndFeel=org.kde.supralinux.aurora.desktop
+AutomaticLookAndFeel=false

@@ -1,3 +1,12 @@
+supralinux-branding (1.3.0) resolute; urgency=medium
+
+  * Add the dark Aurora wallpaper and 2560x1440 / 3840x2160 variants for
+    both light and dark wallpapers.
+  * Update the wallpaper metadata with cross-fade and accent colors.
+  * Refresh the wallpaper KCM screenshot.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 02:00:00 +0000
+
 supralinux-branding (1.2.0) resolute; urgency=medium
 
   * Rebuild the Aurora brand assets for SupraLINUX 1.0.0.

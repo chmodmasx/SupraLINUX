@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=SupraLINUX login sound
+Comment=Reproduce el sonido de inicio del tema de sonido actual
+Exec=sh -c 'sleep 3; exec /usr/bin/supralinux-play-sound desktop-login'
+OnlyShowIn=KDE;
+NoDisplay=true
+X-GNOME-Autostart-enabled=true

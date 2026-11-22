@@ -93,7 +93,7 @@ Rectangle {
             }
             Image {
                 asynchronous: true
-                source: "images/supralinux-mark.png"
+                source: "images/kde.svgz"
                 sourceSize.height: Kirigami.Units.gridUnit * 2
                 sourceSize.width: Kirigami.Units.gridUnit * 2
             }

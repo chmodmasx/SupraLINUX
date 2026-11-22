@@ -5,6 +5,20 @@ Inherits=breeze,hicolor
 Directories=scalable/places,scalable/applets,places/16,places/22,places/24,places/32,places/48,places/64,places/96,places/128,places/256,places/512,applets/16,applets/22,applets/24,applets/32,applets/48,applets/64,applets/96,applets/128,applets/256,applets/512
 
 
+[scalable/places]
+Size=48
+MinSize=16
+MaxSize=512
+Type=Scalable
+Context=Places
+
+[scalable/applets]
+Size=48
+MinSize=16
+MaxSize=512
+Type=Scalable
+Context=Applications
+
 [places/16]
 Size=16
 MinSize=16

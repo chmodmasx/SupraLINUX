@@ -11,6 +11,7 @@ import QtQuick.Controls as QQC2
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.coreaddons as KCoreAddons
 import org.kde.kirigami as Kirigami
+import QtMultimedia
 
 import org.kde.breeze.components
 import "timer.js" as AutoTriggerTimer
@@ -70,6 +71,18 @@ Item {
         // In case the default values ever change
         includeUnusedSessions: false
         includeOwnSession: false
+    }
+
+    SoundEffect {
+        id: logoutSound
+        source: Qt.resolvedUrl("sound.wav")
+        property bool started: false
+        onStatusChanged: {
+            if (!started && status === SoundEffect.Ready) {
+                started = true;
+                play();
+            }
+        }
     }
 
     QQC2.Action {

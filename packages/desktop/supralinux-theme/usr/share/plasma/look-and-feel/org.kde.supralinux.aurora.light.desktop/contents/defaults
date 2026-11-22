@@ -3,8 +3,10 @@ widgetStyle=Breeze
 
 [kdeglobals][General]
 ColorScheme=SupralinuxAuroraLight
+AccentColor=47,127,184
+SoundTheme=Supralinux-KDE3
 font=Noto Sans,10,-1,5,50,0,0,0,0,0
-fixed=Noto Sans Mono,10,-1,5,50,0,0,0,0,0
+fixed=Hack,10,-1,5,50,0,0,0,0,0
 menuFont=Noto Sans,10,-1,5,50,0,0,0,0,0
 toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0
 
@@ -12,7 +14,7 @@ toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0
 Theme=Supralinux-Light
 
 [kdeglobals][Sounds]
-Theme=Supralinux
+Theme=Supralinux-KDE3
 
 [plasmarc][Theme]
 name=org.kde.supralinux.light

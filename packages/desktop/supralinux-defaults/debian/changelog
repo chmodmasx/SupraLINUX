@@ -1,3 +1,14 @@
+supralinux-defaults (1.2.0) resolute; urgency=medium
+
+  * Make SupraLINUX Aurora Light the system default, with the dark global
+    theme installed and automatic day/night switching disabled.
+  * Add system defaults for GTK, splash, Plasma style, lock-screen wallpaper
+    and the login sound.
+  * Add /usr/bin/supralinux-play-sound and its autostart entry.
+  * Point /etc/skel and SDDM at the new real theme IDs.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 02:00:00 +0000
+
 supralinux-defaults (1.1.4) resolute; urgency=medium
 
   * Add an os-prober probe for Linux roots stored in the Btrfs @ subvolume.

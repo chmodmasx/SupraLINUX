@@ -1,14 +1,18 @@
 {
-    "KPlugin": {
-        "Authors": [
-            {
-                "Name": "SupraLINUX"
-            }
-        ],
-        "Id": "org.kde.supralinux.light",
-        "Name": "SupraLINUX Aurora Light",
-        "Description": "SupraLINUX Aurora Light Plasma style",
-        "License": "LGPL-2.1-or-later",
-        "Version": "1.0.0"
-    }
+  "KPackageStructure": "Plasma/Theme",
+  "KPlugin": {
+    "Authors": [
+      {
+        "Name": "SupraLINUX"
+      }
+    ],
+    "Category": "Plasma Style",
+    "Description": "SupraLINUX Aurora Light Plasma style",
+    "EnabledByDefault": true,
+    "Id": "org.kde.supralinux.light",
+    "License": "LGPL-2.1-or-later",
+    "Name": "SupraLINUX Aurora Light",
+    "Version": "1.0.0"
+  },
+  "X-Plasma-API": "5.0"
 }

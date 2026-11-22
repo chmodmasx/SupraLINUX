@@ -1,0 +1,25 @@
+KDE 3 - SupraLINUX — sound theme
+================================
+
+Sonidos originales del paquete kdebase 3.5.10 (KDE 3.5), recuperados por
+SupraLINUX y adaptados a los nombres de eventos que usa Plasma 6.
+
+Origen: kdebase-3.5.10.tar.bz2
+Ruta original: kdebase-3.5.10/kcontrol/knotify/sounds/
+Licencia: GPL-2.0-only (ver LICENSES/GPL-2.0-only.txt)
+
+No se recortaron, normalizaron ni modificaron los audios. Los OGG se
+copiaron tal cual y solo se renombraron a .oga. Los WAV se convirtieron
+una sola vez a Ogg Vorbis sin filtros.
+
+Eventos modernos incluidos:
+  desktop-login, desktop-logout, service-login, service-logout,
+  dialog-error, dialog-error-serious, dialog-error-critical,
+  dialog-warning, dialog-warning-auth, dialog-information,
+  dialog-question, message-new-instant, completion-success,
+  completion-fail, completion-rotation, bell-window-system, bell,
+  device-added, device-removed, battery-caution, battery-low,
+  battery-full, power-plug, power-unplug, trash-empty,
+  camera-shutter, alarm-clock-elapsed.
+
+Los eventos no listados se heredan del theme Ocean.

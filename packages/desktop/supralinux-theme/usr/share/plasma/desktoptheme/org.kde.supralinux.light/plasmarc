@@ -11,3 +11,6 @@ saturation=1.3
 
 [AdaptiveTransparency]
 enabled=true
+
+[BlurBehindEffect]
+enabled=true

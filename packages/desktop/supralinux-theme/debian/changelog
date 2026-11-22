@@ -1,3 +1,16 @@
+supralinux-theme (1.1.0) resolute; urgency=medium
+
+  * Port the validated Aurora host theme to the real package IDs.
+  * Ship light and dark global themes, Plasma styles, color schemes and
+    previews; both global themes use the dark Aurora splash.
+  * Add the KDE 3 - SupraLINUX sound theme with its GPL-2.0-only license,
+    logout WAV hook and system-ready SDDM accent.
+  * Fix GTK dark-mode imports and icon-theme scalable metadata.
+  * Drop the legacy org.kde.supralinux.desktop global theme and the old
+    Supralinux sound theme.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 02:00:00 +0000
+
 supralinux-theme (1.0.3) resolute; urgency=medium
 
   * Initial Aurora theme package for SupraLINUX 1.0.0.
