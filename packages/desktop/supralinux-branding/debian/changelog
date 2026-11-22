@@ -1,3 +1,10 @@
+supralinux-branding (1.3.2) resolute; urgency=medium
+
+  * Add supralinux-white-blue as an additional selectable Application
+    Launcher icon, with SVG and PNG sizes 16-512.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 17:38:45 -0300
+
 supralinux-branding (1.3.1) resolute; urgency=medium
 
   * Add standalone SupraLINUX Aurora Light and Dark wallpaper entries,

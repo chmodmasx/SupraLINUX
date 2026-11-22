@@ -11,6 +11,8 @@ class BrandingTests(unittest.TestCase):
             "branding/grub/supralinux/background.png",
             "branding/supralinux/logos/supralinux-color.svg",
             "branding/supralinux/logos/supralinux-color-512.png",
+            "branding/supralinux/logos/supralinux-white-blue.svg",
+            "branding/supralinux/logos/supralinux-white-blue-512.png",
             "branding/supralinux/wallpapers/SupraLINUX/metadata.json",
             "branding/supralinux/wallpapers/SupraLINUX/contents/images/1920x1080.png",
             "branding/xdg-user-dirs/README.md",
