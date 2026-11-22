@@ -286,12 +286,13 @@ manifiesto de release.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.
-- ISO final `547fd33b…`
-  (`supralinux-aurora-1.0.0-amd64-20261121T093006Z-g166a1c1.iso`): matriz
-  L3/L4/L6 sobre la misma ISO. BIOS y UEFI Secure Boot `PASS`; UEFI+Btrfs,
-  BIOS+EXT4, UEFI+LUKS2, dual-boot Linux en el mismo disco y en dos discos,
-  RAID de datos y recuperación gráfica `PASS`. Los detalles y la evidencia
-  están en `manifests/iso-1.0.0.json` y `evidence/qa/`.
+- ISO final `7eb07d4b…` (`supralinux-aurora-1.0.0-amd64.iso`, snapshot
+  `20261122a`): BIOS y UEFI Secure Boot `PASS` con `supralinux-theme 1.1.1`,
+  `supralinux-defaults 1.2.1` y `supralinux-branding 1.3.0`; LNF claro,
+  `GRUB_GFXMODE` y sonido `Supralinux-KDE3` presentes. La matriz L3/L4/L6 se
+  ejecutó sobre la ISO `547fd33b…`, que comparte instalador, base y kernel; el
+  delta son los paquetes de escritorio. Los detalles y la evidencia están en
+  `manifests/iso-1.0.0.json` y `evidence/qa/`.
 - LUKS2: rollback automático sigue fuera de alcance en 1.0.0.
 - RAID: en un arranque limpio, el live detiene el array (sin `/dev/md*`) y
   Calamares ofrece solo `vda`, `vdb` y `vdc`; el target recibe `mdadm.conf` y
