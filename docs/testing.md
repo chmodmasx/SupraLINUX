@@ -250,11 +250,11 @@ manifiesto de release.
 - Snapshot `supralinux-testing-1.0.0-20261120f`: 604 binarios y 176 fuentes.
   Incluye `supralinux-base-files 1.0.2` (`BUG_REPORT_URL=/bugs`) y
   `supralinux-defaults 1.1.3` (rueda de Gwenview en Ampliar).
-- Snapshot `supralinux-testing-1.0.0-20261121g`: 605 binarios y 177 fuentes.
+- Snapshot `supralinux-testing-1.0.0-20261121g`: 608 binarios y 180 fuentes.
   Agrega `supralinux-recovery-gui 1.0.0` y actualiza
   `supralinux-calamares-config` a 1.0.2; `InRelease` verificado con la clave
   Ed25519. El resumen está en `manifests/aptly-publication-1.0.0.json`.
-- Snapshot `supralinux-testing-1.0.0-20261121h`: 605 binarios y 177 fuentes.
+- Snapshot `supralinux-testing-1.0.0-20261122a`: 608 binarios y 180 fuentes.
   Actualiza `supralinux-defaults` a 1.1.4 con el probe de os-prober para
   raíces Btrfs `@`; mantiene GUI 1.0.0 y Calamares 1.0.2. `InRelease`
   verificado con la clave Ed25519.

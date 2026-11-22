@@ -224,8 +224,8 @@ explícitamente documentado, nunca con una afirmación falsa.
 - Clave pública Ed25519 publicada en `installer/keys/supralinux-archive-key.asc`
   (huella `9BAD7A4B1826213B3BE271E208780B9EEC43C2B8`); la privada está en
   `SUPRALINUX_SECRETS`.
-- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261121h`
-  con 605 binarios y 177 fuentes; publicación `testing` firmada y verificada.
+- Aptly `supralinux-testing`: snapshot `supralinux-testing-1.0.0-20261122a`
+  con 608 binarios y 180 fuentes; publicación `testing` firmada y verificada.
   Incluye `supralinux-recovery-gui 1.0.0`, `supralinux-calamares-config
   1.0.2` y `supralinux-defaults 1.1.4` con el probe os-prober para Btrfs
   `@`. `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly

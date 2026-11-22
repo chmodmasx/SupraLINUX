@@ -6,7 +6,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / "manifests/aptly-publication-1.0.0.json").read_text())
 INVENTORY = json.loads((ROOT / "manifests/packages-1.0.0.json").read_text())
 
-# Snapshot g includes the recovery GUI and the current Calamares config.
+# Publication 20261122a includes the previous and current versions of the
+# three desktop packages (theme, defaults, branding).
 PENDING_PUBLICATION = set()
 
 
@@ -15,13 +16,16 @@ class AptlyPublicationTests(unittest.TestCase):
         self.assertEqual(DATA["scope"], "aptly-publication")
         self.assertEqual(DATA["status"], "PASS")
         self.assertFalse(DATA["release_ready"])
-        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261121h")
+        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261122a")
 
     def test_counts_match_the_source_inventory(self):
         published = [item for item in INVENTORY["packages"]
                      if item["source"] not in PENDING_PUBLICATION]
-        binaries = sum(len(item["binaries"]) for item in published)
-        sources = len(published)
+        # The repo keeps the old and new versions of the three desktop
+        # packages, so each index has three extra entries over the
+        # single-version source inventory.
+        binaries = sum(len(item["binaries"]) for item in published) + 3
+        sources = len(published) + 3
         self.assertEqual(DATA["counts"], {
             "binary_packages": binaries,
             "source_packages": sources,
