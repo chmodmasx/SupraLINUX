@@ -36,6 +36,14 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - El tema global oscuro Aurora es el default para instalaciones nuevas; el
   tema claro sigue instalado y seleccionable. GTK 3/4, el estilo Plasma y el
   splash acompañan el default oscuro.
+- El tema claro usa una selección `#51A2DA` y neutral `#F67400` para que las
+  barras, anillos y badges se vean; el estilo Plasma light queda alineado.
+- SDDM ofrece una variante clara seleccionable, sin herencia automática del
+  wallpaper del usuario.
+- Wallpapers: entradas sueltas `SupraLINUX Aurora Light` y `Dark`, además de
+  la automática.
+- El lanzador cambia de categoría al pasar el puntero por defecto en paneles
+  nuevos.
 
 ## [1.0.0] - Por anunciar
 
