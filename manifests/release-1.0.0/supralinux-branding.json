@@ -2,15 +2,15 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-branding",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-branding",
-    "original_commit": "f5f4131fdbceaab2ddd9bc6bb343398814b37982",
+    "original_commit": "ff8e4f797d9410ba47484ae6d894b182349248d6",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-branding_1.3.0.dsc"
+    "dsc_name": "supralinux-branding_1.3.1.dsc"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
@@ -308,7 +308,11 @@
       "/usr/share/wallpapers/SupraLINUX/metadata.json",
       "/usr/share/wallpapers/SupraLINUX/contents/images/3840x2160.png",
       "/usr/share/wallpapers/SupraLINUX/contents/images_dark/1920x1080.png",
-      "/usr/share/icons/hicolor/512x512/apps/supralinux-color.png"
+      "/usr/share/icons/hicolor/512x512/apps/supralinux-color.png",
+      "/usr/share/wallpapers/SupraLINUX-Light/metadata.json",
+      "/usr/share/wallpapers/SupraLINUX-Light/contents/images/1920x1080.png",
+      "/usr/share/wallpapers/SupraLINUX-Dark/metadata.json",
+      "/usr/share/wallpapers/SupraLINUX-Dark/contents/images/1920x1080.png"
     ]
   }
 }
