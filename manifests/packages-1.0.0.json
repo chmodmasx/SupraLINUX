@@ -106,7 +106,7 @@
     },
     {
       "source": "supralinux-defaults",
-      "version": "1.2.3",
+      "version": "1.2.4",
       "area": "desktop",
       "path": "packages/desktop/supralinux-defaults",
       "binaries": [
@@ -808,7 +808,7 @@
     },
     {
       "source": "kio-admin",
-      "version": "25.12.3-0supralinux1",
+      "version": "25.12.3-0supralinux2",
       "area": "gear-extras",
       "path": "packages/gear-extras/kio-admin",
       "binaries": [

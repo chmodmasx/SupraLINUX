@@ -15,6 +15,7 @@ STALE_BUILD_VERSIONS = {
     "supralinux-theme": "1.0.3",
     "supralinux-defaults": "1.1.4",
     "supralinux-branding": "1.2.0",
+    "kio-admin": "25.12.3-0supralinux1",
 }
 
 

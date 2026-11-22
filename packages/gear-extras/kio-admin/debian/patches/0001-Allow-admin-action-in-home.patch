@@ -1,0 +1,53 @@
+Description: Allow showing the administrative action inside the home directory
+ kio-admin hides "Open as Administrator" for items under $HOME. Distributions
+ may want the action available everywhere by default while keeping a way to
+ restore the upstream behavior. Read ShowInHome from kio-adminrc (default
+ true) and skip the home check when enabled.
+Author: SupraLINUX Project <packages@supralinux.invalid>
+Forwarded: no
+Last-Update: 2026-11-22
+
+--- a/src/fileaction/fileaction.cpp
++++ b/src/fileaction/fileaction.cpp
+@@ -6,11 +6,13 @@
+ #include <QWidget>
+ 
+ #include <KAbstractFileItemActionPlugin>
++#include <KConfigGroup>
+ #include <KFileItem>
+ #include <KFileItemListProperties>
+ #include <KIO/OpenFileManagerWindowJob>
+ #include <KLocalizedString>
+ #include <KPluginFactory>
++#include <KSharedConfig>
+ 
+ class Plugin : public KAbstractFileItemActionPlugin
+ {
+@@ -28,10 +30,13 @@
+             return {};
+         }
+         const auto items = fileItemInfos.items();
+-        if (std::all_of(items.cbegin(), items.cend(), [](const KFileItem &item) {
+-                auto url = item.mostLocalUrl();
+-                return url.path().startsWith(QDir::homePath());
+-            })) {
++        const KConfigGroup config = KSharedConfig::openConfig(QStringLiteral("kio-adminrc"))
++                                        ->group(QStringLiteral("General"));
++        if (!config.readEntry(QStringLiteral("ShowInHome"), true)
++            && std::all_of(items.cbegin(), items.cend(), [](const KFileItem &item) {
++                   auto url = item.mostLocalUrl();
++                   return url.path().startsWith(QDir::homePath());
++               })) {
+             return {};
+         }
+ 
+--- a/src/fileaction/CMakeLists.txt
++++ b/src/fileaction/CMakeLists.txt
+@@ -4,6 +4,7 @@
+ kcoreaddons_add_plugin(fileaction SOURCES fileaction.cpp ../kioadmin_debug.cpp INSTALL_NAMESPACE "kf${QT_MAJOR_VERSION}/kfileitemaction")
+ set_target_properties(fileaction PROPERTIES OUTPUT_NAME "kio-admin")
+ target_link_libraries(fileaction
++    KF${QT_MAJOR_VERSION}::ConfigCore
+     KF${QT_MAJOR_VERSION}::I18n
+     KF${QT_MAJOR_VERSION}::KIOWidgets
+     Qt::Core

@@ -1,3 +1,10 @@
+supralinux-defaults (1.2.4) resolute; urgency=medium
+
+  * Show Dolphin's administrative action in every local location, including
+    the home directory, by shipping kio-adminrc with ShowInHome=true.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 20:10:00 -0300
+
 supralinux-defaults (1.2.3) resolute; urgency=medium
 
   * Add a default System Monitor overview page for new users with distinct

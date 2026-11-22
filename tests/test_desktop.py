@@ -100,6 +100,20 @@ class DesktopIntegrationTests(unittest.TestCase):
         self.assertNotRegex(page, r"\ndisk/[0-9a-f-]{36}/")
         self.assertNotIn("network/eno1/", page)
 
+    def test_defaults_show_the_admin_action_in_the_home_directory(self):
+        base = ROOT / "packages/desktop/supralinux-defaults"
+        config = (base / "etc/xdg/kio-adminrc").read_text()
+        self.assertIn("[General]", config)
+        self.assertIn("ShowInHome=true", config)
+
+    def test_kio_admin_honors_the_show_in_home_option(self):
+        base = ROOT / "packages/gear-extras/kio-admin"
+        series = (base / "debian/patches/series").read_text()
+        self.assertIn("0001-Allow-admin-action-in-home.patch", series)
+        patch = (base / "debian/patches/0001-Allow-admin-action-in-home.patch").read_text()
+        self.assertIn('readEntry(QStringLiteral("ShowInHome"), true)', patch)
+        self.assertIn("KF${QT_MAJOR_VERSION}::ConfigCore", patch)
+
     def test_defaults_keep_the_desktop_helpers(self):
         base = ROOT / "packages/desktop/supralinux-defaults"
         for relative in [

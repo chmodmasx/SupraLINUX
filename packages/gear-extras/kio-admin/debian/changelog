@@ -1,3 +1,11 @@
+kio-admin (25.12.3-0supralinux2) resolute; urgency=medium
+
+  * Read ShowInHome from kio-adminrc and keep the "Open as Administrator"
+    action available inside the home directory by default; set it to false to
+    restore the upstream behavior.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 20:05:00 -0300
+
 kio-admin (25.12.3-0supralinux1) resolute; urgency=medium
 
   * Package kio-admin for the KDE desktop completeness set.
