@@ -30,6 +30,8 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
   instalaciones Linux en dual-boot.
 - Probe propio de os-prober para raíces Btrfs en `@`, de modo que GRUB detecte
   otras instalaciones SupraLINUX en el mismo disco o en dos discos.
+- Icono opcional `supralinux-white-blue` para el menú Inicio, con SVG y PNGs
+  16–512; el default sigue siendo `supralinux-color`.
 
 ### Changed
 
