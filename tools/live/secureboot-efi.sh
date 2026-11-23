@@ -2,10 +2,12 @@
 # Rebuild the signed EFI image and ISO from an existing build/iso tree.
 # build-iso.sh already produces the signed ISO; this helper is only for
 # repairs or for rebuilding the EFI image without redoing the squashfs.
-# Run as mapped root:
-#   unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
+# Run as mapped root with sudo:
+#   sudo env SUPRALINUX_LIVE_DIR=/path/to/live \
+#       unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
 #       --setuid=0 --setgid=0 sh tools/live/secureboot-efi.sh \
 #       /path/to/rootfs [/path/to/output.iso]
+# sudo is required because AppArmor blocks unprivileged user namespaces.
 set -eu
 
 repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)

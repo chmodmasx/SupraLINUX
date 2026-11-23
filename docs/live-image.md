@@ -43,7 +43,8 @@ release, exportar `SUPRALINUX_REQUIRE_RECOVERY_GUI=1`: el build falla si
 `supralinux-recovery-gui` no está instalado.
 
 ```sh
-unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
+sudo env SUPRALINUX_LIVE_DIR="$LIVE" SUPRALINUX_APT_CHANNEL="$SUPRALINUX_APT_CHANNEL" \
+  unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
   --setuid=0 --setgid=0 \
   mmdebstrap --mode=unshare --variant=minbase \
   --components=main,universe,restricted,multiverse \
@@ -52,6 +53,14 @@ unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
   --customize-hook="$REPO/tools/live/customize-rootfs.sh" \
   resolute "$ROOTFS"
 ```
+
+`sudo` es necesario: con `kernel.apparmor_restrict_unprivileged_userns=1`, un
+`unshare` sin privilegios falla con `setgroups() failed: Operation not
+permitted`. Con `sudo`, el namespace lo crea root y el uid 0 interior queda
+mapeado a 100000 en el host; los archivos nuevos siguen siendo de 100000.
+`sudo` limpia el entorno, por eso las variables se pasan con `env`: agregá
+también `SUPRALINUX_APT_BUILD_URL` o `SUPRALINUX_REQUIRE_RECOVERY_GUI` si las
+usás.
 
 La versión exacta del kernel se fija en el comando y en el manifiesto del build
 (`linux-image-generic=7.0.0-43.43`; `resolute-security` conserva esa versión). No se instala
@@ -70,7 +79,9 @@ borra homes y logs de build, deja los puntos de montaje vacíos y conserva
 `/boot` cuando la ISO también lleva el instalador.
 
 ```sh
-SUPRALINUX_LIVE_DIR="$LIVE" SUPRALINUX_KEEP_BOOT=1 \
+sudo env SUPRALINUX_LIVE_DIR="$LIVE" SUPRALINUX_KEEP_BOOT=1 \
+  unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
+  --setuid=0 --setgid=0 \
   sh "$REPO/tools/live/seal-rootfs.sh" "$ROOTFS"
 ```
 
@@ -84,11 +95,14 @@ sellado falla.
 compone la ISO híbrida con `xorriso`.
 
 ```sh
-SUPRALINUX_LIVE_DIR="$LIVE" \
-unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
+sudo env SUPRALINUX_LIVE_DIR="$LIVE" \
+  unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
   --setuid=0 --setgid=0 \
   sh "$REPO/tools/live/build-iso.sh" "$ROOTFS"
 ```
+
+Pasá también por `env` cualquier otra variable del build, por ejemplo
+`SUPRALINUX_SIGNING_KEY` o `SUPRALINUX_ISO_NAME`.
 
 Salida por defecto para un candidato de `testing`:
 
@@ -101,8 +115,9 @@ La versión, el codename, la fecha UTC y el commit salen del rootfs y del
 repositorio. Para construir la ISO de release, fijar el nombre limpio:
 
 ```sh
-SUPRALINUX_ISO_NAME="$LIVE/build/supralinux-aurora-1.0.0-amd64.iso" \
-unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
+sudo env SUPRALINUX_LIVE_DIR="$LIVE" \
+  SUPRALINUX_ISO_NAME="$LIVE/build/supralinux-aurora-1.0.0-amd64.iso" \
+  unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
   --setuid=0 --setgid=0 \
   sh "$REPO/tools/live/build-iso.sh" "$ROOTFS"
 ```

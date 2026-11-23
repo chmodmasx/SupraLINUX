@@ -1,6 +1,7 @@
 #!/bin/sh
-# Finalize the live rootfs before squashfs creation. Run as mapped root when
-# the rootfs is owned by a subuid range (mmdebstrap --mode=unshare).
+# Finalize the live rootfs before squashfs creation. Run as mapped root with
+# sudo unshare when the rootfs is owned by a subuid range
+# (mmdebstrap --mode=unshare).
 set -eu
 
 repo_root=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)

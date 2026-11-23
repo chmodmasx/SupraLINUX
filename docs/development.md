@@ -112,16 +112,38 @@ los overlays.
 
 ## User namespaces
 
-`mmdebstrap` y los hooks live usan `unshare` con mapeo subuid. En hosts con
-`kernel.apparmor_restrict_unprivileged_userns=1`, el perfil
-`unprivileged_userns` puede denegar `sys_admin`/`setgid` y el comando falla con
-`setgroups() failed: Operation not permitted`.
+`mmdebstrap` y los hooks live usan `unshare` con mapeo subuid. El flujo del
+proyecto lo ejecuta con `sudo`:
 
-No se cambia esa política del host sin autorización. Opciones válidas:
+```sh
+sudo env SUPRALINUX_LIVE_DIR="$LIVE" \
+  unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
+  --setuid=0 --setgid=0 ...
+```
+
+Así el namespace lo crea root y el uid 0 interior queda mapeado a 100000 en el
+host. Es el “mapped root” que espera `build-iso.sh`: el rootfs de 100000 se ve
+como `0:0` dentro y los archivos nuevos siguen siendo de 100000, no de root.
+
+Si se ejecuta `unshare` como usuario común en un host con
+`kernel.apparmor_restrict_unprivileged_userns=1`, el perfil
+`unprivileged_userns` deniega `setgroups` y falla con
+`setgroups() failed: Operation not permitted`. Eso no afecta al flujo con
+`sudo`.
+
+`mmdebstrap --mode=unshare` ejecutado directamente también funciona sin `sudo`
+porque tiene su propio perfil AppArmor, pero el wrapper de la ISO usa el
+`unshare` externo y necesita `sudo`.
+
+No hace falta cambiar la política del host para el flujo con `sudo`. Si se
+quisiera usar `unshare` sin privilegios, las opciones siguen siendo:
 
 - ejecutar el build live en una VM desechable con user namespaces permitidos;
 - usar un host de build preparado para `unshare` y mapeo subuid;
 - si se autoriza, ajustar la política del host y registrar el cambio.
+
+`sudo` limpia el entorno: pasar `SUPRALINUX_LIVE_DIR` y las demás variables
+necesarias con `env`.
 
 El build limpio de paquetes (`tools/clean_build.py`) no usa `unshare` en el
 host: arranca QEMU y ejecuta `sbuild` dentro del guest.
@@ -164,8 +186,8 @@ validada. La publicación se firma y se verifica antes de cambiarla.
 
 ## Imagen live
 
-1. `mmdebstrap` bajo `unshare` construye el rootfs desde Ubuntu y el repositorio
-   `testing`.
+1. `mmdebstrap` bajo `sudo unshare` construye el rootfs desde Ubuntu y el
+   repositorio `testing`.
 2. Los hooks versionados instalan el escritorio, el branding y la configuración.
 3. Se copian kernel e initramfs, se sella el rootfs y se crea el squashfs con
    `mksquashfs` determinista.

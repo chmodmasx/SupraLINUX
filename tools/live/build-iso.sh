@@ -2,9 +2,11 @@
 # Build the signed SupraLINUX live/installer ISO from a prepared rootfs.
 # The EFI image uses the shim and GRUB signed by Ubuntu/Microsoft; the ISO
 # works with Secure Boot enabled or disabled.
-# Run as mapped root, for example:
-#   unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
+# Run as mapped root with sudo, for example:
+#   sudo env SUPRALINUX_LIVE_DIR=/path/to/live \
+#       unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
 #       --setuid=0 --setgid=0 sh tools/live/build-iso.sh /path/to/rootfs
+# sudo is required because AppArmor blocks unprivileged user namespaces.
 set -eu
 
 if [ "$(id -u)" -ne 0 ]; then
