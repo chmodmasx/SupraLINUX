@@ -6,24 +6,24 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "ISO final construida desde un rootfs limpio del snapshot 20261122f con supralinux-recovery-gui 1.0.0, supralinux-calamares-config 1.0.2, supralinux-theme 1.1.3, supralinux-defaults 1.2.4, kio-admin 25.12.3-0supralinux2, supralinux-branding 1.3.2 y os-prober. El default oscuro incluye una página del Monitor del sistema en /etc/skel con colores distintos para CPU, GPU, memoria e intercambio; el tema claro sigue instalado y seleccionable, con selección #51A2DA, neutral #F67400, SDDM claro, wallpapers Light/Dark e icono supralinux-white-blue opcional. Dolphin muestra Abrir como administrador en todas las carpetas locales, incluido el home, mediante /etc/xdg/kio-adminrc con ShowInHome=true. BIOS y UEFI Secure Boot revalidados sobre esta ISO. La matriz L3/L4/L6 se ejecutó sobre la ISO 20261121 (mismo instalador, base y kernel); el delta de esta ISO son los paquetes de escritorio kio-admin/defaults, que no modifican las rutas de instalación ni de almacenamiento.",
+  "note": "ISO final construida desde un rootfs limpio del snapshot 20261122g con supralinux-recovery-gui 1.0.0, supralinux-calamares-config 1.0.2, supralinux-theme 1.1.3, supralinux-defaults 1.2.5, kio-admin 25.12.3-0supralinux2, supralinux-branding 1.3.2 y os-prober. El default oscuro incluye una página del Monitor del sistema en /etc/skel con colores distintos para CPU, GPU, memoria e intercambio; el tema claro sigue instalado y seleccionable, con selección #51A2DA, neutral #F67400, SDDM claro, wallpapers Light/Dark e icono supralinux-white-blue opcional. Dolphin muestra Abrir como administrador en todas las carpetas locales, incluido el home, mediante /etc/xdg/kio-adminrc con ShowInHome=true. supralinux-defaults 1.2.5 instala un override local de AppArmor para que linux-boot-prober pueda leer raíces Btrfs @ y update-grub conserve otras instalaciones en el menú. BIOS y UEFI Secure Boot revalidados sobre esta ISO. La matriz L3/L4/L6 se ejecutó sobre la ISO 20261121 (mismo instalador, base y kernel); el delta de esta ISO son los paquetes de escritorio kio-admin/defaults, que no modifican las rutas de instalación ni de almacenamiento.",
   "regression_scope": "La matriz L3/L4/L6 se ejecutó sobre la ISO 20261121T093006Z: casos A/B/C, dual-boot, RAID y L6 con discos desechables y arranque del kernel/initrd de esa ISO con el agente QEMU; L3 por GRUB/OVMF real. La ISO 20261122c conserva instalador, base y kernel y solo actualiza theme/defaults/branding; sobre ella se revalidaron el arranque BIOS y UEFI Secure Boot, las versiones instaladas, el default oscuro, los wallpapers Light/Dark y el ajuste de hover. La instalación es offline (-nic none).",
   "iso": {
     "name": "supralinux-aurora-1.0.0-amd64.iso",
-    "sha256": "4d39412b0e359ee9831d2ca0e1b81b2c114a0d58ed91dfc10343bb5fd310b1d7",
+    "sha256": "0611853bfe3c681d729e370ee4e5cb53ff83f524a540ada8f033dd26fc8e9d3d",
     "bytes": 3176024064,
-    "workspace_path": "live/1.0.0-final-20261122f/build/supralinux-aurora-1.0.0-amd64.iso",
-    "build_evidence": "evidence/live/iso-final-f-20261122T232659Z.log",
-    "rootfs_evidence": "evidence/live/rootfs-final-f-20261122T231707Z.log"
+    "workspace_path": "live/1.0.0-final-20261122g/build/supralinux-aurora-1.0.0-amd64.iso",
+    "build_evidence": "evidence/live/iso-final-g-20261123T014509Z.log",
+    "rootfs_evidence": "evidence/live/rootfs-final-g-20261123T013014Z.log"
   },
   "inputs": {
-    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261122f)",
+    "rootfs": "Ubuntu 26.04 + supralinux-testing (snapshot supralinux-testing-1.0.0-20261122g)",
     "installer": "supralinux-calamares-config 1.0.2",
-    "defaults": "supralinux-defaults 1.2.4",
+    "defaults": "supralinux-defaults 1.2.5",
     "theme": "supralinux-theme 1.1.3",
     "branding": "supralinux-branding 1.3.2",
     "kernel": "7.0.0-43-generic",
-    "aptly_snapshot": "supralinux-testing-1.0.0-20261122f",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261122g",
     "apt_source": "https://repo.supralinux.com/",
     "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
     "base_files": "supralinux-base-files 1.0.2",
@@ -37,20 +37,20 @@
     {
       "id": "L3-BIOS",
       "state": "PASS",
-      "result": "La ISO 20261122f arranca por GRUB BIOS a Plasma con el tema oscuro Aurora; iconos Install y Recuperar visibles.",
-      "evidence": "evidence/qa/iso-final-20261122f-live/bios-dark-desktop.png"
+      "result": "La ISO 20261122g arranca por GRUB BIOS a Plasma con el tema oscuro Aurora; iconos Install y Recuperar visibles.",
+      "evidence": "evidence/qa/iso-final-20261122g-live/bios-desktop.png"
     },
     {
       "id": "L3-UEFI-SB",
       "state": "PASS",
-      "result": "La ISO 20261122f arranca por OVMF Secure Boot; mokutil informa SecureBoot enabled y la live muestra el tema oscuro Aurora.",
-      "evidence": "evidence/qa/iso-final-20261122f-live/uefi-sb-dark-desktop.png"
+      "result": "La ISO 20261122g arranca por OVMF Secure Boot; mokutil informa SecureBoot enabled y la live muestra el tema oscuro Aurora.",
+      "evidence": "evidence/qa/iso-final-20261122g-live/uefi-desktop.png"
     },
     {
       "id": "L3-LIVE-DEFAULTS",
       "state": "PASS",
-      "result": "La live instala theme 1.1.3, defaults 1.2.4, kio-admin 25.12.3-0supralinux2 y branding 1.3.2; default oscuro, icono de menú supralinux-color, icono opcional supralinux-white-blue, wallpapers SupraLINUX/Light/Dark, SDDM dark+light, ShowInHome=true y switchCategoryOnHover=true en BIOS y UEFI.",
-      "evidence": "evidence/qa/iso-final-20261122f-live/uefi-checks.txt"
+      "result": "La live instala theme 1.1.3, defaults 1.2.5, kio-admin 25.12.3-0supralinux2 y branding 1.3.2; default oscuro, icono de menú supralinux-color, icono opcional supralinux-white-blue, wallpapers SupraLINUX/Light/Dark, SDDM dark+light, ShowInHome=true y switchCategoryOnHover=true en BIOS y UEFI.",
+      "evidence": "evidence/qa/iso-final-20261122g-live/uefi-checks.txt"
     },
     {
       "id": "L3-RECOVERY-AUTOSTART",
@@ -128,13 +128,19 @@
       "id": "L3-SYSMON-COLORS",
       "state": "PASS",
       "result": "La live arranca con la página del Monitor desde /etc/skel; CPU azul, GPU naranja, memoria verde suave e intercambio violeta configurados.",
-      "evidence": "evidence/qa/iso-final-20261122f-live/bios-checks.txt"
+      "evidence": "evidence/qa/iso-final-20261122g-live/bios-checks.txt"
     },
     {
       "id": "L3-KIOADMIN-HOME",
       "state": "PASS",
       "result": "Con ShowInHome=true por defecto, Dolphin muestra Abrir como administrador al seleccionar la carpeta personal en la live; con ShowInHome=false desaparece solo dentro del home.",
-      "evidence": "evidence/qa/iso-final-20261122f-live/bios-kio-admin-home.png"
+      "evidence": "evidence/qa/iso-final-20261122g-live/bios-kio-admin-home.png"
+    },
+    {
+      "id": "L3-APPARMOR-BTRFS",
+      "state": "PASS",
+      "result": "En la live 20261122g, os-prober detecta un disco Btrfs @ virtual (/dev/vda1) y linux-boot-prober devuelve las entradas de arranque sin denegación de mount; el perfil linux-boot-prober sigue en enforce.",
+      "evidence": "evidence/qa/iso-final-20261122g-live/bios-os-prober-gpt.txt"
     }
   ],
   "observed": {

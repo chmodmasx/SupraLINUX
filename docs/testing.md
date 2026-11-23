@@ -279,6 +279,10 @@ manifiesto de release.
   `supralinux-defaults 1.2.4` con `/etc/xdg/kio-adminrc`; la acción “Abrir
   como administrador” queda visible en todas las carpetas locales.
   `InRelease` verificado con la clave Ed25519.
+- Snapshot `supralinux-testing-1.0.0-20261122g`: 617 binarios y 189 fuentes.
+  Agrega `supralinux-defaults 1.2.5` con el override local de AppArmor para
+  `linux-boot-prober` y la invalidación de la caché del perfil.
+  `InRelease` verificado con la clave Ed25519.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en
@@ -307,22 +311,28 @@ manifiesto de release.
 - El intento con `supralinux-calamares-config` 1.0.0 falló en el módulo
   `packages` porque intentaba quitar paquetes ausentes con listas APT vacías.
   Se corrigió en 1.0.1, se recompiló y se repitió la instalación.
+- AppArmor y Btrfs `@` en VM desechable: sin el override,
+  `linux-boot-prober /dev/loop1` falla con `mount ... flags="rw, bind"` denegado;
+  con `supralinux-defaults 1.2.5` instalado, el mismo comando devuelve las
+  entradas de arranque y el journal no registra la denegación del mount.
+  Evidencia en `evidence/qa/apparmor-os-prober-20261122/`.
 - kio-admin en live desechable: con `ShowInHome=true` por defecto el menú de
   Dolphin muestra “Abrir como administrador” al seleccionar la carpeta
   personal; con `ShowInHome=false` desaparece allí y sigue apareciendo fuera
   del home. Evidencia en `evidence/qa/kio-admin-home-20261122/`.
-- ISO final `4d39412b…` (`supralinux-aurora-1.0.0-amd64.iso`, snapshot
-  `20261122f`): BIOS y UEFI Secure Boot `PASS` con `supralinux-theme 1.1.3`,
-  `supralinux-defaults 1.2.4`, `kio-admin 25.12.3-0supralinux2` y
+- ISO final `0611853b…` (`supralinux-aurora-1.0.0-amd64.iso`, snapshot
+  `20261122g`): BIOS y UEFI Secure Boot `PASS` con `supralinux-theme 1.1.3`,
+  `supralinux-defaults 1.2.5`, `kio-admin 25.12.3-0supralinux2` y
   `supralinux-branding 1.3.2`; default oscuro, tema claro con selección
   `#51A2DA`/neutral `#F67400`, SDDM claro disponible, wallpapers Light/Dark,
   icono `supralinux-white-blue` opcional, página del Monitor con colores
   distintos, “Abrir como administrador” en todas las carpetas locales y
-  `switchCategoryOnHover=true`. `GRUB_GFXMODE` y sonido `Supralinux-KDE3`
-  presentes. La matriz L3/L4/L6 se ejecutó sobre la ISO `547fd33b…`, que
-  comparte instalador, base y kernel; el delta son los paquetes de escritorio.
-  Los detalles y la evidencia están en `manifests/iso-1.0.0.json` y
-  `evidence/qa/`.
+  `switchCategoryOnHover=true`. La sonda Btrfs `@` de AppArmor también quedó
+  validada en la live: `linux-boot-prober` devuelve las entradas sin denegación
+  del mount. `GRUB_GFXMODE` y sonido `Supralinux-KDE3` presentes. La matriz
+  L3/L4/L6 se ejecutó sobre la ISO `547fd33b…`, que comparte instalador, base y
+  kernel; el delta son los paquetes de escritorio. Los detalles y la evidencia
+  están en `manifests/iso-1.0.0.json` y `evidence/qa/`.
 - SDDM claro: `supralinux-light` carga sin errores QML y queda disponible en
   el KCM; la validación visual final se hará en la reinstalación NVMe.
 - LUKS2: rollback automático sigue fuera de alcance en 1.0.0.

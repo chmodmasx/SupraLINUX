@@ -6,10 +6,10 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = json.loads((ROOT / "manifests/aptly-publication-1.0.0.json").read_text())
 INVENTORY = json.loads((ROOT / "manifests/packages-1.0.0.json").read_text())
 
-# Publication 20261122f includes all retained versions of the three desktop
+# Publication 20261122g includes all retained versions of the three desktop
 # packages and kio-admin: theme 1.0.3/1.1.1/1.1.2/1.1.3, defaults
-# 1.1.4/1.2.1/1.2.2/1.2.3/1.2.4, branding 1.2.0/1.3.0/1.3.1/1.3.2 and
-# kio-admin 25.12.3-0supralinux1/25.12.3-0supralinux2.
+# 1.1.4/1.2.1/1.2.2/1.2.3/1.2.4/1.2.5, branding 1.2.0/1.3.0/1.3.1/1.3.2
+# and kio-admin 25.12.3-0supralinux1/25.12.3-0supralinux2.
 PENDING_PUBLICATION = set()
 
 
@@ -18,15 +18,15 @@ class AptlyPublicationTests(unittest.TestCase):
         self.assertEqual(DATA["scope"], "aptly-publication")
         self.assertEqual(DATA["status"], "PASS")
         self.assertFalse(DATA["release_ready"])
-        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261122f")
+        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261122g")
 
     def test_counts_match_the_source_inventory(self):
         published = [item for item in INVENTORY["packages"]
                      if item["source"] not in PENDING_PUBLICATION]
         # The repo keeps extra versions of the desktop packages and kio-admin:
-        # theme +3, defaults +4, branding +3 and kio-admin +1 in each index.
-        binaries = sum(len(item["binaries"]) for item in published) + 11
-        sources = len(published) + 11
+        # theme +3, defaults +5, branding +3 and kio-admin +1 in each index.
+        binaries = sum(len(item["binaries"]) for item in published) + 12
+        sources = len(published) + 12
         self.assertEqual(DATA["counts"], {
             "binary_packages": binaries,
             "source_packages": sources,

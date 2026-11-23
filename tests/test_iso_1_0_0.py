@@ -15,7 +15,7 @@ class IsoOneZeroTests(unittest.TestCase):
 
     def test_iso_is_pinned_by_sha256_and_size(self):
         self.assertEqual(DATA["iso"]["sha256"],
-                         "4d39412b0e359ee9831d2ca0e1b81b2c114a0d58ed91dfc10343bb5fd310b1d7")
+                         "0611853bfe3c681d729e370ee4e5cb53ff83f524a540ada8f033dd26fc8e9d3d")
         self.assertGreater(DATA["iso"]["bytes"], 2 * 1024**3)
         self.assertEqual(DATA["iso"]["name"],
                          "supralinux-aurora-1.0.0-amd64.iso")
@@ -23,7 +23,7 @@ class IsoOneZeroTests(unittest.TestCase):
     def test_l3_l4_l6_matrix_passed(self):
         tests = {item["id"]: item for item in DATA["tests"]}
         for name in ["L3-BIOS", "L3-UEFI-SB", "L3-LIVE-DEFAULTS", "L3-SYSMON-COLORS",
-                     "L3-KIOADMIN-HOME",
+                     "L3-KIOADMIN-HOME", "L3-APPARMOR-BTRFS",
                      "L3-RECOVERY-AUTOSTART",
                      "L4-A-UEFI-BTRFS", "L4-B-BIOS-EXT4", "L4-C-LUKS2",
                      "L4-D1-SAME-DISK", "L4-D2-TWO-DISKS", "L4-E-RAID",
@@ -44,12 +44,12 @@ class IsoOneZeroTests(unittest.TestCase):
         self.assertIn("gamemode", DATA["observed"]["user_groups"])
         self.assertEqual(DATA["inputs"]["installer"], "supralinux-calamares-config 1.0.2")
         self.assertEqual(DATA["inputs"]["base_files"], "supralinux-base-files 1.0.2")
-        self.assertEqual(DATA["inputs"]["defaults"], "supralinux-defaults 1.2.4")
+        self.assertEqual(DATA["inputs"]["defaults"], "supralinux-defaults 1.2.5")
         self.assertEqual(DATA["inputs"]["theme"], "supralinux-theme 1.1.3")
         self.assertEqual(DATA["inputs"]["branding"], "supralinux-branding 1.3.2")
         self.assertEqual(DATA["inputs"]["kio_admin"], "kio-admin 25.12.3-0supralinux2")
         self.assertEqual(DATA["inputs"]["aptly_snapshot"],
-                         "supralinux-testing-1.0.0-20261122f")
+                         "supralinux-testing-1.0.0-20261122g")
         self.assertEqual(DATA["inputs"]["recovery_gui"], "supralinux-recovery-gui 1.0.0")
         self.assertEqual(DATA["inputs"]["os_prober"], "os-prober 1.84ubuntu1")
         self.assertEqual(DATA["inputs"]["kernel"], "7.0.0-43-generic")
