@@ -340,8 +340,13 @@ manifiesto de release.
 - SDDM claro: `supralinux-light` carga sin errores QML y queda disponible en
   el KCM. `supralinux-theme 1.1.4` atenúa el fondo del login claro (~29%) con
   el mismo tratamiento que el oscuro; comparación en
-  `evidence/qa/sddm-light-1.1.4-20261123/`. La validación visual final en
-  VM/ISO queda pendiente.
+  `evidence/qa/sddm-light-1.1.4-20261123/`.
+- ISO candidata `038c0ed8…`
+  (`supralinux-aurora-1.0.0-amd64-20261123T201655Z-g1784689.iso`): rootfs de
+  `final-g` actualizado solo con `supralinux-theme 1.1.4`; kernel
+  7.0.0-43.43. BIOS y UEFI Secure Boot `PASS`; el login claro de SDDM se
+  validó en VM desechable con el fondo atenuado. Evidencia en
+  `evidence/qa/iso-theme-1.1.4-20261123/`.
 - LUKS2: rollback automático sigue fuera de alcance en 1.0.0.
 - RAID: en un arranque limpio, el live detiene el array (sin `/dev/md*`) y
   Calamares ofrece solo `vda`, `vdb` y `vdc`; el target recibe `mdadm.conf` y
