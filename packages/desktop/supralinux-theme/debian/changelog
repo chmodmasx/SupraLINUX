@@ -1,3 +1,11 @@
+supralinux-theme (1.1.4) resolute; urgency=medium
+
+  * Dim the Aurora Light SDDM login background by the same factor as the
+    dark theme, so the clock, password field and session controls keep
+    legible contrast.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Mon, 23 Nov 2026 16:55:19 -0300
+
 supralinux-theme (1.1.3) resolute; urgency=medium
 
   * Use #51A2DA for the light selection so progress bars, rings and selected
