@@ -460,3 +460,23 @@ parchear Dolphin ni agregar helpers.
 desaparece allí y sigue apareciendo fuera. Probado en live desechable, sin red:
 evidencia en `evidence/qa/kio-admin-home-20261122/`. Abrir el home como root
 puede dejar archivos con dueño root; la opción existe para desactivarlo.
+
+## D-034 — AppArmor permite el bind mount de os-prober en Btrfs @
+
+**Decisión:** `supralinux-defaults` instala un override local en
+`/etc/apparmor.d/local/linux-boot-prober` que permite a `linux-boot-prober`
+hacer `mount --bind` sobre `/var/lib/os-prober/mount/`. El perfil sigue en modo
+`enforce`; solo se amplía el montaje sobre el punto temporal de os-prober. El
+`postinst` invalida la caché del perfil y lo recarga antes de `update-grub`.
+
+**Motivo:** el perfil de `apparmor 5.0.2-0ubuntu1~26.04.1` permite
+`mount options=(rw, nosuid, nodev)` pero no `rw,bind`. `os-prober 1.84ubuntu1`
+usa `mount --bind` para exponer una raíz Btrfs en `@`. La sonda propia
+`91supralinux` detecta esas raíces, pero `linux-boot-prober` no puede generar
+la entrada y `update-grub` termina con el bloque `30_os-prober` vacío.
+
+**Consecuencia:** las instalaciones nuevas y las existentes conservan la
+entrada de otras instalaciones SupraLINUX con Btrfs `@` después de
+`update-grub`. La regla no permite montajes sobre `/`, `/etc` ni rutas fuera de
+`/var/lib/os-prober/mount/`. Ubuntu/Kubuntu tienen el mismo perfil, pero su
+sonda estándar no detecta raíces en `@`; el bug se reporta upstream.

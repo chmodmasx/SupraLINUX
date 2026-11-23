@@ -51,6 +51,9 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - Dolphin muestra “Abrir como administrador” en todas las carpetas locales,
   incluido el home. Se puede recuperar el comportamiento original de KDE con
   `ShowInHome=false` en `~/.config/kio-adminrc`.
+- El menú GRUB conserva otras instalaciones SupraLINUX con raíz Btrfs `@`:
+  un override local de AppArmor permite a `linux-boot-prober` el `mount --bind`
+  que os-prober necesita para generar la entrada.
 
 ## [1.0.0] - Por anunciar
 

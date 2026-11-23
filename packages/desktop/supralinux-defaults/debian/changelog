@@ -1,3 +1,13 @@
+supralinux-defaults (1.2.5) resolute; urgency=medium
+
+  * Allow linux-boot-prober to bind-mount a Btrfs @ subvolume through a
+    local AppArmor override, so update-grub keeps other SupraLINUX
+    installations in the menu.
+  * Drop the cached linux-boot-prober profile and reload it before running
+    update-grub, so existing installations pick up the override immediately.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Sun, 22 Nov 2026 22:35:00 -0300
+
 supralinux-defaults (1.2.4) resolute; urgency=medium
 
   * Show Dolphin's administrative action in every local location, including

@@ -1,0 +1,5 @@
+# os-prober exposes a Btrfs @ subvolume with "mount --bind" so that
+# linux-boot-prober can read the real root. The base profile only allows
+# rw,nosuid,nodev, so the bind mount is denied. Keep the profile enforcing and
+# allow bind mounts only on os-prober's own temporary mount point.
+mount options=(rw, bind) -> /var/lib/os-prober/mount/,

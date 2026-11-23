@@ -106,6 +106,23 @@ class DesktopIntegrationTests(unittest.TestCase):
         self.assertIn("[General]", config)
         self.assertIn("ShowInHome=true", config)
 
+    def test_defaults_allow_os_prober_to_mount_btrfs_subvolumes(self):
+        base = ROOT / "packages/desktop/supralinux-defaults"
+        override = (base / "etc/apparmor.d/local/linux-boot-prober").read_text()
+        self.assertIn(
+            "mount options=(rw, bind) -> /var/lib/os-prober/mount/,",
+            override,
+        )
+        postinst = (base / "debian/postinst").read_text()
+        self.assertIn(
+            "apparmor_parser -r -T /etc/apparmor.d/linux-boot-prober",
+            postinst,
+        )
+        self.assertIn(
+            "rm -f /var/cache/apparmor/*/linux-boot-prober",
+            postinst,
+        )
+
     def test_kio_admin_honors_the_show_in_home_option(self):
         base = ROOT / "packages/gear-extras/kio-admin"
         series = (base / "debian/patches/series").read_text()

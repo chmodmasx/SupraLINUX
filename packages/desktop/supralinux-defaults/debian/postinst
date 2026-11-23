@@ -1,6 +1,14 @@
 #!/bin/sh
 set -e
 systemctl daemon-reload >/dev/null 2>&1 || true
+
+# AppArmor caches compiled profiles. The local include for linux-boot-prober
+# is new, so drop its cached copy and reload it before update-grub runs.
+rm -f /var/cache/apparmor/*/linux-boot-prober
+if [ -d /sys/kernel/security/apparmor ] && command -v apparmor_parser >/dev/null 2>&1; then
+    apparmor_parser -r -T /etc/apparmor.d/linux-boot-prober >/dev/null 2>&1 || true
+fi
+
 if command -v update-grub >/dev/null 2>&1; then
     update-grub >/dev/null 2>&1 || true
 fi
