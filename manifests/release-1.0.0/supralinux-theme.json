@@ -2,15 +2,15 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-theme",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-theme",
-    "original_commit": "f836cdc7ca663b1f914b0cd99d2cf145a1d285c8",
+    "original_commit": "77d99caa27a1b4e72848b216a23280bf69dac9db",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-theme_1.1.3.dsc"
+    "dsc_name": "supralinux-theme_1.1.4.dsc"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
@@ -323,7 +323,11 @@
       "/usr/share/sddm/themes/supralinux-light/metadata.desktop",
       "/usr/share/plasma/desktoptheme/org.kde.supralinux.light/colors",
       "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.desktop/contents/layouts/org.kde.plasma.desktop-layout.js",
-      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.light.desktop/contents/layouts/org.kde.plasma.desktop-layout.js"
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.light.desktop/contents/layouts/org.kde.plasma.desktop-layout.js",
+      "/usr/share/sddm/themes/supralinux-light/login-background.png"
     ]
+  },
+  "expected_installed_files": {
+    "/usr/share/sddm/themes/supralinux-light/login-background.png": "b74bcbe4d8be35f8756ab77c6cd15b02168d263fc163c63cec65cb1ef65d2d08"
   }
 }

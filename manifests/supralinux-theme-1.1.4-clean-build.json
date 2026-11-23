@@ -1,0 +1,333 @@
+{
+  "schema": 1,
+  "scope": "offline-clean-sbuild-build",
+  "package": "supralinux-theme",
+  "version": "1.1.4",
+  "architecture": "all",
+  "source": {
+    "kind": "native",
+    "path": "packages/desktop/supralinux-theme",
+    "original_commit": "77d99caa27a1b4e72848b216a23280bf69dac9db",
+    "format": "3.0 (native)",
+    "declared_build_depends": "debhelper-compat (= 13)",
+    "dsc_name": "supralinux-theme_1.1.4.dsc"
+  },
+  "base_image": {
+    "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
+    "sha256": "0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7",
+    "format": "qcow2",
+    "scope": "inherited-builder-image; disposable-overlay-only"
+  },
+  "rootfs": {
+    "path": "artifacts/sha256/4fdb9d433ebdd075af3d4a94ffb32dc50d84c2e8e47d9d9385c2921a61f85c0b/resolute-amd64.tar",
+    "sha256": "4fdb9d433ebdd075af3d4a94ffb32dc50d84c2e8e47d9d9385c2921a61f85c0b",
+    "bytes": 434753024,
+    "installed_package_count": 123,
+    "scope": "inherited-buildd-rootfs; debhelper and fakeroot absent"
+  },
+  "build_dependencies": {
+    "declared": "debhelper-compat (= 13)",
+    "source_evidence": "artifacts/sha256",
+    "packages": [
+      {
+        "name": "sensible-utils",
+        "version": "0.0.26build1",
+        "architecture": "all",
+        "filename": "sensible-utils_0.0.26build1_all.deb",
+        "sha256": "ee67d2df8ac299b20668d93c4817e9db88626b0636cc4cda76b1948e140e364b"
+      },
+      {
+        "name": "libelf1t64",
+        "version": "0.194-4",
+        "architecture": "amd64",
+        "filename": "libelf1t64_0.194-4_amd64.deb",
+        "sha256": "c2feae172b14d2a8317348023c5e0b6572314c097a9f7b8225c62b0988cc8d92"
+      },
+      {
+        "name": "libunistring5",
+        "version": "1.3-2build1",
+        "architecture": "amd64",
+        "filename": "libunistring5_1.3-2build1_amd64.deb",
+        "sha256": "88c0163f1acb384abde07641b7e13fcaea36e0a3b88fc57a653779fc429fc46a"
+      },
+      {
+        "name": "libxml2-16",
+        "version": "2.15.2+dfsg-0.1ubuntu0.3",
+        "architecture": "amd64",
+        "filename": "libxml2-16_2.15.2+dfsg-0.1ubuntu0.3_amd64.deb",
+        "sha256": "e82ce35fd61483c1febf83232e76e54a296a6a78391983a24a904ff640b75c09"
+      },
+      {
+        "name": "bsdextrautils",
+        "version": "2.41.3-3ubuntu2.2",
+        "architecture": "amd64",
+        "filename": "bsdextrautils_2.41.3-3ubuntu2.2_amd64.deb",
+        "sha256": "a711db104cbae55b4b4bdbc646111b819164446c6762826d8a39983635729603"
+      },
+      {
+        "name": "libsmartcols1",
+        "version": "2.41.3-3ubuntu2.2",
+        "architecture": "amd64",
+        "filename": "libsmartcols1_2.41.3-3ubuntu2.2_amd64.deb",
+        "sha256": "aa2239ba7efd848bbdd5dcb11da9d4a91c81638414fe380f491d030d78f09ffb"
+      },
+      {
+        "name": "libmagic-mgc",
+        "version": "1:5.46-5build2",
+        "architecture": "amd64",
+        "filename": "libmagic-mgc_1%3a5.46-5build2_amd64.deb",
+        "sha256": "3264ec3ed617abec65c55f2e165cf78f8c9dd006859faf0d863a8bc6095a67fd"
+      },
+      {
+        "name": "libmagic1t64",
+        "version": "1:5.46-5build2",
+        "architecture": "amd64",
+        "filename": "libmagic1t64_1%3a5.46-5build2_amd64.deb",
+        "sha256": "855e4f4a543789a427ad9aef77a31fbf99aebdd33576caa467e67a4301cd2d20"
+      },
+      {
+        "name": "file",
+        "version": "1:5.46-5build2",
+        "architecture": "amd64",
+        "filename": "file_1%3a5.46-5build2_amd64.deb",
+        "sha256": "968b0e503f877a81c67bf82b634973e73901f6c4f4c741b5ec09824120791cd3"
+      },
+      {
+        "name": "gettext-base",
+        "version": "0.23.2-1",
+        "architecture": "amd64",
+        "filename": "gettext-base_0.23.2-1_amd64.deb",
+        "sha256": "5a1a4cd407a868e766626f551646b00880fc1534db5e6d47208310a17252f306"
+      },
+      {
+        "name": "libuchardet0",
+        "version": "0.0.8-2",
+        "architecture": "amd64",
+        "filename": "libuchardet0_0.0.8-2_amd64.deb",
+        "sha256": "7ba592f208d28eecffb33494b636fb75fbe7917dc193f4190ad2a6d1c56450a4"
+      },
+      {
+        "name": "groff-base",
+        "version": "1.23.0-10",
+        "architecture": "amd64",
+        "filename": "groff-base_1.23.0-10_amd64.deb",
+        "sha256": "ffd67d3d60092b772b8276fb087f5a328a7ee7dafba197f16fc874cba5320279"
+      },
+      {
+        "name": "libpipeline1",
+        "version": "1.5.8-2",
+        "architecture": "amd64",
+        "filename": "libpipeline1_1.5.8-2_amd64.deb",
+        "sha256": "e1502fe2af97a4e832fe076bef1e60851ec48da841e3e580674293552630df35"
+      },
+      {
+        "name": "man-db",
+        "version": "2.13.1-1build1",
+        "architecture": "amd64",
+        "filename": "man-db_2.13.1-1build1_amd64.deb",
+        "sha256": "8f5f22abe63c90c76363f9ce182671bc2ced4a7259170f2c634cd96b4ad3acfe"
+      },
+      {
+        "name": "m4",
+        "version": "1.4.21-1",
+        "architecture": "amd64",
+        "filename": "m4_1.4.21-1_amd64.deb",
+        "sha256": "1890e37e38fd64bc10630e508f4a013a76bddbe05be2ed89e68df28463712b55"
+      },
+      {
+        "name": "autoconf",
+        "version": "2.72-3.1ubuntu2",
+        "architecture": "all",
+        "filename": "autoconf_2.72-3.1ubuntu2_all.deb",
+        "sha256": "9edd0db0fa94580ab013529d6842a8e89b8ed22ab337da5e95cbb43971978815"
+      },
+      {
+        "name": "autotools-dev",
+        "version": "20240727.1build1",
+        "architecture": "all",
+        "filename": "autotools-dev_20240727.1build1_all.deb",
+        "sha256": "434394dc6703f8e195c19764bd03aa55a0a9986749285fd7abe0a0e4ab086cfc"
+      },
+      {
+        "name": "automake",
+        "version": "1:1.18.1-3build1",
+        "architecture": "all",
+        "filename": "automake_1%3a1.18.1-3build1_all.deb",
+        "sha256": "1a443abf03a5af97f4493405e22eba52fd6935a8b0583ac32fb88b3727563e53"
+      },
+      {
+        "name": "autopoint",
+        "version": "0.23.2-1",
+        "architecture": "all",
+        "filename": "autopoint_0.23.2-1_all.deb",
+        "sha256": "b3b91d457f0bf08b617b09e8d3cfeb619f753e5c1adce6b70654f90254e9236e"
+      },
+      {
+        "name": "libdebhelper-perl",
+        "version": "13.31ubuntu1",
+        "architecture": "all",
+        "filename": "libdebhelper-perl_13.31ubuntu1_all.deb",
+        "sha256": "42bae938ae61392aeab5d32251665c0acaaed68ddeb4397108469cbdeb1c58a6"
+      },
+      {
+        "name": "libtool",
+        "version": "2.5.4-9",
+        "architecture": "all",
+        "filename": "libtool_2.5.4-9_all.deb",
+        "sha256": "5b3146cd9d380e4725fc5b5e54795ae1f72d165d93e68ce29076b69762661fd4"
+      },
+      {
+        "name": "dh-autoreconf",
+        "version": "21+nmu1",
+        "architecture": "all",
+        "filename": "dh-autoreconf_21+nmu1_all.deb",
+        "sha256": "f9e8da94cfca31a607ee00e53efe2467e910d5aed759fdd63224f2023daaf5b9"
+      },
+      {
+        "name": "libarchive-zip-perl",
+        "version": "1.68-1",
+        "architecture": "all",
+        "filename": "libarchive-zip-perl_1.68-1_all.deb",
+        "sha256": "44273c5a4315f3ef76c43d6cf15ff40f4075a787d8d6005d81275c2dc88035e2"
+      },
+      {
+        "name": "libfile-stripnondeterminism-perl",
+        "version": "1.15.0-1build1",
+        "architecture": "all",
+        "filename": "libfile-stripnondeterminism-perl_1.15.0-1build1_all.deb",
+        "sha256": "c9559c0505bdcc5d7ff3afb6318d9914b93b4c656a86f5e5e7e8c8eb3f01ad69"
+      },
+      {
+        "name": "dh-strip-nondeterminism",
+        "version": "1.15.0-1build1",
+        "architecture": "all",
+        "filename": "dh-strip-nondeterminism_1.15.0-1build1_all.deb",
+        "sha256": "3f039a9c0d278b4205fa26496efc305a73bdb86c7563e6b2f0e6fa201a97c5bf"
+      },
+      {
+        "name": "libdw1t64",
+        "version": "0.194-4",
+        "architecture": "amd64",
+        "filename": "libdw1t64_0.194-4_amd64.deb",
+        "sha256": "5b3812ee2a663fef35e71fc1b9d6e29379bf9c38ac67ec954390e117513234b7"
+      },
+      {
+        "name": "debugedit",
+        "version": "1:5.3-4",
+        "architecture": "amd64",
+        "filename": "debugedit_1%3a5.3-4_amd64.deb",
+        "sha256": "cff1b86413dc1c52dd3e3d08af2a8bdc413837d92ea9c65625bd7e9f8c4cb5f6"
+      },
+      {
+        "name": "dwz",
+        "version": "0.16-4",
+        "architecture": "amd64",
+        "filename": "dwz_0.16-4_amd64.deb",
+        "sha256": "9bfe7f141065b9ca90d2a7ae26333ac477e90eb967907d4980010432eb97a824"
+      },
+      {
+        "name": "gettext",
+        "version": "0.23.2-1",
+        "architecture": "amd64",
+        "filename": "gettext_0.23.2-1_amd64.deb",
+        "sha256": "6fb2dd68379bf9578af5ead58203ab322e3b1cf3a6f9562a1e4d12c18e923bfc"
+      },
+      {
+        "name": "intltool-debian",
+        "version": "0.35.0+20060710.6build1",
+        "architecture": "all",
+        "filename": "intltool-debian_0.35.0+20060710.6build1_all.deb",
+        "sha256": "02fbb3d4c7f64d3140a1a5aba7c7f4037b60f63e4f29b21e082bea22ad86d009"
+      },
+      {
+        "name": "po-debconf",
+        "version": "1.0.22",
+        "architecture": "all",
+        "filename": "po-debconf_1.0.22_all.deb",
+        "sha256": "e9ec264b8f4742925354863c1d38e3e1381f888d23aa580fdb7994f185db64a5"
+      },
+      {
+        "name": "debhelper",
+        "version": "13.31ubuntu1",
+        "architecture": "all",
+        "filename": "debhelper_13.31ubuntu1_all.deb",
+        "sha256": "8e883232ebba77199ba916434a7c470c528b8757bf3447dbfeecf2fb95c1ed95"
+      },
+      {
+        "name": "util-linux",
+        "version": "2.41.3-3ubuntu2.2",
+        "architecture": "amd64",
+        "filename": "util-linux_2.41.3-3ubuntu2.2_amd64.deb",
+        "sha256": "11fd410b1d3797b1e9127b68302160213c15e1553745fb6982e270b1e32d1f2a"
+      },
+      {
+        "name": "libblkid1",
+        "version": "2.41.3-3ubuntu2.2",
+        "architecture": "amd64",
+        "filename": "libblkid1_2.41.3-3ubuntu2.2_amd64.deb",
+        "sha256": "929ebedb610fa4dfa16cada763cea7e8ed4bd37c68573563410614189bd4e537"
+      },
+      {
+        "name": "libmount1",
+        "version": "2.41.3-3ubuntu2.2",
+        "architecture": "amd64",
+        "filename": "libmount1_2.41.3-3ubuntu2.2_amd64.deb",
+        "sha256": "7b8f05d4346049c50d846e1947ec12aff36f3dd44cbd5ee4e8505245cd86b461"
+      },
+      {
+        "name": "libuuid1",
+        "version": "2.41.3-3ubuntu2.2",
+        "architecture": "amd64",
+        "filename": "libuuid1_2.41.3-3ubuntu2.2_amd64.deb",
+        "sha256": "77e7078fbdb994e3c9c84ce6fc464f0451580d7f0b46c8770d0189b46959ad43"
+      }
+    ]
+  },
+  "builder": {
+    "sbuild_version": "0.91.2ubuntu3",
+    "chroot_mode": "unshare",
+    "distribution": "resolute",
+    "architecture": "amd64",
+    "guest_ram_mib": 2048,
+    "guest_vcpus": 2,
+    "guest_network": "none; loopback only",
+    "repository_transport": "read-only ext4 input disk",
+    "repository_scope": "local signed file: repository; archive sources disabled in chroot",
+    "guest_timeout_seconds": 1800
+  },
+  "expected_binaries": [
+    {
+      "package": "supralinux-theme",
+      "architecture": "all"
+    }
+  ],
+  "verification": {
+    "expected_paths": [
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.desktop/metadata.json",
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.light.desktop/metadata.json",
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.light.desktop/contents/defaults",
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.desktop/contents/logout/sound.wav",
+      "/usr/share/plasma/desktoptheme/org.kde.supralinux/metadata.json",
+      "/usr/share/plasma/desktoptheme/org.kde.supralinux.light/metadata.json",
+      "/usr/share/color-schemes/SupralinuxAurora.colors",
+      "/usr/share/color-schemes/SupralinuxAuroraLight.colors",
+      "/usr/share/sddm/themes/supralinux/theme.conf",
+      "/usr/share/sounds/Supralinux-KDE3/index.theme",
+      "/usr/share/themes/Supralinux-Aurora-Light/gtk-3.0/gtk.css",
+      "/usr/share/themes/Supralinux-Aurora-Light/gtk-3.0/gtk-dark.css",
+      "/usr/share/themes/Supralinux-Aurora-Light/gtk-4.0/gtk.css",
+      "/etc/xdg/gtk-3.0/settings.ini",
+      "/etc/xdg/gtk-4.0/settings.ini",
+      "/usr/share/sddm/themes/supralinux-light/Main.qml",
+      "/usr/share/sddm/themes/supralinux-light/theme.conf",
+      "/usr/share/sddm/themes/supralinux-light/metadata.desktop",
+      "/usr/share/plasma/desktoptheme/org.kde.supralinux.light/colors",
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.desktop/contents/layouts/org.kde.plasma.desktop-layout.js",
+      "/usr/share/plasma/look-and-feel/org.kde.supralinux.aurora.light.desktop/contents/layouts/org.kde.plasma.desktop-layout.js",
+      "/usr/share/sddm/themes/supralinux-light/login-background.png"
+    ]
+  },
+  "expected_installed_files": {
+    "/usr/share/sddm/themes/supralinux-light/login-background.png": "b74bcbe4d8be35f8756ab77c6cd15b02168d263fc163c63cec65cb1ef65d2d08"
+  }
+}
