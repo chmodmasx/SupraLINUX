@@ -283,6 +283,10 @@ manifiesto de release.
   Agrega `supralinux-defaults 1.2.5` con el override local de AppArmor para
   `linux-boot-prober` y la invalidación de la caché del perfil.
   `InRelease` verificado con la clave Ed25519.
+- Snapshot `supralinux-testing-1.0.0-20261123a`: 618 binarios y 190 fuentes.
+  Agrega `supralinux-theme 1.1.4` con el fondo claro de SDDM atenuado para
+  alinearlo con el tema oscuro; el resto de los paquetes no cambia.
+  `InRelease` verificado con la clave Ed25519.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en
@@ -334,7 +338,10 @@ manifiesto de release.
   kernel; el delta son los paquetes de escritorio. Los detalles y la evidencia
   están en `manifests/iso-1.0.0.json` y `evidence/qa/`.
 - SDDM claro: `supralinux-light` carga sin errores QML y queda disponible en
-  el KCM; la validación visual final se hará en la reinstalación NVMe.
+  el KCM. `supralinux-theme 1.1.4` atenúa el fondo del login claro (~29%) con
+  el mismo tratamiento que el oscuro; comparación en
+  `evidence/qa/sddm-light-1.1.4-20261123/`. La validación visual final en
+  VM/ISO queda pendiente.
 - LUKS2: rollback automático sigue fuera de alcance en 1.0.0.
 - RAID: en un arranque limpio, el live detiene el array (sin `/dev/md*`) y
   Calamares ofrece solo `vda`, `vdb` y `vdc`; el target recibe `mdadm.conf` y

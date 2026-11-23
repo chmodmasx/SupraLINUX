@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261122g",
-  "snapshot_created_at": "2026-11-23T01:29:44Z",
+  "snapshot": "supralinux-testing-1.0.0-20261123a",
+  "snapshot_created_at": "2026-11-23T20:10:42Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -21,9 +21,9 @@
     ]
   },
   "counts": {
-    "binary_packages": 617,
-    "source_packages": 189,
-    "total": 806
+    "binary_packages": 618,
+    "source_packages": 190,
+    "total": 808
   },
   "key": {
     "fingerprint": "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8",
@@ -35,15 +35,15 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "69d0a314f3b591a976d64be4a11d2b10a1cb534b9e2c9ae10945643d7c06d1aa",
-    "release_sha256": "cfb5f5b1f9991503f3b154343ca8a4572929621a57a0ba5569c68129c56a1351",
-    "binary_index_count": 617,
-    "source_index_count": 189
+    "inrelease_sha256": "c358cc09a10b17e30e85988ed67349a22e5c594b8adb87361f2d07db29250dda",
+    "release_sha256": "939a29cf33c38c58132298d39c09836d8fb00ca6a9e89855af53086c7107483f",
+    "binary_index_count": 618,
+    "source_index_count": 190
   },
   "notes": [
-    "El snapshot supralinux-testing-1.0.0-20261122g reemplaza al 20261122f.",
-    "Publica supralinux-defaults 1.2.5 con el override local de AppArmor para linux-boot-prober; kio-admin 0supralinux2, theme 1.1.3 y branding 1.3.2 no cambian.",
-    "El repo testing queda con 617 binarios y 189 fuentes; las versiones anteriores siguen disponibles.",
+    "El snapshot supralinux-testing-1.0.0-20261123a reemplaza al 20261122g.",
+    "Agrega supralinux-theme 1.1.4 con el fondo claro de SDDM atenuado; el resto de los paquetes no cambia.",
+    "El repo testing queda con 618 binarios y 190 fuentes; las versiones anteriores siguen disponibles.",
     "El stack viejo aptly fue retirado; testing se sirve desde el stack nuevo con la carpeta supralinux-aptly."
   ]
 }

@@ -480,3 +480,19 @@ entrada de otras instalaciones SupraLINUX con Btrfs `@` después de
 `update-grub`. La regla no permite montajes sobre `/`, `/etc` ni rutas fuera de
 `/var/lib/os-prober/mount/`. Ubuntu/Kubuntu tienen el mismo perfil, pero su
 sonda estándar no detecta raíces en `@`; el bug se reporta upstream.
+
+## D-035 — Atenuar el asset del login claro, no el QML
+
+**Decisión:** el fondo del tema SDDM `supralinux-light` se genera desde el
+wallpaper Light con el mismo tratamiento de atenuación que el tema oscuro
+(`-evaluate multiply 0.71`). No se agrega un overlay en `Background.qml`.
+
+**Motivo:** el fondo claro era una copia cruda del wallpaper (brillo medio
+42.490) mientras el oscuro ya estaba atenuado (12.742 frente a 17.973 del
+wallpaper oscuro). El lock screen se ve equilibrado por su propio atenuado.
+Un overlay QML solo para el tema claro duplicaría el mecanismo y se alejaría
+del QML upstream de Breeze.
+
+**Consecuencia:** el asset se versiona en `supralinux-theme`; el QML queda igual
+al upstream. La comparación antes/después está en
+`evidence/qa/sddm-light-1.1.4-20261123/`; la validación final se hace en VM/ISO.
