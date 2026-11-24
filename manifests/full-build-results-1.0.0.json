@@ -6,7 +6,7 @@
   "codename": "Aurora",
   "status": "PASS",
   "release_ready": false,
-  "note": "Los 176 paquetes del lote original se reconstruyeron con el packaging actual en VMs desechables; después se agregaron supralinux-recovery-gui 1.0.0 y supralinux-calamares-config 1.0.2 con el mismo circuito. Los cierres de Build-Depends se reutilizaron como inputs verificados por SHA-256. Esto certifica los paquetes, no la ISO ni la release.",
+  "note": "Los 176 paquetes del lote original se reconstruyeron con el packaging actual en VMs desechables; despu\u00e9s se agregaron supralinux-recovery-gui 1.0.0 y supralinux-calamares-config 1.0.2 con el mismo circuito. Los cierres de Build-Depends se reutilizaron como inputs verificados por SHA-256. Esto certifica los paquetes, no la ISO ni la release.",
   "started_at": "2026-11-18T19:30:00+00:00",
   "finished_at": "2026-11-21T09:21:39.598773+00:00",
   "build_count": 177,
@@ -688,19 +688,19 @@
     },
     {
       "package": "kdeconnect",
-      "version": "25.12.3-0supralinux7",
+      "version": "25.12.3-0supralinux8",
       "area": "gear",
       "manifest": "manifests/release-1.0.0/kdeconnect.json",
       "artifact": {
-        "name": "kdeconnect_25.12.3-0supralinux7_amd64.deb",
-        "sha256": "93c8f23de7f03c0010b1b002e536615674e24e3160f915c2b5577a31033b9eea",
-        "bytes": 1121550
+        "name": "kdeconnect_25.12.3-0supralinux8_amd64.deb",
+        "sha256": "a087a4a7d8fcb1be1cc18252932b626da420b954591d7dce866ca6a94759803a",
+        "bytes": 1121522
       },
-      "evidence": "evidence/clean-build/20261118T195559Z-a5e231de9553",
+      "evidence": "evidence/clean-build/20261124T171745Z-e9dc01854e46",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 714.745,
-        "guest_build": 651.778
+        "total": 523.848,
+        "guest_build": 456.598
       },
       "cleanup": {
         "process_absent": true,
@@ -3702,19 +3702,19 @@
     },
     {
       "package": "supralinux-defaults",
-      "version": "1.1.4",
+      "version": "1.2.6",
       "area": "desktop",
       "manifest": "manifests/release-1.0.0/supralinux-defaults.json",
       "artifact": {
-        "name": "supralinux-defaults_1.1.4_all.deb",
-        "sha256": "4a9eaccee0c84a8f04983308122af510423f5625a7579b704517de1c9550c336",
-        "bytes": 15752
+        "name": "supralinux-defaults_1.2.6_all.deb",
+        "sha256": "195b08325a89da8f23900a64ab02bba703a26b517251a24523262867b2f45e20",
+        "bytes": 22058
       },
-      "evidence": "evidence/clean-build/20261121T091811Z-e3f43e8acb02",
+      "evidence": "evidence/clean-build/20261124T165117Z-22ce7f27711b",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 71.503,
-        "guest_build": 27.507
+        "total": 81.245,
+        "guest_build": 30.745
       },
       "cleanup": {
         "process_absent": true,
