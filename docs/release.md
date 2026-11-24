@@ -245,6 +245,13 @@ explícitamente documentado, nunca con una afirmación falsa.
   PPAs. `InRelease` firmado y verificado; los índices públicos declaran 623
   binarios y 192 fuentes. Evidencia de la VM en
   `evidence/qa/ppa-kdeconnect-20261124/`.
+- ISO candidata `a218fc66…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso`): BIOS y UEFI
+  Secure Boot `PASS`; incluye theme 1.1.4, defaults 1.2.6 y kdeconnect
+  0supralinux8. El PPA de Inkscape se agrega con `resolute` y `apt install
+  inkscape` instala 1.4.4. El asset claro de SDDM conserva el hash
+  `b74bcbe4…` y el default sigue siendo oscuro. El candidato no es release ni
+  stable; el detalle está en `manifests/iso-candidate-20261124a.json`.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 

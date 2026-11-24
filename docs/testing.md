@@ -301,6 +301,15 @@ manifiesto de release.
   el build limpio que `PluginModel::setData()` aplica el cambio en el daemon.
   Evidencia en `evidence/qa/kdeconnect-0supralinux8-20261124/` y
   `evidence/clean-build/20261124T171745Z-e9dc01854e46/`.
+- ISO candidata `a218fc66…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso`): BIOS y UEFI
+  Secure Boot `PASS`; instala `supralinux-theme 1.1.4`,
+  `supralinux-defaults 1.2.6` y `kdeconnect 25.12.3-0supralinux8`; el PPA de
+  Inkscape se agrega con `resolute` y `apt install inkscape` instala 1.4.4.
+  El asset claro de SDDM conserva el hash certificado
+  `b74bcbe4…`; el default sigue siendo oscuro. Evidencia en
+  `evidence/qa/iso-20261124a-final/` y
+  `manifests/iso-candidate-20261124a.json`.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en

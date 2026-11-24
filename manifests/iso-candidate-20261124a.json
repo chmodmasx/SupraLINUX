@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "scope": "iso-candidate-validation",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "PASS",
+  "release_ready": false,
+  "note": "Candidato de testing construido desde el rootfs release final-g, actualizado contra el snapshot supralinux-testing-1.0.0-20261124a. Incluye kdeconnect 25.12.3-0supralinux8 con el toggle de plugins aplicado por D-Bus, supralinux-defaults 1.2.6 con el template python-apt para PPAs y supralinux-theme 1.1.4. No es una release ni stable.",
+  "regression_scope": "El kernel, el instalador y la matriz L4/L6 se heredan del rootfs release final-g y de la validacion anterior. El delta de este candidato es kdeconnect, supralinux-defaults y supralinux-theme 1.1.4; se revalidaron BIOS, UEFI Secure Boot, PPA de Inkscape y las versiones instaladas.",
+  "iso": {
+    "name": "supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso",
+    "sha256": "a218fc66420d855c624fbca5a3304336646c5a07152ec828f63f7cd65db9df99",
+    "bytes": 3192059904,
+    "workspace_path": "live/1.0.0-20261124a/build/supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso",
+    "build_evidence": "evidence/live/iso-20261124a-build.log",
+    "rootfs_evidence": "evidence/live/rootfs-20261124a-upgrade.log"
+  },
+  "inputs": {
+    "rootfs": "live/1.0.0-final-20261122g/rootfs + pruebas/actualizaciones desde testing",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261124a",
+    "apt_source": "https://repo.supralinux.com/",
+    "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
+    "installer": "supralinux-calamares-config 1.0.2",
+    "defaults": "supralinux-defaults 1.2.6",
+    "theme": "supralinux-theme 1.1.4",
+    "branding": "supralinux-branding 1.3.2",
+    "kdeconnect": "kdeconnect 25.12.3-0supralinux8",
+    "base_files": "supralinux-base-files 1.0.2",
+    "recovery_gui": "supralinux-recovery-gui 1.0.0",
+    "kernel": "7.0.0-43-generic"
+  },
+  "tests": [
+    {
+      "id": "L3-BIOS",
+      "state": "PASS",
+      "result": "Arranque BIOS a Plasma; escritorio visible y versiones instaladas correctas.",
+      "evidence": "evidence/qa/iso-20261124a-final/bios/bios-desktop.png"
+    },
+    {
+      "id": "L3-UEFI-SB",
+      "state": "PASS",
+      "result": "Arranque UEFI Secure Boot; mokutil informa SecureBoot enabled y Plasma muestra el escritorio.",
+      "evidence": "evidence/qa/iso-20261124a-final/uefi/uefi-desktop.png"
+    },
+    {
+      "id": "L3-PPA-INKSCAPE",
+      "state": "PASS",
+      "result": "add-apt-repository del PPA de Inkscape con Suite resolute; apt update lee el PPA y apt install instala Inkscape 1.4.4.",
+      "evidence": "evidence/qa/iso-20261124a-final/bios/bios-inkscape-version.txt"
+    },
+    {
+      "id": "L3-KDE-CONNECT",
+      "state": "PASS",
+      "result": "kdeconnect 25.12.3-0supralinux8 instalado en la live; el test de regresion del plugin model pasa en el build limpio.",
+      "evidence": "evidence/qa/iso-20261124a-final/bios/bios-kdeconnect.txt"
+    },
+    {
+      "id": "L3-SDDM-LIGHT-ASSET",
+      "state": "PASS",
+      "result": "El asset claro conserva el hash certificado b74bcbe4...; el tema supralinux-light esta instalado y el default oscuro se mantiene.",
+      "evidence": "evidence/qa/iso-20261124a-final/bios/bios-theme.txt"
+    }
+  ],
+  "limitations": [
+    "El greeter claro no se re-capturo en esta live por el autologin y el cambio de VT; el asset y el tema son identicos a 1.1.4, ya certificados en evidence/qa/iso-theme-1.1.4-20261123/.",
+    "El rootfs base conserva el kernel 7.0.0-43-generic validado; el archivo ya no publica el pin 7.0.0-43.43 para un rootfs nuevo.",
+    "Candidato de testing: no es release ni stable y no tiene promesa de migracion."
+  ]
+}
