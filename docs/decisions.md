@@ -532,18 +532,23 @@ inmediato.
 teléfono pareado y se verifica `loadedPlugins`; el parche queda
 `Forwarded: not-yet` hasta que upstream lo acepte.
 
-## D-038 — IDs canónicos y árbol Breeze en los temas de iconos
+## D-038 — Copia completa e independiente de Breeze en los iconos
 
 **Decisión:** los temas se llaman `SupraLINUX-Dark` y `SupraLINUX-Light`, con
-nombres visibles `SupraLINUX Oscuro` y `SupraLINUX Claro`. `index.theme` toma
-la metadata completa de Breeze/Breeze Dark y cada tema materializa un symlink
-por entrada de su tema base. No se agregan aliases para los IDs anteriores.
+nombres visibles `SupraLINUX Oscuro` y `SupraLINUX Claro`. Cada uno es una
+copia completa de Breeze Dark o Breeze: los enlaces cruzados entre ambos temas
+de Breeze se materializan como archivos reales, los enlaces internos se
+conservan y `index.theme` declara todos los directorios que contienen iconos.
+El paquete `supralinux-icons` depende solo de `hicolor-icon-theme`; el tema
+global sigue usando Breeze Dark por defecto y el logo del menú sigue siendo
+`supralinux-color` desde `supralinux-branding`.
 
-**Motivo:** la herencia por sí sola no cubre aplicaciones que buscan nombres
-concretos y no recorren el tema heredado, como Kdenlive. Los IDs anteriores
-tenían además capitalización inconsistente entre el paquete y las referencias
-de LNF/GTK.
+**Motivo:** una copia con enlaces externos no es independiente. Breeze Light
+usa unos 2.700 enlaces hacia Breeze Dark; si solo se copian los enlaces, el
+tema sigue dependiendo del otro paquete. Materializar esos enlaces permite
+usar el tema sin Breeze y deja una base editable para el pack propio.
 
-**Consecuencia:** LNF, GTK 3/4 y los defaults del paquete apuntan a los IDs
-nuevos. `tests/test_theme.py` verifica IDs, nombres, metadata y que cada
-symlink resuelva a la misma ruta relativa en Breeze.
+**Consecuencia:** `supralinux-theme` ya no contiene iconos; `supralinux-icons`
+es un paquete separado, instalado como opción pero no seleccionado por
+defecto. `tests/test_theme.py` verifica IDs, copia completa, metadata, logo,
+ausencia de enlaces externos y que no haya enlaces rotos.

@@ -16,6 +16,7 @@ for each package is in its `debian/copyright`.
 | Go vendored modules (sftp, x/sys, x/crypto) | BSD | `packages/apps/supralinux-kdeconnect-sftp/vendor/` |
 | Wallpapers | CC-BY-4.0 | `branding/`, `packages/desktop/supralinux-theme/` |
 | Sounds | CC0-1.0 | `packages/desktop/supralinux-theme/` |
+| Breeze-derived icon artwork | LGPL-3.0-or-later with KDE exception | `packages/desktop/supralinux-icons/debian/copyright` |
 | Breeze-derived theme parts | LGPL-2.1-or-later | `packages/desktop/supralinux-theme/debian/copyright` |
 
 ## Xenlism

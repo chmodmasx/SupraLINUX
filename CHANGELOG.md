@@ -17,6 +17,9 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - Packaging de KDE Frameworks 6.24, Plasma 6.6.7 y Gear 25.12.3.
 - Integración de Calamares, Secure Boot, Btrfs/Snapper y recuperación live.
 - Branding y tema Aurora.
+- `supralinux-icons 1.3.0`: temas de iconos completos e independientes
+  basados en Breeze/Breeze Dark. El tema oscuro sigue usando Breeze Dark por
+  defecto; los temas SupraLINUX quedan instalados y seleccionables.
 - Identidad `supralinux-base-files`, fuentes y defaults.
 - Firefox con paquetes de idioma español.
 - Repositorio APT firmado y fuentes de paquetes modificados.
@@ -50,9 +53,9 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
   mantener legibles el reloj, el campo de contraseña y los controles.
 - Los temas de iconos usan los IDs canónicos `SupraLINUX-Dark` y
   `SupraLINUX-Light`, con nombres visibles `SupraLINUX Oscuro` y
-  `SupraLINUX Claro`. La metadata completa y el árbol de symlinks derivado de
-  Breeze cubren todos los nombres estándar, también en aplicaciones de
-  terceros como Kdenlive.
+  `SupraLINUX Claro`. Son copias completas y autocontenidas de Breeze/Breeze
+  Dark: se materializan los enlaces cruzados de Breeze, se declaran todos los
+  directorios con iconos y ningún enlace apunta fuera del tema.
 - Wallpapers: entradas sueltas `SupraLINUX Aurora Light` y `Dark`, además de
   la automática.
 - El lanzador cambia de categoría al pasar el puntero por defecto en paneles

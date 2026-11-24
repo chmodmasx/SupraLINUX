@@ -26,7 +26,8 @@ manifests/        Registros de build y release
 |---|---|
 | `supralinux-base-files` | Identidad del sistema, `os-release`, `lsb-release`, `issue`, `legal` |
 | `supralinux-defaults` | Defaults del escritorio, servicios, locale y ajustes |
-| `supralinux-theme` | Tema Aurora, Breeze derivado, SDDM y sonidos |
+| `supralinux-theme` | Tema Aurora, SDDM, sonidos, GTK y estilos |
+| `supralinux-icons` | Temas de iconos completos e independientes basados en Breeze |
 | `supralinux-branding` | Logos, wallpapers, GRUB, Plymouth y branding |
 | `supralinux-hardware-support` | Meta de firmware y soporte de hardware |
 | `supralinux-drivers` | App de controladores sobre UbuntuDrivers |
