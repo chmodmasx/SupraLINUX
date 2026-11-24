@@ -44,7 +44,19 @@ class ThemeIconTests(unittest.TestCase):
                 self.assertFalse((ICONS / name).exists())
                 self.assertFalse((THEME / "usr/share/icons" / name).exists())
 
-    def test_metadata_declares_every_icon_directory(self):
+    def test_metadata_matches_the_breeze_layout(self):
+        # Breeze ships these GTK-only 24 px directories but deliberately keeps
+        # them out of index.theme. Declaring them makes KDE pick monochrome
+        # variants at 24 px, so the copy must hide them too.
+        hidden = {
+            "applets/24", "apps/24", "categories/24", "devices/24",
+            "emblems/24", "mimetypes/24", "places/24", "preferences/24",
+        }
+        # Breeze does not install start-here/kickoff branding at these sizes.
+        branding = {
+            "applets/32", "applets/96", "applets/512", "applets/scalable",
+            "places/128", "places/256", "places/512", "places/scalable",
+        }
         for name in THEMES:
             with self.subTest(theme=name):
                 theme = ICONS / name
@@ -52,15 +64,8 @@ class ThemeIconTests(unittest.TestCase):
                 index = parser["Icon Theme"]
                 declared = set(item for item in index["Directories"].split(",") if item)
                 scaled = set(item for item in index.get("ScaledDirectories", "").split(",") if item)
-                actual = set()
-                for path in theme.rglob("*"):
-                    if path.is_symlink() and path.is_dir():
-                        actual.add(path.relative_to(theme).as_posix())
-                    elif path.is_file() or path.is_symlink():
-                        parent = path.parent.relative_to(theme).as_posix()
-                        if parent != ".":
-                            actual.add(parent)
-                self.assertEqual(actual, declared | scaled)
+                self.assertFalse((declared | scaled) & hidden)
+                self.assertTrue(branding <= (declared | scaled))
                 for entry in declared | scaled:
                     with self.subTest(theme=name, entry=entry):
                         self.assertTrue(parser.has_section(entry), entry)
@@ -72,6 +77,16 @@ class ThemeIconTests(unittest.TestCase):
                         if section["Type"] == "Scalable":
                             self.assertIn("MinSize", section)
                             self.assertIn("MaxSize", section)
+                        self.assertTrue((theme / entry).is_dir(), entry)
+                # Breeze marks the larger application/preference directories
+                # scalable; a fixed 32 px directory cannot satisfy the 48 px
+                # lookup that System Settings uses for its sidebar.
+                for entry in ["apps/48", "preferences/32", "places/96", "devices/64"]:
+                    with self.subTest(theme=name, entry=entry):
+                        self.assertEqual(parser[entry]["Type"], "Scalable")
+                for entry in ["places/32", "places/48", "preferences/22"]:
+                    with self.subTest(theme=name, entry=entry):
+                        self.assertEqual(parser[entry]["Type"], "Fixed")
 
     def test_icon_theme_is_self_contained(self):
         for name in THEMES:

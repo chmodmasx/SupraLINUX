@@ -1,70 +1,72 @@
 #!/usr/bin/env python3
-"""Generate a complete index.theme for a SupraLINUX icon theme.
+"""Generate an index.theme that behaves like the Breeze reference theme.
 
-The theme tree uses the Breeze layout: <context>/<size>, plus @2x/@3x
-variants and optional scalable directories.  Every directory that contains
-at least one icon is declared so the KDE icon loader can reach all copied
-files.
+The theme tree is a complete copy of Breeze (or Breeze Dark), but Breeze's
+index.theme intentionally hides some directories and marks many of the
+remaining ones as scalable.  Declaring every directory as fixed changes icon
+lookup: at a non-native size the loader cannot use a fixed directory and falls
+back to another theme, which is how colourful preference icons turn into
+monochrome symbolic ones.  Copy the reference metadata instead and only add
+the SupraLINUX branding directories that the reference does not have.
 """
 import argparse
-import os
-import re
+import configparser
 from pathlib import Path
 
-CONTEXTS = {
-    "actions": "Actions",
-    "animations": "Animations",
-    "applets": "Applications",
-    "apps": "Applications",
-    "categories": "Categories",
-    "devices": "Devices",
-    "emblems": "Emblems",
-    "emotes": "Emotes",
-    "mimetypes": "MimeTypes",
-    "places": "Places",
-    "preferences": "Preferences",
-    "status": "Status",
+# Directories that only exist in the SupraLINUX branding (start-here and
+# kickoff aliases).  Breeze does not need them, but the branding does.
+EXTRAS = {
+    "applets/32": {"Size": "32", "Context": "Status", "Type": "Fixed"},
+    "applets/96": {"Size": "96", "Context": "Status", "Type": "Fixed"},
+    "applets/512": {"Size": "512", "Context": "Status", "Type": "Fixed"},
+    "applets/scalable": {
+        "Size": "48", "Context": "Status", "MinSize": "16",
+        "MaxSize": "512", "Type": "Scalable",
+    },
+    "places/128": {"Size": "128", "Context": "Places", "Type": "Fixed"},
+    "places/256": {"Size": "256", "Context": "Places", "Type": "Fixed"},
+    "places/512": {"Size": "512", "Context": "Places", "Type": "Fixed"},
+    "places/scalable": {
+        "Size": "48", "Context": "Places", "MinSize": "16",
+        "MaxSize": "512", "Type": "Scalable",
+    },
 }
-ORDER = list(CONTEXTS)
-SCALE_RE = re.compile(r"^(?P<size>.+)@(?P<scale>[23])x$")
+
+IDENTITY_KEYS = [
+    "DisplayDepth", "Example", "FollowsColorScheme",
+    "DesktopDefault", "DesktopSizes", "ToolbarDefault", "ToolbarSizes",
+    "MainToolbarDefault", "MainToolbarSizes", "SmallDefault", "SmallSizes",
+    "PanelDefault", "PanelSizes", "DialogDefault", "DialogSizes",
+    "KDE-Extensions",
+]
 
 
-def icon_dirs(theme):
-    found = []
-    for context in ORDER:
-        context_dir = theme / context
-        if not context_dir.is_dir():
+def read_index(path):
+    parser = configparser.ConfigParser(interpolation=None)
+    parser.optionxform = str
+    parser.read(path, encoding="utf-8")
+    return parser
+
+
+def has_icons(theme, name):
+    directory = theme / name
+    return directory.is_dir() and any(directory.iterdir())
+
+
+def render(theme, name, comment, reference):
+    reference_parser = read_index(reference)
+    index = reference_parser["Icon Theme"]
+    reference_dirs = [item for item in index["Directories"].split(",") if item]
+    reference_scaled = [item for item in index.get("ScaledDirectories", "").split(",") if item]
+
+    directories = [item for item in reference_dirs if has_icons(theme, item)]
+    scaled = [item for item in reference_scaled if has_icons(theme, item)]
+    for extra, metadata in EXTRAS.items():
+        if not has_icons(theme, extra):
             continue
-        for entry in sorted(context_dir.iterdir(), key=lambda item: item.name):
-            if not entry.is_dir():
-                continue
-            if not any(entry.iterdir()):
-                continue
-            name = entry.name
-            match = SCALE_RE.match(name)
-            scale = 1
-            if match:
-                name = match.group("size")
-                scale = int(match.group("scale"))
-            if name == "scalable":
-                found.append((context, "scalable", 0, scale))
-            elif name.isdigit():
-                found.append((context, name, int(name), scale))
-            else:
-                raise SystemExit(f"unexpected icon directory: {entry}")
-    found.sort(key=lambda item: (
-        ORDER.index(item[0]),
-        1 if item[1] == "scalable" else 0,
-        item[2],
-        item[3],
-    ))
-    return found
-
-
-def render(theme, name, comment):
-    dirs = icon_dirs(theme)
-    normal = [item for item in dirs if item[3] == 1]
-    scaled = [item for item in dirs if item[3] > 1]
+        # ScaledDirectories is only for @2x/@3x variants. A scalable SVG
+        # directory (places/scalable) remains a normal scale-1 directory.
+        directories.append(extra)
 
     lines = [
         "[Icon Theme]",
@@ -72,50 +74,23 @@ def render(theme, name, comment):
         f"Comment={comment}",
         "Inherits=hicolor",
         "",
-        "DisplayDepth=32",
-        "Example=folder",
-        "FollowsColorScheme=true",
-        "",
-        "DesktopDefault=48",
-        "DesktopSizes=16,22,32,48,64,128,256",
-        "ToolbarDefault=22",
-        "ToolbarSizes=16,22,32,48",
-        "MainToolbarDefault=22",
-        "MainToolbarSizes=16,22,32,48",
-        "SmallDefault=16",
-        "SmallSizes=16,22,32,48",
-        "PanelDefault=48",
-        "PanelSizes=16,22,32,48,64,128,256",
-        "DialogDefault=32",
-        "DialogSizes=16,22,32,48,64,128,256",
-        "",
-        "KDE-Extensions=.svg",
-        "",
     ]
-
-    def entry_name(context, size, scale):
-        suffix = f"@{scale}x" if scale > 1 else ""
-        return f"{context}/{size}{suffix}"
-
-    normal_names = [entry_name(context, size, 1) for context, size, _, _ in normal]
-    scaled_names = [entry_name(context, size, scale) for context, size, _, scale in scaled]
-    lines.append("Directories=" + ",".join(normal_names))
-    if scaled_names:
-        lines.append("ScaledDirectories=" + ",".join(scaled_names))
+    for key in IDENTITY_KEYS:
+        if key in index:
+            lines.append(f"{key}={index[key]}")
+    lines.append("")
+    lines.append("Directories=" + ",".join(directories))
+    if scaled:
+        lines.append("ScaledDirectories=" + ",".join(scaled))
     lines.append("")
 
-    for context, size, numeric, scale in dirs:
-        lines.append(f"[{entry_name(context, size, scale)}]")
-        lines.append(f"Size={48 if size == 'scalable' else numeric}")
-        if scale > 1:
-            lines.append(f"Scale={scale}")
-        lines.append(f"Context={CONTEXTS[context]}")
-        if size == "scalable":
-            lines.append("MinSize=16")
-            lines.append("MaxSize=512")
-            lines.append("Type=Scalable")
-        else:
-            lines.append("Type=Fixed")
+    for entry in directories + scaled:
+        section = dict(reference_parser[entry]) if reference_parser.has_section(entry) else {}
+        section = section or EXTRAS[entry]
+        lines.append(f"[{entry}]")
+        for key in ["Size", "Scale", "Context", "Type", "MinSize", "MaxSize", "Threshold"]:
+            if key in section:
+                lines.append(f"{key}={section[key]}")
         lines.append("")
 
     return "\n".join(lines).rstrip() + "\n"
@@ -126,13 +101,15 @@ def main():
     parser.add_argument("theme", type=Path)
     parser.add_argument("--name", required=True)
     parser.add_argument("--comment", required=True)
+    parser.add_argument("--reference", required=True, type=Path,
+                        help="index.theme of the Breeze theme this copy is based on")
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     theme = args.theme.resolve()
     if not theme.is_dir():
         raise SystemExit(f"missing theme directory: {theme}")
     output = args.output or theme / "index.theme"
-    output.write_text(render(theme, args.name, args.comment), encoding="utf-8")
+    output.write_text(render(theme, args.name, args.comment, args.reference), encoding="utf-8")
     print(output)
 
 

@@ -17,7 +17,7 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - Packaging de KDE Frameworks 6.24, Plasma 6.6.7 y Gear 25.12.3.
 - Integración de Calamares, Secure Boot, Btrfs/Snapper y recuperación live.
 - Branding y tema Aurora.
-- `supralinux-icons 1.3.0`: temas de iconos completos e independientes
+- `supralinux-icons 1.3.1`: temas de iconos completos e independientes
   basados en Breeze/Breeze Dark. El tema oscuro sigue usando Breeze Dark por
   defecto; los temas SupraLINUX quedan instalados y seleccionables.
 - Identidad `supralinux-base-files`, fuentes y defaults.
