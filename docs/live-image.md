@@ -48,7 +48,7 @@ sudo env SUPRALINUX_LIVE_DIR="$LIVE" SUPRALINUX_APT_CHANNEL="$SUPRALINUX_APT_CHA
   --setuid=0 --setgid=0 \
   mmdebstrap --mode=unshare --variant=minbase \
   --components=main,universe,restricted,multiverse \
-  --include=linux-image-generic=7.0.0-43.43,casper,squashfs-tools,systemd-sysv,initramfs-tools,sudo,dbus,polkitd,pkexec,fonts-dejavu-core,libgl1-mesa-dri,network-manager,ca-certificates,xkb-data,console-setup,keyboard-configuration,qemu-guest-agent \
+  --include=linux-image-generic=7.0.0-44.44,casper,squashfs-tools,systemd-sysv,initramfs-tools,sudo,dbus,polkitd,pkexec,fonts-dejavu-core,libgl1-mesa-dri,network-manager,ca-certificates,xkb-data,console-setup,keyboard-configuration,qemu-guest-agent \
   --setup-hook="$REPO/tools/live/setup-repo.sh" \
   --customize-hook="$REPO/tools/live/customize-rootfs.sh" \
   resolute "$ROOTFS"
@@ -63,14 +63,14 @@ también `SUPRALINUX_APT_BUILD_URL` o `SUPRALINUX_REQUIRE_RECOVERY_GUI` si las
 usás.
 
 La versión exacta del kernel se fija en el comando y en el manifiesto del build
-(`linux-image-generic=7.0.0-43.43`; `resolute-security` conserva esa versión). No se instala
+(`linux-image-generic=7.0.0-44.44`). No se instala
 `calamares-settings-kubuntu`; la configuración viene de
 `supralinux-calamares-config` y la identidad de `supralinux-base-files`.
 
-El pin `7.0.0-43.43` corresponde al rootfs release `final-g`. El archivo público
-actual ya publica `7.0.0-44.44`; un rootfs nuevo debe actualizar el pin y
-revalidar kernel, initramfs y Secure Boot. El candidato `20261124a` se construyó
-desde el rootfs `final-g` para conservar el kernel ya certificado.
+Para las próximas builds se usa `7.0.0-44.44`. El candidato `20261124a` se
+construyó desde el rootfs release `final-g` con `7.0.0-43.43` para conservar el
+kernel ya certificado. Al cambiar el pin hay que revalidar kernel, initramfs y
+Secure Boot.
 
 La base es Ubuntu 26.04 LTS (`resolute`) con actualizaciones de
 `resolute-updates`. No es una ISO 26.04.1 separada: los paquetes con sufijo
