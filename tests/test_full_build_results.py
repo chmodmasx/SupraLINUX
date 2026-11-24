@@ -12,7 +12,6 @@ PENDING_BUILDS = set()
 STALE_BUILD_VERSIONS = {
     # Desktop theme/defaults/branding were version-bumped after the 1.0.0
     # full-build batch; their 1.0.0 artifacts remain historical evidence.
-    "supralinux-theme": "1.0.3",
     "supralinux-defaults": "1.1.4",
     "supralinux-branding": "1.2.0",
     "kio-admin": "25.12.3-0supralinux1",
@@ -23,10 +22,10 @@ class FullBuildResultsTests(unittest.TestCase):
     def test_every_inventory_package_has_a_passing_build(self):
         builds = {item["package"]: item for item in RESULTS["builds"]}
         inventory = {item["source"] for item in INVENTORY["packages"]}
-        self.assertEqual(len(builds), 177)
+        self.assertEqual(len(builds), 178)
         self.assertEqual(set(builds) | PENDING_BUILDS, inventory)
-        self.assertEqual(RESULTS["build_count"], 177)
-        self.assertEqual(RESULTS["counts"], {"pass": 177, "fail": 0, "infra_invalid": 0})
+        self.assertEqual(RESULTS["build_count"], 178)
+        self.assertEqual(RESULTS["counts"], {"pass": 178, "fail": 0, "infra_invalid": 0})
 
     def test_results_do_not_claim_a_release(self):
         self.assertEqual(RESULTS["status"], "PASS")
