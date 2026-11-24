@@ -59,6 +59,15 @@ License: CC-BY-4.0
  https://creativecommons.org/licenses/by/4.0/ or send a letter to
  Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
+Files: usr/share/icons/SupraLINUX-Dark/index.theme usr/share/icons/SupraLINUX-Light/index.theme
+Copyright: KDE Visual Design Group
+           2026 SupraLINUX Project
+License: LGPL-2.1-or-later
+Comment: Theme metadata derived from Breeze/Breeze Dark. The icon files
+ themselves are symlinks to the Breeze packages.
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 2.1 can be found in "/usr/share/common-licenses/LGPL-2.1".
+
 Files: usr/share/sounds/Supralinux-KDE3/*
 Copyright: KDE contributors
            2026 SupraLINUX Project

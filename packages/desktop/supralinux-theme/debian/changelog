@@ -1,3 +1,13 @@
+supralinux-theme (1.2.0) resolute; urgency=medium
+
+  * Rename the icon themes to SupraLINUX-Dark and SupraLINUX-Light, with
+    visible names SupraLINUX Oscuro/Claro, complete Breeze-derived metadata
+    and symlink trees.
+  * Dim the light SDDM login background to 0.68.
+  * Point the look-and-feel and GTK defaults at the new icon theme IDs.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 24 Nov 2026 16:10:00 -0300
+
 supralinux-theme (1.1.4) resolute; urgency=medium
 
   * Dim the Aurora Light SDDM login background by the same factor as the
