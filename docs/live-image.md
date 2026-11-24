@@ -67,6 +67,11 @@ La versión exacta del kernel se fija en el comando y en el manifiesto del build
 `calamares-settings-kubuntu`; la configuración viene de
 `supralinux-calamares-config` y la identidad de `supralinux-base-files`.
 
+El pin `7.0.0-43.43` corresponde al rootfs release `final-g`. El archivo público
+actual ya publica `7.0.0-44.44`; un rootfs nuevo debe actualizar el pin y
+revalidar kernel, initramfs y Secure Boot. El candidato `20261124a` se construyó
+desde el rootfs `final-g` para conservar el kernel ya certificado.
+
 La base es Ubuntu 26.04 LTS (`resolute`) con actualizaciones de
 `resolute-updates`. No es una ISO 26.04.1 separada: los paquetes con sufijo
 `26.04.1` vienen del ciclo de actualizaciones y la identidad del producto sigue
