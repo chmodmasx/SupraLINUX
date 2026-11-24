@@ -299,6 +299,16 @@ manifiesto de release.
   `supralinux-theme_1.2.0_all.deb` con SHA-256 `d2bf1c83…` en
   `evidence/clean-build/20261124T184230Z-aae68d5531b8/`. `InRelease`
   verificado con la clave Ed25519.
+- Snapshot `supralinux-testing-1.0.0-20261124c`: 626 binarios y 195 fuentes.
+  Agrega `supralinux-icons 1.3.0` con los temas completos e independientes
+  basados en Breeze/Breeze Dark y actualiza `supralinux-theme 1.3.0` para
+  separar los iconos y dejar Breeze Dark como default. Builds limpios `PASS`;
+  artefactos `supralinux-icons_1.3.0_all.deb` (SHA-256 `1472c268…`) y
+  `supralinux-theme_1.3.0_all.deb` (SHA-256 `bc2ebb47…`). `InRelease`
+  verificado con la clave Ed25519. La instalación y el cambio de tema se
+  validaron en VM desechable: 0 symlinks rotos, 0 externos y resolución de
+  `start-here`, `start-here-kde` y `org.kde.plasma.kickoff` en ambos temas.
+  Evidencia en `evidence/qa/icons-1.3.0-clean-vm/`.
 - PPA en VM desechable: `add-apt-repository -y ppa:inkscape.dev/stable` agrega
   `Suites: resolute`; `apt-get update` lee el PPA y `apt-get install inkscape`
   instala 1.4.4. Antes del template, `add-apt-repository --list` fallaba con
@@ -318,6 +328,16 @@ manifiesto de release.
   `b74bcbe4…`; el default sigue siendo oscuro. Evidencia en
   `evidence/qa/iso-20261124a-final/` y
   `manifests/iso-candidate-20261124a.json`.
+- ISO candidata `097696c9…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T210917Z-g2e1f379.iso`): rootfs
+  nuevo con kernel `7.0.0-44.44`, snapshot
+  `supralinux-testing-1.0.0-20261124c`, `supralinux-icons 1.3.0` y
+  `supralinux-theme 1.3.0`. BIOS y UEFI Secure Boot `PASS`; el PPA de
+  Inkscape se agrega con `resolute` e instala 1.4.4; los iconos resuelven en
+  ambos temas, sin symlinks rotos ni externos; Breeze Dark sigue siendo el
+  icon theme por defecto y el menú inicio conserva `supralinux-color`.
+  Evidencia en `evidence/qa/iso-20261124b/` y
+  `manifests/iso-candidate-20261124b.json`.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en

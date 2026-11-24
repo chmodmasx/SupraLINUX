@@ -250,6 +250,12 @@ explícitamente documentado, nunca con una afirmación falsa.
   metadata completa derivada de Breeze y 19.852 symlinks por tema. El fondo
   del login claro queda a 0.68. `InRelease` firmado y verificado; el detalle
   está en `manifests/aptly-publication-1.0.0.json`.
+- Snapshot `supralinux-testing-1.0.0-20261124c`: 626 binarios y 195 fuentes.
+  Agrega `supralinux-icons 1.3.0` con copias completas e independientes de
+  Breeze/Breeze Dark y actualiza `supralinux-theme 1.3.0` para separar los
+  iconos. El tema oscuro sigue usando Breeze Dark por defecto; el pack
+  SupraLINUX queda instalado y seleccionable. `InRelease` firmado y
+  verificado; el detalle está en `manifests/aptly-publication-1.0.0.json`.
 - ISO candidata `a218fc66…`
   (`supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso`): BIOS y UEFI
   Secure Boot `PASS`; incluye theme 1.1.4, defaults 1.2.6 y kdeconnect
@@ -257,6 +263,16 @@ explícitamente documentado, nunca con una afirmación falsa.
   inkscape` instala 1.4.4. El asset claro de SDDM conserva el hash
   `b74bcbe4…` y el default sigue siendo oscuro. El candidato no es release ni
   stable; el detalle está en `manifests/iso-candidate-20261124a.json`.
+- ISO candidata `097696c9…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T210917Z-g2e1f379.iso`): rootfs
+  nuevo con kernel `7.0.0-44.44`, snapshot
+  `supralinux-testing-1.0.0-20261124c`, `supralinux-icons 1.3.0` y
+  `supralinux-theme 1.3.0`. BIOS y UEFI Secure Boot `PASS`; el PPA de
+  Inkscape se agrega con `resolute` e instala 1.4.4; los iconos resuelven en
+  ambos temas, sin symlinks rotos ni externos; Breeze Dark sigue siendo el
+  icon theme por defecto y el menú inicio conserva `supralinux-color`.
+  El candidato no es release ni stable; el detalle está en
+  `manifests/iso-candidate-20261124b.json`.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
