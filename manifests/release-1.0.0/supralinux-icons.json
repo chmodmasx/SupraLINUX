@@ -7,7 +7,7 @@
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-icons",
-    "original_commit": "9be4cbcd24c3abf78fd5582b19850698dbdb2efb",
+    "original_commit": "85dd408192bfa25f02162c48e5ca4b6b931c1ec1",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
     "dsc_name": "supralinux-icons_1.3.1.dsc",
