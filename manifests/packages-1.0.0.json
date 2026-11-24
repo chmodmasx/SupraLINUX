@@ -145,7 +145,7 @@
     },
     {
       "source": "supralinux-theme",
-      "version": "1.1.4",
+      "version": "1.2.0",
       "area": "desktop",
       "path": "packages/desktop/supralinux-theme",
       "binaries": [
