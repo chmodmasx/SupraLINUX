@@ -510,9 +510,12 @@ declara `python-apt-common` en `Depends`. No se cambia `ID=ubuntu`.
 
 **Consecuencia:** los PPAs se agregan con `Suites: resolute`. Un test compara el
 `Suite` con `VERSION_CODENAME` y otro valida `get_sources()` con el parser real.
-Los modos `-c`/`-p` no se declaran soportados: `add-apt-repository` los
-escribiría en `supralinux.sources`, el repo del producto; se documenta como
-limitación separada.
+`-c`/`-p` aplicados a un PPA modifican la entrada de ese PPA, no
+`supralinux.sources`: por ejemplo, `-c universe` agrega `Components: universe`
+y `-p updates` usa `Suites: resolute-updates`. El único caso no soportado es
+usarlos solos para cambiar todos los repositorios del sistema, porque ahí
+`add-apt-repository` escribe en `supralinux.sources`, el repo del producto.
+Los PPAs que no publican `resolute` no funcionan, igual que en Ubuntu 26.04.
 
 ## D-037 — KDE Connect aplica el toggle de plugins por D-Bus
 

@@ -21,7 +21,7 @@ SUPRALINUX_BASE="Ubuntu 26.04 LTS"
 
 | Consumidor | Campo que usa | Resultado |
 |---|---|---|
-| APT y `sources.list` | `VERSION_ID`, `VERSION_CODENAME`; `add-apt-repository` usa `ID` + `VERSION_CODENAME` + `supralinux.info` | Resuelve `resolute` como Ubuntu 26.04 y agrega PPAs con la suite correcta. |
+| APT y `sources.list` | `VERSION_ID`, `VERSION_CODENAME`; `add-apt-repository` usa `ID` + `VERSION_CODENAME` + `supralinux.info` | Resuelve `resolute` como Ubuntu 26.04 y agrega PPAs con la suite correcta, incluidos `-c`/`-p` aplicados al PPA. |
 | `lsb_release` | `DISTRIB_ID`, `DISTRIB_RELEASE`, `DISTRIB_CODENAME` | Informa SupraLINUX Aurora 1.0.0 y la base. |
 | Herramientas de base | `ID_LIKE`, `VERSION_ID` | Conservan el comportamiento de Ubuntu/Debian. |
 | UI y `fastfetch` | `PRETTY_NAME`, `VERSION` | Muestran el producto. |
