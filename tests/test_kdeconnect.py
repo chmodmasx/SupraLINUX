@@ -12,6 +12,8 @@ class KdeConnectPluginToggleTests(unittest.TestCase):
     def test_patch_is_in_the_series(self):
         self.assertIn("0006-plugin-settings-apply-immediately.patch",
                       SERIES.read_text().splitlines())
+        self.assertIn("0007-plugin-model-toggle-test.patch",
+                      SERIES.read_text().splitlines())
 
     def test_patch_notifies_the_daemon(self):
         text = PATCH.read_text()

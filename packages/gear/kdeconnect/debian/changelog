@@ -5,7 +5,7 @@ kdeconnect (25.12.3-0supralinux8) resolute; urgency=medium
     kdeconnectd, which keeps the plugin map in memory. Unticking "Receive
     notifications" therefore only took effect after a reconnect or daemon
     restart. Call Device::setPluginEnabled() over D-Bus so the daemon reloads
-    the plugin map immediately.
+    the plugin map immediately. Add a regression test for the app model.
 
  -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 24 Nov 2026 13:44:27 -0300
 

@@ -1,0 +1,75 @@
+Description: Add a regression test for the plugin model toggle
+ The KDE Connect app writes the per-device plugin configuration and now
+ calls Device::setPluginEnabled() so kdeconnectd reloads the plugin map.
+ Add a test that drives PluginModel::setData() and verifies the daemon sees
+ the new state immediately. The test daemon registers the KDE Connect D-Bus
+ service name so DeviceDbusInterface resolves the loopback device.
+Origin: SupraLINUX
+Forwarded: not-yet
+Last-Update: 2026-11-24
+---
+--- a/tests/pluginloadtest.cpp
++++ b/tests/pluginloadtest.cpp
+@@ -5,6 +5,7 @@
+  */
+ 
+ #include <QCoreApplication>
++#include <QDBusConnection>
+ #include <QSignalSpy>
+ #include <QSocketNotifier>
+ #include <QStandardPaths>
+@@ -16,6 +17,7 @@
+ #include "core/kdeconnectplugin.h"
+ #include "kdeconnect-version.h"
+ #include "testdaemon.h"
++#include <pluginmodel.h>
+ #include <backends/pairinghandler.h>
+ 
+ class PluginLoadTest : public QObject
+@@ -66,6 +68,46 @@
+         QVERIFY(d->supportedPlugins().contains(QStringLiteral("kdeconnect_remotecontrol")));
+     }
+ 
++    void testPluginModelAppliesImmediately()
++    {
++        QVERIFY(QDBusConnection::sessionBus().registerService(QStringLiteral("org.kde.kdeconnect")));
++
++        Device *d = nullptr;
++        const QList<Device *> devicesList = m_daemon->devicesList();
++        for (Device *id : devicesList) {
++            if (id->isReachable()) {
++                if (!id->isPaired())
++                    id->requestPairing();
++                d = id;
++                break;
++            }
++        }
++        QVERIFY(d);
++        QVERIFY(d->isPaired());
++        QVERIFY(d->isReachable());
++
++        const QString pluginId = QStringLiteral("kdeconnect_notifications");
++        PluginModel model;
++        model.setDeviceId(d->id());
++
++        int row = -1;
++        for (int i = 0; i < model.rowCount(); ++i) {
++            if (model.index(i, 0).data(PluginModel::IdRole).toString() == pluginId) {
++                row = i;
++                break;
++            }
++        }
++        if (row < 0)
++            QSKIP("kdeconnect_notifications plugin is not available");
++
++        const bool before = d->isPluginEnabled(pluginId);
++        QVERIFY(model.setData(model.index(row, 0), !before, Qt::CheckStateRole));
++        QTRY_COMPARE(d->isPluginEnabled(pluginId), !before);
++
++        QVERIFY(model.setData(model.index(row, 0), before, Qt::CheckStateRole));
++        QTRY_COMPARE(d->isPluginEnabled(pluginId), before);
++    }
++
+ private:
+     TestDaemon *m_daemon;
+ };
