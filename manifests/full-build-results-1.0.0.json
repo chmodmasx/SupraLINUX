@@ -3812,19 +3812,19 @@
     },
     {
       "package": "supralinux-theme",
-      "version": "1.0.3",
+      "version": "1.2.0",
       "area": "desktop",
       "manifest": "manifests/release-1.0.0/supralinux-theme.json",
       "artifact": {
-        "name": "supralinux-theme_1.0.3_all.deb",
-        "sha256": "842d0c486a980efb008ed61babc76c54d484c347501a51d0713aa54932f3b79f",
-        "bytes": 3218590
+        "name": "supralinux-theme_1.2.0_all.deb",
+        "sha256": "d2bf1c83e3db1b3c84aefac1a6f590d663e7b0b4fff0d94ac710bdf472fa9c0c",
+        "bytes": 7372302
       },
-      "evidence": "evidence/clean-build/20261118T161346Z-69ee1d0f7bbd",
+      "evidence": "evidence/clean-build/20261124T184230Z-aae68d5531b8",
       "sbuild_invoked": true,
       "timings_seconds": {
-        "total": 76.705,
-        "guest_build": 27.22
+        "total": 146.211,
+        "guest_build": 58.268
       },
       "cleanup": {
         "process_absent": true,

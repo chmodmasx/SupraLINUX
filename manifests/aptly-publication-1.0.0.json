@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261124a",
-  "snapshot_created_at": "2026-11-24T17:36:52Z",
+  "snapshot": "supralinux-testing-1.0.0-20261124b",
+  "snapshot_created_at": "2026-11-24T18:46:13Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -21,9 +21,9 @@
     ]
   },
   "counts": {
-    "binary_packages": 623,
-    "source_packages": 192,
-    "total": 815
+    "binary_packages": 624,
+    "source_packages": 193,
+    "total": 817
   },
   "key": {
     "fingerprint": "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8",
@@ -35,15 +35,14 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "49987398f8ff16eea9f0f866e0401cb3b6310727d980372942860539bd378efd",
-    "release_sha256": "820782fad3d9594f630d4e0c5a3f9f2f46668af2b8bc22f933e20d10e8d32a75",
-    "binary_index_count": 623,
-    "source_index_count": 192
+    "inrelease_sha256": "303ff3481c688cdee01e05a46d316c2dbc24aa0da641e4a2bf9d69b5d19275d6",
+    "release_sha256": "79d58ac6ca289ea8e4a3f6e68d88827b9b88203acfe67bc898d267984f787df6",
+    "binary_index_count": 624,
+    "source_index_count": 193
   },
   "notes": [
-    "El snapshot supralinux-testing-1.0.0-20261124a reemplaza al 20261123a.",
-    "Agrega kdeconnect 25.12.3-0supralinux8 con el toggle de plugins aplicado por D-Bus y supralinux-defaults 1.2.6 con el template python-apt para PPAs.",
-    "El repo testing queda con 623 binarios y 192 fuentes; las versiones anteriores siguen disponibles.",
-    "Verificado en VM: add-apt-repository + PPA de Inkscape + apt install inkscape; upgrade de KDE Connect y test de regresion del plugin model en build limpio."
+    "El snapshot supralinux-testing-1.0.0-20261124b reemplaza al 20261124a.",
+    "Agrega supralinux-theme 1.2.0 con IDs SupraLINUX-Dark/Light, metadata completa y SDDM claro a 0.68.",
+    "El repo testing queda con 624 binarios y 193 fuentes; las versiones anteriores siguen disponibles."
   ]
 }
