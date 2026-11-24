@@ -7,7 +7,7 @@
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-theme",
-    "original_commit": "b43791450ac9c7e9bc34cdbf9059a854f9f1b0e6",
+    "original_commit": "a8f52ebfa2c7e6c2ddfe80edc0ad8d0b00e750c3",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
     "dsc_name": "supralinux-theme_1.3.1.dsc",
