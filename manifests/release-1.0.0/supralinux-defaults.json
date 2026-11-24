@@ -2,16 +2,16 @@
   "schema": 1,
   "scope": "offline-clean-sbuild-build",
   "package": "supralinux-defaults",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "architecture": "all",
   "source": {
     "kind": "native",
     "path": "packages/desktop/supralinux-defaults",
-    "original_commit": "fdffe69c0cec932904afed215436e0b27fc5ba5d",
+    "original_commit": "8a558fa8376c02bb8fc67761abdbd864cf2bef00",
     "format": "3.0 (native)",
     "declared_build_depends": "debhelper-compat (= 13)",
-    "dsc_name": "supralinux-defaults_1.2.5.dsc",
-    "version": "1.2.5"
+    "dsc_name": "supralinux-defaults_1.2.6.dsc",
+    "version": "1.2.6"
   },
   "base_image": {
     "path": "kvm/bases/0891caeb1925c28ff5055874e2e1a2087ee68213e15177d397d1d48a95fd8eb7.qcow2",
@@ -318,7 +318,8 @@
       "/etc/xdg/ksplashrc",
       "/etc/skel/.local/share/plasma-systemmonitor/overview.page",
       "/etc/xdg/kio-adminrc",
-      "/etc/apparmor.d/local/linux-boot-prober"
+      "/etc/apparmor.d/local/linux-boot-prober",
+      "/usr/share/python-apt/templates/supralinux.info"
     ]
   }
 }
