@@ -1,3 +1,14 @@
+supralinux-theme (1.3.2) resolute; urgency=medium
+
+  * Keep the Plasma highlight role saturated so the Dolphin panel icon and
+    progress indicators retain the brand accent. Kickoff rows stay pale
+    because they use the view/button roles, not the highlight role.
+  * Stop writing AccentColor into the color scheme files. Applying a scheme
+    with that key made KDE derive washed selection and alternate colors;
+    the accent remains in the global theme defaults instead.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 24 Nov 2026 23:00:00 +0000
+
 supralinux-theme (1.3.1) resolute; urgency=medium
 
   * Unify the light window chrome around #E9EEF5 so the titlebar, toolbar

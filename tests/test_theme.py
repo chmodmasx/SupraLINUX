@@ -158,24 +158,31 @@ class ThemeIconTests(unittest.TestCase):
                 self.assertEqual(parser["Colors:View"]["BackgroundNormal"], "255,255,255")
                 self.assertEqual(parser["WM"]["activeBackground"], "233,238,245")
                 self.assertEqual(parser["WM"]["inactiveBackground"], "233,238,245")
-                self.assertEqual(parser["General"]["AccentColor"], "81,162,218")
+                self.assertNotIn("AccentColor", parser["General"])
 
     def test_light_selection_and_highlight_roles_are_intentional(self):
         global_scheme = configparser.ConfigParser(interpolation=None, strict=False)
         global_scheme.read(ROOT / "packages/desktop/supralinux-theme/usr/share/color-schemes/SupralinuxAuroraLight.colors")
         plasma_style = configparser.ConfigParser(interpolation=None, strict=False)
         plasma_style.read(ROOT / "packages/desktop/supralinux-theme/usr/share/plasma/desktoptheme/org.kde.supralinux.light/colors")
-        # Qt apps and icons keep the saturated brand selection; Plasma widgets
-        # use the pale row selection that matches Dolphin's sidebar.
-        self.assertEqual(global_scheme["Colors:Selection"]["BackgroundNormal"], "81,162,218")
-        self.assertEqual(global_scheme["Colors:Selection"]["BackgroundAlternate"], "111,182,228")
-        self.assertEqual(plasma_style["Colors:Selection"]["BackgroundNormal"], "199,228,247")
-        self.assertEqual(plasma_style["Colors:Selection"]["BackgroundAlternate"], "183,220,244")
+        # Qt apps, icons and Plasma highlights keep the saturated brand
+        # selection. Kickoff's pale rows come from the view/button roles.
+        for parser in [global_scheme, plasma_style]:
+            self.assertEqual(parser["Colors:Selection"]["BackgroundNormal"], "81,162,218")
+            self.assertEqual(parser["Colors:Selection"]["BackgroundAlternate"], "111,182,228")
         for parser in [global_scheme, plasma_style]:
             for group in ["Colors:Button", "Colors:Header", "Colors:Header][Inactive",
                           "Colors:Selection", "Colors:Tooltip", "Colors:View", "Colors:Window"]:
                 self.assertEqual(parser[group]["DecorationFocus"], "81,162,218", group)
                 self.assertEqual(parser[group]["DecorationHover"], "62,147,204", group)
+
+    def test_light_accent_lives_in_the_global_theme_only(self):
+        light = (ROOT / "packages/desktop/supralinux-theme/usr/share/plasma/look-and-feel"
+                 / "org.kde.supralinux.aurora.light.desktop/contents/defaults").read_text()
+        dark = (ROOT / "packages/desktop/supralinux-theme/usr/share/plasma/look-and-feel"
+                / "org.kde.supralinux.aurora.desktop/contents/defaults").read_text()
+        self.assertIn("AccentColor=81,162,218", light)
+        self.assertIn("AccentColor=116,172,216", dark)
 
     def test_light_plasma_progress_bar_uses_the_accent(self):
         path = (ROOT / "packages/desktop/supralinux-theme/usr/share/plasma/desktoptheme"

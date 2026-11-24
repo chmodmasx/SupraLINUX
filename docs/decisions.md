@@ -556,21 +556,24 @@ ausencia de enlaces externos y que no haya enlaces rotos.
 ## D-039 — Separar chrome, selección y acento en el tema claro
 
 **Decisión:** el tema claro usa `#E9EEF5` para `Window`, `Header` y `Button`,
-con `#DDE5F0` como alternativo; `View` y `Tooltip` quedan blancos. El esquema
-global conserva `[Colors:Selection]` en `#51A2DA` y declara
-`AccentColor=#51A2DA`; el Plasma Style usa una selección pálida
-(`#C7E4F7`/`#B7DCF4`) para las filas de Kickoff y agrega
-`widgets/bar_meter_horizontal.svgz` con el acento fijo `#51A2DA`.
+con `#DDE5F0` como alternativo; `View` y `Tooltip` quedan blancos. Tanto el
+esquema global como el Plasma Style conservan `[Colors:Selection]` en
+`#51A2DA`. El `AccentColor` vive solo en los defaults del tema global
+(`81,162,218` en claro y `116,172,216` en oscuro), no en los archivos
+`.colors`. El Plasma Style agrega `widgets/bar_meter_horizontal.svgz` con el
+acento fijo `#51A2DA`.
 
 **Motivo:** `ColorScheme-Highlight` no es solo el fondo de una fila
-seleccionada. También recolorea iconos como `org.kde.dolphin` y las barras de
-progreso. Si se baja `[Colors:Selection]` a un azul pálido, los iconos y las
-barras se aclaran. `ColorScheme-Accent` es independiente y se pierde si el
-esquema no declara `AccentColor`, como pasó al aplicar el esquema sin el tema
-global: los iconos de carpeta de Dolphin usaron el fallback pálido.
+seleccionada. También recolorea el icono de Dolphin y las barras de progreso.
+Si se baja `[Colors:Selection]` a un azul pálido, el icono de la panel y las
+barras se aclaran. Las filas de Kickoff usan los roles de vista/botón, así que
+siguen pálidas aunque `Selection` sea saturado.
+Escribir `AccentColor` dentro de un `.colors` hace que el aplicador de KDE
+genere variantes lavadas de `Selection` y `Button`; por eso el acento vive en
+el LNF y no en el esquema.
 
-**Consecuencia:** los iconos y las barras de progreso conservan el azul de
-marca; Kickoff y la barra lateral de Dolphin usan la selección pálida; el
-chrome no cambia de tono al abrir un menú contextual. `tests/test_theme.py`
-verifica los roles y que el SVG de progreso no dependa de
-`ColorScheme-Highlight`.
+**Consecuencia:** las carpetas y el icono de Dolphin conservan el azul de
+marca; las barras de progreso usan el SVG propio; Kickoff y la barra lateral
+de Dolphin usan selección pálida; el chrome no cambia de tono al abrir un
+menú contextual. `tests/test_theme.py` verifica los roles, la ausencia de
+`AccentColor` en los esquemas, el acento del LNF y el SVG de progreso.

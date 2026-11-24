@@ -131,7 +131,6 @@ DecorationFocus=255,255,255
 DecorationHover=255,255,255
 
 [General]
-AccentColor=116,172,216
 ColorScheme=SupralinuxAurora
 Name=SupraLINUX Profundo
 shadeSortColumn=true

@@ -131,7 +131,6 @@ ForegroundPositive=24,122,88
 ForegroundVisited=125,70,160
 
 [General]
-AccentColor=81,162,218
 ColorScheme=SupralinuxAuroraLight
 Name=SupraLINUX Aurora Light
 shadeSortColumn=true
