@@ -291,6 +291,14 @@ manifiesto de release.
   Agrega `kdeconnect 25.12.3-0supralinux8` con el toggle de plugins aplicado
   por D-Bus y `supralinux-defaults 1.2.6` con el template `python-apt` para
   PPAs. `InRelease` verificado con la clave Ed25519.
+- Snapshot `supralinux-testing-1.0.0-20261124b`: 624 binarios y 193 fuentes.
+  Agrega `supralinux-theme 1.2.0` con los IDs `SupraLINUX-Dark` y
+  `SupraLINUX-Light`, nombres visibles `SupraLINUX Oscuro`/`Claro`, metadata
+  completa derivada de Breeze y 19.852 symlinks por tema. El fondo del login
+  claro queda a 0.68. Build limpio `PASS`; artefacto
+  `supralinux-theme_1.2.0_all.deb` con SHA-256 `d2bf1c83…` en
+  `evidence/clean-build/20261124T184230Z-aae68d5531b8/`. `InRelease`
+  verificado con la clave Ed25519.
 - PPA en VM desechable: `add-apt-repository -y ppa:inkscape.dev/stable` agrega
   `Suites: resolute`; `apt-get update` lee el PPA y `apt-get install inkscape`
   instala 1.4.4. Antes del template, `add-apt-repository --list` fallaba con

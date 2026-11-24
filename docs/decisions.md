@@ -528,3 +528,19 @@ inmediato.
 **Consecuencia:** el cambio se aplica al instante. Se prueba en VM con un
 teléfono pareado y se verifica `loadedPlugins`; el parche queda
 `Forwarded: not-yet` hasta que upstream lo acepte.
+
+## D-038 — IDs canónicos y árbol Breeze en los temas de iconos
+
+**Decisión:** los temas se llaman `SupraLINUX-Dark` y `SupraLINUX-Light`, con
+nombres visibles `SupraLINUX Oscuro` y `SupraLINUX Claro`. `index.theme` toma
+la metadata completa de Breeze/Breeze Dark y cada tema materializa un symlink
+por entrada de su tema base. No se agregan aliases para los IDs anteriores.
+
+**Motivo:** la herencia por sí sola no cubre aplicaciones que buscan nombres
+concretos y no recorren el tema heredado, como Kdenlive. Los IDs anteriores
+tenían además capitalización inconsistente entre el paquete y las referencias
+de LNF/GTK.
+
+**Consecuencia:** LNF, GTK 3/4 y los defaults del paquete apuntan a los IDs
+nuevos. `tests/test_theme.py` verifica IDs, nombres, metadata y que cada
+symlink resuelva a la misma ruta relativa en Breeze.

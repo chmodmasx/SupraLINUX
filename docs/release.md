@@ -245,6 +245,11 @@ explícitamente documentado, nunca con una afirmación falsa.
   PPAs. `InRelease` firmado y verificado; los índices públicos declaran 623
   binarios y 192 fuentes. Evidencia de la VM en
   `evidence/qa/ppa-kdeconnect-20261124/`.
+- Snapshot `supralinux-testing-1.0.0-20261124b`: 624 binarios y 193 fuentes.
+  Agrega `supralinux-theme 1.2.0` con IDs `SupraLINUX-Dark`/`SupraLINUX-Light`,
+  metadata completa derivada de Breeze y 19.852 symlinks por tema. El fondo
+  del login claro queda a 0.68. `InRelease` firmado y verificado; el detalle
+  está en `manifests/aptly-publication-1.0.0.json`.
 - ISO candidata `a218fc66…`
   (`supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso`): BIOS y UEFI
   Secure Boot `PASS`; incluye theme 1.1.4, defaults 1.2.6 y kdeconnect

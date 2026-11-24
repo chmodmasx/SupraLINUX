@@ -46,7 +46,13 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - El tema claro usa una selección `#51A2DA` y neutral `#F67400` para que las
   barras, anillos y badges se vean; el estilo Plasma light queda alineado.
 - SDDM ofrece una variante clara seleccionable, sin herencia automática del
-  wallpaper del usuario.
+  wallpaper del usuario. El fondo del login claro queda atenuado a 0.68 para
+  mantener legibles el reloj, el campo de contraseña y los controles.
+- Los temas de iconos usan los IDs canónicos `SupraLINUX-Dark` y
+  `SupraLINUX-Light`, con nombres visibles `SupraLINUX Oscuro` y
+  `SupraLINUX Claro`. La metadata completa y el árbol de symlinks derivado de
+  Breeze cubren todos los nombres estándar, también en aplicaciones de
+  terceros como Kdenlive.
 - Wallpapers: entradas sueltas `SupraLINUX Aurora Light` y `Dark`, además de
   la automática.
 - El lanzador cambia de categoría al pasar el puntero por defecto en paneles
