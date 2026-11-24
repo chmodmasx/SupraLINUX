@@ -88,6 +88,26 @@ cambios aplicados.
 - No se mantiene una línea propia de parches de seguridad.
 - Un parche que sólo existe para ocultar una dependencia o un ABI se rechaza.
 
+### Registro de parches locales
+
+| Paquete | Parche | Motivo | Origen / estado |
+|---|---|---|---|
+| `kdeconnect` | `0006-plugin-settings-apply-immediately.patch` | Aplicar el toggle de plugins en el daemon sin reiniciar. | Local; `Forwarded: not-yet`. |
+| `plasma-workspace` | `0001-users-passwordless.patch` | Administración sin contraseña opt-in por usuario. | Feature local; `Forwarded: not-needed`. |
+| `dolphin` | `0001-context-menu-show-hidden-files.patch` | Mostrar ocultos desde el menú contextual. | Feature local. |
+| `kio` | `0001-directorysize-do-not-cross-mounts.patch` | No cruzar mounts al calcular tamaño. | Fix local. |
+| `knewstuff` | `0001-silence-preview-image-errors.patch` | Evitar modales por thumbnails fallidos. | Workaround KDE 518013. |
+| `plasma-welcome` | `0001-increase-window-size.patch` | Evitar clipping del español al 125%. | Ajuste local de UI. |
+| `krdp` | `0001-initialise-virtual-monitor-size.patch` | Inicializar el tamaño del monitor virtual. | Backport upstream `d2a2b1f`. |
+| `casper` | `0001-honor-noswap.patch` | No activar swap del disco en live con `noswap`. | Fix local; documentado en `compatibility.md`. |
+| `kio-admin` | `0001-Allow-admin-action-in-home.patch` | Acción administrativa también en el home. | Feature local; D-033. |
+| `ark` | `0001-arkviewer-use-own-state-group.patch` | Tamaño/estado propio del visor. | Backport upstream MR !360. |
+| `ark` | `0002-ark-skip-space-check-for-multivolume.patch` | Evitar falso ENOSPC en multivolumen. | Fix local; D-026. |
+| `kwin` | `fix-drm-open-fallback-to-logind-fd.patch` | Fallback DRM del greeter SDDM. | Heredado de Ubuntu; LP #2147233. |
+
+Los parches se revisan al actualizar el paquete; un backport se reemplaza por la
+versión upstream cuando esté disponible.
+
 ## Licencias
 
 | Área | Licencia |

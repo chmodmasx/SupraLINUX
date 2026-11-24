@@ -1,0 +1,63 @@
+Suite: resolute
+RepositoryType: deb
+BaseURI: http://archive.ubuntu.com/ubuntu
+MatchURI: archive\.ubuntu\.com/ubuntu|security\.ubuntu\.com/ubuntu|ports\.ubuntu\.com/ubuntu-ports
+Description: SupraLINUX 26.04 (Ubuntu 26.04 'resolute')
+Component: main
+CompDescription: Officially supported
+CompDescriptionLong: Canonical-supported free and open-source software
+Component: universe
+CompDescription: Community-maintained
+CompDescriptionLong: Community-maintained free and open-source software
+Component: restricted
+CompDescription: Non-free drivers
+CompDescriptionLong: Proprietary drivers for devices
+Component: multiverse
+ParentComponent: universe
+CompDescription: Restricted software
+CompDescriptionLong: Software restricted by copyright or legal issues
+
+Suite: resolute
+ParentSuite: resolute
+RepositoryType: deb-src
+Description: SupraLINUX 26.04 source (Ubuntu 26.04 'resolute')
+
+Suite: resolute-security
+ParentSuite: resolute
+RepositoryType: deb
+Description: Important security updates
+
+Suite: resolute-security
+ParentSuite: resolute
+RepositoryType: deb-src
+Description: Important security updates (source)
+
+Suite: resolute-updates
+ParentSuite: resolute
+RepositoryType: deb
+Description: Recommended updates
+
+Suite: resolute-updates
+ParentSuite: resolute
+RepositoryType: deb-src
+Description: Recommended updates (source)
+
+Suite: resolute-proposed
+ParentSuite: resolute
+RepositoryType: deb
+Description: Pre-released updates
+
+Suite: resolute-proposed
+ParentSuite: resolute
+RepositoryType: deb-src
+Description: Pre-released updates (source)
+
+Suite: resolute-backports
+ParentSuite: resolute
+RepositoryType: deb
+Description: Unsupported updates
+
+Suite: resolute-backports
+ParentSuite: resolute
+RepositoryType: deb-src
+Description: Unsupported updates (source)

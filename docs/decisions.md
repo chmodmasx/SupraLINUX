@@ -496,3 +496,35 @@ del QML upstream de Breeze.
 **Consecuencia:** el asset se versiona en `supralinux-theme`; el QML queda igual
 al upstream. La comparación antes/después está en
 `evidence/qa/sddm-light-1.1.4-20261123/`; la validación final se hace en VM/ISO.
+
+## D-036 — Soporte de PPA con template de python-apt
+
+**Decisión:** `supralinux-defaults` instala
+`/usr/share/python-apt/templates/supralinux.info` con `Suite: resolute` y
+declara `python-apt-common` en `Depends`. No se cambia `ID=ubuntu`.
+
+**Motivo:** `add-apt-repository` usa `aptsources.distro`, que busca un template
+`<ID>.info`; sin `supralinux.info`, toda operación falla con
+`NoDistroTemplateException`. Es el mecanismo estándar de las derivadas;
+`ID_LIKE` y `UBUNTU_CODENAME` no se usan en ese lookup.
+
+**Consecuencia:** los PPAs se agregan con `Suites: resolute`. Un test compara el
+`Suite` con `VERSION_CODENAME` y otro valida `get_sources()` con el parser real.
+Los modos `-c`/`-p` no se declaran soportados: `add-apt-repository` los
+escribiría en `supralinux.sources`, el repo del producto; se documenta como
+limitación separada.
+
+## D-037 — KDE Connect aplica el toggle de plugins por D-Bus
+
+**Decisión:** el paquete `kdeconnect` incluye el parche
+`0006-plugin-settings-apply-immediately.patch`, que llama a
+`Device::setPluginEnabled()` cuando la app cambia el estado de un plugin.
+
+**Motivo:** `PluginModel::setData()` sólo escribía el archivo por dispositivo;
+`kdeconnectd` mantiene el mapa de plugins en memoria y no lo recarga hasta
+reconectar o reiniciar. Destildar “Recibir notificaciones” no tenía efecto
+inmediato.
+
+**Consecuencia:** el cambio se aplica al instante. Se prueba en VM con un
+teléfono pareado y se verifica `loadedPlugins`; el parche queda
+`Forwarded: not-yet` hasta que upstream lo acepte.

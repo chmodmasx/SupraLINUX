@@ -34,6 +34,9 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
   16–512; el default sigue siendo `supralinux-color`.
 - Página por defecto del Monitor del sistema con colores distintos para CPU,
   GPU, memoria e intercambio, pensada para usuarios nuevos y la live.
+- Soporte de PPAs con `add-apt-repository`: `supralinux-defaults` instala el
+  template `supralinux.info` para la suite `resolute` y declara
+  `python-apt-common` como dependencia.
 
 ### Changed
 
@@ -54,6 +57,12 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - El menú GRUB conserva otras instalaciones SupraLINUX con raíz Btrfs `@`:
   un override local de AppArmor permite a `linux-boot-prober` el `mount --bind`
   que os-prober necesita para generar la entrada.
+
+### Fixed
+
+- KDE Connect aplica en el acto los cambios de plugins de la app: al destildar
+  “Recibir notificaciones” el daemon descarga el plugin sin esperar a
+  reconectar el teléfono ni reiniciar `kdeconnectd`.
 
 ## [1.0.0] - Por anunciar
 

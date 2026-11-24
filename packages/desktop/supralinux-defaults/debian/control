@@ -10,6 +10,7 @@ Rules-Requires-Root: no
 Package: supralinux-defaults
 Architecture: all
 Depends: ${misc:Depends},
+ python-apt-common,
  grub-common,
  systemd,
  supralinux-branding (>= 1.2.0),

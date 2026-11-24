@@ -1,0 +1,29 @@
+Description: Apply plugin enable/disable settings immediately
+ The KDE Connect app writes the per-device plugin configuration file and
+ syncs it, but does not notify kdeconnectd. The daemon keeps the plugin map
+ in memory and only reloads it on pairing/reachability changes or when
+ Device::setPluginEnabled() is called over D-Bus. As a result, unticking a
+ plugin (for example "Receive notifications") has no effect until the device
+ reconnects or the daemon restarts.
+ .
+ Call Device::setPluginEnabled() after writing the config so the daemon
+ reloads the plugin map immediately.
+Origin: SupraLINUX
+Forwarded: not-yet
+Last-Update: 2026-11-24
+---
+--- a/interfaces/pluginmodel.cpp
++++ b/interfaces/pluginmodel.cpp
+@@ -100,6 +100,12 @@
+     if (role == Qt::CheckStateRole) {
+         const KPluginMetaData &pluginEntry = m_plugins[index.row()];
+         m_config->group(QStringLiteral("Plugins")).writeEntry(QStringLiteral("%1Enabled").arg(pluginEntry.pluginId()), value);
++
++        // The daemon keeps the plugin map in memory. Writing the config file
++        // alone only takes effect after a reconnect or a daemon restart, so
++        // ask it to reload the plugins now.
++        DeviceDbusInterface device(m_deviceId);
++        device.setPluginEnabled(pluginEntry.pluginId(), value.toBool());
+         ret = true;
+     }
+ 

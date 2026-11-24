@@ -1,3 +1,14 @@
+supralinux-defaults (1.2.6) resolute; urgency=medium
+
+  * Provide the python-apt distribution template for SupraLINUX.
+    add-apt-repository failed with NoDistroTemplateException because
+    aptsources looks for /usr/share/python-apt/templates/<ID>.info and no
+    supralinux.info was installed. The template uses the Ubuntu 26.04 suite
+    "resolute", so PPAs are added with the suite the base actually publishes.
+    Add python-apt-common as a dependency for the template directory.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 24 Nov 2026 13:45:00 -0300
+
 supralinux-defaults (1.2.5) resolute; urgency=medium
 
   * Allow linux-boot-prober to bind-mount a Btrfs @ subvolume through a

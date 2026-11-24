@@ -54,7 +54,8 @@ manifests/        Registros de build y release
 - `VERSION=1.0.0 (Aurora)`, `PRETTY_NAME="SupraLINUX Aurora 1.0.0"`.
 - `SUPRALINUX_VERSION` y `SUPRALINUX_CODENAME` llevan la versión del producto.
 - `supralinux-base-files` usa `dpkg-divert` para poseer los archivos de identidad sin reemplazar `base-files`.
-- Las herramientas que necesitan la base leen `VERSION_ID`/`UBUNTU_CODENAME`; las que muestran el producto leen `PRETTY_NAME`/`VERSION`.
+- Las herramientas que necesitan la base leen `VERSION_ID`/`VERSION_CODENAME`; las que muestran el producto leen `PRETTY_NAME`/`VERSION`.
+- `add-apt-repository` no usa `UBUNTU_CODENAME`: busca `ID` + `VERSION_CODENAME` y el template `/usr/share/python-apt/templates/supralinux.info` que instala `supralinux-defaults`.
 
 ## Instalador
 

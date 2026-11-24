@@ -1,3 +1,14 @@
+kdeconnect (25.12.3-0supralinux8) resolute; urgency=medium
+
+  * Apply plugin enable/disable settings immediately in the KDE Connect app.
+    The app wrote the per-device configuration file but did not notify
+    kdeconnectd, which keeps the plugin map in memory. Unticking "Receive
+    notifications" therefore only took effect after a reconnect or daemon
+    restart. Call Device::setPluginEnabled() over D-Bus so the daemon reloads
+    the plugin map immediately.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 24 Nov 2026 13:44:27 -0300
+
 kdeconnect (25.12.3-0supralinux7) resolute; urgency=medium
 
   * Bluetooth: skip creating the Bluetooth link provider entirely when
