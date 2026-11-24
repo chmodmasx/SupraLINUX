@@ -1,7 +1,6 @@
 etc/xdg/gtk-3.0 etc/xdg
 etc/xdg/gtk-4.0 etc/xdg
 usr/share/color-schemes usr/share
-usr/share/icons usr/share
 usr/share/plasma usr/share
 usr/share/sddm usr/share
 usr/share/sounds usr/share

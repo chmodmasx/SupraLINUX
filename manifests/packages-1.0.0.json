@@ -10,7 +10,7 @@
     "plasma": 61,
     "gear": 20,
     "gear-extras": 15,
-    "desktop": 8,
+    "desktop": 9,
     "apps": 2,
     "fonts": 1,
     "system": 2
@@ -131,6 +131,21 @@
       "test_only": false
     },
     {
+      "source": "supralinux-icons",
+      "version": "1.3.0",
+      "area": "desktop",
+      "path": "packages/desktop/supralinux-icons",
+      "binaries": [
+        "supralinux-icons"
+      ],
+      "licenses": [
+        "GPL-2.0-or-later",
+        "LGPL-3.0-or-later",
+        "CC-BY-4.0"
+      ],
+      "test_only": false
+    },
+    {
       "source": "supralinux-recovery-gui",
       "version": "1.0.0",
       "area": "desktop",
@@ -145,7 +160,7 @@
     },
     {
       "source": "supralinux-theme",
-      "version": "1.2.0",
+      "version": "1.3.0",
       "area": "desktop",
       "path": "packages/desktop/supralinux-theme",
       "binaries": [

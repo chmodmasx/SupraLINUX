@@ -1,0 +1,10 @@
+supralinux-icons (1.3.0) resolute; urgency=medium
+
+  * Initial complete SupraLINUX icon themes based on Breeze and Breeze Dark.
+  * Materialize the cross-theme Breeze links so both themes are complete and
+    independent: no icon points outside its own theme.
+  * Declare every icon directory in index.theme, including the 24 px and
+    scaled directories that Breeze leaves undeclared.
+  * Use the SupraLINUX color logo for start-here and kickoff aliases.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 24 Nov 2026 21:00:00 +0000

@@ -1,0 +1,19 @@
+Source: supralinux-icons
+Section: x11
+Priority: optional
+Maintainer: SupraLINUX Project <packages@supralinux.invalid>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.2
+Homepage: https://supralinux.com
+Rules-Requires-Root: no
+
+Package: supralinux-icons
+Architecture: all
+Depends: ${misc:Depends},
+ hicolor-icon-theme
+Recommends: librsvg2-common
+Description: SupraLINUX Aurora icon themes
+ Complete icon themes for SupraLINUX Aurora, based on Breeze and Breeze
+ Dark. Both themes are self-contained: every icon directory is declared
+ and no link points outside the theme. Cursors and widget styles remain
+ provided by Breeze.

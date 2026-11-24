@@ -16,9 +16,9 @@ class InventoryTests(unittest.TestCase):
         self.assertEqual(data["status"], "packaging")
         self.assertEqual(data["areas"], {
             "kde": 68, "plasma": 61, "gear": 20, "gear-extras": 15,
-            "desktop": 8, "apps": 2, "fonts": 1, "system": 2,
+            "desktop": 9, "apps": 2, "fonts": 1, "system": 2,
         })
-        self.assertEqual(len(data["packages"]), 177)
+        self.assertEqual(len(data["packages"]), 178)
         self.assertNotIn("supralinux-build-test", [item["source"] for item in data["packages"]])
 
     def test_inventory_paths_and_versions_are_real(self):

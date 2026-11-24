@@ -1,3 +1,12 @@
+supralinux-theme (1.3.0) resolute; urgency=medium
+
+  * Move the icon themes to the new supralinux-icons package.
+  * Keep Breeze Dark as the default icon theme; the SupraLINUX icon themes
+    are installed but not selected by default.
+  * Keep the SupraLINUX color logo in the application launcher.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 24 Nov 2026 21:00:00 +0000
+
 supralinux-theme (1.2.0) resolute; urgency=medium
 
   * Rename the icon themes to SupraLINUX-Dark and SupraLINUX-Light, with

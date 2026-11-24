@@ -32,17 +32,25 @@ class BrandingTests(unittest.TestCase):
         install = (ROOT / "packages/desktop/supralinux-theme/debian/install").read_text()
         for entry in [
             "etc/xdg/gtk-3.0", "etc/xdg/gtk-4.0", "usr/share/color-schemes",
-            "usr/share/icons", "usr/share/plasma", "usr/share/sddm",
-            "usr/share/sounds", "usr/share/themes",
+            "usr/share/plasma", "usr/share/sddm", "usr/share/sounds",
+            "usr/share/themes",
         ]:
             with self.subTest(entry=entry):
                 self.assertIn(entry, install)
                 self.assertTrue((ROOT / "packages/desktop/supralinux-theme" / entry).is_dir())
 
+    def test_icon_package_installs_the_expected_trees(self):
+        base = ROOT / "packages/desktop/supralinux-icons"
+        install = (base / "debian/install").read_text()
+        self.assertIn("usr/share/icons", install)
+        for theme in ["SupraLINUX-Dark", "SupraLINUX-Light"]:
+            with self.subTest(theme=theme):
+                self.assertTrue((base / "usr/share/icons" / theme / "index.theme").is_file())
+
     def test_no_generated_build_metadata_is_versioned(self):
         patterns = ["*.deb", "*.changes", "*.buildinfo", "*.substvars",
                     "debhelper-build-stamp", "files", "*.debhelper"]
-        for package in ["supralinux-branding", "supralinux-theme"]:
+        for package in ["supralinux-branding", "supralinux-theme", "supralinux-icons"]:
             base = ROOT / "packages/desktop" / package
             for pattern in patterns:
                 for path in base.rglob(pattern):
@@ -55,7 +63,7 @@ class BrandingTests(unittest.TestCase):
         self.assertIn("Package: supralinux-theme", control)
 
     def test_branding_changelog_and_copyright_are_present(self):
-        for package in ["supralinux-branding", "supralinux-theme"]:
+        for package in ["supralinux-branding", "supralinux-theme", "supralinux-icons"]:
             base = ROOT / "packages/desktop" / package / "debian"
             with self.subTest(package=package):
                 self.assertTrue((base / "changelog").is_file())

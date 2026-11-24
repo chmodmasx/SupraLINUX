@@ -17,7 +17,9 @@ Depends: ${misc:Depends},
  ocean-sound-theme,
  breeze-gtk-theme,
  fonts-noto-core
+Recommends: supralinux-icons
 Description: SupraLINUX Aurora global theme
  Plasma look-and-feel, color schemes, Plasma style, SDDM theme, sound theme
- and GTK defaults for SupraLINUX Aurora. Includes the SupraLINUX Dark and
- SupraLINUX Light icon themes derived from Breeze; cursors remain Breeze.
+ and GTK defaults for SupraLINUX Aurora. The icon themes are provided by
+ supralinux-icons; the default icon theme remains Breeze Dark and cursors
+ remain Breeze.

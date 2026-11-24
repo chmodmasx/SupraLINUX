@@ -1,0 +1,41 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: SupraLINUX Aurora icon themes
+Source: https://supralinux.com
+
+Files: *
+Copyright: 2026 SupraLINUX Project
+License: GPL-2.0-or-later
+ This program is free software; you can redistribute it and/or modify it
+ under the terms of the GNU General Public License as published by the Free
+ Software Foundation; either version 2 of the License, or (at your option)
+ any later version.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+Files: usr/share/icons/SupraLINUX-Dark/* usr/share/icons/SupraLINUX-Light/*
+Copyright: 2014 Uri Herrera <uri_herrera@nitrux.in>
+           2020 Noah Davis <noahadvs@gmail.com>
+           2020 Niccolò Venerandi <niccolo@venerandi.com>
+           2026 SupraLINUX Project
+License: LGPL-3.0-or-later
+Comment: Icon artwork derived from kf6-breeze-icon-theme 6.24.0
+ (breeze-icons). The upstream license is LGPL-3.0-or-later with the KDE
+ exception; see /usr/share/doc/kf6-breeze-icon-theme/copyright.
+ On Debian systems, the complete text of the GNU Lesser General Public
+ License version 3 can be found in "/usr/share/common-licenses/LGPL-3".
+
+Files: usr/share/icons/SupraLINUX-Dark/places/*/start-here*.png
+       usr/share/icons/SupraLINUX-Light/places/*/start-here*.png
+       usr/share/icons/SupraLINUX-Dark/places/scalable/start-here*.svg
+       usr/share/icons/SupraLINUX-Light/places/scalable/start-here*.svg
+       usr/share/icons/SupraLINUX-Dark/applets/*/org.kde.plasma.kickoff*.png
+       usr/share/icons/SupraLINUX-Light/applets/*/org.kde.plasma.kickoff*.png
+       usr/share/icons/SupraLINUX-Dark/applets/scalable/org.kde.plasma.kickoff*.svg
+       usr/share/icons/SupraLINUX-Light/applets/scalable/org.kde.plasma.kickoff*.svg
+Copyright: 2026 SupraLINUX Project
+License: CC-BY-4.0
+ This work is licensed under the Creative Commons Attribution 4.0
+ International License. To view a copy of this license, visit
+ https://creativecommons.org/licenses/by/4.0/ or send a letter to
+ Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
