@@ -317,11 +317,24 @@ manifiesto de release.
   verificado con la clave Ed25519. La vista previa se validó en la sesión
   con Dolphin, Kickoff y Preferencias del sistema; las capturas están en
   `evidence/qa/theme-light-1.3.1/`.
+- Snapshot `supralinux-testing-1.0.0-20261124e`: 628 binarios y 197 fuentes.
+  Actualiza `supralinux-theme 1.3.2`: mantiene el highlight de Plasma en
+  `#51A2DA` para el icono de Dolphin y las barras de progreso, deja las
+  filas de Kickoff pálidas por los roles de vista/botón y conserva
+  `AccentColor` solo en los defaults del tema global. Build limpio `PASS`;
+  `supralinux-theme_1.3.2_all.deb` SHA-256 `daa56af7…`. `InRelease`
+  verificado con la clave Ed25519. La tile SupraLINUX Claro del selector
+  muestra las carpetas azules; capturas en `evidence/qa/theme-light-1.3.2/`.
 - ISO candidata `dac7a4ab…`
   (`supralinux-aurora-1.0.0-amd64-20261124T223750Z-g2aa0f53.iso`): incluye
   `supralinux-theme 1.3.1` y `supralinux-icons 1.3.0`; BIOS y UEFI Secure
   Boot `PASS`. Evidencia en `evidence/qa/iso-20261124c/` y
   `manifests/iso-candidate-20261124c.json`.
+- ISO candidata `e41d62e5…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T225655Z-gc020d3b.iso`): incluye
+  `supralinux-theme 1.3.2` y `supralinux-icons 1.3.0`; BIOS y UEFI Secure
+  Boot `PASS`. Evidencia en `evidence/qa/iso-20261124d/` y
+  `manifests/iso-candidate-20261124d.json`.
 - PPA en VM desechable: `add-apt-repository -y ppa:inkscape.dev/stable` agrega
   `Suites: resolute`; `apt-get update` lee el PPA y `apt-get install inkscape`
   instala 1.4.4. Antes del template, `add-apt-repository --list` fallaba con

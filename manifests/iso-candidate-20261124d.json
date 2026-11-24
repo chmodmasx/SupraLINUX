@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "scope": "iso-candidate-validation",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "PASS",
+  "release_ready": false,
+  "note": "Candidato de testing con rootfs nuevo y kernel 7.0.0-44.44. Incluye supralinux-icons 1.3.0 y supralinux-theme 1.3.2 con el highlight de Plasma saturado, selección de filas pálida por roles de vista/botón y AccentColor solo en los defaults del tema global.",
+  "regression_scope": "El delta sobre 20261124c es supralinux-theme 1.3.2. Se revalidaron BIOS y UEFI Secure Boot; la vista previa de iconos muestra la tile SupraLINUX Claro con las carpetas azules.",
+  "iso": {
+    "name": "supralinux-aurora-1.0.0-amd64-20261124T225655Z-gc020d3b.iso",
+    "sha256": "e41d62e5fb77e4f14c298826a1f83de706904394128ee041a7cff6a4fa9501ba",
+    "bytes": 3180441600,
+    "workspace_path": "live/1.0.0-20261124b/build/supralinux-aurora-1.0.0-amd64-20261124T225655Z-gc020d3b.iso",
+    "build_evidence": "evidence/live/iso-20261124d-build.log",
+    "rootfs_evidence": "evidence/live/rootfs-20261124d-verify.log"
+  },
+  "inputs": {
+    "rootfs": "live/1.0.0-20261124b/rootfs",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261124e",
+    "apt_source": "https://repo.supralinux.com/",
+    "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
+    "installer": "supralinux-calamares-config 1.0.2",
+    "defaults": "supralinux-defaults 1.2.6",
+    "theme": "supralinux-theme 1.3.2",
+    "icons": "supralinux-icons 1.3.0",
+    "branding": "supralinux-branding 1.3.2",
+    "kdeconnect": "kdeconnect 25.12.3-0supralinux8",
+    "base_files": "supralinux-base-files 1.0.2",
+    "recovery_gui": "supralinux-recovery-gui 1.0.0",
+    "kernel": "7.0.0-44-generic"
+  },
+  "tests": [
+    {
+      "id": "L3-BIOS",
+      "state": "PASS",
+      "result": "Arranque BIOS a Plasma; theme 1.3.2 e icons 1.3.0 instalados.",
+      "evidence": "evidence/qa/iso-20261124d/bios/01-desktop.png"
+    },
+    {
+      "id": "L3-UEFI-SB",
+      "state": "PASS",
+      "result": "Arranque UEFI Secure Boot; mokutil informa SecureBoot enabled y Plasma muestra el escritorio.",
+      "evidence": "evidence/qa/iso-20261124d/uefi/01-desktop.png"
+    },
+    {
+      "id": "L3-COLORS",
+      "state": "PASS",
+      "result": "La tile SupraLINUX Claro del selector muestra carpetas azules; Dolphin muestra carpetas azules, chrome uniforme y Kickoff selección pálida.",
+      "evidence": "evidence/qa/theme-light-1.3.2/01-icon-chooser.png"
+    }
+  ],
+  "limitations": [
+    "El PPA de Inkscape no se repitió en este candidato; no cambió nada de red, APT ni instalador respecto de 20261124b.",
+    "El icono de la aplicación Dolphin en el panel es el mismo bajo Breeze y SupraLINUX; su cuerpo claro es parte del icono de la app, no del tema de carpetas.",
+    "Candidato de testing: no es una release y no tiene promesa de migración."
+  ]
+}

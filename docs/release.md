@@ -266,6 +266,15 @@ explícitamente documentado, nunca con una afirmación falsa.
   1.3.1 e icons 1.3.0; BIOS y UEFI Secure Boot `PASS`. El PPA y el instalador
   no se repitieron porque el delta es solo de datos de tema. El detalle está
   en `manifests/iso-candidate-20261124c.json`.
+- Snapshot `supralinux-testing-1.0.0-20261124e`: 628 binarios y 197 fuentes.
+  Actualiza `supralinux-theme 1.3.2` para mantener el highlight de Plasma y
+  el icono de Dolphin en `#51A2DA`, con el acento solo en el tema global.
+  `InRelease` firmado y verificado; el detalle está en
+  `manifests/aptly-publication-1.0.0.json`.
+- ISO candidata `e41d62e5…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T225655Z-gc020d3b.iso`): theme
+  1.3.2 e icons 1.3.0; BIOS y UEFI Secure Boot `PASS`. El detalle está en
+  `manifests/iso-candidate-20261124d.json`.
 - ISO candidata `a218fc66…`
   (`supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso`): BIOS y UEFI
   Secure Boot `PASS`; incluye theme 1.1.4, defaults 1.2.6 y kdeconnect
