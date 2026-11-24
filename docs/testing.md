@@ -309,6 +309,14 @@ manifiesto de release.
   validaron en VM desechable: 0 symlinks rotos, 0 externos y resolución de
   `start-here`, `start-here-kde` y `org.kde.plasma.kickoff` en ambos temas.
   Evidencia en `evidence/qa/icons-1.3.0-clean-vm/`.
+- Snapshot `supralinux-testing-1.0.0-20261124d`: 627 binarios y 196 fuentes.
+  Actualiza `supralinux-theme 1.3.1`: chrome claro uniforme `#E9EEF5`,
+  selección de filas de Plasma pálida, `AccentColor` conservado en los
+  esquemas y barra de progreso propia con el acento `#51A2DA`. Build limpio
+  `PASS`; `supralinux-theme_1.3.1_all.deb` SHA-256 `b029163e…`. `InRelease`
+  verificado con la clave Ed25519. La vista previa se validó en la sesión
+  con Dolphin, Kickoff y Preferencias del sistema; no se reconstruyó la ISO
+  con este delta.
 - PPA en VM desechable: `add-apt-repository -y ppa:inkscape.dev/stable` agrega
   `Suites: resolute`; `apt-get update` lee el PPA y `apt-get install inkscape`
   instala 1.4.4. Antes del template, `add-apt-repository --list` fallaba con

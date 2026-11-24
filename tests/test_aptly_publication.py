@@ -17,15 +17,15 @@ class AptlyPublicationTests(unittest.TestCase):
         self.assertEqual(DATA["scope"], "aptly-publication")
         self.assertEqual(DATA["status"], "PASS")
         self.assertFalse(DATA["release_ready"])
-        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261124c")
+        self.assertEqual(DATA["snapshot"], "supralinux-testing-1.0.0-20261124d")
 
     def test_counts_match_the_source_inventory(self):
         published = [item for item in INVENTORY["packages"]
                      if item["source"] not in PENDING_PUBLICATION]
         # The repo keeps extra versions of the desktop packages and kio-admin:
-        # 20 extra binary and 17 extra source entries in the published indexes.
-        binaries = sum(len(item["binaries"]) for item in published) + 20
-        sources = len(published) + 17
+        # 21 extra binary and 18 extra source entries in the published indexes.
+        binaries = sum(len(item["binaries"]) for item in published) + 21
+        sources = len(published) + 18
         self.assertEqual(DATA["counts"], {
             "binary_packages": binaries,
             "source_packages": sources,

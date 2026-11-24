@@ -256,6 +256,11 @@ explícitamente documentado, nunca con una afirmación falsa.
   iconos. El tema oscuro sigue usando Breeze Dark por defecto; el pack
   SupraLINUX queda instalado y seleccionable. `InRelease` firmado y
   verificado; el detalle está en `manifests/aptly-publication-1.0.0.json`.
+- Snapshot `supralinux-testing-1.0.0-20261124d`: 627 binarios y 196 fuentes.
+  Actualiza `supralinux-theme 1.3.1` con chrome claro uniforme, selección de
+  filas de Plasma pálida, `AccentColor` conservado y barra de progreso con el
+  acento de marca. `InRelease` firmado y verificado; el detalle está en
+  `manifests/aptly-publication-1.0.0.json`.
 - ISO candidata `a218fc66…`
   (`supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso`): BIOS y UEFI
   Secure Boot `PASS`; incluye theme 1.1.4, defaults 1.2.6 y kdeconnect
