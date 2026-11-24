@@ -261,6 +261,11 @@ explícitamente documentado, nunca con una afirmación falsa.
   filas de Plasma pálida, `AccentColor` conservado y barra de progreso con el
   acento de marca. `InRelease` firmado y verificado; el detalle está en
   `manifests/aptly-publication-1.0.0.json`.
+- ISO candidata `dac7a4ab…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T223750Z-g2aa0f53.iso`): theme
+  1.3.1 e icons 1.3.0; BIOS y UEFI Secure Boot `PASS`. El PPA y el instalador
+  no se repitieron porque el delta es solo de datos de tema. El detalle está
+  en `manifests/iso-candidate-20261124c.json`.
 - ISO candidata `a218fc66…`
   (`supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso`): BIOS y UEFI
   Secure Boot `PASS`; incluye theme 1.1.4, defaults 1.2.6 y kdeconnect

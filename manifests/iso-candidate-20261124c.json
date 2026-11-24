@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "scope": "iso-candidate-validation",
+  "product": "SupraLINUX",
+  "version": "1.0.0",
+  "codename": "Aurora",
+  "status": "PASS",
+  "release_ready": false,
+  "note": "Candidato de testing con el rootfs nuevo y kernel 7.0.0-44.44. Incluye supralinux-icons 1.3.0 y supralinux-theme 1.3.1 con el chrome claro uniforme y los roles de selección/acento corregidos. Breeze Dark sigue siendo el icon theme por defecto y el menú inicio conserva supralinux-color.",
+  "regression_scope": "El delta sobre 20261124b es supralinux-theme 1.3.1 (colores del tema claro). Se revalidaron BIOS y UEFI Secure Boot; el PPA y la matriz de instalación no se repitieron porque el cambio es de datos de tema y no toca red, kernel ni instalador.",
+  "iso": {
+    "name": "supralinux-aurora-1.0.0-amd64-20261124T223750Z-g2aa0f53.iso",
+    "sha256": "dac7a4ab419e125b217de68ffad634a12f927156aa22c71909b5e6d5f177c9ff",
+    "bytes": 3180441600,
+    "workspace_path": "live/1.0.0-20261124b/build/supralinux-aurora-1.0.0-amd64-20261124T223750Z-g2aa0f53.iso",
+    "build_evidence": "evidence/live/iso-20261124c-build.log",
+    "rootfs_evidence": "evidence/live/rootfs-20261124c-verify.log"
+  },
+  "inputs": {
+    "rootfs": "live/1.0.0-20261124b/rootfs",
+    "aptly_snapshot": "supralinux-testing-1.0.0-20261124d",
+    "apt_source": "https://repo.supralinux.com/",
+    "aptly_manifest": "manifests/aptly-publication-1.0.0.json",
+    "installer": "supralinux-calamares-config 1.0.2",
+    "defaults": "supralinux-defaults 1.2.6",
+    "theme": "supralinux-theme 1.3.1",
+    "icons": "supralinux-icons 1.3.0",
+    "branding": "supralinux-branding 1.3.2",
+    "kdeconnect": "kdeconnect 25.12.3-0supralinux8",
+    "base_files": "supralinux-base-files 1.0.2",
+    "recovery_gui": "supralinux-recovery-gui 1.0.0",
+    "kernel": "7.0.0-44-generic"
+  },
+  "tests": [
+    {
+      "id": "L3-BIOS",
+      "state": "PASS",
+      "result": "Arranque BIOS a Plasma; escritorio visible y theme 1.3.1/icons 1.3.0 instalados.",
+      "evidence": "evidence/qa/iso-20261124c/bios/01-desktop.png"
+    },
+    {
+      "id": "L3-UEFI-SB",
+      "state": "PASS",
+      "result": "Arranque UEFI Secure Boot; mokutil informa SecureBoot enabled y Plasma muestra el escritorio.",
+      "evidence": "evidence/qa/iso-20261124c/uefi/01-desktop.png"
+    },
+    {
+      "id": "L3-COLORS",
+      "state": "PASS",
+      "result": "La sesión de validación muestra chrome uniforme, selección de Kickoff/Dolphin pálida, iconos de carpeta azules y progreso con acento de marca.",
+      "evidence": "evidence/qa/theme-light-1.3.1/02-dolphin-after.png"
+    }
+  ],
+  "limitations": [
+    "El PPA de Inkscape no se repitió en este candidato; no cambió nada de red, APT ni instalador respecto de 20261124b.",
+    "El greeter claro de SDDM no se capturó por el autologin; sus archivos siguen presentes.",
+    "Candidato de testing: no es una release y no tiene promesa de migración."
+  ]
+}

@@ -315,8 +315,13 @@ manifiesto de release.
   esquemas y barra de progreso propia con el acento `#51A2DA`. Build limpio
   `PASS`; `supralinux-theme_1.3.1_all.deb` SHA-256 `b029163e…`. `InRelease`
   verificado con la clave Ed25519. La vista previa se validó en la sesión
-  con Dolphin, Kickoff y Preferencias del sistema; no se reconstruyó la ISO
-  con este delta.
+  con Dolphin, Kickoff y Preferencias del sistema; las capturas están en
+  `evidence/qa/theme-light-1.3.1/`.
+- ISO candidata `dac7a4ab…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T223750Z-g2aa0f53.iso`): incluye
+  `supralinux-theme 1.3.1` y `supralinux-icons 1.3.0`; BIOS y UEFI Secure
+  Boot `PASS`. Evidencia en `evidence/qa/iso-20261124c/` y
+  `manifests/iso-candidate-20261124c.json`.
 - PPA en VM desechable: `add-apt-repository -y ppa:inkscape.dev/stable` agrega
   `Suites: resolute`; `apt-get update` lee el PPA y `apt-get install inkscape`
   instala 1.4.4. Antes del template, `add-apt-repository --list` fallaba con
