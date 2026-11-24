@@ -143,6 +143,49 @@ class ThemeIconTests(unittest.TestCase):
             text = (THEME / relative).read_text()
             self.assertIn('kickoff.writeConfig("icon", "supralinux-color")', text)
 
+    def test_light_chrome_uses_one_base_color(self):
+        paths = [
+            ROOT / "packages/desktop/supralinux-theme/usr/share/color-schemes/SupralinuxAuroraLight.colors",
+            ROOT / "packages/desktop/supralinux-theme/usr/share/plasma/desktoptheme/org.kde.supralinux.light/colors",
+        ]
+        for path in paths:
+            with self.subTest(path=path.name):
+                parser = configparser.ConfigParser(interpolation=None, strict=False)
+                parser.read(path)
+                for group in ["Colors:Window", "Colors:Button", "Colors:Header", "Colors:Header][Inactive"]:
+                    self.assertEqual(parser[group]["BackgroundNormal"], "233,238,245", group)
+                    self.assertEqual(parser[group]["BackgroundAlternate"], "221,229,240", group)
+                self.assertEqual(parser["Colors:View"]["BackgroundNormal"], "255,255,255")
+                self.assertEqual(parser["WM"]["activeBackground"], "233,238,245")
+                self.assertEqual(parser["WM"]["inactiveBackground"], "233,238,245")
+                self.assertEqual(parser["General"]["AccentColor"], "81,162,218")
+
+    def test_light_selection_and_highlight_roles_are_intentional(self):
+        global_scheme = configparser.ConfigParser(interpolation=None, strict=False)
+        global_scheme.read(ROOT / "packages/desktop/supralinux-theme/usr/share/color-schemes/SupralinuxAuroraLight.colors")
+        plasma_style = configparser.ConfigParser(interpolation=None, strict=False)
+        plasma_style.read(ROOT / "packages/desktop/supralinux-theme/usr/share/plasma/desktoptheme/org.kde.supralinux.light/colors")
+        # Qt apps and icons keep the saturated brand selection; Plasma widgets
+        # use the pale row selection that matches Dolphin's sidebar.
+        self.assertEqual(global_scheme["Colors:Selection"]["BackgroundNormal"], "81,162,218")
+        self.assertEqual(global_scheme["Colors:Selection"]["BackgroundAlternate"], "111,182,228")
+        self.assertEqual(plasma_style["Colors:Selection"]["BackgroundNormal"], "199,228,247")
+        self.assertEqual(plasma_style["Colors:Selection"]["BackgroundAlternate"], "183,220,244")
+        for parser in [global_scheme, plasma_style]:
+            for group in ["Colors:Button", "Colors:Header", "Colors:Header][Inactive",
+                          "Colors:Selection", "Colors:Tooltip", "Colors:View", "Colors:Window"]:
+                self.assertEqual(parser[group]["DecorationFocus"], "81,162,218", group)
+                self.assertEqual(parser[group]["DecorationHover"], "62,147,204", group)
+
+    def test_light_plasma_progress_bar_uses_the_accent(self):
+        path = (ROOT / "packages/desktop/supralinux-theme/usr/share/plasma/desktoptheme"
+                / "org.kde.supralinux.light/widgets/bar_meter_horizontal.svgz")
+        self.assertTrue(path.is_file())
+        import gzip
+        svg = gzip.decompress(path.read_bytes()).decode()
+        self.assertIn("#51a2da", svg.lower())
+        self.assertNotIn('class="ColorScheme-Highlight"', svg)
+
     def test_icon_package_is_independent_from_breeze(self):
         control = (ROOT / "packages/desktop/supralinux-icons/debian/control").read_text()
         package = control.split("Package: supralinux-icons", 1)[1]

@@ -51,6 +51,10 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - SDDM ofrece una variante clara seleccionable, sin herencia automática del
   wallpaper del usuario. El fondo del login claro queda atenuado a 0.68 para
   mantener legibles el reloj, el campo de contraseña y los controles.
+- El tema claro usa un chrome uniforme `#E9EEF5` para barra de título,
+  toolbar y pestañas. La selección de las filas de Plasma queda pálida
+  (`#C7E4F7`), mientras los iconos y las barras de progreso conservan el
+  acento `#51A2DA` y el `AccentColor` del esquema.
 - Los temas de iconos usan los IDs canónicos `SupraLINUX-Dark` y
   `SupraLINUX-Light`, con nombres visibles `SupraLINUX Oscuro` y
   `SupraLINUX Claro`. Son copias completas y autocontenidas de Breeze/Breeze

@@ -552,3 +552,25 @@ usar el tema sin Breeze y deja una base editable para el pack propio.
 es un paquete separado, instalado como opción pero no seleccionado por
 defecto. `tests/test_theme.py` verifica IDs, copia completa, metadata, logo,
 ausencia de enlaces externos y que no haya enlaces rotos.
+
+## D-039 — Separar chrome, selección y acento en el tema claro
+
+**Decisión:** el tema claro usa `#E9EEF5` para `Window`, `Header` y `Button`,
+con `#DDE5F0` como alternativo; `View` y `Tooltip` quedan blancos. El esquema
+global conserva `[Colors:Selection]` en `#51A2DA` y declara
+`AccentColor=#51A2DA`; el Plasma Style usa una selección pálida
+(`#C7E4F7`/`#B7DCF4`) para las filas de Kickoff y agrega
+`widgets/bar_meter_horizontal.svgz` con el acento fijo `#51A2DA`.
+
+**Motivo:** `ColorScheme-Highlight` no es solo el fondo de una fila
+seleccionada. También recolorea iconos como `org.kde.dolphin` y las barras de
+progreso. Si se baja `[Colors:Selection]` a un azul pálido, los iconos y las
+barras se aclaran. `ColorScheme-Accent` es independiente y se pierde si el
+esquema no declara `AccentColor`, como pasó al aplicar el esquema sin el tema
+global: los iconos de carpeta de Dolphin usaron el fallback pálido.
+
+**Consecuencia:** los iconos y las barras de progreso conservan el azul de
+marca; Kickoff y la barra lateral de Dolphin usan la selección pálida; el
+chrome no cambia de tono al abrir un menú contextual. `tests/test_theme.py`
+verifica los roles y que el SVG de progreso no dependa de
+`ColorScheme-Highlight`.

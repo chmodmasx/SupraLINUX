@@ -1,3 +1,15 @@
+supralinux-theme (1.3.1) resolute; urgency=medium
+
+  * Unify the light window chrome around #E9EEF5 so the titlebar, toolbar
+    and tab bar no longer show a lighter band.
+  * Keep the brand selection for Qt apps and icon recoloring, use a pale
+    row selection for Plasma widgets, and keep Plasma progress bars on the
+    brand accent.
+  * Carry AccentColor in both color schemes so applying a scheme does not
+    clear the accent used by Breeze folder and application icons.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Tue, 24 Nov 2026 22:00:00 +0000
+
 supralinux-theme (1.3.0) resolute; urgency=medium
 
   * Move the icon themes to the new supralinux-icons package.

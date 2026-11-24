@@ -19,10 +19,10 @@ IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=233,238,245
-BackgroundNormal=255,255,255
-DecorationFocus=47,127,184
-DecorationHover=81,162,218
+BackgroundAlternate=221,229,240
+BackgroundNormal=233,238,245
+DecorationFocus=81,162,218
+DecorationHover=62,147,204
 ForegroundActive=42,111,159
 ForegroundInactive=92,105,122
 ForegroundLink=42,111,159
@@ -47,10 +47,10 @@ DecorationFocus=255,255,255
 DecorationHover=255,255,255
 
 [Colors:Header]
-BackgroundAlternate=246,247,250
+BackgroundAlternate=221,229,240
 BackgroundNormal=233,238,245
-DecorationFocus=47,127,184
-DecorationHover=81,162,218
+DecorationFocus=81,162,218
+DecorationHover=62,147,204
 ForegroundActive=42,111,159
 ForegroundInactive=92,105,122
 ForegroundLink=42,111,159
@@ -61,10 +61,10 @@ ForegroundPositive=24,122,88
 ForegroundVisited=125,70,160
 
 [Colors:Header][Inactive]
-BackgroundAlternate=233,238,245
-BackgroundNormal=246,247,250
-DecorationFocus=47,127,184
-DecorationHover=81,162,218
+BackgroundAlternate=221,229,240
+BackgroundNormal=233,238,245
+DecorationFocus=81,162,218
+DecorationHover=62,147,204
 ForegroundActive=42,111,159
 ForegroundInactive=92,105,122
 ForegroundLink=42,111,159
@@ -75,10 +75,10 @@ ForegroundPositive=24,122,88
 ForegroundVisited=125,70,160
 
 [Colors:Selection]
-BackgroundAlternate=111,182,228
-BackgroundNormal=81,162,218
-DecorationFocus=42,111,159
-DecorationHover=31,95,139
+BackgroundAlternate=183,220,244
+BackgroundNormal=199,228,247
+DecorationFocus=81,162,218
+DecorationHover=62,147,204
 ForegroundActive=11,18,32
 ForegroundInactive=58,70,86
 ForegroundLink=11,58,90
@@ -91,8 +91,8 @@ ForegroundVisited=74,42,112
 [Colors:Tooltip]
 BackgroundAlternate=240,244,250
 BackgroundNormal=255,255,255
-DecorationFocus=47,127,184
-DecorationHover=81,162,218
+DecorationFocus=81,162,218
+DecorationHover=62,147,204
 ForegroundActive=42,111,159
 ForegroundInactive=92,105,122
 ForegroundLink=42,111,159
@@ -105,8 +105,8 @@ ForegroundVisited=125,70,160
 [Colors:View]
 BackgroundAlternate=240,244,250
 BackgroundNormal=255,255,255
-DecorationFocus=47,127,184
-DecorationHover=81,162,218
+DecorationFocus=81,162,218
+DecorationHover=62,147,204
 ForegroundActive=42,111,159
 ForegroundInactive=92,105,122
 ForegroundLink=42,111,159
@@ -117,10 +117,10 @@ ForegroundPositive=24,122,88
 ForegroundVisited=125,70,160
 
 [Colors:Window]
-BackgroundAlternate=233,238,245
-BackgroundNormal=246,247,250
-DecorationFocus=47,127,184
-DecorationHover=81,162,218
+BackgroundAlternate=221,229,240
+BackgroundNormal=233,238,245
+DecorationFocus=81,162,218
+DecorationHover=62,147,204
 ForegroundActive=42,111,159
 ForegroundInactive=92,105,122
 ForegroundLink=42,111,159
@@ -131,6 +131,7 @@ ForegroundPositive=24,122,88
 ForegroundVisited=125,70,160
 
 [General]
+AccentColor=81,162,218
 ColorScheme=SupralinuxAuroraLight
 Name=SupraLINUX Aurora Light
 shadeSortColumn=true
@@ -142,6 +143,6 @@ contrast=4
 activeBackground=233,238,245
 activeBlend=27,36,48
 activeForeground=27,36,48
-inactiveBackground=246,247,250
+inactiveBackground=233,238,245
 inactiveBlend=92,105,122
 inactiveForeground=92,105,122
