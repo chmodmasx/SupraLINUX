@@ -335,6 +335,20 @@ manifiesto de release.
   `supralinux-theme 1.3.2` y `supralinux-icons 1.3.0`; BIOS y UEFI Secure
   Boot `PASS`. Evidencia en `evidence/qa/iso-20261124d/` y
   `manifests/iso-candidate-20261124d.json`.
+- Snapshot `supralinux-testing-1.0.0-20261124f`: 629 binarios y 198 fuentes.
+  Actualiza `supralinux-icons 1.3.1`: `index.theme` copia la metadata de
+  Breeze, oculta sus directorios GTK de 24 px y declara los extras
+  `start-here`/kickoff. Así Preferencias del sistema resuelve sus iconos de
+  color a 48 px en vez de caer en variantes monocromas. Build limpio `PASS`;
+  `supralinux-icons_1.3.1_all.deb` SHA-256 `e62c2214…`; `InRelease`
+  verificado con la clave Ed25519; capturas en
+  `evidence/qa/theme-light-1.3.2/icons-index/`.
+- ISO candidata `c69e041c…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T232852Z-ga2b0e67.iso`): incluye
+  `supralinux-theme 1.3.2` y `supralinux-icons 1.3.1`; BIOS y UEFI Secure
+  Boot `PASS`; `kiconfinder6` resuelve los iconos de Preferencias desde
+  `SupraLINUX-Light` dentro de la ISO. Evidencia en
+  `evidence/qa/iso-20261124e/` y `manifests/iso-candidate-20261124e.json`.
 - PPA en VM desechable: `add-apt-repository -y ppa:inkscape.dev/stable` agrega
   `Suites: resolute`; `apt-get update` lee el PPA y `apt-get install inkscape`
   instala 1.4.4. Antes del template, `add-apt-repository --list` fallaba con

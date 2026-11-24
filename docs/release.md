@@ -275,6 +275,17 @@ explícitamente documentado, nunca con una afirmación falsa.
   (`supralinux-aurora-1.0.0-amd64-20261124T225655Z-gc020d3b.iso`): theme
   1.3.2 e icons 1.3.0; BIOS y UEFI Secure Boot `PASS`. El detalle está en
   `manifests/iso-candidate-20261124d.json`.
+- Snapshot `supralinux-testing-1.0.0-20261124f`: 629 binarios y 198 fuentes.
+  Actualiza `supralinux-icons 1.3.1` para usar la metadata de directorios de
+  Breeze: los iconos de Preferencias se resuelven a 48 px en color y no caen
+  en las variantes monocromas de 24 px. `InRelease` firmado y verificado; el
+  detalle está en `manifests/aptly-publication-1.0.0.json`.
+- ISO candidata `c69e041c…`
+  (`supralinux-aurora-1.0.0-amd64-20261124T232852Z-ga2b0e67.iso`): theme
+  1.3.2 e icons 1.3.1; BIOS y UEFI Secure Boot `PASS`; la ISO resuelve
+  `preferences-desktop-mouse` y `preferences-desktop-keyboard` desde
+  `SupraLINUX-Light`. El detalle está en
+  `manifests/iso-candidate-20261124e.json`.
 - ISO candidata `a218fc66…`
   (`supralinux-aurora-1.0.0-amd64-20261124T180005Z-gf724c1b.iso`): BIOS y UEFI
   Secure Boot `PASS`; incluye theme 1.1.4, defaults 1.2.6 y kdeconnect

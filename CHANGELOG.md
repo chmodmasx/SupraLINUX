@@ -18,8 +18,11 @@ y el versionado usa [Semantic Versioning](https://semver.org/lang/es/).
 - Integración de Calamares, Secure Boot, Btrfs/Snapper y recuperación live.
 - Branding y tema Aurora.
 - `supralinux-icons 1.3.1`: temas de iconos completos e independientes
-  basados en Breeze/Breeze Dark. El tema oscuro sigue usando Breeze Dark por
-  defecto; los temas SupraLINUX quedan instalados y seleccionables.
+  basados en Breeze/Breeze Dark. La metadata de `index.theme` copia la de
+  Breeze y oculta sus directorios GTK de 24 px, de modo que los iconos se
+  resuelven a tamaños no nativos sin caer en variantes monocromas de otro
+  tema. El tema oscuro sigue usando Breeze Dark por defecto; los temas
+  SupraLINUX quedan instalados y seleccionables.
 - Identidad `supralinux-base-files`, fuentes y defaults.
 - Firefox con paquetes de idioma español.
 - Repositorio APT firmado y fuentes de paquetes modificados.
