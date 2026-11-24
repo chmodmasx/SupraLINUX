@@ -7,8 +7,8 @@
   "status": "PASS",
   "release_ready": false,
   "repository": "supralinux-testing",
-  "snapshot": "supralinux-testing-1.0.0-20261123a",
-  "snapshot_created_at": "2026-11-23T20:10:42Z",
+  "snapshot": "supralinux-testing-1.0.0-20261124a",
+  "snapshot_created_at": "2026-11-24T17:36:52Z",
   "publication": {
     "name": "testing",
     "distribution": "testing",
@@ -21,9 +21,9 @@
     ]
   },
   "counts": {
-    "binary_packages": 618,
-    "source_packages": 190,
-    "total": 808
+    "binary_packages": 623,
+    "source_packages": 192,
+    "total": 815
   },
   "key": {
     "fingerprint": "9BAD7A4B1826213B3BE271E208780B9EEC43C2B8",
@@ -35,15 +35,15 @@
   },
   "verification": {
     "inrelease_signature": "PASS",
-    "inrelease_sha256": "c358cc09a10b17e30e85988ed67349a22e5c594b8adb87361f2d07db29250dda",
-    "release_sha256": "939a29cf33c38c58132298d39c09836d8fb00ca6a9e89855af53086c7107483f",
-    "binary_index_count": 618,
-    "source_index_count": 190
+    "inrelease_sha256": "49987398f8ff16eea9f0f866e0401cb3b6310727d980372942860539bd378efd",
+    "release_sha256": "820782fad3d9594f630d4e0c5a3f9f2f46668af2b8bc22f933e20d10e8d32a75",
+    "binary_index_count": 623,
+    "source_index_count": 192
   },
   "notes": [
-    "El snapshot supralinux-testing-1.0.0-20261123a reemplaza al 20261122g.",
-    "Agrega supralinux-theme 1.1.4 con el fondo claro de SDDM atenuado; el resto de los paquetes no cambia.",
-    "El repo testing queda con 618 binarios y 190 fuentes; las versiones anteriores siguen disponibles.",
-    "El stack viejo aptly fue retirado; testing se sirve desde el stack nuevo con la carpeta supralinux-aptly."
+    "El snapshot supralinux-testing-1.0.0-20261124a reemplaza al 20261123a.",
+    "Agrega kdeconnect 25.12.3-0supralinux8 con el toggle de plugins aplicado por D-Bus y supralinux-defaults 1.2.6 con el template python-apt para PPAs.",
+    "El repo testing queda con 623 binarios y 192 fuentes; las versiones anteriores siguen disponibles.",
+    "Verificado en VM: add-apt-repository + PPA de Inkscape + apt install inkscape; upgrade de KDE Connect y test de regresion del plugin model en build limpio."
   ]
 }

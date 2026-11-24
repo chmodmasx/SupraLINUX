@@ -287,6 +287,20 @@ manifiesto de release.
   Agrega `supralinux-theme 1.1.4` con el fondo claro de SDDM atenuado para
   alinearlo con el tema oscuro; el resto de los paquetes no cambia.
   `InRelease` verificado con la clave Ed25519.
+- Snapshot `supralinux-testing-1.0.0-20261124a`: 623 binarios y 192 fuentes.
+  Agrega `kdeconnect 25.12.3-0supralinux8` con el toggle de plugins aplicado
+  por D-Bus y `supralinux-defaults 1.2.6` con el template `python-apt` para
+  PPAs. `InRelease` verificado con la clave Ed25519.
+- PPA en VM desechable: `add-apt-repository -y ppa:inkscape.dev/stable` agrega
+  `Suites: resolute`; `apt-get update` lee el PPA y `apt-get install inkscape`
+  instala 1.4.4. Antes del template, `add-apt-repository --list` fallaba con
+  `NoDistroTemplateException`. Evidencia en
+  `evidence/qa/ppa-kdeconnect-20261124/`.
+- KDE Connect en VM desechable: upgrade limpio a `25.12.3-0supralinux8`; el test
+  de regresión `PluginLoadTest::testPluginModelAppliesImmediately` verifica en
+  el build limpio que `PluginModel::setData()` aplica el cambio en el daemon.
+  Evidencia en `evidence/qa/kdeconnect-0supralinux8-20261124/` y
+  `evidence/clean-build/20261124T171745Z-e9dc01854e46/`.
 - Gwenview en VM desechable: sin configuración de usuario la rueda cambió
   33% → 94% → 33%; Preferencias mostró “Ampliar”; una preferencia explícita
   de “Desplazamiento” dejó el zoom en 33%. Evidencia en

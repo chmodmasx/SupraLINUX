@@ -239,6 +239,12 @@ explícitamente documentado, nunca con una afirmación falsa.
   `https://repo.supralinux.com/` ya apunta al Aptly nuevo; el Aptly viejo
   dejó de servirse. El resumen está en
   `manifests/aptly-publication-1.0.0.json`.
+- Snapshot `supralinux-testing-1.0.0-20261124a`: 623 binarios y 192 fuentes.
+  Agrega `kdeconnect 25.12.3-0supralinux8` con el toggle de plugins aplicado
+  por D-Bus y `supralinux-defaults 1.2.6` con el template `python-apt` para
+  PPAs. `InRelease` firmado y verificado; los índices públicos declaran 623
+  binarios y 192 fuentes. Evidencia de la VM en
+  `evidence/qa/ppa-kdeconnect-20261124/`.
 - `supralinux-stable` sigue vacío. No hay snapshot `stable` ni autorización de
   release.
 
