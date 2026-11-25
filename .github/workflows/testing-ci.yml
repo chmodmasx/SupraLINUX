@@ -98,7 +98,7 @@ jobs:
   desktop-native:
     needs: plan
     if: needs.plan.outputs.desktop_packages != '[]'
-    name: Native desktop package (matrix: ${{ matrix.package }})
+    name: 'Native desktop package (${{ matrix.package }})'
     strategy:
       fail-fast: false
       matrix:
