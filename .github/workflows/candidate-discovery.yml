@@ -1,0 +1,72 @@
+name: Candidate installer and Secure Boot discovery
+
+on:
+  pull_request:
+    branches: [testing]
+    paths:
+      - '.github/workflows/candidate-discovery.yml'
+      - 'tools/qa/installer-discovery.py'
+      - 'tools/qa/secure-boot-live.py'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: candidate-discovery-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    name: 'Candidate QA (${{ matrix.mode }})'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [installer, secure-boot]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v5
+        with:
+          ref: a1a98626e4d83632b2f2fa65dabcd6395c2dd720
+          path: candidate-source
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: testing-iso
+          run-id: 45628300933
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/candidate
+      - name: Install QEMU and verify KVM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils ovmf
+          test -c /dev/kvm
+          sudo chgrp "$(id -gn)" /dev/kvm
+          sudo chmod g+rw /dev/kvm
+          python3 tools/ci/check-kvm.py
+      - name: Check exact ISO identity and probe candidate
+        env:
+          MODE: ${{ matrix.mode }}
+        run: |
+          set -eu
+          cd "$RUNNER_TEMP/candidate"
+          iso=supralinux-aurora-1.0.0-amd64-20261125T140403Z-g71ef7cb.iso
+          echo "9702e3fcc2ac83d9f68cf50d1c01c8cfda5986067876a9a8e59022e96231cb8f  $iso" | sha256sum -c -
+          case "$MODE" in
+            installer) script=installer-discovery.py ;;
+            secure-boot) script=secure-boot-live.py ;;
+            *) exit 2 ;;
+          esac
+          python3 "$GITHUB_WORKSPACE/tools/qa/$script" "$iso" "$GITHUB_WORKSPACE/candidate-source/tools/ci/boot-live.py" "$RUNNER_TEMP/probe"
+      - name: Retain probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-probe-${{ matrix.mode }}
+          path: ${{ runner.temp }}/probe/
+          if-no-files-found: warn
+          retention-days: 7
