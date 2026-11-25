@@ -141,10 +141,21 @@ class DesktopIntegrationTests(unittest.TestCase):
             "usr/local/sbin/supralinux-locale-check",
             "usr/local/sbin/supralinux-xdg-dirs",
             "usr/share/supralinux/fastfetch-logo.txt",
-            "etc/skel/.local/share/dbus-1/services/org.freedesktop.secrets.service",
+            "usr/share/supralinux/kwallet-blank/org.freedesktop.secrets.service",
         ]:
             with self.subTest(relative=relative):
                 self.assertTrue((base / relative).is_file(), relative)
+
+    def test_kwallet_secret_service_is_provisioned_per_user(self):
+        base = ROOT / "packages/desktop/supralinux-defaults"
+        template = "usr/share/supralinux/kwallet-blank/org.freedesktop.secrets.service"
+        service = (base / template).read_text()
+        self.assertIn("Name=org.freedesktop.secrets", service)
+        self.assertIn("Exec=/usr/bin/ksecretd", service)
+        for relative in ["debian/postinst", "usr/local/sbin/supralinux-kwallet-setup"]:
+            script = (base / relative).read_text()
+            self.assertIn("/" + template, script)
+            self.assertIn('$home/.local/share/dbus-1/services/org.freedesktop.secrets.service', script)
 
     def test_driver_version_matches_the_changelog(self):
         base = ROOT / "packages/apps/supralinux-drivers"
