@@ -12,7 +12,7 @@ PENDING_BUILDS = set()
 STALE_BUILD_VERSIONS = {
     # Desktop theme/defaults/branding were version-bumped after the 1.0.0
     # full-build batch; their 1.0.0 artifacts remain historical evidence.
-    "supralinux-defaults": "1.1.4",
+    "supralinux-defaults": "1.2.6",  # 1.2.7 needs a new clean build
     "supralinux-branding": "1.2.0",
     "kio-admin": "25.12.3-0supralinux1",
 }
