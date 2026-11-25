@@ -18,8 +18,16 @@ class CiRoutingTests(unittest.TestCase):
     def test_go_package_selects_go_only(self):
         self.assertEqual(routing.classify(["packages/apps/supralinux-kdeconnect-sftp/debian/control"]), {"kdeconnect"})
 
-    def test_installer_selects_kvm_only(self):
-        self.assertEqual(routing.classify(["packages/desktop/supralinux-calamares-config/etc/calamares/settings.conf"]), {"kvm"})
+    def test_installer_selects_kvm_and_its_native_build(self):
+        self.assertEqual(routing.classify(["packages/desktop/supralinux-calamares-config/etc/calamares/settings.conf"]), {"kvm", "supralinux-calamares-config"})
+
+    def test_defaults_selects_its_native_build_only(self):
+        self.assertEqual(routing.classify(["packages/desktop/supralinux-defaults/etc/systemd/zram-generator.conf"]), {"supralinux-defaults"})
+
+    def test_desktop_matrix_is_deterministic_and_selective(self):
+        self.assertEqual(routing.desktop_packages({"kvm"}), [])
+        self.assertEqual(routing.desktop_packages({"supralinux-defaults", "kvm"}), ["supralinux-defaults"])
+        self.assertEqual(routing.desktop_packages(set(routing.JOBS)), ["supralinux-defaults", "supralinux-calamares-config"])
 
     def test_ci_changes_select_all(self):
         self.assertEqual(routing.classify([".github/workflows/testing-ci.yml"]), set(routing.JOBS))
@@ -34,5 +42,5 @@ class CiRoutingTests(unittest.TestCase):
 
     def test_diff_includes_deleted_and_renamed_paths(self):
         with patch.object(routing.subprocess, "check_output", return_value=b"packages/apps/supralinux-kdeconnect-sftp/debian/control\x00installer/recovery/script.sh\x00") as diff:
-            self.assertEqual(routing.plan("pull_request", "a", "b")[0], set(routing.JOBS))
+            self.assertEqual(routing.plan("pull_request", "a", "b")[0], {"kdeconnect", "kvm"})
             self.assertIn("--no-renames", diff.call_args.args[0])

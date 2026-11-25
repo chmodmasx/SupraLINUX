@@ -1,9 +1,15 @@
 """Select expensive CI jobs from the exact tree delta; unknown delta runs all."""
+import json
 import os
 import subprocess
 from pathlib import PurePosixPath
 
-JOBS = ("kdeconnect", "kvm")
+DESKTOP_PACKAGES = ("supralinux-defaults", "supralinux-calamares-config")
+JOBS = ("kdeconnect", "kvm", *DESKTOP_PACKAGES)
+
+
+def desktop_packages(selected):
+    return [name for name in DESKTOP_PACKAGES if name in selected]
 
 
 def classify(paths):
@@ -11,6 +17,13 @@ def classify(paths):
     for name in paths:
         if name.startswith((".github/", "tools/ci/")) or name in ("Makefile", "tests/test_ci_routing.py"):
             return set(JOBS)
+        for package in DESKTOP_PACKAGES:
+            if name.startswith(f"packages/desktop/{package}/"):
+                selected.add(package)
+        if name.startswith("tests/test_zram_policy"):
+            selected.add("supralinux-defaults")
+        if name.startswith("tests/test_calamares_finalvalidation"):
+            selected.add("supralinux-calamares-config")
         if name.startswith("packages/") and any(
             part.startswith(("kdeconnect", "supralinux-kdeconnect"))
             for part in PurePosixPath(name).parts
@@ -48,6 +61,7 @@ def main():
     with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
         for job in JOBS:
             out.write(f"{job}={str(job in selected).lower()}\n")
+        out.write(f"desktop_packages={json.dumps(desktop_packages(selected))}\n")
 
 
 if __name__ == "__main__":
