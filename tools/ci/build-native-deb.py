@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 PAYLOAD = {
     "supralinux-defaults": "etc/systemd/zram-generator.conf",
     "supralinux-calamares-config": "etc/calamares/modules/shellprocess_finalvalidation.conf",
+    "supralinux-kdeconnect-sftp": "usr/libexec/supralinux-kdeconnect-sftp",
 }
 
 
@@ -28,12 +29,13 @@ def only_file(directory, pattern):
 
 
 def build(package, output):
-    source = ROOT / "packages/desktop" / package
     inventory = json.loads((ROOT / "manifests/packages-1.0.0.json").read_text())
     entries = [entry for entry in inventory["packages"] if entry["source"] == package]
     if len(entries) != 1:
         raise ValueError(f"Expected one inventory entry for {package}")
     entry = entries[0]
+    area = "apps" if package == "supralinux-kdeconnect-sftp" else "desktop"
+    source = ROOT / "packages" / area / package
     if entry["path"] != str(source.relative_to(ROOT)) or entry["binaries"] != [package]:
         raise ValueError(f"Unexpected inventory contract for {package}")
     version = command(["dpkg-parsechangelog", "-SVersion"], cwd=source)
@@ -44,7 +46,8 @@ def build(package, output):
     subprocess.run(["dpkg-checkbuilddeps"], cwd=source, check=True)
     subprocess.run(["dpkg-buildpackage", "-b", "-us", "-uc"], cwd=source, check=True)
     binary = only_file(source.parent, f"{package}_*.deb")
-    for field, expected in (("Package", package), ("Version", version), ("Architecture", "all")):
+    architecture = "amd64" if package == "supralinux-kdeconnect-sftp" else "all"
+    for field, expected in (("Package", package), ("Version", version), ("Architecture", architecture)):
         actual = command(["dpkg-deb", "-f", str(binary), field])
         if actual != expected:
             raise ValueError(f"{field}: expected {expected}, got {actual}")
