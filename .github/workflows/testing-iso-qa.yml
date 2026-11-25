@@ -7,6 +7,8 @@ on:
       - '.github/workflows/testing-iso-qa.yml'
       - 'tools/live/build-testing-iso.sh'
       - 'tools/live/stage-overlays.py'
+      - 'tools/ci/boot-live.py'
+      - 'tools/ci/build-native-deb.py'
   workflow_dispatch:
 
 permissions:
@@ -98,5 +100,52 @@ jobs:
             ${{ runner.temp }}/iso-build.log
             ${{ runner.temp }}/staged/overlays.json
             ${{ runner.temp }}/supra-live/build/iso/casper/filesystem.manifest
+          if-no-files-found: warn
+          retention-days: 7
+
+  boot:
+    needs: iso
+    name: 'Boot testing ISO (${{ matrix.mode }})'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [bios, uefi]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: testing-iso
+          path: ${{ runner.temp }}/boot-iso
+      - name: Install QEMU and OVMF
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 ovmf
+          if [ ! -c /dev/kvm ]; then
+            echo '::error::INFRA_INVALID: /dev/kvm unavailable'
+            exit 1
+          fi
+          sudo chgrp "$(id -gn)" /dev/kvm
+          sudo chmod g+rw /dev/kvm
+          python3 tools/ci/check-kvm.py
+      - name: Verify candidate and boot live desktop
+        env:
+          MODE: ${{ matrix.mode }}
+        run: |
+          cd "$RUNNER_TEMP/boot-iso"
+          sha256sum -c ./*.iso.sha256
+          shopt -s nullglob
+          isos=(*.iso)
+          test "${#isos[@]}" -eq 1
+          python3 "$GITHUB_WORKSPACE/tools/ci/boot-live.py" "${isos[0]}" "$RUNNER_TEMP/live-boot" --mode "$MODE"
+      - name: Retain console and screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testing-live-boot-${{ matrix.mode }}
+          path: ${{ runner.temp }}/live-boot/
           if-no-files-found: warn
           retention-days: 7
