@@ -3,7 +3,7 @@ Section: net
 Priority: optional
 Maintainer: SupraLINUX Project <packages@supralinux.invalid>
 Build-Depends: debhelper-compat (= 13),
-               golang-go (>= 2:1.24~)
+               golang-go (>= 2:1.26~)
 Standards-Version: 4.7.0
 Homepage: https://supralinux.com/
 Rules-Requires-Root: no

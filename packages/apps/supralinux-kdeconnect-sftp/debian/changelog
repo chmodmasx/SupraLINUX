@@ -1,3 +1,9 @@
+supralinux-kdeconnect-sftp (1.0.3) resolute; urgency=medium
+
+  * Require Go 1.26 to match go.mod and the vendored toolchain contract.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 25 Nov 2026 12:00:00 +0000
+
 supralinux-kdeconnect-sftp (1.0.2) resolute; urgency=medium
 
   * Rebuild the KDE Connect SFTP bridge for SupraLINUX 1.0.0.
