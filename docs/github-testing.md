@@ -23,7 +23,11 @@ The read-only Testing CI workflow runs existing static tests, builds the KDE Con
 - Pull requests targeting testing run once per update. Push runs are restricted to testing, preserving post-merge integration checks. Superseded runs for the same ref are cancelled.
 - Static and contract tests remain mandatory on every run. Install missing test dependencies only.
 - The independent planner compares the checked-out tree against the event base using a NUL-delimited Git diff with renames treated as delete/add. It does not depend on the hosted path-filter file-count limit. Missing comparisons and manual runs select every expensive job.
-- KDE Connect builds run for related sources, tests or build tooling. KVM capability runs for VM, installer, live-image or relevant builder changes. CI policy changes select both jobs.
+- KDE Connect builds run for related sources, tests or build tooling. KVM capability runs for VM, installer, live-image or relevant builder changes. CI policy changes select all jobs. The native desktop matrix selects only the changed supported package (defaults or Calamares); related contract tests also select their package.
 - The planner runs in parallel with the static suite; expensive jobs are independently scheduled after planning. Skipped jobs mean not selected, never a fresh product PASS.
 - The current Go package deliberately uses vendored dependencies and an isolated Debian build cache. Do not share that cache or bypass clean-build evidence merely for faster CI. Measure checkout, dependency installation and test duration before adding caches.
 - Future ISO/VM workflows must check KVM on their own runner, not rely on the earlier capability result. No workflow publishes releases or promotes stable.
+
+## Native desktop package checks
+
+The native desktop matrix builds `supralinux-defaults` and `supralinux-calamares-config` independently using Ubuntu build dependencies and `dpkg-buildpackage -b -us -uc`. The helper verifies the source/changelog and inventory versions, exact binary name/version/architecture, required payload, and presence of `.changes` and `.buildinfo`. Each successful job retains its own artifacts for seven days. A direct runner build is not an offline KVM/sbuild clean-build PASS; it never updates historical evidence or publishes APT packages. The artifacts are intended for a later testing ISO staging step; no ISO or stable release is published.
