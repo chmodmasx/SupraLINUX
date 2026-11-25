@@ -1,6 +1,7 @@
 #!/bin/bash
 # Build a testing ISO from the committed local tree, without modifying it.
 set -euo pipefail
+umask 022
 repo=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
 if [[ $EUID -eq 0 ]]; then
     echo "Run make iso as your normal user; the live builder requests sudo." >&2
@@ -14,7 +15,7 @@ if ! git -C "$repo" diff --quiet HEAD --; then
     echo "Commit tracked changes before building an ISO." >&2
     exit 2
 fi
-deps=(build-essential dpkg-dev debhelper gettext golang-go mmdebstrap uidmap squashfs-tools xorriso mtools dosfstools ubuntu-keyring git python3 sudo)
+deps=(build-essential dpkg-dev debhelper gettext golang-go mmdebstrap uidmap squashfs-tools xorriso mtools dosfstools ubuntu-keyring git python3 sudo util-linux)
 missing=()
 for package in "${deps[@]}"; do
     if [[ "$(dpkg-query -W -f='${Status}' "$package" 2>/dev/null || true)" != "install ok installed" ]]; then
@@ -43,7 +44,7 @@ work=$(mktemp -d "$parent/supralinux-iso-XXXXXXXX")
 chmod 0755 "$work"
 # The mapped build root must be able to read the isolated checkout.
 # Fail early if a parent directory denies traversal.
-sudo -u '#100000' test -x "$work" || {
+sudo setpriv --reuid=100000 --regid=100000 --clear-groups -- test -x "$work" || {
     echo "Workspace must be traversable by the mapped uid 100000: $work" >&2
     exit 1
 }
