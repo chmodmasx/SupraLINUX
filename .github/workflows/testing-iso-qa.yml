@@ -1,0 +1,102 @@
+name: Testing ISO QA
+
+on:
+  pull_request:
+    branches: [testing]
+    paths:
+      - '.github/workflows/testing-iso-qa.yml'
+      - 'tools/live/build-testing-iso.sh'
+      - 'tools/live/stage-overlays.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: testing-iso-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  overlays:
+    name: 'Build ISO overlay (${{ matrix.package }})'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        package: [supralinux-defaults, supralinux-calamares-config, supralinux-kdeconnect-sftp]
+    env:
+      GOTOOLCHAIN: local
+      GOPROXY: 'off'
+      GOSUMDB: 'off'
+      GOFLAGS: -mod=vendor
+      CGO_ENABLED: '0'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Install build dependencies
+        env:
+          PACKAGE: ${{ matrix.package }}
+        run: |
+          sudo apt-get update
+          deps=(build-essential dpkg-dev debhelper gettext)
+          if [[ "$PACKAGE" == supralinux-kdeconnect-sftp ]]; then deps+=(golang-go); fi
+          sudo apt-get install -y --no-install-recommends "${deps[@]}"
+      - name: Build verified overlay
+        env:
+          PACKAGE: ${{ matrix.package }}
+        run: python3 tools/ci/build-native-deb.py "$PACKAGE" "$RUNNER_TEMP/overlay"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: iso-overlay-${{ matrix.package }}
+          path: ${{ runner.temp }}/overlay/
+          if-no-files-found: error
+          retention-days: 3
+
+  iso:
+    needs: overlays
+    name: Build testing ISO
+    runs-on: ubuntu-26.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: iso-overlay-*
+          path: ${{ runner.temp }}/iso-overlays
+      - name: Install live builder dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends mmdebstrap uidmap squashfs-tools xorriso mtools dosfstools ubuntu-keyring
+          df -h
+      - name: Build live rootfs and ISO
+        run: |
+          set -o pipefail
+          python3 tools/live/stage-overlays.py "$RUNNER_TEMP/iso-overlays" "$RUNNER_TEMP/staged"
+          sh tools/live/build-testing-iso.sh "$RUNNER_TEMP/supra-live" "$RUNNER_TEMP/staged" 2>&1 | tee "$RUNNER_TEMP/iso-build.log"
+          cd "$RUNNER_TEMP/supra-live/build"
+          sha256sum -c ./*.iso.sha256
+      - name: Upload ISO candidate (temporary QA only)
+        uses: actions/upload-artifact@v4
+        with:
+          name: testing-iso
+          path: |
+            ${{ runner.temp }}/supra-live/build/*.iso
+            ${{ runner.temp }}/supra-live/build/*.iso.sha256
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 3
+      - name: Retain build evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testing-iso-build-evidence
+          path: |
+            ${{ runner.temp }}/iso-build.log
+            ${{ runner.temp }}/staged/overlays.json
+            ${{ runner.temp }}/supra-live/build/iso/casper/filesystem.manifest
+          if-no-files-found: warn
+          retention-days: 7
