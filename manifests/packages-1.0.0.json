@@ -106,7 +106,7 @@
     },
     {
       "source": "supralinux-defaults",
-      "version": "1.2.6",
+      "version": "1.2.7",
       "area": "desktop",
       "path": "packages/desktop/supralinux-defaults",
       "binaries": [
