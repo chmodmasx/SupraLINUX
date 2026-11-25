@@ -12,7 +12,7 @@ case "$live:$stage" in *[[:space:]]*) echo "Paths must not contain whitespace" >
 test ! -e "$live"
 test -f "$stage/overlays.json"
 test "$(uname -m)" = x86_64
-for cmd in mmdebstrap mksquashfs xorriso mcopy mkfs.vfat unshare python3 dpkg-query; do
+for cmd in mmdebstrap mksquashfs xorriso mcopy mkfs.vfat unshare python3 dpkg-query setpriv; do
     command -v "$cmd" >/dev/null
 done
 # Only create a fresh output directory. Never reuse/delete an existing rootfs.
@@ -27,8 +27,25 @@ for deb in "$stage"/*.deb; do
     test -r "$deb"
     debs="$debs $deb"
 done
+# Do not change permissions on the runner's home or other host directories.
+# Test traversal using the exact mapped uid/gid before entering the namespace.
+cd "$repo"
+mapped_test() {
+    sudo setpriv --reuid=100000 --regid=100000 --clear-groups -- test "$@"
+}
+if ! mapped_test -x "$repo" || ! mapped_test -r "$repo/tools/live/setup-repo.sh" ||
+   ! mapped_test -x "$(dirname "$live")" || ! mapped_test -r "$stage/overlays.json"; then
+    echo "INFRA_INVALID: namespace uid/gid 100000 cannot access source or workspace" >&2
+    exit 1
+fi
+for deb in "$stage"/*.deb; do
+    if ! mapped_test -r "$deb"; then
+        echo "INFRA_INVALID: mapped uid cannot read overlay: $deb" >&2
+        exit 1
+    fi
+done
 sudo install -d -o 100000 -g 100000 -m 0755 "$live"
-sudo env SUPRALINUX_LIVE_DIR="$live" SUPRALINUX_APT_CHANNEL=testing \
+sudo env HOME=/tmp SUPRALINUX_LIVE_DIR="$live" SUPRALINUX_APT_CHANNEL=testing \
     SUPRALINUX_LOCAL_DEBS="$debs" SUPRALINUX_REQUIRE_RECOVERY_GUI=1 \
     unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
     --setuid=0 --setgid=0 \
@@ -41,6 +58,6 @@ sudo env SUPRALINUX_LIVE_DIR="$live" SUPRALINUX_APT_CHANNEL=testing \
     "deb http://archive.ubuntu.com/ubuntu resolute main universe restricted multiverse" \
     "deb http://archive.ubuntu.com/ubuntu resolute-updates main universe restricted multiverse" \
     "deb http://security.ubuntu.com/ubuntu resolute-security main universe restricted multiverse"
-sudo env SUPRALINUX_LIVE_DIR="$live" SUPRALINUX_APT_CHANNEL=testing \
+sudo env HOME=/tmp SUPRALINUX_LIVE_DIR="$live" SUPRALINUX_APT_CHANNEL=testing \
     unshare --map-users=0:100000:65536 --map-groups=0:100000:65536 \
     --setuid=0 --setgid=0 sh "$repo/tools/live/build-iso.sh" "$live/rootfs"
