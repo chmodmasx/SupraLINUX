@@ -75,6 +75,40 @@ tail -n 100 /tmp/supra-qa-calamares.log
 """
 
 
+def click(qmp, x, y, width=1280, height=800):
+    """Absolute tablet input, with no input to the host desktop."""
+    if not (0 <= x < width and 0 <= y < height):
+        raise ValueError("Click outside expected framebuffer")
+    qmp.call("input-send-event", {"events": [
+        {"type": "abs", "data": {"axis": "x", "value": round(x * 32767 / (width - 1))}},
+        {"type": "abs", "data": {"axis": "y", "value": round(y * 32767 / (height - 1))}},
+        {"type": "btn", "data": {"down": True, "button": "left"}},
+    ]})
+    qmp.call("input-send-event", {"events": [
+        {"type": "btn", "data": {"down": False, "button": "left"}},
+    ]})
+
+
+def verify_frame(path):
+    with path.open("rb") as stream:
+        if stream.readline().strip() != b"P6":
+            raise ValueError("Expected binary PPM framebuffer")
+        dimensions = stream.readline().split()
+        if dimensions != [b"1280", b"800"]:
+            raise ValueError(f"Unexpected framebuffer size: {dimensions}")
+
+
+ACCESSIBILITY = r"""
+set -eu
+uid=$(id -u supralinux)
+runuser -u supralinux -- env XDG_RUNTIME_DIR=/run/user/"$uid" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$uid"/bus sh -c '
+    address=$(gdbus call --session --dest org.a11y.Bus --object-path /org/a11y/bus --method org.a11y.Bus.GetAddress | cut -d "\047" -f 2)
+    test -n "$address"
+    gdbus call --address "$address" --dest org.a11y.atspi.Registry --object-path /org/a11y/atspi/accessible/root --method org.a11y.atspi.Accessible.GetChildren
+'
+"""
+
+
 def run(args):
     boot = load_boot(args.boot_helper)
     output = args.output.resolve()
@@ -88,7 +122,8 @@ def run(args):
             disk = runtime / "target.qcow2"
             subprocess.run(["qemu-img", "create", "-f", "qcow2", str(disk), "40G"], check=True)
             cmd = boot.command_line(args.iso.resolve(), output, runtime, "uefi")
-            cmd += ["-drive", f"if=virtio,format=qcow2,file={disk}"]
+            cmd += ["-drive", f"if=virtio,format=qcow2,file={disk}",
+                    "-device", "qemu-xhci", "-device", "usb-tablet"]
             with (output / "qemu.log").open("w") as log:
                 process = subprocess.Popen(cmd, stdout=log, stderr=log)
                 qmp = boot.connect_until(runtime / "qmp.sock", process, time.monotonic() + 30, True)
@@ -114,6 +149,18 @@ def run(args):
                     report[f"probe_{index}"] = guest(agent, DISCOVER)
                 if guest(agent, "pgrep -x calamares")["exitcode"] != 0:
                     raise RuntimeError("Calamares did not remain running")
+                report["accessibility_registry"] = guest(agent, ACCESSIBILITY)
+                # The exact welcome screenshot showed Next at (1136, 736).
+                # Only advance three pages; never select or confirm partitioning.
+                frame = output / "installer-2.ppm"
+                verify_frame(frame)
+                for index in range(1, 4):
+                    click(qmp, 1136, 736)
+                    time.sleep(4)
+                    frame = output / f"navigation-{index}.ppm"
+                    qmp.call("screendump", {"filename": str(frame)})
+                    verify_frame(frame)
+                    report[f"navigation_{index}"] = guest(agent, "tail -n 30 /tmp/supra-qa-calamares.log")
                 report["status"] = "PASS"
         except (OSError, ValueError, RuntimeError, TimeoutError, subprocess.SubprocessError) as exc:
             report["error"] = str(exc)
