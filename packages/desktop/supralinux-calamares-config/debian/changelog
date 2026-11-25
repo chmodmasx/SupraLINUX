@@ -1,3 +1,10 @@
+supralinux-calamares-config (1.0.3) resolute; urgency=medium
+
+  * Fail explicitly on recovery package purge errors.
+  * Check basic target consistency before finishing the installation.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 25 Nov 2026 12:00:00 +0000
+
 supralinux-calamares-config (1.0.2) resolute; urgency=medium
 
   * Remove the graphical recovery package and its files from the installed

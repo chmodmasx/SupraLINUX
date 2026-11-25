@@ -15,6 +15,8 @@ STALE_BUILD_VERSIONS = {
     "supralinux-defaults": "1.1.4",
     "supralinux-branding": "1.2.0",
     "kio-admin": "25.12.3-0supralinux1",
+    # 1.0.3 requires a new build; 1.0.2 evidence remains historical.
+    "supralinux-calamares-config": "1.0.2",
 }
 
 
