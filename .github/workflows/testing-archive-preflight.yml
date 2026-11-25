@@ -1,0 +1,38 @@
+name: Testing archive preflight
+
+on:
+  pull_request:
+    branches: [testing]
+    paths:
+      - '.github/workflows/testing-archive-preflight.yml'
+      - 'tools/live/check-testing-archive.py'
+      - 'installer/apt/supralinux-testing.sources'
+      - 'installer/keys/supralinux-archive-key.asc'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: testing-archive-preflight-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  inspect:
+    name: Inspect signed testing archive (diagnostic)
+    runs-on: ubuntu-26.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Read signed archive and compare inventory
+        run: python3 tools/live/check-testing-archive.py "$RUNNER_TEMP/archive-preflight/report.json"
+      - name: Retain diagnostic report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testing-archive-preflight
+          path: ${{ runner.temp }}/archive-preflight/
+          if-no-files-found: warn
+          retention-days: 7
