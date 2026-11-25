@@ -17,6 +17,7 @@ STALE_BUILD_VERSIONS = {
     "kio-admin": "25.12.3-0supralinux1",
     # 1.0.3 requires a new build; 1.0.2 evidence remains historical.
     "supralinux-kdeconnect-sftp": "1.0.2",
+    "supralinux-calamares-config": "1.0.2",
 }
 
 
