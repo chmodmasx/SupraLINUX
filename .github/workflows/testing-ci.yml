@@ -2,7 +2,7 @@ name: Testing CI
 
 on:
   push:
-    branches: [testing, 'ci/**', 'fix/**']
+    branches: [testing]
   pull_request:
     branches: [testing]
   workflow_dispatch:
@@ -15,6 +15,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  plan:
+    name: Select affected jobs
+    runs-on: ubuntu-26.04
+    timeout-minutes: 5
+    outputs:
+      kdeconnect: ${{ steps.select.outputs.kdeconnect }}
+      kvm: ${{ steps.select.outputs.kvm }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 2
+          sparse-checkout: tools/ci
+          persist-credentials: false
+      - name: Select jobs from Git tree delta
+        id: select
+        env:
+          CI_BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: python3 tools/ci/select-jobs.py
+
   static:
     name: Static and contract tests
     runs-on: ubuntu-26.04
@@ -25,12 +44,23 @@ jobs:
           persist-credentials: false
       - name: Install test dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends apparmor gettext gnupg dpkg-dev
+          packages=(apparmor gettext gnupg dpkg-dev)
+          missing=()
+          for package in "${packages[@]}"; do
+            if [ "$(dpkg-query -W -f='${Status}' "$package" 2>/dev/null)" != "install ok installed" ]; then
+              missing+=("$package")
+            fi
+          done
+          if (( ${#missing[@]} )); then
+            sudo apt-get update
+            sudo apt-get install -y --no-install-recommends "${missing[@]}"
+          fi
       - name: Run existing test suite
         run: make check
 
   kdeconnect-sftp:
+    needs: plan
+    if: needs.plan.outputs.kdeconnect == 'true'
     name: KDE Connect SFTP (Go, Debian binary build)
     runs-on: ubuntu-26.04
     timeout-minutes: 20
@@ -65,6 +95,8 @@ jobs:
           dpkg-deb --info "${packages[0]}"
 
   kvm-capability:
+    needs: plan
+    if: needs.plan.outputs.kvm == 'true'
     name: KVM infrastructure capability (not product QA)
     runs-on: ubuntu-26.04
     timeout-minutes: 10
