@@ -1,6 +1,7 @@
 """Read-only first-boot checks, intended for an installed disposable QA VM."""
 import argparse
 import json
+import os
 from pathlib import Path
 import pwd
 import re
@@ -20,7 +21,8 @@ LIVE_PATHS = ("/etc/polkit-1/rules.d/49-supralinux-recovery.rules",
 
 
 def command(*args):
-    return subprocess.check_output(args, text=True, stderr=subprocess.PIPE, timeout=30).strip()
+    return subprocess.check_output(args, text=True, stderr=subprocess.PIPE, timeout=30,
+                                   env={**os.environ, "LC_ALL": "C"}).strip()
 
 
 def require(condition, message):
