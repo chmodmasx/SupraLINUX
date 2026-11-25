@@ -1,0 +1,88 @@
+name: Testing CI
+
+on:
+  push:
+    branches: [testing, 'ci/**', 'fix/**']
+  pull_request:
+    branches: [testing]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: testing-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  static:
+    name: Static and contract tests
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Install test dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends apparmor gettext gnupg dpkg-dev
+      - name: Run existing test suite
+        run: make check
+
+  kdeconnect-sftp:
+    name: KDE Connect SFTP (Go, Debian binary build)
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: packages/apps/supralinux-kdeconnect-sftp
+    env:
+      GOTOOLCHAIN: local
+      GOPROXY: 'off'
+      GOSUMDB: 'off'
+      GOFLAGS: -mod=vendor
+      CGO_ENABLED: '0'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Install Ubuntu build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends build-essential dpkg-dev debhelper golang-go
+      - name: Check Go toolchain and declared dependencies
+        run: |
+          go version
+          dpkg-checkbuilddeps
+      - name: Test and build Debian package
+        run: dpkg-buildpackage -b -us -uc
+      - name: Verify output
+        run: |
+          shopt -s nullglob
+          packages=(../supralinux-kdeconnect-sftp_*_amd64.deb)
+          test "${#packages[@]}" -eq 1
+          dpkg-deb --info "${packages[0]}"
+
+  kvm-capability:
+    name: KVM infrastructure capability (not product QA)
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Install QEMU
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86
+      - name: Check KVM device and permissions
+        run: |
+          if [ ! -c /dev/kvm ]; then
+            echo '::error::INFRA_INVALID: /dev/kvm unavailable'
+            exit 1
+          fi
+          sudo chgrp "$(id -gn)" /dev/kvm
+          sudo chmod g+rw /dev/kvm
+      - name: Confirm KVM acceleration through QMP
+        run: python3 tools/ci/check-kvm.py
