@@ -1,3 +1,10 @@
+supralinux-defaults (1.2.7) resolute; urgency=medium
+
+  * Enable compressed swap on systems with more than 8 GiB RAM.
+  * Keep LZ4 and cap logical zram size at half RAM or 8 GiB.
+
+ -- SupraLINUX Project <packages@supralinux.invalid>  Wed, 25 Nov 2026 09:15:00 -0300
+
 supralinux-defaults (1.2.6) resolute; urgency=medium
 
   * Provide the python-apt distribution template for SupraLINUX.
