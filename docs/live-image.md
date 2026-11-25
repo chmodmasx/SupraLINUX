@@ -96,6 +96,8 @@ sellado falla.
 
 ## Squashfs e ISO
 
+Antes de modificar el rootfs, `build-iso.sh` ejecuta `verify-packages.py` (requiere Python 3 y dpkg-query en el host). Comprueba la versión exacta de cada binario instalado que figura en el inventario actual y exige los binarios del inventario incluidos en el perfil de escritorio. No exige paquetes opcionales que no estén instalados. Si el repositorio APT o los .deb locales están desactualizados, el build falla antes de crear el squashfs; no se acepta una ISO con versiones históricas. El contrato verifica identidad/versión, no sustituye hashes de artefactos, clean builds ni QA en KVM.
+
 `build-iso.sh` copia kernel e initramfs, sella el rootfs, crea el squashfs y
 compone la ISO híbrida con `xorriso`.
 
