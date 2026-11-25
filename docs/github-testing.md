@@ -14,6 +14,6 @@ The read-only Testing CI workflow runs existing static tests, builds the KDE Con
 
 - Import the external builder inputs and define a runner workspace contract before attempting the existing offline sbuild flow in Actions. No historical manifest is proof of a new build.
 - Add independent QEMU boot, installer and first-boot tests using disposable disks, QMP screenshots and serial logs. Use KVM when available. Label unavailable acceleration as INFRA_INVALID; do not silently substitute a product PASS.
-- Use testing pre-releases only. GitHub release assets must be smaller than 2 GiB each; split larger ISO files with SHA-256 for each part and for the reassembled ISO, or link to an external ISO host. Publication is not implemented in the initial CI.
+- Do not publish ISOs to GitHub Releases. Use CI artifacts for temporary QA evidence only. The owner will clone the repository and build testing ISOs locally using the documented build procedure. Stable remains prohibited until explicit owner authorization.
 - Validate Calamares target consistency immediately before unmount. Test each supported storage/boot mode separately, including the actual package state and live-only cleanup.
-- Evaluate ZRAM settings in VMs using repeatable memory pressure and responsiveness measurements before changing the default. Keep LZ4 and the current policy until comparisons justify a change.
+- Evaluate the experimental ZRAM policy in its independent testing branch using repeatable memory pressure and responsiveness measurements. Keep LZ4 initially. Do not claim measured performance gains before VM evidence exists.
