@@ -57,6 +57,11 @@ test "$VERSION_ID" = 26.04
 test -d /cdrom/casper
 pgrep -x kwin_wayland
 pgrep -x plasmashell
+# A running shell and active login session can precede the visible desktop.
+if pgrep -u supralinux -x ksplashqml >/dev/null; then exit 1; fi
+uid=$(id -u supralinux)
+runuser -u supralinux -- busctl --address="unix:path=/run/user/$uid/bus" \
+    call org.kde.plasmashell /PlasmaShell org.freedesktop.DBus.Peer Ping
 for session in $(loginctl list-sessions --no-legend | awk '{print $1}'); do
     if [ "$(loginctl show-session "$session" -p Type --value)" = wayland ] &&
        [ "$(loginctl show-session "$session" -p Name --value)" = supralinux ] &&
@@ -135,17 +140,21 @@ def run(iso, output, mode, timeout):
                 report["status"] = "FAIL"
                 deadline = time.monotonic() + timeout
                 last = "Guest agent not ready"
+                consecutive = 0
                 while time.monotonic() < deadline and process.poll() is None:
                     try:
                         if agent is None:
                             agent = Monitor(runtime / "qga.sock")
                         ok, last = guest_check(agent)
                         report["guest"] = last
-                        if ok:
+                        consecutive = consecutive + 1 if ok else 0
+                        if consecutive >= 2:
                             report["status"] = "PASS"
+                            report["desktop_ready_samples"] = consecutive
                             break
                     except (OSError, ValueError, RuntimeError, ConnectionError, TimeoutError) as exc:
                         last = str(exc)
+                        consecutive = 0
                         if agent is not None:
                             agent.close()
                             agent = None
@@ -162,6 +171,8 @@ def run(iso, output, mode, timeout):
                     qmp.call("screendump", {"filename": str(output / "screen.ppm")})
                 except (OSError, RuntimeError, ValueError, ConnectionError) as exc:
                     report["screenshot_error"] = str(exc)
+                    if report["status"] == "PASS":
+                        report["status"] = "INFRA_INVALID"
                 qmp.close()
             if process is not None:
                 if process.poll() is None:
