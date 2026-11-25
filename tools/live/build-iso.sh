@@ -36,6 +36,9 @@ fi
 test -s "$root/boot/vmlinuz"
 test -s "$root/boot/initrd.img"
 
+# Reject missing or stale inventory binaries before modifying the rootfs.
+python3 "$repo_root/tools/live/verify-packages.py" "$root"
+
 rm -rf "$iso"
 mkdir -p "$iso/casper" "$iso/boot/grub" "$iso/.disk"
 mkdir -p "$iso/boot/grub/themes/supralinux"
