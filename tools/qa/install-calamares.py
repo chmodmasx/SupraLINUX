@@ -125,9 +125,12 @@ def install(args):
                 click(qmp, 1136, 736)
                 expect_page(qmp, output, "summary")
                 report["summary_disk"] = checked(agent, guard)
+                before = crop_digest(output / "summary.ppm", 250, 150, 780, 480)
                 click(qmp, 1136, 736)
                 time.sleep(3)
                 dialog = frame(qmp, output, "confirmation")
+                if crop_digest(dialog, 250, 150, 780, 480) == before:
+                    raise RuntimeError("No visible confirmation dialog transition")
                 # Preserve the final confirmation for review, without committing.
                 if not args.confirm:
                     report["preview_disk"] = checked(agent, guard)
