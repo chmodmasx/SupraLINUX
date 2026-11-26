@@ -9,6 +9,9 @@ on:
       - 'tools/live/stage-overlays.py'
       - 'tools/ci/boot-live.py'
       - 'tools/ci/build-native-deb.py'
+      - 'tools/qa/recovery-live-metrics.py'
+      - 'tools/qa/guest/recovery.sh'
+      - 'tools/qa/guest/live-metrics.sh'
   workflow_dispatch:
 
 permissions:
@@ -160,5 +163,49 @@ jobs:
         with:
           name: testing-live-boot-${{ matrix.mode }}
           path: ${{ runner.temp }}/live-boot/
+          if-no-files-found: warn
+          retention-days: 7
+
+  live-probe:
+    needs: iso
+    name: 'Live QA (${{ matrix.mode }})'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [recovery, metrics]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: testing-iso
+          path: ${{ runner.temp }}/probe-iso
+      - name: Install QEMU and verify KVM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils ovmf
+          test -c /dev/kvm
+          sudo chgrp "$(id -gn)" /dev/kvm
+          sudo chmod g+rw /dev/kvm
+          python3 tools/ci/check-kvm.py
+      - name: Verify candidate and run live probe
+        env:
+          MODE: ${{ matrix.mode }}
+        run: |
+          cd "$RUNNER_TEMP/probe-iso"
+          sha256sum -c ./*.iso.sha256
+          shopt -s nullglob
+          isos=(*.iso)
+          test "${#isos[@]}" -eq 1
+          python3 "$GITHUB_WORKSPACE/tools/qa/recovery-live-metrics.py" "${isos[0]}" "$RUNNER_TEMP/live-probe" --mode "$MODE"
+      - name: Retain live probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testing-live-probe-${{ matrix.mode }}
+          path: ${{ runner.temp }}/live-probe/
           if-no-files-found: warn
           retention-days: 7

@@ -25,3 +25,5 @@ The first runner attempt established that `/home/runner/work` is not traversable
 The BIOS and UEFI jobs require real KVM acceleration, verify the candidate checksum, check the live Wayland session over QGA, and retain screenshots, console logs and results separately. Neither job runs Calamares yet.
 
 The live matrix also includes UEFI Secure Boot with Microsoft-enrolled OVMF variables. A guest must report SecureBoot=1 and SetupMode=0; firmware configuration alone is insufficient. All three modes require the splash to exit, responsive Plasma D-Bus and two consecutive readiness samples before mandatory screenshot evidence. This is still live QA, not installed-system certification.
+
+Two parallel live probes reuse the same workflow's verified ISO: a synthetic Btrfs rollback on an isolated tagged disk and a read-only live metrics sample. They do not use external or expired run IDs and do not certify an installed system.
