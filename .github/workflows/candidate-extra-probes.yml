@@ -1,0 +1,63 @@
+name: Candidate independent storage and memory probes
+
+on:
+  pull_request:
+    branches: [testing]
+    paths:
+      - '.github/workflows/candidate-extra-probes.yml'
+      - 'tools/qa/candidate-extra-probes.py'
+      - 'tools/qa/guest/atomic-exchange.sh'
+      - 'tests/test_candidate_extra_probes.py'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: candidate-extra-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  probe:
+    name: 'Candidate probe (${{ matrix.scenario }})'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario: [atomic-exchange, zram-2048, zram-4096, zram-8192, zram-12288]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: testing-iso
+          run-id: 45752431633
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/candidate
+      - name: Prepare KVM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils ovmf
+          test -c /dev/kvm
+          sudo chgrp "$(id -gn)" /dev/kvm
+          sudo chmod g+rw /dev/kvm
+          python3 tools/ci/check-kvm.py
+          free -m
+      - name: Verify pinned candidate and run independent probe
+        env:
+          SCENARIO: ${{ matrix.scenario }}
+        run: |
+          cd "$RUNNER_TEMP/candidate"
+          iso=supralinux-aurora-1.0.0-amd64-20261126T041016Z-g58f44e6.iso
+          echo "058c11f8e46f7b2e0177208e02e597e139e7e15ad3ce2774708dbfced44207df  $iso" | sha256sum -c -
+          python3 "$GITHUB_WORKSPACE/tools/qa/candidate-extra-probes.py" "$iso" "$RUNNER_TEMP/probe" --scenario "$SCENARIO"
+      - name: Retain probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-extra-${{ matrix.scenario }}
+          path: ${{ runner.temp }}/probe/
+          if-no-files-found: warn
+          retention-days: 7
