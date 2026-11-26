@@ -98,11 +98,35 @@ def prepare_welcome(qmp, agent, output):
     raise RuntimeError("Calamares welcome not visibly ready after bounded focus attempts")
 
 
+def select_storage(qmp, agent, output, scenario):
+    """Only the observed Btrfs path may commit; explore alternatives separately."""
+    click(qmp, 206, 71)
+    time.sleep(4)
+    frame(qmp, output, "partition-selected")
+    checked(agent, "grep -q 'InstallChoice Config::Erase' /tmp/supra-qa-calamares.log")
+    if scenario == "ext4":
+        # The pinned partition.conf lists exactly btrfs then ext4.
+        click(qmp, 510, 128)
+        time.sleep(1)
+        frame(qmp, output, "filesystem-options")
+        key(qmp, "end")
+        key(qmp, "ret")
+        time.sleep(3)
+        frame(qmp, output, "partition-ext4")
+    elif scenario == "luks2":
+        # Explore encryption controls without unreviewed password coordinates.
+        click(qmp, 206, 550)
+        time.sleep(3)
+        frame(qmp, output, "partition-encryption")
+        return False
+    return True
+
+
 def install(args):
     boot = load_boot()
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
-    report = {"scope": "Calamares Btrfs transaction", "status": "INFRA_INVALID",
+    report = {"scope": "Calamares transaction", "scenario": args.scenario, "status": "INFRA_INVALID",
               "mode": "commit" if args.confirm else "preview"}
     proc = qmp = agent = None
     with tempfile.TemporaryDirectory(prefix="supra-install-") as tmp:
@@ -134,11 +158,12 @@ def install(args):
                 for step in ("location", "keyboard", "partition"):
                     click(qmp, 1136, 736)
                     expect_page(qmp, output, step)
-                click(qmp, 206, 71)
-                time.sleep(4)
-                frame(qmp, output, "partition-selected")
-                checked(agent, "grep -q 'InstallChoice Config::Erase' /tmp/supra-qa-calamares.log")
+                navigate = select_storage(qmp, agent, output, args.scenario)
                 report["partition_disk"] = checked(agent, guard)
+                if not navigate:
+                    report["status"] = "DISCOVERY_READY"
+                    report["scope"] = "encryption control discovery only"
+                    raise StopIteration
                 click(qmp, 1136, 736)
                 expect_page(qmp, output, "users")
                 field(qmp, 300, 50, USER)
@@ -149,6 +174,9 @@ def install(args):
                 click(qmp, 1136, 736)
                 expect_page(qmp, output, "summary")
                 report["summary_disk"] = checked(agent, guard)
+                filesystem = "ext4" if args.scenario == "ext4" else "btrfs"
+                checked(agent, "grep -A1 'mountPoint: :.*\"/\"' /tmp/supra-qa-calamares.log | grep -q 'fs: :.*\"" + filesystem + "\"'")
+                report["planned_root_filesystem"] = filesystem
                 before = crop_digest(output / "summary.ppm", 250, 150, 780, 480)
                 click(qmp, 1136, 736)
                 time.sleep(3)
@@ -174,6 +202,9 @@ def install(args):
                     checked(agent, "sync; test -b /dev/vda1; test -b /dev/vda2; lsblk -o NAME,FSTYPE,SERIAL /dev/vda")
                     report["status"] = "INSTALL_FINISHED"
                     ready_for_boot = True
+        except StopIteration:
+            if report["status"] != "DISCOVERY_READY":
+                raise
         except (OSError, ValueError, RuntimeError, TimeoutError, subprocess.SubprocessError) as exc:
             report["error"] = str(exc)
         finally:
@@ -205,7 +236,7 @@ def install(args):
             report["status"] = "PASS" if result.returncode == 0 else "FAIL"
     (output / "result.json").write_text(json.dumps(report, indent=2)+"\n")
     print(json.dumps(report, indent=2))
-    return 0 if report["status"] in ("PREVIEW_READY", "PASS") else 1
+    return 0 if report["status"] in ("DISCOVERY_READY", "PREVIEW_READY", "PASS") else 1
 
 
 if __name__ == "__main__":
@@ -213,5 +244,8 @@ if __name__ == "__main__":
     parser.add_argument("iso", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--confirm", nargs=7, metavar=("X", "Y", "LEFT", "TOP", "WIDTH", "HEIGHT", "SHA256"))
+    parser.add_argument("--scenario", choices=["btrfs", "ext4", "luks2"], default="btrfs")
     args = parser.parse_args()
+    if args.confirm and args.scenario != "btrfs":
+        parser.error("Only the reviewed Btrfs confirmation is currently authorized")
     raise SystemExit(install(args))

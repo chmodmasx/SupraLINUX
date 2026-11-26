@@ -30,3 +30,15 @@ clock. Unknown frames fail closed. Separate tablet motion, press and release
 to avoid timing ambiguity. Retain before/after focus frames. No change to
 the product or disk guard; no blind retries of Next or confirmation.
 The crop profile and runtime behavior require revalidation for other ISOs.
+
+## Parallel candidate scenarios
+
+Run 45767814663 reached PREVIEW_READY. Reviewed confirmation.ppm (artifact
+15092727409) shows the actual Install now button, /dev/vda, EFI and Btrfs
+plan. The Btrfs job uses the exact reviewed modal crop and runs the existing
+first-boot contract. EXT4 explores the dropdown and verifies the requested
+root filesystem in the generated plan, then stops at confirmation. LUKS2
+only explores the encryption controls and preserves the blank disk; status
+DISCOVERY_READY is not an installation or encryption PASS. All jobs use the
+same pinned ISO, isolated disposable disks and fail-fast false. No disk
+images are published. This temporary workflow remains experimental.
