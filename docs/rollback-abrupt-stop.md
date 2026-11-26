@@ -19,3 +19,8 @@ experiment, not a physical power-loss or arbitrary in-syscall guarantee.
 All four cases are NOT_RUN until CI reports results. This temporary
 cross-run workflow must be replaced with a same-run ISO gate before
 merging; the experiment requires the #25 atomic helper.
+
+Run 45785776774: all four cases exited before reaching their checkpoint;
+no abrupt stop or replay occurred. Retain guest shell trace and helper log
+on early exit, and explicitly set the QA wrapper PATH. No fault-tolerance
+result is claimed. Keep the original pinned ISO and helper hash.

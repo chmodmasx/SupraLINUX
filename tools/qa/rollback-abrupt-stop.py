@@ -79,7 +79,9 @@ def wait_checkpoint(agent, pid, phase, timeout=90):
     while time.monotonic() < deadline:
         result = agent.call("guest-exec-status", pid=pid)
         if result.get("exited"):
-            raise RuntimeError("Recovery exited before the requested cut checkpoint")
+            raise RuntimeError("Recovery exited before checkpoint: "
+                               + json.dumps({"exitcode": result.get("exitcode"),
+                                             "stdout": decode(result), "stderr": decode(result, "err-data")}))
         marker = agent.execute("/bin/cat", ["/run/supra-qa-cut/checkpoint"], timeout=5)
         if marker.get("exitcode") == 0:
             if decode(marker).strip() != phase:
@@ -109,9 +111,19 @@ def run(args):
                 agent.put("/tmp/supra-qa-cut.sh", GUEST.read_bytes())
                 report["fixture"] = checked(agent, "/bin/sh /tmp/supra-qa-cut.sh prepare", 120)
                 pid = agent.call("guest-exec", path="/bin/sh",
-                    arg=["/tmp/supra-qa-cut.sh", "run", args.phase],
-                    **{"capture-output": False})["pid"]
-                wait_checkpoint(agent, pid, args.phase)
+                    arg=["-x", "/tmp/supra-qa-cut.sh", "run", args.phase],
+                    **{"capture-output": True})["pid"]
+                try:
+                    wait_checkpoint(agent, pid, args.phase)
+                except (RuntimeError, TimeoutError):
+                    for name in ("helper.log", "checkpoint"):
+                        try:
+                            data = agent.get("/run/supra-qa-cut/" + name, limit=1024*1024)
+                            (out / ("failure-" + name)).write_bytes(data)
+                            report[name] = data.decode(errors="replace")
+                        except (OSError, RuntimeError, ValueError) as exc:
+                            report[name + "_error"] = str(exc)
+                    raise
                 report["checkpoint"] = args.phase
                 (out / "helper-before-cut.log").write_bytes(agent.get("/run/supra-qa-cut/helper.log", limit=1024*1024))
                 # No QMP quit, guest shutdown, guest sync, or graceful termination.

@@ -73,7 +73,10 @@ if [ "$SUPRA_QA_CUT_PHASE" = before-backup-rename ]; then pause; fi
 if [ "$SUPRA_QA_CUT_PHASE" = after-backup-rename ]; then pause; fi
 WRAPPER
     chmod 0700 "$work/bin/python3" "$work/bin/mv"
-    PATH="$work/bin:$PATH" /usr/local/sbin/supralinux-recover --device "$dev" --snapshot 1 --yes --progress=json > "$work/helper.log" 2>&1
+    # Force a known tool path; do not depend on the agent's inherited PATH.
+    PATH="$work/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    export PATH
+    /usr/local/sbin/supralinux-recover --device "$dev" --snapshot 1 --yes --progress=json > "$work/helper.log" 2>&1
     # The harness must hard-stop at a checkpoint, never accept normal completion.
     exit 3
     ;;
