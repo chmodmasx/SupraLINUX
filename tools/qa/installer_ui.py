@@ -60,14 +60,25 @@ def click(qmp, x, y):
 
 
 def key(qmp, *keys):
-    qmp.call("send-key", {"keys": [{"type": "qcode", "data": k} for k in keys], "hold-time": 70})
-    time.sleep(0.12)
+    """Synchronous press/release events; avoid asynchronous send-key timers."""
+    if not keys:
+        raise ValueError("Empty key sequence")
+    def event(k, down):
+        return {"type": "key", "data": {"key": {"type": "qcode", "data": k}, "down": down}}
+    qmp.call("input-send-event", {"events": [event(k, True) for k in keys]})
+    time.sleep(0.20)
+    qmp.call("input-send-event", {"events": [event(k, False) for k in reversed(keys)]})
+    time.sleep(0.30)
 
 
 def field(qmp, x, y, value):
     if not value or any(c not in "abcdefghijklmnopqrstuvwxyz0123456789" for c in value):
         raise ValueError("Only lowercase ASCII test values accepted")
     click(qmp, x, y)
+    time.sleep(0.40)
     key(qmp, "ctrl", "a")
+    key(qmp, "backspace")
     for c in value:
         key(qmp, c)
+    # Let the last character and Qt validation settle before focus changes.
+    time.sleep(0.70)

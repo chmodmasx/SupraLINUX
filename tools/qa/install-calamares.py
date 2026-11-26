@@ -119,7 +119,8 @@ def select_storage(qmp, agent, output, scenario):
         frame(qmp, output, "partition-encryption")
         field(qmp, 450, 550, PASSWORD)
         field(qmp, 780, 550, PASSWORD)
-        time.sleep(4)
+        click(qmp, 1100, 510)
+        time.sleep(2)
         frame(qmp, output, "partition-encryption-filled")
 
 
@@ -168,6 +169,9 @@ def install(args):
                 field(qmp, 300, 170, "supraqatest")
                 field(qmp, 300, 230, PASSWORD)
                 field(qmp, 500, 230, PASSWORD)
+                click(qmp, 1100, 320)
+                time.sleep(2)
+                frame(qmp, output, "users-filled")
                 click(qmp, 1136, 736)
                 expect_page(qmp, output, "summary")
                 report["summary_disk"] = checked(agent, guard)
@@ -228,7 +232,7 @@ def install(args):
             result = subprocess.run([sys.executable, str(ROOT / "tools/qa/boot-installed.py"),
                 str(disk), str(output / "installed"), "--mode", "uefi",
                 "--firmware-vars", str(runtime / "OVMF_VARS.fd"), "--filesystem", filesystem,
-                "--user", USER, "--live-machine-id", live_id], check=False)
+                "--user", USER, "--live-machine-id", live_id, "--verify-greeter"], check=False)
             report["installed_exitcode"] = result.returncode
             report["status"] = "PASS" if result.returncode == 0 else "FAIL"
     (output / "result.json").write_text(json.dumps(report, indent=2)+"\n")

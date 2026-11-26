@@ -47,3 +47,21 @@ class InstallerUITests(unittest.TestCase):
         self.assertFalse(events[2][0]["data"]["down"])
         with self.assertRaises(ValueError):
             ui.click(qmp, -1, 736)
+
+    def test_key_events_release_in_reverse_order(self):
+        qmp = Mock()
+        with patch.object(ui.time, "sleep"):
+            ui.key(qmp, "ctrl", "a")
+        events = [call.args[1]["events"] for call in qmp.call.call_args_list]
+        self.assertEqual([[e["data"]["key"]["data"] for e in batch] for batch in events],
+                         [["ctrl", "a"], ["a", "ctrl"]])
+        self.assertTrue(all(e["data"]["down"] for e in events[0]))
+        self.assertTrue(all(not e["data"]["down"] for e in events[1]))
+
+    def test_field_clears_previous_value_and_waits_after_typing(self):
+        qmp = Mock()
+        with patch.object(ui.time, "sleep") as sleep, patch.object(ui, "click"), patch.object(ui, "key") as key:
+            ui.field(qmp, 300, 110, "supraqa")
+        self.assertEqual([call.args[1:] for call in key.call_args_list],
+                         [("ctrl", "a"), ("backspace",), *[(c,) for c in "supraqa"]])
+        self.assertEqual(sleep.call_args.args, (0.70,))

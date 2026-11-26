@@ -54,3 +54,15 @@ no-error completion log before reboot. The encryption screenshot from
 15093780002 shows the two password fields at y550. Fill those disposable
 fields and navigate to the summary, requiring the separate ext4 /boot plan;
 no encrypted disk writes authorized until plan and unlock are verified.
+
+## Third matrix: input reliability and visible greeter
+
+Run 45771355048: both unencrypted installations completed and booted, with
+six of seven contract checks passing. Actual useradd in both logs was
+supraq, not supraqa; hostname supraqates was also truncated in the earlier
+successful run. LUKS2 screenshot showed mismatched password lengths,
+a disabled Next button, and the intended EFI/ext4 /boot/LUKS2 layout.
+Replace asynchronous send-key with explicit press/release input events and
+settling delays; capture filled fields. Do not loosen the user assertion.
+Merge current testing into this branch (includes #24 and #26), enable the
+optional greeter gate and direct unencrypted root check. LUKS2 stays preview.
