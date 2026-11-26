@@ -12,6 +12,10 @@ on:
       - 'tools/qa/recovery-live-metrics.py'
       - 'tools/qa/guest/recovery.sh'
       - 'tools/qa/guest/live-metrics.sh'
+      - 'tools/qa/candidate-extra-probes.py'
+      - 'tools/qa/guest/atomic-exchange.sh'
+      - 'tools/qa/installed-contract.py'
+      - 'tests/test_candidate_extra_probes.py'
   workflow_dispatch:
 
 permissions:
@@ -207,5 +211,49 @@ jobs:
         with:
           name: testing-live-probe-${{ matrix.mode }}
           path: ${{ runner.temp }}/live-probe/
+          if-no-files-found: warn
+          retention-days: 7
+
+  extra-probe:
+    needs: iso
+    name: 'Live QA extended (${{ matrix.scenario }})'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        scenario: [atomic-exchange, zram-2048, zram-4096, zram-8192, zram-12288]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: testing-iso
+          path: ${{ runner.temp }}/extra-iso
+      - name: Install QEMU and verify KVM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils ovmf
+          test -c /dev/kvm
+          sudo chgrp "$(id -gn)" /dev/kvm
+          sudo chmod g+rw /dev/kvm
+          python3 tools/ci/check-kvm.py
+      - name: Verify same-run ISO and run extended probe
+        env:
+          SCENARIO: ${{ matrix.scenario }}
+        run: |
+          cd "$RUNNER_TEMP/extra-iso"
+          sha256sum -c ./*.iso.sha256
+          shopt -s nullglob
+          isos=(*.iso)
+          test "${#isos[@]}" -eq 1
+          python3 "$GITHUB_WORKSPACE/tools/qa/candidate-extra-probes.py" "${isos[0]}" "$RUNNER_TEMP/extra-probe" --scenario "$SCENARIO"
+      - name: Retain extended probe evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: testing-live-extra-${{ matrix.scenario }}
+          path: ${{ runner.temp }}/extra-probe/
           if-no-files-found: warn
           retention-days: 7

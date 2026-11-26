@@ -16,3 +16,12 @@ rename sequence. If supported, use the evidence to design a separately
 reviewed recoverable transaction protocol and fault-injection matrix.
 The candidate workflow uses a temporary cross-run artifact; do not merge
 it unchanged. Integrate successful probes with the same-run ISO job.
+
+## Candidate evidence and permanent CI
+
+Run 45769104623: five of five real KVM probes passed. All ZRAM sizes
+match the policy within tolerance, priority 100. Atomic exchange passed
+with preserved roots and home after clean remount. Static CI 45769104414
+also passed. The temporary cross-run workflow is removed. Extended probes
+now depend on the existing ISO job and verify its same-run checksum;
+no second ISO build. Revalidate the resulting workflow before merging.
