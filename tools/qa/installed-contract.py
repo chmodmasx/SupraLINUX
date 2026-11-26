@@ -93,8 +93,21 @@ def luks2_metadata(raw):
 
 
 def mount_device(mount):
-    number = command("findmnt", "-n", "-o", "MAJ:MIN", "--mountpoint", mount)
-    require(re.fullmatch(r"\d+:\d+", number) is not None, "Invalid mount device identity")
+    # Btrfs mount MAJ:MIN is an anonymous filesystem ID (e.g. 0:30),
+    # not the actual partition or dm device. Resolve the mount source.
+    source = command("findmnt", "-n", "-o", "SOURCE", "--nofsroot", "--mountpoint", mount)
+    require(source.startswith("/dev/") and "\n" not in source, "Invalid mount source")
+    block = Path(source).resolve(strict=True)
+    import stat
+    info = block.stat()
+    require(stat.S_ISBLK(info.st_mode), "Mount source is not a block device")
+    number = f"{os.major(info.st_rdev)}:{os.minor(info.st_rdev)}"
+    if command("findmnt", "-n", "-o", "FSTYPE", "--mountpoint", mount) == "btrfs":
+        # This contract covers single-device installer layouts only.
+        listing = command("btrfs", "filesystem", "show", "--raw", mount)
+        members = re.findall(r"(?m)^\s*devid\s+\d+.*?\bpath\s+(\S+)\s*$", listing)
+        require(len(members) == 1 and Path(members[0]).resolve(strict=True) == block,
+                "Unexpected multi-device or mismatched Btrfs root")
     return Path("/dev/block") / number
 
 
