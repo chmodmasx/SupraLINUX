@@ -24,7 +24,7 @@ printf '<snapshot><type>single</type><date>%s</date><description>QA baseline</de
 printf 'changed\n' > "$mountpoint/@/root-marker"
 sync
 umount "$mountpoint"
-helper=/usr/local/sbin/supralinux-recover
+helper=${SUPRA_QA_RECOVERY_HELPER:-/usr/local/sbin/supralinux-recover}
 test -x "$helper"
 "$helper" --device "$dev" --list-tsv
 "$helper" --device "$dev" --snapshot 1 --yes --progress=json
@@ -35,4 +35,5 @@ test "$(cat "$mountpoint/@snapshots/1/snapshot/root-marker")" = original
 set -- "$mountpoint"/@pre-rollback-*
 test "$#" -eq 1
 test "$(cat "$1/root-marker")" = changed
+test -z "$(find "$mountpoint" -maxdepth 1 -name '@rollback-*' -print -quit)"
 echo 'ROLLBACK_PASS: root restored, home unchanged, snapshot and prior root retained'
