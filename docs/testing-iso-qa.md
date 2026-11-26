@@ -23,3 +23,5 @@ changing main.
 The first runner attempt established that `/home/runner/work` is not traversable by the mapped uid. CI therefore uses a fresh local clone and staged overlays under `/var/tmp`, without relaxing the runner home permissions. The wrapper preflights mapped uid/gid access before invoking mmdebstrap. The runner reported 87 GiB available, so no tool-cache removal is needed.
 
 The BIOS and UEFI jobs require real KVM acceleration, verify the candidate checksum, check the live Wayland session over QGA, and retain screenshots, console logs and results separately. Neither job runs Calamares yet.
+
+The live matrix also includes UEFI Secure Boot with Microsoft-enrolled OVMF variables. A guest must report SecureBoot=1 and SetupMode=0; firmware configuration alone is insufficient. All three modes require the splash to exit, responsive Plasma D-Bus and two consecutive readiness samples before mandatory screenshot evidence. This is still live QA, not installed-system certification.
