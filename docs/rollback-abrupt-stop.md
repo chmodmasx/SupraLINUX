@@ -24,3 +24,9 @@ Run 45785776774: all four cases exited before reaching their checkpoint;
 no abrupt stop or replay occurred. Retain guest shell trace and helper log
 on early exit, and explicitly set the QA wrapper PATH. No fault-tolerance
 result is claimed. Keep the original pinned ISO and helper hash.
+
+Run 45852386149 showed the real helper completed normally without reaching
+any pause. A likely cause is execution restriction on /run; move wrappers
+into a fresh /tmp directory, verify their direct execution and inherited
+PATH in a child shell, then invoke the unchanged packaged helper. This is
+an instrumentation hypothesis, not a demonstrated filesystem fault.
