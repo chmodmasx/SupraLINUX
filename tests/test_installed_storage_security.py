@@ -37,3 +37,19 @@ class StorageSecurityTests(unittest.TestCase):
                     valid.replace("none", "/path/to/key"), valid.replace("root ", "wrong ")):
             with self.assertRaises(ValueError):
                 contract.crypttab_entry(bad, "root", uuid)
+
+    def test_mount_device_uses_real_source_not_anonymous_btrfs_id(self):
+        from unittest.mock import patch, MagicMock
+        import stat
+        import os
+        block = MagicMock()
+        block.stat.return_value.st_mode = stat.S_IFBLK
+        block.stat.return_value.st_rdev = os.makedev(252, 2)
+        path = MagicMock()
+        path.resolve.return_value = block
+        # /dev/block/252:2 is constructed via the final Path call.
+        with patch.object(contract, "command", side_effect=[
+                "/dev/vda2", "btrfs", "devid 1 size 100 used 20 path /dev/vda2"
+        ]) as command, patch.object(contract, "Path", side_effect=[path, path, Path("/dev/block")]):
+            self.assertEqual(contract.mount_device("/"), Path("/dev/block/252:2"))
+            self.assertIn("--nofsroot", command.call_args_list[0].args)

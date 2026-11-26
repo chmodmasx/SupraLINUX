@@ -52,7 +52,7 @@ def command_line(disk, output, runtime, mode, firmware_vars=None):
 
 def contract_arguments(mode, filesystem, user, live_machine_id, inventory):
     args = ["--mode", mode, "--filesystem", filesystem, "--user", user,
-            "--live-machine-id", live_machine_id]
+            "--live-machine-id", live_machine_id, "--encryption", "none"]
     names = {"supralinux-defaults", "supralinux-kdeconnect-sftp"}
     versions = {entry["source"]: entry["version"] for entry in inventory["packages"]
                 if entry["source"] in names}
