@@ -1,0 +1,58 @@
+name: Candidate abrupt rollback stop
+on:
+  pull_request:
+    branches: [testing]
+    paths:
+      - '.github/workflows/candidate-rollback-cut.yml'
+      - 'tools/qa/rollback-abrupt-stop.py'
+      - 'tools/qa/guest/rollback-cut.sh'
+      - 'tests/test_rollback_abrupt_stop.py'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: candidate-rollback-cut-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  cut:
+    name: 'Rollback cut (${{ matrix.phase }})'
+    runs-on: ubuntu-26.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        phase: [before-exchange, after-exchange, before-backup-rename, after-backup-rename]
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: testing-iso
+          run-id: 45771451393
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/candidate
+      - name: Prepare KVM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils ovmf
+          test -c /dev/kvm
+          sudo chgrp "$(id -gn)" /dev/kvm
+          sudo chmod g+rw /dev/kvm
+          python3 tools/ci/check-kvm.py
+      - name: Verify packaged helper ISO and interrupt disposable guest
+        env:
+          PHASE: ${{ matrix.phase }}
+        run: |
+          cd "$RUNNER_TEMP/candidate"
+          iso=supralinux-aurora-1.0.0-amd64-20261126T070509Z-gfdd8e33.iso
+          echo "9a402d1fd44670f35e4b7a5a18dd2a37fd948a77d179f8e51788b58688ee2c21  $iso" | sha256sum -c -
+          python3 "$GITHUB_WORKSPACE/tools/qa/rollback-abrupt-stop.py" "$iso" "$RUNNER_TEMP/cut" --phase "$PHASE"
+      - name: Retain evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-rollback-cut-${{ matrix.phase }}
+          path: ${{ runner.temp }}/cut/
+          if-no-files-found: warn
+          retention-days: 7
