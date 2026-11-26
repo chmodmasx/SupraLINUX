@@ -42,3 +42,15 @@ only explores the encryption controls and preserves the blank disk; status
 DISCOVERY_READY is not an installation or encryption PASS. All jobs use the
 same pinned ISO, isolated disposable disks and fail-fast false. No disk
 images are published. This temporary workflow remains experimental.
+
+## Second matrix
+
+Run 45769015656: Btrfs installation and disk-only first boot PASS (all seven
+installed contract checks), EXT4 PREVIEW_READY and LUKS2 DISCOVERY_READY.
+The EXT4 confirmation crop from artifact 15092843015 matches the reviewed
+Btrfs crop exactly; generated root plan is ext4. Enable commit and pass the
+actual filesystem to the installed checker. Require the explicit Calamares
+no-error completion log before reboot. The encryption screenshot from
+15093780002 shows the two password fields at y550. Fill those disposable
+fields and navigate to the summary, requiring the separate ext4 /boot plan;
+no encrypted disk writes authorized until plan and unlock are verified.

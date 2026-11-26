@@ -53,7 +53,7 @@ jobs:
           iso=supralinux-aurora-1.0.0-amd64-20261126T041016Z-g58f44e6.iso
           echo "058c11f8e46f7b2e0177208e02e597e139e7e15ad3ce2774708dbfced44207df  $iso" | sha256sum -c -
           args=(--scenario "$SCENARIO")
-          if [[ "$SCENARIO" == btrfs ]]; then
+          if [[ "$SCENARIO" == btrfs || "$SCENARIO" == ext4 ]]; then
             args+=(--confirm 736 422 402 337 483 102 0aef032d8ffbc53d58717d6b6398997829864e821535ce060d05ac6a807f2e16)
           fi
           python3 "$GITHUB_WORKSPACE/tools/qa/install-calamares.py" "$iso" "$RUNNER_TEMP/transaction" "${args[@]}"

@@ -99,7 +99,7 @@ def prepare_welcome(qmp, agent, output):
 
 
 def select_storage(qmp, agent, output, scenario):
-    """Only the observed Btrfs path may commit; explore alternatives separately."""
+    """Choose the reviewed storage controls on a disposable disk."""
     click(qmp, 206, 71)
     time.sleep(4)
     frame(qmp, output, "partition-selected")
@@ -114,12 +114,13 @@ def select_storage(qmp, agent, output, scenario):
         time.sleep(3)
         frame(qmp, output, "partition-ext4")
     elif scenario == "luks2":
-        # Explore encryption controls without unreviewed password coordinates.
         click(qmp, 206, 550)
         time.sleep(3)
         frame(qmp, output, "partition-encryption")
-        return False
-    return True
+        field(qmp, 450, 550, PASSWORD)
+        field(qmp, 780, 550, PASSWORD)
+        time.sleep(4)
+        frame(qmp, output, "partition-encryption-filled")
 
 
 def install(args):
@@ -158,12 +159,8 @@ def install(args):
                 for step in ("location", "keyboard", "partition"):
                     click(qmp, 1136, 736)
                     expect_page(qmp, output, step)
-                navigate = select_storage(qmp, agent, output, args.scenario)
+                select_storage(qmp, agent, output, args.scenario)
                 report["partition_disk"] = checked(agent, guard)
-                if not navigate:
-                    report["status"] = "DISCOVERY_READY"
-                    report["scope"] = "encryption control discovery only"
-                    raise StopIteration
                 click(qmp, 1136, 736)
                 expect_page(qmp, output, "users")
                 field(qmp, 300, 50, USER)
@@ -177,6 +174,9 @@ def install(args):
                 filesystem = "ext4" if args.scenario == "ext4" else "btrfs"
                 checked(agent, "grep -A1 'mountPoint: :.*\"/\"' /tmp/supra-qa-calamares.log | grep -q 'fs: :.*\"" + filesystem + "\"'")
                 report["planned_root_filesystem"] = filesystem
+                if args.scenario == "luks2":
+                    checked(agent, "grep -A1 'mountPoint: :.*\"/boot\"' /tmp/supra-qa-calamares.log | grep -q 'fs: :.*\"ext4\"'")
+                    report["planned_separate_boot"] = True
                 before = crop_digest(output / "summary.ppm", 250, 150, 780, 480)
                 click(qmp, 1136, 736)
                 time.sleep(3)
@@ -199,12 +199,9 @@ def install(args):
                     expect_page(qmp, output, "install", 45)
                     expect_page(qmp, output, "finished", 1800)
                     # A completed GUI alone is insufficient; inspect the disk and boot it.
-                    checked(agent, "sync; test -b /dev/vda1; test -b /dev/vda2; lsblk -o NAME,FSTYPE,SERIAL /dev/vda")
+                    report["installed_disk"] = checked(agent, "grep -q 'Installation finished. No error reported.' /tmp/supra-qa-calamares.log; sync; test -b /dev/vda1; test -b /dev/vda2; lsblk -o NAME,FSTYPE,SERIAL /dev/vda")
                     report["status"] = "INSTALL_FINISHED"
                     ready_for_boot = True
-        except StopIteration:
-            if report["status"] != "DISCOVERY_READY":
-                raise
         except (OSError, ValueError, RuntimeError, TimeoutError, subprocess.SubprocessError) as exc:
             report["error"] = str(exc)
         finally:
@@ -230,13 +227,13 @@ def install(args):
         if ready_for_boot:
             result = subprocess.run([sys.executable, str(ROOT / "tools/qa/boot-installed.py"),
                 str(disk), str(output / "installed"), "--mode", "uefi",
-                "--firmware-vars", str(runtime / "OVMF_VARS.fd"), "--filesystem", "btrfs",
+                "--firmware-vars", str(runtime / "OVMF_VARS.fd"), "--filesystem", filesystem,
                 "--user", USER, "--live-machine-id", live_id], check=False)
             report["installed_exitcode"] = result.returncode
             report["status"] = "PASS" if result.returncode == 0 else "FAIL"
     (output / "result.json").write_text(json.dumps(report, indent=2)+"\n")
     print(json.dumps(report, indent=2))
-    return 0 if report["status"] in ("DISCOVERY_READY", "PREVIEW_READY", "PASS") else 1
+    return 0 if report["status"] in ("PREVIEW_READY", "PASS") else 1
 
 
 if __name__ == "__main__":
@@ -246,6 +243,6 @@ if __name__ == "__main__":
     parser.add_argument("--confirm", nargs=7, metavar=("X", "Y", "LEFT", "TOP", "WIDTH", "HEIGHT", "SHA256"))
     parser.add_argument("--scenario", choices=["btrfs", "ext4", "luks2"], default="btrfs")
     args = parser.parse_args()
-    if args.confirm and args.scenario != "btrfs":
-        parser.error("Only the reviewed Btrfs confirmation is currently authorized")
+    if args.confirm and args.scenario == "luks2":
+        parser.error("Encrypted commit requires a reviewed plan and unlock harness")
     raise SystemExit(install(args))
