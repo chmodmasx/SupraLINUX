@@ -30,3 +30,13 @@ class LiveProbeTests(unittest.TestCase):
 
     def test_boot_helper_is_from_current_source(self):
         self.assertTrue(callable(probes.load_boot().command_line))
+
+    def test_candidate_backend_has_no_root_rename_gap(self):
+        source = (ROOT / "installer/recovery/supralinux-recover.sh").read_text()
+        subprocess.run(["sh", "-n"], input=source, text=True, check=True)
+        self.assertIn("libc.renameat2", source)
+        self.assertIn("flock -n 9", source)
+        self.assertNotIn('mv "$btrfs/@"', source)
+        self.assertNotIn('mv "$new_root" "$btrfs/@"', source)
+        self.assertLess(source.index('btrfs filesystem sync "$btrfs"'), source.index("libc.renameat2"))
+        self.assertLess(source.index("libc.renameat2"), source.index('mv -T -- "$new_root" "$old_root"'))
