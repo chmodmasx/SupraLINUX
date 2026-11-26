@@ -1,0 +1,53 @@
+name: Local ISO command QA
+
+on:
+  pull_request:
+    branches: [testing]
+    paths:
+      - '.github/workflows/local-iso-qa.yml'
+      - 'tools/live/local-iso.sh'
+      - 'Makefile'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: local-iso-qa-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  make-iso:
+    name: Build testing candidate through make iso
+    runs-on: ubuntu-26.04
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Install declared host dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends build-essential dpkg-dev debhelper gettext golang-go mmdebstrap uidmap squashfs-tools xorriso mtools dosfstools ubuntu-keyring git python3 sudo util-linux make
+      - name: Exercise local entry point
+        run: |
+          set -o pipefail
+          bash -n tools/live/local-iso.sh
+          work=$(mktemp -d /var/tmp/supra-make-qa-XXXXXXXX)
+          chmod 0755 "$work"
+          SUPRALINUX_WORKSPACE="$work" make iso 2>&1 | tee "$RUNNER_TEMP/make-iso.log"
+          test -z "$(git status --porcelain --untracked-files=no)"
+          mapfile -t candidates < <(find "$work" -name '*.iso' -type f)
+          test "${#candidates[@]}" -eq 1
+          cd "$(dirname "${candidates[0]}")"
+          sha256sum -c ./*.iso.sha256
+          cp ./*.iso.sha256 "$RUNNER_TEMP/local-iso.sha256"
+      - name: Retain local build evidence only
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: make-iso-evidence
+          path: |
+            ${{ runner.temp }}/make-iso.log
+            ${{ runner.temp }}/local-iso.sha256
+          if-no-files-found: warn
+          retention-days: 7
