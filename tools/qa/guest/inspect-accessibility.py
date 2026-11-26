@@ -19,6 +19,7 @@ PROPERTIES = "org.freedesktop.DBus.Properties"
 
 def parse_refs(raw):
     # gdbus prints GVariant objectpath annotations on the first array element.
+    raw = raw.replace("@a(so) []", "[]")
     value = ast.literal_eval(re.sub(r"\bobjectpath\s+(?=['\"])", "", raw.strip()))
     if not isinstance(value, tuple) or len(value) != 1 or not isinstance(value[0], list):
         raise ValueError("Unexpected accessibility children response")
@@ -104,8 +105,10 @@ def inspect(bus, limit=160):
                 report["error"] = str(exc)
                 break
     report["truncated"] = bool(queue)
-    if report["nodes"] and not report.get("error"):
+    if report["nodes"] and not report.get("error") and all("error" not in node for node in report["nodes"]) and not report["truncated"]:
         report["status"] = "PASS"
+    elif not report.get("error"):
+        report["error"] = "Incomplete accessibility tree"
     return report
 
 
