@@ -1,5 +1,6 @@
 """QMP input and screenshot checkpoints for the observed 1280x800 Calamares UI."""
 import hashlib
+import time
 
 WIDTH, HEIGHT = 1280, 800
 PAGES = ("welcome", "location", "keyboard", "partition", "users", "summary", "install", "finished")
@@ -44,6 +45,7 @@ def click(qmp, x, y):
 
 def key(qmp, *keys):
     qmp.call("send-key", {"keys": [{"type": "qcode", "data": k} for k in keys], "hold-time": 70})
+    time.sleep(0.12)
 
 
 def field(qmp, x, y, value):
