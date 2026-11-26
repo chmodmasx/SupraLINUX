@@ -125,6 +125,14 @@ if findmnt -rn -S /dev/vda; then exit 1; fi
 
 
 
+def accessibility_tree(agent, output, name):
+    source = Path(__file__).resolve().parent / "guest/inspect-accessibility.py"
+    agent.put("/tmp/supra-qa-inspect-accessibility.py", source.read_bytes())
+    report = guest(agent, 'uid=$(id -u supralinux); runuser -u supralinux -- env XDG_RUNTIME_DIR=/run/user/"$uid" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$uid"/bus python3 /tmp/supra-qa-inspect-accessibility.py --timeout 35', timeout=45)
+    (output / (name + ".json")).write_text(report["stdout"])
+    return {"exitcode": report["exitcode"], "stderr": report["stderr"]}
+
+
 def run(args):
     boot = load_boot(args.boot_helper)
     output = args.output.resolve()
@@ -185,6 +193,21 @@ def run(args):
                 time.sleep(4)
                 qmp.call("screendump", {"filename": str(output / "partition-options.ppm")})
                 report["partition_options_log"] = guest(agent, "tail -n 50 /tmp/supra-qa-calamares.log")
+                if "InstallChoice Config::Erase" not in report["partition_options_log"]["stdout"]:
+                    raise RuntimeError("Erase selection not confirmed in installer log")
+                verify_frame(output / "partition-options.ppm")
+                report["partition_accessibility"] = accessibility_tree(agent, output, "partition-tree")
+                report["before_users_disk_guard"] = guest(agent, DISK_GUARD)
+                if report["before_users_disk_guard"]["exitcode"] != 0:
+                    raise RuntimeError("Disk topology changed before confirmation")
+                # In the observed default Btrfs partition page, Next opens Users.
+                # Never click Install or confirm writes in this discovery run.
+                click(qmp, 1136, 736)
+                time.sleep(5)
+                qmp.call("screendump", {"filename": str(output / "users.ppm")})
+                verify_frame(output / "users.ppm")
+                report["users_accessibility"] = accessibility_tree(agent, output, "users-tree")
+                report["users_log"] = guest(agent, "tail -n 50 /tmp/supra-qa-calamares.log")
                 report["status"] = "PASS"
         except (OSError, ValueError, RuntimeError, TimeoutError, subprocess.SubprocessError) as exc:
             report["error"] = str(exc)
