@@ -23,5 +23,10 @@ class LiveBootTests(unittest.TestCase):
 
     def test_guest_check_requires_live_wayland_session(self):
         for required in ("kwin_wayland", "plasmashell", "/cdrom/casper",
-                         "loginctl show-session", "wayland", "supralinux"):
+                         "loginctl show-session", "wayland", "supralinux",
+                         "ksplashqml", "org.kde.plasmashell", "org.freedesktop.DBus.Peer Ping"):
             self.assertIn(required, boot.CHECK)
+
+    def test_secure_boot_contract_checks_guest_enforcement(self):
+        self.assertIn('test "$secure" = 1', boot.SECURE_CHECK)
+        self.assertIn('test "$setup" = 0', boot.SECURE_CHECK)
