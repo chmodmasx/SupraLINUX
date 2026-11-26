@@ -33,14 +33,30 @@ def crop_digest(path, x, y, w, h):
     return hashlib.sha256(b"".join(raw[(row*WIDTH+x)*3:(row*WIDTH+x+w)*3] for row in range(y,y+h))).hexdigest()
 
 
+# Stable regions compared against three successful discovery frames and the
+# unobscured final frame of the failed transaction. Scoped to the pinned ISO.
+WELCOME_LOGO = "4cb7285808803abfb0004592b4ef6c1459405fc80bbe517c9600fb33a78610bf"
+WELCOME_NEXT = "385639e223df9c5a5debc05753462f0838f595f51841ad0323f62152702b2ffa"
+
+
+def welcome_ready(path):
+    """Sidebar alone cannot distinguish an obscured or inactive installer."""
+    return (page(path) == "welcome"
+            and crop_digest(path, 430, 300, 420, 290) == WELCOME_LOGO
+            and crop_digest(path, 1100, 726, 69, 21) == WELCOME_NEXT)
+
+
 def click(qmp, x, y):
     if not (0 <= x < WIDTH and 0 <= y < HEIGHT):
         raise ValueError("Click outside framebuffer")
     qmp.call("input-send-event", {"events": [
         {"type": "abs", "data": {"axis": "x", "value": round(x * 32767 / (WIDTH - 1))}},
-        {"type": "abs", "data": {"axis": "y", "value": round(y * 32767 / (HEIGHT - 1))}},
-        {"type": "btn", "data": {"down": True, "button": "left"}}]})
+        {"type": "abs", "data": {"axis": "y", "value": round(y * 32767 / (HEIGHT - 1))}}]})
+    time.sleep(0.15)
+    qmp.call("input-send-event", {"events": [{"type": "btn", "data": {"down": True, "button": "left"}}]})
+    time.sleep(0.15)
     qmp.call("input-send-event", {"events": [{"type": "btn", "data": {"down": False, "button": "left"}}]})
+    time.sleep(0.15)
 
 
 def key(qmp, *keys):

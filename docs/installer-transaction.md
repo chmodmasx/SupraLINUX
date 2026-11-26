@@ -12,3 +12,21 @@ within that crop. It refuses a changed dialog, requires the finished page,
 and calls the installed-system contract by rebooting the same virtual disk
 with no ISO and preserved UEFI variables. Commit path is unvalidated until
 a real run. The temporary artifact selector must not merge unchanged.
+
+## Welcome readiness regression
+
+Run 45754757653 failed at the first transition. Its initial welcome.ppm
+shows KDE's Welcome Center in front of Calamares, with inactive Next; its
+later frames match the unobscured welcome logo and Next regions of the
+successful discovery run 45752676747. Calamares logs show asynchronous
+requirements finished after the window appeared. The previous sidebar
+classifier accepted the obscured frame. This is evidence of a readiness
+and focus defect in QA, not an established installer defect.
+
+Wait for completed requirements, use a neutral focus click outside controls,
+and require two unobscured welcome samples before navigation. The two crop
+digests are from the pinned candidate and discovery frames, excluding the
+clock. Unknown frames fail closed. Separate tablet motion, press and release
+to avoid timing ambiguity. Retain before/after focus frames. No change to
+the product or disk guard; no blind retries of Next or confirmation.
+The crop profile and runtime behavior require revalidation for other ISOs.

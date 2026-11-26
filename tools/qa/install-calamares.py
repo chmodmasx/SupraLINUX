@@ -17,7 +17,7 @@ import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from package_smoke import wait_agent
-from installer_ui import click, key, field, page, crop_digest
+from installer_ui import click, key, field, page, crop_digest, welcome_ready
 
 ROOT = Path(__file__).resolve().parents[2]
 GUEST = Path(__file__).resolve().parent / "guest"
@@ -75,6 +75,29 @@ def wait_ready(agent, script, seconds):
     raise RuntimeError("Guest readiness timeout")
 
 
+def prepare_welcome(qmp, agent, output):
+    """Focus the real installer only after its asynchronous requirements finish."""
+    wait_ready(agent, "grep -q 'All requirements have been checked' /tmp/supra-qa-calamares.log", 90)
+    expect_page(qmp, output, "welcome", 90)
+    # The first failed run showed plasma-welcome over Calamares. A neutral
+    # area outside that window and all controls was verified in the artifacts.
+    # Never click Next to acquire focus or when readiness is ambiguous.
+    for attempt in range(1, 4):
+        before = frame(qmp, output, f"welcome-before-focus-{attempt}")
+        if page(before) != "welcome":
+            raise RuntimeError("Unexpected page before installer focus")
+        click(qmp, 1150, 100)
+        time.sleep(2)
+        after = frame(qmp, output, f"welcome-after-focus-{attempt}")
+        if page(after) != "welcome":
+            raise RuntimeError("Unexpected page after neutral focus click")
+        if welcome_ready(after):
+            time.sleep(2)
+            if welcome_ready(frame(qmp, output, "welcome-ready")):
+                return
+    raise RuntimeError("Calamares welcome not visibly ready after bounded focus attempts")
+
+
 def install(args):
     boot = load_boot()
     output = args.output.resolve()
@@ -106,7 +129,8 @@ def install(args):
                 guard = (GUEST / "installer-disk-guard.sh").read_text()
                 report["initial_disk"] = checked(agent, guard)
                 checked(agent, (GUEST / "launch-calamares.sh").read_text())
-                expect_page(qmp, output, "welcome", 90)
+                prepare_welcome(qmp, agent, output)
+                report["welcome_ready"] = True
                 for step in ("location", "keyboard", "partition"):
                     click(qmp, 1136, 736)
                     expect_page(qmp, output, step)
