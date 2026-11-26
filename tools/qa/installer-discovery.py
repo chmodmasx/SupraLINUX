@@ -101,12 +101,23 @@ def verify_frame(path):
 ACCESSIBILITY = r"""
 set -eu
 uid=$(id -u supralinux)
-runuser -u supralinux -- env XDG_RUNTIME_DIR=/run/user/"$uid" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$uid"/bus sh -c '
-    address=$(gdbus call --session --dest org.a11y.Bus --object-path /org/a11y/bus --method org.a11y.Bus.GetAddress | cut -d "\047" -f 2)
-    test -n "$address"
-    gdbus call --address "$address" --dest org.a11y.atspi.Registry --object-path /org/a11y/atspi/accessible/root --method org.a11y.atspi.Accessible.GetChildren
-'
+runuser -u supralinux -- env XDG_RUNTIME_DIR=/run/user/"$uid" DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/"$uid"/bus python3 - <<'PY'
+import ast, subprocess
+raw = subprocess.check_output(["gdbus", "call", "--session", "--dest", "org.a11y.Bus", "--object-path", "/org/a11y/bus", "--method", "org.a11y.Bus.GetAddress"], text=True)
+address, = ast.literal_eval(raw.strip())
+print(subprocess.check_output(["gdbus", "call", "--address", address, "--dest", "org.a11y.atspi.Registry", "--object-path", "/org/a11y/atspi/accessible/root", "--method", "org.a11y.atspi.Accessible.GetChildren"], text=True))
+PY
 """
+
+DISK_GUARD = r"""
+set -eu
+test "$(lsblk -dn -o NAME,TYPE | awk '$2 == "disk" {print $1}')" = vda
+test "$(lsblk -bdn -o SIZE /dev/vda)" = 42949672960
+test "$(lsblk -rn -o NAME /dev/vda | wc -l)" -eq 1
+test -z "$(lsblk -dn -o FSTYPE /dev/vda)"
+test "$(lsblk -dn -o SERIAL /dev/vda | tr -d ' ')" = SUPRAQA-INSTALL
+"""
+
 
 
 def run(args):
@@ -122,7 +133,8 @@ def run(args):
             disk = runtime / "target.qcow2"
             subprocess.run(["qemu-img", "create", "-f", "qcow2", str(disk), "40G"], check=True)
             cmd = boot.command_line(args.iso.resolve(), output, runtime, "uefi")
-            cmd += ["-drive", f"if=virtio,format=qcow2,file={disk}",
+            cmd += ["-drive", f"if=none,id=target,format=qcow2,file={disk}",
+                    "-device", "virtio-blk-pci,drive=target,serial=SUPRAQA-INSTALL",
                     "-device", "qemu-xhci", "-device", "usb-tablet"]
             with (output / "qemu.log").open("w") as log:
                 process = subprocess.Popen(cmd, stdout=log, stderr=log)
@@ -161,6 +173,13 @@ def run(args):
                     qmp.call("screendump", {"filename": str(frame)})
                     verify_frame(frame)
                     report[f"navigation_{index}"] = guest(agent, "tail -n 30 /tmp/supra-qa-calamares.log")
+                report["disk_guard"] = guest(agent, DISK_GUARD)
+                if report["disk_guard"]["exitcode"] != 0:
+                    raise RuntimeError("Unexpected disk topology")
+                click(qmp, 206, 71)
+                time.sleep(4)
+                qmp.call("screendump", {"filename": str(output / "partition-options.ppm")})
+                report["partition_options_log"] = guest(agent, "tail -n 50 /tmp/supra-qa-calamares.log")
                 report["status"] = "PASS"
         except (OSError, ValueError, RuntimeError, TimeoutError, subprocess.SubprocessError) as exc:
             report["error"] = str(exc)
