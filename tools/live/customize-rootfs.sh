@@ -56,6 +56,25 @@ fi
 
 apt_run update
 
+# Build-only compatibility pin for the locally staged 1.2.7 defaults.
+# The last successful ISO (run 45771451393) used theme 1.3.2; 1.3.3
+# explicitly Breaks defaults < 1.3.0. Never persist this pin in the ISO.
+build_pin="$root/etc/apt/preferences.d/99-supra-qa-overlay.pref"
+if [ -n "${SUPRALINUX_LOCAL_DEBS:-}" ]; then
+    for deb in $SUPRALINUX_LOCAL_DEBS; do
+        if [ "$(dpkg-deb -f "$deb" Package)" = supralinux-defaults ] &&
+           [ "$(dpkg-deb -f "$deb" Version)" = 1.2.7 ]; then
+            if ! chroot "$root" apt-cache show supralinux-theme=1.3.2 >/dev/null 2>&1; then
+                echo "BUILD_BLOCKED: signed theme 1.3.2 is unavailable for defaults 1.2.7" >&2
+                exit 1
+            fi
+            test ! -e "$build_pin"
+            printf 'Package: supralinux-theme\nPin: version 1.3.2\nPin-Priority: 1001\n' > "$build_pin"
+            chroot "$root" apt-cache policy supralinux-theme supralinux-defaults
+        fi
+    done
+fi
+
 # casper is part of the live runtime and comes from the SupraLINUX snapshot
 # so the noswap handling in casper-bottom/13swap ships in the package.
 apt_run install --no-install-recommends casper
@@ -156,6 +175,11 @@ NM
 # testing; it is intentionally not preinstalled in the image.
 
 # The published SupraLINUX and Mozilla sources stay configured for updates.
+if [ -f "$build_pin" ]; then
+    test "$(chroot "$root" dpkg-query -W -f='${Version}' supralinux-theme)" = 1.3.2
+    test "$(chroot "$root" dpkg-query -W -f='${Version}' supralinux-defaults)" = 1.2.7
+    rm -f "$build_pin"
+fi
 chroot "$root" apt-get clean
 
 # A build-time repository URL is only for installing from a local staging

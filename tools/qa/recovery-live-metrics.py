@@ -64,7 +64,20 @@ def run(args):
                 report["desktop_ready_seconds"] = round(time.monotonic() - start, 2)
                 if args.mode == "metrics":
                     time.sleep(30)
-                result = agent.execute("/bin/sh", ["-c", probe_script(args.mode)], timeout=180)
+                script = probe_script(args.mode)
+                if args.recovery_source:
+                    if args.mode != "recovery":
+                        raise ValueError("Source override is only for recovery QA")
+                    import hashlib
+                    data = (ROOT / "installer/recovery/supralinux-recover.sh").read_bytes()
+                    report["recovery_source_sha256"] = hashlib.sha256(data).hexdigest()
+                    # Inject the checked-out helper only into this disposable live guest.
+                    agent.put("/tmp/supra-qa-recover.sh", data)
+                    prepared = agent.execute("/bin/chmod", ["0700", "/tmp/supra-qa-recover.sh"], timeout=10)
+                    if prepared.get("exitcode") != 0:
+                        raise RuntimeError("Could not prepare candidate recovery helper")
+                    script = "SUPRA_QA_RECOVERY_HELPER=/tmp/supra-qa-recover.sh\nexport SUPRA_QA_RECOVERY_HELPER\n" + script
+                result = agent.execute("/bin/sh", ["-c", script], timeout=180)
                 for key in ("out-data", "err-data"):
                     report[key] = base64.b64decode(result.get(key, "")).decode(errors="replace")
                 report["exitcode"] = result.get("exitcode")
@@ -98,4 +111,6 @@ if __name__ == "__main__":
     parser.add_argument("iso", type=Path)
     parser.add_argument("output", type=Path)
     parser.add_argument("--mode", choices=["recovery", "metrics"], required=True)
+    parser.add_argument("--recovery-source", action="store_true",
+                        help="Test exact checked-out helper in guest instead of ISO copy")
     raise SystemExit(run(parser.parse_args()))

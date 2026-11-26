@@ -106,6 +106,12 @@ fi
 fs_type=$(blkid -o value -s TYPE "$device" 2>/dev/null || true)
 [ "$fs_type" = btrfs ] || fail 5 "$device no es un sistema de archivos Btrfs."
 
+# Serialize recovery operations for this block device even through aliases.
+device=$(readlink -f "$device")
+lock_id=$(stat -Lc '%t-%T' "$device")
+exec 9>"/run/lock/supralinux-recovery-$lock_id.lock"
+flock -n 9 || fail 6 "Ya hay otra operación de recuperación para $device."
+
 if findmnt -rn -S "$device" >/dev/null 2>&1; then
     fail 6 "$device ya está montado; desmonta el sistema instalado antes."
 fi
@@ -120,7 +126,9 @@ cleanup() {
     rmdir "$btrfs" 2>/dev/null || true
     rmdir "$mountpoint" 2>/dev/null || true
 }
-trap cleanup EXIT INT TERM
+trap cleanup EXIT
+trap 'exit 130' INT
+trap 'exit 143' TERM
 
 mount -o subvolid=5,rw "$device" "$btrfs" ||
     fail 7 "No se pudo montar $device."
@@ -204,16 +212,40 @@ btrfs subvolume snapshot "$source_snapshot" "$new_root" >&2 ||
 emit_step backup ok
 emit_step restore running
 
-if ! mv "$btrfs/@" "$old_root"; then
-    btrfs subvolume delete "$new_root" >/dev/null 2>&1 || true
-    fail 12 "No se pudo apartar la raíz actual; no se modificó nada."
-fi
-if ! mv "$new_root" "$btrfs/@"; then
-    mv "$old_root" "$btrfs/@" || true
-    fail 13 "No se pudo activar la instantánea; se restauró la raíz anterior."
-fi
+# Validate real subvolumes and persist the prepared snapshot before activation.
+# Never use a pair of renames that temporarily removes @.
+btrfs subvolume show "$btrfs/@" >/dev/null || fail 12 "La raíz no es un subvolumen Btrfs."
+btrfs subvolume show "$new_root" >/dev/null || fail 12 "La raíz preparada no es un subvolumen Btrfs."
+btrfs filesystem sync "$btrfs" >&2 || fail 12 "No se pudo sincronizar la raíz preparada."
+if ! python3 - "$btrfs" "${new_root##*/}" <<'PY'
+import ctypes
+import os
+import sys
 
-sync
+libc = ctypes.CDLL(None, use_errno=True)
+exchange = libc.renameat2
+exchange.argtypes = [ctypes.c_int, ctypes.c_char_p, ctypes.c_int, ctypes.c_char_p, ctypes.c_uint]
+exchange.restype = ctypes.c_int
+fd = os.open(sys.argv[1], os.O_RDONLY | os.O_DIRECTORY)
+try:
+    if exchange(fd, b"@", fd, os.fsencode(sys.argv[2]), 2) != 0:  # RENAME_EXCHANGE
+        error = ctypes.get_errno()
+        raise OSError(error, os.strerror(error))
+finally:
+    os.close(fd)
+PY
+then
+    # If the process was interrupted, the exchange may already have happened.
+    # Keep both subvolumes, and never infer a successful rollback or delete either.
+    fail 12 "Intercambio no confirmado; ambas raíces se conservan. Revisar $new_root."
+fi
+btrfs filesystem sync "$btrfs" >&2 ||
+    fail 13 "Raíz intercambiada; persistencia no confirmada. Raíz anterior conservada en $new_root."
+# Only the backup name changes here. @ stays available throughout.
+mv -T -- "$new_root" "$old_root" ||
+    fail 13 "Raíz restaurada; copia anterior conservada en $new_root."
+btrfs filesystem sync "$btrfs" >&2 ||
+    fail 13 "Raíz restaurada; no se pudo confirmar la persistencia de la copia anterior."
 
 # Keep the three most recent pre-rollback roots. The one just created is the
 # newest; older copies are no longer useful and can fill the filesystem.
