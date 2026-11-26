@@ -1,0 +1,56 @@
+name: Candidate Calamares transaction
+
+on:
+  pull_request:
+    branches: [testing]
+    paths:
+      - '.github/workflows/candidate-install-transaction.yml'
+      - 'tools/qa/install-calamares.py'
+      - 'tools/qa/installer_ui.py'
+      - 'tools/qa/guest/installer-disk-guard.sh'
+      - 'tools/qa/guest/launch-calamares.sh'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: candidate-install-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  transaction:
+    runs-on: ubuntu-26.04
+    timeout-minutes: 50
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: testing-iso
+          run-id: 45752431633
+          github-token: ${{ github.token }}
+          path: ${{ runner.temp }}/candidate
+      - name: Prepare offline KVM
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils ovmf
+          test -c /dev/kvm
+          sudo chgrp "$(id -gn)" /dev/kvm
+          sudo chmod g+rw /dev/kvm
+          python3 tools/ci/check-kvm.py
+      - name: Inspect final installation confirmation
+        run: |
+          cd "$RUNNER_TEMP/candidate"
+          iso=supralinux-aurora-1.0.0-amd64-20261126T041016Z-g58f44e6.iso
+          echo "058c11f8e46f7b2e0177208e02e597e139e7e15ad3ce2774708dbfced44207df  $iso" | sha256sum -c -
+          python3 "$GITHUB_WORKSPACE/tools/qa/install-calamares.py" "$iso" "$RUNNER_TEMP/transaction"
+      - name: Retain installation evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: calamares-transaction
+          path: ${{ runner.temp }}/transaction/
+          if-no-files-found: warn
+          retention-days: 7
