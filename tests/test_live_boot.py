@@ -26,3 +26,7 @@ class LiveBootTests(unittest.TestCase):
                          "loginctl show-session", "wayland", "supralinux",
                          "ksplashqml", "org.kde.plasmashell", "org.freedesktop.DBus.Peer Ping"):
             self.assertIn(required, boot.CHECK)
+
+    def test_secure_boot_contract_checks_guest_enforcement(self):
+        self.assertIn('test "$secure" = 1', boot.SECURE_CHECK)
+        self.assertIn('test "$setup" = 0', boot.SECURE_CHECK)
