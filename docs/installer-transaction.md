@@ -66,3 +66,9 @@ Replace asynchronous send-key with explicit press/release input events and
 settling delays; capture filled fields. Do not loosen the user assertion.
 Merge current testing into this branch (includes #24 and #26), enable the
 optional greeter gate and direct unencrypted root check. LUKS2 stays preview.
+
+Run 45785493220: EXT4 full installation/boot/greeter PASS; LUKS2 preview
+PASS including separate ext4 /boot; Btrfs installed, user and seven other
+checks passed except encryption verification used anonymous MAJ:MIN 0:30.
+Resolve actual block source and require single Btrfs backing member instead.
+The greeter gate remains mandatory for unencrypted commit scenarios.
