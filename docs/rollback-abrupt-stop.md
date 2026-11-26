@@ -1,0 +1,21 @@
+# Abrupt rollback stop QA
+
+Four independent KVM jobs use the already-built #25 ISO (run 45771451393),
+verify its SHA-256 and the exact packaged recovery helper SHA-256. The
+product helper is unchanged. QA-only PATH wrappers pause just before or
+after the real Python exchange, and just before or after the backup
+rename. A host-side SIGKILL stops the exact QEMU child without shutdown;
+a new live VM mounts the same disposable raw disk with normal Btrfs replay.
+
+Before exchange, the current root must remain active; after exchange
+but before sync either complete root is acceptable. After the exchange
+sync the restored root must persist. At every boundary, @ exists,
+the two root markers are complementary, @home and the source snapshot
+are preserved. No repair, automatic replay of the rollback operation,
+or external disk access. The raw test disk uses cache=none; the host
+and physical storage remain powered, so this is a synthetic hard-stop
+experiment, not a physical power-loss or arbitrary in-syscall guarantee.
+
+All four cases are NOT_RUN until CI reports results. This temporary
+cross-run workflow must be replaced with a same-run ISO gate before
+merging; the experiment requires the #25 atomic helper.
