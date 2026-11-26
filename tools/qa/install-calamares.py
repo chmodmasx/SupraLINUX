@@ -180,7 +180,11 @@ def install(args):
                 report["planned_root_filesystem"] = filesystem
                 if args.scenario == "luks2":
                     checked(agent, "grep -A1 'mountPoint: :.*\"/boot\"' /tmp/supra-qa-calamares.log | grep -q 'fs: :.*\"ext4\"'")
+                    checked(agent, "grep -q 'fsName :.*\"luks2\"' /tmp/supra-qa-calamares.log")
                     report["planned_separate_boot"] = True
+                    # Reviewed partition summary region excludes the panel clock.
+                    if crop_digest(output / "summary.ppm", 235, 291, 1034, 337) != "fe6b90835b472a986fc54448a45fbfc210ba3507c25f20671a8e705a7649dd30":
+                        raise RuntimeError("Encrypted partition summary differs from reviewed plan")
                 before = crop_digest(output / "summary.ppm", 250, 150, 780, 480)
                 click(qmp, 1136, 736)
                 time.sleep(3)
@@ -204,6 +208,12 @@ def install(args):
                     expect_page(qmp, output, "finished", 1800)
                     # A completed GUI alone is insufficient; inspect the disk and boot it.
                     report["installed_disk"] = checked(agent, "grep -q 'Installation finished. No error reported.' /tmp/supra-qa-calamares.log; sync; test -b /dev/vda1; test -b /dev/vda2; lsblk -o NAME,FSTYPE,SERIAL /dev/vda")
+                    if args.scenario == "luks2":
+                        report["luks_layout"] = checked(agent,
+                            "test \"$(lsblk -dn -o FSTYPE /dev/vda1)\" = vfat && "
+                            "test \"$(lsblk -dn -o FSTYPE /dev/vda2)\" = ext4 && "
+                            "cryptsetup isLuks --type luks2 /dev/vda3 && "
+                            "lsblk -o NAME,FSTYPE,SERIAL /dev/vda")
                     report["status"] = "INSTALL_FINISHED"
                     ready_for_boot = True
         except (OSError, ValueError, RuntimeError, TimeoutError, subprocess.SubprocessError) as exc:
@@ -228,7 +238,12 @@ def install(args):
                 except subprocess.TimeoutExpired:
                     proc.kill()
                     proc.wait()
-        if ready_for_boot:
+        if ready_for_boot and args.scenario == "luks2":
+            result = subprocess.run([sys.executable, str(ROOT / "tools/qa/boot-encrypted-discovery.py"),
+                str(disk), str(output / "unlock"), "--firmware-vars", str(runtime / "OVMF_VARS.fd")], check=False)
+            report["unlock_discovery_exitcode"] = result.returncode
+            report["status"] = "UNLOCK_DISCOVERY_READY" if result.returncode == 0 else "FAIL"
+        elif ready_for_boot:
             result = subprocess.run([sys.executable, str(ROOT / "tools/qa/boot-installed.py"),
                 str(disk), str(output / "installed"), "--mode", "uefi",
                 "--firmware-vars", str(runtime / "OVMF_VARS.fd"), "--filesystem", filesystem,
@@ -237,7 +252,7 @@ def install(args):
             report["status"] = "PASS" if result.returncode == 0 else "FAIL"
     (output / "result.json").write_text(json.dumps(report, indent=2)+"\n")
     print(json.dumps(report, indent=2))
-    return 0 if report["status"] in ("PREVIEW_READY", "PASS") else 1
+    return 0 if report["status"] in ("PREVIEW_READY", "UNLOCK_DISCOVERY_READY", "PASS") else 1
 
 
 if __name__ == "__main__":
@@ -247,6 +262,4 @@ if __name__ == "__main__":
     parser.add_argument("--confirm", nargs=7, metavar=("X", "Y", "LEFT", "TOP", "WIDTH", "HEIGHT", "SHA256"))
     parser.add_argument("--scenario", choices=["btrfs", "ext4", "luks2"], default="btrfs")
     args = parser.parse_args()
-    if args.confirm and args.scenario == "luks2":
-        parser.error("Encrypted commit requires a reviewed plan and unlock harness")
     raise SystemExit(install(args))

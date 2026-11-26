@@ -72,3 +72,15 @@ PASS including separate ext4 /boot; Btrfs installed, user and seven other
 checks passed except encryption verification used anonymous MAJ:MIN 0:30.
 Resolve actual block source and require single Btrfs backing member instead.
 The greeter gate remains mandatory for unencrypted commit scenarios.
+
+## Encrypted installation discovery branch
+
+Run 45785493220 artifact 15100228650: reviewed summary shows GPT, EFI
+300 MiB, separate ext4 /boot 4 GiB, remaining root LUKS2 with Btrfs inside.
+The confirmation modal crop matches the previous reviewed hash; require
+an additional exact partition-plan crop and log LUKS2 assertion before
+commit. The encrypted disk itself must pass cryptsetup isLuks --type luks2
+and partition filesystem checks. Capture offline disk-only boot frames
+without guessing an unlock prompt. UNLOCK_DISCOVERY_READY is a screenshot
+collection status, not verified unlock or installed-system PASS. The
+existing unencrypted matrix remains independently active on PR #22.

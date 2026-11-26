@@ -1,4 +1,4 @@
-name: Candidate Calamares transaction
+name: Candidate encrypted installation and unlock discovery
 
 on:
   pull_request:
@@ -7,6 +7,7 @@ on:
       - '.github/workflows/candidate-install-transaction.yml'
       - 'tools/qa/install-calamares.py'
       - 'tools/qa/installer_ui.py'
+      - 'tools/qa/boot-encrypted-discovery.py'
       - 'tools/qa/guest/installer-disk-guard.sh'
       - 'tools/qa/guest/launch-calamares.sh'
 
@@ -26,7 +27,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        scenario: [btrfs, ext4, luks2]
+        scenario: [luks2]
     steps:
       - uses: actions/checkout@v5
         with:
@@ -53,7 +54,7 @@ jobs:
           iso=supralinux-aurora-1.0.0-amd64-20261126T041016Z-g58f44e6.iso
           echo "058c11f8e46f7b2e0177208e02e597e139e7e15ad3ce2774708dbfced44207df  $iso" | sha256sum -c -
           args=(--scenario "$SCENARIO")
-          if [[ "$SCENARIO" == btrfs || "$SCENARIO" == ext4 ]]; then
+          if [[ "$SCENARIO" == luks2 ]]; then
             args+=(--confirm 736 422 402 337 483 102 0aef032d8ffbc53d58717d6b6398997829864e821535ce060d05ac6a807f2e16)
           fi
           python3 "$GITHUB_WORKSPACE/tools/qa/install-calamares.py" "$iso" "$RUNNER_TEMP/transaction" "${args[@]}"
