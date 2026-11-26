@@ -85,13 +85,18 @@ def command_line(iso, output, runtime, mode):
         "-device", "virtio-serial-pci",
         "-device", "virtserialport,chardev=qga0,name=org.qemu.guest_agent.0",
     ]
-    if mode == "uefi":
-        code = Path("/usr/share/OVMF/OVMF_CODE_4M.fd")
-        template = Path("/usr/share/OVMF/OVMF_VARS_4M.fd")
+    if mode in ("uefi", "uefi-secure"):
+        secure = mode == "uefi-secure"
+        firmware = Path("/usr/share/OVMF")
+        code = firmware / ("OVMF_CODE_4M.secboot.fd" if secure else "OVMF_CODE_4M.fd")
+        template = firmware / ("OVMF_VARS_4M.ms.fd" if secure else "OVMF_VARS_4M.fd")
         if not code.is_file() or not template.is_file():
-            raise OSError("OVMF 4M firmware unavailable")
+            raise OSError("Required OVMF firmware or variables unavailable")
         variables = runtime / "OVMF_VARS.fd"
         shutil.copyfile(template, variables)
+        if secure:
+            command[command.index("-machine") + 1] = "q35,accel=kvm,smm=on"
+            command += ["-global", "driver=cfi.pflash01,property=secure,value=on"]
         command += ["-drive", f"if=pflash,format=raw,readonly=on,file={code}",
                     "-drive", f"if=pflash,format=raw,file={variables}"]
     return command
@@ -106,9 +111,20 @@ def connect_until(path, process, deadline, qmp=False):
     raise TimeoutError(f"Monitor unavailable: {path.name}; qemu status={process.poll()}")
 
 
-def guest_check(agent):
+SECURE_CHECK = r"""
+set -eu
+secure=$(od -An -tu1 -j4 -N1 /sys/firmware/efi/efivars/SecureBoot-8be4df61-93ca-11d2-aa0d-00e098032b8c | tr -d ' ')
+setup=$(od -An -tu1 -j4 -N1 /sys/firmware/efi/efivars/SetupMode-8be4df61-93ca-11d2-aa0d-00e098032b8c | tr -d ' ')
+test "$secure" = 1
+test "$setup" = 0
+echo "SecureBoot=$secure SetupMode=$setup"
+"""
+
+
+def guest_check(agent, mode="bios"):
     agent.call("guest-ping")
-    pid = agent.call("guest-exec", {"path": "/bin/sh", "arg": ["-c", CHECK],
+    checks = SECURE_CHECK + "\n" + CHECK if mode == "uefi-secure" else CHECK
+    pid = agent.call("guest-exec", {"path": "/bin/sh", "arg": ["-c", checks],
                                     "capture-output": True})["pid"]
     deadline = time.monotonic() + 20
     while time.monotonic() < deadline:
@@ -145,7 +161,7 @@ def run(iso, output, mode, timeout):
                     try:
                         if agent is None:
                             agent = Monitor(runtime / "qga.sock")
-                        ok, last = guest_check(agent)
+                        ok, last = guest_check(agent, mode)
                         report["guest"] = last
                         consecutive = consecutive + 1 if ok else 0
                         if consecutive >= 2:
@@ -192,7 +208,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("iso", type=Path)
     parser.add_argument("output", type=Path)
-    parser.add_argument("--mode", choices=["bios", "uefi"], required=True)
+    parser.add_argument("--mode", choices=["bios", "uefi", "uefi-secure"], required=True)
     parser.add_argument("--timeout", type=int, default=420)
     args = parser.parse_args()
     if not args.iso.is_file() or args.timeout <= 0:
@@ -201,4 +217,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
