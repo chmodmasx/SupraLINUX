@@ -124,7 +124,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        mode: [bios, uefi]
+        mode: [bios, uefi, uefi-secure]
     steps:
       - uses: actions/checkout@v5
         with:
