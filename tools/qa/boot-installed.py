@@ -63,6 +63,64 @@ def contract_arguments(mode, filesystem, user, live_machine_id, inventory):
     return args
 
 
+def visible_frame(path):
+    """Conservative evidence: reject blank or near-uniform PPM framebuffers."""
+    with path.open("rb") as f:
+        if f.readline().strip() != b"P6":
+            raise ValueError("Expected binary PPM screenshot")
+        width, height = map(int, f.readline().split())
+        if not (320 <= width <= 8192 and 200 <= height <= 8192):
+            raise ValueError("Invalid screen dimensions")
+        if f.readline().strip() != b"255":
+            raise ValueError("Unsupported PPM depth")
+        data = f.read()
+    if len(data) != width * height * 3:
+        raise ValueError("Truncated screenshot")
+    # Require color variation across the framebuffer, not merely a cursor.
+    stride = max(1, width * height // 4096)
+    samples = [data[i:i+3] for i in range(0, len(data), stride * 3)]
+    distinct = len(set(samples))
+    bright = sum(max(pixel) >= 24 for pixel in samples)
+    return {"width": width, "height": height, "distinct_samples": distinct,
+            "visible_samples": bright, "sample_count": len(samples),
+            "nonblank": distinct >= 16 and bright >= max(1, len(samples) // 20)}
+
+
+GREETER_CHECK = r"""
+set -eu
+systemctl is-active --quiet sddm.service
+pgrep -f '^(/[^ ]*/)?sddm-greeter(-qt6)?( |$)' >/dev/null
+for session in $(loginctl list-sessions --no-legend | awk '{print $1}'); do
+    if [ "$(loginctl show-session "$session" -p Class --value)" = greeter ] &&
+       [ "$(loginctl show-session "$session" -p Active --value)" = yes ]; then
+        loginctl show-session "$session" -p Class -p Type -p Active -p State
+        exit 0
+    fi
+done
+exit 1
+"""
+
+
+def collect_greeter(agent, qmp, output, timeout=120):
+    """Require an active SDDM greeter and two nonblank guest framebuffer samples."""
+    deadline = time.monotonic() + timeout
+    consecutive = 0
+    samples = []
+    while time.monotonic() < deadline:
+        probe = agent.execute("/bin/sh", ["-c", GREETER_CHECK], timeout=15)
+        qmp.call("screendump", {"filename": str(output / "greeter-latest.ppm")})
+        frame = visible_frame(output / "greeter-latest.ppm")
+        frame["greeter_active"] = probe.get("exitcode") == 0
+        frame["session"] = base64.b64decode(probe.get("out-data", "")).decode(errors="replace")
+        samples.append(frame)
+        consecutive = consecutive + 1 if frame["nonblank"] and frame["greeter_active"] else 0
+        if consecutive >= 2:
+            shutil.copyfile(output / "greeter-latest.ppm", output / "greeter-ready.ppm")
+            return {"status": "PASS", "scope": "visible greeter readiness, not login", "samples": samples}
+        time.sleep(5)
+    return {"status": "FAIL", "scope": "visible greeter readiness, not login", "samples": samples}
+
+
 def run(args):
     # Import QMP implementation only when executing, not during unit tests.
     import importlib.util
@@ -118,6 +176,17 @@ def run(args):
                 evidence = json.loads(stdout)
                 report["installed_contract"] = evidence
                 report["status"] = "PASS" if result.get("exitcode") == 0 and evidence.get("status") == "PASS" else "FAIL"
+                if args.verify_greeter and report["status"] == "PASS":
+                    report["greeter"] = collect_greeter(agent, qmp, output)
+                    if report["greeter"]["status"] != "PASS":
+                        report["status"] = "FAIL"
+                if args.verify_greeter:
+                    diagnostic = agent.execute("/bin/sh", ["-c",
+                        "loginctl list-sessions; systemctl --no-pager status sddm.service; "
+                        "journalctl -b -u sddm.service --no-pager -n 100"], timeout=30)
+                    (output / "sddm-diagnostics.txt").write_text(
+                        base64.b64decode(diagnostic.get("out-data", "")).decode(errors="replace") +
+                        base64.b64decode(diagnostic.get("err-data", "")).decode(errors="replace"))
         except (OSError, ValueError, RuntimeError, TimeoutError, subprocess.SubprocessError) as exc:
             report["error"] = str(exc)
         finally:
@@ -150,5 +219,7 @@ if __name__ == "__main__":
     parser.add_argument("--filesystem", choices=["btrfs", "ext4"], required=True)
     parser.add_argument("--user", required=True)
     parser.add_argument("--live-machine-id", required=True)
+    parser.add_argument("--verify-greeter", action="store_true",
+                        help="Also require active greeter and nonblank framebuffer evidence")
     args = parser.parse_args()
     raise SystemExit(run(args))

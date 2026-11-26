@@ -18,3 +18,13 @@ into a disposable live guest and records its SHA-256. It tests the real
 backend against the existing synthetic fixture, not the packaged ISO
 or an installed system. Remove the cross-run artifact workflow before
 merge and validate the resulting same-run ISO.
+
+## Evidence and permanent CI
+
+Run 45771451444 passed against the exact checked-out helper (SHA-256
+4f54dc0f1ee0c3707656b63a6297be1f4a03658bb86ba1d765c705c153b73d1a).
+Run 45771451393 built a new ISO and passed nine of nine jobs including
+packaged recovery, BIOS, UEFI, Secure Boot, and metrics. Static CI
+45771451425 passed six of six. The temporary cross-run workflow has
+been removed; the existing same-run ISO recovery gate remains.
+Revalidate the synchronized testing tree before merging.

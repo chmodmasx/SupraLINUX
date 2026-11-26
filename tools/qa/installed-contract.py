@@ -55,6 +55,78 @@ def package_status(name):
     return tuple(value.split("\t", 1))
 
 
+EFI_GLOBAL_GUID = "8be4df61-93ca-11d2-aa0d-00e098032b8c"
+
+
+def efi_flag(data):
+    require(len(data) == 5 and data[4] in (0, 1), "Malformed EFI boolean variable")
+    return data[4]
+
+
+def secure_boot_policy(secure_boot, setup_mode):
+    require(efi_flag(secure_boot) == 1, "Secure Boot not enabled")
+    require(efi_flag(setup_mode) == 0, "UEFI still in SetupMode")
+    return {"SecureBoot": 1, "SetupMode": 0}
+
+
+def crypttab_entry(contents, mapping, uuid):
+    """Match one explicit passphrase-backed entry; do not return secret fields."""
+    rows = [line.split() for line in contents.splitlines()
+            if line.strip() and not line.lstrip().startswith("#")]
+    entries = [row for row in rows if row[0] == mapping]
+    require(len(entries) == 1, "Expected one crypttab entry for the root mapping")
+    row = entries[0]
+    require(len(row) >= 3, "Incomplete root crypttab entry")
+    require(row[1] in (f"UUID={uuid}", f"/dev/disk/by-uuid/{uuid}"),
+            "crypttab does not identify the actual root LUKS container")
+    require(row[2] in ("none", "-"), "Unexpected non-passphrase root key source")
+    return {"mapping": mapping, "luks_uuid": uuid}
+
+
+def luks2_metadata(raw):
+    data = json.loads(raw)
+    require(isinstance(data, dict) and isinstance(data.get("segments"), dict)
+            and bool(data["segments"]), "Missing LUKS2 segment metadata")
+    require(any(isinstance(segment, dict) and segment.get("type") == "crypt"
+                for segment in data["segments"].values()), "No encrypted LUKS2 data segment")
+    return True
+
+
+def mount_device(mount):
+    number = command("findmnt", "-n", "-o", "MAJ:MIN", "--mountpoint", mount)
+    require(re.fullmatch(r"\d+:\d+", number) is not None, "Invalid mount device identity")
+    return Path("/dev/block") / number
+
+
+def encryption_contract(policy):
+    root = mount_device("/")
+    kind = command("lsblk", "-dn", "-o", "TYPE", str(root))
+    if policy == "none":
+        require(kind == "part", "Unencrypted root is not a direct partition")
+        return {"encryption": "none"}
+    require(policy == "luks2", "Unknown encryption policy")
+    require(kind == "crypt", "Root is not on an active crypt mapping")
+    sys_root = Path("/sys/dev/block") / root.name
+    mapping = (sys_root / "dm/name").read_text().strip()
+    require(re.fullmatch(r"[A-Za-z0-9_.+-]+", mapping) is not None, "Invalid dm mapping name")
+    slaves = list((sys_root / "slaves").iterdir())
+    require(len(slaves) == 1, "Expected one backing block device for root mapping")
+    container = Path("/dev") / slaves[0].name
+    require(command("blkid", "-p", "-s", "TYPE", "-o", "value", str(container)) == "crypto_LUKS",
+            "Root mapping does not use a LUKS container")
+    uuid = command("cryptsetup", "luksUUID", str(container))
+    require(re.fullmatch(r"[0-9a-fA-F-]{36}", uuid) is not None, "Invalid LUKS UUID")
+    luks2_metadata(command("cryptsetup", "luksDump", "--dump-json-metadata", str(container)))
+    detail = crypttab_entry(Path("/etc/crypttab").read_text(), mapping, uuid)
+    boot = mount_device("/boot")
+    require(boot != root, "/boot is not separate from encrypted root")
+    require(command("findmnt", "-n", "-o", "FSTYPE", "--mountpoint", "/boot") == "ext4",
+            "Encrypted layout requires a separate ext4 /boot")
+    require(command("lsblk", "-dn", "-o", "TYPE", str(boot)) == "part",
+            "/boot is not a direct unencrypted partition")
+    return {"encryption": "luks2", "boot_filesystem": "ext4", **detail}
+
+
 def check(args):
     results = {}
 
@@ -102,7 +174,7 @@ def check(args):
             require(Path("/etc/snapper/configs/root").is_file(), "Missing Snapper root configuration")
             require(Path("/etc/apt/apt.conf.d/80snapper").is_file(), "Missing APT snapshot hook")
         efi = Path("/sys/firmware/efi").is_dir()
-        require(efi == (args.mode == "uefi"), "Boot firmware differs from requested mode")
+        require(efi == (args.mode in ("uefi", "uefi-secure")), "Boot firmware differs from requested mode")
         if efi:
             require(command("findmnt", "-n", "-o", "FSTYPE", "--mountpoint", "/boot/efi") == "vfat",
                     "ESP not mounted as vfat")
@@ -140,6 +212,13 @@ def check(args):
     run("identity", identity)
     run("packages", packages)
     run("storage_and_boot", storage)
+    if args.encryption is not None:
+        run("encryption", lambda: encryption_contract(args.encryption))
+    if args.mode == "uefi-secure":
+        variables = Path("/sys/firmware/efi/efivars")
+        run("secure_boot", lambda: secure_boot_policy(
+            (variables / ("SecureBoot-" + EFI_GLOBAL_GUID)).read_bytes(),
+            (variables / ("SetupMode-" + EFI_GLOBAL_GUID)).read_bytes()))
     run("user", user)
     run("services", services)
     run("archive", archive)
@@ -158,7 +237,8 @@ def expected_package(value):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--mode", choices=["bios", "uefi"], required=True)
+    parser.add_argument("--mode", choices=["bios", "uefi", "uefi-secure"], required=True)
+    parser.add_argument("--encryption", choices=["none", "luks2"])
     parser.add_argument("--filesystem", choices=["btrfs", "ext4"], required=True)
     parser.add_argument("--user", required=True)
     parser.add_argument("--live-machine-id")
